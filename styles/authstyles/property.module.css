@@ -1,0 +1,119 @@
+.title {
+  color: #1d72db;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 20px;
+}
+.text {
+  font-size: 15px;
+  width: 11rem;
+  font-family: Poppins, medium;
+}
+
+.text1 {
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  width: 14rem;
+}
+
+.text2 {
+  color: #bcc7ce;
+  font-size: 15px;
+  background-color: #dbe9f24d;
+  border: none;
+  width: 30rem;
+  font-family: Poppins;
+}
+.button {
+  width: 8rem;
+  height: 2rem;
+  background-color: #1d72db;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+}
+
+.section {
+  box-shadow: 0px 0px 20px #323d5a1f;
+  border-radius: 20px;
+  border: none !important;
+  width: 58rem;
+  height: 30rem;
+}
+.background {
+  background-color: #1d72db;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  height: 30rem;
+}
+.description {
+  color: white;
+  font-size: 18px;
+  margin-top: 1.5rem;
+}
+
+.body {
+  margin-top: 13rem;
+}
+.formcheck {
+  height: 9rem;
+}
+.formcontrol {
+  width: 12rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+}
+.formcontrol1 {
+  width: 13rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-left: 1rem;
+}
+.formcontrol2 {
+  width: 28.5rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-left: 1rem;
+}
+.inputtext {
+  width: 2rem;
+  height: 2rem;
+  color: black;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+}
+.inputtext1 {
+  width: 2rem;
+  height: -1rem;
+  color: black;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+}
+
+.form_placeholder {
+  width: 5rem;
+}
+
+@media only screen and (max-width: 900px) {
+}
