@@ -1,6 +1,9 @@
 import React from "react";
 import Styles from "../../styles/authstyles/property.module.css";
 import Head from 'next/head'
+import Image1 from "../../assets/icons/arrow.png";
+import Image from "next/image";
+import Image2 from "../../assets/icons/1.png";
 const Property = () => {
 
   return (
@@ -57,20 +60,37 @@ const Property = () => {
                     />
                   </div>
                 </form>
-                <div className="d-flex me-5 float-end align-items-end">
+                <div className="d-flex me-2 mb-5 float-end align-items-end ">
                   <div className= {`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}>
-                    <div className="ms-5">
-                      <i class="ri-arrow-right-circle-line"></i>
+                    <div className="ms-5 me-3">
+                    <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
                     </div>
                     <label class="form-check-label" for="inlineFormCheck">
                       Back
                     </label>
                   </div>
-                  <div className="mt-5 ms-5">
-                    <button type="submit" class={Styles.button}>
-                      Next
-                    </button>
-                  </div>
+                
+                  <div className="mt-5 ms-3">
+                        <button
+                          type="submit"
+                          className={`me-5   ${Styles.button}`}
+                        >
+                        Next
+                          <span className="ms-5 ">
+                            <Image src={Image2} alt="Picture of the author" className={Styles.widthimg}
+                             width={15}
+                             height={15}
+                            />
+                          </span>
+                        </button>
+                      </div>
+                
                 </div>
               </div>
             </div>

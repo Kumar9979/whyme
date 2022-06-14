@@ -1,6 +1,10 @@
 import React from "react";
 import Head from "next/head";
-
+import Image1 from "../../assets/icons/arrow.png";
+import rent from "../../assets/icons/rent.png";
+import Image2 from "../../assets/icons/1.png";
+import Image from "next/image";
+import Image3 from '../../assets/icons/2.png'
 import Styles from "../../styles/propertystyles/property.module.css";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 const Auth = () => {
@@ -22,18 +26,25 @@ const Auth = () => {
                   <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
-                    <span className={`me-2 ${Styles.propertyborder}`}>
+                    <span className='me-2 '  >
                       {" "}
-                      <i class="ri-checkbox-line"></i>
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                          
+                            />
                     </span>
-                    Property Details
+                  <span className={`  ${Styles.propertyborder}`}> Property Details </span>
                   </div>
                   <div
                     className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
                   >
                     <span className="me-2">
                       {" "}
-                      <i class="ri-checkbox-line"></i>
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
                     </span>
                     Property Features
                   </div>
@@ -42,7 +53,10 @@ const Auth = () => {
                   >
                     <span className="me-2">
                       {" "}
-                      <i class="ri-checkbox-line"></i>
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
                     </span>
                     Price Details
                   </div>
@@ -51,7 +65,11 @@ const Auth = () => {
                   >
                     <span className="me-2">
                       {" "}
-                      <i class="ri-checkbox-line"></i>
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            
+                            />
                     </span>
                     Photos & Description
                   </div>
@@ -232,22 +250,22 @@ const Auth = () => {
                     </div>
                   </div>
 
-                  <p className={`mt-3 ms-4 ${Styles.checkheading}`}>
+                  <p className={`mt-5  ms-4 ${Styles.checkheading}`}>
                     Amenities
                   </p>
                   <div>
-                    <div className="container mb-4  ">
+                    <div className="container mb-2  ">
                       <div className="row ms-2">
                         <div className="col-lg-4 ">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
                             />
                             <label
-                              className={`form-check-label ${Styles.checkcontent}`}
+                              className={`form-check-label  ${Styles.checkcontent}`}
                               for="flexCheckChecked"
                             >
                               Elevators/Lifts
@@ -257,7 +275,7 @@ const Auth = () => {
                         <div className="col-lg-5 ">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckDefault"
@@ -273,7 +291,7 @@ const Auth = () => {
                         <div className="col-lg-3 ">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -289,12 +307,12 @@ const Auth = () => {
                       </div>
                     </div>
 
-                    <div className="container mb-3">
+                    <div className="container mb-2">
                       <div className="row ms-2">
                         <div className="col-lg-4 ">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -310,7 +328,7 @@ const Auth = () => {
                         <div className="col-lg-5">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckDefault"
@@ -326,7 +344,7 @@ const Auth = () => {
                         <div className="col-lg-3">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -341,12 +359,12 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="container mb-3">
+                    <div className="container mb-2">
                       <div className="row ms-2">
                         <div className="col-lg-3 ">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -362,7 +380,7 @@ const Auth = () => {
                         <div className="col-lg-4">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckDefault"
@@ -378,7 +396,7 @@ const Auth = () => {
                         <div className="col-lg-3">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -393,12 +411,12 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="container mb-3">
+                    <div className="container mb-2">
                       <div className="row ms-2">
                         <div className="col-lg-5">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -414,7 +432,7 @@ const Auth = () => {
                         <div className="col-lg-7">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckDefault"
@@ -434,7 +452,7 @@ const Auth = () => {
                         <div className="col-lg-7">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckChecked"
@@ -450,7 +468,7 @@ const Auth = () => {
                         <div className="col-lg-5">
                           <div className="form-check">
                             <input
-                              className="form-check-input"
+                              className="form-check-input mt-2"
                               type="checkbox"
                               value=""
                               id="flexCheckDefault"
@@ -470,16 +488,36 @@ const Auth = () => {
                   <div className="ms-auto w-50">
                     <div className="d-flex align-items-center">
                       <div className="d-flex mt-5 ms-2">
-                        <div className="ms-5">
-                        <i className={`ri-arrow-left-circle-line me-3 ${Styles.buttonicon}`}></i>
+                        <div className="me-3 mt-1">
+                          {/* <i className={`ri-arrow-left-circle-line me-3 ${Styles.buttonicon}`}></i> */}
+                          <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
                         </div>
-                        <label className={`form-check-label ${Styles.backbutton}`}for="inlineFormCheck">
+
+                        <label
+                          className={`form-check-label mt-1 ${Styles.backbutton}`}
+                          for="inlineFormCheck"
+                        >
                           Back
                         </label>
                       </div>
                       <div className="mt-5 ms-3">
-                        <button type="submit" className={`me-5 ${Styles.button}`}>
-                          Next<span className="ms-5"><i class="ri-arrow-right-circle-line"></i></span>
+                        <button
+                          type="submit"
+                          className={`me-5   ${Styles.button}`}
+                        >
+                        Next
+                          <span className="ms-5 ">
+                            <Image src={Image2} alt="Picture of the author" className={Styles.widthimg}
+                             width={15}
+                             height={15}
+                            />
+                          </span>
                         </button>
                       </div>
                     </div>
