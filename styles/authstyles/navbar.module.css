@@ -1,7 +1,9 @@
-/* .headerlogo {
+.headerlogo {
     font-family: Lato;
     font-size: 36px;
     font-weight: 900;
+    text-decoration: none;
+    color:black;
   }
   .headermenu {
     font-family: Montserrat;
@@ -10,12 +12,15 @@
     color: #000000;
   }
   
-  .landing-page-header-btn {
-    background-color: #18aafa;
+  .landingheader {
+    background-color: #013EA3;
     color: #ffffff;
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 600;
     border: none;
     border-radius: 6px;
-  } */
+  }
+  .container{
+    box-shadow: 5px 5px 20px #00000029;
+  }

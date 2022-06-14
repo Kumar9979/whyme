@@ -1,13 +1,17 @@
 import React from "react";
 import Head from 'next/head'
 import Styles from "../../styles/authstyles/property2.module.css";
-
+import Image1 from "../../assets/icons/arrow.png";
+import Image from "next/image";
+import Image2 from "../../assets/icons/1.png";
+import Navbar from "../../pages/auth/navbar";
 const Register = () => {
   return (
     <> 
     <Head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
     </Head>
+    <Navbar/>
     <div className={`${Styles.body} d-flex justify-content-center`}>
         <div className={`${Styles.section} card mb-3  mt-5 `}>
           <div className="">
@@ -114,19 +118,41 @@ const Register = () => {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={`d-flex me-5 float-end align-items-end ${Styles.formcheck}`}
-                  >
-                    <div className="d-flex mt-5 ms-5 ">
-                      <div className="ms-5"></div>
-                      <label class="form-label" for="inlineFormCheck">
-                        Back
-                      </label>
-                    </div>
-                    <div className="mt-5 ms-5 ">
-                      <button type="submit" class={Styles.button}>
+                  <div className="ms-auto w-50 mt-5">
+                    <div className="d-flex align-items-center">
+                      <div className="d-flex mt-5 ms-2">
+                        <div className="me-3 mt-1">
+                          {/* <i className={`ri-arrow-left-circle-line me-3 ${Styles.buttonicon}`}></i> */}
+                          <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
+                        </div>
+
+                        <label
+                          className={`form-check-label mt-1 ${Styles.backbutton}`}
+                          for="inlineFormCheck"
+                        >
+                          Back
+                        </label>
+                      </div>
+                      <div className="mt-5 ms-3">
+                        <button
+                          type="submit"
+                          className={`me-5   ${Styles.button}`}
+                        >
                         Next
-                      </button>
+                          <span className="ms-5 ">
+                            <Image src={Image2} alt="Picture of the author" className={Styles.widthimg}
+                             width={15}
+                             height={15}
+                            />
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
