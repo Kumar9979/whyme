@@ -1,6 +1,6 @@
 import React from "react";
 import Head from 'next/head'
-import Styles from "../../Styles/authstyles/property2.module.css";
+import Styles from "../../styles/authstyles/property2.module.css";
 
 const Register = () => {
   return (
