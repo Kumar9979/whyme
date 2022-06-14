@@ -1,8 +1,11 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
-import styles from "../../styles/modals/registerUserModal.module.css";
+import { Modal } from "react-bootstrap";
+import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import Image from "next/image";
+import camera from "../../assets/icons/camera.png";
+import close from "../../assets/icons/close.png";
 
 const RegisterUserModal = ({ show, onHide }) => {
   const formik = useFormik({
@@ -23,17 +26,21 @@ const RegisterUserModal = ({ show, onHide }) => {
 
   return (
     <Modal show={show} onHide={onHide} centered>
-      <div className="d-flex justify-content-end ">
+      <div className="d-flex justify-content-end mt-4 me-4 mb-1">
         {" "}
-        <i
+        <Image
           onClick={onHide}
-          className={`${styles.modal_icon_close} ${styles.cursor_pointer} ri-close-circle-line me-4 mt-4 `}
-        ></i>
+          src={close}
+          alt="close icon"
+          width={30}
+          height={30}
+          className={`${styles.cursor_pointer}`}
+        />
       </div>
       <Modal.Body className={styles.modal_body_register}>
-        <div className="mb-1">
+        <div className="mb-1 mt-1">
           <h5
-            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
           >
             Register your account
           </h5>
@@ -47,7 +54,7 @@ const RegisterUserModal = ({ show, onHide }) => {
 
         <form onSubmit={formik.handleSubmit} className="mt-4">
           <label
-            className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1 `}
+            className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.fontFam_poppins} ${styles.font_20} mb-1 `}
           >
             Profile Picture
           </label>
@@ -56,7 +63,12 @@ const RegisterUserModal = ({ show, onHide }) => {
               htmlFor="profile"
               className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
-              <i className="ri-camera-line"></i>
+              <Image
+                src={camera}
+                alt="image of camera"
+                width={35}
+                height={35}
+              />
             </label>
 
             {/* <div className={styles.modal_inputProfile_registeruser}>
@@ -68,14 +80,14 @@ const RegisterUserModal = ({ show, onHide }) => {
               style={{ visibility: "hidden" }}
               id="profile"
               name="img"
-              accept="image/*"
+              accept="image/*;capture=camera"
             />
           </div>
 
           <div className="mb-3">
             <label
               id="#name"
-              className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+              className={`${styles.color_1D1E1F} ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.font_20} mb-1`}
             >
               Name
             </label>
@@ -99,7 +111,7 @@ const RegisterUserModal = ({ show, onHide }) => {
 
           <div className="">
             <label
-              className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+              className={`${styles.color_1D1E1F} ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.font_20} mb-1`}
             >
               Email Address
             </label>

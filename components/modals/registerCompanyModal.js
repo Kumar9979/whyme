@@ -1,8 +1,12 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import styles from "../../styles/modals/registerUserModal.module.css";
+import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import Image from "next/image";
+import camera from "../../assets/icons/camera.png";
+import close from "../../assets/icons/close.png"
+
 const RegisterCompanyModal = ({ show, onHide }) => {
   const formik = useFormik({
     initialValues: {
@@ -24,18 +28,30 @@ const RegisterCompanyModal = ({ show, onHide }) => {
     },
   });
   return (
-    <Modal show={show} onHide={onHide} centered>
-      <div className="d-flex justify-content-end ">
+    <Modal
+      size="lg"
+      aria-labelledby="example-modal-sizes-title-lg"
+      show={show}
+      onHide={onHide}
+      centered
+    >
+      <div className="d-flex justify-content-end mt-4 me-4 mb-1">
         {" "}
-        <i
-          onClick={onHide}
-          className={`${styles.modal_icon_close} ${styles.cursor_pointer} ri-close-circle-line me-4 mt-4 `}
-        ></i>
+   
+        <Image  onClick={onHide}
+                src={close}
+                alt="close icon"
+                width={30}
+                height={30}
+                className={ `${styles.cursor_pointer}`}
+               
+              />
+
       </div>
       <Modal.Body className={styles.modal_body_register}>
-        <div className="mb-1">
+        <div className="mb-1 mt-1">
           <h5
-            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
           >
             Register your account
           </h5>
@@ -47,18 +63,24 @@ const RegisterCompanyModal = ({ show, onHide }) => {
           </p>
         </div>
 
-        <form onSubmit={formik.handleSubmit} className="mt-4">
+        <form onSubmit={formik.handleSubmit} className="mt-4 w-100">
           <label
-            className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1 `}
+            className={`${styles.color_1D1E1F} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} mb-1 `}
           >
             Company Logo
           </label>
           <div className="mb-3">
             <label
               htmlFor="profile"
-              className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
+              className={`${styles.fontFam_poppins} ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
-              <i className="ri-camera-line"></i>
+                <Image
+                src={camera}
+                alt="image of camera"
+                width={35}
+                height={35}
+               
+              />
             </label>
 
             {/* <div className={styles.modal_inputProfile_registeruser}>
@@ -70,15 +92,16 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               style={{ visibility: "hidden" }}
               id="profile"
               name="img"
-              accept="image/*"
+              accept="image/*;capture=camera"
+           
             />
           </div>
 
-          <div className="d-flex w-100 justify-content-between">
-            <div className="mb-3 w-50">
+          <div className={ ` ${styles.flex_column} d-flex w-100   justify-content-between`}>
+            <div className={`${styles.width_res_cen_half} mb-3 `}>
               <label
                 id="#name"
-                className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
               >
                 Company Name
               </label>
@@ -99,10 +122,10 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               )}
             </div>
 
-            <div className="mb-3 w-50">
+            <div className={`${styles.width_res_cen_half} ${styles.margin_l_3}  mb-3 `}>
               <label
                 id="#name"
-                className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
               >
                 Name
               </label>
@@ -125,56 +148,60 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             </div>
           </div>
 
-          <div className="">
-            <label
-              className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
-            >
-              Email Address
-            </label>
+          <div className={ ` ${styles.flex_column} d-flex w-100   justify-content-between`}>
 
-            <input
-              type="text"
-              placeholder="Enter your email address"
-              className={`${styles.modal_input_registeruser} w-100`}
-              name="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-            />
 
-            {formik.errors.email && formik.touched.email && (
-              <div className="d-flex align-items-center text-danger">
-                <i className="ri-error-warning-line me-1 mt-1 "></i>
-                <span> {formik.errors.email}</span>
-              </div>
-            )}
-          </div>
-          <div className="">
-            <label
-              className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
-            >
-              Role
-            </label>
+            <div className={`${styles.width_res_cen_half} mb-3 `}>
+              <label
+                className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+              >
+                Email Address
+              </label>
 
-            <input
-              type="text"
-              placeholder="Ex : Agent, Builder, etc,..."
-              className={`${styles.modal_input_registeruser} w-100`}
-              name="role"
-              value={formik.values.role}
-              onChange={formik.handleChange}
-            />
+              <input
+                type="text"
+                placeholder="Enter your email address"
+                className={`${styles.modal_input_registeruser} w-100`}
+                name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+              />
 
-            {formik.errors.role && formik.touched.role && (
-              <div className="d-flex align-items-center text-danger">
-                <i className="ri-error-warning-line me-1 mt-1 "></i>
-                <span> {formik.errors.role}</span>
-              </div>
-            )}
+              {formik.errors.email && formik.touched.email && (
+                <div className="d-flex align-items-center text-danger">
+                  <i className="ri-error-warning-line me-1 mt-1 "></i>
+                  <span> {formik.errors.email}</span>
+                </div>
+              )}
+            </div>
+            <div className={`${styles.width_res_cen_half} ${styles.margin_l_3}  mb-3`}>
+              <label
+                className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+              >
+                Role
+              </label>
+
+              <input
+                type="text"
+                placeholder="Ex : Agent, Builder, etc,..."
+                className={`${styles.modal_input_registeruser} w-100`}
+                name="role"
+                value={formik.values.role}
+                onChange={formik.handleChange}
+              />
+
+              {formik.errors.role && formik.touched.role && (
+                <div className="d-flex align-items-center text-danger">
+                  <i className="ri-error-warning-line me-1 mt-1 "></i>
+                  <span> {formik.errors.role}</span>
+                </div>
+              )}
+            </div>
           </div>
           <div>
             <button
               type="submit"
-              className={`${styles.modal_btn_complete} ${styles.font_20} ${styles.font_semibold} text-uppercase btn text-white w-100 mt-5`}
+              className={`${styles.modal_btn_complete} ${styles.font_20} ${styles.font_semibold} text-uppercase btn text-white w-100 mt-4`}
             >
               COMPLETE
             </button>
