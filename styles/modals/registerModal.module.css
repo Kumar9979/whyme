@@ -1,3 +1,29 @@
+.register_form_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: 0;
+  box-shadow: 0px 0px 15px #00000029 !important;
+  border-radius: 20px !important;
+  border: none !important;
+}
+
+.margin_top_5{
+  margin-top: 5%;
+}
+
+
+.max_height_800 {
+  max-width: 800px;
+}
+
+.max_height_500 {
+  max-width: 500px;
+}
+
 .width_res_cen_half {
   width: 50%;
 }

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import styles from "../../styles/modals/registerModal.module.css";
+
+import styles from "../../styles/modals/registerModal.module.css"
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
-import SellRentOptionModal from "./sellRentOptionModal";
+import SellRentOptionModal from "../../components/modals/sellRentOptionModal";
 
-const RegisterCompanyModal = ({ show, onHide }) => {
+const RegisterCompany = () => {
   const [file, setFile] = useState(camera);
   const [uploaded, setuploaded] = useState(false);
   const [size, setSize] = useState(35);
@@ -58,7 +58,9 @@ const RegisterCompanyModal = ({ show, onHide }) => {
 
   return (
     <>
-    <Modal
+
+    
+        {/* <Modal
       size="lg"
       aria-labelledby="example-modal-sizes-title-lg"
       show={show}
@@ -67,11 +69,15 @@ const RegisterCompanyModal = ({ show, onHide }) => {
         formReset();
       }}
       centered
-    >
+    > */}
+
+<div className={`d-flex align-items-center justify-content-center mx-2`}>
+
+      <div className={`${styles.register_form_container} ${styles.margin_top_5}  ${styles.max_height_800} `}>
       <div className="d-flex justify-content-end mt-4 me-4 mb-1">
         {" "}
         <Image
-          onClick={()=>{onHide(); formReset(); }}
+      
           src={close}
           alt="close icon"
           width={30}
@@ -79,7 +85,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
           className={`${styles.cursor_pointer}`}
         />
       </div>
-      <Modal.Body className={styles.modal_body_register}>
+      <div className={styles.modal_body_register}>
         <div className="mb-1 mt-1">
           <h5
             className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
@@ -257,12 +263,17 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             </button>
           </div>
         </form>
-      </Modal.Body>
-    </Modal>
-      <SellRentOptionModal show={sellRentShow} onHide={handleSellRentClose} />
+
+
+        
+      </div>
+      </div>
+
+      </div>
+
     </>
 
   );
 };
 
-export default RegisterCompanyModal;
+export default RegisterCompany;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
@@ -8,12 +8,17 @@ import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
 
 const RegisterUserModal = ({ show, onHide }) => {
+  const [file, setFile] = useState();
+  const [size, setSize] = useState(35);
+  const [uploaded, setuploaded] = useState(false);
   const formik = useFormik({
     initialValues: {
+      image: "",
       name: "",
       email: "",
     },
     validationSchema: Yup.object({
+      image: Yup.mixed().required("Upload an Image"),
       name: Yup.string().required("Required"),
       email: Yup.string().email().required("Required"),
     }),
@@ -24,12 +29,36 @@ const RegisterUserModal = ({ show, onHide }) => {
     },
   });
 
+  function handleChange(e) {
+    if (e.target?.files.length !== 0) {
+      setSize(100);
+      setuploaded(true);
+      setFile(URL.createObjectURL(e.target.files[0]));
+    }
+  }
+
+  function formReset() {
+    setuploaded(false);
+    setSize(35);
+    formik.setFieldValue("image", "");
+  }
+
   return (
-    <Modal show={show} onHide={onHide} centered>
+    <Modal
+      show={show}
+      onHide={() => {
+        onHide();
+        formReset();
+      }}
+      centered
+    >
       <div className="d-flex justify-content-end mt-4 me-4 mb-1">
         {" "}
         <Image
-          onClick={onHide}
+          onClick={() => {
+            onHide();
+            formReset();
+          }}
           src={close}
           alt="close icon"
           width={30}
@@ -64,10 +93,10 @@ const RegisterUserModal = ({ show, onHide }) => {
               className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
               <Image
-                src={camera}
+                src={uploaded ? file : camera}
                 alt="image of camera"
-                width={35}
-                height={35}
+                width={size}
+                height={size}
               />
             </label>
 
@@ -75,12 +104,23 @@ const RegisterUserModal = ({ show, onHide }) => {
   hi
 </div> */}
 
+            {formik.errors.image && formik.touched.image && (
+              <div className="d-flex align-items-center text-danger mt-1">
+                <i className="ri-error-warning-line me-1 "></i>
+                <span>{formik.errors.image}</span>
+              </div>
+            )}
+
             <input
               type={"file"}
               style={{ visibility: "hidden" }}
               id="profile"
-              name="img"
+              name="image"
               accept="image/*;capture=camera"
+              onChange={(e) => {
+                formik.setFieldValue("image", e.target.files[0]);
+                handleChange(e);
+              }}
             />
           </div>
 
@@ -103,7 +143,7 @@ const RegisterUserModal = ({ show, onHide }) => {
             />
             {formik.errors.name && formik.touched.name && (
               <div className="d-flex align-items-center text-danger">
-                <i className="ri-error-warning-line me-1 mt-1 "></i>
+                <i className="ri-error-warning-line me-1 "></i>
                 <span>{formik.errors.name}</span>
               </div>
             )}
@@ -127,7 +167,7 @@ const RegisterUserModal = ({ show, onHide }) => {
 
             {formik.errors.email && formik.touched.email && (
               <div className="d-flex align-items-center text-danger">
-                <i className="ri-error-warning-line me-1 mt-1 "></i>
+                <i className="ri-error-warning-line me-1 "></i>
                 <span> {formik.errors.email}</span>
               </div>
             )}

@@ -17,8 +17,8 @@ const modals = () => {
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button>
-      {/* <UserTypeModal show={show} onHide={handleClose} /> */}
-      <RegisterCompanyModal show={show} onHide={handleClose} />
+      <UserTypeModal show={show} onHide={handleClose} />
+      {/* <RegisterCompanyModal show={show} onHide={handleClose} /> */}
       {/* <RegisterUserModal show={show} onHide={handleClose}/> */}
       {/* <SellRentOptionModal show={show} onHide={handleClose} /> */}
     </>
