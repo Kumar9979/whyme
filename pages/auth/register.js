@@ -15,13 +15,12 @@ const Register = () => {
   const router=useRouter()
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+     Number:"",
     },
 
     validationSchema: Yup.object({
-      email: Yup.string().email().required("!required"),
-      password: Yup.string().required("!required"),
+     
+      Number: Yup.string().required("!required"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -125,13 +124,13 @@ const Register = () => {
                         </label>
                         <div class="input-group  ">
                           <input
-                            type="email"
+                            type="text"
                             className={Styles.formcontrol}
                             placeholder="Enter super area"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
-                           name="email"
-                            value={formik.values.email}
+                           name="Number"
+                            value={formik.values.Number}
                             onChange={formik.handleChange}
                           />
                           <span
@@ -141,7 +140,7 @@ const Register = () => {
                             sqft
                           </span>
                         </div>
-                        <p className="text-danger">{formik.errors.email}</p>
+                        <p className="text-danger">{formik.errors.Number}</p>
                       </div>
 
                       <div class="col-lg-6 mt-3 ">
@@ -150,20 +149,20 @@ const Register = () => {
                         </label>
                         <div class="input-group">
                           <input
-                            type="password"
+                            type="text"
                             className={Styles.formcontrol}
                             placeholder="Enter carpet area"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
-                            name="password"
-                            value={formik.values.password}
+                            name="Number"
+                            value={formik.values.Number}
                             onChange={formik.handleChange}
                           />
                           <span className={Styles.inputtext} id="basic-addon2">
                             sqft
                           </span>
                         </div>
-                        <p className="text-danger">{formik.errors.password}</p>
+                        <p className="text-danger">{formik.errors.Number}</p>
                       </div>
                     </div>
                     <div class="row ">
@@ -174,17 +173,17 @@ const Register = () => {
                             ₹{" "}
                           </span>
                           <input
-                            type="email"
+                            type="text"
                             class={Styles.formcontrol2}
                             placeholder="Enter property price"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
-                            name="email"
-                            value={formik.values.email}
+                            name="Number"
+                            value={formik.values.Number}
                             onChange={formik.handleChange}
                           />
                         </div>
-                        <p className="text-danger">{formik.errors.email}</p>
+                        <p className="text-danger">{formik.errors.Number}</p>
                       </div>
                     </div>
 
@@ -196,17 +195,17 @@ const Register = () => {
                             ₹{" "}
                           </span>
                           <input
-                            type="email"
+                            type="text"
                             class={Styles.formcontrol2}
                             placeholder="Enter maintainence price"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
-                            name="email"
-                            value={formik.values.email}
+                            name="Number"
+                            value={formik.values.Number}
                             onChange={formik.handleChange}
                           />
                         </div>
-                        <p className="text-danger">{formik.errors.email}</p>
+                        <p className="text-danger">{formik.errors.Number}</p>
                       </div>
                     </div>
 

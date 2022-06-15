@@ -14,13 +14,14 @@ const Property = () => {
  const router=useRouter()
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+  
+      Address: "",
     },
 
     validationSchema: Yup.object({
-      email: Yup.string().email().required("!required"),
-      password: Yup.string().required("!required"),
+     
+      Address: Yup.string().required("!required"),
+    
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -106,16 +107,16 @@ const Property = () => {
                     <label for="exampleInputEmail1">Select Your Property in Map</label>
                     <br />
                     <input
-                      type="email"
+                      type="text"
                       className={Styles.formcontrol}
                       id="exampleInputEmail1"
-                      name="email"
+                      name="Address"
                       placeholder="Enter Your Property Location"
-                      value={formik.values.email}
+                      value={formik.values.Address}
                       onChange={formik.handleChange}
                     />
                   </div>
-                  <p className="text-danger">{formik.errors.email}</p>
+                  <p className="text-danger">{formik.errors.Address}</p>
                 <p class={`${Styles.cardtext} mt-5`}>
                   Select your Property in map
                 </p>
@@ -128,30 +129,30 @@ const Property = () => {
                     <label for="exampleInputEmail1">Address</label>
                     <br />
                     <input
-                      type="email"
+                      type="text"
                       className={Styles.formcontrol}
                       id="exampleInputEmail1"
-                      name="email"
+                      name="Address"
                       placeholder="Enter Your Property Location"
-                      value={formik.values.email}
+                      value={formik.values.Address}
                       onChange={formik.handleChange}
                     />
                   </div>
-                  <p className="text-danger">{formik.errors.email}</p>
+                  <p className="text-danger">{formik.errors.Address}</p>
                   <div className={`${Styles.formgroup} mt-3`}>
                     <label for="exampleInputPassword1">Building Name</label>
                     <br />
                     <input
-                      type="password"
+                      type="text"
                       className={Styles.formcontrol}
                       id="exampleInputPassword1"
-                      name="password"
+                      name="Address"
                       placeholder="Enter Your Email Address"
-                      value={formik.values.password}
+                      value={formik.values.Address}
                       onChange={formik.handleChange}
                     />
                   </div>
-                  <p className="text-danger">{formik.errors.password}</p>
+                  <p className="text-danger">{formik.errors.Address}</p>
                 </form>
                 <div className="d-flex me-2 mb-5 float-end align-items-end ">
                   <div className= {`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}>

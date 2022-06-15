@@ -1,6 +1,7 @@
 import React from 'react'
 import Styles from '../../styles/authstyles/navbar.module.css'
-
+import Image from "next/image";
+import Image3 from '../../assets/icons/3.png';
 const Navbar = () => {
   return (
     <div>
@@ -8,9 +9,11 @@ const Navbar = () => {
         <div className="header mt-4 container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
-              <a className={Styles.headerlogo} href="#">
-               ZameenSquare
-              </a>
+            <Image src={Image3} alt="Picture of the author" 
+                             width={400}
+                             height={70}
+                          
+                            />
               <button
                 className=" ms-auto navbar-toggler"
                 type="button"

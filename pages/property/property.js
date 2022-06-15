@@ -14,13 +14,12 @@ const Auth = () => {
   const router=useRouter()
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      Number:"",
     },
 
     validationSchema: Yup.object({
-      email: Yup.string().email().required("!required"),
-      password: Yup.string().required("!required"),
+  
+      Number: Yup.string().required("!required"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -110,16 +109,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="password"
+                        type="text"
                         className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputEmail4"
                         placeholder="Ex : 13"
-                        name="password"
-                        value={formik.values.password}
+                        name="Number"
+                        value={formik.values.Number}
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <p className="text-danger">{formik.errors.password}</p>
+                    <p className="text-danger">{formik.errors.Number}</p>
                   </div>
                   <div className="col-lg-3 ">
                     <label
@@ -130,16 +129,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="email"
+                        type="text"
                         className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 7"
-                        name="email"
-                        value={formik.values.email}
+                        name="Number"
+                        value={formik.values.Number}
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <p className="text-danger">{formik.errors.email}</p>
+                    <p className="text-danger">{formik.errors.Number}</p>
                   </div>
                   <div className="col-lg-3 ">
                     <label
@@ -150,16 +149,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="password"
+                        type="text"
                         className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 3"
-                        name="password"
-                        value={formik.values.password}
+                        name="Number"
+                        value={formik.values.Number}
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <p className="text-danger">{formik.errors.password}</p>
+                    <p className="text-danger">{formik.errors.Number}</p>
                   </div>
                 </div>
               </div>
@@ -175,16 +174,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="email"
+                        type="text"
                         className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputEmail4"
                         placeholder="Ex : 13"
-                        name="email"
-                        value={formik.values.email}
+                        name="Number"
+                        value={formik.values.Number}
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <p className="text-danger">{formik.errors.email}</p>
+                    <p className="text-danger">{formik.errors.Number}</p>
                   </div>
                   <div className="col-lg-3">
                     <label
@@ -195,16 +194,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="password"
+                        type="text"
                         className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 7"
-                        name="password"
-                        value={formik.values.password}
+                        name="Number"
+                        value={formik.values.Number}
                         onChange={formik.handleChange}
                       />
                     </div>
-                    <p className="text-danger">{formik.errors.password}</p>
+                    <p className="text-danger">{formik.errors.Number}</p>
                   </div>
                   <div className="col-lg-3">
                     <label
