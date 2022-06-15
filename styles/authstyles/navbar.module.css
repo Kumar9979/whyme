@@ -6,10 +6,11 @@
     color:black;
   }
   .headermenu {
-    font-family: Montserrat;
-    font-size: 16px;
+    font-family: Poppins,medium;
+    font-size: 20px;
     font-weight: 600;
-    color: #000000;
+    color: #323D5A;
+    text-decoration: none;
   }
   
   .landingheader {

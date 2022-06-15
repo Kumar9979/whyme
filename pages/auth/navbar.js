@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
  <div className={`container-fluid handbook-section ${Styles.container}` }>
-        <div className="header py-3 px-5 container-fluid">
+        <div className="header mt-4 container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
               <a className={Styles.headerlogo} href="#">
@@ -25,27 +25,27 @@ const Navbar = () => {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item ms-5">
-                  <a className="nav-link header-menu" href="#">
+                  <a className={Styles.headermenu}href="#">
                   Buy
                     </a>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className="nav-link header-menu" href="#">
+                    <a className={Styles.headermenu} href="#">
                     Rent
                     </a>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className="nav-link header-menu" href="#">
+                    <a className={Styles.headermenu} href="#">
                     Sell
                     </a>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className="nav-link header-menu" href="#">
+                    <a className={Styles.headermenu} href="#">
                     <i class="ri-heart-3-fill"></i>
                     </a>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className="nav-link header-menu" href="#">
+                    <a className={Styles.headermenu} href="#">
                     <i class="ri-user-add-line"></i>
                     </a>
                   </li>

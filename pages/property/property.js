@@ -7,7 +7,26 @@ import Image from "next/image";
 import Image3 from '../../assets/icons/2.png'
 import Styles from "../../styles/propertystyles/property.module.css";
 import Navbar from "../../pages/auth/navbar";
+import {useFormik} from "formik"
+import * as Yup from "yup"
+import {useRouter} from "next/router"
 const Auth = () => {
+  const router=useRouter()
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    validationSchema: Yup.object({
+      email: Yup.string().email().required("!required"),
+      password: Yup.string().required("!required"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+        router.replace("/auth/register")
+    },
+  });
   return (
     <>
       <Head>
@@ -17,6 +36,7 @@ const Auth = () => {
         ></link>
       </Head>
 <Navbar/>
+<form onSubmit={formik.handleSubmit}>
       <div className={`d-flex justify-content-center ${Styles.body}`}>
         <div className={`w-50    ${Styles.cardbody}`}>
           <div className="row">
@@ -90,12 +110,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="text"
-                        className={`form-label  ${Styles.placeholder}`}
+                        type="password"
+                        className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputEmail4"
                         placeholder="Ex : 13"
+                        name="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
                       />
                     </div>
+                    <p className="text-danger">{formik.errors.password}</p>
                   </div>
                   <div className="col-lg-3 ">
                     <label
@@ -106,12 +130,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="text"
-                        className={`form-label  ${Styles.placeholder}`}
+                        type="email"
+                        className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 7"
+                        name="email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
                       />
                     </div>
+                    <p className="text-danger">{formik.errors.email}</p>
                   </div>
                   <div className="col-lg-3 ">
                     <label
@@ -122,12 +150,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="text"
-                        className={`form-label ${Styles.placeholder}`}
+                        type="password"
+                        className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 3"
+                        name="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
                       />
                     </div>
+                    <p className="text-danger">{formik.errors.password}</p>
                   </div>
                 </div>
               </div>
@@ -143,12 +175,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="text"
-                        className={`form-label  ${Styles.placeholder}`}
+                        type="email"
+                        className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputEmail4"
                         placeholder="Ex : 13"
+                        name="email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
                       />
                     </div>
+                    <p className="text-danger">{formik.errors.email}</p>
                   </div>
                   <div className="col-lg-3">
                     <label
@@ -159,12 +195,16 @@ const Auth = () => {
                     </label>
                     <div>
                       <input
-                        type="text"
-                        className={`form-label  ${Styles.placeholder}`}
+                        type="password"
+                        className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                         id="inputPassword4"
                         placeholder="Ex : 7"
+                        name="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
                       />
                     </div>
+                    <p className="text-danger">{formik.errors.password}</p>
                   </div>
                   <div className="col-lg-3">
                     <label
@@ -500,8 +540,9 @@ const Auth = () => {
                         </div>
 
                         <label
-                          className={`form-check-label mt-1 ${Styles.backbutton}`}
+                          className={`form-check-label mt-1  ${Styles.backbutton}`}
                           for="inlineFormCheck"
+                          onClick={()=>  router.replace("/auth/property")}
                         >
                           Back
                         </label>
@@ -513,7 +554,7 @@ const Auth = () => {
                         >
                         Next
                           <span className="ms-5 ">
-                            <Image src={Image2} alt="Picture of the author" className={Styles.widthimg}
+                            <Image src={Image2} alt="Picture of the author" className={`${Styles.widthimg}`}
                              width={15}
                              height={15}
                             />
@@ -528,6 +569,7 @@ const Auth = () => {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 };

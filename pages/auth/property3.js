@@ -6,7 +6,10 @@ import Image2 from "../../assets/icons/1.png";
 import Image from "next/image";
 import Styles from "../../styles/authstyles/property3.module.css";
 import Navbar from "../../pages/auth/navbar";
+import Image3 from '../../assets/icons/2.png'
+import {useRouter} from "next/router"
 const Property3 = () => {
+  const router=useRouter()
   return (
     <>
     <Head>
@@ -21,12 +24,58 @@ const Property3 = () => {
         <div class="row">
           <div className={`col-md-4 ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
-              <div class="row">
-                <div class="col-lg-12 mt-5 ms-5">Property details</div>
-                <div class="col-lg-12 mt-5 ms-5">Property Features</div>
-                <div class="col-lg-12 mt-5 ms-5">Price Details</div>
-                <div class="col-lg-12 mt-5 ms-5">Photos & Descriptions</div>
-              </div>
+            <div className="row ms-5">
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
+                  >
+                    <span className='me-2 '  >
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                          
+                            />
+                    </span>
+                  <span className={`  ${Styles.propertyborder}`}> Property Details </span>
+                  </div>
+                  <div
+                    className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
+                    </span>
+                    Property Features
+                  </div>
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
+                    </span>
+                    Price Details
+                  </div>
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            
+                            />
+                    </span>
+                    Photos & Description
+                  </div>
+                </div>
             </div>
           </div>
           <div class="col-md-8 pe-5 ">
@@ -73,7 +122,7 @@ const Property3 = () => {
                             height={15}
                           />
                     </div>
-                    <label class="form-check-label" for="inlineFormCheck">
+                    <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
                       Back
                     </label>
                   </div>

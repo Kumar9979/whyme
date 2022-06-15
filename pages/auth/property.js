@@ -6,8 +6,27 @@ import Image from "next/image";
 import Image2 from "../../assets/icons/1.png";
 import "../../pages/auth/navbar"
 import Navbar from "../../pages/auth/navbar";
+import Image3 from '../../assets/icons/2.png'
+import {useFormik} from "formik"
+import * as Yup from "yup"
+import {useRouter} from "next/router"
 const Property = () => {
+ const router=useRouter()
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
 
+    validationSchema: Yup.object({
+      email: Yup.string().email().required("!required"),
+      password: Yup.string().required("!required"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+        router.replace("/property/property")
+    },
+  });
   return (
     <>
     <Head>
@@ -19,23 +38,84 @@ const Property = () => {
 
 
     <Navbar/>
+    <form onSubmit={formik.handleSubmit}>
     <div className={`d-flex justify-content-center ${Styles.body}`}>
       <div className={`${Styles.container} w-50`}>
         <div class="row">
           <div className={`col-md-4  ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
-              <div class="row ">
-                <div class="col-lg-12 mt-5 ms-5">Property details</div>
-                <div class="col-lg-12 mt-5 ms-5">Property Features</div>
-                <div class="col-lg-12 mt-5 ms-5">Price Details</div>
-                <div class="col-lg-12 mt-5 ms-5">Photos & Descriptions</div>
-              </div>
+            <div className="row ms-5">
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
+                  >
+                    <span className='me-2 '  >
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                          
+                            />
+                    </span>
+                  <span className={`  ${Styles.propertyborder}`}> Property Details </span>
+                  </div>
+                  <div
+                    className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
+                    </span>
+                    Property Features
+                  </div>
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            />
+                    </span>
+                    Price Details
+                  </div>
+                  <div
+                    className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
+                  >
+                    <span className="me-2">
+                      {" "}
+                      <Image src={Image3} alt="Picture of the author" 
+                             width={20}
+                             height={20}
+                            
+                            />
+                    </span>
+                    Photos & Description
+                  </div>
+                </div>
             </div>
           </div>
           <div class="col-md-8 ">
             <div className={`${Styles.carbody} `}>
               <div className="card-body ms-5 mt-4">
                 <h5 className={Styles.propertydetails}>Property Details</h5>
+                <div className={`${Styles.formgroup} mt-3`}>
+                    <label for="exampleInputEmail1">Select Your Property in Map</label>
+                    <br />
+                    <input
+                      type="email"
+                      className={Styles.formcontrol}
+                      id="exampleInputEmail1"
+                      name="email"
+                      placeholder="Enter Your Property Location"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                  <p className="text-danger">{formik.errors.email}</p>
                 <p class={`${Styles.cardtext} mt-5`}>
                   Select your Property in map
                 </p>
@@ -51,9 +131,13 @@ const Property = () => {
                       type="email"
                       className={Styles.formcontrol}
                       id="exampleInputEmail1"
+                      name="email"
                       placeholder="Enter Your Property Location"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
                     />
                   </div>
+                  <p className="text-danger">{formik.errors.email}</p>
                   <div className={`${Styles.formgroup} mt-3`}>
                     <label for="exampleInputPassword1">Building Name</label>
                     <br />
@@ -61,9 +145,13 @@ const Property = () => {
                       type="password"
                       className={Styles.formcontrol}
                       id="exampleInputPassword1"
+                      name="password"
                       placeholder="Enter Your Email Address"
+                      value={formik.values.password}
+                      onChange={formik.handleChange}
                     />
                   </div>
+                  <p className="text-danger">{formik.errors.password}</p>
                 </form>
                 <div className="d-flex me-2 mb-5 float-end align-items-end ">
                   <div className= {`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}>
@@ -103,6 +191,7 @@ const Property = () => {
         </div>
       </div>
     </div>
+    </form>
     </>
   );
 };
