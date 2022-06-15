@@ -1,0 +1,36 @@
+.heading{
+    font-size:21px;
+    font-weight:600;
+}
+
+.login_text{
+    font-size:14px;
+    color:#323D5A99;
+}
+
+.login_button{
+    background-color:#50BF97;
+    width:90%;
+    border:none;
+    border-radius: 10px;
+    color:#fff;
+}
+
+.otp_text{
+    color:#F77223;
+}
+
+.resend_link{
+    text-decoration: none;
+}
+
+.input_text{
+    border:none;
+    border-bottom: 1px solid #00000029;
+   
+
+}
+
+/* .otp_input{
+    color:red !important;
+} */
