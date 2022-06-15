@@ -41,9 +41,9 @@ const Property = () => {
     <Navbar/>
     <form onSubmit={formik.handleSubmit}>
     <div className={`d-flex justify-content-center ${Styles.body}`}>
-      <div className={`${Styles.container} w-50`}>
+      <div className={`${Styles.container} `}>
         <div class="row">
-          <div className={`col-md-4  ${Styles.propertycolumn}`}>
+          <div className={`col-md-4   ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
             <div className="row ms-5">
                   <div

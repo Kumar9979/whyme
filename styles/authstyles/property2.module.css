@@ -55,7 +55,6 @@
   margin-top: 1.5rem;
 }
 
-
 .formcheck {
   height: 9rem;
 }
@@ -114,47 +113,76 @@
 .form_placeholder {
   width: 5rem;
 }
-.propertydetails{
-  color: #1D72DB;
+.propertydetails {
+  color: #1d72db;
   font-weight: 500;
 }
-.body{
+.body {
   margin-top: 8rem;
-
 }
 
-
-.propertycontainer{
+.propertycontainer {
   margin-top: 3rem;
 }
-.carbody{
+.carbody {
   /* box-shadow: 0px 0px 20px #323D5A1F; */
 }
-.propertycolumn{
-  background-color: #1D72DB;
+.propertycolumn {
+  background-color: #1d72db;
   color: white;
   font-size: 18px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.container{
-  box-shadow: 0px 0px 20px #323D5A1F;
+.container {
+  box-shadow: 0px 0px 20px #323d5a1f;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-border: none;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+ 
+}
+
+.cardtext {
+  font-size: 15px;
+  font-family: Poppins, Regular;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+  width: 80%;
+  }
+  .formcontrol {
+    width: 5rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+  }
+  .formcontrol1 {
+    width:5rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+    padding-left: 1rem;
+  }
+  .formcontrol2 {
+    width: 5rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+   
+}
+.propertycolumn {
 border-radius: 20px;
 }
-
-
-.cardtext{
-  font-size: 15px;
-  font-family: Poppins,Regular;
-}
-/* .formgroup{
-
-  font-size: 15px;
-  font-family: Poppins,Regular;
-
-} */
-@media only screen and (max-width: 900px) {
 }

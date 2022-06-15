@@ -68,9 +68,11 @@
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: none;
 border-radius: 20px;
+width: 50%;
 }
 .body{
     margin-top: 5rem;
+ 
 }
 .cloud {
     font-family: 'remixicon' !important;
@@ -102,4 +104,74 @@ border-radius: 20px;
 .propertydetails{
     font-size: 20px;
     font-family: Poppins,medium;
+}
+@media only screen and (max-width: 900px) {
+.container{
+    
+width: 80%;
+}
+.descriptionbox{
+    top: 2px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+.descriptionbox2{
+    top: 2px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    
+}
+.draganddrop{
+    font-size: 8px;
+    color: #BCC7CE;
+    font-family: Poppins,medium;
+    font-weight: 300;
+    white-space: nowrap;
+    margin-left: 5px;
+
+}
+.cloud {
+    font-family: 'remixicon' !important;
+   font-weight: 100;
+    font-size: 20px;
+   color: blue;
+   
+}
+.jpgimg{
+    font-size: 7px;
+    color: #BCC7CE;
+     line-height: 0rem;
+     white-space: nowrap;
+     margin-left: 5px;
+     font-family: Poppins,medium;
+}
+.jpgimg1{
+    font-size: 7px;
+    color: #BCC7CE;
+     line-height: 0rem;
+     font-family: Poppins,medium;
+    
+
+}
+.browsephotos{
+    font-size: 7px;
+    color: #1D72DB;
+    margin-top: -5px;
+    font-family: Poppins,medium;
+    line-height: 0rem;
+}
+.browsephotos1{
+    font-size: 7px;
+    color: #BCC7CE;
+    margin-top: 1px;
+    font-family: Poppins,medium;
+
+}
+.propertycolumn{
+ border-radius: 20px;
+    
+}
 }

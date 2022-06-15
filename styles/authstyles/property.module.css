@@ -36,6 +36,7 @@
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: none;
 border-radius: 20px;
+width: 50%;
 }
 .body{
     margin-top: 5rem;
@@ -65,3 +66,15 @@ border-radius: 20px;
     font-family: Poppins,Regular;
 
 }
+@media only screen and (max-width: 900px) {
+
+    .propertycolumn{
+  
+       border-radius: 20px;
+    }
+    .container{
+    width:80%;
+    }
+}
+    @media only screen and (min-width: 768px) and (max-width: 1024px){
+    }

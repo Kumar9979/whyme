@@ -10,6 +10,7 @@ import Navbar from "../../pages/auth/navbar";
 import {useFormik} from "formik"
 import * as Yup from "yup"
 import {useRouter} from "next/router"
+import Dropdown from 'react-bootstrap/Dropdown'
 const Auth = () => {
   const router=useRouter()
   const formik = useFormik({
@@ -37,7 +38,7 @@ const Auth = () => {
 <Navbar/>
 <form onSubmit={formik.handleSubmit}>
       <div className={`d-flex justify-content-center ${Styles.body}`}>
-        <div className={`w-50    ${Styles.cardbody}`}>
+        <div className={`  ${Styles.cardbody}`}>
           <div className="row">
             <div className={`col-lg-4 ${Styles.property}`}>
               <div className={`container ms-3 ${Styles.container}`}>
@@ -212,7 +213,7 @@ const Auth = () => {
                     >
                       Facing{" "}
                     </label>
-                    <div className="dropdown">
+                    {/* <div className="dropdown">
                       <button
                         className={`btn  dropdown-toggle ${Styles.dropdown}`}
                         type="button"
@@ -242,7 +243,18 @@ const Auth = () => {
                           </a>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
+                    <Dropdown className={Styles.dropdown}>
+  <Dropdown.Toggle variant="" id="dropdown-basic">
+    North
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">south</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">east</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">west</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
                   </div>
                 </div>
               </div>
@@ -256,7 +268,7 @@ const Auth = () => {
                     >
                       Furnishing status{" "}
                     </label>
-                    <div className="dropdown">
+                    {/* <div className="dropdown">
                       <button
                         className={`btn  dropdown-toggle ${Styles.dropdown}`}
                         type="button"
@@ -286,7 +298,18 @@ const Auth = () => {
                           </a>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
+                            <Dropdown className={Styles.dropdown}>
+  <Dropdown.Toggle variant="" id="dropdown-basic">
+    Furnished
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">unfurnished</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">none</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">none1</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
                   </div>
 
                   <p className={`mt-5  ms-4 ${Styles.checkheading}`}>
@@ -524,7 +547,7 @@ const Auth = () => {
                     </div>
                   </div>
 
-                  <div className="ms-auto w-50">
+                  <div className="ms-auto ">
                     <div className="d-flex align-items-center">
                       <div className="d-flex mt-5 ms-2">
                         <div className="me-3 mt-1">

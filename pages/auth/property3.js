@@ -20,7 +20,7 @@ const Property3 = () => {
     </Head>
     <Navbar/>
     <div className={`d-flex justify-content-center ${Styles.body}`}>
-       <div className={`${Styles.container} w-50`}>
+       <div className={`${Styles.container} `}>
         <div class="row">
           <div className={`col-md-4 ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
