@@ -86,6 +86,7 @@ const Modals = ({ show, onShow, onHide }) => {
                 <input
                   type="text"
                   name="phoneNumber"
+                  placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
                   className={`${styles.input_text} w-100`}
@@ -99,6 +100,7 @@ const Modals = ({ show, onShow, onHide }) => {
                     <input
                       type="text"
                       name="phoneNumber"
+                      placeholder="Enter your phone number"
                       value={formik.values.phoneNumber}
                       onChange={formik.handleChange}
                       className={`${styles.input_text} ${styles.input_text_warning} w-100`}
