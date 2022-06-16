@@ -11,13 +11,15 @@ const Navbar = () => {
         <div className="header mt-4 container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
-            <Image src={Image3} alt="Picture of the author" 
+              <div className={Styles.zameenimage}>
+            <Image src={Image3}   alt="Picture of the author" 
                              width={400}
                              height={70}
                           
                             />
+                            </div>
               <button
-                className=" ms-auto navbar-toggler"
+                className={`ms-auto navbar-toggler ${Styles.navbar}`}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"

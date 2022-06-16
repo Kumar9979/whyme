@@ -43,9 +43,10 @@ const Auth = () => {
         <div className={`  ${Styles.cardbody}`}>
           <div className="row">
             <div className={`col-lg-4 ${Styles.property}`}>
-              <div className={`container ms-3 ${Styles.container}`}>
-                <div className="row ">
-                <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+              <div className={`container  ${Styles.container}`}>
+                <div className="row">
+                <div className={`mt-5 ${Styles.media1}`}>
+                    <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical'>
             <Step>
                 <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
             </Step>
@@ -62,6 +63,26 @@ const Auth = () => {
                 <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
             </Step>
         </Stepper>
+        </div>
+<div className={`${Styles.media}`}>
+        <Stepper style={{width:'18%'}} activeStep={value1} orientation='horizontal' >
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+        </Stepper>
+        </div>
                   {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >

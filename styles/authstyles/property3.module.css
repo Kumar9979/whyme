@@ -52,7 +52,7 @@
     color: #1D72DB;
 }
 .propertycolumn{
-    background-color: #1D72DB;
+    background-color:lightskyblue;
     color: white;
     font-size: 18px;
     border-top-left-radius: 20px;
@@ -109,11 +109,15 @@ width: 50%;
    
     white-space: nowrap;
 }
+.media{
+    display: none;
+    }
 @media only screen and (max-width: 900px) {
 .container{
     
 width: 80%;
 }
+
 .descriptionbox{
     top: 2px;
     left: 5px;
@@ -134,7 +138,7 @@ width: 80%;
     font-family: Poppins,medium;
     font-weight: 300;
     white-space: nowrap;
-    margin-left: 5px;
+    margin-left: 2rem;
 
 }
 .cloud {
@@ -142,6 +146,7 @@ width: 80%;
    font-weight: 100;
     font-size: 20px;
    color: blue;
+   margin-left: 5rem;
    
 }
 .jpgimg{
@@ -149,7 +154,7 @@ width: 80%;
     color: #BCC7CE;
      line-height: 0rem;
      white-space: nowrap;
-     margin-left: 5px;
+     margin-left: 2rem;
      font-family: Poppins,medium;
 }
 .jpgimg1{
@@ -157,6 +162,7 @@ width: 80%;
     color: #BCC7CE;
      line-height: 0rem;
      font-family: Poppins,medium;
+     margin-left: 5rem;
     
 
 }
@@ -166,6 +172,7 @@ width: 80%;
     margin-top: -5px;
     font-family: Poppins,medium;
     line-height: 0rem;
+    padding-left: 3rem;
 }
 .browsephotos1{
     font-size: 7px;
@@ -177,5 +184,16 @@ width: 80%;
 .propertycolumn{
  border-radius: 20px;
     
+}
+.media{
+    display: flex;
+ 
+}
+.media1{
+    display: none;
+}
+.propertycontainer{
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 }

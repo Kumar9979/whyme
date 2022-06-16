@@ -45,9 +45,10 @@ const [value1, setValue1] = useState('3')
           <div class="row">
             <div className={`col-md-4  ${Styles.propertycolumn}`}>
               <div className={`${Styles.propertycontainer}`}>
-                <div className="row ms-4">
+                <div className="row ms-3">
 
-                <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+                <div className={`mt-5 ${Styles.media1}`}>
+                    <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical'>
             <Step>
                 <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
             </Step>
@@ -64,6 +65,26 @@ const [value1, setValue1] = useState('3')
                 <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
             </Step>
         </Stepper>
+        </div>
+<div className={`${Styles.media}`}>
+        <Stepper style={{width:'18%'}} activeStep={value1} orientation='horizontal' >
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+            <Step>
+                <StepLabel ></StepLabel>
+            </Step>
+        </Stepper>
+        </div>
                   {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
@@ -145,7 +166,7 @@ const [value1, setValue1] = useState('3')
                         <div class="input-group  ">
                           <input
                             type="text"
-                            className={Styles.formcontrol}
+                            className={` ${Styles.formcontrol} `}
                             placeholder="Enter super area"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"

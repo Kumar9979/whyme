@@ -18,3 +18,9 @@ a {
   background: none !important;
 }
 
+input:focus {
+  border-color: inherit;
+  outline: none;
+}
+
+
