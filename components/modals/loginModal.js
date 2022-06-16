@@ -41,6 +41,7 @@ const Modals = ({ show, onShow, onHide }) => {
       setNumber(values.phoneNumber);
       setShowOtp(true);
       onHide();
+      resetForm()
     
     },
   });

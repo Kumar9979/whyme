@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 
 import OtpImage from "../../assets/icons/otp.png";
-import RegisterUserModal from "./registerUserModal"
+import RegisterUserModal from "./registerUserModal";
 import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
@@ -20,9 +20,9 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
   const [OtpNumber, setOtpNumber] = React.useState(false);
   const [showRegUserModal, setshowRegUserModal] = useState(false);
 
+  // console.log(number);
   const handleRegModalClose = () => setshowRegUserModal(false);
   const handleREgModalShow = () => setshowRegUserModal(true);
-  console.log(number);
 
   let value = false;
 
@@ -30,9 +30,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
     if (+OTP === 6789) {
       console.log("success");
       onHide();
-handleREgModalShow();
-      
-
+      handleREgModalShow();
     } else {
       value = true;
       console.log("error");
@@ -46,7 +44,7 @@ handleREgModalShow();
     setIsActive(true);
   }
   function timerPause() {
-    setCounter(10);
+    setCounter(0);
     setIsActive(false);
   }
 
@@ -57,7 +55,6 @@ handleREgModalShow();
   //     setCounter('BOOOOM!');
   //   }
   // });
-
 
   useEffect(() => {
     let interval = null;
@@ -77,13 +74,13 @@ handleREgModalShow();
     setNumbs(number);
   }, [number]);
 
-  console.log(nums);
+  // console.log(nums);
 
   return (
     <>
       <div>
         <Modal show={show} onHide={onHide} centered>
-          <div className="d-flex justify-content-end mt-3 me-2">
+          <div className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}>
             <Image src={Close} onClick={onHide} />
           </div>
 
@@ -96,17 +93,17 @@ handleREgModalShow();
             >
               <h5 className={` ${styles.heading} `}>OTP Verification</h5>
             </div>
-            <div className="d-flex justify-content-center me-3 ms-3">
+            <div className="d-flex justify-content-center me-2 ms-2">
               <p className={`${styles.login_text}`}>
                 Enter 4 digit one time password sent to your mobile
                 <div className="d-flex justify-content-center">
                   {" "}
-                  <p className={`${styles.login_text}`}>
+                  <span className={`${styles.login_text}`}>
                     number{" "}
                     <span className={`${styles.phone_number} text-dark`}>
                       {number}
                     </span>
-                  </p>{" "}
+                  </span>{" "}
                   <span
                     onClick={() => {
                       timerPause();
@@ -120,7 +117,7 @@ handleREgModalShow();
                 </div>
               </p>
             </div>
-            <div className={`d-flex justify-content-end me-5`}>
+            <div className={`d-flex justify-content-around ms-3 me-5`}>
               <OtpInput
                 input
                 value={OTP}
@@ -159,14 +156,16 @@ handleREgModalShow();
                 }
               />
             </div>
-            <div className="d-flex mt-1 ms-5">
+            <div className={`${styles.otp_warning} d-flex mt-1 justify-content-start me-5 `}>
               {" "}
               {OtpNumber ? (
-                <span className={`${styles.otp_warning} text-danger ps-5`}>Please Enter Valid Otp </span>
+                <span className={`${styles.otp_warning} text-danger `}>
+                  Please Enter Valid Otp{" "}
+                </span>
               ) : null}
             </div>
 
-            <div className="d-flex justify-content-end  me-5">
+            <div className="d-flex justify-content-end  me-3">
               {/* <p className="time-counter ">{counter >= 0 ? counter : null}</p> */}
 
               {counter < 0 ? (
@@ -177,7 +176,7 @@ handleREgModalShow();
                   &nbsp;Resend OTP
                 </span>
               ) : (
-                <p className="time-counter ">{counter >= 0 ? counter : null}</p>
+                <span className={`${styles.otp_timer} `}>{counter >= 0 ? counter : null}</span>
               )}
             </div>
             <div className="d-flex justify-content-center mt-5 mb-3">
@@ -195,7 +194,7 @@ handleREgModalShow();
           </Modal.Body>
         </Modal>
       </div>
-      <RegisterUserModal show={showRegUserModal} onHide={handleRegModalClose}/>
+      <RegisterUserModal show={showRegUserModal} onHide={handleRegModalClose} />
     </>
   );
 };
