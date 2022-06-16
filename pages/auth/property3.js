@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import Head from 'next/head'
 import Image1 from "../../assets/icons/arrow.png";
 import rent from "../../assets/icons/rent.png";
@@ -8,7 +8,9 @@ import Styles from "../../styles/authstyles/property3.module.css";
 import Navbar from "../../pages/auth/navbar";
 import Image3 from '../../assets/icons/2.png'
 import {useRouter} from "next/router"
+import { Stepper,StepLabel,Step } from '@material-ui/core';
 const Property3 = () => {
+  const [value1, setValue1] = useState('5')
   const router=useRouter()
   return (
     <>
@@ -25,7 +27,24 @@ const Property3 = () => {
           <div className={`col-md-4 ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
             <div className="row ms-5">
-                  <div
+            <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Features</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
+            </Step>
+        </Stepper>
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
                     <span className='me-2 '  >
@@ -74,7 +93,7 @@ const Property3 = () => {
                             />
                     </span>
                     Photos & Description
-                  </div>
+                  </div> */}
                 </div>
             </div>
           </div>

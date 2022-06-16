@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import Styles from "../../styles/authstyles/property.module.css";
 import Head from 'next/head'
 import Image1 from "../../assets/icons/arrow.png";
@@ -10,7 +10,9 @@ import Image3 from '../../assets/icons/2.png'
 import {useFormik} from "formik"
 import * as Yup from "yup"
 import {useRouter} from "next/router"
+import { Stepper,StepLabel,Step } from '@material-ui/core';
 const Property = () => {
+  const [value1, setValue1] = useState('1')
  const router=useRouter()
   const formik = useFormik({
     initialValues: {
@@ -45,8 +47,8 @@ const Property = () => {
         <div class="row">
           <div className={`col-md-4   ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
-            <div className="row ms-5">
-                  <div
+            <div className="row ms-5 ">
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
                     <span className='me-2 '  >
@@ -58,8 +60,25 @@ const Property = () => {
                             />
                     </span>
                   <span className={`  ${Styles.propertyborder}`}> Property Details </span>
-                  </div>
-                  <div
+                  </div> */}
+                    <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Features</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
+            </Step>
+        </Stepper>
+                  {/* <div
                     className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
                   >
                     <span className="me-2">
@@ -70,8 +89,8 @@ const Property = () => {
                             />
                     </span>
                     Property Features
-                  </div>
-                  <div
+                  </div> */}
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
                   >
                     <span className="me-2">
@@ -82,8 +101,8 @@ const Property = () => {
                             />
                     </span>
                     Price Details
-                  </div>
-                  <div
+                  </div> */}
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
                   >
                     <span className="me-2">
@@ -95,7 +114,7 @@ const Property = () => {
                             />
                     </span>
                     Photos & Description
-                  </div>
+                  </div> */}
                 </div>
             </div>
           </div>
@@ -165,7 +184,9 @@ const Property = () => {
                             height={15}
                           />
                     </div>
-                    <label class="form-check-label" for="inlineFormCheck">
+                    <label class="form-check-label" for="inlineFormCheck"
+                   onClick={()=>{router.replace("/auth/navbar")}}  
+                    >
                       Back
                     </label>
                   </div>

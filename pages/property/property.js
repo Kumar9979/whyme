@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState } from "react";
 import Head from "next/head";
 import Image1 from "../../assets/icons/arrow.png";
 import rent from "../../assets/icons/rent.png";
@@ -11,8 +11,10 @@ import {useFormik} from "formik"
 import * as Yup from "yup"
 import {useRouter} from "next/router"
 import Dropdown from 'react-bootstrap/Dropdown'
+import { Stepper,StepLabel,Step } from '@material-ui/core';
 const Auth = () => {
   const router=useRouter()
+  const [value1, setValue1] = useState('2')
   const formik = useFormik({
     initialValues: {
       Number:"",
@@ -43,7 +45,24 @@ const Auth = () => {
             <div className={`col-lg-4 ${Styles.property}`}>
               <div className={`container ms-3 ${Styles.container}`}>
                 <div className="row ">
-                  <div
+                <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Features</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
+            </Step>
+        </Stepper>
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
                     <span className='me-2 '  >
@@ -92,16 +111,16 @@ const Auth = () => {
                             />
                     </span>
                     Photos & Description
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
 
             <div className={`col-lg-8  mt-5  ${Styles.property2}`}>
               <p className={`ms-5 ${Styles.heading}`}>Property Features</p>
-              <div className="container mb-3 ">
+              <div className="container mb-3 ms-3">
                 <div className="row ">
-                  <div className="col-lg-3  ms-4">
+                  <div className="col-lg-3 ">
                     <label
                       for="inputEmail4"
                       className={`form-label   ${Styles.input}`}
@@ -164,9 +183,9 @@ const Auth = () => {
                 </div>
               </div>
 
-              <div className="container mb-3">
+              <div className="container mb-3 ms-3">
                 <div className="row">
-                  <div className="col-lg-3 ms-4">
+                  <div className="col-lg-3 ">
                     <label
                       for="inputEmail4"
                       className={`form-label  ${Styles.input}`}
@@ -206,7 +225,7 @@ const Auth = () => {
                     </div>
                     <p className="text-danger">{formik.errors.Number}</p>
                   </div>
-                  <div className="col-lg-3">
+                  <div className="col-lg-3 ms-2">
                     <label
                       for="inputPassword4"
                       className={`form-label me-5 ${Styles.input}`}
@@ -259,9 +278,9 @@ const Auth = () => {
                 </div>
               </div>
 
-              <div className="container mb-5">
+              <div className="container mb-5 ms-3">
                 <div className="row">
-                  <div className="col-lg-4 ms-4">
+                  <div className="col-lg-4 ">
                     <label
                       for="inputPassword4"
                       className={`form-label me-5 ${Styles.input}`}
@@ -312,12 +331,12 @@ const Auth = () => {
 </Dropdown>
                   </div>
 
-                  <p className={`mt-5  ms-4 ${Styles.checkheading}`}>
+                  <p className={`mt-5   ${Styles.checkheading}`}>
                     Amenities
                   </p>
                   <div>
-                    <div className="container mb-2  ">
-                      <div className="row ms-2">
+                    <div className="container mb-2 ms-2 ">
+                      <div className="row ">
                         <div className="col-lg-4 ">
                           <div className="form-check">
                             <input
@@ -369,8 +388,8 @@ const Auth = () => {
                       </div>
                     </div>
 
-                    <div className="container mb-2">
-                      <div className="row ms-2">
+                    <div className="container mb-2 ms-2">
+                      <div className="row ">
                         <div className="col-lg-4 ">
                           <div className="form-check">
                             <input
@@ -421,8 +440,8 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="container mb-2">
-                      <div className="row ms-2">
+                    <div className="container mb-2 ms-2">
+                      <div className="row ">
                         <div className="col-lg-3 ">
                           <div className="form-check">
                             <input
@@ -473,8 +492,8 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="container mb-2">
-                      <div className="row ms-2">
+                    <div className="container mb-2 ms-2">
+                      <div className="row ">
                         <div className="col-lg-5">
                           <div className="form-check">
                             <input
@@ -509,8 +528,8 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="container ">
-                      <div className="row ms-2">
+                    <div className="container  ms-2">
+                      <div className="row">
                         <div className="col-lg-7">
                           <div className="form-check">
                             <input

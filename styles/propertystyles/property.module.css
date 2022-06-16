@@ -113,6 +113,11 @@ background: #FFFFFF 0% 0% no-repeat padding-box;
   
 
 }
+.steplabel {
+   
+    white-space: nowrap;
+}
+
 @media only screen and (max-width: 900px) {
 .cardbody{
     width: 80%;
@@ -126,6 +131,12 @@ background: #FFFFFF 0% 0% no-repeat padding-box;
     background-color:#1D72DB;
 border-radius: 20px;
  
+}
+.input{
+    white-space: nowrap;
+    font-size: 15px;
+    font-family: Poppins,Regular;
+    margin-right: 2rem;
 }
 .button{
    
@@ -141,6 +152,9 @@ border-radius: 20px;
  margin-right:6rem;
 }
 
+}
+.stepper{
+    orientation: horizontal;
 }
 
 

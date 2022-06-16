@@ -2,7 +2,9 @@ import React from 'react'
 import Styles from '../../styles/authstyles/navbar.module.css'
 import Image from "next/image";
 import Image3 from '../../assets/icons/3.png';
+import {useRouter} from "next/router"
 const Navbar = () => {
+  const router=useRouter()
   return (
     <div>
  <div className={`container-fluid handbook-section ${Styles.container}` }>
@@ -56,6 +58,7 @@ const Navbar = () => {
                   <button
                     type="button"
                     className={`ms-5 px-5  btn-primary ${Styles.landingheader}`}
+                 onClick={()=>{ router.replace("/auth/property")}}
                   >
                  Post Property
                   </button>

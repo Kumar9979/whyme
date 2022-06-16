@@ -105,6 +105,10 @@ width: 50%;
     font-size: 20px;
     font-family: Poppins,medium;
 }
+.steplabel {
+   
+    white-space: nowrap;
+}
 @media only screen and (max-width: 900px) {
 .container{
     

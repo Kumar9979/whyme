@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 
 import Styles from "../../styles/authstyles/property2.module.css";
 import Head from "next/head";
@@ -11,7 +11,9 @@ import Image3 from "../../assets/icons/2.png";
 import {useFormik} from "formik"
 import * as Yup from "yup"
 import {useRouter} from "next/router"
+import { Stepper,StepLabel,Step } from '@material-ui/core';
 const Register = () => {
+const [value1, setValue1] = useState('3')
   const router=useRouter()
   const formik = useFormik({
     initialValues: {
@@ -44,7 +46,25 @@ const Register = () => {
             <div className={`col-md-4  ${Styles.propertycolumn}`}>
               <div className={`${Styles.propertycontainer}`}>
                 <div className="row ms-4">
-                  <div
+
+                <Stepper style={{width:'18%'}} activeStep={value1} orientation='vertical' className="mt-5">
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Property Features</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Price Details</StepLabel>
+            </Step>
+            <Step>
+                <StepLabel className={Styles.steplabel}>Photos & Description</StepLabel>
+            </Step>
+        </Stepper>
+                  {/* <div
                     className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
                   >
                     <span className="me-2 ">
@@ -102,7 +122,7 @@ const Register = () => {
                       />
                     </span>
                     Photos & Description
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
