@@ -33,7 +33,7 @@ const Modals = ({ show, onShow, onHide }) => {
     },
     validationSchema: Yup.object({
       phoneNumber: Yup.string()
-        .matches(phoneRegex, "invalid")
+        .matches(phoneRegex, "Please enter the valid phone number")
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -89,7 +89,7 @@ const Modals = ({ show, onShow, onHide }) => {
                   placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
-                  className={`${styles.input_text} w-100`}
+                  className={`${styles.input_text} w-100 px-3`}
                 />
               )}
             </div>
