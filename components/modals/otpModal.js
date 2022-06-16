@@ -19,7 +19,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
 
   const [OtpNumber, setOtpNumber] = React.useState(false);
 
-  console.log(number);
+  // console.log(number);
 
   let value = false;
 
@@ -61,7 +61,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
     setNumbs(number);
   }, [number]);
 
-  console.log(nums);
+  // console.log(nums);
 
   return (
     <>
