@@ -44,7 +44,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
     setIsActive(true);
   }
   function timerPause() {
-    setCounter(10);
+    setCounter(-1);
     setIsActive(false);
   }
 
