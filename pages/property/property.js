@@ -97,11 +97,11 @@ const Auth = () => {
               </div>
             </div>
 
-            <div className={`col-lg-8 mt-5  ${Styles.property2}`}>
+            <div className={`col-lg-8  mt-5  ${Styles.property2}`}>
               <p className={`ms-5 ${Styles.heading}`}>Property Features</p>
               <div className="container mb-3 ">
                 <div className="row ">
-                  <div className="col-lg-3 ms-4">
+                  <div className="col-lg-3  ms-4">
                     <label
                       for="inputEmail4"
                       className={`form-label   ${Styles.input}`}
@@ -547,11 +547,11 @@ const Auth = () => {
                     </div>
                   </div>
 
-                  <div className="ms-auto ">
-                    <div className="d-flex align-items-center">
+                   <div className={`ms-auto w-50 ${Styles.buttoncontainer}`}>
+                    <div className="d-flex ">
                       <div className="d-flex mt-5 ms-2">
                         <div className="me-3 mt-1">
-                          {/* <i className={`ri-arrow-left-circle-line me-3 ${Styles.buttonicon}`}></i> */}
+                         
                           <Image
                             src={Image1}
                             alt="Picture of the author"
@@ -584,7 +584,43 @@ const Auth = () => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div> 
+                      {/* <div className="d-flex mb-2  me-2 mt-3  float-end align-items-end ">
+                      <div
+                        className={`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}
+                      >
+                        <div className="ms-5 me-3">
+                          <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
+                        </div>
+                        <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property")}>
+                          Back
+                        </label>
+                      </div>
+
+                      <div className="mt-5 ms-3">
+                        <button
+                          type="submit"
+                          className={`me-5   ${Styles.button}`}
+                        >
+                          Next
+                          <span className="ms-5 ">
+                            <Image
+                              src={Image2}
+                              alt="Picture of the author"
+                              className={Styles.widthimg}
+                              width={15}
+                              height={15}
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div> */}
                 </div>
               </div>
             </div>

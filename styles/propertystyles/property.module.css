@@ -109,19 +109,36 @@ background: #FFFFFF 0% 0% no-repeat padding-box;
     color: #1D72DB;
     
 }
+.buttoncontainer{
+  
+
+}
 @media only screen and (max-width: 900px) {
 .cardbody{
     width: 80%;
 }
 .checkcontent{
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
   
 }
 .property{
     background-color:#1D72DB;
 border-radius: 20px;
  
+}
+.button{
+   
+   
+    
+   
+ 
+}
+.backbutton{
+   
+}
+.buttoncontainer{
+ margin-right:6rem;
 }
 
 }
