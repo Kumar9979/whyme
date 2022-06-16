@@ -36,6 +36,12 @@
 
 }
 
+.input_text::placeholder{
+    color:#DDDBDB;
+    font-weight: 600;
+    font-size: 16px;
+}
+
 .input_text:focus-visible {
     
     outline: none;
@@ -49,3 +55,22 @@
 /* .otp_input{
     color:red !important;
 } */
+
+@media only screen and (max-width: 900px) {
+
+
+  .modal {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: max-content;
+    max-width: max-content;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  /* .otp_warning{
+      padding-right:rem;
+  } */
+}

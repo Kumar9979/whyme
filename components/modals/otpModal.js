@@ -7,7 +7,7 @@ import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
 import OtpInput from "react-otp-input";
-import Modals from "./modal";
+import Modals from "./loginModal";
 
 const OtpModals = ({ onShowModal, show, onHide, number }) => {
   const [OTP, setOTP] = useState("");
@@ -104,7 +104,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
                 </div>
               </p>
             </div>
-            <div className={`d-flex justify-content-around me-2`}>
+            <div className={`d-flex justify-content-end me-5`}>
               <OtpInput
                 input
                 value={OTP}
@@ -143,10 +143,10 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
                 }
               />
             </div>
-            <div className="d-flex mt-3 ms-5">
+            <div className="d-flex mt-1 ms-5">
               {" "}
               {OtpNumber ? (
-                <span className="text-danger ">The OTP entered is invalid</span>
+                <span className={`${styles.otp_warning} text-danger ps-5`}>Please Enter Valid Otp </span>
               ) : null}
             </div>
 
@@ -156,7 +156,7 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
               {counter < 0 ? (
                 <span
                   onClick={() => reset()}
-                  className={`${styles.resend_link} pe-4`}
+                  className={`${styles.resend_link} `}
                 >
                   &nbsp;Resend OTP
                 </span>

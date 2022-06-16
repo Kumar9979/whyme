@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OtpModals from "../components/modals/otpModal";
-import Modals from "../components/modals/modal";
+import Modals from "../components/modals/loginModal";
 
 const ModalButton = () => {
   const [show, setShow] = useState(false);
