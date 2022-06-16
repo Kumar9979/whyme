@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import OtpModals from "../components/modals/otpModal";
 import Modals from "../components/modals/modal";
 
-const userTypeModal = () => {
+const ModalButton = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -17,7 +17,7 @@ const userTypeModal = () => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-       
+       modals
       </Button>
       <Modals show={show} onShow={handleShow}   onHide={handleClose}/>
       {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
@@ -26,4 +26,4 @@ const userTypeModal = () => {
   );
 };
 
-export default userTypeModal;
+export default ModalButton;
