@@ -48,7 +48,7 @@ const Modals = ({ show, onShow, onHide }) => {
   return (
     <div>
       <Modal show={show} onHide={onHide} centered>
-        <div className="d-flex justify-content-end mt-3 me-2">
+        <div className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}>
           <Image src={Close} onClick={onHide} />
         </div>
 
@@ -89,7 +89,7 @@ const Modals = ({ show, onShow, onHide }) => {
                   placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
-                  className={`${styles.input_text} w-100 px-3`}
+                  className={`${styles.input_text}  px-3`}
                 />
               )}
             </div>
