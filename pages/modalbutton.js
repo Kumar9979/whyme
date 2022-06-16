@@ -17,7 +17,7 @@ const ModalButton = () => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-       
+       modals
       </Button>
       <Modals show={show} onShow={handleShow}   onHide={handleClose}/>
       {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
