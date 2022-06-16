@@ -7,29 +7,22 @@ import * as Yup from "yup";
 import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
-import "react-phone-number-input/style.css";
-import Select from "react-select";
+// import Select from "react-select";
 
-
-const Modals = ({ show, onHide }) => {
+const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
-  const [number, setNumber] = useState('');
-
-
-
-  const options = [
-    { value: '+91', label: '+91' },
-    { value: '+92', label: '+92' },
-    { value: '+93', label: '+93' }
-   ,
-  ];
+  const [number, setNumber] = useState(undefined);
+  const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s/0-9]*$/;
+  // const options = [
+  //   { value: "+91", label: "+91" },
+  //   { value: "+92", label: "+92" },
+  //   { value: "+93", label: "+93" },
+  // ];
 
   const [selectedOption, setSelectedOption] = useState(null);
 
   const [num, setNum] = useState("");
   const [numPass, setNumPass] = useState(false);
-  // const phoneRegex = /^[0-9]{10}$/;
-  // const router = useRouter();
 
   const ShowOtpModal = () => setShowOtp(true);
   const closeOtpModal = () => setShowOtp(false);
@@ -39,23 +32,18 @@ const Modals = ({ show, onHide }) => {
       phoneNumber: "",
     },
     validationSchema: Yup.object({
-      phoneNumber:
-        Yup.string()
+      phoneNumber: Yup.string()
+        .matches(phoneRegex, "invalid")
         .required("Required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
-    setNumber(values.phoneNumber)
-    setShowOtp(true)
+      setNumber(values.phoneNumber);
+      setShowOtp(true);
+      onHide();
+      resetForm();
     },
   });
- 
-
-
-
-
-
-
 
   return (
     <div>
@@ -65,10 +53,7 @@ const Modals = ({ show, onHide }) => {
         </div>
 
         <Modal.Body>
-          <form onSubmit={
-          formik.handleSubmit
-          
-          }>
+          <form onSubmit={formik.handleSubmit}>
             <div className="d-flex justify-content-center mb-5">
               <Image src={LImage} />
             </div>
@@ -89,46 +74,52 @@ const Modals = ({ show, onHide }) => {
               </p>
             </div>
             <div className="d-flex justify-content-center me-4 ms-4 ">
-              {/* <PhoneInput
-                placeholder="Enter phone number"
-                name="phoneNumber"
-                value={formik.values.phoneNumber}
-                onChange={formik.handleChange}
-                className={` ${styles.input_text} form-control w-100 px-2 py-2`}
-                // inputstyle={{
-                //   border:"none",
-                // }}
+              {/*             
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
               /> */}
-     <Select
-                      defaultValue={selectedOption}
-                      onChange={setSelectedOption}
-                      options={options}
-              
-              />
 
-
-            
-<input type="text" 
-
-name="phoneNumber"
-value={formik.values.phoneNumber}
-onChange={formik.handleChange}
-/>
-
-            {formik.errors.phoneNumber && formik.touched.phoneNumber && (
-                <p className="d-flex warningmsg">
-                  <i className="ri-error-warning-line me-1 "></i>
-                  {formik.errors.phoneNumber}
-                </p>
+              {formik.errors.phoneNumber &&
+              formik.touched.phoneNumber ? null : (
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  value={formik.values.phoneNumber}
+                  onChange={formik.handleChange}
+                  className={`${styles.input_text} w-100`}
+                />
               )}
-
             </div>
+            <div className="d-flex  justify-content-center">
+              <div className=" w-100 ms-3 me-3 mt-2">
+                {formik.errors.phoneNumber && formik.touched.phoneNumber && (
+                  <>
+                    <input
+                      type="text"
+                      name="phoneNumber"
+                      value={formik.values.phoneNumber}
+                      onChange={formik.handleChange}
+                      className={`${styles.input_text} ${styles.input_text_warning} w-100`}
+                    />
+
+                    <div>
+                      {" "}
+                      <p className="d-flex text-danger">
+                        <i className="ri-error-warning-line me-1 "></i>
+
+                        {formik.errors.phoneNumber}
+                      </p>{" "}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+
             <div className="d-flex justify-content-center mt-5 mb-3">
               {" "}
-              <button
-                className={`${styles.login_button} py-2 `}
-                type="submit"
-              >
+              <button className={`${styles.login_button} py-2 `} type="submit">
                 CONTINUE
               </button>
             </div>
@@ -136,7 +127,12 @@ onChange={formik.handleChange}
         </Modal.Body>
       </Modal>
 
-      <OtpModal number={number} show={showOtp} onHide={closeOtpModal} />
+      <OtpModal
+        onShowModal={onShow}
+        number={number}
+        show={showOtp}
+        onHide={closeOtpModal}
+      />
     </div>
   );
 };

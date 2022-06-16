@@ -9,13 +9,19 @@ const userTypeModal = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseOtp = () => setShowModal(false);
+  const handleShowOtp = () => setShowModal(true);
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+       
       </Button>
-      <Modals show={show} onHide={handleClose}/>
-      {/* <OtpModals show={show} onHide={handleClose}/> */}
+      <Modals show={show} onShow={handleShow}   onHide={handleClose}/>
+      {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
+
     </>
   );
 };

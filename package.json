@@ -21,6 +21,7 @@
     "react-phone-input-2": "^2.15.0",
     "react-phone-number-input": "^3.2.2",
     "react-select": "^5.3.2",
+    "remixicon": "^2.5.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

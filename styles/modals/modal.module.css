@@ -18,18 +18,33 @@
 
 .otp_text{
     color:#F77223;
+    cursor: pointer;
 }
 
 .resend_link{
     text-decoration: none;
+    color:#1D72DB;
+    font-size: 14px;
 }
 
 .input_text{
-    border:none;
+    border-top:none;
+    border-left: none;
+    border-right: none;
     border-bottom: 1px solid #00000029;
    
 
 }
+
+.input_text:focus-visible {
+    
+    outline: none;
+  }
+
+ .input_text_warning {
+    
+    border-bottom: 1px solid red;;
+  } 
 
 /* .otp_input{
     color:red !important;
