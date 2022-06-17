@@ -17,12 +17,18 @@ const [value1, setValue1] = useState('3')
   const router=useRouter()
   const formik = useFormik({
     initialValues: {
-     Number:"",
+      SuperArea: "",
+      CarpetArea: "",
+      ExpectedPrice: "",
+      MaintenanceFees: "",
     },
 
     validationSchema: Yup.object({
+      SuperArea: Yup.string().required("Required"),
+      CarpetArea: Yup.string().required("Required"),
+      ExpectedPrice: Yup.string().required("Required"),
+      MaintenanceFees: Yup.string().required("Required"),
      
-      Number: Yup.string().required("!required"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -42,7 +48,7 @@ const [value1, setValue1] = useState('3')
       <form onSubmit={formik.handleSubmit}>
       <div className={`d-flex justify-content-center ${Styles.body}`}>
         <div className={`${Styles.container}`}>
-          <div className="row">
+          <div class="row">
             <div className={`col-md-4  ${Styles.propertycolumn}`}>
               <div className={`${Styles.propertycontainer}`}>
                 <div className="row ms-3">
@@ -85,159 +91,119 @@ const [value1, setValue1] = useState('3')
             </Step>
         </Stepper>
         </div>
-                  {/* <div
-                    className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2 ">
-                      {" "}
-                      <Image
-                        src={Image3}
-                        alt="Picture of the author"
-                        width={20}
-                        height={20}
-                      />
-                    </span>
-                    <span className={`  ${Styles.propertyborder}`}>
-                      {" "}
-                      Property Details{" "}
-                    </span>
-                  </div>
-                  <div
-                    className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image
-                        src={Image3}
-                        alt="Picture of the author"
-                        width={20}
-                        height={20}
-                      />
-                    </span>
-                    Property Features
-                  </div>
-                  <div
-                    className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image
-                        src={Image3}
-                        alt="Picture of the author"
-                        width={20}
-                        height={20}
-                      />
-                    </span>
-                    Price Details
-                  </div>
-                  <div
-                    className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image
-                        src={Image3}
-                        alt="Picture of the author"
-                        width={20}
-                        height={20}
-                      />
-                    </span>
-                    Photos & Description
-                  </div> */}
+                
                 </div>
               </div>
             </div>
-            <div className="col-md-8 ">
+            <div class="col-md-8 ">
               <div className={`${Styles.carbody} `}>
                 <div className="card-body ms-5 mt-4">
                   <div className={`ms-4 ${Styles.sectionbody}`}>
                     <h5 className={Styles.title}>Price details</h5>
                   </div>
 
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-6 ">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 ">
                         <label
                           for="inputEmail4"
-                          className={` mt-3  ${Styles.text}`}
+                          class={` mt-3  ${Styles.text}`}
                         >
                           Super Area
                         </label>
-                        <div className="input-group  ">
+                        <div class="input-group  ">
                           <input
                             type="text"
                             className={` ${Styles.formcontrol} `}
                             placeholder="Enter super area"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
-                           name="Number"
-                            value={formik.values.Number}
+                           name="MaintenanceFees"
+                            value={formik.values.MaintenanceFees}
                             onChange={formik.handleChange}
                           />
                           <span
-                            className={` ${Styles.inputtext}`}
+                            className={`${Styles.inputtext} `} 
                             id="basic-addon2"
                           >
                             sqft
                           </span>
                         </div>
-                        <p className="text-danger">{formik.errors.Number}</p>
+                        {formik.errors.MaintenanceFees &&
+                      formik.touched.MaintenanceFees && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.MaintenanceFees}</span>
+                        </div>
+                      )}
                       </div>
 
-                      <div className="col-lg-6 mt-3 ">
-                        <label for="inputEmail4" className={Styles.text}>
+                      <div class="col-lg-6 mt-3 ">
+                        <label for="inputEmail4" class={Styles.text}>
                           Carpet Area
                         </label>
-                        <div className="input-group">
+                        <div class="input-group">
                           <input
                             type="text"
                             className={Styles.formcontrol}
                             placeholder="Enter carpet area"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
-                            name="Number"
-                            value={formik.values.Number}
+                            name="CarpetArea"
+                            value={formik.values.CarpetArea}
                             onChange={formik.handleChange}
                           />
-                          <span className={Styles.inputtext} id="basic-addon2">
+                          <span className={`${Styles.inputtext} `} id="basic-addon2">
                             sqft
                           </span>
                         </div>
-                        <p className="text-danger">{formik.errors.Number}</p>
+                        {formik.errors.CarpetArea &&
+                      formik.touched.CarpetArea && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.CarpetArea}</span>
+                        </div>
+                      )}
                       </div>
                     </div>
-                    <div className="row ">
-                      <div className="col mt-3">
-                        <p className={` ${Styles.text}`}>Expected Price</p>
-                        <div className=" ">
-                          <span className={Styles.inputtext1} id="basic-addon1">
+                    <div class="row ">
+                      <div class="col mt-3">
+                        <p class={` ${Styles.text}`}>Expected Price</p>
+                        <div class=" ">
+                          <span class={Styles.inputtext1} id="basic-addon1">
                             ₹{" "}
                           </span>
                           <input
                             type="text"
-                            className={Styles.formcontrol2}
+                            class={Styles.formcontrol2}
                             placeholder="Enter property price"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
-                            name="Number"
-                            value={formik.values.Number}
+                            name="ExpectedPrice"
+                            value={formik.values.ExpectedPrice}
                             onChange={formik.handleChange}
                           />
                         </div>
-                        <p className="text-danger">{formik.errors.Number}</p>
+                        {formik.errors.ExpectedPrice &&
+                      formik.touched.ExpectedPrice && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.ExpectedPrice}</span>
+                        </div>
+                      )}
                       </div>
                     </div>
 
-                    <div className="row mb-5">
-                      <div className="col mt-3">
-                        <p className={` ${Styles.text}`}>Maintainence Fees</p>
-                        <div className=" ">
-                          <span className={Styles.inputtext1} id="basic-addon1">
+                    <div class="row mb-5">
+                      <div class="col mt-3">
+                        <p class={` ${Styles.text}`}>Maintainence Fees</p>
+                        <div class=" ">
+                          <span class={Styles.inputtext1} id="basic-addon1">
                             ₹{" "}
                           </span>
                           <input
                             type="text"
-                            className={Styles.formcontrol2}
+                            class={Styles.formcontrol2}
                             placeholder="Enter maintainence price"
                             aria-label="Username"
                             aria-describedby="basic-addon1"
@@ -246,7 +212,13 @@ const [value1, setValue1] = useState('3')
                             onChange={formik.handleChange}
                           />
                         </div>
-                        <p className="text-danger">{formik.errors.Number}</p>
+                        {formik.errors.Number &&
+                      formik.touched.Number && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.Number}</span>
+                        </div>
+                      )}
                       </div>
                     </div>
 
@@ -263,7 +235,7 @@ const [value1, setValue1] = useState('3')
                             height={15}
                           />
                         </div>
-                        <label className="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/property/property")}>
+                        <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/property/property")}>
                           Back
                         </label>
                       </div>

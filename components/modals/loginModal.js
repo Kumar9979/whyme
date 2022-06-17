@@ -65,15 +65,15 @@ const Modals = ({ show, onShow, onHide }) => {
               <h5 className={` ${styles.heading} `}>Mobile Number</h5>
             </div>
             <div className="d-flex justify-content-center me-3 ms-3">
-              <p className={`${styles.login_text}`}>
-                We will send you a One Time Password on
+              <div className={`${styles.login_text} `}>
+                <p>We will send you a One Time Password on</p>
                 <div className="d-flex justify-content-center">
                   {" "}
-                  <p className={`${styles.login_text}`}>
-                    this mobile number.
-                  </p>{" "}
+                  <div className={`${styles.login_text_2} `}>
+                    <p>this mobile number.</p>
+                  </div>{" "}
                 </div>
-              </p>
+              </div>
             </div>
             <div className="d-flex justify-content-center me-4 ms-4 ">
               {/*             
