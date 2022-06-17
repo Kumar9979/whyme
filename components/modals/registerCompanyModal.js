@@ -27,6 +27,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       image: Yup.mixed().required("Upload an Image"),
       name: Yup.string().required("Required"),
       email: Yup.string().email().required("Required"),
+      // .matches(phoneRegex, "invalid")
       companyName: Yup.string().required("Required"),
       role: Yup.string().required("Required"),
     }),

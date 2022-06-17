@@ -1,0 +1,226 @@
+.title {
+  color: #1d72db;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 20px;
+}
+.text {
+  font-size: 15px;
+  width: 11rem;
+  font-family: Poppins, medium;
+}
+
+.text1 {
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  width: 14rem;
+}
+
+.text2 {
+  color: #bcc7ce;
+  font-size: 15px;
+  background-color: #dbe9f24d;
+  border: none;
+  width: 30rem;
+  font-family: Poppins;
+}
+.button {
+  width: 8rem;
+  height: 2rem;
+  background-color: #1d72db;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+}
+
+.section {
+  box-shadow: 0px 0px 20px #323d5a1f;
+  border-radius: 20px;
+  border: none !important;
+  width: 58rem;
+  height: 30rem;
+}
+.background {
+  background-color:lightskyblue;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  height: 30rem;
+}
+.description {
+  color: white;
+  font-size: 18px;
+  margin-top: 1.5rem;
+}
+
+.formcheck {
+  height: 9rem;
+}
+.formcontrol {
+  width: 12rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+}
+.formcontrol{
+  padding: 1rem !important;
+}
+.formcontrol1 {
+  width: 13rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-left: 1rem;
+}
+.formcontrol2 {
+  width: 28.5rem;
+  height: 2rem;
+  color: #bcc7ce;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-left: 1rem;
+}
+.inputtext {
+  width: 2rem;
+  height: 2rem;
+  color: black;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+}
+.inputtext1 {
+  width: 2rem;
+  height: 2rem;
+  color: black;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+
+  padding-top: 0.4rem;
+  padding-bottom: 0.5rem;
+   padding-left: 0.5rem;
+}
+
+.form_placeholder {
+  width: 5rem;
+}
+.propertydetails {
+  color: #1d72db;
+  font-weight: 500;
+}
+.body {
+  margin-top: 8rem;
+}
+
+.propertycontainer {
+  margin-top: 3rem;
+}
+
+
+.propertycolumn {
+  background-color: lightskyblue;
+  color: white;
+  font-size: 18px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.container {
+  box-shadow: 0px 0px 20px #323d5a1f;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+ 
+}
+
+.cardtext {
+  font-size: 15px;
+  font-family: Poppins, Regular;
+}
+.steplabel {
+   
+  white-space: nowrap;
+}
+.media{
+  display: none;
+  }
+
+  
+
+ 
+
+@media only screen and (max-width: 900px) {
+  .container {
+  width: 90%;
+  }
+  .formcontrol {
+    width: 9rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+  }
+  .formcontrol1 {
+    width:12rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+    padding-left: 1rem;
+  }
+  .formcontrol2 {
+    width: 11rem;
+    height: 2rem;
+    color: #bcc7ce;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+   
+}
+.propertycolumn {
+  background-color: lightskyblue;
+border-radius: 20px;
+}
+.media{
+  
+ display: flex;
+
+
+}
+.media1{
+display: none;
+}
+.inputtext {
+  width: 3rem;
+  height: 2rem;
+  color: black;
+  font-size: 12px;
+  background-color: #dbe9f24d;
+  border: none;
+  font-family: Poppins;
+  padding-top: 0.5rem;
+}
+.propertycontainer {
+  margin-top: 1rem;
+
+}
+}

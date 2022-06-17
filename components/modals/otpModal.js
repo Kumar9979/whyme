@@ -80,7 +80,9 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
     <>
       <div>
         <Modal show={show} onHide={onHide} centered>
-          <div className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}>
+          <div
+            className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}
+          >
             <Image src={Close} onClick={onHide} />
           </div>
 
@@ -156,7 +158,9 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
                 }
               />
             </div>
-            <div className={`${styles.otp_warning} d-flex mt-1 justify-content-start me-5 `}>
+            <div
+              className={`${styles.otp_warning} d-flex mt-1 justify-content-start me-5 `}
+            >
               {" "}
               {OtpNumber ? (
                 <span className={`${styles.otp_warning} text-danger `}>
@@ -176,7 +180,9 @@ const OtpModals = ({ onShowModal, show, onHide, number }) => {
                   &nbsp;Resend OTP
                 </span>
               ) : (
-                <span className={`${styles.otp_timer} `}>{counter >= 0 ? counter : null}</span>
+                <span className={`${styles.otp_timer} `}>
+                  {counter >= 0 ? counter : null}
+                </span>
               )}
             </div>
             <div className="d-flex justify-content-center mt-5 mb-3">
