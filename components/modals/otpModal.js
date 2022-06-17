@@ -30,6 +30,8 @@ const OtpModals = ({
       console.log("OTP verification success");
       onHide();
       handleRegModalShow();
+      timerReset("close");
+      setOTP("");
     } else {
       setError(true);
       console.log("Wrong OTP!");
@@ -41,9 +43,11 @@ const OtpModals = ({
       handleTimer();
       setCounter(30);
       setError(false);
+      setOTP("");
     } else {
       setCounter(30);
       setError(false);
+      setOTP("");
     }
   }
 

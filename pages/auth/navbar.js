@@ -7,8 +7,9 @@ const Navbar = () => {
   const router=useRouter()
   return (
     <div>
+   
  <div className={`container-fluid handbook-section ${Styles.container}` }>
-        <div className="header mt-4 container-fluid">
+        <div className="header  container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
               <div className={Styles.zameenimage}>

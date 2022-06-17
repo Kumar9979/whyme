@@ -134,11 +134,7 @@
   border-radius: 7px;
 }
 
-.modal_input_registeruser {
-  border: 1px solid #dddbdb;
-  border-radius: 7px;
-  padding: 7px;
-}
+
 
 .modal_inputProfile_registeruser {
   border: 1px solid #dddbdb;
@@ -152,10 +148,22 @@
   font-size: 14px;
 }
 
-/*******USER TYPE MODAL********/
+
 .modal_box_type {
   border: 2px solid #1d72db;
   border-radius: 10px;
+}
+
+
+.register_form_inputField{
+border: 1px solid #dddbdb;
+border-radius: 7px;
+padding: 7px;
+}
+
+
+.register_form_inputField:focus-visible{
+outline: 1px solid #1D72DB;
 }
 
 /******MEDIA QUERY*******/

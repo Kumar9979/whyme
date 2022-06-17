@@ -63,16 +63,7 @@ const RegisterCompany = () => {
     <>
 
     
-        {/* <Modal
-      size="lg"
-      aria-labelledby="example-modal-sizes-title-lg"
-      show={show}
-      onHide={() => {
-        onHide();
-        formReset();
-      }}
-      centered
-    > */}
+  
 
 <div className={`d-flex align-items-center justify-content-center mx-2`}>
 
@@ -80,7 +71,7 @@ const RegisterCompany = () => {
       <div className="d-flex justify-content-end mt-4 me-4 mb-1">
         {" "}
         <Image
-      
+    
           src={close}
           alt="close icon"
           width={30}
@@ -164,7 +155,7 @@ const RegisterCompany = () => {
               <input
                 type="text"
                 placeholder="Enter your company name"
-                className={`${styles.modal_input_registeruser} w-100`}
+                className={` ${styles.register_form_inputField} w-100`}
                 value={formik.values.companyName}
                 name="companyName"
                 onChange={formik.handleChange}
@@ -191,7 +182,7 @@ const RegisterCompany = () => {
                 id="#name"
                 type="text"
                 placeholder="Enter your name"
-                className={`${styles.modal_input_registeruser} w-100`}
+                className={` ${styles.register_form_inputField} w-100`}
                 value={formik.values.name}
                 name="name"
                 onChange={formik.handleChange}
@@ -218,7 +209,7 @@ const RegisterCompany = () => {
               <input
                 type="text"
                 placeholder="Enter your email address"
-                className={`${styles.modal_input_registeruser} w-100`}
+                className={`${styles.register_form_inputField} w-100`}
                 name="email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
@@ -243,7 +234,7 @@ const RegisterCompany = () => {
               <input
                 type="text"
                 placeholder="Ex : Agent, Builder, etc,..."
-                className={`${styles.modal_input_registeruser} w-100`}
+                className={`${styles.register_form_inputField} w-100`}
                 name="role"
                 value={formik.values.role}
                 onChange={formik.handleChange}
