@@ -7,8 +7,10 @@ import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
 import SellRentOptionModal from "../../components/modals/sellRentOptionModal";
+import { useRouter } from "next/router";
 
 const RegisterCompany = () => {
+  const router=useRouter();
   const [file, setFile] = useState(camera);
   const [uploaded, setuploaded] = useState(false);
   const [size, setSize] = useState(35);
@@ -36,6 +38,7 @@ const RegisterCompany = () => {
       resetForm();
       handleSellRentShow();
       onHide();
+      router.replace('/sellrent')
 
     },
   });
