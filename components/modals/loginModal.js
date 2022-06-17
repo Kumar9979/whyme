@@ -11,8 +11,10 @@ import styles from "../../styles/modals/modal.module.css";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
+  const [timer, setTimer] = useState(false);
+
   const [number, setNumber] = useState(undefined);
-  const phoneRegex = /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
+  const phoneRegex =/(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
   // const options = [
   //   { value: "+91", label: "+91" },
   //   { value: "+92", label: "+92" },
@@ -21,11 +23,11 @@ const Modals = ({ show, onShow, onHide }) => {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const [num, setNum] = useState("");
-  const [numPass, setNumPass] = useState(false);
 
   const ShowOtpModal = () => setShowOtp(true);
   const closeOtpModal = () => setShowOtp(false);
+
+  const handleTimer = () => setTimer(!timer);
 
   const formik = useFormik({
     initialValues: {
@@ -41,15 +43,14 @@ const Modals = ({ show, onShow, onHide }) => {
       setNumber(values.phoneNumber);
       setShowOtp(true);
       onHide();
-      resetForm()
-    
+      setTimer(true)
     },
   });
 
   return (
     <div>
       <Modal show={show} onHide={onHide} centered>
-        <div className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}>
+        <div className="d-flex justify-content-end mt-3 me-2">
           <Image src={Close} onClick={onHide} />
         </div>
 
@@ -90,12 +91,12 @@ const Modals = ({ show, onShow, onHide }) => {
                   placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
-                  className={`${styles.input_text}  px-3`}
+                  className={`${styles.input_text} w-100 px-3`}
                 />
               )}
             </div>
             <div className="d-flex  justify-content-center">
-              <div className=" w-100 ms-4 me-4 mt-2">
+              <div className=" w-100 ms-3 me-3 mt-2">
                 {formik.errors.phoneNumber && formik.touched.phoneNumber && (
                   <>
                     <input
@@ -104,7 +105,7 @@ const Modals = ({ show, onShow, onHide }) => {
                       placeholder="Enter your phone number"
                       value={formik.values.phoneNumber}
                       onChange={formik.handleChange}
-                      className={`${styles.input_text} ${styles.input_text_warning} px-3`}
+                      className={`${styles.input_text} ${styles.input_text_warning} w-100`}
                     />
 
                     <div>
@@ -135,6 +136,8 @@ const Modals = ({ show, onShow, onHide }) => {
         number={number}
         show={showOtp}
         onHide={closeOtpModal}
+        timerStatus={timer}
+        handleTimer={handleTimer}
       />
     </div>
   );

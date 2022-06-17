@@ -1,0 +1,100 @@
+.propertydetails{
+    color: #1D72DB;
+    font-weight: 500;
+}
+
+.formcontrol{
+    border: none;
+  color: #BCC7CE;
+  opacity: 1;
+    font-size: 12px;
+    background-color: #DBE9F24D;
+    width: 92%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+padding-left: 1rem;
+    font-family: Poppins,medium; ;
+   
+   
+}
+.propertycontainer{
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+.carbody{
+    /* box-shadow: 0px 0px 20px #323D5A1F; */
+}
+.propertycolumn{
+    background-color:lightskyblue;
+    color: white;
+    font-size: 18px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.container{
+    box-shadow: 0px 0px 20px #323D5A1F;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: none;
+border-radius: 20px;
+width: 50%;
+}
+.body{
+    margin-top: 5rem;
+}
+.formchecklabel{
+    color: #1D72DB;
+}
+.button{
+    width:8rem;
+    height: 2rem;
+    background-color: #1D72DB;
+    border: none;
+    border-radius: 7px;
+    color: white;
+}
+.propertydetails{
+    font-size: 20px;
+    font-family: Poppins,medium;
+}
+.cardtext{
+    font-size: 15px;
+    font-family: Poppins,Regular;
+}
+.formgroup{
+
+    font-size: 15px;
+    font-family: Poppins,Regular;
+
+}
+.steplabel {
+   
+    white-space: nowrap;
+}
+.media{
+display: none;
+}
+@media only screen and (max-width: 900px) {
+
+    .propertycolumn{
+  
+       border-radius: 20px;
+    }
+   .media{
+       display: flex;
+    
+   }
+   .media1{
+       display: none;
+   }
+    .container{
+    width:80%;
+    }
+    .propertycontainer{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        
+    }
+}
+    @media only screen and (min-width: 768px) and (max-width: 1024px){
+    }
