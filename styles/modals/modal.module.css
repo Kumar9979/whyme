@@ -1,64 +1,76 @@
-.heading{
-    font-size:21px;
-    font-weight:600;
+.heading {
+  font-size: 21px;
+  font-weight: 600;
 }
 
-.login_text{
-    font-size:14px;
-    color:#323D5A99;
+.login_text {
+  font-size: 15px;
+  color: #323d5a99;
 }
 
-.login_button{
-    background-color:#50BF97;
-    width:90%;
-    border:none;
-    border-radius: 10px;
-    color:#fff;
+.login_button {
+  background-color: #50bf97;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
 }
 
-.otp_text{
-    color:#F77223;
-    cursor: pointer;
+.otp_text {
+  color: #f77223;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: -1%;
 }
 
-.resend_link{
-    text-decoration: none;
-    color:#1D72DB;
-    font-size: 14px;
+.resend_link {
+  text-decoration: none;
+  color: #1d72db;
+  font-size: 14px;
 }
 
-.input_text{
-    border-top:none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #00000029;
-   
-
+.input_text {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #00000029;
+  width:90%;
 }
 
-.input_text::placeholder{
-    color:#DDDBDB;
-    font-weight: 600;
-    font-size: 16px;
+.input_text::placeholder {
+  color: #dddbdb;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .input_text:focus-visible {
-    
-    outline: none;
-  }
+  outline: none;
+}
 
- .input_text_warning {
-    
-    border-bottom: 1px solid red;;
-  } 
+.input_text_warning {
+  border-bottom: 1px solid red;
+}
+.otp_warning{
+    padding-left:2.1rem;
+}
 
-/* .otp_input{
-    color:red !important;
-} */
+.resend_link{
+    padding-right:5.1rem;
+    /* margin-top:-1.6rem; */
+}
 
-@media only screen and (max-width: 900px) {
+.otp_timer{
+    color:black;
+    padding-right:5.1rem;
+}
+
+.cursor_pointer{
+    cursor: pointer;
 
 
+}
+
+@media only screen and (max-width: 945px) {
   .modal {
     bottom: 0;
     left: 0;
@@ -70,7 +82,24 @@
     top: 0;
   }
 
-  /* .otp_warning{
-      padding-right:rem;
-  } */
+  
+.login_text {
+    font-size: 12px;
+    color: #323d5a99;
+  }
+
+  .otp_warning{
+    padding-left:0.3rem;
+}
+
+.resend_link{
+    padding-right:0rem;
+}
+
+.otp_timer{
+    color:black;
+    padding-right:1rem;
+}
+
+
 }
