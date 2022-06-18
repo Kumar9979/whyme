@@ -118,43 +118,6 @@ const Property = () => {
                         </Step>
                       </Stepper>
                     </div>
-                    {/* <div
-                    className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            />
-                    </span>
-                    Property Features
-                  </div> */}
-                    {/* <div
-                    className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            />
-                    </span>
-                    Price Details
-                  </div> */}
-                    {/* <div
-                    className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            
-                            />
-                    </span>
-                    Photos & Description
-                  </div> */}
                   </div>
                 </div>
               </div>

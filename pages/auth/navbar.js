@@ -8,19 +8,19 @@ const Navbar = () => {
   return (
     <div>
       <div className={`container-fluid handbook-section ${Styles.container}`}>
-        <div className="header mt-4 container-fluid">
+        <div className="header  container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
               <div className={Styles.zameenimage}>
                 <Image
                   src={Image3}
                   alt="Picture of the author"
-                  width={400}
-                  height={70}
+                  width={300}
+                  height={50}
                 />
               </div>
               <button
-                className={`ms-auto navbar-toggler ${Styles.navbar}`}
+                className={` navbar-toggler `}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -28,7 +28,9 @@ const Navbar = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon">
+                  <i className={`${Styles.navbar_icon_menu} align-middle ri-menu-line `}></i>
+                </span>
               </button>
               <div
                 className="collapse navbar-collapse"
@@ -63,7 +65,7 @@ const Navbar = () => {
 
                   <button
                     type="button"
-                    className={`ms-5 px-5  btn-primary ${Styles.landingheader}`}
+                    className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
                     onClick={() => {
                       router.replace("/auth/property");
                     }}

@@ -171,12 +171,17 @@ const Auth = () => {
                           className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                           id="inputEmail4"
                           placeholder="Ex : 13"
-                          name="Number"
-                          value={formik.values.Number}
+                          name="TotalFloors"
+                          value={formik.values.TotalFloors}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      <p className="text-danger">{formik.errors.Number}</p>
+                      {formik.errors.TotalFloors && formik.touched.TotalFloors && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.TotalFloors}</span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-3 ">
                       <label
@@ -191,12 +196,17 @@ const Auth = () => {
                           className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                           id="inputPassword4"
                           placeholder="Ex : 7"
-                          name="Number"
-                          value={formik.values.Number}
+                          name="FloorNumber"
+                          value={formik.values.FloorNumber}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      <p className="text-danger">{formik.errors.Number}</p>
+                      {formik.errors.FloorNumber && formik.touched.FloorNumber && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.FloorNumber}</span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-3 ">
                       <label
@@ -211,12 +221,18 @@ const Auth = () => {
                           className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                           id="inputPassword4"
                           placeholder="Ex : 3"
-                          name="Number"
-                          value={formik.values.Number}
+                          name="CarParkingCount"
+                          value={formik.values.CarParkingCount}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      <p className="text-danger">{formik.errors.Number}</p>
+                      {formik.errors.CarParkingCount &&
+                        formik.touched.CarParkingCount && (
+                          <div className="d-flex align-items-center text-danger">
+                            <i className="ri-error-warning-line me-1  "></i>
+                            <span>{formik.errors.CarParkingCount}</span>
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
@@ -236,12 +252,17 @@ const Auth = () => {
                           className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                           id="inputEmail4"
                           placeholder="Ex : 13"
-                          name="Number"
-                          value={formik.values.Number}
+                          name="BedRoom"
+                          value={formik.values.BedRoom}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      <p className="text-danger">{formik.errors.Number}</p>
+                      {formik.errors.BedRoom && formik.touched.BedRoom && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.BedRoom}</span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-3">
                       <label
@@ -256,121 +277,137 @@ const Auth = () => {
                           className={`form-label ps-2 pe-2  pt-2 pb-2 ${Styles.placeholder}`}
                           id="inputPassword4"
                           placeholder="Ex : 7"
-                          name="Number"
-                          value={formik.values.Number}
+                          name="BathRoom"
+                          value={formik.values.BathRoom}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      <p className="text-danger">{formik.errors.Number}</p>
+                      {formik.errors.BathRoom && formik.touched.BathRoom && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.BathRoom}</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="col-lg-3 ms-2">
+                    <div className="col-lg-5 ">
                       <label
                         for="inputPassword4"
-                        className={`form-label me-5 ${Styles.input}`}
+                        className={`form-label  ${Styles.input}`}
                       >
                         Facing{" "}
                       </label>
-                      {/* <div className="dropdown">
-                      <button
-                        className={`btn  dropdown-toggle ${Styles.dropdown}`}
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
+                      <div
+                        onClick={() => setoptionType("facing")}
+                        className={
+                          optionType === "facing"
+                            ? `${Styles.bg_color_1D72DB}  d-flex flex-column  `
+                            : ` d-flex flex-columnn `
+                        }
                       >
-                        North
-                      </button>
-                      <ul
-                        className="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Something else here
-                          </a>
-                        </li>
-                      </ul>
-                    </div> */}
-                      <Dropdown className={Styles.dropdown}>
-                        <Dropdown.Toggle variant="" id="dropdown-basic">
-                          North
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">south</Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">east</Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">west</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
+                        {/* <span
+              className={
+                optionType === "facing"
+                  ? `${Styles.fontFam_poppins} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase text-white mt-3`
+                  : `${Styles.fontFam_poppins} ${Styles.color_323D5A} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase  mt-3`
+              }
+            >
+             Facing
+            </span> */}
+                        <Select
+                          options={facing}
+                          type="text"
+                          placeholder="Select.."
+                          className="w-75"
+                          styles={customStyles}
+                          name="facing"
+                          value={facing.filter((option) => {
+                            return option.value === formik.values.facing;
+                          })}
+                          onChange={(selectedOption) => {
+                            let event = {
+                              target: {
+                                name: "facing",
+                                value: selectedOption.value,
+                              },
+                            };
+                            formik.handleChange(event);
+                          }}
+                          components={{
+                            IndicatorSeparator: () => null,
+                          }}
+                        />
+                      </div>
+                      {formik.errors.facing && formik.touched.facing && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1 mt-1 "></i>
+                          <span> {formik.errors.facing}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 <div className="container mb-5 ms-3">
                   <div className="row">
-                    <div className="col-lg-4 ">
+                    <div className="col-lg-5 ">
                       <label
                         for="inputPassword4"
                         className={`form-label me-5 ${Styles.input}`}
                       >
                         Furnishing status{" "}
                       </label>
-                      {/* <div className="dropdown">
-                      <button
-                        className={`btn  dropdown-toggle ${Styles.dropdown}`}
-                        type="button"
-                        id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Furnished
-                      </button>
-                      <ul
-                        className="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton1"
-                      >
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Something else here
-                          </a>
-                        </li>
-                      </ul>
-                    </div> */}
-                      <Dropdown className={Styles.dropdown}>
-                        <Dropdown.Toggle variant="" id="dropdown-basic">
-                          Furnished
-                        </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">
-                            unfurnished
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">none</Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">none1</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
+                      <div
+                        onClick={() => setoptionType("furnishedStatus")}
+                        className={
+                          optionType === "furnishedStatus"
+                            ? `${Styles.bg_color_1D72DB}  d-flex flex-column  `
+                            : ` d-flex flex-columnn `
+                        }
+                      >
+                        {/* <span
+              className={
+                optionType === "facing"
+                  ? `${Styles.fontFam_poppins} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase text-white mt-3`
+                  : `${Styles.fontFam_poppins} ${Styles.color_323D5A} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase  mt-3`
+              }
+            >
+             Facing
+            </span> */}
+                        <Select
+                          options={furnishingStatus}
+                          type="text"
+                          placeholder="Select.."
+                          className="w-100"
+                          styles={customStyles}
+                          name="FurnishedStatus"
+                          value={furnishingStatus.filter((option) => {
+                            return (
+                              option.value === formik.values.FurnishedStatus
+                            );
+                          })}
+                          onChange={(selectedOption) => {
+                            let event = {
+                              target: {
+                                name: "FurnishedStatus",
+                                value: selectedOption.value,
+                              },
+                            };
+                            formik.handleChange(event);
+                          }}
+                          components={{
+                            IndicatorSeparator: () => null,
+                          }}
+                        />
+                      </div>
                     </div>
-
+                    {formik.errors.FurnishedStatus &&
+                      formik.touched.FurnishedStatus && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.FurnishedStatus}</span>
+                        </div>
+                      )}
                     <p className={`mt-5   ${Styles.checkheading}`}>Amenities</p>
                     <div>
                       <div className="container mb-2 ms-2 ">
