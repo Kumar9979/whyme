@@ -39,6 +39,9 @@ const RegisterUserModal = ({ show, onHide }) => {
     }
   }
 
+
+  
+
   function formReset() {
     formik.handleReset();
     setUploaded(false);
