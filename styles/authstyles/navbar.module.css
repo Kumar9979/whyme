@@ -5,6 +5,12 @@
     text-decoration: none;
     color:black;
   }
+
+.navbar_icon_menu{
+  color: #1d72db;
+  
+}
+
   .headermenu {
     font-family: Poppins,medium;
     font-size: 20px;
@@ -16,11 +22,11 @@
   .landingheader {
     background-color: #013EA3;
     color: #ffffff;
-    font-family: Montserrat;
-    font-size: 16px;
+    font-family: Poppins;
     font-weight: 600;
     border: none;
     border-radius: 6px;
+    padding: .5rem;
   }
   .container{
     box-shadow: 5px 5px 20px #00000029;
