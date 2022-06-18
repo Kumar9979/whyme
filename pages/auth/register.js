@@ -117,12 +117,38 @@ const Register = () => {
                       <h5 className={Styles.title}>Price details</h5>
                     </div>
 
+<<<<<<< HEAD
                     <div class="container">
                       <div class="row">
                         <div class="col-lg-6 ">
                           <label
                             for="inputEmail4"
                             class={` mt-3  ${Styles.text}`}
+=======
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 ">
+                        <label
+                          htmlFor="inputEmail4"
+                          class={` mt-3  ${Styles.text}`}
+                        >
+                          Super Area
+                        </label>
+                        <div class="input-group  ">
+                          <input
+                            type="text"
+                            className={` ${Styles.formcontrol} `}
+                            placeholder="Enter super area"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                           name="MaintenanceFees"
+                            value={formik.values.MaintenanceFees}
+                            onChange={formik.handleChange}
+                          />
+                          <span
+                            className={`${Styles.inputtext} `} 
+                            id="basic-addon2"
+>>>>>>> 8df03fcaf11df7f42e57ce5990e5f94b834f1706
                           >
                             Super Area
                           </label>
@@ -212,6 +238,7 @@ const Register = () => {
                         </div>
                       </div>
 
+<<<<<<< HEAD
                       <div class="row mb-5">
                         <div class="col mt-3">
                           <p class={` ${Styles.text}`}>Maintainence Fees</p>
@@ -237,6 +264,108 @@ const Register = () => {
                             </div>
                           )}
                         </div>
+=======
+                      <div class="col-lg-6 mt-3 ">
+                        <label htmlFor="inputEmail4" class={Styles.text}>
+                          Carpet Area
+                        </label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            className={Styles.formcontrol}
+                            placeholder="Enter carpet area"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                            name="CarpetArea"
+                            value={formik.values.CarpetArea}
+                            onChange={formik.handleChange}
+                          />
+                          <span className={`${Styles.inputtext} `} id="basic-addon2">
+                            sqft
+                          </span>
+                        </div>
+                        {formik.errors.CarpetArea &&
+                      formik.touched.CarpetArea && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.CarpetArea}</span>
+                        </div>
+                      )}
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col mt-3">
+                        <p class={` ${Styles.text}`}>Expected Price</p>
+                        <div class=" ">
+                          <span class={Styles.inputtext1} id="basic-addon1">
+                            ₹{" "}
+                          </span>
+                          <input
+                            type="text"
+                            class={Styles.formcontrol2}
+                            placeholder="Enter property price"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            name="ExpectedPrice"
+                            value={formik.values.ExpectedPrice}
+                            onChange={formik.handleChange}
+                          />
+                        </div>
+                        {formik.errors.ExpectedPrice &&
+                      formik.touched.ExpectedPrice && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.ExpectedPrice}</span>
+                        </div>
+                      )}
+                      </div>
+                    </div>
+
+                    <div class="row mb-5">
+                      <div class="col mt-3">
+                        <p class={` ${Styles.text}`}>Maintainence Fees</p>
+                        <div class=" ">
+                          <span class={Styles.inputtext1} id="basic-addon1">
+                            ₹{" "}
+                          </span>
+                          <input
+                            type="text"
+                            class={Styles.formcontrol2}
+                            placeholder="Enter maintainence price"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            name="Number"
+                            value={formik.values.Number}
+                            onChange={formik.handleChange}
+                          />
+                        </div>
+                        {formik.errors.Number &&
+                      formik.touched.Number && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.Number}</span>
+                        </div>
+                      )}
+                      </div>
+                    </div>
+
+                    <div className="d-flex me-2 mb-5 mt-5 float-end align-items-end ">
+                      <div
+                        className={`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}
+                      >
+                        <div className="ms-5 me-3">
+                          <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
+                        </div>
+                        <label class="form-check-label" htmlFor="inlineFormCheck" onClick={()=>  router.replace("/property/property")}>
+                          Back
+                        </label>
+>>>>>>> 8df03fcaf11df7f42e57ce5990e5f94b834f1706
                       </div>
 
                       <div className="d-flex me-2 mb-5 mt-5 float-end align-items-end ">

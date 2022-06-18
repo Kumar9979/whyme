@@ -8,10 +8,14 @@
   white-space: nowrap;
 }
 
-.heading {
-  color: #1d72db;
-  font-size: 20px;
-  font-family: Poppins, medium;
+
+
+
+
+.heading{
+    color:#1D72DB;
+   font-size: 20px;
+    font-family: Poppins,medium;   
 }
 .input {
   white-space: nowrap;

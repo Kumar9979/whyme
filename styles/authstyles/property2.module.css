@@ -129,7 +129,12 @@
   margin-top: 3rem;
 }
 
+<<<<<<< HEAD
  .propertycolumn {
+=======
+
+.propertycolumn {
+>>>>>>> 8df03fcaf11df7f42e57ce5990e5f94b834f1706
   background-color: lightskyblue;
   color: white;
   font-size: 18px;
@@ -156,11 +161,19 @@
   display: none;
 }
 
+<<<<<<< HEAD
   @media
   only
   screen
   and
   (max-width: 900px) {
+=======
+  
+
+ 
+
+@media only screen and (max-width: 900px) {
+>>>>>>> 8df03fcaf11df7f42e57ce5990e5f94b834f1706
   .container {
     width: 90%;
   }

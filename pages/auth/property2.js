@@ -174,7 +174,7 @@ const Property2 = () => {
                       <div className="row">
                         <div className="col-lg-6 ">
                           <label
-                            for="inputEmail4"
+                            htmlFor="inputEmail4"
                             className={` mt-3  ${Styles.text}`}
                           >
                             Super Area
@@ -201,7 +201,7 @@ const Property2 = () => {
                         </div>
 
                         <div className="col-lg-6 mt-3 ">
-                          <label for="inputEmail4" className={Styles.text}>
+                          <label htmlFor="inputEmail4" className={Styles.text}>
                             Carpet Area
                           </label>
                           <div className="input-group">
@@ -313,7 +313,7 @@ const Property2 = () => {
                           </div>
                           <label
                             className="form-check-label"
-                            for="inlineFormCheck"
+                            htmlFor="inlineFormCheck"
                             onClick={() => router.replace("/auth/register")}
                           >
                             Back

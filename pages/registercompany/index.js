@@ -106,7 +106,57 @@ const RegisterCompany = () => {
                   />
                 </label>
 
+<<<<<<< HEAD
                 {/* <div className={styles.modal_inputProfile_registeruser}>
+=======
+      <div className={`${styles.register_form_container} ${styles.margin_top_5}  ${styles.max_height_800} `}>
+      <div className="d-flex justify-content-end mt-4 me-4 mb-1">
+        {" "}
+        <Image
+    
+          src={close}
+          alt="close icon"
+          width={30}
+          height={30}
+          className={`${styles.cursor_pointer}`}
+        />
+      </div>
+      <div className={styles.modal_body_register}>
+        <div className="mb-1 mt-1">
+          <h5
+            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
+          >
+            Register your account
+          </h5>
+
+          <p
+            className={`${styles.opacity_6} ${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+          >
+            Please register your account to manage all your property.
+          </p>
+        </div>
+
+        <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
+          <label
+            className={`${styles.color_1D1E1F} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} mb-1 `}
+          >
+            Company Logo
+          </label>
+          <div className="mb-3">
+            <label
+              htmlhtmlFor="profile"
+              className={`${styles.fontFam_poppins} ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
+            >
+              <Image
+                src={uploaded ? file : camera}
+                alt="image of camera"
+                width={size}
+                height={size}
+              />
+            </label>
+
+            {/* <div className={styles.modal_inputProfile_registeruser}>
+>>>>>>> 8df03fcaf11df7f42e57ce5990e5f94b834f1706
   hi
 </div> */}
 
