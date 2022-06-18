@@ -26,7 +26,7 @@ const RegisterUserModal = ({ show, onHide }) => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
-      formReset()
+      formReset();
       onHide();
     },
   });
@@ -93,7 +93,7 @@ const RegisterUserModal = ({ show, onHide }) => {
           </label>
           <div className="mb-3">
             <label
-              htmlFor="profile"
+              htmlhtmlFor="profile"
               className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
               <Image
@@ -118,7 +118,6 @@ const RegisterUserModal = ({ show, onHide }) => {
             <input
               type={"file"}
               style={{ visibility: "hidden" }}
-              
               id="profile"
               name="image"
               accept="image/*;capture=camera"

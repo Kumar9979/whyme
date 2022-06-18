@@ -106,7 +106,7 @@ const [value1, setValue1] = useState('3')
                     <div class="row">
                       <div class="col-lg-6 ">
                         <label
-                          for="inputEmail4"
+                          htmlFor="inputEmail4"
                           class={` mt-3  ${Styles.text}`}
                         >
                           Super Area
@@ -139,7 +139,7 @@ const [value1, setValue1] = useState('3')
                       </div>
 
                       <div class="col-lg-6 mt-3 ">
-                        <label for="inputEmail4" class={Styles.text}>
+                        <label htmlFor="inputEmail4" class={Styles.text}>
                           Carpet Area
                         </label>
                         <div class="input-group">
@@ -235,7 +235,7 @@ const [value1, setValue1] = useState('3')
                             height={15}
                           />
                         </div>
-                        <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/property/property")}>
+                        <label class="form-check-label" htmlFor="inlineFormCheck" onClick={()=>  router.replace("/property/property")}>
                           Back
                         </label>
                       </div>

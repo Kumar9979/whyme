@@ -163,7 +163,7 @@ const Property = () => {
                   <div className="card-body ms-5 mt-4">
                     <h5 className={Styles.propertydetails}>Property Details</h5>
                     <div className={`${Styles.formgroup} mt-3`}>
-                      <label for="exampleInputEmail1">
+                      <label htmlFor="exampleInputEmail1">
                         Select Your Property in Map
                       </label>
                       <br />
@@ -193,7 +193,7 @@ const Property = () => {
                     />
               
                       <div className={`${Styles.formgroup} mt-3`}>
-                        <label for="exampleInputEmail1">Address</label>
+                        <label htmlFor="exampleInputEmail1">Address</label>
                         <br />
                         <textarea
                           type="text"
@@ -213,7 +213,7 @@ const Property = () => {
                         </div>
                       )}
                       <div className={`${Styles.formgroup} mt-3`}>
-                        <label for="exampleInputPassword1">Building Name</label>
+                        <label htmlFor="exampleInputPassword1">Building Name</label>
                         <br />
                         <input
                           type="text"
@@ -247,7 +247,7 @@ const Property = () => {
                         </div>
                         <label
                           class="form-check-label"
-                          for="inlineFormCheck"
+                          htmlFor="inlineFormCheck"
                           onClick={() => {
                             router.replace("/auth/navbar");
                           }}

@@ -1,0 +1,93 @@
+.fontFam_poppins {
+  font-family: "Poppins";
+}
+.fontFam_roboto {
+  font-family: "Roboto";
+}
+
+.priceDetails_boxShadow{
+ box-shadow:  0px 0px 20px #323D5A1F;
+ border-radius: 20px;
+}
+
+.input_bar {
+  align-self: stretch;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
+}
+
+.bg_color_1D72DB {
+  background-color: #1d72db;
+}
+.color_1D72DB {
+  color: #1d72db;
+}
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.font_24 {
+  font-size: 24px;
+}
+
+.font_18 {
+  font-size: 18px;
+}
+
+.font_20 {
+  font-size: 20px;
+}
+
+.font_14 {
+  font-size: 14px;
+}
+.font_semibold {
+  font-weight: 600;
+}
+
+.font_medium {
+  font-weight: 500;
+}
+
+.font_light {
+  font-weight: 300;
+}
+
+.font_regular {
+  font-weight: 400;
+}
+
+.modal_icon_arrowRight {
+  font-size: xx-large;
+}
+
+.modal_icon_arrowRightbtn {
+  font-size: 12px;
+}
+
+.icon_arrowLeftbtn {
+  color: #1d72db;
+  outline: 1px solid #1d72db;
+  font-size: 12px;
+}
+
+.propetyfeature_input {
+  border: none;
+  background-color: #f4f8fb;
+  color: black;
+
+  font-family: "Poppins", light;
+  border-radius: 4px;
+}
+.propetyfeature_input::placeholder {
+  font-family: "Poppins", light;
+  font-size: 14px;
+  color: #bcc7ce;
+}
+
+.propetyfeature_input:focus-visible {
+  outline: none;
+}

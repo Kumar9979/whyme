@@ -23,11 +23,7 @@ const Property3 = () => {
     <Navbar/>
     <div className={`d-flex justify-content-center ${Styles.body}`}>
        <div className={`${Styles.container} `}>
-<<<<<<< HEAD
-        <div className="row">
-=======
         <div class="row">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
           <div className={`col-md-4 ${Styles.propertycolumn}`}>
             <div className={`${Styles.propertycontainer}`}>
             <div className="row ">
@@ -69,72 +65,6 @@ const Property3 = () => {
             </Step>
         </Stepper>
         </div>
-<<<<<<< HEAD
-                  {/* <div
-                    className={`col-lg-12 col-md-12 mb-5  mt-5 ${Styles.propertyheading}`}
-                  >
-                    <span className='me-2 '  >
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                          
-                            />
-                    </span>
-                  <span className={`  ${Styles.propertyborder}`}> Property Details </span>
-                  </div>
-                  <div
-                    className={`col-lg-12  col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            />
-                    </span>
-                    Property Features
-                  </div>
-                  <div
-                    className={`col-lg-12 col-md-12 mb-5   ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            />
-                    </span>
-                    Price Details
-                  </div>
-                  <div
-                    className={`col-lg-12 col-md-12 mb-5  ${Styles.propertyheading}`}
-                  >
-                    <span className="me-2">
-                      {" "}
-                      <Image src={Image3} alt="Picture of the author" 
-                             width={20}
-                             height={20}
-                            
-                            />
-                    </span>
-                    Photos & Description
-                  </div> */}
-                </div>
-            </div>
-          </div>
-          <div className="col-md-8 pe-5 ">
-            <div className={`${Styles.carbody} `}>
-              <div className="card-body ms-5 mt-4">
-                <h5 className={Styles.propertydetails}>Photos & Description</h5>
-                <p className={`${Styles.cardtext} mt-5`}>
-                  Photos
-                </p>
-                <div className="card">
-  <div className={Styles.descriptionbox}>
-   
-    <i className={`ri-upload-cloud-2-line ${Styles.cloud}`}></i>
-=======
                  
                 </div>
             </div>
@@ -150,7 +80,6 @@ const Property3 = () => {
   <div className={Styles.descriptionbox}>
    
     <i class={`ri-upload-cloud-2-line ${Styles.cloud}`}></i>
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
    
   <p className={Styles.draganddrop}>Drag & drop the image of an property</p>
   <p className={`mb-3 ${Styles.jpgimg}`}>JPG and PNG images - max 20MB each</p>
@@ -163,12 +92,8 @@ const Property3 = () => {
 
                 <form>
                   <div className={`${Styles.formgroup} mt-3 mb-3`}>
-                    <label for="exampleInputEmail1">Description</label>
-<<<<<<< HEAD
-                    <div className="card">
-=======
+                    <label htmlFor="exampleInputEmail1">Description</label>
                     <div class="card">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
   <div className={Styles.descriptionbox2}>
   <p className={`mt-2 ms-2 ${Styles.browsephotos1}`}>Describe your Property</p>
   </div>
@@ -188,11 +113,7 @@ const Property3 = () => {
                             height={15}
                           />
                     </div>
-<<<<<<< HEAD
-                    <label className="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
-=======
-                    <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
+                    <label class="form-check-label" htmlFor="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
                       Back
                     </label>
                   </div>
@@ -221,16 +142,6 @@ const Property3 = () => {
         </div>
       </div>
       {/* <div className={`${Styles.container} w-50`}>
-<<<<<<< HEAD
-        <div className="row">
-          <div className={`col-md-4 ${Styles.propertycolumn}`}>
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12 mt-5 ms-5">Property details</div>
-                <div className="col-lg-12 mt-5 ms-5">Property Features</div>
-                <div className="col-lg-12 mt-5 ms-5">Price Details</div>
-                <div className="col-lg-12 mt-5 ms-5">Photos & Descriptions</div>
-=======
         <div class="row">
           <div className={`col-md-4 ${Styles.propertycolumn}`}>
             <div class="container">
@@ -239,32 +150,20 @@ const Property3 = () => {
                 <div class="col-lg-12 mt-5 ms-5">Property Features</div>
                 <div class="col-lg-12 mt-5 ms-5">Price Details</div>
                 <div class="col-lg-12 mt-5 ms-5">Photos & Descriptions</div>
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
               </div>
             </div>
           </div>
                 </div>
-<<<<<<< HEAD
-                <div className="col-md-8">
-=======
                 <div class="col-md-8">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
                   <div className={`{Styles.carbody} `}>
                     <div className="card-body">
                       <h5 className={Styles.propertydetails}>
                         Photos & Description
                       </h5>
-<<<<<<< HEAD
-                      <p className={`{Styles.cardtext} mt-5`}>
-                       photos
-                      </p>
-                      <div className="card">
-=======
                       <p class={`{Styles.cardtext} mt-5`}>
                        photos
                       </p>
                       <div class="card">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
   <div className={Styles.descriptionbox}>
   <p className={Styles.draganddrop}>Drag & drop the image of an property</p>
   <small className="card-text">JPG and PNG images - max 20MB each</small>
@@ -275,17 +174,10 @@ const Property3 = () => {
 </div>
                     
 
-<<<<<<< HEAD
-<p className={`{Styles.cardtext} mt-5`}>
-                     Description
-                      </p>
-<div className="card">
-=======
 <p class={`{Styles.cardtext} mt-5`}>
                      Description
                       </p>
 <div class="card">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
   <div className={Styles.descriptionbox2}>
   <small>Describe ypur property</small>
   </div>
@@ -296,17 +188,13 @@ const Property3 = () => {
                         <div className="ps-5 mt-3">
                           <label
                             className = "Styles.formchecklabel"
-                            for="exampleCheck1"
+                            htmlFor="exampleCheck1"
                           >
                             Back
                           </label>
                         </div>
                         
-<<<<<<< HEAD
-                          <button type="submit" className="btn btn-primary ms-4 mt-3 mb-3">
-=======
                           <button type="submit" class="btn btn-primary ms-4 mt-3 mb-3">
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
                             Next
                           </button>
                       

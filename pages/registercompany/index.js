@@ -102,7 +102,7 @@ const RegisterCompany = () => {
           </label>
           <div className="mb-3">
             <label
-              htmlFor="profile"
+              htmlhtmlFor="profile"
               className={`${styles.fontFam_poppins} ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
               <Image

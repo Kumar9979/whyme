@@ -17,8 +17,7 @@
 .heading{
     color:#1D72DB;
    font-size: 20px;
-    font-family: Poppins,medium;
-   
+    font-family: Poppins,medium;   
 }
 .input{
     white-space: nowrap;
@@ -34,8 +33,6 @@
   font-family: Poppins,light;
   border-radius: 4px;
   width: 5rem;
-
-
 }
 
 .placeholder:focus-visible{

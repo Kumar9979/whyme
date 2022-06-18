@@ -128,14 +128,8 @@
 .propertycontainer {
   margin-top: 3rem;
 }
-<<<<<<< HEAD
-.carbody {
-  /* box-shadow: 0px 0px 20px #323D5A1F; */
-}
-=======
 
 
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
 .propertycolumn {
   background-color: lightskyblue;
   color: white;
@@ -165,13 +159,10 @@
   display: none;
   }
 
-<<<<<<< HEAD
-=======
   
 
  
 
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
 @media only screen and (max-width: 900px) {
   .container {
   width: 90%;
