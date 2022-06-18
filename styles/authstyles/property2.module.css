@@ -44,7 +44,7 @@
   height: 30rem;
 }
 .background {
-  background-color:lightskyblue;
+  background-color: lightskyblue;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
   height: 30rem;
@@ -67,7 +67,7 @@
   border: none;
   font-family: Poppins;
 }
-.formcontrol{
+.formcontrol {
   padding: 1rem !important;
 }
 .formcontrol1 {
@@ -111,7 +111,7 @@
 
   padding-top: 0.4rem;
   padding-bottom: 0.5rem;
-   padding-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .form_placeholder {
@@ -128,15 +128,8 @@
 .propertycontainer {
   margin-top: 3rem;
 }
-<<<<<<< HEAD
-.carbody {
-  /* box-shadow: 0px 0px 20px #323D5A1F; */
-}
-=======
 
-
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
-.propertycolumn {
+ .propertycolumn {
   background-color: lightskyblue;
   color: white;
   font-size: 18px;
@@ -150,7 +143,6 @@
   border: none;
   border-radius: 20px;
   width: 50%;
- 
 }
 
 .cardtext {
@@ -158,23 +150,19 @@
   font-family: Poppins, Regular;
 }
 .steplabel {
-   
   white-space: nowrap;
 }
-.media{
+.media {
   display: none;
-  }
+}
 
-<<<<<<< HEAD
-=======
-  
-
- 
-
->>>>>>> a85961b60d0ff63669d73a0dd3ab42d38eb268a8
-@media only screen and (max-width: 900px) {
+  @media
+  only
+  screen
+  and
+  (max-width: 900px) {
   .container {
-  width: 90%;
+    width: 90%;
   }
   .formcontrol {
     width: 9rem;
@@ -186,7 +174,7 @@
     font-family: Poppins;
   }
   .formcontrol1 {
-    width:12rem;
+    width: 12rem;
     height: 2rem;
     color: #bcc7ce;
     font-size: 12px;
@@ -203,33 +191,28 @@
     background-color: #dbe9f24d;
     border: none;
     font-family: Poppins;
-   
-}
-.propertycolumn {
-  background-color: lightskyblue;
-border-radius: 20px;
-}
-.media{
-  
- display: flex;
-
-
-}
-.media1{
-display: none;
-}
-.inputtext {
-  width: 3rem;
-  height: 2rem;
-  color: black;
-  font-size: 12px;
-  background-color: #dbe9f24d;
-  border: none;
-  font-family: Poppins;
-  padding-top: 0.5rem;
-}
-.propertycontainer {
-  margin-top: 1rem;
-
-}
+  }
+  .propertycolumn {
+    background-color: lightskyblue;
+    border-radius: 20px;
+  }
+  .media {
+    display: flex;
+  }
+  .media1 {
+    display: none;
+  }
+  .inputtext {
+    width: 3rem;
+    height: 2rem;
+    color: black;
+    font-size: 12px;
+    background-color: #dbe9f24d;
+    border: none;
+    font-family: Poppins;
+    padding-top: 0.5rem;
+  }
+  .propertycontainer {
+    margin-top: 1rem;
+  }
 }
