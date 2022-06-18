@@ -88,16 +88,16 @@ const propertyFeatures = () => {
   return (
     <div className="container">
       <div className={`row`}>
-        <div className={`col-4`} >stepper</div>
+        <div className={`col-lg-4 col-md-12`} >stepper</div>
 
-        <div className="col-7 ">
+        <div className="col-lg-7 col-m-12 ">
           <div className={`mb-4`}>
             <h5 className={`${styles.color_1D72DB} ${styles.fontFam_poppins
             } ${styles.font_medium} ${styles.font_24}`}>Property Features</h5>
           </div>
 <form  onSubmit={formik.handleSubmit}>
           <div className={`contents`}>
-            <div className={`  d-flex `}>
+            <div className={`${styles.amenities_list_flex_res} `}>
               <div className="item-1   ">
                 <label
                   htmlFor="totalFloors"
@@ -178,7 +178,7 @@ const propertyFeatures = () => {
               </div>
             </div>
 
-            <div className={` d-flex `}>
+            <div className={`${styles.amenities_list_flex_res} mt-4`}>
               <div className="item-1 ">
                 <label
                   htmlFor="BedRoom"
@@ -280,7 +280,7 @@ const propertyFeatures = () => {
               </div>
             </div>
 
-            <div className={`content-third-line d-flex`}>
+            <div className={`content-third-line d-flex mt-4`}>
               <div className="item">
                 <label
                   htmlFor="FurnishedStatus"
@@ -333,8 +333,8 @@ const propertyFeatures = () => {
 
             {/* CHECKBOX ITEMS */}
 
-            <div className={`content-fourth-line `}>
-              <div className={`content-fourth-name`}>
+            <div className={`content-fourth-line mt-4 `}>
+              <div className={`content-fourth-name mb-2`}>
                 <h5
                   className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                 >
@@ -343,8 +343,8 @@ const propertyFeatures = () => {
               </div>
               {/* CHECKBOX ITEMS LIST  */}
 
-              <div className={`d-flex `}>
-                <div className="form-check me-4">
+              <div className={`${styles.amenities_list_flex_res} `}>
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -359,7 +359,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check me-4">
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -374,7 +374,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -390,8 +390,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`d-flex  `}>
-                <div className="form-check me-4">
+              <div className={`${styles.amenities_list_flex_res}  `}>
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -406,7 +406,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check me-4">
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -421,7 +421,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -437,8 +437,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`d-flex  `}>
-                <div className="form-check me-4">
+              <div className={`${styles.amenities_list_flex_res}  `}>
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -453,7 +453,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check me-4">
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -484,8 +484,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`d-flex  `}>
-                <div className="form-check me-4">
+              <div className={`${styles.amenities_list_flex_res}  `}>
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -500,7 +500,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -516,8 +516,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`d-flex  `}>
-                <div className="form-check me-4">
+              <div className={`${styles.amenities_list_flex_res}  `}>
+                <div className="form-check me-4 mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -532,7 +532,7 @@ const propertyFeatures = () => {
                   </label>
                 </div>
 
-                <div className="form-check">
+                <div className="form-check mb-2">
                   <input
                     className="form-check-input mt-2"
                     type="checkbox"
@@ -549,7 +549,7 @@ const propertyFeatures = () => {
               </div>
             </div>
 
-            <div className={`content-btn d-flex justify-content-end`}>
+            <div className={`content-btn d-flex justify-content-end mt-4`}>
               <div className={`d-flex`}>
                 <button className={`bg-white border-0 `}>
                 <span className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}>

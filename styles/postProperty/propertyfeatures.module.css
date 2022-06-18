@@ -59,6 +59,10 @@
 
 }
 
+.amenities_list_flex_res{
+  display: flex;
+}
+
 .propetyfeature_input:focus-visible {
   outline: 1px solid #1d72db;
 }
@@ -78,3 +82,12 @@ outline: 1px solid #1d72db;
 font-size: 12px;
 
   }
+
+
+
+@media only screen and (max-width: 945px) {
+  .amenities_list_flex_res{ 
+display: block;
+  }
+
+}
