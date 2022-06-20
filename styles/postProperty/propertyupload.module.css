@@ -28,7 +28,7 @@
 
 .description::placeholder {
   font-size: 13px;
-  color: #BCC7CE;
+  color: #bcc7ce;
 }
 
 .upload_image {
@@ -56,6 +56,7 @@
   color: #1d72db;
   font-size: 11px;
   font-weight: 500;
+  margin-top:-3%;
 }
 
 .terms_condition_text {
@@ -63,13 +64,6 @@
   font-size: 14px;
   font-weight: 500;
 }
-/* .or_text{
-      
-  } */
-
-/* .upload_image::placeholder{
-text-align: center;
-  } */
 
 .locationform {
   border: none;
@@ -77,12 +71,7 @@ text-align: center;
   font-family: Poppins, Regular;
   font-size: 10px;
 }
-.building {
-  border: none;
-  background-color: #f4f8fb;
-  font-family: Poppins, Regular;
-  font-size: 10px;
-}
+
 .labelText {
   font-family: Poppins, Regular;
 }
@@ -106,3 +95,9 @@ text-align: center;
   outline: 1px solid #1d72db;
   font-size: 12px;
 }
+
+/* .back_button_image{
+  margin-top:20% !important;
+} */
+
+
