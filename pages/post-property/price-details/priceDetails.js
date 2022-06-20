@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
-
+import Steeper from "../property-details/Steeper";
 const PriceDetails = () => {
   const numRegex = /^[0-9]+$/;
   const formik = useFormik({
@@ -40,7 +40,14 @@ const PriceDetails = () => {
     <div
       className={`${styles.priceDetails_boxShadow} d-flex justify-content-center align-items-center p-4`}
     >
-      {/* <div>stepper</div> */}
+        <div className="col-4">
+            <div className={`${styles.sidebar}`}>
+              <div className={`${styles.progressbar} p-5 `}>
+                <Steeper active={3} />
+              </div>
+            </div>
+          </div>
+      
 
       <div className="">
         <div className={`mb-4`}>

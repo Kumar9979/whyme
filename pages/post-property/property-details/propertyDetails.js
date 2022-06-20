@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
 import Mapimages from "../../../assets/icons/download.jpg";
-import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
+import Steeper from "./Steeper";
 
 const PropertyDetails = () => {
-  const [value, setValue1] = useState("1");
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       Map: "",
@@ -30,36 +31,16 @@ const PropertyDetails = () => {
         <div className="row">
           <div className="col-4">
             <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5`}>
-                <Stepper
-                  style={{ width: "0%" }}
-                  activeStep={value}
-                  orientation="vertical"
-                >
-                  <Step>
-                    <StepLabel className="">Property Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Property Features</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Photos & Description</StepLabel>
-                  </Step>
-                </Stepper>
+              <div className={`${styles.progressbar} p-5 `}>
+                <Steeper active={1} />
               </div>
             </div>
           </div>
           <div className="col-lg-6 col-md-10 col-sm-10">
-            <div className="mt-5 ms-5">
+            <div className="mt-2">
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
-              <form onSubmit={formik.handleSubmit} className="mt-3">
-                <h6 className={`${styles.selectHeading} mt-5`}>
+              <form onSubmit={formik.handleSubmit}>
+                <h6 className={`${styles.selectHeading} mt-5 `}>
                   Select Your Property In Map
                 </h6>
 
@@ -86,8 +67,8 @@ const PropertyDetails = () => {
                     className="mt-2"
                     src={Mapimages}
                     alt="Picture of the author"
-                    width={500}
-                    height={250}
+                    width={400}
+                    height={150}
                   />
                 </div>
                 <div className="mt-3">
@@ -157,7 +138,12 @@ const PropertyDetails = () => {
                     </button>
 
                     <button
-                      type="submit"
+                      type="button"
+                      onClick={() =>
+                        router.push(
+                          "/post-property/property-features/propertyFeatures"
+                        )
+                      }
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span

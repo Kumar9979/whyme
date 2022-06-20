@@ -1,7 +1,7 @@
 .sidebar {
   background-color: #1d72db;
-  height: 50rem;
-  width: 25rem;
+  height: 40rem;
+  width: 20rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
@@ -58,6 +58,10 @@
   outline: 1px solid #1d72db;
   font-size: 12px;
 }
-.progressbar{
-  background: none;
+.Steeper{
+  background-color: #1D72DB !important;
+  
+}
+.circle{
+  background-color:#1D72DB !important ;
 }
