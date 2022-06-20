@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
+import arrowRightIcon from "../../../assets/icons/arrow-right-line.png";
+import { Stepper, StepLabel, Step } from "@material-ui/core";
+import Image from "next/image";
 
 import Select from "react-select";
 const propertyFeatures = () => {
+  const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
+
+  const numRegex = /^[0-9]+$/;
   const customStyles = {
     control: (base, state) => ({
       ...base,
       background: "#F4F8FB",
       // match with the menu
       borderRadius: "7px",
+      width: "100%",
       // Overwrittes the different states of border
       borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
       // Removes weird border around container
@@ -45,6 +52,22 @@ const propertyFeatures = () => {
       },
     }),
   };
+
+  const amenitiesList = [
+    "Elevators/Lifts",
+    "Guest Parking Spaces",
+    "Gym",
+    "CCTV Surveillance",
+    "Swimming Pool",
+    "Play Grounds",
+    "Kids Play Area",
+    "Community Clubhouse",
+    "Garden",
+    "Pet Washing Stations",
+    "Rooftop Lounge Areas",
+    "Electronic Vehicle Charging Points",
+    "Barbecue Areas",
+  ];
   const facing = [
     { value: "North", label: "North" },
     { value: "South", label: "South" },
@@ -56,6 +79,7 @@ const propertyFeatures = () => {
     { value: "Unfurnished", label: "Unfurnished" },
   ];
   const formik = useFormik({
+    // enableReinitialize: true,
     initialValues: {
       TotalFloors: "",
       FloorNumber: "",
@@ -64,19 +88,28 @@ const propertyFeatures = () => {
       BathRoom: "",
       facing: "",
       FurnishedStatus: "",
-      // Amenitities: "",
+      Amenities: [],
     },
 
     validationSchema: Yup.object({
-      TotalFloors: Yup.string().required("Required"),
-      FloorNumber: Yup.string().required("Required"),
-      CarParkingCount: Yup.string().required("Required"),
-      BedRoom: Yup.string().required("Required"),
-      BathRoom: Yup.string().required("Required"),
+      TotalFloors: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      FloorNumber: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      CarParkingCount: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      BedRoom: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      BathRoom: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
       facing: Yup.string().required("Required"),
       FurnishedStatus: Yup.string().required("Required"),
-      
-      // Amenitities: Yup.string().required("Required"),
+      Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -85,510 +118,599 @@ const propertyFeatures = () => {
     },
   });
 
+  const handleCheckbox = (e) => {
+    const { checked, name } = e.target;
+
+    if (e.target.checked) {
+      formik.setFieldValue("Amenities", [
+        ...formik.values.Amenities,
+        e.target.name,
+      ]);
+    } else {
+      formik.setFieldValue(
+        "Amenities",
+        formik.values.Amenities.filter((v) => v !== e.target.name)
+      );
+    }
+  };
+
   return (
     <div className="container">
       <div className={`row`}>
-        <div className={`col-lg-4 col-md-12`} >stepper</div>
+        <div className={`col-lg-5 col-md-12`}>
+          {/* <div className={`${styles.sidebar}`}>
+              <div className={`${styles.progressbar} p-5`}>
+                <Stepper
+                  style={{ width: "0%" }}
+                  activeStep={value}
+                  orientation="vertical"
+                >
+                  <Step>
+                    <StepLabel className="">Property Details</StepLabel>
+                  </Step>
+                  <Step>
+                    <StepLabel className="">Property Features</StepLabel>
+                  </Step>
+                  <Step>
+                    <StepLabel className="">Price Details</StepLabel>
+                  </Step>
+                  <Step>
+                    <StepLabel className="">Price Details</StepLabel>
+                  </Step>
+                  <Step>
+                    <StepLabel className="">Photos & Description</StepLabel>
+                  </Step>
+                </Stepper>
+              </div>
+            </div> */}
+        </div>
 
-        <div className="col-lg-7 col-m-12 ">
+        <div className="col-lg-6 col-m-12 ">
           <div className={`mb-4`}>
-            <h5 className={`${styles.color_1D72DB} ${styles.fontFam_poppins
-            } ${styles.font_medium} ${styles.font_24}`}>Property Features</h5>
+            <h5
+              className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+            >
+              Property Features
+            </h5>
           </div>
-<form  onSubmit={formik.handleSubmit}>
-          <div className={`contents`}>
-            <div className={`${styles.amenities_list_flex_res} `}>
-              <div className="item-1   ">
-                <label
-                  htmlFor="totalFloors"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Total floors
-                </label>
-                <div>
-                  <input
-                    type="text"
-                    className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                    id="totalFloors"
-                    placeholder="Ex : 13"
-                    name="TotalFloors"
-                    value={formik.values.TotalFloors}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-                {formik.errors.TotalFloors && formik.touched.TotalFloors && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.TotalFloors}</span>
+          <form onSubmit={formik.handleSubmit}>
+            <div className={`${styles.propertyFeature_padding_l_res}`}>
+              <div className={`${styles.amenities_list_flex_res} `}>
+                <div className="mb-2">
+                  <label
+                    htmlFor="totalFloors"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Total floors
+                  </label>
+                  <div>
+                    <input
+                      type="text"
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      id="totalFloors"
+                      placeholder="Ex : 13"
+                      name="TotalFloors"
+                      value={formik.values.TotalFloors}
+                      onChange={formik.handleChange}
+                    />
                   </div>
-                )}
-              </div>
-
-              <div className="item-2    ">
-                <label
-                  htmlFor="FloorNumber"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Floor number
-                </label>
-                <div>
-                  <input
-                    type="text"
-                    className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                    id="FloorNumber"
-                    placeholder="Ex : 7"
-                    name="FloorNumber"
-                    value={formik.values.FloorNumber}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-                {formik.errors.FloorNumber && formik.touched.FloorNumber && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.FloorNumber}</span>
-                  </div>
-                )}
-              </div>
-
-              <div className="item-3   ">
-                <label
-                  htmlFor=" CarParkingCount"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Car Parking Count
-                </label>
-                <div>
-                  <input
-                    type="text"
-                    className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                    id=" CarParkingCount"
-                    placeholder="Ex : 3"
-                    name="CarParkingCount"
-                    value={formik.values.CarParkingCount}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-                {formik.errors.CarParkingCount &&
-                  formik.touched.CarParkingCount && (
+                  {formik.errors.TotalFloors && formik.touched.TotalFloors && (
                     <div className="d-flex align-items-center text-danger">
                       <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.CarParkingCount}</span>
+                      <span>{formik.errors.TotalFloors}</span>
                     </div>
                   )}
-              </div>
-            </div>
-
-            <div className={`${styles.amenities_list_flex_res} mt-4`}>
-              <div className="item-1 ">
-                <label
-                  htmlFor="BedRoom"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Bedroom
-                </label>
-                <div>
-                  <input
-                    type="text"
-                    className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                    id="BedRoom"
-                    placeholder="Ex : 13"
-                    name="BedRoom"
-                    value={formik.values.BedRoom}
-                    onChange={formik.handleChange}
-                  />
                 </div>
-                {formik.errors.BedRoom && formik.touched.BedRoom && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.BedRoom}</span>
+
+                <div className="  mb-2  ">
+                  <label
+                    htmlFor="FloorNumber"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Floor number
+                  </label>
+                  <div>
+                    <input
+                      type="text"
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      id="FloorNumber"
+                      placeholder="Ex : 7"
+                      name="FloorNumber"
+                      value={formik.values.FloorNumber}
+                      onChange={formik.handleChange}
+                    />
                   </div>
-                )}
-              </div>
-
-              <div className="item-2 ">
-                <label
-                  htmlFor="FloorNumber"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Bathroom
-                </label>
-                <div>
-                  <input
-                    type="text"
-                    className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                    id="FloorNumber"
-                    placeholder="Ex : 7"
-                    name="FloorNumber"
-                    value={formik.values.FloorNumber}
-                    onChange={formik.handleChange}
-                  />
+                  {formik.errors.FloorNumber && formik.touched.FloorNumber && (
+                    <div className="d-flex align-items-center text-danger">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.FloorNumber}</span>
+                    </div>
+                  )}
                 </div>
-                {formik.errors.FloorNumber && formik.touched.FloorNumber && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.FloorNumber}</span>
+
+                <div className=" mb-2 ">
+                  <label
+                    htmlFor=" CarParkingCount"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Car Parking Count
+                  </label>
+                  <div>
+                    <input
+                      type="text"
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      id=" CarParkingCount"
+                      placeholder="Ex : 3"
+                      name="CarParkingCount"
+                      value={formik.values.CarParkingCount}
+                      onChange={formik.handleChange}
+                    />
                   </div>
-                )}
+                  {formik.errors.CarParkingCount &&
+                    formik.touched.CarParkingCount && (
+                      <div className="d-flex align-items-center text-danger">
+                        <i className="ri-error-warning-line me-1  "></i>
+                        <span>{formik.errors.CarParkingCount}</span>
+                      </div>
+                    )}
+                </div>
               </div>
 
-              <div className="item-3">
-                <label
-                  htmlFor="facing"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Facing{" "}
-                </label>
-                <div
-                  onClick={() => setoptionType("facing")}
-                  // className={
-                  //   optionType === "facing"
-                  //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
-                  //     : ` d-flex flex-columnn `
-                  // }
-                >
-                  <Select
-                    id="facing"
-                    options={facing}
-                    type="text"
-                    placeholder="Select.."
-                  
-                    styles={customStyles}
-                    name="facing"
-                    value={facing.filter((option) => {
-                      return option.value === formik.values.facing;
-                    })}
-                    onChange={(selectedOption) => {
-                      let event = {
-                        target: {
-                          name: "facing",
-                          value: selectedOption.value,
-                        },
-                      };
-                      formik.handleChange(event);
-                    }}
-                    components={{
-                      IndicatorSeparator: () => null,
-                    }}
-                  />
-                </div>
-                {formik.errors.facing && formik.touched.facing && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1 mt-1 "></i>
-                    <span> {formik.errors.facing}</span>
+              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+                <div className="w-50 mb-2 ">
+                  <label
+                    htmlFor="BedRoom"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Bedroom
+                  </label>
+                  <div>
+                    <input
+                      type="text"
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      id="BedRoom"
+                      placeholder="Ex : 13"
+                      name="BedRoom"
+                      value={formik.values.BedRoom}
+                      onChange={formik.handleChange}
+                    />
                   </div>
-                )}
-              </div>
-            </div>
-
-            <div className={`content-third-line d-flex mt-4`}>
-              <div className="item">
-                <label
-                  htmlFor="FurnishedStatus"
-                  className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                Furnishing Status{" "}
-                </label>
-                <div
-                  onClick={() => setoptionType("furnishingStatus")}
-                  // className={
-                  //   optionType === "furnishingStatus"
-                  //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
-                  //     : ` d-flex flex-columnn `
-                  // }
-                >
-                  <Select
-                    id="FurnishedStatus"
-                    options={furnishingStatus}
-                    type="text"
-                    placeholder="Select.."
-                
-                    styles={customStyles}
-                    name="FurnishedStatus"
-                    value={furnishingStatus.filter((option) => {
-                      return option.value === formik.values.FurnishedStatus;
-                    })}
-                    onChange={(selectedOption) => {
-                      let event = {
-                        target: {
-                          name: "FurnishedStatus",
-                          value: selectedOption.value,
-                        },
-                      };
-                      formik.handleChange(event);
-                    }}
-                    components={{
-                      IndicatorSeparator: () => null,
-                    }}
-                  />
+                  {formik.errors.BedRoom && formik.touched.BedRoom && (
+                    <div className="d-flex align-items-center text-danger">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.BedRoom}</span>
+                    </div>
+                  )}
                 </div>
-                {formik.errors.FurnishedStatus &&
-                  formik.touched.FurnishedStatus && (
+
+                <div className="w-50  mb-2 ">
+                  <label
+                    htmlFor=" Bathroom"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Bathroom
+                  </label>
+                  <div>
+                    <input
+                      type="text"
+                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propertyFeature_width_50_to_75} ${styles.propetyfeature_input}`}
+                      id="BathRoom"
+                      placeholder="Ex : 7"
+                      name="BathRoom"
+                      value={formik.values.BathRoom}
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                  {formik.errors.BathRoom && formik.touched.BathRoom && (
+                    <div className="d-flex align-items-center text-danger">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.BathRoom}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className={`${styles.propertyFeature_width_50_to_75}  mb-2`}>
+                  <label
+                    htmlFor="facing"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Facing{" "}
+                  </label>
+                  <div
+                    onClick={() => setoptionType("facing")}
+                    // className={
+                    //   optionType === "facing"
+                    //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
+                    //     : ` d-flex flex-columnn `
+                    // }
+                  >
+                    <Select
+                      id="facing"
+                      options={facing}
+                      type="text"
+                      placeholder="Select.."
+                      styles={customStyles}
+                      name="facing"
+                      value={facing.filter((option) => {
+                        return option.value === formik.values.facing;
+                      })}
+                      onChange={(selectedOption) => {
+                        let event = {
+                          target: {
+                            name: "facing",
+                            value: selectedOption.value,
+                          },
+                        };
+                        formik.handleChange(event);
+                      }}
+                      components={{
+                        IndicatorSeparator: () => null,
+                      }}
+                    />
+                  </div>
+                  {formik.errors.facing && formik.touched.facing && (
                     <div className="d-flex align-items-center text-danger">
                       <i className="ri-error-warning-line me-1 mt-1 "></i>
-                      <span> {formik.errors.FurnishedStatus}</span>
+                      <span> {formik.errors.facing}</span>
                     </div>
                   )}
-              </div>
-            </div>
-
-            {/* CHECKBOX ITEMS */}
-
-            <div className={`content-fourth-line mt-4 `}>
-              <div className={`content-fourth-name mb-2`}>
-                <h5
-                  className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                >
-                  Amenities
-                </h5>
-              </div>
-              {/* CHECKBOX ITEMS LIST  */}
-
-              <div className={`${styles.amenities_list_flex_res} `}>
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Elevators/Lifts
-                  </label>
-                </div>
-
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Guest Parking Spaces
-                  </label>
-                </div>
-
-                <div className="form-check mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Gym
-                  </label>
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res}  `}>
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
+              <div className={`${styles.propertyFeature_width_50_to_75} mt-3`}>
+                <div className=" mb-2">
                   <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
+                    htmlFor="FurnishedStatus"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                   >
-                    CCTV Surveillance
+                    Furnishing Status{" "}
                   </label>
-                </div>
-
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
+                  <div
+                    onClick={() => setoptionType("furnishingStatus")}
+                    // className={
+                    //   optionType === "furnishingStatus"
+                    //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
+                    //     : ` d-flex flex-columnn `
+                    // }
                   >
-                    Swimming Pool
-                  </label>
-                </div>
-
-                <div className="form-check mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Play Grounds
-                  </label>
-                </div>
-              </div>
-
-              <div className={`${styles.amenities_list_flex_res}  `}>
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Kids Play Area
-                  </label>
-                </div>
-
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Community Clubhouse
-                  </label>
-                </div>
-
-                <div className="form-check">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Garden
-                  </label>
-                </div>
-              </div>
-
-              <div className={`${styles.amenities_list_flex_res}  `}>
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Pet Washing Stations
-                  </label>
-                </div>
-
-                <div className="form-check mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Rooftop Lounge Areas
-                  </label>
-                </div>
-              </div>
-
-              <div className={`${styles.amenities_list_flex_res}  `}>
-                <div className="form-check me-4 mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Electronic Vehicle Charging Points
-                  </label>
-                </div>
-
-                <div className="form-check mb-2">
-                  <input
-                    className="form-check-input mt-2"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label
-                    className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                    htmlFor="flexCheckChecked"
-                  >
-                    Barbecue Areas
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div className={`content-btn d-flex justify-content-end mt-4`}>
-              <div className={`d-flex`}>
-                <button className={`bg-white border-0 `}>
-                <span className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}>
-
-                            <i
-                              className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
-                            ></i>
-                          </span>
-
-
-                  <span
-                    className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
-                  >
-                   Back
-                  </span>
-                </button>
-
-                <button
-                  type="submit"
-                  className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
-                >
-                  <span
-                    className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
-                  >
-                    Next
-                  </span>
-                  <div>
-                    <i
-                      className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
-                    ></i>
+                    <Select
+                      id="FurnishedStatus"
+                      options={furnishingStatus}
+                      type="text"
+                      placeholder="Select.."
+                      styles={customStyles}
+                      name="FurnishedStatus"
+                      value={furnishingStatus.filter((option) => {
+                        return option.value === formik.values.FurnishedStatus;
+                      })}
+                      onChange={(selectedOption) => {
+                        let event = {
+                          target: {
+                            name: "FurnishedStatus",
+                            value: selectedOption.value,
+                          },
+                        };
+                        formik.handleChange(event);
+                      }}
+                      components={{
+                        IndicatorSeparator: () => null,
+                      }}
+                    />
                   </div>
-                </button>
+                  {formik.errors.FurnishedStatus &&
+                    formik.touched.FurnishedStatus && (
+                      <div className="d-flex align-items-center text-danger">
+                        <i className="ri-error-warning-line me-1 mt-1 "></i>
+                        <span> {formik.errors.FurnishedStatus}</span>
+                      </div>
+                    )}
+                </div>
+              </div>
+
+              {/* CHECKBOX ITEMS */}
+
+              <div className={`content-fourth-line mt-5 `}>
+                <div className={`content-fourth-name mb-2`}>
+                  <h5
+                    className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Amenities
+                  </h5>
+                </div>
+                {/* CHECKBOX ITEMS LIST  */}
+
+                <div className={`${styles.amenities_list_flex_res}`}>
+                  <div className="form-check me-4 mb-3 ">
+                    <input
+                      className="form-check-input mt-2 "
+                      type="checkbox"
+                      id="Elevators/Lifts"
+                      name="Elevators/Lifts"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Elevators/Lifts")}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Elevators/Lifts"
+                    >
+                      Elevators/Lifts
+                    </label>
+                  </div>
+
+                  <div className="form-check me-4 mb-3 ">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Guest Parking Spaces"
+                      name="Guest Parking Spaces"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Guest Parking Spaces")}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Guest Parking Spaces"
+                    >
+                      Guest Parking Spaces
+                    </label>
+                  </div>
+
+                  <div className="form-check mb-3 ">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Gym"
+                      name="Gym"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Gym")}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Gym"
+                    >
+                      Gym
+                    </label>
+                  </div>
+                </div>
+
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="CCTV Surveillance"
+                      name="CCTV Surveillance"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "CCTV Surveillance"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="CCTV Surveillance"
+                    >
+                      CCTV Surveillance
+                    </label>
+                  </div>
+
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Swimming Pool"
+                      name="Swimming Pool"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Swimming Pool"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Swimming Pool"
+                    >
+                      Swimming Pool
+                    </label>
+                  </div>
+
+                  <div className="form-check mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Play Grounds"
+                      name="Play Grounds"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Play Grounds")}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Play Grounds"
+                    >
+                      Play Grounds
+                    </label>
+                  </div>
+                </div>
+
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Kids Play Area"
+                      name="Kids Play Area"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Kids Play Area"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Kids Play Area"
+                    >
+                      Kids Play Area
+                    </label>
+                  </div>
+
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Community Clubhouse"
+                      name="Community Clubhouse"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Community Clubhouse"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Community Clubhouse"
+                    >
+                      Community Clubhouse
+                    </label>
+                  </div>
+
+                  <div className="form-check  mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Garden"
+                      name="Garden"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Garden")}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Garden"
+                    >
+                      Garden
+                    </label>
+                  </div>
+                </div>
+
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Pet Washing Stations"
+                      name="Pet Washing Stations"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Pet Washing Stations"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Pet Washing Stations"
+                    >
+                      Pet Washing Stations
+                    </label>
+                  </div>
+
+                  <div className="form-check mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Rooftop Lounge Areas"
+                      name="Rooftop Lounge Areas"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Rooftop Lounge Areas"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Rooftop Lounge Areas"
+                    >
+                      Rooftop Lounge Areas
+                    </label>
+                  </div>
+                </div>
+
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      name="Electronic Vehicle Charging Points"
+                      id="Electronic Vehicle Charging Points"
+                      // value={formik.values.Amenitities}
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Electronic Vehicle Charging Points"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="Electronic Vehicle Charging Points"
+                    >
+                      Electronic Vehicle Charging Points
+                    </label>
+                  </div>
+
+                  <div className="form-check mb-3">
+                    <input
+                      className="form-check-input mt-2"
+                      type="checkbox"
+                      id="Barbecue Areas"
+                      name="Barbecue Areas"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Barbecue Areas"
+                      )}
+                    />
+                    <label
+                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
+                      htmlFor="flexCheckChecked"
+                    >
+                      Barbecue Areas
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div className={`content-btn d-flex justify-content-end mt-4`}>
+                <div className={`d-flex`}>
+                  <button className={`bg-white border-0 `}>
+                    <span
+                      className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
+                    >
+                      <i
+                        className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
+                      ></i>
+                    </span>
+
+                    <span
+                      className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                    >
+                      Back
+                    </span>
+                  </button>
+
+                  <button
+                    type="submit"
+                    className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
+                  >
+                    <span
+                      className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                    >
+                      Next
+                    </span>
+                    <div>
+                      <i
+                        className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
+                      ></i>
+                      {/* <Image className={styles.modal_icon_arrowRightbtn} src={
+                        
+arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-       </form>
+          </form>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 

@@ -52,11 +52,10 @@
   border: none;
   background-color: #f4f8fb;
   color: black;
-  width: 40%;
+
   font-size: 13px;
   font-family: Poppins, light;
   border-radius: 4px;
-
 }
 
 .amenities_list_flex_res{
@@ -76,6 +75,10 @@
     font-size: 12px;
   }
 
+  /* .modal_icon_arrowRightbtn {
+    border: 1px solid white;
+  } */
+
   .icon_arrowLeftbtn{
 color: #1d72db;
 outline: 1px solid #1d72db;
@@ -83,11 +86,29 @@ font-size: 12px;
 
   }
 
+  .sidebar {
+    background-color: #1d72db;
+    height: 50rem;
+    width: 25rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+.propertyFeature_width_50_to_75{
+  width: 50%;
+}
 
 
 @media only screen and (max-width: 945px) {
   .amenities_list_flex_res{ 
 display: block;
+  }
+  .propertyFeature_padding_l_res{
+    padding-left: 20px;
+  }
+
+
+  .propertyFeature_width_50_to_75{
+    width: 75%;
   }
 
 }

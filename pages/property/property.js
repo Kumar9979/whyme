@@ -12,94 +12,22 @@ import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
-import Select from "react-select";
-
-export const customStyles = {
-  control: (base, state) => ({
-    ...base,
-    background: "#F4F8FB",
-    // match with the menu
-    borderRadius: "7px",
-    // Overwrittes the different states of border
-    borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-    // Removes weird border around container
-    boxShadow: state.isFocused ? null : null,
-    "&:hover": {
-      // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-    },
-  }),
-  option: (provided, state) => ({
-    ...provided,
-    backgroundColor: state.isSelected ? "#1D72DB" : null,
-    borderBottom: "1px solid #F5F5F5",
-    fontFamily: "Poppins",
-    "&:hover": {
-      backgroundColor: state.isFocused ? "#1D72DB" : "#1D72DB",
-    },
-  }),
-  placeholder: (defaultStyles) => {
-    return {
-      ...defaultStyles,
-      color: "#BCC7CE",
-      fontFamily: "Poppins",
-      fontSize: "0.8rem",
-    };
-  },
-  dropdownIndicator: (provided) => ({
-    ...provided,
-    svg: {
-      fill: "#323D5A",
-    },
-  }),
-};
-
-const facing = [
-  { value: "North", label: "North" },
-  { value: "South", label: "South" },
-  { value: "East", label: "East" },
-  { value: "West", label: "West" },
-];
-const furnishingStatus = [
-  { value: "Furnished", label: "Furnished" },
-  { value: "Unfurnished", label: "Unfurnished" },
-];
-
 const Auth = () => {
   const router = useRouter();
   const [value1, setValue1] = useState("2");
-  const [optionType, setoptionType] = useState("");
   const formik = useFormik({
     initialValues: {
-      TotalFloors: "",
-      FloorNumber: "",
-      CarParkingCount: "",
-      BedRoom: "",
-      BathRoom: "",
-      facing: "",
-      FurnishedStatus: "",
-      Amenitities: "",
+      Number: "",
     },
 
     validationSchema: Yup.object({
-      TotalFloors: Yup.string().required("Required"),
-      FloorNumber: Yup.string().required("Required"),
-      CarParkingCount: Yup.string().required("Required"),
-      BedRoom: Yup.string().required("Required"),
-      BathRoom: Yup.string().required("Required"),
-      facing: Yup.string().required("Required"),
-      FurnishedStatus: Yup.string().required("Required"),
-      Amenitities: Yup.string().required("Required"),
+      Number: Yup.string().required("!required"),
     }),
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: (values) => {
       console.log(values);
-
       router.replace("/auth/register");
-
-      resetForm();
     },
   });
-
   return (
     <>
       <Head>
@@ -744,7 +672,42 @@ const Auth = () => {
                         </div>
                       </div>
                     </div>
-                
+                    {/* <div className="d-flex mb-2  me-2 mt-3  float-end align-items-end ">
+                      <div
+                        className={`d-flex mt-5 ms-5 ${Styles.formchecklabel}`}
+                      >
+                        <div className="ms-5 me-3">
+                          <Image
+                            src={Image1}
+                            alt="Picture of the author"
+                            className={` ${Styles.buttonicon}`}
+                            width={15}
+                            height={15}
+                          />
+                        </div>
+                        <label className="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property")}>
+                          Back
+                        </label>
+                      </div>
+
+                      <div className="mt-5 ms-3">
+                        <button
+                          type="submit"
+                          className={`me-5   ${Styles.button}`}
+                        >
+                          Next
+                          <span className="ms-5 ">
+                            <Image
+                              src={Image2}
+                              alt="Picture of the author"
+                              className={Styles.widthimg}
+                              width={15}
+                              height={15}
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

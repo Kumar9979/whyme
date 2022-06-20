@@ -32,7 +32,6 @@ const Navbar = () => {
                   <i className={`${Styles.navbar_icon_menu} align-middle ri-menu-line `}></i>
                 </span>
               </button>
-
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
