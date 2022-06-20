@@ -18,6 +18,16 @@
     color: #323D5A;
     text-decoration: none;
   }
+
+  .headerIcon{
+    font-family: Poppins,medium;
+    font-size: 20px;
+    font-weight: 600;
+    color: #323D5A;
+    text-decoration: none;
+    border:2px solid black;
+    border-radius: 7px;
+  }
   
   .landingheader {
     background-color: #013EA3;

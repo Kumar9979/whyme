@@ -1,8 +1,9 @@
 import React from "react";
 import Styles from "../../styles/authstyles/navbar.module.css";
 import Image from "next/image";
-import Image3 from "../../assets/icons/3.png";
+import ZameenSquareImage from "../../assets/icons/zameen.png";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 const Navbar = () => {
   const router = useRouter();
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
             <div className="container-fluid academy-header">
               <div className={Styles.zameenimage}>
                 <Image
-                  src={Image3}
+                  src={ZameenSquareImage}
                   alt="Picture of the author"
                   width={300}
                   height={50}
@@ -32,39 +33,35 @@ const Navbar = () => {
                   <i className={`${Styles.navbar_icon_menu} align-middle ri-menu-line `}></i>
                 </span>
               </button>
-<<<<<<< HEAD
-
-=======
->>>>>>> 9ba6b56337cc73b16c1a7ce427092414f51f3947
               <div
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item ms-5">
-                    <a className={Styles.headermenu} href="#">
-                      Buy
-                    </a>
+                    <Link  href="#">
+                     <a className={`${Styles.headermenu}`}> Buy</a>
+                    </Link>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className={Styles.headermenu} href="#">
-                      Rent
-                    </a>
+                    <Link  href="#">
+                      <a className={`${Styles.headermenu}`}>Rent</a>
+                    </Link>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className={Styles.headermenu} href="#">
-                      Sell
-                    </a>
+                    <Link href="#">
+                    <a className={`${Styles.headermenu}`}>Sell</a>  
+                    </Link>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className={Styles.headermenu} href="#">
-                      <i className="ri-heart-3-fill"></i>
-                    </a>
+                    <Link  href="#">
+                     <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a> 
+                    </Link>
                   </li>
                   <li className="nav-item ms-5">
-                    <a className={Styles.headermenu} href="#">
-                      <i className="ri-user-add-line"></i>
-                    </a>
+                    <Link href="#">
+                    <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
+                    </Link>
                   </li>
 
                   <button

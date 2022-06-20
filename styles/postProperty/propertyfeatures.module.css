@@ -90,8 +90,6 @@ font-size: 12px;
 
   }
 
-<<<<<<< HEAD
-=======
   .sidebar {
     background-color: #1d72db;
     height: 50rem;
@@ -102,17 +100,12 @@ font-size: 12px;
 .propertyFeature_width_50_to_75{
   width: 50%;
 }
->>>>>>> a1ba204a1836beee1c63168c94c0625db4f50f5a
 
 
 @media only screen and (max-width: 945px) {
   .amenities_list_flex_res{ 
 display: block;
   }
-<<<<<<< HEAD
-
-}
-=======
   .propertyFeature_padding_l_res{
     padding-left: 20px;
   }
@@ -123,4 +116,3 @@ display: block;
   }
 
 }
->>>>>>> a1ba204a1836beee1c63168c94c0625db4f50f5a

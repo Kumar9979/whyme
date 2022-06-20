@@ -7,7 +7,6 @@ import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
 
-
 const PropertyUpload = () => {
   const [value, setValue1] = useState("4");
   const [file, setFile] = useState(upload);
