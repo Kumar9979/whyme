@@ -138,13 +138,13 @@ const propertyFeatures = () => {
   return (
     <div className="container mt-5">
       <div className={`row`}>
-      <div className="col-4">
-            <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5 `}>
-                <Steeper active={1} />
-              </div>
+        <div className="col-4">
+          <div className={`${styles.sidebar}`}>
+            <div className={`${styles.progressbar} p-5 `}>
+              <Steeper active={1} />
             </div>
           </div>
+        </div>
 
         <div className="col-lg-6 col-m-12 ">
           <div className={`mb-4`}>
@@ -290,7 +290,9 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className={`${styles.propertyFeature_width_50_to_75}  mb-2`}>
+                <div
+                  className={`${styles.propertyFeature_width_50_to_75}  mb-2`}
+                >
                   <label
                     htmlFor="facing"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -408,7 +410,9 @@ const propertyFeatures = () => {
                       id="Elevators/Lifts"
                       name="Elevators/Lifts"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Elevators/Lifts")}
+                      checked={formik.values.Amenities.includes(
+                        "Elevators/Lifts"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
@@ -425,7 +429,9 @@ const propertyFeatures = () => {
                       id="Guest Parking Spaces"
                       name="Guest Parking Spaces"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Guest Parking Spaces")}
+                      checked={formik.values.Amenities.includes(
+                        "Guest Parking Spaces"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}

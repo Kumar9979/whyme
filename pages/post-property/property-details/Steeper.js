@@ -1,23 +1,28 @@
 import React from "react";
 import { Stepper, Step, StepLabel } from "@material-ui/core";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
+import { styled } from "@material-ui/styles";
+import StepConnector from "@material-ui/core/StepConnector";
+import { StepConnectorClasskey } from "@material-ui/core/StepConnector/StepConnector";
+import Image from "next/image";
+import CheckGreyImages from "../../../assets/icons/checkgrey.png";
+import CheckImages from "../../../assets/icons/check.png";
 
 const Steeper = ({ active }) => {
+  const steps = [
+    "Property Details",
+    "Property Features",
+    "Price Details",
+    "Photos & Description",
+  ];
   return (
     <div className={`${styles.Steeper}`}>
       <Stepper orientation="vertical" activeStep={active}>
-        <Step className={`${styles.circle}`}>
-          <StepLabel>Property Details</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Property Features</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Price Details</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Photos & Description</StepLabel>
-        </Step>
+        {steps.map((label) => (
+          <Step className={`${styles.circle}`}>
+            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+          </Step>
+        ))}
       </Stepper>
     </div>
   );
@@ -29,12 +34,30 @@ function QontoStepIcon(props) {
   const { active, completed, className } = props;
 
   return (
-    <QontoStepIconRoot ownerState={{ active }} className={className}>
+    <div ownerState={{ active }} className={className}>
       {completed ? (
-        <Check className="QontoStepIcon-completedIcon" />
+         <Image src={CheckImages} alt="Picture of the author" />
       ) : (
-        <div className="QontoStepIcon-circle" />
+        <Image src={CheckGreyImages} alt="Picture of the author" />
       )}
-    </QontoStepIconRoot>
+    </div>
   );
 }
+
+const QontoConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${StepConnectorClasskey}`]: {
+    top: 10,
+    left: "calc(-50% + 16px)",
+    right: "calc(50% + 16px)",
+  },
+  [`&.${StepConnectorClasskey}`]: {
+    [`& .${StepConnectorClasskey}`]: {
+      borderColor: "#784af4",
+    },
+  },
+  [`&.${StepConnectorClasskey}`]: {
+    [`& .${StepConnectorClasskey}`]: {
+      borderColor: "#784af4",
+    },
+  },
+}));

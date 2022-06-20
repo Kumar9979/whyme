@@ -32,7 +32,7 @@ const PropertyDetails = () => {
           <div className="col-4">
             <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5 `}>
-                <Steeper active={1} />
+                <Steeper active={0} />
               </div>
             </div>
           </div>

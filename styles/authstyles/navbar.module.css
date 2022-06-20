@@ -1,0 +1,40 @@
+.headerlogo {
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: 900;
+    text-decoration: none;
+    color:black;
+  }
+
+.navbar_icon_menu{
+  color: #1d72db;
+  
+}
+
+  .headermenu {
+    font-family: Poppins,medium;
+    font-size: 20px;
+    font-weight: 600;
+    color: #323D5A;
+    text-decoration: none;
+  }
+  
+  .landingheader {
+    background-color: #013EA3;
+    color: #ffffff;
+    font-family: Poppins;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: .5rem;
+  }
+  .container{
+    box-shadow: 5px 5px 20px #00000029;
+  }
+  @media only screen and (max-width: 900px){
+    .zameenimage{
+      width:10rem;
+
+    }
+ 
+  }
