@@ -40,14 +40,13 @@ const PriceDetails = () => {
     <div
       className={`${styles.priceDetails_boxShadow} d-flex justify-content-center align-items-center p-4`}
     >
-        <div className="col-4">
-            <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5 `}>
-                <Steeper active={3} />
-              </div>
-            </div>
+      <div className="col-4">
+        <div className={`${styles.sidebar}`}>
+          <div className={`${styles.progressbar} p-5 `}>
+            <Steeper active={3} />
           </div>
-      
+        </div>
+      </div>
 
       <div className="">
         <div className={`mb-4`}>
