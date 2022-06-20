@@ -11,10 +11,9 @@
   border: none !important;
 }
 
-.margin_top_5{
+.margin_top_5 {
   margin-top: 5%;
 }
-
 
 .max_height_800 {
   max-width: 800px;
@@ -134,8 +133,6 @@
   border-radius: 7px;
 }
 
-
-
 .modal_inputProfile_registeruser {
   border: 1px solid #dddbdb;
   border-radius: 7px;
@@ -148,22 +145,19 @@
   font-size: 14px;
 }
 
-
 .modal_box_type {
   border: 2px solid #1d72db;
   border-radius: 10px;
 }
 
-
-.register_form_inputField{
-border: 1px solid #dddbdb;
-border-radius: 7px;
-padding: 7px;
+.register_form_inputField {
+  border: 1px solid #dddbdb;
+  border-radius: 7px;
+  padding: 7px;
 }
 
-
-.register_form_inputField:focus-visible{
-outline: 1px solid #1D72DB;
+.register_form_inputField:focus-visible {
+  outline: 1px solid #1d72db;
 }
 
 /******MEDIA QUERY*******/

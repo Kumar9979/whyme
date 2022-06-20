@@ -3,10 +3,14 @@ import Select from "react-select";
 import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import sell from "../../assets/icons/sell.png";
 import Image from "next/image";
 import close from "../../assets/icons/close.png";
+import sell from "../../assets/icons/sell.png";
+import sellWhite from "../../assets/icons/sellWhite.png";
+
 import rent from "../../assets/icons/rent.png";
+import rentWhite from "../../assets/icons/rentWhite.png";
+
 
 export const customStyles = {
   control: (base, state) => ({
@@ -133,7 +137,7 @@ const SellRent = () => {
                 : ` ${styles.rentSell_container} ${styles.margin_r_3} d-flex flex-column align-items-center justify-content-center p-2`
             }
           >
-            <Image src={sell} alt="image of sell" width={65} height={65} />
+            <Image src={optionType==="sell"? sellWhite:sell} alt="image of sell" width={65} height={65} />
             <span
               className={
                 optionType === "sell"
@@ -155,7 +159,7 @@ const SellRent = () => {
           >
             <div>
               <Image
-                src={rent}
+                src={ optionType === "rent"? rentWhite: rent}
                 alt="image of rent"
                 width={65}
                 height={65}
