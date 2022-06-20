@@ -7,6 +7,7 @@ import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
 
 import Select from "react-select";
+import Steeper from "../property-details/Steeper";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
@@ -120,34 +121,14 @@ const propertyFeatures = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className={`row`}>
-        <div className={`col-lg-5 col-md-12`}>
-          {/* <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5`}>
-                <Stepper
-                  style={{ width: "0%" }}
-                  activeStep={value}
-                  orientation="vertical"
-                >
-                  <Step>
-                    <StepLabel className="">Property Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Property Features</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Photos & Description</StepLabel>
-                  </Step>
-                </Stepper>
-              </div>
-            </div> */}
+        <div className="col-4">
+          <div className={`${styles.sidebar}`}>
+            <div className={`${styles.progressbar} p-5 `}>
+              <Steeper active={1} />
+            </div>
+          </div>
         </div>
 
         <div className="col-lg-6 col-m-12 ">
@@ -294,7 +275,9 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className={`${styles.propertyFeature_width_50_to_75}  mb-2`}>
+                <div
+                  className={`${styles.propertyFeature_width_50_to_75}  mb-2`}
+                >
                   <label
                     htmlFor="facing"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -412,7 +395,9 @@ const propertyFeatures = () => {
                       id="Elevators/Lifts"
                       name="Elevators/Lifts"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Elevators/Lifts")}
+                      checked={formik.values.Amenities.includes(
+                        "Elevators/Lifts"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
@@ -429,7 +414,9 @@ const propertyFeatures = () => {
                       id="Guest Parking Spaces"
                       name="Guest Parking Spaces"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Guest Parking Spaces")}
+                      checked={formik.values.Amenities.includes(
+                        "Guest Parking Spaces"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}

@@ -1,7 +1,8 @@
 .sidebar {
   background-color: #1d72db;
   height: 50rem;
-  width: 25rem;
+  max-width: 25rem;
+  min-width: 15rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
@@ -32,7 +33,7 @@
 }
 
 .upload_image {
-  height: 12rem;
+  height: 14rem;
   border: 1px solid #bcc7ce;
   background-color: #fff;
   border-radius: 7px;
@@ -99,5 +100,16 @@
 /* .back_button_image{
   margin-top:20% !important;
 } */
+
+.error_message{
+font-size:15px;
+}
+
+.upload_button{
+  border:none;
+  color:#1D72DB;
+  background: none;
+  font-size: 13px;
+}
 
 
