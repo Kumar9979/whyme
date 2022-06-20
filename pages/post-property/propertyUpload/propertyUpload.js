@@ -119,10 +119,11 @@ const PropertyUpload = () => {
                     <div className="d-flex flex-column align-items-center justify-content-center ">
                       <input
                         type={"file"}
-                        // style={{ visibility: "hidden" }}
+                        style={{ visibility: "hidden" }}
                         id="upload"
                         name="image"
                         accept="image/*;capture=camera"
+                        multiple
                        
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
@@ -139,8 +140,8 @@ const PropertyUpload = () => {
                         <span className={`${styles.or_text}`}>-</span>OR
                         <span>-</span>
                       </p>
-                      
-                      <p className={`${styles.upload_text_3}`}>Browse Photos</p>
+                      <label htmlFor="upload" className={`${styles.upload_text_3}`}>Browse Photos</label>
+                      {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
                     </div>
                     {formik.errors.image && formik.touched.image && (
                       <div className="d-flex align-items-center text-danger mt-1">
