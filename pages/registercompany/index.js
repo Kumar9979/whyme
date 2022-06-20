@@ -37,7 +37,7 @@ const RegisterCompany = () => {
       console.log(values);
       resetForm();
       handleSellRentShow();
-      onHide();
+      formReset()
       router.replace("/sellrent");
     },
   });

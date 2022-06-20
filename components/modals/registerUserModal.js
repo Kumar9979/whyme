@@ -6,8 +6,10 @@ import { useFormik } from "formik";
 import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
+import { useRouter } from "next/router";
 
 const RegisterUserModal = ({ show, onHide }) => {
+  const router = useRouter();
   const [file, setFile] = useState();
   const [size, setSize] = useState(35);
   const [uploaded, setUploaded] = useState(false);
@@ -28,6 +30,7 @@ const RegisterUserModal = ({ show, onHide }) => {
       resetForm();
       formReset();
       onHide();
+      router.replace("/auth/navbar");
     },
   });
 
@@ -40,7 +43,7 @@ const RegisterUserModal = ({ show, onHide }) => {
   }
 
 
-  
+
 
   function formReset() {
     formik.handleReset();
@@ -94,9 +97,9 @@ const RegisterUserModal = ({ show, onHide }) => {
           >
             Profile Picture
           </label>
-          <div className="mb-3">
+          <div className="">
             <label
-              htmlhtmlFor="profile"
+              htmlFor="profile"
               className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
               <Image

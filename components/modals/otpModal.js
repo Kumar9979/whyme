@@ -92,7 +92,7 @@ const OtpModals = ({
               <h5 className={` ${styles.heading} `}>OTP Verification</h5>
             </div>
             <div className="d-flex justify-content-center me-2 ms-2">
-              <p className={`${styles.login_text}`}>
+              <div className={`${styles.login_text}`}>
                 Enter 4 digit one time password sent to your mobile
                 <div className="d-flex justify-content-center">
                   {" "}
@@ -113,7 +113,7 @@ const OtpModals = ({
                     <i className="ri-pencil-line"></i> change
                   </span>
                 </div>
-              </p>
+              </div>
             </div>
             <div className={`d-flex justify-content-around ms-3 me-5`}>
               <OtpInput
@@ -129,28 +129,28 @@ const OtpModals = ({
                 inputStyle={
                   error
                     ? {
-                        width: "60px",
-                        height: "50px",
+                      width: "60px",
+                      height: "50px",
 
-                        marginLeft: "18px",
-                        borderBottom: "1px solid red",
-                        borderRight: "none",
-                        borderLeft: "none",
-                        borderTop: "none",
-                        color: "black",
-                        fontSize: "23px",
-                      }
+                      marginLeft: "18px",
+                      borderBottom: "1px solid red",
+                      borderRight: "none",
+                      borderLeft: "none",
+                      borderTop: "none",
+                      color: "black",
+                      fontSize: "23px",
+                    }
                     : {
-                        width: "60px",
-                        height: "50px",
-                        marginLeft: "18px",
-                        borderBottom: "1px solid #00000029",
-                        borderRight: "none",
-                        borderLeft: "none",
-                        borderTop: "none",
-                        color: "black",
-                        fontSize: "23px",
-                      }
+                      width: "60px",
+                      height: "50px",
+                      marginLeft: "18px",
+                      borderBottom: "1px solid #00000029",
+                      borderRight: "none",
+                      borderLeft: "none",
+                      borderTop: "none",
+                      color: "black",
+                      fontSize: "23px",
+                    }
                 }
               />
             </div>

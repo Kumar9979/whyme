@@ -7,6 +7,7 @@ import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
 
 import Select from "react-select";
+import Steeper from "../property-details/Steeper";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
@@ -53,16 +54,24 @@ const propertyFeatures = () => {
     }),
   };
 
-  
   const facing = [
     { value: "North", label: "North" },
     { value: "South", label: "South" },
     { value: "East", label: "East" },
     { value: "West", label: "West" },
   ];
+  const status = [
+    { value: "Ready To Move", label: "Ready To Move" },
+    { value: "Not Ready To Move", label: "Not Ready To Move" },
+  ];
+
   const furnishingStatus = [
     { value: "Furnished", label: "Furnished" },
     { value: "Unfurnished", label: "Unfurnished" },
+  ];
+  const transaction = [
+    { value: "Resale", label: "Resale" },
+    { value: "Fresh", label: "Fresh" },
   ];
   const formik = useFormik({
     // enableReinitialize: true,
@@ -74,6 +83,8 @@ const propertyFeatures = () => {
       BathRoom: "",
       facing: "",
       FurnishedStatus: "",
+      Status: "",
+      Transaction: "",
       Amenities: [],
     },
 
@@ -95,6 +106,8 @@ const propertyFeatures = () => {
         .required("Required"),
       facing: Yup.string().required("Required"),
       FurnishedStatus: Yup.string().required("Required"),
+      Status: Yup.string().required("Required"),
+      Transaction: Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -120,37 +133,17 @@ const propertyFeatures = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className={`row`}>
-        <div className={`col-lg-5 col-md-12`}>
-          {/* <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5`}>
-                <Stepper
-                  style={{ width: "0%" }}
-                  activeStep={value}
-                  orientation="vertical"
-                >
-                  <Step>
-                    <StepLabel className="">Property Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Property Features</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Photos & Description</StepLabel>
-                  </Step>
-                </Stepper>
-              </div>
-            </div> */}
+        <div className="col-lg-4 col-md-12">
+          <div className={`${styles.sidebar}`}>
+            <div className={`${styles.progressbar} p-5 `}>
+              <Steeper active={1} />
+            </div>
+          </div>
         </div>
 
-        <div className="col-lg-6 col-m-12 ">
+        <div className="col-lg-6 col-md-12 p-3 ">
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -294,7 +287,9 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className={`${styles.propertyFeature_width_50_to_75}  mb-2`}>
+                <div
+                  className={`${styles.propertyFeature_width_50_to_75}  mb-2`}
+                >
                   <label
                     htmlFor="facing"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -303,11 +298,7 @@ const propertyFeatures = () => {
                   </label>
                   <div
                     onClick={() => setoptionType("facing")}
-                    // className={
-                    //   optionType === "facing"
-                    //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
-                    //     : ` d-flex flex-columnn `
-                    // }
+
                   >
                     <Select
                       id="facing"
@@ -342,22 +333,15 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`${styles.propertyFeature_width_50_to_75} mt-3`}>
-                <div className=" mb-2">
+              <div className={`${styles.amenities_list_flex_res}  mt-3`}>
+                <div className="me-5 w-100 mb-2">
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                   >
                     Furnishing Status{" "}
                   </label>
-                  <div
-                    onClick={() => setoptionType("furnishingStatus")}
-                    // className={
-                    //   optionType === "furnishingStatus"
-                    //     ? `${styles.bg_color_1D72DB}  d-flex flex-column  `
-                    //     : ` d-flex flex-columnn `
-                    // }
-                  >
+                  <div onClick={() => setoptionType("furnishingStatus")}>
                     <Select
                       id="FurnishedStatus"
                       options={furnishingStatus}
@@ -390,6 +374,86 @@ const propertyFeatures = () => {
                       </div>
                     )}
                 </div>
+                <div className="me-5 w-100 mb-2">
+                  <label
+                    htmlFor="Status"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Status{" "}
+                  </label>
+                  <div onClick={() => setoptionType("status")}>
+                    <Select
+                      id="Status"
+                      options={status}
+                      type="text"
+                      placeholder="Select.."
+                      styles={customStyles}
+                      name="Status"
+                      value={status.filter((option) => {
+                        return option.value === formik.values.Status;
+                      })}
+                      onChange={(selectedOption) => {
+                        let event = {
+                          target: {
+                            name: "Status",
+                            value: selectedOption.value,
+                          },
+                        };
+                        formik.handleChange(event);
+                      }}
+                      components={{
+                        IndicatorSeparator: () => null,
+                      }}
+                    />
+                  </div>
+                  {formik.errors.Status &&
+                    formik.touched.Status && (
+                      <div className="d-flex align-items-center text-danger">
+                        <i className="ri-error-warning-line me-1 mt-1 "></i>
+                        <span> {formik.errors.Status}</span>
+                      </div>
+                    )}
+                </div>
+                <div className=" mb-2 w-100">
+                  <label
+                    htmlFor="Transaction"
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                  >
+                    Transaction{" "}
+                  </label>
+                  <div onClick={() => setoptionType("transaction")}>
+                    <Select
+                      id="Transaction"
+                      options={transaction}
+                      type="text"
+                      placeholder="Select.."
+                      styles={customStyles}
+                      name="Transaction"
+                      value={transaction.filter((option) => {
+                        return option.value === formik.values.Transaction;
+                      })}
+                      onChange={(selectedOption) => {
+                        let event = {
+                          target: {
+                            name: "Transaction",
+                            value: selectedOption.value,
+                          },
+                        };
+                        formik.handleChange(event);
+                      }}
+                      components={{
+                        IndicatorSeparator: () => null,
+                      }}
+                    />
+                  </div>
+                  {formik.errors.Transaction &&
+                    formik.touched.Transaction && (
+                      <div className="d-flex align-items-center text-danger">
+                        <i className="ri-error-warning-line me-1 mt-1 "></i>
+                        <span> {formik.errors.Transaction}</span>
+                      </div>
+                    )}
+                </div>
               </div>
 
               {/* CHECKBOX ITEMS */}
@@ -412,7 +476,9 @@ const propertyFeatures = () => {
                       id="Elevators/Lifts"
                       name="Elevators/Lifts"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Elevators/Lifts")}
+                      checked={formik.values.Amenities.includes(
+                        "Elevators/Lifts"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
@@ -429,7 +495,9 @@ const propertyFeatures = () => {
                       id="Guest Parking Spaces"
                       name="Guest Parking Spaces"
                       onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes("Guest Parking Spaces")}
+                      checked={formik.values.Amenities.includes(
+                        "Guest Parking Spaces"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}

@@ -39,28 +39,28 @@ const Navbar = () => {
               >
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item ms-5">
-                    <Link  href="#">
-                     <a className={`${Styles.headermenu}`}> Buy</a>
+                    <Link href="#">
+                      <a className={`${Styles.headermenu}`}> Buy</a>
                     </Link>
                   </li>
                   <li className="nav-item ms-5">
-                    <Link  href="#">
+                    <Link href="#">
                       <a className={`${Styles.headermenu}`}>Rent</a>
                     </Link>
                   </li>
                   <li className="nav-item ms-5">
                     <Link href="#">
-                    <a className={`${Styles.headermenu}`}>Sell</a>  
-                    </Link>
-                  </li>
-                  <li className="nav-item ms-5">
-                    <Link  href="#">
-                     <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a> 
+                      <a className={`${Styles.headermenu}`}>Sell</a>
                     </Link>
                   </li>
                   <li className="nav-item ms-5">
                     <Link href="#">
-                    <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
+                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a>
+                    </Link>
+                  </li>
+                  <li className="nav-item ms-5">
+                    <Link href="#">
+                      <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
                     </Link>
                   </li>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                     type="button"
                     className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
                     onClick={() => {
-                      router.replace("/auth/property");
+                      router.push("/registercompany/userType");
                     }}
                   >
                     Post Property

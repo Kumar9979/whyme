@@ -5,9 +5,9 @@
   font-family: "Roboto";
 }
 
-.priceDetails_boxShadow{
- box-shadow:  0px 0px 20px #323D5A1F;
- border-radius: 20px;
+.priceDetails_boxShadow {
+  box-shadow: 0px 0px 20px #323d5a1f;
+  border-radius: 20px;
 }
 
 .input_bar {
@@ -90,4 +90,21 @@
 
 .propetyfeature_input:focus-visible {
   outline: none;
+}
+.sidebar {
+  background-color: #1d72db;
+  height: 40rem;
+  max-width: 20rem;
+  min-width: 10rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.PriceDetails_margin_top_res {
+  margin-top: 11rem;
+}
+
+@media only screen and (max-width: 945px) {
+  .PriceDetails_margin_top_res {
+    margin-top: 2rem;
+  }
 }

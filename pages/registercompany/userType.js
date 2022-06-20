@@ -15,8 +15,8 @@ const UserType = () => {
 
   function navigation(type) {
     if (type === "Builder") {
-      router.replace("/registercompany");
-    } else if (type === "agent/owner") router.replace("/sellrent");
+      router.push("/registercompany");
+    } else if (type === "agent/owner") router.push("/sellrent");
   }
 
   return (

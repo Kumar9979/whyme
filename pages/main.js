@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OtpModals from "../components/modals/otpModal";
 import Modals from "../components/modals/loginModal";
-import Navbar from "../pages/auth/navbar";
+import Navbar from "./auth/navbar";
 
 
-const ModalButton = () => {
+const Main = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -18,18 +18,18 @@ const ModalButton = () => {
 
   return (
     <>
-    <div>
-    <Navbar/>
+      <div>
 
-    </div>
+
+      </div>
       <Button variant="primary" onClick={handleShow}>
-       modals
+        Launch
       </Button>
-      <Modals show={show} onShow={handleShow}   onHide={handleClose}/>
+      <Modals show={show} onShow={handleShow} onHide={handleClose} />
       {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
 
     </>
   );
 };
 
-export default ModalButton;
+export default Main;

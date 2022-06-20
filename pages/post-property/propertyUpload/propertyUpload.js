@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
+import Navbar from "../../auth/navbar";
 
 const PropertyUpload = () => {
   const [value, setValue1] = useState("4");
@@ -52,6 +53,7 @@ const PropertyUpload = () => {
 
   return (
     <div>
+      <Navbar />
       <div className="container mt-5">
         <div className="row">
           <div className="col-4">
@@ -82,7 +84,7 @@ const PropertyUpload = () => {
             </div>
           </div>
           <div className="col-lg-6 col-md-10 col-sm-10">
-            <div className="mt-5 ms-5">
+            <div className="mt-5 ms-2">
               <h5 className={`${styles.propertyHeading}`}>
                 Photos & Descrption
               </h5>
@@ -124,10 +126,10 @@ const PropertyUpload = () => {
                         name="image"
                         accept="image/*;capture=camera"
                         multiple
-                       
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
                         }}
+                        hidden
                       />
                       <p className={`${styles.upload_text_1}`}>
                         Drag & drop the image of an property
@@ -140,13 +142,37 @@ const PropertyUpload = () => {
                         <span className={`${styles.or_text}`}>-</span>OR
                         <span>-</span>
                       </p>
-                      <label htmlFor="upload" className={`${styles.upload_text_3}`}>Browse Photos</label>
+                      <button
+                        className={`${styles.upload_button}`}
+                        type="submit"
+                        variant="contained"
+                        component="label"
+                      >
+                        <label>
+                          <input
+                            type="file"
+                            //  style={{ visibility: "hidden" }}
+                            name="image"
+                            accept="image/*;capture=camera"
+                            multiple
+                            onChange={(e) => {
+                              formik.setFieldValue("image", e.target.files[0]);
+                            }}
+                            hidden
+                          />
+                          Browse Photos
+                        </label>
+                      </button>
                       {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
                     </div>
                     {formik.errors.image && formik.touched.image && (
-                      <div className="d-flex align-items-center text-danger mt-1">
-                        <i className="ri-error-warning-line me-1 0 "></i>
-                        <span>{formik.errors.image}</span>
+                      <div className="d-flex align-items-center text-danger mt-5">
+                        <i
+                          className={` ${styles.error_message} ri-error-warning-line me-1 `}
+                        ></i>
+                        <span className={`${styles.error_message}`}>
+                          {formik.errors.image}
+                        </span>
                       </div>
                     )}
 

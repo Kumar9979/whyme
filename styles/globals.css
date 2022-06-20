@@ -37,7 +37,7 @@ border: 2px solid #1d72db  !important;
 padding-top: .3rem;
 }
 
-/* .MuiStepper-vertical {
+.MuiStepper-vertical {
   flex-direction: column;
   background-color: #1D72DB !important;
-} */
+}

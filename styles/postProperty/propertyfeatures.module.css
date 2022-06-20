@@ -1,3 +1,12 @@
+.sidebar {
+  background-color: #1d72db;
+  height: 40rem;
+  max-width: 20rem;
+  min-width: 10rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
 .fontFam_poppins {
   font-family: "Poppins";
 }
@@ -10,8 +19,6 @@
 .cursor_pointer {
   cursor: pointer;
 }
-
-
 
 .font_24 {
   font-size: 24px;
@@ -53,7 +60,6 @@
   border-radius: 4px;
 }
 
-
 .amenities_list_flex_res {
   display: flex;
 }
@@ -70,20 +76,12 @@
   font-size: 12px;
 }
 
-
 .icon_arrowLeftbtn {
   color: #1d72db;
   outline: 1px solid #1d72db;
   font-size: 12px;
 }
 
-.sidebar {
-  background-color: #1d72db;
-  height: 50rem;
-  width: 25rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-}
 .propertyFeature_width_50_to_75 {
   width: 50%;
 }
