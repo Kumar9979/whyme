@@ -1,0 +1,59 @@
+.sidebar {
+  background-color: #1d72db;
+  height: 50rem;
+  width: 25rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.propertyHeading {
+  color: #1d72db;
+  font-family: Poppins, medium;
+}
+.selectHeading {
+  font-family: Poppins, medium;
+}
+.location {
+  border: none;
+}
+.address {
+  height: 6rem;
+  border: none;
+  background-color: #f4f8fb;
+  font-family: Poppins, Regular;
+  font-size: 10px;
+}
+.locationform {
+  border: none;
+  background-color: #f4f8fb;
+  font-family: Poppins, Regular;
+  font-size: 10px;
+}
+.building {
+  border: none;
+  background-color: #f4f8fb;
+  font-family: Poppins, Regular;
+  font-size: 10px;
+}
+.labelText {
+  font-family: Poppins, Regular;
+}
+.back {
+  background: none;
+}
+.MuiSvgIcon-root {
+  color: #ffffff00 !important;
+  border: 1px solid #ffffff !important;
+}
+.modal_icon_arrowRight {
+  font-size: xx-large;
+}
+
+.modal_icon_arrowRightbtn {
+  font-size: 12px;
+}
+
+.icon_arrowLeftbtn {
+  color: #1d72db;
+  outline: 1px solid #1d72db;
+  font-size: 12px;
+}
