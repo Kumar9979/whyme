@@ -2,7 +2,6 @@ import React from "react";
 import { Stepper, Step, StepLabel } from "@material-ui/core";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
 
-
 const Steeper = ({ active }) => {
   return (
     <div className={`${styles.Steeper}`}>

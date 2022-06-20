@@ -2,14 +2,15 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
-import Steeper from "../property-details/Steeper";
-const PriceDetails = () => {
+
+const PriceDetailsRent = () => {
   const numRegex = /^[0-9]+$/;
   const formik = useFormik({
     initialValues: {
       SuperArea: "",
       CarpetArea: "",
       DepositPrice: "",
+      RentPrice: "",
       // RentPrice: "",
       MaintenanceFees: "",
     },
@@ -24,9 +25,9 @@ const PriceDetails = () => {
       DepositPrice: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      // RentPrice: Yup.string()
-      //   .matches(numRegex, "invalid value")
-      //   .required("Required"),
+      RentPrice: Yup.string()
+        .matches(numRegex, "invalid value")
+        .required("Required"),
       MaintenanceFees: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
@@ -37,16 +38,17 @@ const PriceDetails = () => {
   });
 
   return (
-    <div
-      className={`${styles.priceDetails_boxShadow} d-flex justify-content-center align-items-center p-4`}
-    >
-      <div className="col-4">
-        <div className={`${styles.sidebar}`}>
-          <div className={`${styles.progressbar} p-5 `}>
-            <Steeper active={3} />
-          </div>
-        </div>
+
+
+    <div className={`container`}>
+      <div className={`row`}> 
+      <div className={`col-l-5`}>
+
       </div>
+    <div
+      className={`${styles.priceDetails_boxShadow} d-flex justify-content-center align-items-center col-lg-6 p-4`}
+    >
+      {/* <div>stepper</div> */}
 
       <div className="">
         <div className={`mb-4`}>
@@ -131,12 +133,14 @@ const PriceDetails = () => {
               </div>
             </div>
 
-            <div className={`mb-4`}>
+            <div className={`row`}>
+
+            <div className={`col-lg-6 col-md-12 mb-4`}>
               <label
                 htmlFor="DepositPrice"
                 className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
               >
-                Expected Price
+                Deposit Price
               </label>
               <div className={`${styles.propetyfeature_input} d-flex`}>
                 <div
@@ -166,6 +170,46 @@ const PriceDetails = () => {
                 </div>
               )}
             </div>
+
+
+            <div className={`mb-4 col-lg-6 col-md-12 `}>
+              <label
+                htmlFor="DepositPrice"
+                className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+              >
+               Rent Price
+              </label>
+              <div className={`${styles.propetyfeature_input} d-flex`}>
+                <div
+                  className={`d-flex justify-content-center align-items-center`}
+                >
+                  <span
+                    className={`${styles.fontFam_roboto} ${styles.font_regular} ${styles.font_24}  align-middle ms-2`}
+                  >
+                    ₹
+                  </span>
+                  <span className={`${styles.input_bar} mx-2`}></span>
+                </div>
+                <input
+                  type="text"
+                  className={`form-label ps-2 pe-2  pt-2   w-100 ${styles.propetyfeature_input} `}
+                  id="RentPrice"
+                  placeholder="Enter property price"
+                  name="RentPrice"
+                  value={formik.values.RentPrice}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              {formik.errors.RentPrice && formik.touched.RentPrice && (
+                <div className="d-flex align-items-center text-danger">
+                  <i className="ri-error-warning-line me-1  "></i>
+                  <span>{formik.errors.RentPrice}</span>
+                </div>
+              )}
+            </div>
+            </div>
+
+
 
             <div className={"mb-4"}>
               <label
@@ -243,7 +287,10 @@ const PriceDetails = () => {
         </form>
       </div>
     </div>
+    </div>
+
+    </div>
   );
 };
 
-export default PriceDetails;
+export default PriceDetailsRent;

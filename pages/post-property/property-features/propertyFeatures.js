@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
-import { useRouter } from "next/router";
+import arrowRightIcon from "../../../assets/icons/arrow-right-line.png";
+import { Stepper, StepLabel, Step } from "@material-ui/core";
+import Image from "next/image";
 
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
 const propertyFeatures = () => {
-  const router = useRouter();
-  const [value, setValue1] = useState("2");
+  const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
+
+  const numRegex = /^[0-9]+$/;
   const customStyles = {
     control: (base, state) => ({
       ...base,
       background: "#F4F8FB",
       // match with the menu
       borderRadius: "7px",
+      width: "100%",
       // Overwrittes the different states of border
       borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
       // Removes weird border around container
@@ -49,6 +53,22 @@ const propertyFeatures = () => {
       },
     }),
   };
+
+  const amenitiesList = [
+    "Elevators/Lifts",
+    "Guest Parking Spaces",
+    "Gym",
+    "CCTV Surveillance",
+    "Swimming Pool",
+    "Play Grounds",
+    "Kids Play Area",
+    "Community Clubhouse",
+    "Garden",
+    "Pet Washing Stations",
+    "Rooftop Lounge Areas",
+    "Electronic Vehicle Charging Points",
+    "Barbecue Areas",
+  ];
   const facing = [
     { value: "North", label: "North" },
     { value: "South", label: "South" },
@@ -60,6 +80,7 @@ const propertyFeatures = () => {
     { value: "Unfurnished", label: "Unfurnished" },
   ];
   const formik = useFormik({
+    // enableReinitialize: true,
     initialValues: {
       TotalFloors: "",
       FloorNumber: "",
@@ -68,19 +89,28 @@ const propertyFeatures = () => {
       BathRoom: "",
       facing: "",
       FurnishedStatus: "",
-      // Amenitities: "",
+      Amenities: [],
     },
 
     validationSchema: Yup.object({
-      TotalFloors: Yup.string().required("Required"),
-      FloorNumber: Yup.string().required("Required"),
-      CarParkingCount: Yup.string().required("Required"),
-      BedRoom: Yup.string().required("Required"),
-      BathRoom: Yup.string().required("Required"),
+      TotalFloors: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      FloorNumber: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      CarParkingCount: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      BedRoom: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      BathRoom: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
       facing: Yup.string().required("Required"),
       FurnishedStatus: Yup.string().required("Required"),
-
-      // Amenitities: Yup.string().required("Required"),
+      Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -89,18 +119,34 @@ const propertyFeatures = () => {
     },
   });
 
+  const handleCheckbox = (e) => {
+    const { checked, name } = e.target;
+
+    if (e.target.checked) {
+      formik.setFieldValue("Amenities", [
+        ...formik.values.Amenities,
+        e.target.name,
+      ]);
+    } else {
+      formik.setFieldValue(
+        "Amenities",
+        formik.values.Amenities.filter((v) => v !== e.target.name)
+      );
+    }
+  };
+
   return (
     <div className="container mt-5">
       <div className={`row`}>
-        <div className="col-4">
-          <div className={`${styles.sidebar}`}>
-            <div className={`${styles.progressbar} p-5 `}>
-              <Steeper active={2} />
+      <div className="col-4">
+            <div className={`${styles.sidebar}`}>
+              <div className={`${styles.progressbar} p-5 `}>
+                <Steeper active={1} />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="col-lg-6 col-md-10 col-sm-10 ">
+        <div className="col-lg-6 col-m-12 ">
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -109,9 +155,9 @@ const propertyFeatures = () => {
             </h5>
           </div>
           <form onSubmit={formik.handleSubmit}>
-            <div className={`contents`}>
-              <div className={`  d-flex `}>
-                <div className="item-1   ">
+            <div className={`${styles.propertyFeature_padding_l_res}`}>
+              <div className={`${styles.amenities_list_flex_res} `}>
+                <div className="mb-2">
                   <label
                     htmlFor="totalFloors"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -121,7 +167,7 @@ const propertyFeatures = () => {
                   <div>
                     <input
                       type="text"
-                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                       id="totalFloors"
                       placeholder="Ex : 13"
                       name="TotalFloors"
@@ -137,7 +183,7 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className="item-2    ">
+                <div className="  mb-2  ">
                   <label
                     htmlFor="FloorNumber"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -147,7 +193,7 @@ const propertyFeatures = () => {
                   <div>
                     <input
                       type="text"
-                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                       id="FloorNumber"
                       placeholder="Ex : 7"
                       name="FloorNumber"
@@ -163,7 +209,7 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className="item-3   ">
+                <div className=" mb-2 ">
                   <label
                     htmlFor=" CarParkingCount"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -173,7 +219,7 @@ const propertyFeatures = () => {
                   <div>
                     <input
                       type="text"
-                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                       id=" CarParkingCount"
                       placeholder="Ex : 3"
                       name="CarParkingCount"
@@ -191,8 +237,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={` d-flex `}>
-                <div className="item-1 ">
+              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+                <div className="w-50 mb-2 ">
                   <label
                     htmlFor="BedRoom"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -202,7 +248,7 @@ const propertyFeatures = () => {
                   <div>
                     <input
                       type="text"
-                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                      className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                       id="BedRoom"
                       placeholder="Ex : 13"
                       name="BedRoom"
@@ -218,9 +264,9 @@ const propertyFeatures = () => {
                   )}
                 </div>
 
-                <div className="item-2 ">
+                <div className="w-50  mb-2 ">
                   <label
-                    htmlFor="FloorNumber"
+                    htmlFor=" Bathroom"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                   >
                     Bathroom
@@ -228,23 +274,23 @@ const propertyFeatures = () => {
                   <div>
                     <input
                       type="text"
-                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                      id="FloorNumber"
+                      className={`form-label ps-2 pe-2  pt-2 pb-2 ${styles.propertyFeature_width_50_to_75} ${styles.propetyfeature_input}`}
+                      id="BathRoom"
                       placeholder="Ex : 7"
-                      name="FloorNumber"
-                      value={formik.values.FloorNumber}
+                      name="BathRoom"
+                      value={formik.values.BathRoom}
                       onChange={formik.handleChange}
                     />
                   </div>
-                  {formik.errors.FloorNumber && formik.touched.FloorNumber && (
+                  {formik.errors.BathRoom && formik.touched.BathRoom && (
                     <div className="d-flex align-items-center text-danger">
                       <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.FloorNumber}</span>
+                      <span>{formik.errors.BathRoom}</span>
                     </div>
                   )}
                 </div>
 
-                <div className="item-3">
+                <div className={`${styles.propertyFeature_width_50_to_75}  mb-2`}>
                   <label
                     htmlFor="facing"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -292,8 +338,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`content-third-line d-flex`}>
-                <div className="item">
+              <div className={`${styles.propertyFeature_width_50_to_75} mt-3`}>
+                <div className=" mb-2">
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -344,8 +390,8 @@ const propertyFeatures = () => {
 
               {/* CHECKBOX ITEMS */}
 
-              <div className={`content-fourth-line `}>
-                <div className={`content-fourth-name`}>
+              <div className={`content-fourth-line mt-5 `}>
+                <div className={`content-fourth-name mb-2`}>
                   <h5
                     className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                   >
@@ -354,201 +400,244 @@ const propertyFeatures = () => {
                 </div>
                 {/* CHECKBOX ITEMS LIST  */}
 
-                <div className={`d-flex `}>
-                  <div className="form-check me-4">
+                <div className={`${styles.amenities_list_flex_res}`}>
+                  <div className="form-check me-4 mb-3 ">
                     <input
-                      className="form-check-input mt-2"
+                      className="form-check-input mt-2 "
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Elevators/Lifts"
+                      name="Elevators/Lifts"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Elevators/Lifts")}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Elevators/Lifts"
                     >
                       Elevators/Lifts
                     </label>
                   </div>
 
-                  <div className="form-check me-4">
+                  <div className="form-check me-4 mb-3 ">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Guest Parking Spaces"
+                      name="Guest Parking Spaces"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Guest Parking Spaces")}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Guest Parking Spaces"
                     >
                       Guest Parking Spaces
                     </label>
                   </div>
 
-                  <div className="form-check">
+                  <div className="form-check mb-3 ">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Gym"
+                      name="Gym"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Gym")}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Gym"
                     >
                       Gym
                     </label>
                   </div>
                 </div>
 
-                <div className={`d-flex  `}>
-                  <div className="form-check me-4">
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="CCTV Surveillance"
+                      name="CCTV Surveillance"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "CCTV Surveillance"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="CCTV Surveillance"
                     >
                       CCTV Surveillance
                     </label>
                   </div>
 
-                  <div className="form-check me-4">
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Swimming Pool"
+                      name="Swimming Pool"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Swimming Pool"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Swimming Pool"
                     >
                       Swimming Pool
                     </label>
                   </div>
 
-                  <div className="form-check">
+                  <div className="form-check mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Play Grounds"
+                      name="Play Grounds"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Play Grounds")}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Play Grounds"
                     >
                       Play Grounds
                     </label>
                   </div>
                 </div>
 
-                <div className={`d-flex  `}>
-                  <div className="form-check me-4">
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Kids Play Area"
+                      name="Kids Play Area"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Kids Play Area"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Kids Play Area"
                     >
                       Kids Play Area
                     </label>
                   </div>
 
-                  <div className="form-check me-4">
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Community Clubhouse"
+                      name="Community Clubhouse"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Community Clubhouse"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Community Clubhouse"
                     >
                       Community Clubhouse
                     </label>
                   </div>
 
-                  <div className="form-check">
+                  <div className="form-check  mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Garden"
+                      name="Garden"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes("Garden")}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Garden"
                     >
                       Garden
                     </label>
                   </div>
                 </div>
 
-                <div className={`d-flex  `}>
-                  <div className="form-check me-4">
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Pet Washing Stations"
+                      name="Pet Washing Stations"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Pet Washing Stations"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Pet Washing Stations"
                     >
                       Pet Washing Stations
                     </label>
                   </div>
 
-                  <div className="form-check">
+                  <div className="form-check mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Rooftop Lounge Areas"
+                      name="Rooftop Lounge Areas"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Rooftop Lounge Areas"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Rooftop Lounge Areas"
                     >
                       Rooftop Lounge Areas
                     </label>
                   </div>
                 </div>
 
-                <div className={`d-flex  `}>
-                  <div className="form-check me-4">
+                <div className={`${styles.amenities_list_flex_res}  `}>
+                  <div className="form-check me-4 mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      name="Electronic Vehicle Charging Points"
+                      id="Electronic Vehicle Charging Points"
+                      // value={formik.values.Amenitities}
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Electronic Vehicle Charging Points"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
-                      htmlFor="flexCheckChecked"
+                      htmlFor="Electronic Vehicle Charging Points"
                     >
                       Electronic Vehicle Charging Points
                     </label>
                   </div>
 
-                  <div className="form-check">
+                  <div className="form-check mb-3">
                     <input
                       className="form-check-input mt-2"
                       type="checkbox"
-                      value=""
-                      id="flexCheckChecked"
+                      id="Barbecue Areas"
+                      name="Barbecue Areas"
+                      onChange={handleCheckbox}
+                      checked={formik.values.Amenities.includes(
+                        "Barbecue Areas"
+                      )}
                     />
                     <label
                       className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins}`}
@@ -560,7 +649,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`content-btn d-flex justify-content-end`}>
+              <div className={`content-btn d-flex justify-content-end mt-4`}>
                 <div className={`d-flex`}>
                   <button className={`bg-white border-0 `}>
                     <span
@@ -580,9 +669,6 @@ const propertyFeatures = () => {
 
                   <button
                     type="submit"
-                    onClick={() =>
-                      router.push("/post-property/price-details/priceDetails")
-                    }
                     className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
                   >
                     <span
@@ -594,6 +680,9 @@ const propertyFeatures = () => {
                       <i
                         className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
                       ></i>
+                      {/* <Image className={styles.modal_icon_arrowRightbtn} src={
+                        
+arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
                     </div>
                   </button>
                 </div>
