@@ -21,6 +21,7 @@
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
   font-size: 10px;
+  resize: none;
 }
 .locationform {
   border: none;
@@ -56,4 +57,7 @@
   color: #1d72db;
   outline: 1px solid #1d72db;
   font-size: 12px;
+}
+.progressbar{
+  background: none;
 }
