@@ -5,13 +5,14 @@ import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 import arrowRightIcon from "../../../assets/icons/arrow-right-line.png";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
-
+  const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const customStyles = {
     control: (base, state) => ({
@@ -114,7 +115,7 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-
+      router.replace("/post-property/price-details/priceDetailsRent");
       resetForm();
     },
   });
@@ -140,7 +141,7 @@ const propertyFeatures = () => {
       <div className={`row`}>
         <div className="col-4">
           <div className={`${styles.sidebar}`}>
-            <div className={`${styles.progressbar} p-5 `}>
+            <div className={`${styles.progressbar} p-5 d-none d-sm-block `}>
               <Steeper active={1} />
             </div>
           </div>

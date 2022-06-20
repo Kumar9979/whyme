@@ -32,11 +32,10 @@ export default Steeper;
 
 function QontoStepIcon(props) {
   const { active, completed, className } = props;
-
   return (
     <div ownerState={{ active }} className={className}>
       {completed ? (
-         <Image src={CheckImages} alt="Picture of the author" />
+        <Image src={CheckImages} alt="Picture of the author" />
       ) : (
         <Image src={CheckGreyImages} alt="Picture of the author" />
       )}

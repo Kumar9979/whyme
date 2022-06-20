@@ -23,6 +23,11 @@ const PropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
+    
+        router.replace(
+          "/post-property/property-features/propertyFeatures"
+        )
+      
     },
   });
   return (
@@ -30,7 +35,7 @@ const PropertyDetails = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col-4">
-            <div className={`${styles.sidebar}`}>
+            <div className={`${styles.sidebar} d-none d-sm-block `}>
               <div className={`${styles.progressbar} p-5 `}>
                 <Steeper active={0} />
               </div>
@@ -138,12 +143,8 @@ const PropertyDetails = () => {
                     </button>
 
                     <button
-                      type="button"
-                      onClick={() =>
-                        router.push(
-                          "/post-property/property-features/propertyFeatures"
-                        )
-                      }
+                      type="submit"
+                   
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
