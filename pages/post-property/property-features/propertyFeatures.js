@@ -53,21 +53,7 @@ const propertyFeatures = () => {
     }),
   };
 
-  const amenitiesList = [
-    "Elevators/Lifts",
-    "Guest Parking Spaces",
-    "Gym",
-    "CCTV Surveillance",
-    "Swimming Pool",
-    "Play Grounds",
-    "Kids Play Area",
-    "Community Clubhouse",
-    "Garden",
-    "Pet Washing Stations",
-    "Rooftop Lounge Areas",
-    "Electronic Vehicle Charging Points",
-    "Barbecue Areas",
-  ];
+  
   const facing = [
     { value: "North", label: "North" },
     { value: "South", label: "South" },
@@ -120,7 +106,6 @@ const propertyFeatures = () => {
 
   const handleCheckbox = (e) => {
     const { checked, name } = e.target;
-
     if (e.target.checked) {
       formik.setFieldValue("Amenities", [
         ...formik.values.Amenities,
@@ -129,7 +114,7 @@ const propertyFeatures = () => {
     } else {
       formik.setFieldValue(
         "Amenities",
-        formik.values.Amenities.filter((v) => v !== e.target.name)
+        formik.values.Amenities.filter((item) => item !== e.target.name)
       );
     }
   };
