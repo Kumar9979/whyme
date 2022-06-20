@@ -232,7 +232,7 @@ const Auth = () => {
                   <div className="row ">
                     <div className="col-lg-3 ">
                       <label
-                        for="inputEmail4"
+                        htmlFor="inputEmail4"
                         className={`form-label   ${Styles.input}`}
                       >
                         Total floors
@@ -257,7 +257,7 @@ const Auth = () => {
                     </div>
                     <div className="col-lg-3 ">
                       <label
-                        for="inputPassword4"
+                        htmlFor="inputPassword4"
                         className={`form-label   ${Styles.input}`}
                       >
                         Floor number
@@ -282,7 +282,7 @@ const Auth = () => {
                     </div>
                     <div className="col-lg-3 ">
                       <label
-                        for="inputPassword4"
+                        htmlFor="inputPassword4"
                         className={`form-label ${Styles.input}`}
                       >
                         Car Parking Count
@@ -313,7 +313,7 @@ const Auth = () => {
                   <div className="row">
                     <div className="col-lg-3 ">
                       <label
-                        for="inputEmail4"
+                        htmlFor="inputEmail4"
                         className={`form-label  ${Styles.input}`}
                       >
                         Bedroom
@@ -338,7 +338,7 @@ const Auth = () => {
                     </div>
                     <div className="col-lg-3">
                       <label
-                        for="inputPassword4"
+                        htmlFor="inputPassword4"
                         className={`form-label  ${Styles.input}`}
                       >
                         Bathroom
@@ -363,7 +363,7 @@ const Auth = () => {
                     </div>
                     <div className="col-lg-5 ">
                       <label
-                        for="inputPassword4"
+                        htmlFor="inputPassword4"
                         className={`form-label  ${Styles.input}`}
                       >
                         Facing{" "}
@@ -376,15 +376,6 @@ const Auth = () => {
                             : ` d-flex flex-columnn `
                         }
                       >
-                        {/* <span
-              className={
-                optionType === "facing"
-                  ? `${Styles.fontFam_poppins} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase text-white mt-3`
-                  : `${Styles.fontFam_poppins} ${Styles.color_323D5A} ${Styles.font_18} ${Styles.font_medium} $ text-uppercase  mt-3`
-              }
-            >
-             Facing
-            </span> */}
                         <Select
                           options={facing}
                           type="text"
@@ -423,7 +414,7 @@ const Auth = () => {
                   <div className="row">
                     <div className="col-lg-5 ">
                       <label
-                        for="inputPassword4"
+                        htmlFor="inputPassword4"
                         className={`form-label me-5 ${Styles.input}`}
                       >
                         Furnishing status{" "}
@@ -494,7 +485,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label  ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Elevators/Lifts
                               </label>
@@ -510,7 +501,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckDefault"
+                                htmlFor="flexCheckDefault"
                               >
                                 Guest Parking Spaces
                               </label>
@@ -526,7 +517,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Gym
                               </label>
@@ -547,7 +538,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 CCTV Surveillance
                               </label>
@@ -563,7 +554,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckDefault"
+                                htmlFor="flexCheckDefault"
                               >
                                 Guest Parking Spaces
                               </label>
@@ -579,7 +570,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Gym
                               </label>
@@ -599,7 +590,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Kids Play Area
                               </label>
@@ -615,7 +606,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckDefault"
+                                htmlFor="flexCheckDefault"
                               >
                                 Swimming Pool
                               </label>
@@ -631,7 +622,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Play Ground
                               </label>
@@ -651,7 +642,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Pet Washing Stations
                               </label>
@@ -667,7 +658,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckDefault"
+                                htmlFor="flexCheckDefault"
                               >
                                 Rooftop Lounge Areas
                               </label>
@@ -687,7 +678,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckChecked"
+                                htmlFor="flexCheckChecked"
                               >
                                 Electronic Vehicle Charging Points
                               </label>
@@ -703,7 +694,7 @@ const Auth = () => {
                               />
                               <label
                                 className={`form-check-label ${Styles.checkcontent}`}
-                                for="flexCheckDefault"
+                                htmlFor="flexCheckDefault"
                               >
                                 Barbecue Areas
                               </label>
@@ -728,7 +719,7 @@ const Auth = () => {
 
                           <label
                             className={`form-check-label mt-1  ${Styles.backbutton}`}
-                            for="inlineFormCheck"
+                            htmlFor="inlineFormCheck"
                             onClick={() => router.replace("/auth/property")}
                           >
                             Back

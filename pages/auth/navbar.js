@@ -1,25 +1,26 @@
-import React from 'react'
-import Styles from '../../styles/authstyles/navbar.module.css'
+import React from "react";
+import Styles from "../../styles/authstyles/navbar.module.css";
 import Image from "next/image";
-import Image3 from '../../assets/icons/3.png';
-import {useRouter} from "next/router"
+import Image3 from "../../assets/icons/3.png";
+import { useRouter } from "next/router";
 const Navbar = () => {
-  const router=useRouter()
+  const router = useRouter();
   return (
     <div>
- <div className={`container-fluid handbook-section ${Styles.container}` }>
-        <div className="header mt-4 container-fluid">
+      <div className={`container-fluid handbook-section ${Styles.container}`}>
+        <div className="header  container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
               <div className={Styles.zameenimage}>
-            <Image src={Image3}   alt="Picture of the author" 
-                             width={400}
-                             height={70}
-                          
-                            />
-                            </div>
+                <Image
+                  src={Image3}
+                  alt="Picture of the author"
+                  width={300}
+                  height={50}
+                />
+              </div>
               <button
-                className={`ms-auto navbar-toggler ${Styles.navbar}`}
+                className={` navbar-toggler `}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -27,53 +28,59 @@ const Navbar = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon">
+                  <i className={`${Styles.navbar_icon_menu} align-middle ri-menu-line `}></i>
+                </span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item ms-5">
-                  <a className={Styles.headermenu}href="#">
-                  Buy
+                    <a className={Styles.headermenu} href="#">
+                      Buy
                     </a>
                   </li>
                   <li className="nav-item ms-5">
                     <a className={Styles.headermenu} href="#">
-                    Rent
+                      Rent
                     </a>
                   </li>
                   <li className="nav-item ms-5">
                     <a className={Styles.headermenu} href="#">
-                    Sell
+                      Sell
                     </a>
                   </li>
                   <li className="nav-item ms-5">
                     <a className={Styles.headermenu} href="#">
-                    <i class="ri-heart-3-fill"></i>
+                      <i className="ri-heart-3-fill"></i>
                     </a>
                   </li>
                   <li className="nav-item ms-5">
                     <a className={Styles.headermenu} href="#">
-                    <i class="ri-user-add-line"></i>
+                      <i className="ri-user-add-line"></i>
                     </a>
                   </li>
-                
+
                   <button
                     type="button"
-                    className={`ms-5 px-5  btn-primary ${Styles.landingheader}`}
-                 onClick={()=>{ router.replace("/auth/property")}}
+                    className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
+                    onClick={() => {
+                      router.replace("/auth/property");
+                    }}
                   >
-                 Post Property
+                    Post Property
                   </button>
                 </ul>
               </div>
             </div>
           </nav>
         </div>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

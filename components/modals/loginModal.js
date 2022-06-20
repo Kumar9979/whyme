@@ -11,8 +11,10 @@ import styles from "../../styles/modals/modal.module.css";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
+  const [timer, setTimer] = useState(false);
+
   const [number, setNumber] = useState(undefined);
-  const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s/0-9]*$/;
+  const phoneRegex =/(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
   // const options = [
   //   { value: "+91", label: "+91" },
   //   { value: "+92", label: "+92" },
@@ -21,11 +23,11 @@ const Modals = ({ show, onShow, onHide }) => {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const [num, setNum] = useState("");
-  const [numPass, setNumPass] = useState(false);
 
   const ShowOtpModal = () => setShowOtp(true);
   const closeOtpModal = () => setShowOtp(false);
+
+  const handleTimer = () => setTimer(!timer);
 
   const formik = useFormik({
     initialValues: {
@@ -41,7 +43,7 @@ const Modals = ({ show, onShow, onHide }) => {
       setNumber(values.phoneNumber);
       setShowOtp(true);
       onHide();
-      resetForm();
+      setTimer(true)
     },
   });
 
@@ -134,6 +136,8 @@ const Modals = ({ show, onShow, onHide }) => {
         number={number}
         show={showOtp}
         onHide={closeOtpModal}
+        timerStatus={timer}
+        handleTimer={handleTimer}
       />
     </div>
   );

@@ -10,7 +10,7 @@ import close from "../../assets/icons/close.png";
 const RegisterUserModal = ({ show, onHide }) => {
   const [file, setFile] = useState();
   const [size, setSize] = useState(35);
-  const [uploaded, setuploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -26,21 +26,28 @@ const RegisterUserModal = ({ show, onHide }) => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
+      formReset();
+      onHide();
     },
   });
 
   function handleChange(e) {
     if (e.target?.files.length !== 0) {
       setSize(100);
-      setuploaded(true);
+      setUploaded(true);
       setFile(URL.createObjectURL(e.target.files[0]));
     }
   }
 
+
+  
+
   function formReset() {
-    setuploaded(false);
+    formik.handleReset();
+    setUploaded(false);
     setSize(35);
     formik.setFieldValue("image", "");
+    console.log(uploaded);
   }
 
   return (
@@ -89,7 +96,7 @@ const RegisterUserModal = ({ show, onHide }) => {
           </label>
           <div className="mb-3">
             <label
-              htmlFor="profile"
+              htmlhtmlFor="profile"
               className={`${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
             >
               <Image
@@ -136,7 +143,7 @@ const RegisterUserModal = ({ show, onHide }) => {
               id="#name"
               type="text"
               placeholder="Enter your name"
-              className={`${styles.modal_input_registeruser} w-100`}
+              className={` ${styles.register_form_inputField} w-100`}
               value={formik.values.name}
               name="name"
               onChange={formik.handleChange}
@@ -159,7 +166,7 @@ const RegisterUserModal = ({ show, onHide }) => {
             <input
               type="text"
               placeholder="Enter your email address"
-              className={`${styles.modal_input_registeruser} w-100`}
+              className={` ${styles.register_form_inputField} w-100`}
               name="email"
               value={formik.values.email}
               onChange={formik.handleChange}

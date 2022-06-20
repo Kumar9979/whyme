@@ -92,7 +92,7 @@ const Property3 = () => {
 
                 <form>
                   <div className={`${Styles.formgroup} mt-3 mb-3`}>
-                    <label for="exampleInputEmail1">Description</label>
+                    <label htmlFor="exampleInputEmail1">Description</label>
                     <div class="card">
   <div className={Styles.descriptionbox2}>
   <p className={`mt-2 ms-2 ${Styles.browsephotos1}`}>Describe your Property</p>
@@ -113,7 +113,7 @@ const Property3 = () => {
                             height={15}
                           />
                     </div>
-                    <label class="form-check-label" for="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
+                    <label class="form-check-label" htmlFor="inlineFormCheck" onClick={()=>  router.replace("/auth/property2")}>
                       Back
                     </label>
                   </div>
@@ -188,7 +188,7 @@ const Property3 = () => {
                         <div className="ps-5 mt-3">
                           <label
                             className = "Styles.formchecklabel"
-                            for="exampleCheck1"
+                            htmlFor="exampleCheck1"
                           >
                             Back
                           </label>
