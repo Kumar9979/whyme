@@ -52,7 +52,7 @@ const PriceDetailsRent = () => {
           </div>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
+          className={`${styles.input_container} d-flex justify-content-center align-items-center col-lg-6 py-5`}
         >
           {/* <div>stepper</div> */}
 

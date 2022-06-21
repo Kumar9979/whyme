@@ -8,8 +8,11 @@ import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
 import Navbar from "../../navbar/navbar";
 import { useRouter } from "next/router";
+import StepperNew from "../../stepper/stepper";
 
 const PropertyUpload = () => {
+
+  const [currentPage, setCurrentPage] = useState("photoDesc");
   const router = useRouter();
   const [value, setValue1] = useState("4");
   const [file, setFile] = useState(upload);
@@ -58,8 +61,8 @@ const PropertyUpload = () => {
       <Navbar />
       <div className="container mt-5">
         <div className="row">
-          <div className="col-4">
-            <div className={`${styles.sidebar}`}>
+          <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB}`}>
+            {/* <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5`}>
                 <Stepper
                   style={{ width: "0%" }}
@@ -83,9 +86,10 @@ const PropertyUpload = () => {
                   </Step>
                 </Stepper>
               </div>
-            </div>
+            </div> */}
+                    <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className="col-lg-6 col-md-10 col-sm-10">
+          <div className={`${styles.input_container} col-lg-6 col-md-10 col-sm-10`}>
             <div className="mt-5 ms-2">
               <h5 className={`${styles.propertyHeading}`}>
                 Photos & Descrption
@@ -105,7 +109,7 @@ const PropertyUpload = () => {
                     /> */}
                     Photos
                   </label>
-                  <div className={`${styles.upload_image} mt-3`}>
+                  <div className={`${styles.upload_image} `}>
                     <div
                       htmlFor="upload"
                       className="d-flex justify-content-center mt-3 mb-2"

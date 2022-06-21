@@ -88,6 +88,10 @@ height: 100%;
   width: 50%;
 }
 
+.input_container{
+  margin-left: 3.5rem;
+}
+
 @media only screen and (max-width: 945px) {
   .amenities_list_flex_res {
     display: block;
@@ -117,6 +121,10 @@ height: 100%;
 
   .propertyFeature_width_50_to_75 {
     width: 100%;
+  }
+
+  .input_container{
+    margin-left:0rem !important;
   }
 
 

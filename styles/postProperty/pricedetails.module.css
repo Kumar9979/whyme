@@ -103,6 +103,10 @@
   margin-top: 11rem;
 }
 
+.input_container{
+  margin-left:3.5rem;
+}
+
 @media only screen and (max-width: 945px) {
   .PriceDetails_margin_top_res {
     margin-top: 2rem;
@@ -117,6 +121,10 @@
     border-top-right-radius: 2rem; 
     border-bottom-right-radius: 2rem; 
     margin-bottom: 5%;
+  }
+
+  .input_container{
+    margin-left:0rem !important;
   }
 
 

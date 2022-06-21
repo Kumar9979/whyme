@@ -21,20 +21,26 @@
   border: none;
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
-  font-size: 10px;
+  font-size: 12px;
+  color:#1A1A1A;
+  font-weight: 500;
   resize: none;
 }
 .locationform {
   border: none;
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
-  font-size: 10px;
+  font-size: 12px;
+  color:#1A1A1A;
+  font-weight: 500;
 }
 .building {
   border: none;
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
-  font-size: 10px;
+  font-size: 12px;
+  color:#1A1A1A;
+  font-weight: 500;
 }
 .labelText {
   font-family: Poppins, Regular;
@@ -63,6 +69,26 @@
   background-color: #1D72DB !important;
   
 }
+.bg_color_1D72DB {
+  background-color: #1d72db;
+}
+
+.whole_container{
+  border-radius: 15px;
+}
+
+.input_container{
+  margin-left:3rem;
+}
+
+.font_18{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.color_1D72DB {
+  color: #1d72db;
+}
 
 
 @media only screen and (max-width: 945px) {
@@ -77,6 +103,10 @@ height: 100%;
   border-top-right-radius: 2rem; 
   border-bottom-right-radius: 2rem; 
   margin-bottom: 5%;
+}
+
+.input_container{
+  margin-left:0rem !important;
 }
 
 }

@@ -56,12 +56,13 @@ const Navbar = () => {
                   </li>
                   <li className={`${Styles.navbar} nav-item ms-5 `} >
                     <Link href="#">
-                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a>
+                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill `}></i></a>
                     </Link>
                   </li>
                   <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
-                      <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
+                      <a className={`${Styles.headerIcon} `}>
+                        <i className="ms-2 me-2 mt-5  ri-user-add-line "></i></a>
                     </Link>
                   </li>
 

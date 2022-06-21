@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import Steeper from "../property-details/Steeper";
 import { useRouter } from "next/router";
 import Navbar from "../../navbar/navbar";
+import StepperNew from "../../stepper/stepper";
 const PriceDetailsSell = () => {
+  const [currentPage, setCurrentPage] = useState("priceDetails");
+
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
@@ -46,15 +49,16 @@ const PriceDetailsSell = () => {
       <Navbar/>
     <div className="container mt-5 pt-5">
       <div className={`row`}>
-        <div className="col-lg-4">
-          <div className={`${styles.sidebar}`}>
+        <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB} `}>
+          {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={3} />
             </div>
-          </div>
+          </div> */}
+          <StepperNew  currentPage={currentPage}/>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
+          className={`${styles.input_container}  d-flex justify-content-center align-items-center col-lg-6 py-5`}
         >
           {/* <div>stepper</div> */}
 

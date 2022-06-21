@@ -9,9 +9,14 @@ import Image from "next/image";
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
 import { useRouter } from "next/router";
+import StepperNew from "../../stepper/stepper";
+import Navbar from "../../navbar/navbar";
+
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
+  const [currentPage, setCurrentPage] = useState("propertyFeatures");
+  
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const customStyles = {
@@ -136,17 +141,20 @@ const propertyFeatures = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="container mt-5">
       <div className={`row`}>
-        <div className="col-lg-4 col-md-12">
-          <div className={`${styles.sidebar}`}>
+        <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB} `}>
+          {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={1} />
             </div>
-          </div>
+          </div> */}
+          <StepperNew  currentPage={currentPage}/>
         </div>
 
-        <div className="col-lg-6 col-md-12 py-5 px-3 ">
+        <div className={`${styles.input_container} col-lg-6 col-md-12 py-5 px-3  `}>
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -766,6 +774,7 @@ arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
             </div>
           </form>
         </div>
+      </div>
       </div>
     </div>
   );

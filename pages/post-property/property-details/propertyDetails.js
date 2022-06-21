@@ -7,9 +7,11 @@ import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Steeper from "./Steeper";
 import Navbar from "../../navbar/navbar";
+import StepperNew from "../../stepper/stepper";
 
 const PropertyDetails = () => {
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState("propertyDetails");
   const formik = useFormik({
     initialValues: {
       Map: "",
@@ -34,27 +36,28 @@ const PropertyDetails = () => {
   return (
     <div>
       <Navbar/>
-      <div className="container mt-5">
+      <div className={`${styles.whole_container} mt-5 container`} >
         <div className="row">
-          <div className="col-lg-4 col-md-12">
-            <div className={`${styles.sidebar}`}>
+          <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB}`}>
+            {/* <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5 `}>
                 <Steeper active={0} />
               </div>
-            </div>
+            </div> */}
+              <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className="col-lg-6 col-md-10 col-sm-10 px-5 pt-3">
+          <div className={`${styles.input_container} col-lg-6 col-md-10 col-sm-10 px-5 pt-3 `}>
             <div className="mt-2">
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
               <form onSubmit={formik.handleSubmit}>
-                <h6 className={`${styles.selectHeading} mt-5 `}>
+                <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
                   Select Your Property In Map
                 </h6>
 
                 <div className={`${styles.location}form-group`}>
                   <input
                     type="text"
-                    className={`${styles.locationform} form-control`}
+                    className={`${styles.locationform} form-control mb-2`}
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter your property location"
@@ -74,20 +77,20 @@ const PropertyDetails = () => {
                     className="mt-2"
                     src={Mapimages}
                     alt="Picture of the author"
-                    width={400}
+                    width={600}
                     height={150}
                   />
                 </div>
                 <div className="mt-3">
                   <label
                     for="exampleFormControlInput1"
-                    className={`${styles.labelText} form-label`}
+                    className={`${styles.labelText} form-label pb-1`}
                   >
                     Address
                   </label>
                   <textarea
                     type="text"
-                    className={`${styles.address} form-control`}
+                    className={`${styles.address} form-control mb-4`}
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter your property location"
@@ -105,13 +108,13 @@ const PropertyDetails = () => {
                 <div className="mt-3">
                   <label
                     for="exampleFormControlInput1"
-                    className={`${styles.labelText} form-label`}
+                    className={`${styles.labelText} form-label pb-1`}
                   >
                     Building Name
                   </label>
                   <input
                     type="text"
-                    className={`${styles.building} form-control`}
+                    className={`${styles.building} form-control mb-3`}
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter your email address"
@@ -138,10 +141,10 @@ const PropertyDetails = () => {
                       </span>
 
                       <span
-                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
-                      >
-                        Back
-                      </span>
+                      className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle `}
+                    >
+                      Back
+                    </span>
                     </button>
 
                     <button
