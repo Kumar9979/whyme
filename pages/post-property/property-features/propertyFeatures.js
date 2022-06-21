@@ -148,11 +148,12 @@ const propertyFeatures = () => {
               <Steeper active={1} />
             </div>
           </div> */}
+
           
           <StepperNew  currentPage={currentPage}/>
         </div>
 
-        <div className={`col-lg-6 col-md-12 py-5 px-3 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} ` }>
+        <div className={`col-lg-7 col-md-12 py-5 ps-5 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} ` }>
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}

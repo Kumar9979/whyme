@@ -36,7 +36,7 @@ const PropertyDetails = () => {
     <div>
       <div className="container mt-5">
         <div className="row">
-          <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB}`}>
+          <div className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
             {/* <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5 `}>
                 <Steeper active={0} />
@@ -44,7 +44,7 @@ const PropertyDetails = () => {
             </div> */}
               <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className="col-lg-6 col-md-10 col-sm-10 px-5 pt-3">
+          <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3  ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}`}>
             <div className="mt-2">
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
               <form onSubmit={formik.handleSubmit}>
