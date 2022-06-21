@@ -59,9 +59,8 @@
   outline: 1px solid #1d72db;
   font-size: 12px;
 }
-.Steeper{
-  background-color: #1D72DB !important;
-  
+.Steeper {
+  background-color: #1d72db !important;
 }
 .bg_color_1D72DB {
   background-color: #1d72db;
@@ -71,39 +70,36 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 
-
-padding-top: 100px;
+  padding-top: 100px;
 }
-
+.property_boxShadow {
+  box-shadow: 0px 0px 20px #323d5a1f;
+}
 .propertyFeature_border_radius {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-@media only screen and (max-width:  990px) {
+@media only screen and (max-width: 990px) {
+  .sidebar {
+    background-color: #1d72db;
+    height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
 
+  .stepper_border_radius {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    padding: 2rem;
+  }
 
-.sidebar {
-  background-color: #1d72db;
-height: 100%;
-  max-width: 50rem;
-  min-width: 10rem;
- border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem; 
-  border-bottom-right-radius: 2rem; 
-}
-
-
-.stepper_border_radius {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 0px;
-  padding:2rem ;
-
-}
-
-.propertyFeature_border_radius {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
+  .propertyFeature_border_radius {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 }

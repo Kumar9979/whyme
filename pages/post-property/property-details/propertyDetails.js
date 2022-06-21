@@ -129,7 +129,8 @@ const PropertyDetails = () => {
                 )}
                 <div className={`content-btn d-flex justify-content-end mt-5`}>
                   <div className={`d-flex`}>
-                    <button className={`bg-white border-0  `}>
+                    <button type="button"  onClick={ ()=>  router.push(
+                        "/sellrent")} className={`bg-white border-0  `}>
                       <span
                         className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                       >
@@ -147,7 +148,7 @@ const PropertyDetails = () => {
 
                     <button
                       type="submit"
-                  
+                   
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span

@@ -46,7 +46,7 @@ const PriceDetailsSell = () => {
   return (
     <div className="container mt-5 pt-5">
       <div className={`row`}>
-        <div className={`col-lg-4 col-md-10 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
+        <div className={`col-lg-4 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
           {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={3} />
