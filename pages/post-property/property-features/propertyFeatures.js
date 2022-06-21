@@ -5,13 +5,14 @@ import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 import arrowRightIcon from "../../../assets/icons/arrow-right-line.png";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
-
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
+import { useRouter } from "next/router";
+import Navbar from "../../navbar/navbar";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
-
+  const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const customStyles = {
     control: (base, state) => ({
@@ -112,8 +113,10 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-
-      resetForm();
+      router.push(
+        "/post-property/price-details/priceDetailsSell"
+      )
+     
     },
   });
 
@@ -133,6 +136,8 @@ const propertyFeatures = () => {
   };
 
   return (
+  <div>
+    <Navbar/>
     <div className="container mt-5">
       <div className={`row`}>
         <div className="col-lg-4 col-md-12">
@@ -143,7 +148,7 @@ const propertyFeatures = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 p-3 ">
+        <div className="col-lg-6 col-md-12 py-5 px-3 ">
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -374,7 +379,7 @@ const propertyFeatures = () => {
                       </div>
                     )}
                 </div>
-                <div className="me-5 w-100 mb-2">
+                <div  className={` me-5 w-100 mb-2`}>
                   <label
                     htmlFor="Status"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -386,6 +391,7 @@ const propertyFeatures = () => {
                       id="Status"
                       options={status}
                       type="text"
+                      className={`${styles.select_status}`}
                       placeholder="Select.."
                       styles={customStyles}
                       name="Status"
@@ -404,6 +410,8 @@ const propertyFeatures = () => {
                       components={{
                         IndicatorSeparator: () => null,
                       }}
+
+                    
                     />
                   </div>
                   {formik.errors.Status &&
@@ -723,7 +731,9 @@ const propertyFeatures = () => {
 
               <div className={`content-btn d-flex justify-content-end mt-4`}>
                 <div className={`d-flex`}>
-                  <button className={`bg-white border-0 `}>
+                  <button type="button" onClick={ ()=>  router.push(
+        "/post-property/property-details/propertyDetails")}
+       className={`bg-white border-0 `}>
                     <span
                       className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                     >
@@ -763,6 +773,7 @@ arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

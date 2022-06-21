@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Steeper from "./Steeper";
+import Navbar from "../../navbar/navbar";
 
 const PropertyDetails = () => {
   const router = useRouter();
@@ -23,12 +24,16 @@ const PropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-
-      router.push("/post-property/property-features/propertyFeatures");
+   
+        router.push(
+          "/post-property/property-features/propertyFeatures"
+        )
+    
     },
   });
   return (
     <div>
+      <Navbar/>
       <div className="container mt-5">
         <div className="row">
           <div className="col-4">
@@ -38,7 +43,7 @@ const PropertyDetails = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-10 col-sm-10">
+          <div className="col-lg-6 col-md-10 col-sm-10 pt-3">
             <div className="mt-2">
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
               <form onSubmit={formik.handleSubmit}>
@@ -141,6 +146,7 @@ const PropertyDetails = () => {
 
                     <button
                       type="submit"
+                  
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span

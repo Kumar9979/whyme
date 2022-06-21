@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import Steeper from "../property-details/Steeper";
+import Navbar from "../../navbar/navbar";
 
 const PriceDetailsRent = () => {
   const numRegex = /^[0-9]+$/;
@@ -39,9 +40,9 @@ const PriceDetailsRent = () => {
   });
 
   return (
-
-
-    <div className={`container`}>
+<div>
+<Navbar/>
+    <div className={`container mt-5`}>
       <div className={`row`}>
         <div className="col-lg-4">
           <div className={`${styles.sidebar}`}>
@@ -51,7 +52,7 @@ const PriceDetailsRent = () => {
           </div>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 p-4`}
+          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
         >
           {/* <div>stepper</div> */}
 
@@ -293,7 +294,7 @@ const PriceDetailsRent = () => {
           </div>
         </div>
       </div>
-
+      </div>
     </div>
   );
 };

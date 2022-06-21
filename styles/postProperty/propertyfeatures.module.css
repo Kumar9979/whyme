@@ -1,6 +1,6 @@
 .sidebar {
   background-color: #1d72db;
-  height: 40rem;
+height: 100%;
   max-width: 20rem;
   min-width: 10rem;
   border-top-left-radius: 2rem;
@@ -97,4 +97,12 @@
   .propertyFeature_width_50_to_75 {
     width: 75%;
   }
+
+
 }
+/* 
+@media only screen and (min-width: 1198px) {
+  .select_status::placeholder{
+    margin-right:85px;
+  }
+} */

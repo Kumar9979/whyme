@@ -3,14 +3,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import Steeper from "../property-details/Steeper";
+import { useRouter } from "next/router";
+import Navbar from "../../navbar/navbar";
 const PriceDetailsSell = () => {
   const numRegex = /^[0-9]+$/;
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       SuperArea: "",
       CarpetArea: "",
       ExpectedPrice: "",
-
       MaintenanceFees: "",
     },
 
@@ -33,11 +35,16 @@ const PriceDetailsSell = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
+      router.push(
+        "/post-property/propertyUpload/propertyUpload"
+      )
     },
   });
 
   return (
-    <div className="container">
+    <div>
+      <Navbar/>
+    <div className="container mt-5 pt-5">
       <div className={`row`}>
         <div className="col-lg-4">
           <div className={`${styles.sidebar}`}>
@@ -47,7 +54,7 @@ const PriceDetailsSell = () => {
           </div>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 p-5`}
+          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
         >
           {/* <div>stepper</div> */}
 
@@ -217,7 +224,11 @@ const PriceDetailsSell = () => {
                 className={`${styles.PriceDetails_margin_top_res} d-flex justify-content-end `}
               >
                 <div className={`d-flex`}>
-                  <button className={`bg-white border-0  `}>
+                  <button type="button"   onClick={() =>
+                        router.push(
+                          "/post-property/property-features/propertyFeatures"
+                        )
+                      } className={`bg-white border-0  `}>
                     <span
                       className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                     >
@@ -253,6 +264,7 @@ const PriceDetailsSell = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

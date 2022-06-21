@@ -10,9 +10,11 @@ import sellWhite from "../../assets/icons/sellWhite.png";
 
 import rent from "../../assets/icons/rent.png";
 import rentWhite from "../../assets/icons/rentWhite.png";
+import { useRouter } from "next/router";
 
 
 export const customStyles = {
+
   control: (base, state) => ({
     ...base,
     background: "#F4F8FB",
@@ -72,6 +74,7 @@ const typeOptions = [
 ];
 
 const SellRent = () => {
+  const router = useRouter();
   const [optionType, setoptionType] = useState("");
   const formik = useFormik({
     initialValues: {
@@ -84,6 +87,7 @@ const SellRent = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
+      router.push("post-property/property-details/propertyDetails")
     },
   });
 

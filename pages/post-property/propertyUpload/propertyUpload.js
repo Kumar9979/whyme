@@ -6,9 +6,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
-import Navbar from "../../auth/navbar";
+import Navbar from "../../navbar/navbar";
+import { useRouter } from "next/router";
 
 const PropertyUpload = () => {
+  const router = useRouter();
   const [value, setValue1] = useState("4");
   const [file, setFile] = useState(upload);
   const [uploaded, setuploaded] = useState(false);
@@ -225,7 +227,9 @@ const PropertyUpload = () => {
 
                 <div className={`content-btn d-flex justify-content-end mt-5`}>
                   <div className={`d-flex`}>
-                    <button className={`bg-white border-0  `}>
+                    <button type="button" onClick={()=>router.push(
+        "/post-property/price-details/priceDetailsSell"
+      )} className={`bg-white border-0  `}>
                       <span
                         className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                       >

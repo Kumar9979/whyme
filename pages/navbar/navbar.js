@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../../styles/authstyles/navbar.module.css";
+import Styles from "../../styles/navbarStyles/navbar.module.css";
 import Image from "next/image";
 import ZameenSquareImage from "../../assets/icons/zameen.png";
 import { useRouter } from "next/router";
