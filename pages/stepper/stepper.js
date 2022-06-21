@@ -107,8 +107,8 @@ const StepperNew = ({ currentPage }) => {
       <div className={`${styles.stepper_margin_start} `}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={form2} alt="status icon" 
-           
+            <Image src={form2} className={opcaityForm2}  alt="status icon" 
+         
           
             />
           </div>
@@ -127,7 +127,7 @@ const StepperNew = ({ currentPage }) => {
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={form3} alt="status icon" />
+            <Image src={form3}   className={opcaityForm3} alt="status icon" />
           </div>
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${opcaityForm3} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
@@ -145,7 +145,7 @@ const StepperNew = ({ currentPage }) => {
           
             <Image src={form4} alt="status icon"   
          
-            className={styles.stepper_status_image}
+         className={opcaityForm4}
        
             />
        

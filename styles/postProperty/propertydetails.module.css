@@ -26,6 +26,12 @@
   font-weight: 500;
   resize: none;
 }
+
+.address::placeholder{
+  font-size: 13px;
+  color: #bcc7ce;
+}
+
 .locationform {
   border: none;
   background-color: #f4f8fb;
@@ -34,6 +40,13 @@
   color:#1A1A1A;
   font-weight: 500;
 }
+
+
+.locationform::placeholder{
+  font-size: 13px;
+  color: #bcc7ce;
+}
+
 .building {
   border: none;
   background-color: #f4f8fb;
@@ -41,6 +54,11 @@
   font-size: 12px;
   color:#1A1A1A;
   font-weight: 500;
+}
+
+.building::placeholder{
+  font-size: 13px;
+  color: #bcc7ce;
 }
 .labelText {
   font-family: Poppins, Regular;
@@ -65,9 +83,8 @@
   outline: 1px solid #1d72db;
   font-size: 12px;
 }
-.Steeper{
-  background-color: #1D72DB !important;
-  
+.Steeper {
+  background-color: #1d72db !important;
 }
 .bg_color_1D72DB {
   background-color: #1d72db;
@@ -79,6 +96,7 @@
 
 .input_container{
   margin-left:3rem;
+  margin-right: 3rem;
 }
 
 .font_18{
@@ -94,44 +112,41 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 
-
-padding-top: 100px;
+  padding-top: 100px;
 }
-
+.property_boxShadow {
+  box-shadow: 0px 0px 20px #323d5a1f;
+}
 .propertyFeature_border_radius {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-@media only screen and (max-width:  990px) {
+@media only screen and (max-width: 990px) {
+  .sidebar {
+    background-color: #1d72db;
+    height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
 
+  .stepper_border_radius {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    padding: 2rem;
+  }
 
-.sidebar {
-  background-color: #1d72db;
-height: 100%;
-  max-width: 50rem;
-  min-width: 10rem;
- border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem; 
-  border-bottom-right-radius: 2rem; 
-  margin-bottom: 5%;
-}
+  .propertyFeature_border_radius {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 
-.input_container{
-  margin-left:0rem !important;
-}
-
-
-.stepper_border_radius {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 0px;
-  padding:2rem ;
-
-}
-
-.propertyFeature_border_radius {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
+  .input_container{
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+  }
 }

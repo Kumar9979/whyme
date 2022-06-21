@@ -46,9 +46,9 @@ const PropertyDetails = () => {
             </div> */}
               <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className={`${styles.input_container} ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-6 col-md-10 col-sm-10 px-5 pt-3 `}>
+          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}>
           {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
-            <div className="mt-2">
+            <div className={`${styles.input_container} mt-2 `}>
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
               <form onSubmit={formik.handleSubmit}>
                 <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
@@ -118,7 +118,7 @@ const PropertyDetails = () => {
                     className={`${styles.building} form-control mb-3`}
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
-                    placeholder="Enter your email address"
+                    placeholder="Enter your Building Name"
                     name="BuildingName"
                     value={formik.values.BuildingName}
                     onChange={formik.handleChange}
@@ -130,9 +130,10 @@ const PropertyDetails = () => {
                     <span>{formik.errors.BuildingName}</span>
                   </div>
                 )}
-                <div className={`content-btn d-flex justify-content-end mt-5`}>
+                <div className={`content-btn d-flex justify-content-end mt-5 mb-3`}>
                   <div className={`d-flex`}>
-                    <button className={`bg-white border-0  `}>
+                    <button type="button"  onClick={ ()=>  router.push(
+                        "/sellrent")} className={`bg-white border-0  `}>
                       <span
                         className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                       >
@@ -150,7 +151,7 @@ const PropertyDetails = () => {
 
                     <button
                       type="submit"
-                  
+                   
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
