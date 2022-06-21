@@ -89,7 +89,8 @@ const StepperNew = ({ currentPage }) => {
         <div className={`${styles.stepper_item_flex_res}`}>
           <div className={``}>
             <Image src={form1} alt="status icon" 
-            className={styles.stepper_status_image}
+            layout="fixed"
+            // className={styles.stepper_status_image}
             />
           </div>
 
@@ -140,13 +141,13 @@ const StepperNew = ({ currentPage }) => {
         </div>
       </div>
 
-      <div>
+      <div >
         <div className={`${styles.stepper_item_flex_res}`}>
           
             <Image src={form4} alt="status icon"   
          
          className={opcaityForm4}
-       
+      
             />
        
 
