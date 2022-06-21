@@ -6,9 +6,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Steeper from "./Steeper";
+import StepperNew from "../../stepper/stepper";
 
 const PropertyDetails = () => {
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState("propertyDetails");
   const formik = useFormik({
     initialValues: {
       Map: "",
@@ -34,12 +36,13 @@ const PropertyDetails = () => {
     <div>
       <div className="container mt-5">
         <div className="row">
-          <div className="col-lg-4 col-md-12">
-            <div className={`${styles.sidebar}`}>
+          <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB}`}>
+            {/* <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5 `}>
                 <Steeper active={0} />
               </div>
-            </div>
+            </div> */}
+              <StepperNew  currentPage={currentPage}/>
           </div>
           <div className="col-lg-6 col-md-10 col-sm-10 px-5 pt-3">
             <div className="mt-2">

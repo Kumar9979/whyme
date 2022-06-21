@@ -79,6 +79,10 @@
 .back {
   background: none;
 }
+
+.bg_color_1D72DB {
+  background-color: #1d72db;
+}
 .MuiSvgIcon-root {
   color: #ffffff00 !important;
   border: 1px solid #ffffff !important;
