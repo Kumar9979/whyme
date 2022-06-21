@@ -6,7 +6,9 @@ height: 100%;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
-
+/* .propertyFeatures_status_width{
+  width: 30rem;
+} */
 .fontFam_poppins {
   font-family: "Poppins";
 }
@@ -94,8 +96,27 @@ height: 100%;
     padding-left: 20px;
   }
 
+
+
+  .sidebar {
+    background-color: #1d72db;
+  height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+   border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+    margin-top:5%;
+
+ 
+  }
+
+.amenities_width{
+  width:100% !important;
+}
+
   .propertyFeature_width_50_to_75 {
-    width: 75%;
+    width: 100%;
   }
 
 

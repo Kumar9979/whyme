@@ -5,10 +5,10 @@ import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 import arrowRightIcon from "../../../assets/icons/arrow-right-line.png";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
+
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
 import { useRouter } from "next/router";
-import Navbar from "../../navbar/navbar";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
@@ -136,8 +136,6 @@ const propertyFeatures = () => {
   };
 
   return (
-  <div>
-    <Navbar/>
     <div className="container mt-5">
       <div className={`row`}>
         <div className="col-lg-4 col-md-12">
@@ -293,7 +291,7 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={`${styles.propertyFeature_width_50_to_75}  mb-2`}
+                  className={`${styles.propertyFeature_width_50_to_75}  mb-3`}
                 >
                   <label
                     htmlFor="facing"
@@ -338,8 +336,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res}  mt-3`}>
-                <div className="me-5 w-100 mb-2">
+              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+                <div className="me-5 w-100 mb-3">
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -379,7 +377,7 @@ const propertyFeatures = () => {
                       </div>
                     )}
                 </div>
-                <div  className={` me-5 w-100 mb-2`}>
+                <div className={`me-5 w-100 mb-3`}>
                   <label
                     htmlFor="Status"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -391,7 +389,6 @@ const propertyFeatures = () => {
                       id="Status"
                       options={status}
                       type="text"
-                      className={`${styles.select_status}`}
                       placeholder="Select.."
                       styles={customStyles}
                       name="Status"
@@ -410,8 +407,6 @@ const propertyFeatures = () => {
                       components={{
                         IndicatorSeparator: () => null,
                       }}
-
-                    
                     />
                   </div>
                   {formik.errors.Status &&
@@ -748,7 +743,6 @@ const propertyFeatures = () => {
                       Back
                     </span>
                   </button>
-
                   <button
                     type="submit"
                     className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
@@ -773,7 +767,6 @@ arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
           </form>
         </div>
       </div>
-    </div>
     </div>
   );
 };

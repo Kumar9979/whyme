@@ -1,6 +1,6 @@
 .sidebar {
   background-color: #1d72db;
-  height: 50rem;
+  height: 100%;
   max-width: 25rem;
   min-width: 15rem;
   border-top-left-radius: 2rem;
@@ -113,3 +113,19 @@ font-size:15px;
 }
 
 
+@media only screen and (max-width: 945px) {
+  
+
+  .sidebar {
+    background-color: #1d72db;
+  height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+   border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+    margin-bottom: 5%;
+  }
+
+
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Stepper, Step, StepLabel } from "@material-ui/core";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
 import { styled } from "@material-ui/styles";
@@ -15,9 +15,24 @@ const Steeper = ({ active }) => {
     "Price Details",
     "Photos & Description",
   ];
+
+  const [size, setSize] = useState()
+
+
+  useEffect(()=> {
+    if (typeof window !== 'undefined') {
+    window.addEventListener('resize', ()=> {
+
+      
+          console.log(window.innerWidth<=945);
+          setSize(window.innerWidth)
+   
+      
+    })
+ }}, )
   return (
     <div className={`${styles.Steeper}`}>
-      <Stepper orientation="vertical" activeStep={active}>
+      <Stepper orientation={size<=945?"horizontal":"vertical"} activeStep={active}>
         {steps.map((label) => (
           <Step className={`${styles.circle}`}>
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>

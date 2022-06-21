@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Link from 'next/link'
 const Navbar = () => {
   const router = useRouter();
+  
   return (
     <div>
       <div className={`container-fluid handbook-section ${Styles.container}`}>

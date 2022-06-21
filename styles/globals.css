@@ -41,3 +41,8 @@ padding-top: .3rem;
   flex-direction: column;
   background-color: #1D72DB !important;
 }
+.MuiStepper-horizontal {
+  align-items: center;
+  flex-direction: row;
+  background-color: #1D72DB !important;
+}
