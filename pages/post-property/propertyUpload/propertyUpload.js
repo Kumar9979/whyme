@@ -176,13 +176,7 @@ const PropertyUpload = () => {
                       </div>
                     )}
 
-                    {/* <input
-                    type={text}
-                    className={` ${styles.input_text}`}
-                    id="profile"
-                    aria-describedby="emailHelp"
-                    placeholder="Drag & drop the image of an property"
-                  /> */}
+                   
                   </div>
                 </div>
                 <div className="mt-5">
@@ -214,7 +208,7 @@ const PropertyUpload = () => {
                 <div className={` mt-2 `}>
                   <input
                     type="checkbox"
-                    // name="terms"
+                  
                     name="terms"
                     onChange={formik.handleChange}
                   />
@@ -238,9 +232,7 @@ const PropertyUpload = () => {
                         <i
                           className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
                         ></i>
-                        {/* <Image
-                      src={backButton}
-                      className={`${styles.back_button_image} `}/> */}
+                     
                       </span>
 
                       <span

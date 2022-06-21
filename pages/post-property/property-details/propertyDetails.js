@@ -23,6 +23,8 @@ const PropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
+
+      router.push("/post-property/property-features/propertyFeatures");
     },
   });
   return (
@@ -138,12 +140,7 @@ const PropertyDetails = () => {
                     </button>
 
                     <button
-                      type="button"
-                      onClick={() =>
-                        router.push(
-                          "/post-property/property-features/propertyFeatures"
-                        )
-                      }
+                      type="submit"
                       className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span

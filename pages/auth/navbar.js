@@ -38,27 +38,27 @@ const Navbar = () => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav ms-auto">
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}> Buy</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}>Rent</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}>Sell</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `} >
                     <Link href="#">
                       <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
                     </Link>

@@ -11,6 +11,7 @@
   
 }
 
+
   .headermenu {
     font-family: Poppins,medium;
     font-size: 20px;
@@ -40,11 +41,37 @@
   }
   .container{
     box-shadow: 5px 5px 20px #00000029;
+    
   }
   @media only screen and (max-width: 900px){
     .zameenimage{
       width:10rem;
+      
 
+    }
+
+    .headermenu {
+      font-family: Poppins,medium;
+      font-size: 18px;
+      font-weight: 600;
+      color: #323D5A;
+      text-decoration: none;
+      
+      
+    }
+
+    .navbar{
+      margin-bottom: 3%;
+      text-align: center;
+    }
+
+    .container{
+      position: fixed;
+      top:0%;
+      overflow: hidden;
+      z-index: 5;
+      background-color: #fff;
+   
     }
  
   }
