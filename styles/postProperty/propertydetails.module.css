@@ -121,6 +121,15 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+
+@media only screen and (max-width: 1200px) {
+  .stepper_border_radius {
+    padding: 0px;
+    padding-left: 10px;
+    padding-top: 120px;
+  }
+}
 @media only screen and (max-width: 990px) {
   .sidebar {
     background-color: #1d72db;

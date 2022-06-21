@@ -15,9 +15,9 @@
 .stepper_border_radius {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-padding: 30px;
-padding-left: 40px;
-padding-top: 120px;
+  padding: 30px;
+  padding-left: 40px;
+  padding-top: 120px;
 }
 
 .propertyFeature_border_radius {
@@ -113,6 +113,14 @@ padding-top: 120px;
 }
 
 
+@media only screen and (max-width: 1200px) {
+  .stepper_border_radius {
+    padding: 0px;
+    padding-left: 10px;
+    padding-top: 120px;
+  }
+}
+
 @media only screen and (max-width: 990px) {
   .amenities_list_flex_res {
     display: block;
@@ -154,10 +162,9 @@ padding-top: 120px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 0px;
-    padding:2rem ;
-  
+    padding: 2rem;
   }
-  
+
   .propertyFeature_border_radius {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 20px;
