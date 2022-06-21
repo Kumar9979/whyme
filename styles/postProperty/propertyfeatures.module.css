@@ -150,7 +150,7 @@
 }
 
   .propertyFeature_width_50_to_75 {
-    width: 100%;
+    width: 100% !important;
   }
 
   .input_container{

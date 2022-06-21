@@ -16,8 +16,10 @@ const PropertyUpload = () => {
   const router = useRouter();
   const [value, setValue1] = useState("4");
   const [file, setFile] = useState(upload);
-  const [uploaded, setuploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
   const [size, setSize] = useState(35);
+  const [imgName, setImgName] = useState('');
+
 
   const formik = useFormik({
     initialValues: {
@@ -42,6 +44,23 @@ const PropertyUpload = () => {
     },
   });
 
+  function handleChange(e) {
+    if (e.target?.files.length !== 0) {
+      setImgName(e.target.files[0].name);
+      console.log(imgName);
+      setUploaded(true)
+    }
+    else{
+      setUploaded(false)
+    }
+  
+  }
+
+
+  // const onImageChange = (e) => {
+  //   const [file] = e.target.files;
+  //   setImg(URL.createObjectURL(file));
+  // };
   // function handleChange(e) {
   //   if (e.target?.files.length !== 0) {
   //     setSize(100);
@@ -126,6 +145,7 @@ const PropertyUpload = () => {
                       </label>
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center ">
+                      {uploaded? <p>{imgName}</p>:null}
                       <input
                         type={"file"}
                         style={{ visibility: "hidden" }}
@@ -135,6 +155,8 @@ const PropertyUpload = () => {
                         multiple
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
+                          handleChange(e);
+                          
                         }}
                         hidden
                       />
@@ -164,6 +186,8 @@ const PropertyUpload = () => {
                             multiple
                             onChange={(e) => {
                               formik.setFieldValue("image", e.target.files[0]);
+
+                              handleChange(e);
                             }}
                             hidden
                           />

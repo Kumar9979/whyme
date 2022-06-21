@@ -44,6 +44,7 @@
 }
 .stepper_margin_left {
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 .stepper_status_image {
   width: 60px !important;
@@ -84,6 +85,6 @@
   }
 
   .font_20 {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
