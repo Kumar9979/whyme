@@ -61,7 +61,7 @@ const PropertyUpload = () => {
       <Navbar />
       <div className="container mt-5">
         <div className="row">
-          <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB}`}>
+          <div className={`col-lg-4 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
             {/* <div className={`${styles.sidebar}`}>
               <div className={`${styles.progressbar} p-5`}>
                 <Stepper
@@ -89,9 +89,10 @@ const PropertyUpload = () => {
             </div> */}
                     <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className={`${styles.input_container} col-lg-6 col-md-10 col-sm-10`}>
-            <div className="mt-5 ms-2">
-              <h5 className={`${styles.propertyHeading}`}>
+          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-10 col-sm-10`}>
+          {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
+            <div className={`${styles.input_container}`}>
+              <h5 className={`${styles.propertyHeading} pt-3`}>
                 Photos & Descrption
               </h5>
 
@@ -229,7 +230,7 @@ const PropertyUpload = () => {
                   </div>
                 )}
 
-                <div className={`content-btn d-flex justify-content-end mt-5`}>
+                <div className={`content-btn d-flex justify-content-end mt-5 mb-3`}>
                   <div className={`d-flex`}>
                     <button type="button" onClick={()=>router.push(
         "/post-property/price-details/priceDetailsSell"

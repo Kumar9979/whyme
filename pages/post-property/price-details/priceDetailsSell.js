@@ -49,7 +49,7 @@ const PriceDetailsSell = () => {
       <Navbar/>
     <div className="container mt-5 pt-5">
       <div className={`row`}>
-        <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB} `}>
+        <div className={`col-lg-4 col-md-10 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
           {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={3} />
@@ -58,11 +58,12 @@ const PriceDetailsSell = () => {
           <StepperNew  currentPage={currentPage}/>
         </div>
         <div
-          className={`${styles.input_container}  d-flex justify-content-center align-items-center col-lg-6 py-5`}
+          className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} d-flex justify-content-center align-items-center col-lg-7 py-5`}
+         
         >
           {/* <div>stepper</div> */}
 
-          <div className="">
+          <div className={`${styles.input_container} `}>
             <div className={`mb-4`}>
               <h5
                 className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}

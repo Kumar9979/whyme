@@ -9,6 +9,23 @@
   box-shadow: 0px 0px 20px #323d5a1f;
   border-radius: 20px;
 }
+.property_boxShadow {
+  box-shadow: 0px 0px 20px #323d5a1f;
+}
+
+.stepper_border_radius {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+padding: 30px;
+padding-left: 40px;
+padding-top: 120px;
+}
+
+.propertyFeature_border_radius {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 
 .input_bar {
   align-self: stretch;
@@ -102,6 +119,10 @@
 .PriceDetails_margin_top_res {
   margin-top: 11rem;
 }
+.input_container{
+  margin-left: 3.5rem;
+}
+
 
 @media only screen and (max-width:  990px) {
   
@@ -125,4 +146,20 @@
   }
 
 
+
+  .stepper_border_radius {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    padding:2rem ;
+  
+  }
+  
+  .propertyFeature_border_radius {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  
 }

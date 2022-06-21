@@ -61,7 +61,7 @@ const StepperNew = ({ currentPage }) => {
       opcaityForm4 = styles.stepper_opacity;
       line1_Opactiy = "none";
       line2_Opactiy = "none";
-      line3_Opactiy = "none";
+      line3_Opactiy = styles.stepper_line_opacity;
     } else if (currentPage == "photoDesc") {
       form1 = visitedIcon;
       form2 = visitedIcon;
@@ -85,15 +85,12 @@ const StepperNew = ({ currentPage }) => {
         styles.stepper_bg_color
       }`}
     >
-      <div className={``}>
+      <div className={`${styles.stepper_item_container}`}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div className={``}>
-            <Image src={form1} alt="status icon" style={{
-              width: "200px",
-              height: "200px",
-              maxHeight: "200px",
-              maxWidth: "200px",
-            }} />
+            <Image src={form1} alt="status icon" 
+            className={styles.stepper_status_image}
+            />
           </div>
 
           <span
@@ -107,18 +104,12 @@ const StepperNew = ({ currentPage }) => {
         </div>
       </div>
 
-      <div className={`${styles.stepper_margin_start}`}>
+      <div className={`${styles.stepper_margin_start} `}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
             <Image src={form2} alt="status icon" 
-            style={{
-              width: "200px",
-              height: "200px",
-              maxHeight: "200px",
-              maxWidth: "200px",
-            }}
-            
-            
+           
+          
             />
           </div>
 
@@ -136,12 +127,7 @@ const StepperNew = ({ currentPage }) => {
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={form3} alt="status icon" style={{
-              width: "200px",
-              height: "200px",
-              maxHeight: "200px",
-              maxWidth: "200px",
-            }} />
+            <Image src={form3} alt="status icon" />
           </div>
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${opcaityForm3} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
@@ -156,23 +142,13 @@ const StepperNew = ({ currentPage }) => {
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
-          <div
-          //  className="position-relative"
-          >
+          
             <Image src={form4} alt="status icon"   
-            //  style={{
-            //   width: "200px",
-            //   height: "200px",
-            //   maxHeight: "200px",
-            //   maxWidth: "200px",
-
-            // }}
-            width={25}
-            height={25}
-            // layout="fill"
-            // layout="responsive" 
+         
+            className={styles.stepper_status_image}
+       
             />
-          </div>
+       
 
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${opcaityForm4} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
