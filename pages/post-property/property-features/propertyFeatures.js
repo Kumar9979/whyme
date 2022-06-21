@@ -8,10 +8,11 @@ import Image from "next/image";
 
 import Select from "react-select";
 import Steeper from "../property-details/Steeper";
+import { useRouter } from "next/router";
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
-
+  const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const customStyles = {
     control: (base, state) => ({
@@ -112,8 +113,10 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-
-      resetForm();
+      router.push(
+        "/post-property/price-details/priceDetailsSell"
+      )
+     
     },
   });
 
@@ -143,7 +146,7 @@ const propertyFeatures = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12 p-3 ">
+        <div className="col-lg-6 col-md-12 py-5 px-3 ">
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -723,7 +726,9 @@ const propertyFeatures = () => {
 
               <div className={`content-btn d-flex justify-content-end mt-4`}>
                 <div className={`d-flex`}>
-                  <button className={`bg-white border-0 `}>
+                  <button type="button" onClick={ ()=>  router.push(
+        "/post-property/property-details/propertyDetails")}
+       className={`bg-white border-0 `}>
                     <span
                       className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                     >

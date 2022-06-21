@@ -41,7 +41,7 @@ const PriceDetailsRent = () => {
   return (
 
 
-    <div className={`container`}>
+    <div className={`container mt-5`}>
       <div className={`row`}>
         <div className="col-lg-4">
           <div className={`${styles.sidebar}`}>
@@ -51,7 +51,7 @@ const PriceDetailsRent = () => {
           </div>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 p-4`}
+          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
         >
           {/* <div>stepper</div> */}
 
