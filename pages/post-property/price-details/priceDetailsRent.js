@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import Steeper from "../property-details/Steeper";
+import StepperNew from "../../stepper/stepper";
+import { useRouter } from "next/router";
 
 const PriceDetailsRent = () => {
+  const [currentPage, setCurrentPage] = useState("priceDetails");
+
   const numRegex = /^[0-9]+$/;
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       SuperArea: "",
@@ -35,7 +40,11 @@ const PriceDetailsRent = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
+      router.push(
+        "/post-property/propertyUpload/propertyUpload"
+      )
     },
+ 
   });
 
   return (
@@ -43,15 +52,17 @@ const PriceDetailsRent = () => {
 
     <div className={`container mt-5`}>
       <div className={`row`}>
-        <div className="col-lg-4">
-          <div className={`${styles.sidebar}`}>
+        <div className={`col-lg-4 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
+          {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={3} />
             </div>
-          </div>
+          </div> */}
+
+<StepperNew  currentPage={currentPage}/>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 py-5`}
+          className={` d-flex justify-content-center align-items-center col-lg-6 py-5 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}`}
         >
           {/* <div>stepper</div> */}
 
@@ -256,7 +267,10 @@ const PriceDetailsRent = () => {
 
               <div className={` d-flex justify-content-end ${styles.PriceDetails_margin_top_res}`}>
                 <div className={`d-flex`}>
-                  <button className={`bg-white border-0  `}>
+                  <button type="button" onClick={() =>
+                        router.push(
+                          "/post-property/property-features/propertyFeatures"
+                        )} className={`bg-white border-0  `}>
                     <span
                       className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                     >
