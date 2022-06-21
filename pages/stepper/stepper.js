@@ -7,77 +7,51 @@ import styles from "../../styles/stepper/stepper.module.css";
 import { StepLabel } from "@material-ui/core";
 
 const StepperNew = ({ currentPage }) => {
+  const propertyDetails = {
+    iconImage: visitedIcon,
+    iconOpacity: "visible",
+    lineOpacity: styles.stepper_line_opacity,
+  };
+  const propertyFeatures = {
+    iconImage: currentIcon,
+    iconOpacity: styles.stepper_opacity,
+    lineOpacity: styles.stepper_line_opacity,
+  };
+  const priceDetails = {
+    iconImage: currentIcon,
+    iconOpacity: styles.stepper_opacity,
+    lineOpacity: styles.stepper_opacity,
+  };
+  const photoDesc = {
+    iconImage: currentIcon,
+    iconOpacity: styles.stepper_opacity,
+  };
 
-  let form1 = visitedIcon;
-  let form2 = currentIcon;
-  let form3 = currentIcon;
-  let form4 = currentIcon;
-
-  let line1_Opactiy = "none";
-  let line2_Opactiy = styles.stepper_line_opacity;
-  let line3_Opactiy = styles.stepper_line_opacity;
-
-  let opcaityForm1 = "none";
-  let opcaityForm2 = styles.stepper_opacity;
-  let opcaityForm3 = styles.stepper_opacity;
-  let opcaityForm4 = styles.stepper_opacity;
-
-  function status(currentPage) {
-    if (currentPage === "propertyDetails") {
-      form1 = visitedIcon;
-      form2 = currentIcon;
-      form3 = currentIcon;
-      form4 = currentIcon;
-      opcaityForm1 = "none";
-      opcaityForm2 = styles.stepper_opacity;
-      opcaityForm3 = styles.stepper_opacity;
-      opcaityForm4 = styles.stepper_opacity;
-      line1_Opactiy =styles.stepper_line_opacity;
-      line2_Opactiy = styles.stepper_line_opacity;
-      line3_Opactiy = styles.stepper_line_opacity;
-      console.log(line2_Opactiy);
-    } else if (currentPage == "propertyFeatures") {
-      form1 = visitedIcon;
-
-      form2 = visitedIcon;
-      form3 = currentIcon;
-      form4 = currentIcon;
-      opcaityForm1 = "none";
-      opcaityForm2 = "none";
-      opcaityForm3 = styles.stepper_opacity;
-      opcaityForm4 = styles.stepper_opacity;
-      line1_Opactiy = "none";
-      line2_Opactiy = styles.stepper_line_opacity;
-      line3_Opactiy = styles.stepper_line_opacity;
-    } else if (currentPage == "priceDetails") {
-      form1 = visitedIcon;
-
-      form2 = visitedIcon;
-      form3 = visitedIcon;
-      form4 = currentIcon;
-      opcaityForm1 = "none";
-      opcaityForm2 = "none";
-      opcaityForm3 = "none";
-      opcaityForm4 = styles.stepper_opacity;
-      line1_Opactiy = "none";
-      line2_Opactiy = "none";
-      line3_Opactiy = styles.stepper_line_opacity;
-    } else if (currentPage == "photoDesc") {
-      form1 = visitedIcon;
-      form2 = visitedIcon;
-      form3 = visitedIcon;
-      form4 = visitedIcon;
-      opcaityForm1 = "none";
-      opcaityForm2 = "none";
-      opcaityForm3 = "none";
-      opcaityForm4 = "none";
-      line1_Opactiy = "none";
-      line2_Opactiy = "none";
-      line3_Opactiy = "none";
+  function currentStepper(currentPage) {
+    if (currentPage === "propertyFeatures") {
+      propertyFeatures.iconImage = visitedIcon;
+      propertyFeatures.iconOpacity = "visibile";
+      propertyDetails.lineOpacity = "visibile";
+    } else if (currentPage === "priceDetails") {
+      propertyDetails.lineOpacity = "visibile";
+      propertyFeatures.iconImage = visitedIcon;
+      propertyFeatures.iconOpacity = "visibile";
+      propertyFeatures.lineOpacity = "visibile";
+      priceDetails.iconImage = visitedIcon;
+      priceDetails.iconOpacity = "visibile";
+    } else if (currentPage === "photoDesc") {
+      propertyDetails.lineOpacity = "visibile";
+      propertyFeatures.iconImage = visitedIcon;
+      propertyFeatures.iconOpacity = "visibile";
+      propertyFeatures.lineOpacity = "visibile";
+      priceDetails.iconImage = visitedIcon;
+      priceDetails.iconOpacity = "visibile";
+      priceDetails.lineOpacity = "visibile";
+      photoDesc.iconImage = visitedIcon;
+      photoDesc.iconOpacity = "visibile";
     }
   }
-
-  status(currentPage);
+  currentStepper(currentPage);
 
   return (
     <div
@@ -88,71 +62,79 @@ const StepperNew = ({ currentPage }) => {
       <div className={`${styles.stepper_item_container}`}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div className={``}>
-            <Image src={form1} alt="status icon" 
-            layout="fixed"
-            // className={styles.stepper_status_image}
+            <Image
+              src={propertyDetails.iconImage}
+              alt="status icon"
+              layout="fixed"
+              // className={styles.stepper_status_image}
             />
           </div>
 
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${opcaityForm1} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Property Details
           </span>
         </div>
         <div className={`${styles.stepper_line_cont}`}>
-          <span className={`${line1_Opactiy} ${styles.stepper_line}`}></span>
+          <span className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}></span>
         </div>
       </div>
 
       <div className={`${styles.stepper_margin_start} `}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={form2} className={opcaityForm2}  alt="status icon" 
-         
-          
+            <Image
+              src={propertyFeatures.iconImage}
+              className={`${propertyFeatures.iconOpacity}`}
+              alt="status icon"
             />
           </div>
 
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${opcaityForm2} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${propertyFeatures.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Property Features
           </span>
         </div>
         <div className={`${styles.stepper_line_cont}`}>
-          <span className={`${line2_Opactiy} ${styles.stepper_line}`}></span>
+          <span className={`${propertyFeatures.lineOpacity} ${styles.stepper_line}`}></span>
         </div>
       </div>
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={form3}   className={opcaityForm3} alt="status icon" />
+            <Image
+              src={priceDetails.iconImage}
+              className={priceDetails.iconOpacity}
+              alt="status icon"
+            />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${opcaityForm3} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Price Details
           </span>
         </div>
         <div className={`${styles.stepper_line_cont}`}>
-          <span className={`${line3_Opactiy} ${styles.stepper_line}`}></span>
+          <span
+            className={`${priceDetails.lineOpacity} ${styles.stepper_line}`}
+          ></span>
         </div>
       </div>
 
-      <div >
+      <div>
         <div className={`${styles.stepper_item_flex_res}`}>
-          
-            <Image src={form4} alt="status icon"   
-         
-         className={opcaityForm4}
-      
+          <div>
+            <Image
+              src={photoDesc.iconImage}
+              alt="status icon"
+              className={photoDesc.iconOpacity}
             />
-       
-
+          </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${opcaityForm4} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Photos & Description
           </span>
