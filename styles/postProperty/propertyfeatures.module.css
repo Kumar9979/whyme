@@ -6,7 +6,9 @@ height: 100%;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
-
+/* .propertyFeatures_status_width{
+  width: 30rem;
+} */
 .fontFam_poppins {
   font-family: "Poppins";
 }
@@ -93,6 +95,22 @@ height: 100%;
   .propertyFeature_padding_l_res {
     padding-left: 20px;
   }
+
+
+
+  .sidebar {
+    background-color: #1d72db;
+  height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+   border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+
+ 
+  }
+
+
 
   .propertyFeature_width_50_to_75 {
     width: 75%;

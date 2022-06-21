@@ -291,7 +291,7 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={`${styles.propertyFeature_width_50_to_75}  mb-2`}
+                  className={`${styles.propertyFeature_width_50_to_75}  mb-3`}
                 >
                   <label
                     htmlFor="facing"
@@ -336,8 +336,8 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res}  mt-3`}>
-                <div className="me-5 w-100 mb-2">
+              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+                <div className="me-5 w-100 mb-3">
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -377,7 +377,7 @@ const propertyFeatures = () => {
                       </div>
                     )}
                 </div>
-                <div className="me-5 w-100 mb-2">
+                <div className={`me-5 w-100 mb-3`}>
                   <label
                     htmlFor="Status"
                     className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -743,7 +743,6 @@ const propertyFeatures = () => {
                       Back
                     </span>
                   </button>
-
                   <button
                     type="submit"
                     className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
