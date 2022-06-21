@@ -41,8 +41,11 @@
   }
   .container{
     box-shadow: 5px 5px 20px #00000029;
+
     
   }
+
+  
   @media only screen and (max-width: 900px){
     .zameenimage{
       width:10rem;

@@ -5,6 +5,7 @@
   min-width: 10rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
+  
 }
 
 .property_boxShadow {
@@ -15,6 +16,8 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 padding: 30px;
+padding-left: 40px;
+padding-top: 120px;
 }
 
 .propertyFeature_border_radius {
@@ -149,7 +152,8 @@ padding: 30px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 0px;
-    padding:0rem ;
+    padding:2rem ;
+  
   }
   
   .propertyFeature_border_radius {
@@ -166,3 +170,22 @@ padding: 30px;
     margin-right:85px;
   }
 } */
+
+@media only screen and (max-width: 1100px)  {
+  
+  .input_container{
+    margin-left:0rem !important;
+  }
+
+  .sidebar {
+    background-color: #1d72db;
+    height: 100%;
+    max-width: 50rem;
+    min-width: 10rem;
+   border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    border-bottom-right-radius: 2rem; 
+    margin-top:5%;
+  
+  }
+}
