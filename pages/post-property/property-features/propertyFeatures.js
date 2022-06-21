@@ -143,18 +143,20 @@ const propertyFeatures = () => {
   return (
     <div>
       <Navbar/>
-    <div className="container mt-5">
+    <div className="container mb-5 mt-5">
       <div className={`row`}>
-        <div className={`col-lg-4 col-md-12 p-5 ${styles.bg_color_1D72DB} `}>
+        <div className={`col-lg-4 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
           {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={1} />
             </div>
           </div> */}
+          
           <StepperNew  currentPage={currentPage}/>
         </div>
 
-        <div className={`${styles.input_container} col-lg-6 col-md-12 py-5 px-3  `}>
+        <div className={`${styles.input_container}  ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-6 col-md-12 py-5 px-3  `}>
+        {/* <div className={`col-lg-6 col-md-12 py-5 px-3` }> */}
           <div className={`mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
