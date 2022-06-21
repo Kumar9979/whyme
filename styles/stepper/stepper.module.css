@@ -14,13 +14,20 @@ align-items: flex-start;
 
 }
 
+.stepper_opacity{
+    opacity: 0.8;
+}
+
+.stepper_line_opacity{
+    opacity: 0.3;
+}
 
 .stepper_line {
     min-height: 28px;
     border-left-style: solid;
-    border-left-width: 1px;
+    border-left-width: 2px;
     display: block;
-    border-color: #bdbdbd;
+    border-color: #ffff;
 }
 
 .stepper_line_cont{
