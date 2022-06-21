@@ -103,7 +103,7 @@
   margin-top: 11rem;
 }
 
-@media only screen and (max-width: 945px) {
+@media only screen and (max-width:  990px) {
   .PriceDetails_margin_top_res {
     margin-top: 2rem;
   }
