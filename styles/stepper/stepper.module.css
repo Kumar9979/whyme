@@ -1,85 +1,89 @@
-
-
 .font_20 {
-    font-size: 20px;
-  }
-  .font_medium {
-    font-weight: 500;
-  }
-
-  .fontFam_poppins {
-    font-family: "Poppins";
-  }
-
-
-.stepper_cont_flex_res{
-    display: flex;
-    flex-direction: column;
+  font-size: 20px;
 }
-.stepper_item_flex_res{
-    display: flex;
-align-items:center;
+.font_medium {
+  font-weight: 500;
 }
 
-
-.stepper_bg_color{
-    background-color: #1d72db;
-
+.fontFam_poppins {
+  font-family: "Poppins";
 }
 
-
-
-
-.stepper_opacity{
-    opacity: 0.3;
+.stepper_cont_flex_res {
+  display: flex;
+  flex-direction: column;
+}
+.stepper_item_flex_res {
+  display: flex;
+  align-items: center;
 }
 
-.stepper_line_opacity{
-    opacity: 0.3;
+.stepper_bg_color {
+  background-color: #1d72db;
+}
+
+.stepper_opacity {
+  opacity: 0.3;
+}
+
+.stepper_line_opacity {
+  opacity: 0.3;
 }
 
 .stepper_line {
-    min-height: 50px;
-    border-left-style: solid;
-    border-left-width: 2px;
+  min-height: 50px;
+  border-left-style: solid;
+  border-left-width: 2px;
+  display: block;
+  border-color: #ffff;
+}
+
+.stepper_line_cont {
+  padding: 0 0 8px;
+  margin-left: 10px;
+}
+.stepper_margin_left {
+  margin-left: 10px;
+}
+.stepper_status_image {
+  width: 60px !important;
+}
+
+@media only screen and (max-width: 990px) {
+  /* .stepper_item_container {
+    display: flex;
+  } */
+  .stepper_cont_flex_res {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .stepper_line {
+    display: none;
+  /* min-width: .5rem;
+    border-top-style: solid;
+    border-top-width: 2px;
     display: block;
     border-color: #ffff;
-}
-
-.stepper_line_cont{
-    padding: 0 0 8px;
-    margin-left: 10px;
-}
-.stepper_margin_left{
-    margin-left: 10px;
-}
-
-@media only screen and (max-width:  990px) {
-
-    .stepper_cont_flex_res{
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .stepper_line {
-       display: none;
-    }
-    .stepper_item_flex_res{
+    border-left-style: none;
+    border-left-width: none;
+    margin-top: 30px; */
+  }
+  .stepper_item_flex_res {
     flex-direction: column;
-align-items: center;
- 
-    }
-    .stepper_margin_start{
-        margin-left: 10px;
-    }
-    .stepper_text_center_res{
-        text-align: center;
-    }
-    .stepper_margin_left{
-        margin-left:0px;
-    }
+    align-items: center;
+  }
+  .stepper_margin_start {
+    margin-left: 10px;
+  }
+  .stepper_text_center_res {
+    text-align: center;
+  }
+  .stepper_margin_left {
+    margin-left: 0px;
+  }
 
-    .font_20 {
-        font-size: 16px;
-      }
+  .font_20 {
+    font-size: 16px;
+  }
 }
