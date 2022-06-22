@@ -53,6 +53,7 @@ const StepperNew = ({ currentPage }) => {
   }
   currentStepper(currentPage);
 
+  
   return (
     <div
       className={`container ${`${styles.stepper_cont_flex_res}`}  justify-content-around  ${

@@ -10,14 +10,17 @@ import Navbar from "../../auth/navbar";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
 
+
 const PropertyUpload = () => {
 
   const [currentPage, setCurrentPage] = useState("photoDesc");
   const router = useRouter();
   const [value, setValue1] = useState("4");
   const [file, setFile] = useState(upload);
-  const [uploaded, setuploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(false);
   const [size, setSize] = useState(35);
+  const [imgName, setImgName] = useState('');
+
 
   const formik = useFormik({
     initialValues: {
@@ -42,20 +45,24 @@ const PropertyUpload = () => {
     },
   });
 
-  // function handleChange(e) {
-  //   if (e.target?.files.length !== 0) {
-  //     setSize(100);
-  //     setuploaded(true);
-  //     setFile(URL.createObjectURL(e.target.files[0]));
-  //   }
-  // }
+  function handleChange(e) {
+    if (e.target?.files.length !== 0) {
+      setImgName(e.target.files[0].name);
+      console.log(imgName);
+      setUploaded(true)
+    }
+    else{
+      setUploaded(false)
+    }
+  
+  }
 
   // function formReset() {
   //   setuploaded(false);
   //   setSize(35);
   //   formik.setFieldValue("image", "");
   // }
-
+console.log(formik.values);
   return (
     <div>
       <Navbar />
@@ -125,6 +132,7 @@ const PropertyUpload = () => {
                       </label>
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center ">
+                  {upload?<p>{imgName}</p>:null}   
                       <input
                         type={"file"}
                         style={{ visibility: "hidden" }}
@@ -134,6 +142,7 @@ const PropertyUpload = () => {
                         multiple
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
+                          handleChange(e);
                         }}
                         hidden
                       />
@@ -156,6 +165,7 @@ const PropertyUpload = () => {
                       >
                         <label>
                           <input
+                           
                             type="file"
                             //  style={{ visibility: "hidden" }}
                             name="image"
@@ -163,8 +173,10 @@ const PropertyUpload = () => {
                             multiple
                             onChange={(e) => {
                               formik.setFieldValue("image", e.target.files[0]);
+                              handleChange(e);
                             }}
                             hidden
+                          
                           />
                           Browse Photos
                         </label>
