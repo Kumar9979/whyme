@@ -10,6 +10,7 @@ import Select from "react-select";
 import Steeper from "../property-details/Steeper";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
+import Navbar from "../../navbar/navbar";
 
 const propertyFeatures = () => {
   const [value, setValue1] = useState("4");
@@ -140,7 +141,9 @@ const propertyFeatures = () => {
   };
 
   return (
-    <div className="container mb-5 mt-5 ">
+    <div>
+      <Navbar/>
+    <div className="container mb-5 mt-5">
       <div className={`row`}>
         <div className={`col-lg-4 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
           {/* <div className={`${styles.sidebar}`}>
@@ -153,8 +156,10 @@ const propertyFeatures = () => {
           <StepperNew  currentPage={currentPage}/>
         </div>
 
-        <div className={`col-lg-7 col-md-12 py-5 px-2 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} ` }>
-          <div className={`mb-4`}>
+        <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-12 py-5 px-3  `}>
+        {/* <div className={`col-lg-6 col-md-12 py-5 px-3` }> */}
+ <div className={`${styles.input_container}`}>
+          <div className={`  mb-4`}>
             <h5
               className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
             >
@@ -772,7 +777,9 @@ arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
               </div>
             </div>
           </form>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   );

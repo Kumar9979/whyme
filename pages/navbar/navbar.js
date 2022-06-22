@@ -1,11 +1,12 @@
 import React from "react";
-import Styles from "../../styles/authstyles/navbar.module.css";
+import Styles from "../../styles/navbarStyles/navbar.module.css";
 import Image from "next/image";
 import ZameenSquareImage from "../../assets/icons/zameen.png";
 import { useRouter } from "next/router";
 import Link from 'next/link'
 const Navbar = () => {
   const router = useRouter();
+  
   return (
     <div>
       <div className={`container-fluid handbook-section ${Styles.container}`}>
@@ -38,29 +39,30 @@ const Navbar = () => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav ms-auto">
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}> Buy</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}>Rent</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}>Sell</a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `} >
                     <Link href="#">
-                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill`}></i></a>
+                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill `}></i></a>
                     </Link>
                   </li>
-                  <li className="nav-item ms-5">
+                  <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
-                      <a className={`${Styles.headerIcon}`}> <i className="ms-2 me-2 mt-5 ri-user-add-line"></i></a>
+                      <a className={`${Styles.headerIcon} `}>
+                        <i className="ms-2 me-2 mt-5  ri-user-add-line "></i></a>
                     </Link>
                   </li>
 

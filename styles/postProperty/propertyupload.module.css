@@ -75,6 +75,7 @@
 
 .labelText {
   font-family: Poppins, Regular;
+  font-weight:500;
 }
 .back {
   background: none;
@@ -130,6 +131,21 @@ padding-top: 120px;
 }
 
 
+.input_container{
+  margin-left: 3.5rem;
+  margin-right:4rem;
+}
+
+.font_18{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.color_1D72DB {
+  color: #1d72db;
+}
+
+
 @media only screen and (max-width: 1200px) {
   .stepper_border_radius {
     padding: 0px;
@@ -148,6 +164,12 @@ padding-top: 120px;
    border-top-left-radius: 2rem;
     border-top-right-radius: 2rem; 
     border-bottom-right-radius: 2rem; 
+    margin-bottom: 5%;
+  }
+
+  .input_container{
+    margin-left: 0rem !important;
+    margin-right:0rem !important;
   }
 
 

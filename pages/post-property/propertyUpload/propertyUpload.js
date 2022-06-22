@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
-import Navbar from "../../auth/navbar";
+import Navbar from "../../navbar/navbar";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
 
@@ -57,6 +57,19 @@ const PropertyUpload = () => {
   
   }
 
+
+  // const onImageChange = (e) => {
+  //   const [file] = e.target.files;
+  //   setImg(URL.createObjectURL(file));
+  // };
+  // function handleChange(e) {
+  //   if (e.target?.files.length !== 0) {
+  //     setSize(100);
+  //     setuploaded(true);
+  //     setFile(URL.createObjectURL(e.target.files[0]));
+  //   }
+  // }
+
   // function formReset() {
   //   setuploaded(false);
   //   setSize(35);
@@ -96,9 +109,10 @@ console.log(formik.values);
             </div> */}
                     <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className={`col-lg-6 col-md-10 col-sm-10 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} `}>
-            <div className="mt-5 ms-2">
-              <h5 className={`${styles.propertyHeading}`}>
+          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-11 col-sm-11`}>
+          {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
+            <div className={`${styles.input_container}`}>
+              <h5 className={`${styles.propertyHeading} pt-3`}>
                 Photos & Descrption
               </h5>
 
@@ -116,7 +130,7 @@ console.log(formik.values);
                     /> */}
                     Photos
                   </label>
-                  <div className={`${styles.upload_image} mt-3`}>
+                  <div className={`${styles.upload_image} `}>
                     <div
                       htmlFor="upload"
                       className="d-flex justify-content-center mt-3 mb-2"
@@ -132,7 +146,7 @@ console.log(formik.values);
                       </label>
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center ">
-                  {upload?<p>{imgName}</p>:null}   
+                      {uploaded? <p>{imgName}</p>:null}
                       <input
                         type={"file"}
                         style={{ visibility: "hidden" }}
@@ -143,6 +157,7 @@ console.log(formik.values);
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
                           handleChange(e);
+                          
                         }}
                         hidden
                       />
@@ -194,13 +209,7 @@ console.log(formik.values);
                       </div>
                     )}
 
-                    {/* <input
-                    type={text}
-                    className={` ${styles.input_text}`}
-                    id="profile"
-                    aria-describedby="emailHelp"
-                    placeholder="Drag & drop the image of an property"
-                  /> */}
+                   
                   </div>
                 </div>
                 <div className="mt-5">
@@ -232,7 +241,7 @@ console.log(formik.values);
                 <div className={` mt-2 `}>
                   <input
                     type="checkbox"
-                    // name="terms"
+                  
                     name="terms"
                     onChange={formik.handleChange}
                   />
@@ -247,7 +256,7 @@ console.log(formik.values);
                   </div>
                 )}
 
-                <div className={`content-btn d-flex justify-content-end mt-5`}>
+                <div className={`content-btn d-flex justify-content-end mt-5 mb-3`}>
                   <div className={`d-flex`}>
                     <button type="button" onClick={()=>router.push(
         "/post-property/price-details/priceDetailsSell"
@@ -258,9 +267,7 @@ console.log(formik.values);
                         <i
                           className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
                         ></i>
-                        {/* <Image
-                      src={backButton}
-                      className={`${styles.back_button_image} `}/> */}
+                     
                       </span>
 
                       <span

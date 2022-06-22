@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import Steeper from "../property-details/Steeper";
 import { useRouter } from "next/router";
+import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
 const PriceDetailsSell = () => {
   const [currentPage, setCurrentPage] = useState("priceDetails");
@@ -44,6 +45,8 @@ const PriceDetailsSell = () => {
   });
 
   return (
+    <div>
+      <Navbar/>
     <div className="container mt-5 pt-5">
       <div className={`row`}>
         <div className={`col-lg-4 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
@@ -55,11 +58,12 @@ const PriceDetailsSell = () => {
           <StepperNew  currentPage={currentPage}/>
         </div>
         <div
-          className={` d-flex justify-content-center align-items-center col-lg-6 py-5 ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}`}
+          className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} d-flex justify-content-center align-items-center col-lg-7 py-5`}
+         
         >
           {/* <div>stepper</div> */}
 
-          <div className="">
+          <div className={`${styles.input_container} `}>
             <div className={`mb-4`}>
               <h5
                 className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -265,6 +269,7 @@ const PriceDetailsSell = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

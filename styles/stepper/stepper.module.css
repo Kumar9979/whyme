@@ -22,7 +22,7 @@
   background-color: #1d72db;
 }
 
-.stepper_opacity {
+.stepper_text_opacity {
   opacity: 0.3;
 }
 
@@ -87,6 +87,6 @@
   }
 
   .font_20 {
-    font-size: 14px;
+    font-size: 12px;
   }
 }

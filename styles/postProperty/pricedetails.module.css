@@ -119,6 +119,17 @@ padding-top: 120px;
 .PriceDetails_margin_top_res {
   margin-top: 11rem;
 }
+.input_container{
+  margin-left: 3.5rem;
+  margin-right:3.5rem;
+}
+
+/* .create_map{
+  height: 150px;
+  width:600px;
+} */
+
+
 @media only screen and (max-width: 1200px) {
   .stepper_border_radius {
     padding: 0px;
@@ -127,6 +138,7 @@ padding-top: 120px;
   }
 }
 @media only screen and (max-width:  990px) {
+  
   .PriceDetails_margin_top_res {
     margin-top: 2rem;
   }
@@ -139,6 +151,12 @@ padding-top: 120px;
    border-top-left-radius: 2rem;
     border-top-right-radius: 2rem; 
     border-bottom-right-radius: 2rem; 
+    margin-bottom: 5%;
+  }
+
+  .input_container{
+    margin-left:0rem !important;
+    margin-right: 0rem !important;
   }
 
 
