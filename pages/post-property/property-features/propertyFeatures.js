@@ -143,9 +143,9 @@ const propertyFeatures = () => {
   return (
     <div>
       <Navbar/>
-    <div className="container mb-5 mt-5">
+    <div className="container mt-5">
       <div className={`row`}>
-        <div className={`col-lg-4 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
+        <div className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}>
           {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
               <Steeper active={1} />
@@ -249,7 +249,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+              <div className={`${styles.amenities_list_flex_res} mt-2`}>
                 <div className={`${styles.property_features_list_container} w-50  mb-2 `}>
                   <label
                     htmlFor="BedRoom"
@@ -348,7 +348,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res} mt-3`}>
+              <div className={`${styles.amenities_list_flex_res} mt-2`}>
                 <div className="me-5 w-100 mb-3">
                   <label
                     htmlFor="FurnishedStatus"
@@ -736,7 +736,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
 
-              <div className={`content-btn d-flex justify-content-end mt-4`}>
+              <div className={`content-btn d-flex justify-content-end mt-2`}>
                 <div className={`d-flex`}>
                   <button type="button" onClick={ ()=>  router.push(
         "/post-property/property-details/propertyDetails")}

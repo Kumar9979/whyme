@@ -76,12 +76,14 @@
 
 .modal_icon_arrowRightbtn {
   font-size: 12px;
+  outline: 1px solid #fff;
 }
 
 .icon_arrowLeftbtn {
   color: #1d72db;
-  outline: 1px solid #1d72db;
-  font-size: 12px;
+  outline: 2px solid #1d72db;
+  font-size: 13px;
+  
 }
 .Steeper {
   background-color: #1d72db !important;
@@ -105,7 +107,11 @@
 }
 
 .color_1D72DB {
-  color: #1d72db;
+  color: #1d72db ;
+}
+
+.next_button{
+  background-color: #1d72db !important;
 }
 
 .stepper_border_radius {

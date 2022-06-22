@@ -69,28 +69,38 @@ const StepperNew = ({ currentPage }) => {
               alt="status icon"
               layout="fixed"
               // className={styles.stepper_status_image}
+              width={20}
+              height={20}
             />
           </div>
 
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
-            Property <span className={`${styles.stepper_components_title}`}>Details</span>
+            Property{" "}
+            <span className={`${styles.stepper_components_title}`}>
+              Details
+            </span>
           </span>
         </div>
         <div className={`${styles.icon_gap}`}>
-        <div className={`${styles.stepper_line_cont}`}>
-          <span
-            className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}
-          ></span>
-        </div>
+          <div className={`${styles.stepper_line_cont}`}>
+            <span
+              className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}
+            ></span>
+          </div>
         </div>
       </div>
 
       <div className={`${styles.stepper_margin_start} `}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={propertyFeatures.iconImage} alt="status icon" />
+            <Image
+              src={propertyFeatures.iconImage}
+              alt="status icon"
+              width={20}
+              height={20}
+            />
           </div>
 
           <span
@@ -100,18 +110,23 @@ const StepperNew = ({ currentPage }) => {
           </span>
         </div>
         <div className={`${styles.icon_gap}`}>
-        <div className={`${styles.stepper_line_cont}`}>
-          <span
-            className={`${propertyFeatures.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_features}`}
-          ></span>
-        </div>
+          <div className={`${styles.stepper_line_cont}`}>
+            <span
+              className={`${propertyFeatures.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_features}`}
+            ></span>
+          </div>
         </div>
       </div>
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={priceDetails.iconImage} alt="status icon" />
+            <Image
+              src={priceDetails.iconImage}
+              alt="status icon"
+              width={20}
+              height={20}
+            />
           </div>
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
@@ -120,18 +135,23 @@ const StepperNew = ({ currentPage }) => {
           </span>
         </div>
         <div className={`${styles.icon_gap_3}`}>
-        <div className={`${styles.stepper_line_cont}`}>
-          <span
-            className={`${priceDetails.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_price}`}
-          ></span>
-        </div>
+          <div className={`${styles.stepper_line_cont}`}>
+            <span
+              className={`${priceDetails.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_price}`}
+            ></span>
+          </div>
         </div>
       </div>
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image src={photoDesc.iconImage} alt="status icon" />
+            <Image
+              src={photoDesc.iconImage}
+              alt="status icon"
+              width={20}
+              height={20}
+            />
           </div>
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}

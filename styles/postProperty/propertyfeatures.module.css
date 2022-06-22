@@ -1,3 +1,7 @@
+
+
+
+
 .sidebar {
   background-color: #1d72db;
   height: 100%;
@@ -42,15 +46,15 @@
 }
 
 .font_24 {
-  font-size: 24px;
-}
+  font-size: 1.25rem;
+  }
 
 .font_18 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .font_20 {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .font_14 {
@@ -95,12 +99,13 @@
 
 .modal_icon_arrowRightbtn {
   font-size: 12px;
+  outline: 1px solid #fff;
 }
 
 .icon_arrowLeftbtn {
   color: #1d72db;
-  outline: 1px solid #1d72db;
-  font-size: 12px;
+  outline: 2px solid #1d72db;
+  font-size: 13px;
 }
 
 .propertyFeature_width_50_to_75 {
@@ -110,6 +115,10 @@
 .input_container{
   margin-left: 3.5rem;
   margin-right:3.5rem;
+}
+
+.amenities_list_title{
+  font-size:14px;
 }
 
 

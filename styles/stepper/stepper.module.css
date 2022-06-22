@@ -1,5 +1,5 @@
 .font_20 {
-  font-size: 20px;
+  font-size: 17px;
 }
 .font_medium {
   font-weight: 500;
@@ -51,6 +51,11 @@
 }
 
 
+@media only screen and (max-width: 1401px) {
+  .font_20 {
+    font-size: 14px;
+  }
+}
 
 @media only screen and (max-width: 990px) {
   /* .stepper_item_container {
@@ -62,7 +67,7 @@
   }
 
   .stepper_line {
-    /* display: none; */
+    display: none;
   min-width:.1rem;
     /* border-top-style: solid; */
     border-top-width: 2px;
@@ -70,7 +75,7 @@
     border-color: #ffff;
   
     margin-top: -84px;
-    margin-left: 56px;
+    margin-left: 53px;
     transform: rotate(90deg);
    }
 
@@ -104,7 +109,7 @@
     font-size: 12px;
   }
 
-.icon_gap{
+/* .icon_gap{
   margin-left: 1.4rem;
   margin-right: -1rem !important;
 }
@@ -112,44 +117,16 @@
 .icon_gap_3{
   margin-left: 1.4rem;
   margin-right: -0.6rem !important;
-}
+} */
   
 }
 
 
-@media only screen and (min-width:768px) and (max-width:1345px){
-
-  .stepper_line {
-    /* display: none; */
-  min-width:0.1rem;
-    /* border-top-style: solid; */
-    border-top-width: 2px;
-    /* display: block; */
-    border-color: #ffff;
-  
-    margin-top: -72px;
-    margin-left: 61px;
-    transform: rotate(90deg);
-   }
-
-   .stepper_line_price{
-     margin-top:-86px;
-   }
-
-   .stepper_line_features{
-     margin-top:-66px;
-   }
-
-   .font_20{
-     font-size: 15px;
-   }
-
-   .stepper_margin_left {
-    margin-left: 0px;
-  }
 
 
-}
+
+
+
 
 
 
