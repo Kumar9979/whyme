@@ -78,7 +78,7 @@ const PropertyUpload = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mt-5">
+      <div className="container mt-5 pt-5">
         <div className="row">
           <div className={`col-lg-4 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
             {/* <div className={`${styles.sidebar}`}>
@@ -108,7 +108,7 @@ const PropertyUpload = () => {
             </div> */}
                     <StepperNew  currentPage={currentPage}/>
           </div>
-          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-10 col-sm-10`}>
+          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-11 col-sm-11`}>
           {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
             <div className={`${styles.input_container}`}>
               <h5 className={`${styles.propertyHeading} pt-3`}>

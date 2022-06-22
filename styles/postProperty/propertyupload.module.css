@@ -186,4 +186,21 @@ padding-top: 120px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
   }
+
+  .upload_image {
+    height: 12rem;
+    border: 1px solid #bcc7ce;
+    background-color: #fff;
+    border-radius: 7px;
+    font-family: Poppins, Regular;
+    font-size: 10px;
+  }
+
+  .upload_button{
+    border:none;
+    color:#1D72DB;
+    background: none;
+    font-size: 13px;
+    margin-top: -3%;
+  }
 }
