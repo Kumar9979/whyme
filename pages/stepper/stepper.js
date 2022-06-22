@@ -1,54 +1,56 @@
 import React, { useState } from "react";
-import currentIcon from "../../assets/icons/checkgrey.png";
-import visitedIcon from "../../assets/icons/check.png";
 import Image from "next/image";
 
 import styles from "../../styles/stepper/stepper.module.css";
-import { StepLabel } from "@material-ui/core";
+import stepperCompleletedIcon from "../../assets/icons/stepperCompleletedIcon.svg";
+import stepperCurrentIcon from "../../assets/icons/stepperCurrentIcon.svg";
+import stepperUnvisitedIcon from "../../assets/icons/stepperUnvisitedIcon.svg";
 
 const StepperNew = ({ currentPage }) => {
   const propertyDetails = {
-    iconImage: visitedIcon,
-    iconOpacity: "visible",
+    iconImage: stepperCurrentIcon,
     lineOpacity: styles.stepper_line_opacity,
   };
   const propertyFeatures = {
-    iconImage: currentIcon,
-    iconOpacity: styles.stepper_opacity,
+    iconImage: stepperUnvisitedIcon,
+    textOpacity: styles.stepper_text_opacity,
     lineOpacity: styles.stepper_line_opacity,
   };
   const priceDetails = {
-    iconImage: currentIcon,
-    iconOpacity: styles.stepper_opacity,
-    lineOpacity: styles.stepper_opacity,
+    iconImage: stepperUnvisitedIcon,
+    textOpacity: styles.stepper_text_opacity,
+    lineOpacity: styles.stepper_line_opacity,
   };
   const photoDesc = {
-    iconImage: currentIcon,
-    iconOpacity: styles.stepper_opacity,
+    iconImage: stepperUnvisitedIcon,
+    textOpacity: styles.stepper_text_opacity,
   };
 
   function currentStepper(currentPage) {
     if (currentPage === "propertyFeatures") {
-      propertyFeatures.iconImage = visitedIcon;
-      propertyFeatures.iconOpacity = "visibile";
+      propertyDetails.iconImage = stepperCompleletedIcon;
+      propertyFeatures.iconImage = stepperCurrentIcon;
+      propertyFeatures.textOpacity = "visibile";
       propertyDetails.lineOpacity = "visibile";
     } else if (currentPage === "priceDetails") {
+      propertyDetails.iconImage = stepperCompleletedIcon;
       propertyDetails.lineOpacity = "visibile";
-      propertyFeatures.iconImage = visitedIcon;
-      propertyFeatures.iconOpacity = "visibile";
+      propertyFeatures.iconImage = stepperCompleletedIcon;
+      propertyFeatures.textOpacity = "visibile";
       propertyFeatures.lineOpacity = "visibile";
-      priceDetails.iconImage = visitedIcon;
-      priceDetails.iconOpacity = "visibile";
+      priceDetails.iconImage = stepperCurrentIcon;
+      priceDetails.textOpacity = "visibile";
     } else if (currentPage === "photoDesc") {
+      propertyDetails.iconImage = stepperCompleletedIcon;
       propertyDetails.lineOpacity = "visibile";
-      propertyFeatures.iconImage = visitedIcon;
-      propertyFeatures.iconOpacity = "visibile";
+      propertyFeatures.iconImage = stepperCompleletedIcon;
+      propertyFeatures.textOpacity = "visibile";
       propertyFeatures.lineOpacity = "visibile";
-      priceDetails.iconImage = visitedIcon;
-      priceDetails.iconOpacity = "visibile";
+      priceDetails.iconImage = stepperCompleletedIcon;
+      priceDetails.textOpacity = "visibile";
       priceDetails.lineOpacity = "visibile";
-      photoDesc.iconImage = visitedIcon;
-      photoDesc.iconOpacity = "visibile";
+      photoDesc.iconImage = stepperCurrentIcon;
+      photoDesc.textOpacity = "visibile";
     }
   }
   currentStepper(currentPage);
@@ -77,42 +79,38 @@ const StepperNew = ({ currentPage }) => {
           </span>
         </div>
         <div className={`${styles.stepper_line_cont}`}>
-          <span className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}></span>
+          <span
+            className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}
+          ></span>
         </div>
       </div>
 
       <div className={`${styles.stepper_margin_start} `}>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image
-              src={propertyFeatures.iconImage}
-              className={`${propertyFeatures.iconOpacity}`}
-              alt="status icon"
-            />
+            <Image src={propertyFeatures.iconImage} alt="status icon" />
           </div>
 
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${propertyFeatures.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${propertyFeatures.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Property Features
           </span>
         </div>
         <div className={`${styles.stepper_line_cont}`}>
-          <span className={`${propertyFeatures.lineOpacity} ${styles.stepper_line}`}></span>
+          <span
+            className={`${propertyFeatures.lineOpacity} ${styles.stepper_line}`}
+          ></span>
         </div>
       </div>
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image
-              src={priceDetails.iconImage}
-              className={priceDetails.iconOpacity}
-              alt="status icon"
-            />
+            <Image src={priceDetails.iconImage} alt="status icon" />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Price Details
           </span>
@@ -127,14 +125,10 @@ const StepperNew = ({ currentPage }) => {
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div>
-            <Image
-              src={photoDesc.iconImage}
-              alt="status icon"
-              className={photoDesc.iconOpacity}
-            />
+            <Image src={photoDesc.iconImage} alt="status icon" />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.iconOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Photos & Description
           </span>

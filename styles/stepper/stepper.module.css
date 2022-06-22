@@ -22,7 +22,7 @@
   background-color: #1d72db;
 }
 
-.stepper_opacity {
+.stepper_text_opacity {
   opacity: 0.3;
 }
 
@@ -49,6 +49,8 @@
 .stepper_status_image {
   width: 60px !important;
 }
+
+
 
 @media only screen and (max-width: 990px) {
   /* .stepper_item_container {

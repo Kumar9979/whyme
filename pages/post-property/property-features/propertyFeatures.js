@@ -68,7 +68,7 @@ const propertyFeatures = () => {
   ];
   const status = [
     { value: "Ready To Move", label: "Ready To Move" },
-    { value: "Not Ready To Move", label: "Not Ready To Move" },
+    { value: "Under Construction", label: "Under Construction" },
   ];
 
   const furnishingStatus = [
@@ -577,7 +577,7 @@ const propertyFeatures = () => {
                     >
                       Swimming Pool
                     </label>
-                  </div>
+                    95%  </div>
 
                   <div className="form-check mb-3">
                     <input

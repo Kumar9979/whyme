@@ -10,6 +10,7 @@ import Navbar from "../../navbar/navbar";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
 
+
 const PropertyUpload = () => {
 
   const [currentPage, setCurrentPage] = useState("photoDesc");
@@ -74,7 +75,7 @@ const PropertyUpload = () => {
   //   setSize(35);
   //   formik.setFieldValue("image", "");
   // }
-
+console.log(formik.values);
   return (
     <div>
       <Navbar />
@@ -179,6 +180,7 @@ const PropertyUpload = () => {
                       >
                         <label>
                           <input
+                           
                             type="file"
                             //  style={{ visibility: "hidden" }}
                             name="image"
@@ -186,10 +188,10 @@ const PropertyUpload = () => {
                             multiple
                             onChange={(e) => {
                               formik.setFieldValue("image", e.target.files[0]);
-
                               handleChange(e);
                             }}
                             hidden
+                          
                           />
                           Browse Photos
                         </label>
