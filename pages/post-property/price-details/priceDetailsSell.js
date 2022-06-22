@@ -74,7 +74,7 @@ const PriceDetailsSell = () => {
             <form onSubmit={formik.handleSubmit}>
               <div className={``}>
                 <div className={`row  mb-4`}>
-                  <div className={`col-lg-6 col-sm-12 `}>
+                  <div className={`col-lg-6 col-sm-12 ${styles.super_area_container}`}>
                     <label
                       htmlFor="SuperArea"
                       className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -153,7 +153,7 @@ const PriceDetailsSell = () => {
                 <div className={`mb-4`}>
                   <label
                     htmlFor="ExpectedPrice"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins} `}
                   >
                     Expected Price
                   </label>

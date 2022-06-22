@@ -171,6 +171,22 @@
     border-bottom-left-radius: 20px;
   }
 
+  .font_24{
+    font-size: 20px;
+  }
+
+  .font_20{
+    font-size: 16px;
+  }
+
+  .amenities_list_title{
+    font-size:14px;
+    font-weight: 500;
+  }
+
+  .property_features_list_container{
+    width: 100% !important;
+  }
 
 }
 /* 

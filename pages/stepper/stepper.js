@@ -75,13 +75,15 @@ const StepperNew = ({ currentPage }) => {
           <span
             className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
-            Property Details
+            Property <span className={`${styles.stepper_components_title}`}>Details</span>
           </span>
         </div>
+        <div className={`${styles.icon_gap}`}>
         <div className={`${styles.stepper_line_cont}`}>
           <span
             className={`${propertyDetails.lineOpacity} ${styles.stepper_line}`}
           ></span>
+        </div>
         </div>
       </div>
 
@@ -97,10 +99,12 @@ const StepperNew = ({ currentPage }) => {
             Property Features
           </span>
         </div>
+        <div className={`${styles.icon_gap}`}>
         <div className={`${styles.stepper_line_cont}`}>
           <span
-            className={`${propertyFeatures.lineOpacity} ${styles.stepper_line}`}
+            className={`${propertyFeatures.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_features}`}
           ></span>
+        </div>
         </div>
       </div>
 
@@ -115,10 +119,12 @@ const StepperNew = ({ currentPage }) => {
             Price Details
           </span>
         </div>
+        <div className={`${styles.icon_gap_3}`}>
         <div className={`${styles.stepper_line_cont}`}>
           <span
-            className={`${priceDetails.lineOpacity} ${styles.stepper_line}`}
+            className={`${priceDetails.lineOpacity} ${styles.stepper_line} ${styles.stepper_line_price}`}
           ></span>
+        </div>
         </div>
       </div>
 
