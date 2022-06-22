@@ -14,19 +14,38 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import PlacesAutocomplete from "./placesAutocomplete";
 import { usePosition } from "./usePosition";
 
+
+
+
+
+
+
+
+
 const PropertyDetails = () =>
   // { latlng, onChange,isEdit, value }
   {
-    const {latitude, longitude, error} = usePosition();
+    const { latitude: lat, longitude: lng, error } = usePosition();
+    // useEffect(() => {
+    //   console.log(lat, lng);
+    //   setSelected({ lat, lng });
+    // }, [lat, lng]);
+
     const router = useRouter();
     const [currentPage, setCurrentPage] = useState("propertyDetails");
-    const [selected, setSelected] = useState({lat:latitude,lng:longitude});
+
     const [zoom, setZoom] = useState(10);
+    // const [currentLat, setCurrentLat] = useState(latitude);
+    // const [currentLng, setCurrentlng] = useState(longitude);
+    const [selected, setSelected] = useState();
+    const [map, setMap] = useState(null)
+
     const [center, setCenter] = useState({ lat: 12.2958104, lng: 76.6393805 });
-  
-console.log(latitude, longitude, error);
 
-
+    // console.log(latitude, longitude, error);
+    const mapOptions = {
+      fullscreenControl: false,
+    };
     const formik = useFormik({
       initialValues: {
         Map: "",
@@ -108,10 +127,22 @@ console.log(latitude, longitude, error);
                             zoom={16}
                             center={selected}
                             mapContainerClassName={`${styles.map_container}`}
+                            onLoad={map => setMap(map)}
+                          //  options={mapOptions}
                           >
-                            {selected && <Marker draggable={true} onDragEnd={(e)=>
-                              { setSelected({lat:e.latLng.lat(),lng:e.latLng.lng()})
-                              }} visible={true} position={selected} />}
+                            {selected && (
+                              <Marker
+                                draggable={true}
+                                onDragEnd={(e) => {
+                                  setSelected({
+                                    lat: e.latLng.lat(),
+                                    lng: e.latLng.lng(),
+                                  });
+                                }}
+                                visible={true}
+                                position={selected}
+                              />
+                            )}
                           </GoogleMap>
                         </div>
                       </>
@@ -218,3 +249,4 @@ console.log(latitude, longitude, error);
   };
 
 export default PropertyDetails;
+

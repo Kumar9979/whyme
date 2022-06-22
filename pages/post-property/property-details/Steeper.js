@@ -1,78 +1,111 @@
-import React, { useEffect, useState } from "react";
-import { Stepper, Step, StepLabel } from "@material-ui/core";
-import styles from "../../../styles/postProperty/propertydetails.module.css";
-import { styled } from "@material-ui/styles";
-import StepConnector from "@material-ui/core/StepConnector";
-import { StepConnectorClasskey } from "@material-ui/core/StepConnector/StepConnector";
-import Image from "next/image";
-import CheckGreyImages from "../../../assets/icons/checkgrey.png";
-import CheckImages from "../../../assets/icons/check.png";
+import { useState, useMemo, useEffect } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
+import "@reach/combobox/styles.css";
+import { usePosition } from "../property-details/usePosition";
 
-const Steeper = ({ active }) => {
-  const steps = [
-    "Property Details",
-    "Property Features",
-    "Price Details",
-    "Photos & Description",
-  ];
+export default function Places() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
+    libraries: ["places"],
+  });
 
-  const [size, setSize] = useState()
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
+}
 
-
-  useEffect(()=> {
-    if (typeof window !== 'undefined') {
-    window.addEventListener('resize', ()=> {
-
-      
-          console.log(window.innerWidth<=945);
-          setSize(window.innerWidth)
-   
-      
-    })
- }}, )
-  return (
-    <div className={`${styles.Steeper}`}>
-      <Stepper orientation={size<=945?"horizontal":"vertical"} activeStep={active}>
-        {steps.map((label) => (
-          <Step className={`${styles.circle}`}>
-            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-    </div>
-  );
-};
-
-export default Steeper;
-
-function QontoStepIcon(props) {
-  const { active, completed, className } = props;
+function Map() {
+  // const center = useMemo(() => ({ lat: 43.45, lng: -80.49 }), []);
+  const [selected, setSelected] = useState({ lat: 43.45, lng: -80.49 });
+  const { latitude:lat, longitude:lng, error } = usePosition();
+  useEffect(() => {
+    console.log(lat,lng);
+    setSelected({ lat, lng });
+  },[lat,lng])
 
   return (
-    <div ownerState={{ active }} className={className}>
-      {completed ? (
-         <Image src={CheckImages} alt="Picture of the author" />
-      ) : (
-        <Image src={CheckGreyImages} alt="Picture of the author" />
-      )}
-    </div>
+    <>
+      <div className="places-container">
+        <PlacesAutocomplete setSelected={setSelected} />
+      </div>
+
+      <GoogleMap
+        zoom={16}
+        center={selected}
+        mapContainerClassName="map-container"
+      >
+     {/* <Marker position={selected} /> */}
+
+
+
+
+     {selected && (
+                              <Marker
+                                draggable={true}
+                                onDragEnd={(e) => {
+                                  setSelected({
+                                    lat: e.latLng.lat(),
+                                    lng: e.latLng.lng(),
+                                  });
+                                }}
+                                visible={true}
+                                position={selected}
+                              />
+                            )}
+      </GoogleMap>
+    </>
   );
 }
 
-const QontoConnector = styled(StepConnector)(({ theme }) => ({
-  [`&.${StepConnectorClasskey}`]: {
-    top: 10,
-    left: "calc(-50% + 16px)",
-    right: "calc(50% + 16px)",
-  },
-  [`&.${StepConnectorClasskey}`]: {
-    [`& .${StepConnectorClasskey}`]: {
-      borderColor: "#784af4",
-    },
-  },
-  [`&.${StepConnectorClasskey}`]: {
-    [`& .${StepConnectorClasskey}`]: {
-      borderColor: "#784af4",
-    },
-  },
-}));
+const PlacesAutocomplete = ({ setSelected }) => {
+  const {
+    ready,
+    value,
+    setValue,
+    suggestions: { status, data },
+    clearSuggestions,
+  } = usePlacesAutocomplete();
+
+  const handleSelect = async (address) => {
+    setValue(address, false);
+    clearSuggestions();
+
+    const results = await getGeocode({ address });
+
+
+    const { lat, lng } = await getLatLng(results[0]);
+    setSelected({ lat, lng });
+  };
+
+  return (
+    <Combobox onSelect={handleSelect}>
+      <ComboboxInput
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        disabled={!ready}
+        className="combobox-input"
+        placeholder="Search an address"
+      />
+      <ComboboxPopover>
+        <ComboboxList>
+          {status === "OK" &&
+            data.map(({ place_id, description }) => (
+              <ComboboxOption key={place_id} value={description} />
+            ))}
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  );
+};
+
+
