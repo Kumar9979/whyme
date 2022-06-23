@@ -214,14 +214,15 @@ const SellRent = () => {
                 }}
               />
 
-              {formik.errors.propertyType && formik.touched.propertyType && (
+
+            </div>
+          ) : null}
+                        {formik.errors.propertyType && formik.touched.propertyType && (
                 <div className="d-flex align-items-center text-danger">
                   <i className="ri-error-warning-line me-1 mt-1 "></i>
                   <span> {formik.errors.propertyType}</span>
                 </div>
               )}
-            </div>
-          ) : null}
           <div className="d-flex justify-content-end py-2 border-none mt-2">
             <button
               type="submit"

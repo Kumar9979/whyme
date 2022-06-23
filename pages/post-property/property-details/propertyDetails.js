@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect, useMemo } from "react";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
 import Mapimages from "../../../assets/icons/download.jpg";
 import Image from "next/image";
-import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
@@ -48,8 +48,8 @@ const PropertyDetails = () => {
     },
     validationSchema: Yup.object({
       Map: Yup.object("").shape({
-        lat: Yup.string().required(""),
-        lng: Yup.string().required(""),
+        lat: Yup.string().required("Select your location in the map"),
+        lng: Yup.string().required("Select your location in the map"),
       }),
       Address: Yup.string("").required("Required"),
       BuildingName: Yup.string("").required("Required"),
@@ -83,7 +83,7 @@ const PropertyDetails = () => {
   }
 
   return (
-    <div>
+    <>
       <Navbar />
       <div className={`${styles.whole_container} mt-5 container`}>
         <div className="row mb-2">
@@ -96,18 +96,19 @@ const PropertyDetails = () => {
             className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}
           >
             {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
+            <form onSubmit={formik.handleSubmit}
+                // onSubmit={(e) => {
+                //   formik.handleSubmit;
+                //   console.log("hi");
+                // }}
+              >
             <div className={`${styles.input_container} mt-2 `}>
               <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
-              <form
-                onSubmit={(e) => {
-                  formik.handleSubmit;
-                  console.log("hi");
-                }}
-              >
+          
                 <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
                   Select Your Property In Map
                 </h6>
-                <div className={`${styles.location}form-group`}>
+                <div className={`${styles.location} form-group`}>
                   {/* <input
                       type="text"
                       className={`${styles.locationform} form-control mb-2`}
@@ -119,7 +120,7 @@ const PropertyDetails = () => {
                       onChange={formik.handleChange}
                     /> */}
                 </div>
-                <span onClick={markerSetOn}></span>
+               
                 <div>
                   {isLoaded ? (
                     <>
@@ -161,17 +162,17 @@ const PropertyDetails = () => {
                     <p>Map Loading</p>
                   )}
 
-                  {/* 
+                  
 {formik.errors.Map && formik.touched.Map && (
-                  <div className="d-flex align-items-center text-danger">
+                  <div className="d-flex align-items-center text-danger mt-2">
                     <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.Map}</span>
+                    <span>{formik.errors.Map.lat}</span>
                   </div>
-                )} */}
+                )}
                 </div>
                 <div className="mt-3">
                   <label
-                    for="exampleFormControlInput1"
+                    htmlFor="Address"
                     className={`${styles.labelText} form-label pb-1`}
                   >
                     Address
@@ -179,9 +180,8 @@ const PropertyDetails = () => {
                   <textarea
                     type="text"
                     className={`${styles.address} form-control mb-4`}
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter your property location"
+                    id="Address"
+                    placeholder="Enter your property address"
                     name="Address"
                     value={formik.values.Address}
                     onChange={formik.handleChange}
@@ -195,7 +195,7 @@ const PropertyDetails = () => {
                 )}
                 <div className="mt-3">
                   <label
-                    for="exampleFormControlInput1"
+                  htmlFor="BuildingName"
                     className={`${styles.labelText} form-label pb-1`}
                   >
                     Building Name
@@ -203,8 +203,8 @@ const PropertyDetails = () => {
                   <input
                     type="text"
                     className={`${styles.building} form-control mb-3`}
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
+                    id="BuildingName"
+                  
                     placeholder="Enter your Building Name"
                     name="BuildingName"
                     value={formik.values.BuildingName}
@@ -243,7 +243,8 @@ const PropertyDetails = () => {
 
                     <button
                       type="submit"
-                      onClick={formik.handleSubmit}
+                   
+                    
                       className={`${styles.bg_color_1D72DB}  ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
@@ -259,12 +260,15 @@ const PropertyDetails = () => {
                     </button>
                   </div>
                 </div>
-              </form>
+             
             </div>
+            </form>
+
           </div>
+
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

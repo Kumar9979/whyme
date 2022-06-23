@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../../../styles/postProperty/propertyupload.module.css";
-import { Stepper, StepLabel, Step } from "@material-ui/core";
 import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -9,9 +8,11 @@ import backButton from "../../../assets/icons/backbutton.png";
 import Navbar from "../../navbar/navbar";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
-
+import { FileUploader } from "react-drag-drop-files";
+// import FileUploader from "./fileUpoader";
 
 const PropertyUpload = () => {
+const fileTypes = ["JPG", "PNG", "GIF"];
 
   const [currentPage, setCurrentPage] = useState("photoDesc");
   const router = useRouter();
@@ -19,8 +20,7 @@ const PropertyUpload = () => {
   const [file, setFile] = useState(upload);
   const [uploaded, setUploaded] = useState(false);
   const [size, setSize] = useState(35);
-  const [imgName, setImgName] = useState('');
-
+  const [imgName, setImgName] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -45,19 +45,35 @@ const PropertyUpload = () => {
     },
   });
 
-  function handleChange(e) {
-    if (e.target?.files.length !== 0) {
-      setImgName(e.target.files[0].name);
-      console.log(imgName);
-      setUploaded(true)
-    }
-    else{
-      setUploaded(false)
-    }
-  
+  // function handleChange(e) {
+  //   if (e.target?.files.length !== 0) {
+  //     setImgName(e.target.files[0].name);
+  //     console.log(imgName);
+  //     setUploaded(true);
+  //   } else {
+  //     setUploaded(false);
+  //   }
+  // }
+
+  const onUpload = (files) => {
+    setUploaded(true);
+    setFile(files[0]);
+    setImgName(files[0].name);
+    formik.setFieldValue("image", files[0]);
+  };
+
+
+
+/******* REACT FILE PICKER******* */
+
+
+  const [fileDrop, setFileDrop] = useState(null);
+  const handleChange = (file) => {
+    setFileDrop(file);
+    
+    console.log(fileDrop);
   }
-
-
+  console.log(imgName);
   // const onImageChange = (e) => {
   //   const [file] = e.target.files;
   //   setImg(URL.createObjectURL(file));
@@ -75,23 +91,30 @@ const PropertyUpload = () => {
   //   setSize(35);
   //   formik.setFieldValue("image", "");
   // }
-console.log(formik.values);
+  console.log(formik.values);
+
+
+
+
   return (
     <div>
       <Navbar />
       <div className="container mt-5 pt-3">
         <div className="row">
-          <div className={`col-lg-3 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
-            
-                    <StepperNew  currentPage={currentPage}/>
+          <div
+            className={`col-lg-3 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}
+          >
+            <StepperNew currentPage={currentPage} />
           </div>
-          <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-11 col-sm-11`}>
-          {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
+          <div
+            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-11 col-sm-11`}
+          >
+            {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
             <div className={`${styles.input_container}`}>
               <h5 className={`${styles.propertyHeading} pt-3`}>
                 Photos & Descrption
               </h5>
-
+              <FileUploader handleChange={handleChange} multiple={true} name="file" types={fileTypes} />
               <form onSubmit={formik.handleSubmit} className="mt-3">
                 <div className="mt-5">
                   <label
@@ -106,88 +129,89 @@ console.log(formik.values);
                     /> */}
                     Photos
                   </label>
-                  <div className={`${styles.upload_image} `}>
-                    <div
-                      htmlFor="upload"
-                      className="d-flex justify-content-center mt-3 mb-2"
-                    >
-                      <label htmlFor="upload">
-                        {" "}
-                        <Image
-                          src={upload}
-                          name="image"
-                          value={formik.values.image}
-                          alt="image of camera"
-                        />
-                      </label>
-                    </div>
-                    <div className="d-flex flex-column align-items-center justify-content-center ">
-                      {uploaded? <p>{imgName}</p>:null}
-                      <input
-                        type={"file"}
-                        style={{ visibility: "hidden" }}
-                        id="upload"
-                        name="image"
-                        accept="image/*;capture=camera"
-                        multiple
-                        onChange={(e) => {
-                          formik.setFieldValue("image", e.target.files[0]);
-                          handleChange(e);
-                          
-                        }}
-                        hidden
-                      />
-                      <p className={`${styles.upload_text_1}`}>
-                        Drag & drop the image of an property
-                      </p>
-
-                      <p className={`${styles.upload_text_2}`}>
-                        JPG and PNG images - max 20MB each
-                      </p>
-                      <p className={`${styles.upload_text_2}`}>
-                        <span className={`${styles.or_text}`}>-</span>OR
-                        <span>-</span>
-                      </p>
-                      <button
-                        className={`${styles.upload_button}`}
-                        type="submit"
-                        variant="contained"
-                        component="label"
+                  {/* <FileUploader onUpload={onUpload} count={5}> */}
+                    <div className={`${styles.upload_image} `}>
+                      <div
+                        htmlFor="upload"
+                        className="d-flex justify-content-center mt-3 mb-2"
                       >
-                        <label>
-                          <input
-                           
-                            type="file"
-                            //  style={{ visibility: "hidden" }}
+                        <label htmlFor="upload">
+                          {" "}
+                          <Image
+                            src={upload}
                             name="image"
-                            accept="image/*;capture=camera"
-                            multiple
-                            onChange={(e) => {
-                              formik.setFieldValue("image", e.target.files[0]);
-                              handleChange(e);
-                            }}
-                            hidden
-                          
+                            value={formik.values.image}
+                            alt="image of camera"
                           />
-                          Browse Photos
                         </label>
-                      </button>
-                      {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
-                    </div>
-                    {formik.errors.image && formik.touched.image && (
-                      <div className="d-flex align-items-center text-danger mt-5">
-                        <i
-                          className={` ${styles.error_message} ri-error-warning-line me-1 `}
-                        ></i>
-                        <span className={`${styles.error_message}`}>
-                          {formik.errors.image}
-                        </span>
                       </div>
-                    )}
+                      <div className="d-flex flex-column align-items-center justify-content-center ">
+                        {uploaded ? <p>{imgName}</p> : null}
+                        <input
+                          type={"file"}
+                          style={{ visibility: "hidden" }}
+                          id="upload"
+                          name="image"
+                          accept="image/*;capture=camera"
+                          multiple
+                          onChange={(e) => {
+                            formik.setFieldValue("image", e.target.files[0]);
+                            handleChange(e);
+                          }}
+                          hidden
+                        />
+                        <p className={`${styles.upload_text_1}`}>
+                          Drag & drop the image of an property
+                        </p>
 
-                   
-                  </div>
+                        <p className={`${styles.upload_text_2}`}>
+                          JPG and PNG images - max 20MB each
+                        </p>
+                        <p className={`${styles.upload_text_2}`}>
+                          <span className={`${styles.or_text}`}>-</span>OR
+                          <span>-</span>
+                        </p>
+                        <button
+                          className={`${styles.upload_button}`}
+                          type="button"
+                          variant="contained"
+                          component="label"
+                        >
+                          <label>
+                            <input
+                              type="file"
+                              //  style={{ visibility: "hidden" }}
+                              name="image"
+                              accept="image/*;capture=camera"
+                              multiple
+                              onChange={(e) => {
+                                formik.setFieldValue(
+                                  "image",
+                                  e.target.files[0]
+                                );
+                                handleChange(e);
+                              }}
+                              hidden
+                            />
+                            Browse Photos
+                          </label>
+                        </button>
+                        {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
+                      </div>
+                      {formik.errors.image && formik.touched.image && (
+                        <div className="d-flex align-items-center text-danger mt-5">
+                          <i
+                            className={` ${styles.error_message} ri-error-warning-line me-1 `}
+                          ></i>
+                          <span className={`${styles.error_message}`}>
+                            {formik.errors.image}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  {/* </FileUploader> */}
                 </div>
+
                 <div className="mt-5">
                   <div className="mt-3">
                     <label
@@ -217,7 +241,6 @@ console.log(formik.values);
                 <div className={` mt-2 `}>
                   <input
                     type="checkbox"
-                  
                     name="terms"
                     onChange={formik.handleChange}
                   />
@@ -232,18 +255,25 @@ console.log(formik.values);
                   </div>
                 )}
 
-                <div className={`content-btn d-flex justify-content-end mt-5 mb-3`}>
+                <div
+                  className={`content-btn d-flex justify-content-end mt-5 mb-3`}
+                >
                   <div className={`d-flex`}>
-                    <button type="button" onClick={()=>router.push(
-        "/post-property/price-details/priceDetailsSell"
-      )} className={`bg-white border-0  `}>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        router.push(
+                          "/post-property/price-details/priceDetailsSell"
+                        )
+                      }
+                      className={`bg-white border-0  `}
+                    >
                       <span
                         className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
                       >
                         <i
                           className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
                         ></i>
-                     
                       </span>
 
                       <span
