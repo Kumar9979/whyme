@@ -14,6 +14,7 @@ height: 220px;
 border-radius: .25rem;
 
 }
+
 .propertyHeading {
   color: #1d72db;
   font-family: Poppins, medium;
@@ -52,7 +53,7 @@ border-radius: .25rem;
 
 .locationform::placeholder{
   font-size: 13px;
-  color: #bcc7ce;
+  color: #bcc7ce !important;
 }
 
 .building {
@@ -84,12 +85,14 @@ border-radius: .25rem;
 
 .modal_icon_arrowRightbtn {
   font-size: 12px;
+  outline: 1px solid #fff;
 }
 
 .icon_arrowLeftbtn {
   color: #1d72db;
-  outline: 1px solid #1d72db;
-  font-size: 12px;
+  outline: 2px solid #1d72db;
+  font-size: 13px;
+  
 }
 .Steeper {
   background-color: #1d72db !important;
@@ -113,7 +116,11 @@ border-radius: .25rem;
 }
 
 .color_1D72DB {
-  color: #1d72db;
+  color: #1d72db ;
+}
+
+.next_button{
+  background-color: #1d72db !important;
 }
 
 .stepper_border_radius {
@@ -128,6 +135,11 @@ border-radius: .25rem;
 .propertyFeature_border_radius {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.stepper_property_details{
+  padding-left: 2.5rem !important;
+  
 }
 
 
@@ -166,4 +178,16 @@ border-radius: .25rem;
     margin-left: 0rem !important;
     margin-right: 0rem !important;
   }
+
+  .stepper_property_details{
+    padding-left: 0rem !important;
+  }
+
+  .whole_container{
+    margin-top: 75px !important;
+    /* margin-right:10px !important; */
+    /* margin-left: 5px !important; */
+    margin-bottom: 15px !important;
+  }
+  
 }

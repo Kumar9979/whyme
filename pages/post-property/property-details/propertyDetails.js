@@ -5,98 +5,110 @@ import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
-import Steeper from "./Steeper";
 import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
-
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-
 import PlacesAutocomplete from "./placesAutocomplete";
 import { usePosition } from "./usePosition";
+import Geocode from "react-geocode";
 
+const libraries = ["places"];
 
+const PropertyDetails = () => {
+  const { latitude: lat, longitude: lng, error } = usePosition();
+  useEffect(() => {
+    setSelected({ lat, lng });
+    if (lat !== undefined) {
+      const timer = setTimeout(() => {
+        markerSetOn();
+      }, 1000);
+    }
+   return () => clearTimeout(timer);
+  }, [lat, lng]);
 
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState("propertyDetails");
 
+  const [zoom, setZoom] = useState(10);
+  const [markedAddress, setMarkedAddress] = useState("");
 
+  const [selected, setSelected] = useState();
+  const [map, setMap] = useState(null);
+  const [markerStat, setmarkerStat] = useState(false);
+  console.log(markerStat);
+  function markerSetOn() {
+    setmarkerStat(true);
+  }
 
-
-
-
-const PropertyDetails = () =>
-  // { latlng, onChange,isEdit, value }
-  {
-    const { latitude: lat, longitude: lng, error } = usePosition();
-    // useEffect(() => {
-    //   console.log(lat, lng);
-    //   setSelected({ lat, lng });
-    // }, [lat, lng]);
-
-    const router = useRouter();
-    const [currentPage, setCurrentPage] = useState("propertyDetails");
-
-    const [zoom, setZoom] = useState(10);
-    // const [currentLat, setCurrentLat] = useState(latitude);
-    // const [currentLng, setCurrentlng] = useState(longitude);
-    const [selected, setSelected] = useState();
-    const [map, setMap] = useState(null)
-
-    const [center, setCenter] = useState({ lat: 12.2958104, lng: 76.6393805 });
-
-    // console.log(latitude, longitude, error);
-    const mapOptions = {
-      fullscreenControl: false,
-    };
-    const formik = useFormik({
-      initialValues: {
-        Map: "",
-        Address: "",
-        BuildingName: "",
-      },
-
-      validationSchema: Yup.object({
-        Map: Yup.string("").required("Required"),
-        Address: Yup.string("").required("Required"),
-        BuildingName: Yup.string("").required("Required"),
+  const formik = useFormik({
+    initialValues: {
+      Map: {},
+      Address: "",
+      BuildingName: "",
+    },
+    validationSchema: Yup.object({
+      Map: Yup.object("").shape({
+        lat: Yup.string().required(""),
+        lng: Yup.string().required(""),
       }),
-      onSubmit: (values) => {
-        console.log(values);
+      Address: Yup.string("").required("Required"),
+      BuildingName: Yup.string("").required("Required"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+      router.push("/post-property/property-features/propertyFeatures");
+    },
+  });
 
-        router.push("/post-property/property-features/propertyFeatures");
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
+    libraries,
+  });
+  
+  Geocode.setApiKey("AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU");
+
+  console.log(formik.values);
+
+  function markerChange() {
+    Geocode.fromLatLng(selected.lat, selected.lng).then(
+      (response) => {
+        setMarkedAddress(response.results[0].formatted_address);
+        console.log(markedAddress);
       },
-    });
-    const { isLoaded } = useLoadScript({
-      googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
-      libraries: ["places"],
-    });
 
-    console.log(selected);
-    const handlePlacesChanged = (place) => {};
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 
-    return (
-      <div>
-        <Navbar />
-        <div className={`${styles.whole_container} mt-5 container`}>
-          <div className="row">
-            <div
-              className={`col-lg-4 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}
-            >
-              <StepperNew currentPage={currentPage} />
-            </div>
-            <div
-              className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}
-            >
-              {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
-              <div className={`${styles.input_container} mt-2 `}>
-                <h5 className={`${styles.propertyHeading}`}>
-                  Property Details
-                </h5>
-                <form onSubmit={formik.handleSubmit}>
-                  <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
-                    Select Your Property In Map
-                  </h6>
-                  {/* <PlacesAutocomplete handlePlacesChanged={handlePlacesChanged} setSelected={setSelected} /> */}
-                  <div className={`${styles.location}form-group`}>
-                    {/* <input
+  return (
+    <div>
+      <Navbar />
+      <div className={`${styles.whole_container} mt-5 container`}>
+        <div className="row mb-2">
+          <div
+            className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} ${styles.stepper_property_details}`}
+          >
+            <StepperNew currentPage={currentPage} />
+          </div>
+          <div
+            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}
+          >
+            {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
+            <div className={`${styles.input_container} mt-2 `}>
+              <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
+              <form
+                onSubmit={(e) => {
+                  formik.handleSubmit;
+                  console.log("hi");
+                }}
+              >
+                <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
+                  Select Your Property In Map
+                </h6>
+                <div className={`${styles.location}form-group`}>
+                  {/* <input
                       type="text"
                       className={`${styles.locationform} form-control mb-2`}
                       id="exampleInputEmail1"
@@ -106,147 +118,154 @@ const PropertyDetails = () =>
                       value={formik.values.Map}
                       onChange={formik.handleChange}
                     /> */}
-                  </div>
-                  {/* {formik.errors.Map && formik.touched.Map && (
-                    <div className="d-flex align-items-center text-danger">
-                      <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.Map}</span>
-                    </div>
-                  )} */}
-                  <div>
-                    {isLoaded ? (
-                      <>
-                        <div>
-                          <PlacesAutocomplete
-                            handlePlacesChanged={handlePlacesChanged}
-                            setSelected={setSelected}
-                          />
-                        </div>
-                        <div className="mt-3">
-                          <GoogleMap
-                            zoom={16}
-                            center={selected}
-                            mapContainerClassName={`${styles.map_container}`}
-                            onLoad={map => setMap(map)}
-                          //  options={mapOptions}
-                          >
-                            {selected && (
-                              <Marker
-                                draggable={true}
-                                onDragEnd={(e) => {
-                                  setSelected({
-                                    lat: e.latLng.lat(),
-                                    lng: e.latLng.lng(),
-                                  });
-                                }}
-                                visible={true}
-                                position={selected}
-                              />
-                            )}
-                          </GoogleMap>
-                        </div>
-                      </>
-                    ) : (
-                      <p>Map Loading</p>
-                    )}
-                  </div>
-                  <div className="mt-3">
-                    <label
-                      for="exampleFormControlInput1"
-                      className={`${styles.labelText} form-label pb-1`}
-                    >
-                      Address
-                    </label>
-                    <textarea
-                      type="text"
-                      className={`${styles.address} form-control mb-4`}
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter your property location"
-                      name="Address"
-                      value={formik.values.Address}
-                      onChange={formik.handleChange}
-                    ></textarea>
-                  </div>
-                  {formik.errors.Address && formik.touched.Address && (
-                    <div className="d-flex align-items-center text-danger">
-                      <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.Address}</span>
-                    </div>
+                </div>
+                <span onClick={markerSetOn}></span>
+                <div>
+                  {isLoaded ? (
+                    <>
+                      <div>
+                        <PlacesAutocomplete
+                          markerSetOn={markerSetOn}
+                          markedAddress={markedAddress}
+                          setSelected={setSelected}
+                        />
+                      </div>
+                      <div className="mt-3">
+                        <GoogleMap
+                          zoom={16}
+                          center={selected}
+                          mapContainerClassName={`${styles.map_container}`}
+                          onLoad={(map) => {
+                            setMap(map);
+                            formik.setFieldValue("Map", selected);
+                          }}
+                        >
+                          {markerStat && (
+                            <Marker
+                              draggable={true}
+                              onDragEnd={(e) => {
+                                markerChange();
+                                setSelected({
+                                  lat: e.latLng.lat(),
+                                  lng: e.latLng.lng(),
+                                });
+                                formik.setFieldValue("Map", selected);
+                              }}
+                              position={selected}
+                            />
+                          )}
+                        </GoogleMap>
+                      </div>
+                    </>
+                  ) : (
+                    <p>Map Loading</p>
                   )}
-                  <div className="mt-3">
-                    <label
-                      for="exampleFormControlInput1"
-                      className={`${styles.labelText} form-label pb-1`}
-                    >
-                      Building Name
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.building} form-control mb-3`}
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter your Building Name"
-                      name="BuildingName"
-                      value={formik.values.BuildingName}
-                      onChange={formik.handleChange}
-                    />
+
+                  {/* 
+{formik.errors.Map && formik.touched.Map && (
+                  <div className="d-flex align-items-center text-danger">
+                    <i className="ri-error-warning-line me-1  "></i>
+                    <span>{formik.errors.Map}</span>
                   </div>
-                  {formik.errors.BuildingName && formik.touched.BuildingName && (
-                    <div className="d-flex align-items-center text-danger">
-                      <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.BuildingName}</span>
-                    </div>
-                  )}
-                  <div
-                    className={`content-btn d-flex justify-content-end mt-5 mb-3`}
+                )} */}
+                </div>
+                <div className="mt-3">
+                  <label
+                    for="exampleFormControlInput1"
+                    className={`${styles.labelText} form-label pb-1`}
                   >
-                    <div className={`d-flex`}>
-                      <button
-                        type="button"
-                        onClick={() => router.push("/sellrent")}
-                        className={`bg-white border-0  `}
-                      >
-                        <span
-                          className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
-                        >
-                          <i
-                            className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
-                          ></i>
-                        </span>
-
-                        <span
-                          className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle `}
-                        >
-                          Back
-                        </span>
-                      </button>
-
-                      <button
-                        type="submit"
-                        className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
-                      >
-                        <span
-                          className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
-                        >
-                          Next
-                        </span>
-                        <div>
-                          <i
-                            className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
-                          ></i>
-                        </div>
-                      </button>
-                    </div>
+                    Address
+                  </label>
+                  <textarea
+                    type="text"
+                    className={`${styles.address} form-control mb-4`}
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your property location"
+                    name="Address"
+                    value={formik.values.Address}
+                    onChange={formik.handleChange}
+                  ></textarea>
+                </div>
+                {formik.errors.Address && formik.touched.Address && (
+                  <div className="d-flex align-items-center text-danger">
+                    <i className="ri-error-warning-line me-1  "></i>
+                    <span>{formik.errors.Address}</span>
                   </div>
-                </form>
-              </div>
+                )}
+                <div className="mt-3">
+                  <label
+                    for="exampleFormControlInput1"
+                    className={`${styles.labelText} form-label pb-1`}
+                  >
+                    Building Name
+                  </label>
+                  <input
+                    type="text"
+                    className={`${styles.building} form-control mb-3`}
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your Building Name"
+                    name="BuildingName"
+                    value={formik.values.BuildingName}
+                    onChange={formik.handleChange}
+                  />
+                </div>
+                {formik.errors.BuildingName && formik.touched.BuildingName && (
+                  <div className="d-flex align-items-center text-danger">
+                    <i className="ri-error-warning-line me-1  "></i>
+                    <span>{formik.errors.BuildingName}</span>
+                  </div>
+                )}
+                <div
+                  className={`content-btn d-flex justify-content-end mt-5 mb-3`}
+                >
+                  <div className={`d-flex`}>
+                    <button
+                      type="button"
+                      onClick={() => router.push("/sellrent")}
+                      className={`bg-white border-0  `}
+                    >
+                      <span
+                        className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
+                      >
+                        <i
+                          className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
+                        ></i>
+                      </span>
+
+                      <span
+                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle `}
+                      >
+                        Back
+                      </span>
+                    </button>
+
+                    <button
+                      type="submit"
+                      onClick={formik.handleSubmit}
+                      className={`${styles.bg_color_1D72DB}  ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
+                    >
+                      <span
+                        className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                      >
+                        Next
+                      </span>
+                      <div>
+                        <i
+                          className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
+                        ></i>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default PropertyDetails;
-

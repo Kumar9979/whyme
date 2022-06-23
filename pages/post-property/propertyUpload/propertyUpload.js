@@ -79,34 +79,10 @@ console.log(formik.values);
   return (
     <div>
       <Navbar />
-      <div className="container mt-5">
+      <div className="container mt-5 pt-3">
         <div className="row">
-          <div className={`col-lg-4 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
-            {/* <div className={`${styles.sidebar}`}>
-              <div className={`${styles.progressbar} p-5`}>
-                <Stepper
-                  style={{ width: "0%" }}
-                  activeStep={value}
-                  orientation="vertical"
-                >
-                  <Step>
-                    <StepLabel className="">Property Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Property Features</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Price Details</StepLabel>
-                  </Step>
-                  <Step>
-                    <StepLabel className="">Photos & Description</StepLabel>
-                  </Step>
-                </Stepper>
-              </div>
-            </div> */}
+          <div className={`col-lg-3 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}>
+            
                     <StepperNew  currentPage={currentPage}/>
           </div>
           <div className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-11 col-sm-11`}>
@@ -279,7 +255,7 @@ console.log(formik.values);
 
                     <button
                       type="submit"
-                      className={`${styles.bg_color_1D72DB} bg-primary ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
+                      className={`${styles.bg_color_1D72DB}  ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
                         className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}

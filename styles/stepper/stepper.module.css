@@ -1,5 +1,5 @@
 .font_20 {
-  font-size: 20px;
+  font-size: 17px;
 }
 .font_medium {
   font-weight: 500;
@@ -51,6 +51,11 @@
 }
 
 
+@media only screen and (max-width: 1401px) {
+  .font_20 {
+    font-size: 14px;
+  }
+}
 
 @media only screen and (max-width: 990px) {
   /* .stepper_item_container {
@@ -63,15 +68,29 @@
 
   .stepper_line {
     display: none;
-  /* min-width: .5rem;
-    border-top-style: solid;
+  min-width:.1rem;
+    /* border-top-style: solid; */
     border-top-width: 2px;
-    display: block;
+    /* display: block; */
     border-color: #ffff;
-    border-left-style: none;
-    border-left-width: none;
-    margin-top: 30px; */
+  
+    margin-top: -84px;
+    margin-left: 53px;
+    transform: rotate(90deg);
+   }
+
+   .stepper_components_title{
+     margin-right:10px;
+   }
+
+   .stepper_line_price{
+    margin-top:-67px;
   }
+
+  .stepper_line_features{
+    margin-top:-84px;
+  }
+
   .stepper_item_flex_res {
     flex-direction: column;
     align-items: center;
@@ -89,4 +108,27 @@
   .font_20 {
     font-size: 12px;
   }
+
+/* .icon_gap{
+  margin-left: 1.4rem;
+  margin-right: -1rem !important;
 }
+
+.icon_gap_3{
+  margin-left: 1.4rem;
+  margin-right: -0.6rem !important;
+} */
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
