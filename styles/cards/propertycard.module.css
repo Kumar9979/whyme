@@ -1,0 +1,174 @@
+.property_card_container {
+  box-shadow: 0px 0px 20px #0000001f;
+  border-radius: 12px;
+}
+
+.property_card_image {
+  border-radius: 10px;
+}
+
+.property_card_heart_icon {
+  color: #50bf97;
+  font-size: x-large;
+  position: absolute;
+  top: 20%;
+  left: 26%;
+}
+.property_card_heart_icon_container {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #dbe9f24d;
+  position: relative;
+  left: 90%;
+  top: 66%;
+}
+.property_card_flex_res {
+  display: flex;
+}
+.property_card_color_gray {
+  color: #bcc7ce;
+}
+.property_card_color_blue {
+  color: #1d72db;
+}
+.property_card_color_purple {
+  color: #323d5a;
+}
+
+.property_card_price {
+  font-size: 32px;
+  font-family: "Poppins";
+  text-align: right;
+  font-weight: 600;
+  color: #323d5a;
+}
+.property_card_list_items {
+  list-style: none;
+}
+.property_card_list_items li::before {
+  content: "• ";
+  color: #24734e;
+  margin-right: 4px;
+  font-size: large;
+  vertical-align: middle;
+  display: inline-block;
+}
+.property_card_btn_contact {
+  border-radius: 26px;
+  max-width: 200px;
+  min-height: 52px;
+}
+.property_card_btn_contact_icon {
+  border-radius: 50%;
+}
+
+.property_card_bgColor_blue {
+  background-color: #1d72db;
+}
+
+.property_card_icons {
+  font-size: xx-large;
+  color: #1d72db;
+}
+
+.property_card_under_construction {
+  color: #1d1e1f;
+  border-radius: 5px;
+  background-color: #fbc352;
+}
+.property_card_ready_move {
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #24734e;
+  padding: 0.3rem;
+  font-weight: 500;
+  font-family: "Poppins";
+  font-size: 12px;
+}
+.property_card_price_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 1rem;
+
+}
+/* .property_card_margin_left_neg{
+    margin-left: -17px;
+} */
+
+
+
+.property_card_desc_res {
+  margin-left: 1.5rem !important;
+
+  margin-right: 0.5rem !important;
+}
+
+.fontFam_poppins {
+  font-family: "Poppins";
+}
+.fontFam_roboto {
+  font-family: "Roboto";
+}
+
+.font_24 {
+  font-size: 1.25rem;
+}
+
+.font_18 {
+  font-size: 16px;
+}
+
+.font_20 {
+  font-size: 20px;
+}
+
+.font_14 {
+  font-size: 14px;
+}
+.font_12 {
+  font-size: 12px;
+}
+.font_semibold {
+  font-weight: 600;
+}
+
+.font_medium {
+  font-weight: 500;
+}
+
+.font_light {
+  font-weight: 300;
+}
+
+.font_regular {
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 990px) {
+  .property_card_flex_res {
+    display: block;
+  }
+
+  .property_card_desc_res {
+    margin-left: 0rem !important;
+
+    margin-right: 0rem !important;
+  }
+  .property_card_price_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 0rem;
+
+}
+.property_card_heart_icon_container {
+
+    left: -320%;
+    top: 123%;
+    
+  }
+}
