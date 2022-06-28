@@ -280,7 +280,7 @@ const fileTypes = ["JPG", "PNG", "GIF"];
                         className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle text-primary`}
                       >
                         Back
-                      </span>
+                      </span> 
                     </button>
 
                     <button
