@@ -57,7 +57,7 @@ const UserType = () => {
                 onClick={() => {
                   navigation("Builder");
                 }}
-                className={`${styles.modal_box_type}  ${styles.color_1D72DB} ${styles.cursor_pointer} d-flex  px-2 mb-3 w-100`}
+                className={`${styles.modal_box_type}  ${styles.color_1D72DB} ${styles.cursor_pointer} d-flex  ps-2 mb-3 w-100`}
               >
                 <div className="d-flex  justify-content-between    align-items-center">
                   {" "}
@@ -65,9 +65,9 @@ const UserType = () => {
                     <Image
                       src={building}
                       alt="building icon"
-                      width={40}
-                      height={40}
-                      className={`${styles.cursor_pointer}`}
+                      width={35}
+                      height={35}
+                                            className={`${styles.cursor_pointer}`}
                     />
                   </div>
                   <span
@@ -93,7 +93,7 @@ const UserType = () => {
                       src={agent}
                       alt="building icon"
                       width={35}
-                      height={35}
+                      height={30}
                       className={`${styles.cursor_pointer}`}
                     />
                   </div>
@@ -120,7 +120,7 @@ const UserType = () => {
                       src={owner}
                       alt="building icon"
                       width={35}
-                      height={35}
+                      height={30}
                       className={`${styles.cursor_pointer}`}
                     />
                   </div>

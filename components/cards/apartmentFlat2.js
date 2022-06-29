@@ -18,6 +18,7 @@ const ApartmentFlat2 = () => {
             objectFit="cover"
             className={`${styles.property_card_image}`}
           />
+          <span className={`${styles.property_card_image_tag} `}>Luxurious</span>
         </div>
 
         <div className={`${styles.property_card_desc_res}`}>
@@ -136,7 +137,7 @@ const ApartmentFlat2 = () => {
             <div>
               <div className={`d-flex align-items-center mb-1`}>
                 <i
-                  className={`ri-honour-line ${styles.property_card_icons}`}
+                  className={`ri-archive-drawer-line ${styles.property_card_icons}`}
                 ></i>
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
@@ -179,21 +180,72 @@ const ApartmentFlat2 = () => {
             <ul
               className={`${styles.property_card_list_items} p-0 ${styles.fontFam_poppins} ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular} `}
             >
-              <li> <span className={`${styles.property_card_list_dot} me-2`}>●</span> Elevators/Lifts</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Guest Parking Spaces</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Parking</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Spaces</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Lifts</li>
+              <li>
+                {" "}
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>{" "}
+                Elevators/Lifts
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Guest Parking Spaces
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Parking
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Spaces
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Lifts
+              </li>
             </ul>
 
             <ul
               className={`${styles.property_card_list_items} ${styles.fontFam_poppins} ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular}`}
             >
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Elevators/Lifts</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Guest Parking Spaces</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Parking</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Spaces</li>
-              <li><span className={`${styles.property_card_list_dot} me-2`}>●</span>Lifts</li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Elevators/Lifts
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Guest Parking Spaces
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Parking
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Spaces
+              </li>
+              <li>
+                <span className={`${styles.property_card_list_dot} me-2`}>
+                  ●
+                </span>
+                Lifts
+              </li>
             </ul>
             <div className={``}>
               <div

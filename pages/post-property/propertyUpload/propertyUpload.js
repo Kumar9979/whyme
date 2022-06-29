@@ -12,8 +12,6 @@ import ImageUploading from "react-images-uploading";
 import closeIcon from "../../../assets/icons/close.png";
 
 const PropertyUpload = () => {
-  const fileTypes = ["JPG", "PNG", "GIF"];
-
   const [images, setImages] = useState([]);
   const maxNumber = 10;
   const [currentPage, setCurrentPage] = useState("photoDesc");
@@ -22,7 +20,7 @@ const PropertyUpload = () => {
   const [uploaded, setUploaded] = useState(false);
   const [size, setSize] = useState(35);
   const [imgName, setImgName] = useState("");
-  const [imgList, setImgList] = useState([]);
+  const [imgTot, setImgTot] = useState(0);
 
   const formik = useFormik({
     initialValues: {
@@ -50,27 +48,11 @@ const PropertyUpload = () => {
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     console.log(imageList, addUpdateIndex);
-    console.log(imageList.slice(0,6));
-    setImages(imageList.slice(0,6));
+    setImgTot(imageList.length);
+    setImages(imageList);
+    formik.setFieldValue("image", imageList);
   };
 
-  function handleChange(e) {
-    if (e.target?.files.length !== 0) {
-      setImgName(e.target.files[0].name);
-      console.log(imgName);
-      setUploaded(true);
-    } else {
-      setUploaded(false);
-    }
-  }
-
-  const onUpload = (files) => {
-    setUploaded(true);
-    setFile(files[0]);
-    setImgName(files[0].name);
-    formik.setFieldValue("image", files[0]);
-  };
-  console.log(images);
   return (
     <div>
       <Navbar />
@@ -86,22 +68,16 @@ const PropertyUpload = () => {
           >
             {/* <div className={`col-lg-6 col-md-10 col-sm-10 `}> */}
             <div className={`${styles.input_container}`}>
-              <h5 className={`${styles.propertyHeading} pt-3`}>
+              <h5 className={`${styles.propertyHeading} mt-md-5 mt-sm-3 mt-3 `}>
                 Photos & Descrption
               </h5>
               {/* <FileUploader handleChange={handleChange} multiple={true} name="file" types={fileTypes} /> */}
-              <form onSubmit={formik.handleSubmit} className="mt-3">
+              <form onSubmit={formik.handleSubmit} className="">
                 <div className="mt-5">
                   <label
-                    for="profile"
+                    htmlFor="profile"
                     className={`${styles.labelText} form-label`}
                   >
-                    {/* <Image
-                      src={uploaded ? file : upload}
-                      alt="image of camera"
-                      width={size}
-                      height={size}
-                    /> */}
                     Photos
                   </label>
                   {/* <FileUploader onUpload={onUpload} count={5}> */}
@@ -167,16 +143,24 @@ const PropertyUpload = () => {
                         ) : (
                           <>
                             {" "}
-                            <div className={`d-flex p-2`}>
+                            <div className={`row p-2 ps-4`}>
                               {/* {imageList.slice(0,6).map((image, index) => ( */}
                               {images.map((image, index) => (
-                                <div className={``} key={index}>
-                                  <Image
-                                    src={image.data_url}
-                                    name="uploaded-images"
-                                    width={50}
-                                    height={50}
-                                  />
+                                <div
+                                  className={`col-4 d-flex mb-2`}
+                                  key={index}
+                                >
+                                  <div
+                                    className={`${styles.property_upload_preview_image_container}`}
+                                  >
+                                    <Image
+                                      src={image.data_url}
+                                      name="uploaded-images"
+                                      layout="fill"
+                                      objectFit="cover"
+                                      className={`${styles.property_upload_preview_image}`}
+                                    />
+                                  </div>
                                   <button
                                     type="button"
                                     className={`border-0 bg-white`}
@@ -192,8 +176,11 @@ const PropertyUpload = () => {
                                 </div>
                               ))}
                             </div>
+                            {images.length > 5 ? (
+                              <span>{imgTot - 6} more images</span>
+                            ) : null}
                             <div
-                              className={`d-flex justify-content-center mt-5`}
+                              className={`d-flex justify-content-center  mt-4`}
                             >
                               <button
                                 {...dragProps}
@@ -226,7 +213,7 @@ const PropertyUpload = () => {
                 <div className="mt-5">
                   <div className="mt-3">
                     <label
-                      for="exampleFormControlInput1"
+                      htmlFor="exampleFormControlInput1"
                       className={`${styles.labelText} form-label`}
                     >
                       Description

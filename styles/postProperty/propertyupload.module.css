@@ -6,6 +6,17 @@
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
+.property_upload_preview_image_container{
+width: 60px;
+height: 60px;
+position: relative;
+}
+.property_upload_preview_image_container:hover{
+  transform: scale(2.5) !important; 
+  transition: .5s; 
+  z-index: 9999;
+
+}
 .propertyHeading {
   color: #1d72db;
   font-family: Poppins, medium;
