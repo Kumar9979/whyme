@@ -6,8 +6,8 @@ import ApartmentFlat2 from '../components/cards/apartmentFlat2'
 const Home = () => {
   return (
     <>
-  <ApartmentFlat/>
-  {/* <ApartmentFlat2/> */}
+  {/* <ApartmentFlat/> */}
+  <ApartmentFlat2/>
   </>
   )
 }
