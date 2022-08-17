@@ -1,15 +1,19 @@
-import React from 'react'
-
-import ApartmentFlat from '../components/cards/apartmentFlat'
-import ApartmentFlat2 from '../components/cards/apartmentFlat2'
-
+import React, { useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import ApartmentFlat from "../components/cards/apartmentFlat";
+import ApartmentFlat2 from "../components/cards/apartmentFlat2";
+import * as dummyApis from "../redux/actions/josnApisAction"
 const Home = () => {
+  const reducer = useSelector((store) => store);
+  console.log(reducer);
+  const dispatch = useDispatch();
+  useEffect(() => {dispatch(dummyApis.jsonAction())}, []);
   return (
     <>
-  {/* <ApartmentFlat/> */}
-  <ApartmentFlat2/>
-  </>
-  )
-}
+      {/* <ApartmentFlat/> */}
+      <ApartmentFlat2 />
+    </>
+  );
+};
 
-export default Home
+export default Home;
