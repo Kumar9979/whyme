@@ -41,12 +41,10 @@
   }
   .container{
     box-shadow: 5px 5px 20px #00000029;
-
-    
   }
 
   
-  @media only screen and (max-width: 900px){
+  @media only screen and (max-width: 992px){
     .zameenimage{
       width:10rem;
       
@@ -56,7 +54,7 @@
     .headermenu {
       font-family: Poppins,medium;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       color: #323D5A;
       text-decoration: none;
       

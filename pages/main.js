@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OtpModals from "../components/modals/otpModal";
 import Modals from "../components/modals/loginModal";
-import Navbar from "./auth/navbar";
 
 
 const Main = () => {

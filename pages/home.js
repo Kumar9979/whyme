@@ -1,13 +1,14 @@
+import { useRouter } from 'next/router'
 import React from 'react'
-
-import ApartmentFlat from '../components/cards/apartmentFlat'
-import ApartmentFlat2 from '../components/cards/apartmentFlat2'
+import Navbar from '../components/navbar/navbar'
 
 const Home = () => {
+  const router = useRouter()
   return (
     <>
-  {/* <ApartmentFlat/> */}
-  <ApartmentFlat2/>
+    <Navbar/>
+    {/* <button onClick={()=>router.push("/post-property/price-details/priceDetailsSell")}>Navigate</button> */}
+ 
   </>
   )
 }
