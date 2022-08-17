@@ -32,7 +32,7 @@
     "react-phone-input-2": "^2.15.0",
     "react-phone-number-input": "^3.2.2",
     "react-redux": "^8.0.2",
-    "react-select": "^5.3.2",
+    "react-select": "^5.4.0",
     "redux": "^4.2.0",
     "redux-saga": "^1.2.0",
     "remixicon": "^2.5.0",

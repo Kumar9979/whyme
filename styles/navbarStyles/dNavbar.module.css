@@ -1,0 +1,14 @@
+.navbarheight {
+    background-color: #1D72DB;
+    height: 4rem;
+}
+
+
+.contentheight {
+    height: 1.5rem;
+    display: flex;
+}
+
+.customstyles {
+    color: #50BF97;
+}

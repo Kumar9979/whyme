@@ -59,10 +59,10 @@ const Navbar = () => {
                       <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5 pt-1  ri-heart-3-fill `}></i></a>
                     </Link>
                   </li>
-                  <li className={`${Styles.navbar} nav-item ms-5 `}>
+                  <li className={`${Styles.navbar} nav-item ms-5 d-lg-flex align-items-center `}>
                     <Link href="#">
-                      <a className={`${Styles.headerIcon} `}>
-                        <i className="ms-2 me-2 mt-5  ri-user-add-line "></i></a>
+                      <a className={`${Styles.headerIcon}`}>
+                        <i className="ms-2 me-2 mt-5   ri-user-add-line "></i></a>
                     </Link>
                   </li>
 

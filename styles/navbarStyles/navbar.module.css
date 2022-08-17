@@ -26,7 +26,7 @@
     font-weight: 600;
     color: #323D5A;
     text-decoration: none;
-    border:2px solid black;
+    border:1px solid black;
     border-radius: 7px;
   }
   
@@ -34,7 +34,7 @@
     background-color: #013EA3;
     color: #ffffff;
     font-family: Poppins;
-    font-weight: 600;
+    font-weight: 400;
     border: none;
     border-radius: 6px;
     padding: .5rem;
