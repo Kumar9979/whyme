@@ -1,16 +1,19 @@
-import { useRouter } from 'next/router'
-import React from 'react'
-import Navbar from '../components/navbar/navbar'
-
+import React, { useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import ApartmentFlat2 from "../components/cards/apartmentFlat2";
+import * as dummyApis from "../redux/actions/josnApisAction"
 const Home = () => {
-  const router = useRouter()
+  const reducer = useSelector((store) => store);
+  console.log(reducer);
+  const dispatch = useDispatch();
+  useEffect(() => {dispatch(dummyApis.jsonAction())}, []);
   return (
     <>
-    <Navbar/>
-    {/* <button onClick={()=>router.push("/post-property/price-details/priceDetailsSell")}>Navigate</button> */}
- 
-  </>
-  )
-}
+      {/* <ApartmentFlat/> */}
+      <ApartmentFlat2 />
+    </>
+  );
+};
 
-export default Home
+
+export default Home;
