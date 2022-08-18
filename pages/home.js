@@ -6,6 +6,7 @@ import ImageGrid from "../components/image-grid";
 import HomeDetails from "../components/home-details";
 import Navbar from "../components/navbar/navbar";
 import styles from "../styles/homepage/homepage.module.css"
+import Review from "../components/image-grid-review";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -17,10 +18,11 @@ const Home = () => {
       <Navbar/>
     <HomeDetails/>
       <div className="row d-flex justify-content-center">
-        <div className="col-md-6 col-11">
+        <div className="col-lg-6 col-11">
           <ImageGrid />
+          <Review/>
         </div>
-        <div className="col-md-4">
+        <div className="col-lg-4">
           
         </div>
         
