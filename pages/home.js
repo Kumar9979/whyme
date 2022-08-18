@@ -7,6 +7,7 @@ import HomeDetails from "../components/home-details";
 import Navbar from "../components/navbar/navbar";
 import styles from "../styles/homepage/homepage.module.css"
 import Review from "../components/image-grid-review";
+import Aboutproperty from "../components/about-property/aboutproperty";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -21,6 +22,7 @@ const Home = () => {
         <div className="col-lg-6 col-11">
           <ImageGrid />
           <Review/>
+          <Aboutproperty/>
         </div>
         <div className="col-lg-4">
           

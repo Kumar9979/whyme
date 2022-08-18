@@ -34,7 +34,7 @@ const Review = () => {
             </p>{" "}
             <span className="d-flex justify-content-end">By Amal Sabu</span>{" "}
           </div>
-          <div className={`col-lg-6 col-12 `}>
+          <div className={`col-lg-6 col-12  `}>
             <div className={`${styles.contact_button} ps-1 pt-1 `}>
               <div className="d-flex align-items-center ">
                 <div className="" >
