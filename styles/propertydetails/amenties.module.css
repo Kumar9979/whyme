@@ -30,3 +30,10 @@
   width: 1rem;
   margin-left: -1em;
 }
+@media only screen and (max-width: 992px) {
+  .amenties_list {
+    font-size: 10px;
+ 
+  }
+    
+}

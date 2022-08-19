@@ -8,6 +8,7 @@ import styles from "../styles/homepage/homepage.module.css";
 import Review from "../components/image-grid-review";
 import Aboutproperty from "../components/about-property";
 import Amenties from "../components/amenties";
+import ContactOwner from "../components/contact_owner";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -26,6 +27,7 @@ const Home = () => {
           <Review />
           <Aboutproperty />
           <Amenties />
+          <ContactOwner/>
         </div>
         <div className="col-lg-4"></div>
       </div>
