@@ -99,6 +99,9 @@
   font-size: 14px;
   font-family: Poppins;
   font-weight: 400;
+  position: absolute;
+  top:1rem;
+  right:2rem;
 }
 /* .cards_images{
 
@@ -129,12 +132,36 @@
   font-size: 25px;
   font-family: Poppins;
   font-weight: 600;
-  position: absolute;
+  /* position: absolute;
   bottom:20px;
-  right:35px  
+  right:35px   */
 }
-
-
+.edit_btn{
+  background-color: #1D72DB;
+  border-radius: 10px;
+  border:none;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+.delete_btn{
+  background-color: #ffffff;
+  border-radius: 10px;
+  border:1px solid #1D72DB;
+  color: #1D72DB;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+.edit_icon{
+  font-size: 14px;
+  vertical-align: middle;
+}
+.delete_icon{
+  font-size: 14px;
+  vertical-align: middle;
+}
 
 
 @media only screen and (max-width: 992px) {
@@ -156,9 +183,26 @@
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       width:100%;
   } 
+  /* .rupee_text{
+    position: absolute;
+    bottom:-40px;
+    right:600px  
+  } */
+  .verfied_btn{
+    position: absolute;
+    top:-17rem;
+    right:2rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .verfied_btn{
+    position: absolute;
+    top:-19rem;
+    right:2rem;
+  }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
     .fd{
         box-shadow: none;
     border-radius: 7px;
@@ -173,5 +217,15 @@
         border: none;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         width:auto;
+    }
+    /* .rupee_text{
+      position: absolute;
+      bottom:-40px;
+      right:230px  
+    } */
+    .verfied_btn{
+      position: absolute;
+      top:-22rem;
+      right:2rem;
     }
 }
