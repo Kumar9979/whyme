@@ -6,12 +6,12 @@ import styles from "../../styles/myproperties/propertyStatistics.module.css"
 
 const PropertyStatics = () => {
   return (
-    <ProfileLayout>
+    
         <div className={`${styles.fd}`}>
         <ApartmentCard/>
         <CardsViewsTotalCallback/>
     </div>
-    </ProfileLayout>
+    
   
   )
 }

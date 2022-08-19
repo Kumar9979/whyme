@@ -7,12 +7,16 @@
   width: 75rem;
   margin-top: 2rem;
 }
+.back_icon{
+  margin-top: 5rem;
+}
 
 .back_text {
   color: #24734e;
   font-size: 16px;
   font-family: Poppins;
   font-weight: 500;
+  margin-top:-1%;
 }
 .luxuries_image {
   width: 15rem;

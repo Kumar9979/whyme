@@ -22,7 +22,7 @@ const ApartmentCard = () => {
 
   return (
     <div className={`container-fluid`}>
-      <div className={`${styles.back_iocn} ps-lg-5 pt-lg-3`}>
+      <div className={`${styles.back_icon} ps-lg-5 pt-lg-3`}>
         <span>
           {" "}
           <Image src={backIcon} />

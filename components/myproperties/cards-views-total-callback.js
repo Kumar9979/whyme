@@ -6,21 +6,19 @@ import CallBackIcon from "../../assets/icons/callback-icon.svg";
 
 const CardsViewsTotalCallback = () => {
   return (
-    <div className="d-flex justify-content-center mt-4 ">
-      <div className={`${styles.card}`}>
-        <div class="container  text-center">
-          <div class="row d-flex justify-content-start">
-            {ameneties.map((item, index) => {
-              return (
-                <div class={` col-lg-3   col-4 `}>
-                  <div className={`${styles.cards} card `}>
-                    <div
+    <div className={`${styles.main_card} d-flex justify-content-start`}>
+      <div className="mt-4">
+      <div className={`${styles.cards_container} container text-center`}>
+        <div className="d-flex ms-2">
+          <div className={`${styles.first_card} col-4`}>
+            <div className=" border bg-light">
+            <div
                       className={`${styles.card_body} card-body p-1 border bg-light d-lg-flex`}
                     >
                       <div className={`${styles.eyeIconContainer}`}>
                         <Image
                           className={`${styles.eye_icon} px-lg-1`}
-                          src={item.image}
+                          src={EyeIcon}
                           alt=""
                           layout="fixed"
                         />
@@ -29,23 +27,28 @@ const CardsViewsTotalCallback = () => {
                         <span
                           className={`${styles.eye_text} ms-lg-2 me-lg-3 text-start`}
                         >
-                          {item.heading}
+                          Views Today
                         </span>
                         <span
                           className={`${styles.Eye_subtext} ms-lg-2 me-lg-3 text-start`}
                         >
-                          {item.amenity}
+                          34
                         </span>
                       </div>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+            </div>
+          </div>
+          <div className={`${styles.second_card} col-4 ms-2`}>
+            <div className=" border bg-light">hjkjhg</div>
+          </div>
+          <div className="col-4">
+            <div className=" border bg-light">kljhgfgh</div>
           </div>
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };
 

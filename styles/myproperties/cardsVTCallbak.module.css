@@ -1,34 +1,25 @@
-.column{
-    width:fit-content;
+.main_card{
+    width:54rem;
 }
-.cards{
-    width:max-content;
-    margin-right: 3rem;
-    
-    border: none;
-}
-.card_body{
-    border-radius: 10px;
+.first_card{
+   width: fit-content;
+
 }
 
-.eye_text{
-    font-size: 15px;
-}
 
 @media only screen and (max-width: 992px) {
-    .card{
-        width:auto
+    .main_card{
+        width:auto;
     }
-  
 }
+@media only screen and (max-width: 780px) {
+    .main_card{
+        width:auto;
+    }
+}
+
 @media only screen and (max-width: 480px) {
-    .card{
-        width:auto
-    }
-    .eye_text{
-        font-size: 12px;
-    }
-    .eye_icon{
-        width:2rem !important;
+    .main_card{
+        width:auto;
     }
 }
