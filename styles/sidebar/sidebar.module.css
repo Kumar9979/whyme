@@ -5,13 +5,17 @@
   padding: 2rem;
 }
 .sidebar_links {
-  color: #323d5a;
+  color: inherit;
   font-family: Poppins;
   font-size: 1rem;
 }
 .sidebar_list{
     font-weight: 500;
     color:#323D5A
+}
+.sidebar_listActive{
+    font-weight: 500;
+    color:#1D72DB
 }
 .DpContainer{
     width: 4rem;

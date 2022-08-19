@@ -4,7 +4,10 @@ import Dp from "../../assets/images/dp.jpg";
 import styles from "../../styles/sidebar/sidebar.module.css";
 import Image from "next/image";
 import Navbar from "../navbar/navbar";
+import { useRouter } from "next/router";
 const ProfileLayout = ({ children }) => {
+  const router = useRouter()
+  console.log(router.pathname)
   return (
     <>
       <div className="container-fluid">
@@ -51,7 +54,7 @@ const ProfileLayout = ({ children }) => {
               <hr />
               <ul className="list-unstyled  mt-5">
                 <li
-                  className={`${styles.sidebar_list} mb-3 d-flex align-items-center`}
+                  className={`${router.pathname==="/profile/recently-viewed"?styles.sidebar_listActive:styles.sidebar_list} mb-3 d-flex align-items-center`}
                 >
                   <i className={`${styles.icon} ri-time-fill me-2`}></i>
                   <Link href="/profile/recently-viewed">
@@ -59,7 +62,7 @@ const ProfileLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`${styles.sidebar_list} mb-3 d-flex align-items-center`}
+                  className={`${router.pathname==="/profile/shortlisted-properties"?styles.sidebar_listActive:styles.sidebar_list}  mb-3 d-flex align-items-center`}
                 >
                   <i className={`${styles.icon} ri-heart-fill me-2`}></i>
                   <Link href="/profile/shortlisted-properties">
@@ -69,7 +72,7 @@ const ProfileLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`${styles.sidebar_list} mb-3 d-flex align-items-center`}
+                  className={`${router.pathname==="/profile/my-properties"?styles.sidebar_listActive:styles.sidebar_list}  mb-3 d-flex align-items-center`}
                 >
                   <i className={`${styles.icon} ri-key-fill me-2`}></i>
                   <Link href="/profile/my-properties">
@@ -77,7 +80,7 @@ const ProfileLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li
-                  className={`${styles.sidebar_list} mb-3 d-flex align-items-center`}
+                  className={`${router.pathname==="/profile/add-a-property"?styles.sidebar_listActive:styles.sidebar_list}  mb-3 d-flex align-items-center`}
                 >
                   <i className={`${styles.icon} ri-add-box-fill me-2`}></i>
                   <Link href="/profile/add-a-property">
