@@ -1,0 +1,31 @@
+.sidebar {
+  position: fixed;
+  box-shadow: 0px 0px 7px #ccc;
+  height: 100rem;
+  padding: 2rem;
+}
+.sidebar_links {
+  color: #323d5a;
+  font-family: Poppins;
+  font-size: 1rem;
+}
+
+.card {
+  border: none;
+  background-color: #fff;
+}
+.profile_name{
+    font-family: Poppins;
+    color:#323D5A;
+    font-size: 1.1rem;
+}
+.phone_number{
+    font-family: Poppins;
+    font-size: 0.8rem;
+    color:#BCC7CE;
+}
+.edit_profile{
+    font-family: Poppins;
+    font-size: 0.8rem;
+    color:#1D72DB;
+}
