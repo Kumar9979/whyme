@@ -22,17 +22,7 @@ const ApartmentCard = () => {
 
   return (
     <div className={`container-fluid`}>
-      <div className={`${styles.back_icon} ps-lg-5 pt-lg-3`}>
-        <span>
-          {" "}
-          <Image src={backIcon} />
-          <span className={`${styles.back_text} ms-2`}>Back</span>{" "}
-        </span>
-      </div>
-      <div className={`${styles.property_heading} ps-lg-5 pt-lg-2`}>
-        Property Statistics
-      </div>
-      <hr className={`ms-lg-5`} />
+      
       <div className="">
         <div className="d-flex justify-content-center">
           <div className={`${styles.card_container} card `}>

@@ -1,25 +1,51 @@
-.main_card{
+/* .main_card{
     width:54rem;
-}
+} */
 .first_card{
    width: fit-content;
-
+}
+.card_body{
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 7px #ccc;
+}
+.eye_text{
+    font-size: 12px;
+    color: #ADB1BD;
+    font-family: Poppins;
+    font-weight: 500;
+    
 }
 
 
 @media only screen and (max-width: 992px) {
-    .main_card{
+    /* .main_card{
         width:auto;
-    }
+    } */
 }
 @media only screen and (max-width: 780px) {
-    .main_card{
+    /* .main_card{
         width:auto;
-    }
+    } */
 }
 
 @media only screen and (max-width: 480px) {
-    .main_card{
+    /* .main_card{
         width:auto;
+    } */
+    .eye_text{
+        font-size: 10px;
+        color: #ADB1BD;
+        font-family: Poppins;
+        font-weight: 500;
+        text-align: center !important;
+    }
+
+    .Eye_subtext{
+
+        text-align: center !important;
+        color: #323D5A;
+        font-family: Poppins;
+        font-weight: 500;
     }
 }

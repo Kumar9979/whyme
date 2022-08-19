@@ -1,0 +1,9 @@
+.request_callback_heading{
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 480px) {
+    
+}
