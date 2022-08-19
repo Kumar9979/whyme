@@ -10,12 +10,12 @@ const AgentProperties = () => {
     <div>
       <div className={`${styles.agent_properties} p-4 mt-4`}>
         <div className={`row `}>
-          <div className="col-4">
+          <div className="col-12 col-lg-4">
             <div className={`${styles.agent_properties_text}`}>
               Want to see more <br />
               Properties by this Agent?
             </div>
-            <div className={`${styles.agent_help_text} pt-3`}>
+            <div className={`${styles.agent_help_text} pt-2`}>
               Our Agent can help you with:
             </div>
             {agenthelp.map((item, index) => {
@@ -59,10 +59,12 @@ const AgentProperties = () => {
             </div>
           </div>
          
-          <div className={`col-4`}>
+          <div className={`col-6 col-lg-3 `}>
             <RelatedProperties/>
           </div>
-          <div className="col-3"></div>
+          <div className="col-6 col-lg-3">
+          <RelatedProperties/>
+          </div>
           <div></div>
         </div>
       </div>

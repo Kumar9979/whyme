@@ -35,7 +35,7 @@ const RelatedProperties = () => {
 
         <div className="p-2">
           <div className={`${styles.related_properties_price}`}>₹ 70 Lac</div>
-          <div className={`${styles.related_properties_location}`}>
+          <div className={`${styles.related_properties_location} `}>
             2 BHK flat in Vijayanagar, Mysuru
           </div>
           <div
@@ -66,7 +66,18 @@ const RelatedProperties = () => {
               );
             })}
           </div>
+
+          <div className={`d-flex justify-content-between`}>
+            <div className={`${styles.posted_date}`}>Posted on <br/>20 July 2020</div>
+            <div>
+                <button className={`${styles.view_details_button} px-3 py-1`}>View Details</button>
+            </div>
+          </div>
         </div>
+
+
+
+
       </div>
     </div>
   );
