@@ -6,6 +6,7 @@ import reviewimage3 from "../../assets/images/imagereview/reviewimage3.svg";
 import reviewimage4 from "../../assets/images/imagereview/reviewimage4.svg";
 import people from "../../assets/images/imagereview/people.png";
 import Image from "next/image";
+
 const Review = () => {
   return (
     <div className={`row mt-1 `}>
