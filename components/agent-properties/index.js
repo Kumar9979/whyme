@@ -10,7 +10,7 @@ const AgentProperties = () => {
     <div>
       <div className={`${styles.agent_properties} p-4 mt-4`}>
         <div className={`row `}>
-          <div className="col-5">
+          <div className="col-4">
             <div className={`${styles.agent_properties_text}`}>
               Want to see more <br />
               Properties by this Agent?
@@ -59,7 +59,7 @@ const AgentProperties = () => {
             </div>
           </div>
          
-          <div className={`col-3`}>
+          <div className={`col-4`}>
             <RelatedProperties/>
           </div>
           <div className="col-3"></div>

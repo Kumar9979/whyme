@@ -22,7 +22,31 @@
 }
 .related_properties_price {
     color: #1D72DB;
-    font-size: 16px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.related_properties_location {
+    color: #000000;
+    font-size: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+.ready_to_move {
+    color: #ACA9A9;
+    font-size: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.card_heading {
+    color: #BCC7CE;
+    font-size: 7px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+.card_amenity {
+    color: #1D72DB;
+    font-size: 7px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
 }
