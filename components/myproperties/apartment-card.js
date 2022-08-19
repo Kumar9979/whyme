@@ -11,6 +11,8 @@ import facing from "../../assets/icons/facing.svg";
 import transaction from "../../assets/icons/transaction.svg";
 import Delete from "../../assets/icons/delete.svg";
 import Edit from "../../assets/icons/edit-icon.svg";
+import Location from "../../assets/icons/location-icon.svg";
+import Tick from "../../assets/icons/tick-icon.svg";
 
 const ApartmentCard = () => {
   const [ReadLess, setReadLess] = useState(false);
@@ -24,7 +26,7 @@ const ApartmentCard = () => {
         <span>
           {" "}
           <Image src={backIcon} />
-          <span className={`${styles.back_text} ms-2 `}>Back</span>{" "}
+          <span className={`${styles.back_text} ms-2`}>Back</span>{" "}
         </span>
       </div>
       <div className={`${styles.property_heading} ps-lg-5 pt-lg-2`}>
@@ -44,6 +46,21 @@ const ApartmentCard = () => {
                     layout="responsive"
                     objectFit="cover"
                   />
+                  <div className={`${styles.verified_mobile}  px-2`}>
+                    <div className="d-flex justify-content-center">
+                      <div className={`${styles.tick_icon}`}>
+                        <span>
+                          {" "}
+                          <Image src={Tick} />
+                        </span>
+                      </div>
+                      <div>
+                        <span className={`${styles.verified_text} ms-1`}>
+                          Verified
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                   <div
                     className={`${styles.posted_on} d-flex flex-column pt-2`}
                   >
@@ -58,10 +75,8 @@ const ApartmentCard = () => {
                     </div>
                   </div>
                   <div className={`d-flex mb-3 ms-2 ms-lg-3`}>
-                    <span className="">
-                      <i
-                        className={`${styles.address_icon} ri-map-pin-line`}
-                      ></i>
+                    <span className={`${styles.location_icon}`}>
+                      <Image src={Location} />
                     </span>
                     <span className={`${styles.address_heading} ms-1`}>
                       2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
@@ -81,25 +96,27 @@ const ApartmentCard = () => {
                       ₹ 30 Lac
                     </div>
                     <div className="d-flex">
-                    <div className={`${styles.edit_delete_mobile} d-flex ms-5`}>
-                      <div className={`${styles.icon} d-flex`}>
-                        <button className={`${styles.edit_btn}  ps-2 pe-2`}>
-                          <span className={`${styles.edit_icon} `}>
-                            <Image src={Edit} alt="" />
-                          </span>
-                        </button>
-                        <div className={`${styles.delete} ms-1 `}>
-                        <button className={`${styles.delete_btn} ps-2 pe-2 `}>
-                          <span className={`${styles.delete_icon} `}>
-                            <Image src={Delete} alt="" />
-                          </span>
-                        </button>
+                      <div
+                        className={`${styles.edit_delete_mobile} d-flex ms-5`}
+                      >
+                        <div className={`${styles.icon} d-flex`}>
+                          <button className={`${styles.edit_btn}  ps-2 pe-2`}>
+                            <span className={`${styles.edit_icon} `}>
+                              <Image src={Edit} alt="" />
+                            </span>
+                          </button>
+                          <div className={`${styles.delete} ms-1 `}>
+                            <button
+                              className={`${styles.delete_btn} ps-2 pe-2 `}
+                            >
+                              <span className={`${styles.delete_icon} `}>
+                                <Image src={Delete} alt="" />
+                              </span>
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                      </div>
-                      
                     </div>
-                    </div>
-                    
                   </div>
 
                   <div className={`${styles.flat_details}`}>
@@ -158,7 +175,9 @@ const ApartmentCard = () => {
                       })}
                     </div>
                   </div>
-                  <div className={`${styles.lorem_text_container} ps-2`}>
+                  <div
+                    className={`${styles.lorem_text_container} ps-2 ps-lg-3`}
+                  >
                     <p className={`${styles.lorem_text}`}>
                       {allText}
                       <button
@@ -173,6 +192,17 @@ const ApartmentCard = () => {
                 <div
                   className={`${styles.edit_delete_container} positive-relative`}
                 >
+                  <div className={`${styles.verified} d-flex px-2 pb-1`}>
+                    <div className={`${styles.tick_icon}`}>
+                      <Image src={Tick} />
+                    </div>
+                    <div>
+                      <span className={`${styles.verified_text} ms-1`}>
+                        Verified
+                      </span>
+                    </div>
+                  </div>
+
                   <div className={`${styles.rupee_text} text-end  `}>
                     ₹ 30 Lac
                   </div>

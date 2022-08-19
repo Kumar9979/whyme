@@ -1,13 +1,16 @@
 .column{
     width:fit-content;
 }
-.card{
-    width:85%
+.cards{
+    width:max-content;
+    margin-right: 3rem;
+    
+    border: none;
+}
+.card_body{
+    border-radius: 10px;
 }
 
-.card_body{
-    border-radius: 10px !important;
-}
 .eye_text{
     font-size: 15px;
 }
@@ -26,6 +29,6 @@
         font-size: 12px;
     }
     .eye_icon{
-        width:25% !important
+        width:2rem !important;
     }
 }
