@@ -1,22 +1,35 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector} from "react-redux";
-import ApartmentFlat from "../components/cards/apartmentFlat";
-import ApartmentFlat2 from "../components/cards/apartmentFlat2";
+import { useSelector, useDispatch } from "react-redux";
+import * as dummyApis from "../redux/actions/josnApisAction";
 import ImageGrid from "../components/image-grid";
-import * as dummyApis from "../redux/actions/josnApisAction"
+import HomeDetails from "../components/home-details";
+import Navbar from "../components/navbar/navbar";
+import styles from "../styles/homepage/homepage.module.css";
+import Review from "../components/image-grid-review";
+import Aboutproperty from "../components/about-property";
+import Amenties from "../components/amenties";
+import ContactOwner from "../components/contact_owner";
+
 const Home = () => {
   const reducer = useSelector((store) => store);
   console.log(reducer);
   const dispatch = useDispatch();
-  useEffect(() => {dispatch(dummyApis.jsonAction())}, []);
+  useEffect(() => {
+    dispatch(dummyApis.jsonAction());
+  }, []);
   return (
-    <div className="container-fluid">
-      {/* <ApartmentFlat/> */}
-      <div className="row">
-        <div className="col-md-7">
+    <div className={`${styles.body_background}`}>
+      <Navbar />
+      <HomeDetails />
+      <div className="row d-flex justify-content-center">
+        <div className="col-lg-6 col-11">
           <ImageGrid />
+          <Review />
+          <Aboutproperty />
+          <Amenties />
+          <ContactOwner/>
         </div>
-        <div className="col-md-7"></div>
+        <div className="col-lg-4"></div>
       </div>
     </div>
   );

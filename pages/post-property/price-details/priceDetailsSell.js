@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import { useRouter } from "next/router";
-import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
 const PriceDetailsSell = () => {
   const [currentPage, setCurrentPage] = useState("priceDetails");
@@ -44,7 +43,6 @@ const PriceDetailsSell = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="container mt-5 pt-3">
         <div className={`row`}>
           <div

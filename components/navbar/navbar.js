@@ -8,7 +8,6 @@ const Navbar = () => {
   const router = useRouter();
   
   return (
-    <div>
       <div className={`container-fluid handbook-section ${Styles.container}`}>
         <div className="header  container-fluid">
           <nav className="navbar navbar-expand-lg ">
@@ -35,7 +34,7 @@ const Navbar = () => {
                 </span>
               </button>
               <div
-                className="collapse navbar-collapse"
+                className={`collapse navbar-collapse pt-2`}
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav ms-auto">
@@ -54,15 +53,15 @@ const Navbar = () => {
                       <a className={`${Styles.headermenu}`}>Sell</a>
                     </Link>
                   </li>
-                  <li className={`${Styles.navbar} nav-item ms-5 `} >
+                  <li className={`${Styles.navbar} nav-item ms-5 d-lg-flex align-items-center`} >
                     <Link href="#">
-                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5  ri-heart-3-fill `}></i></a>
+                      <a className={`${Styles.headerIcon}`}><i className={`ms-2 me-2 mt-5 pt-1  ri-heart-3-fill `}></i></a>
                     </Link>
                   </li>
-                  <li className={`${Styles.navbar} nav-item ms-5 `}>
+                  <li className={`${Styles.navbar} nav-item ms-5 d-lg-flex align-items-center `}>
                     <Link href="#">
-                      <a className={`${Styles.headerIcon} `}>
-                        <i className="ms-2 me-2 mt-5  ri-user-add-line "></i></a>
+                      <a className={`${Styles.headerIcon}`}>
+                        <i className="ms-2 me-2 mt-5   ri-user-add-line "></i></a>
                     </Link>
                   </li>
 
@@ -81,7 +80,7 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-    </div>
+ 
   );
 };
 

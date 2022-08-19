@@ -1,0 +1,39 @@
+.amenties {
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+.amenties_text {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.amenties_horizontal {
+  border: 1px solid #dbe9f2;
+}
+.amenties_list {
+  color: #323d5a;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.amenties_bullet{
+   list-style: none;
+
+}
+.amenties_list::before {
+  content: "\2022";
+  color: #24734E;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1rem;
+  margin-left: -1em;
+}
+@media only screen and (max-width: 992px) {
+  .amenties_list {
+    font-size: 10px;
+ 
+  }
+    
+}
