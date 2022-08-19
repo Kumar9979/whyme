@@ -9,6 +9,8 @@ import Review from "../components/image-grid-review";
 import Aboutproperty from "../components/about-property";
 import Amenties from "../components/amenties";
 import ContactOwner from "../components/contact_owner";
+import PropertyLocation from "../components/property_location";
+import AgentProperties from "../components/agent-properties";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -19,7 +21,6 @@ const Home = () => {
   }, []);
   return (
     <div className={`${styles.body_background}`}>
-      <Navbar />
       <HomeDetails />
       <div className="row d-flex justify-content-center">
         <div className="col-lg-6 col-11">
@@ -27,7 +28,9 @@ const Home = () => {
           <Review />
           <Aboutproperty />
           <Amenties />
-          <ContactOwner/>
+          <ContactOwner />
+          <PropertyLocation />
+          <AgentProperties />
         </div>
         <div className="col-lg-4"></div>
       </div>
