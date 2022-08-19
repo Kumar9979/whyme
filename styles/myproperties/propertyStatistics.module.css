@@ -1,231 +1,261 @@
-.fd{
-    box-shadow: 0px 0px 15px #00000012;
-    border-radius: 7px;
-    background-color: #ffffff;
-    max-width: 1000px;
-    margin: 0 auto;
+.fd {
+  box-shadow: 0px 0px 15px #00000012;
+  border-radius: 7px;
+  background-color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto;
   width: 75rem;
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-.back_text{
-    color:#24734E;
-    font-size: 16px;
-    font-family: Poppins;
-    font-weight: 500;
+.back_text {
+  color: #24734e;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 500;
 }
-.imageContainer{
+.luxuries_image {
+  width: 15rem;
+}
+.address_details {
+  width: 25rem;
+}
+.imageContainer {
   width: 3rem;
   height: 2rem;
   /* border: 1px solid black; */
   align-items: center;
   text-align: center;
 }
-.back_iocn{
-    vertical-align:baseline !important;
-}
-.property_heading{
-    font-size: 24px;
-    font-family: Poppins;
-    color:#323D5A;
-    font-weight: 500;
-}
-.lorem_text{
+.property_heading {
+  font-size: 24px;
   font-family: Poppins;
-  font-size: 12px;
-  color: #323D5A;
+  color: #323d5a;
   font-weight: 500;
 }
-.readmore_btn{
+.lorem_text {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #323d5a;
+  font-weight: 500;
+}
+.readmore_btn {
   border: none;
   background: none;
-  color: #F77223;
+  color: #f77223;
 }
 
 .image_style {
-    border-radius: 20px !important;
-  }
-  .luxuries{
-    position: absolute;
-    background-color: #fbc352;
-    border-top-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem ;
-    top: 16px;
-    left: 16px;
-    font-family: Poppins;
-    font-weight: 500;
-  }
-  .flat_heading{
-    font-family: Poppins;
-    font-weight: 500;
-    color: #000000;
-    font-size: 15px;
-  }
- 
-  .address_icon{
-    color: #BCC7CE;
-    font-family: Poppins;
-    font-size: 14px;
-  }
-  .address_heading{
-    text-align: start;
-    color: #BCC7CE;
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 12px;
-  }
-
-  .super_area{
-    font-size: 10px;
-    color: #BCC7CE;
-    font-family: Poppins;
-    font-weight: 400;
-    width: 4rem;
-
-  }
-  .super_area_sub{
-    font-size: 12px;
-    color: #1D72DB;
-    font-family: Poppins;
-    font-weight: 400;
-  }
-   .li_list::marker{
-    color: #24734E !important;
-   
+  border-radius: 20px !important;
 }
-.verfied_btn{
-  background-color: #1D72DB;
-  color: #FFFFFF;
+.flat_heading {
+  font-family: Poppins;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15px;
+}
+
+.address_icon {
+  color: #bcc7ce;
+  font-family: Poppins;
   font-size: 14px;
+}
+.address_heading {
+  text-align: start;
+  color: #bcc7ce;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.super_area {
+  font-size: 10px;
+  color: #bcc7ce;
   font-family: Poppins;
   font-weight: 400;
-  position: absolute;
-  top:1rem;
-  right:2rem;
+  width: 4rem;
 }
-/* .cards_images{
-
-} */
-
-/* .see_more{
-    color: #F77223;
-    font-family: Poppins;
-    font-weight: 500;
-    font-size: 15px;
-} */
-
-.card_body{
-    border-radius: 15px;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width:85%;
+.super_area_sub {
+  font-size: 12px;
+  color: #1d72db;
+  font-family: Poppins;
+  font-weight: 400;
 }
-.posted_on{
-    font-size: 12px;
-    color: #323D5A;
-    opacity: 87%;
-    font-family: Poppins;
-    text-align: start;
-    font-weight: 500;
+.li_list::marker {
+  color: #24734e !important;
 }
-.rupee_text{
+.card_container {
+  border: none;
+}
+.card_body {
+  border-radius: 10px;
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 52rem;
+}
+.posted_on {
+  font-size: 12px;
+  color: #323d5a;
+  opacity: 87%;
+  font-family: Poppins;
+  text-align: start;
+  font-weight: 500;
+}
+.posted_on_mobile {
+  font-size: 10px;
+  color: #323d5a;
+  opacity: 87%;
+  font-family: Poppins;
+  text-align: start;
+  font-weight: 500;
+}
+.rupee_text_mobile{
+  display: none;
+  font-family: Poppins;
+  font-weight: 600;
+}
+.rupee_text {
   font-size: 25px;
   font-family: Poppins;
   font-weight: 600;
-  /* position: absolute;
-  bottom:20px;
-  right:35px   */
+  position: absolute;
+  bottom:60px;
+  right:20px  
 }
-.edit_btn{
-  background-color: #1D72DB;
+.edit_delete{
+  position: absolute;
+  bottom: 15px;
+  right:20px
+}
+.edit_btn {
+  background-color: #1d72db;
   border-radius: 10px;
-  border:none;
-  color: #FFFFFF;
+  border: none;
+  color: #ffffff;
   font-size: 14px;
   font-family: Poppins;
   font-weight: 500;
 }
-.delete_btn{
+.delete_btn {
   background-color: #ffffff;
   border-radius: 10px;
-  border:1px solid #1D72DB;
-  color: #1D72DB;
+  border: 1px solid #1d72db;
+  color: #1d72db;
   font-size: 14px;
   font-family: Poppins;
   font-weight: 500;
 }
-.edit_icon{
+.edit_icon {
   font-size: 14px;
   vertical-align: middle;
 }
-.delete_icon{
+.delete_icon {
   font-size: 14px;
   vertical-align: middle;
 }
-
+.posted_on_mobile {
+  display: none !important;
+}
+.edit_delete_mobile{
+  display: none !important;
+}
+.edit_delete_container {
+  width: 20rem;
+}
 
 @media only screen and (max-width: 992px) {
-    .card_images{
-        margin-bottom: 20px !important;
-    }
-    .fd{
-        box-shadow: 0px 0px 15px #00000012;
-        border-radius: 7px;
-        background-color: #ffffff;
-        max-width: auto;
-        margin: 0 auto;
-        width: auto;
-        margin-top: 2rem;
-    }
-    .card_body{
-      border-radius: 15px;
-      border: none;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      width:100%;
-  } 
-  /* .rupee_text{
-    position: absolute;
-    bottom:-40px;
-    right:600px  
-  } */
-  .verfied_btn{
-    position: absolute;
-    top:-17rem;
-    right:2rem;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .verfied_btn{
-    position: absolute;
-    top:-19rem;
-    right:2rem;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-    .fd{
-        box-shadow: none;
+  .fd {
+    box-shadow: 0px 0px 15px #00000012;
     border-radius: 7px;
     background-color: #ffffff;
     max-width: auto;
     margin: 0 auto;
     width: auto;
     margin-top: 2rem;
-    }
-    .card_body{
-        border-radius: 15px;
-        border: none;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        width:auto;
-    }
-    /* .rupee_text{
-      position: absolute;
-      bottom:-40px;
-      right:230px  
-    } */
-    .verfied_btn{
-      position: absolute;
-      top:-22rem;
-      right:2rem;
-    }
+  }
+  
+  .card_body {
+    border-radius: 15px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+  }
+  .posted_on_mobile {
+    display: none !important;
+  }
+  .rupee_text_mobile{
+    display: none;
+  }
+  .edit_delete_mobile{
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card_body {
+    border-radius: 15px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+  }
+  .posted_on_mobile {
+    display: none !important;
+  }
+  .rupee_text_mobile{
+    display: none;
+  }
+  .edit_delete_mobile{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .edit_delete_mobile{
+    display: block !important;
+  }
+  .edit_delete_container {
+    display: none;
+  }
+  .posted_on {
+    display: none !important;
+  }
+  .fd {
+    box-shadow: none;
+    border-radius: 7px;
+    background-color: #ffffff;
+    max-width: auto;
+    margin: 0 auto;
+    width: auto;
+    margin-top: 2rem;
+  }
+  .card_body {
+    border-radius: 15px;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0px;
+  }
+  .luxuries_image {
+    width: 8rem;
+  }
+  .address_details {
+    width: 12rem;
+  }
+  .flat_heading {
+    font-size: 11px;
+  }
+  .address_heading {
+    font-size: 10px;
+  }
+  .flat_details {
+    display: none;
+  }
+  .lorem_text_container {
+    display: none;
+  }
+  .posted_on_mobile {
+    display: block !important;
+  }
+  .rupee_text_mobile{
+    display: block;
+  }
 }
