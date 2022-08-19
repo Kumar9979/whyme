@@ -34,11 +34,13 @@ const ApartmentCard = () => {
       <div className="d-flex justify-content-center">
         <div className={`${styles.card_body} card mb-3  `}>
           <div className="row g-0 ">
-            <div className="col-lg-3 col-md-3">
-              <div className={`position-relative`}>
+            <div className="col-lg-3 ">
+              <div className={` position-relative`}>
                 <Image
                   src={Luxuries}
-                  className={`${styles.image_style} img-fluid rounded-start p-3`}
+                  className={`${styles.image_style} img-fluid rounded-start p-3 `}
+                  // width="45px"
+                  // height="45px"
                   alt="..."
                   layout="responsive"
                   objectFit="cover"
@@ -52,10 +54,10 @@ const ApartmentCard = () => {
                 </div>
               </div>
             </div>
-            <div className=" col-lg-9 col-md-9">
+            <div className=" col-lg-9 ">
               <div className="container-fluid">
                 <div className="row">
-                  <div className="col-lg-9 col-md-9">
+                  <div className="col-lg-9 ">
                     <div className={`d-flex `}>
                       <div
                         className={`${styles.flat_heading} pt-3 ps-3 ps-lg-0`}
@@ -68,7 +70,7 @@ const ApartmentCard = () => {
                         Under Construction
                       </div> */}
                     </div>
-                    <div className={`d-flex mb-3`}>
+                    <div className={`d-flex mb-3 ms-3 ms-lg-0`}>
                       <span className="">
                         <i
                           className={`${styles.address_icon} ri-map-pin-line`}
@@ -85,7 +87,7 @@ const ApartmentCard = () => {
                         <div className="row">
                           {ameneties.map((item, index) => {
                             return (
-                              <div className={`col-md-4 d-flex mb-3`}>
+                              <div className={`col-lg-4 col-6 d-flex mb-3`}>
                                 <div className={`${styles.imageContainer}`}>
                                   <Image
                                     className={`${styles.cards_images}`}
@@ -127,15 +129,15 @@ const ApartmentCard = () => {
                     
                   </div>
 
-                  <div className="container-fluid col-lg-3 col-md-3 position-relative">
-                    <div className="text-end me-4">
+                  <div className="container-fluid d-flex flex-column justify-content-between col-lg-3 position-relative">
+                    <div className="text-lg-end ">
                       <button
-                        className={`${styles.verfied_btn} btn btn-online ps-3 pe-3 mt-3 mb-2 pt-0 pb-0`}
+                        className={`${styles.verfied_btn} btn btn-online ps-3 pe-3  pt-0 pb-0`}
                       >
                         Verified
                       </button>
                     </div>
-                    <div className="text-end me-4">
+                    <div className="text-lg-end me-lg-4 ms-3 ms-lg-0 mb-lg-3">
                       <div className={`${styles.rupee_text} `}><span>₹ 30 Lac</span></div>
                       
                     </div>
@@ -143,17 +145,17 @@ const ApartmentCard = () => {
                   </div>
                 </div>
               </div>
-              <div className="row d-flex float-end">
-              <div className={`${styles.edit_delete} d-flex`}>
+              <div className="row d-flex float-end mb-3">
+              <div className={`${styles.edit_edit} d-flex`}>
                     <div className={`${styles.icon} d-flex`}>
-                        <button className={`${styles.delete_icon } `}><span className={`${styles.delete_icon} `}><Image
+                        <button className={`${styles.edit_btn} px-3 `}><span className={`${styles.edit_icon} `}><Image
                               src={Edit}
                               alt=""
                               
-                            /></span> <span className="">Delete</span></button>
+                            /></span> <span className="">Edit</span></button>
                     </div>
-                        <div className={`${styles.delete} d-flex`}>
-                        <button className={`${styles.delete_icon } `}><span className={`${styles.delete_icon} `}><Image
+                        <div className={`${styles.delete} d-flex ms-3 me-3 `}>
+                        <button className={`${styles.delete_btn} ps-3 pe-3 pt-1 pb-1`}><span className={`${styles.delete_icon} `}><Image
                               src={Delete}
                               alt=""
                               

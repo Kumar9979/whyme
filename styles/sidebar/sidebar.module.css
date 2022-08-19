@@ -1,0 +1,47 @@
+.sidebar {
+  position: fixed;
+  box-shadow: 0px 0px 7px #ccc;
+  height: 100rem;
+  padding: 2rem;
+}
+.sidebar_links {
+  color: inherit;
+  font-family: Poppins;
+  font-size: 1rem;
+}
+.sidebar_list{
+    font-weight: 500;
+    color:#323D5A
+}
+.sidebar_listActive{
+    font-weight: 500;
+    color:#1D72DB
+}
+.DpContainer{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.card {
+  border: none;
+  background-color: #fff;
+}
+.profile_name {
+  font-family: Poppins;
+  color: #323d5a;
+  font-size: 1.1rem;
+}
+.phone_number {
+  font-family: Poppins;
+  font-size: 0.8rem;
+  color: #bcc7ce;
+}
+.edit_profile {
+  font-family: Poppins;
+  font-size: 0.8rem;
+  color: #1d72db;
+}
+.Dp {
+  object-fit: cover;
+}

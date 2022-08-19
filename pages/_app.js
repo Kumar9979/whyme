@@ -5,8 +5,14 @@ import Script from "next/script";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
-
+import Navbar from "../components/navbar/navbar";
 function MyApp({ Component, pageProps }) {
+  const profilePaths = [
+    "/profile/recently-viewed",
+    "/profile/shortlisted-properties",
+    "/profile/my-properties",
+    "/profile/add-a-property",
+  ];
   return (
     <>
       <Head>
@@ -24,8 +30,10 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"
       />
+
       <Provider store={store}>
-        <Component {...pageProps} />
+        <Navbar />
+          <Component {...pageProps} />
       </Provider>
     </>
   );
