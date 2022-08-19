@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileLayout from './Sidebar'
+import ProfileLayout from '../../components/sidebarLayout/Sidebar'
 
 const RecentlyViewed = () => {
   return (
