@@ -1,0 +1,23 @@
+.contact_owner {
+    border-radius: 12px;
+    background-color: #1D72DB;
+
+}
+
+.contact_owner_button {
+    color: #1D72DB;
+    background-color: #FFFFFF;
+    border-radius: 26px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+  font-family: "Poppins", sans-serif;    
+}
+.contact_owner_text {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+  font-family: "Poppins", sans-serif;
+
+}
+

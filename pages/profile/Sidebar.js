@@ -3,7 +3,6 @@ import React from "react";
 import Dp from "../../assets/images/dp.jpg";
 import styles from "../../styles/sidebar/sidebar.module.css";
 import Image from "next/image";
-import Navbar from "../navbar/navbar";
 import { useRouter } from "next/router";
 const ProfileLayout = ({ children }) => {
   const router = useRouter()

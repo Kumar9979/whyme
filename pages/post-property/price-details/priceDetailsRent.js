@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
-import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
 import { useRouter } from "next/router";
+import Navbar from "../../../components/navbar/navbar";
 
 const PriceDetailsRent = () => {
   const [currentPage, setCurrentPage] = useState("priceDetails");

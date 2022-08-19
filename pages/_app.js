@@ -5,9 +5,7 @@ import Script from "next/script";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
-import Navbar from "./navbar/navbar";
-import ProfileLayout from "./profile/Sidebar";
-
+import Navbar from "../components/navbar/navbar";
 function MyApp({ Component, pageProps }) {
   const profilePaths = [
     "/profile/recently-viewed",

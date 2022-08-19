@@ -1,0 +1,68 @@
+.HomeDetails {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 10px #00000029;
+  opacity: 1;
+}
+
+.HomeDetails_apartment {
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.details_location {
+  color: #5f5c5c;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.details_move {
+  background: var(--unnamed-color-24734e) 0% 0% no-repeat padding-box;
+  background: #24734e 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  text-align: left;
+  letter-spacing: 0.12px;
+  color: #ffffff;
+  opacity: 0.87;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.HomeDetails_rupees {
+  color: #1d72db;
+  font-size: 34px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.details_sqft {
+  color: #323d5a;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 992px) {
+
+  .HomeDetails_apartment {
+    font-size: 16px;
+  }
+
+  .details_location {
+    font-size: 10px;
+  }
+  .details_move {
+    font-size: 9px;
+  }
+  .HomeDetails_rupees {
+    font-size: 25px;
+  }
+  .details_sqft {
+    font-size: 11px;
+  }
+  .HomeDetails {
+    margin-top: 5rem;
+  }
+
+} 

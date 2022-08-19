@@ -1,0 +1,34 @@
+.image_posted {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #323d5a;
+  font-weight: 600;
+}
+.contact_button {
+  background: var(--unnamed-color-1d72db) 0% 0% no-repeat padding-box;
+  background: #1d72db 0% 0% no-repeat padding-box;
+  border-radius: 26px;
+  opacity: 1;
+}
+.contact_text {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.people {
+    border-radius: 50%;
+}
+@media only screen and (max-width: 1140px) and (min-width:992px) {
+    .image_posted {
+        font-size: 8px;
+        font-weight: 500;
+      }
+
+      .contact_text {
+        font-weight: 400;
+        font-size: 10px;
+      }
+
+}
