@@ -29,7 +29,7 @@ const RelatedProperties = () => {
           </div>
           
         </div>
-        <span className={`${styles.related_properties-price}`}>₹ 70 Lac</span>
+        <span className={`${styles.related_properties_price}`}>₹ 70 Lac</span>
       </div>
     </div>
   );

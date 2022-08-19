@@ -21,7 +21,6 @@ const Home = () => {
   }, []);
   return (
     <div className={`${styles.body_background}`}>
-      <Navbar />
       <HomeDetails />
       <div className="row d-flex justify-content-center">
         <div className="col-lg-6 col-11">
