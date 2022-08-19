@@ -1,13 +1,13 @@
 import React from 'react'
 import ProfileLayout from './Sidebar'
 
-const MyProperties = () => {
+const ShortListedProperties = () => {
   return (
     <ProfileLayout>
-      <div>myProperties</div>
+       <div>shortListedProperties</div>
     </ProfileLayout>
-    
+   
   )
 }
 
-export default MyProperties
+export default ShortListedProperties
