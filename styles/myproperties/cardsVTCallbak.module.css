@@ -1,9 +1,9 @@
 /* .main_card{
     width:54rem;
 } */
-.first_card{
-   width: fit-content;
-}
+/* .first_card{
+   width: auto;
+} */
 .card_body{
     border-radius: 10px;
     background-color: #FFFFFF;
@@ -14,25 +14,24 @@
     color: #ADB1BD;
     font-family: Poppins;
     font-weight: 500;
-    
+}
+.main_card{
+    overflow-x: auto;
+  
 }
 
+.main_card::-webkit-scrollbar{
+    display: none;
+}
 
 @media only screen and (max-width: 992px) {
-    /* .main_card{
-        width:auto;
-    } */
+    
 }
 @media only screen and (max-width: 780px) {
-    /* .main_card{
-        width:auto;
-    } */
+   
 }
 
 @media only screen and (max-width: 480px) {
-    /* .main_card{
-        width:auto;
-    } */
     .eye_text{
         font-size: 10px;
         color: #ADB1BD;

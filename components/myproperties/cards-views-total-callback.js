@@ -7,11 +7,11 @@ import { useMediaQuery } from "react-responsive";
 const CardsViewsTotalCallback = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   return (
-    <div className={`${styles.main_card} d-flex justify-content-start`}>
+    <div className={`${styles.main_card} d-flex justify-content-start `}>
       <div className="mt-4">
-        <div className={`${styles.cards_container} container text-center`}>
+        <div className={`${styles.cards_container} ms-2 text-center`}>
           <div className="d-flex ">
-            <div className={`${styles.first_card} col-4`}>
+            <div className={`${styles.first_card} mb-2 col-5`}>
               <div className={`${styles.card_body} border`}>
                 <div className={` card-body p-1 d-lg-flex`}>
                   <div className={`${styles.eyeIconContainer}`}>
@@ -38,7 +38,7 @@ const CardsViewsTotalCallback = () => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.first_card} col-4 ms-2`}>
+            <div className={`${styles.first_card} col-5 ms-2`}>
             <div className={`${styles.card_body} border`}>
                 <div className={` card-body p-1 d-lg-flex`}>
                   <div className={`${styles.eyeIconContainer}`}>

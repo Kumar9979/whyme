@@ -21,7 +21,7 @@ const PropertyStatics = () => {
         <div className={`${styles.property_heading} ps-2 ps-lg-0`}>
           Property Statistics
         </div>
-        <hr className={`ms-lg-5`} />
+        <hr className={``} />
         <ApartmentCard />
         <CardsViewsTotalCallback />
         <RequestCallback/>

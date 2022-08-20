@@ -21,7 +21,7 @@ const ApartmentCard = () => {
   const allText = ReadLess === true ? text : text.slice(0, 122);
  
   return (
-    <div className={`ms-4 ms-lg-0`}>
+    <div className={`ms-2 ms-lg-0`}>
         <div className="d-flex justify-content-start">
           <div className={`${styles.card_container} card `}>
             <div className={`${styles.card_body} card-body p-lg-2`}>

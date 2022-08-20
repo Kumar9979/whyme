@@ -6,7 +6,7 @@ import Image from "next/image";
 const RequestCallback = () => {
   return (
     <div>
-      <div className={`${styles.request_callback_heading} ps-4 mt-4 pe-2`}>
+      <div className={`${styles.request_callback_heading} ps-2 mt-4 `}>
         <span>Requested Callbacks</span>
         <div
           className={`${styles.request_callback_table_container} d-flex justifiy-content-between`}
@@ -61,7 +61,7 @@ const RequestCallback = () => {
                     <td className={` text-nowrap `}>
                       <div class="dropdown">
                         <button
-                          class=" dropdown-toggle"
+                          className={`${styles.dropdown_icon}`}
                           type="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
@@ -71,7 +71,7 @@ const RequestCallback = () => {
                         <ul class="dropdown-menu">
                           <li>
                             <a class="dropdown-item" href="#">
-                              Action
+                              Download
                             </a>
                           </li>
                           
