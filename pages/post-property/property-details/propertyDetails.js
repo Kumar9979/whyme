@@ -23,7 +23,7 @@ const PropertyDetails = () => {
         markerSetOn();
       }, 1000);
     }
-   return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, [lat, lng]);
 
   const router = useRouter();
@@ -64,7 +64,7 @@ const PropertyDetails = () => {
     googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
     libraries,
   });
-  
+
   Geocode.setApiKey("AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU");
 
   console.log(formik.values);
@@ -96,15 +96,18 @@ const PropertyDetails = () => {
             className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}
           >
             {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
-            <form onSubmit={formik.handleSubmit}
-                // onSubmit={(e) => {
-                //   formik.handleSubmit;
-                //   console.log("hi");
-                // }}
-              >
-            <div className={`${styles.input_container} mt-2 `}>
-              <h5 className={`${styles.propertyHeading}`}>Property Details</h5>
-          
+            <form
+              onSubmit={formik.handleSubmit}
+              // onSubmit={(e) => {
+              //   formik.handleSubmit;
+              //   console.log("hi");
+              // }}
+            >
+              <div className={`${styles.input_container} mt-2 `}>
+                <h5 className={`${styles.propertyHeading}`}>
+                  Property Details
+                </h5>
+
                 <h6 className={`${styles.selectHeading} pt-5 pb-2 `}>
                   Select Your Property In Map
                 </h6>
@@ -120,7 +123,7 @@ const PropertyDetails = () => {
                       onChange={formik.handleChange}
                     /> */}
                 </div>
-               
+
                 <div>
                   {isLoaded ? (
                     <>
@@ -162,13 +165,12 @@ const PropertyDetails = () => {
                     <p>Map Loading</p>
                   )}
 
-                  
-{formik.errors.Map && formik.touched.Map && (
-                  <div className="d-flex align-items-center text-danger mt-2">
-                    <i className="ri-error-warning-line me-1  "></i>
-                    <span>{formik.errors.Map.lat}</span>
-                  </div>
-                )}
+                  {formik.errors.Map && formik.touched.Map && (
+                    <div className="d-flex align-items-center text-danger mt-2">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.Map.lat}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-3">
                   <label
@@ -195,7 +197,7 @@ const PropertyDetails = () => {
                 )}
                 <div className="mt-3">
                   <label
-                  htmlFor="BuildingName"
+                    htmlFor="BuildingName"
                     className={`${styles.labelText} form-label pb-1`}
                   >
                     Building Name
@@ -204,7 +206,6 @@ const PropertyDetails = () => {
                     type="text"
                     className={`${styles.building} form-control mb-3`}
                     id="BuildingName"
-                  
                     placeholder="Enter your Building Name"
                     name="BuildingName"
                     value={formik.values.BuildingName}
@@ -243,8 +244,6 @@ const PropertyDetails = () => {
 
                     <button
                       type="submit"
-                   
-                    
                       className={`${styles.bg_color_1D72DB}  ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
@@ -260,12 +259,9 @@ const PropertyDetails = () => {
                     </button>
                   </div>
                 </div>
-             
-            </div>
+              </div>
             </form>
-
           </div>
-
         </div>
       </div>
     </>

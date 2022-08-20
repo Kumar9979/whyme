@@ -18,6 +18,7 @@ import OwnerContact from "../components/owner-contact";
 import ContactUs from "../components/contact_us";
 import LoremIpsum from "../components/lorem-ipsum";
 import RequestCall from "../components/request-callback";
+import LoremText from "../components/lorem-text";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -77,6 +78,7 @@ const Home = () => {
           <ContactUs/>
           <RequestCall/>
           <LoremIpsum/>
+          <LoremText/>
         </div>
       </div>
     </div>
