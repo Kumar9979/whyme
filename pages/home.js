@@ -17,6 +17,7 @@ import RelatedProperties from "../components/related-properties-card";
 import OwnerContact from "../components/owner-contact";
 import ContactUs from "../components/contact_us";
 import LoremIpsum from "../components/lorem-ipsum";
+import RequestCall from "../components/request-callback";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -74,6 +75,7 @@ const Home = () => {
         <div className="col-lg-3 col-11">
           <OwnerContact />
           <ContactUs/>
+          <RequestCall/>
           <LoremIpsum/>
         </div>
       </div>

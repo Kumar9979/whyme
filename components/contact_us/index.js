@@ -24,7 +24,7 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="form-group mt-3">
+          <div className="form-group mt-4">
             <label
               className={`${styles.contact_us_label}`}
               for="exampleInputEmail1"
@@ -40,7 +40,7 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="form-group mt-3">
+          <div className="form-group mt-4">
             <label
               className={`${styles.contact_us_label}`}
               for="exampleInputPassword1"
@@ -57,7 +57,7 @@ const ContactUs = () => {
 
           <button
             type="submit"
-            className={`${styles.form_submit} mt-3 w-100 py-2`}
+            className={`${styles.form_submit} mt-4 w-100 py-2`}
           >
             Submit
           </button>
