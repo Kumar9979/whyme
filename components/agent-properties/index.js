@@ -59,10 +59,10 @@ const AgentProperties = () => {
             </div>
           </div>
          
-          <div className={`col-6 col-lg-3 `}>
+          <div className={`col-6 col-lg-4 `}>
             <RelatedProperties/>
           </div>
-          <div className="col-6 col-lg-3">
+          <div className="col-6 col-lg-4">
           <RelatedProperties/>
           </div>
           <div></div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as dummyApis from "../../redux/actions/josnApisAction";
 import ImageGrid from "../../components/image-grid";
@@ -20,12 +20,18 @@ import RequestCall from "../../components/request-callback";
 import LoremText from "../../components/lorem-text";
 
 const Home = () => {
+  const number = 20;
+  const ref = useRef();
   const reducer = useSelector((store) => store);
   console.log(reducer);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(dummyApis.jsonAction());
   }, []);
+
+  const onScroll = (scroll) => {
+    ref.current.scrollLeft += scroll;
+  };
   return (
     <div className={`${styles.body_background}`}>
       <HomeDetails />
@@ -57,27 +63,22 @@ const Home = () => {
               </span>
             </button>
           </div>
-          <div className="row">
-            <div className="col-6 col-lg-3 mb-3 mb-lg-0">
-              <RelatedProperties />
-            </div>
-            <div className="col-6 col-lg-3">
-              <RelatedProperties />
-            </div>
-            <div className="col-6 col-lg-3 mb-3 mb-lg-0">
-              <RelatedProperties />
-            </div>
-            <div className="col-6 col-lg-3">
-              <RelatedProperties />
+          <div className={`${styles.scrollmenu}`}>
+            <div ref={ref} className={`${styles.row} d-flex`}>
+              {[...Array(number)].map((item, index) => {
+                return <RelatedProperties />;
+              })}
             </div>
           </div>
+          <button onClick={() => {onScroll(-800)}}>Prev</button>
+          <button onClick={() => {onScroll(+800)}}>Next</button>
         </div>
         <div className="col-lg-3 col-11">
           <OwnerContact />
-          <ContactUs/>
-          <RequestCall/>
-          <LoremIpsum/>
-          <LoremText/>
+          <ContactUs />
+          <RequestCall />
+          <LoremIpsum />
+          <LoremText />
         </div>
       </div>
     </div>
