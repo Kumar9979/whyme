@@ -15,6 +15,8 @@ import seeall from "../assets/images/seeall.svg";
 import Image from "next/image";
 import RelatedProperties from "../components/related-properties-card";
 import OwnerContact from "../components/owner-contact";
+import ContactUs from "../components/contact_us";
+import LoremIpsum from "../components/lorem-ipsum";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -69,8 +71,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-3">
+        <div className="col-lg-3 col-11">
           <OwnerContact />
+          <ContactUs/>
+          <LoremIpsum/>
         </div>
       </div>
     </div>

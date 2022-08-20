@@ -1,0 +1,42 @@
+.contactus {
+  box-shadow: 0px 0px 7px #ccc;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+}
+.contactus_heading {
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+.horizontal_line {
+    color: #DBE9F2;
+}
+.contact_us_label {
+    color: #1D1E1F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+.form_input {
+    background-color: #DBE9F200;
+    border-radius: 7px;
+    border-color: #DDDBDB;
+}
+.form_input::placeholder {
+    color: #DDDBDB;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 9px;   
+    position: absolute;
+    top: 30%;
+}
+.form_submit {
+    border-radius: 7px;
+    background-color: #1D72DB;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;   
+    border: none;
+}
