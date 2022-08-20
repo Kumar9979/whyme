@@ -50,8 +50,10 @@ const PropertyLocation = () => {
             Karnataka 570017
           </div>
           <div>
-          <i className={`${styles.location_icon} ri-map-pin-2-fill mt-1`}></i><span><button className={`${styles.view_map}`}>View on map</button></span>
-
+            <i className={`${styles.location_icon} ri-map-pin-2-fill mt-1`}></i>
+            <span>
+              <button className={`${styles.view_map}`}>View on map</button>
+            </span>
           </div>
         </div>
         <div className="col-8">

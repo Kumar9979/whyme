@@ -32,6 +32,7 @@ const Home = () => {
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
+  
   return (
     <div className={`${styles.body_background}`}>
       <HomeDetails />
