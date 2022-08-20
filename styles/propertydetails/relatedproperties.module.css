@@ -1,14 +1,13 @@
 .related_image {
   box-shadow: 0px 0px 7px #0000001f;
   border-radius: 10px;
-
 }
 .luxurius {
   color: #000000;
-  font-size: 12px;
+  font-size: 11px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  background-color: #FBC352;
+  background-color: #fbc352;
   border-radius: 5px;
   width: 50%;
   text-align: center;
@@ -17,12 +16,52 @@
 }
 
 .like_image {
-    bottom: -12%;
-    right: 10%;
+  bottom: -12%;
+  right: 10%;
 }
 .related_properties_price {
-    color: #1D72DB;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+  color: #1d72db;
+  font-size: 11px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.related_properties_location {
+  color: #000000;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.ready_to_move {
+  color: #aca9a9;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.card_heading {
+  color: #bcc7ce;
+  font-size: 7px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.card_amenity {
+  color: #1d72db;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.view_details_button {
+  color: #ffffff;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background-color: #1d72db;
+  border-radius: 5px;
+  border: none;
+}
+.posted_date {
+    color: #979494;
+    font-size: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
