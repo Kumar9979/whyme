@@ -10,7 +10,7 @@ import RequestCallback from "../../components/myproperties/request-callback";
 const PropertyStatics = () => {
   return (
     <ProfileLayout>
-      <div className={`${styles.fd}`}>
+      <div className={`${styles.background_card}`}>
         <div className={`${styles.back_icon} ps-2 ps-lg-0`}>
           <span>
             {" "}

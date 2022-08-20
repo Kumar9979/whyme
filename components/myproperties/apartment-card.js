@@ -19,12 +19,10 @@ const ApartmentCard = () => {
 
   const text = ` Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Diam. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Diam. `;
   const allText = ReadLess === true ? text : text.slice(0, 122);
-
+ 
   return (
-    <div className={`container-fluid`}>
-      
-      <div className="">
-        <div className="d-flex justify-content-center">
+    <div className={`ms-4 ms-lg-0`}>
+        <div className="d-flex justify-content-start">
           <div className={`${styles.card_container} card `}>
             <div className={`${styles.card_body} card-body p-lg-2`}>
               <div className="d-flex">
@@ -221,7 +219,6 @@ const ApartmentCard = () => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };
