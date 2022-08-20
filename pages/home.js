@@ -14,6 +14,7 @@ import AgentProperties from "../components/agent-properties";
 import seeall from "../assets/images/seeall.svg";
 import Image from "next/image";
 import RelatedProperties from "../components/related-properties-card";
+import OwnerContact from "../components/owner-contact";
 
 const Home = () => {
   const reducer = useSelector((store) => store);
@@ -68,8 +69,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-4">
-          
+        <div className="col-lg-3">
+          <OwnerContact />
         </div>
       </div>
     </div>
