@@ -5,7 +5,6 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import backButton from "../../../assets/icons/backbutton.png";
-import Navbar from "../../navbar/navbar";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
 import ImageUploading from "react-images-uploading";
@@ -55,7 +54,6 @@ const PropertyUpload = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="container mt-5 pt-3">
         <div className="row">
           <div
