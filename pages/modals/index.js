@@ -7,7 +7,7 @@ const Modals = () => {
     const handleClose = () => setShow(false);
     const handleShow =() => setShow(true)
   return (
-    <div className="d-flex mt-5">
+    <div className="d-flex">
       <button onClick={handleShow} className="btn btn-primary" type="submit">
         Button
       </button>
