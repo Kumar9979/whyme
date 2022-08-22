@@ -1,0 +1,25 @@
+.upload_heading_text{
+    color: #323D5A;
+    font-family: Poppins;
+}
+.upload_subheading_text{
+    color: #323D5A99;
+    font-family: Poppins;
+}
+.upload_image_text_1{
+    color: #BCC7CE;
+}
+.upload_image_text_2{
+    color: #BCC7CE;
+}
+.upload_browse_text{
+    color: #1D72DB;
+    background: none;
+    border: none ;
+}
+.card_width{
+    max-width:40rem;
+}
+.card_radius{
+    border-radius: 20px;
+}
