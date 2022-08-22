@@ -68,16 +68,12 @@ const ImageGrid = () => {
                 width={250}
                 height={300}
               />
-              <button
-                onClick={handleShow}
-                className={`${styles.seemore_text} `}
-              >
-                <div
+              
+                <div onClick={handleShow}
                   className={`${styles.seemore_button} position-absolute px-3 py-2`}
                 >
                   See More
                 </div>{" "}
-              </button>
             </div>
           </div>
           <div className="pt-1">
