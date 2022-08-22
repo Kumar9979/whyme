@@ -1,0 +1,8 @@
+.requestcall_width {
+    width: fit-content;
+}
+
+.cancel_button {
+    background-color: transparent;
+    border: none;
+}
