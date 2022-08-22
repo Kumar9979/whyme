@@ -71,8 +71,6 @@ const Home = () => {
               })}
             </div>
           </div>
-          <button onClick={() => {onScroll(-800)}}>Prev</button>
-          <button onClick={() => {onScroll(+800)}}>Next</button>
         </div>
         <div className="col-lg-3 col-11">
           <OwnerContact />
