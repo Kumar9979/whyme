@@ -9,8 +9,9 @@ import floor from "../../assets/icons/floor.svg";
 import bathroom from "../../assets/icons/bathroom.svg";
 
 const RelatedProperties = () => {
+  const number = 20;
   return (
-    <div>
+    <div className="me-4">
       <div className={`${styles.related_image} `}>
         <div className={`position-relative`}>
           <Image
@@ -68,16 +69,17 @@ const RelatedProperties = () => {
           </div>
 
           <div className={`d-flex justify-content-between`}>
-            <div className={`${styles.posted_date}`}>Posted on <br/>20 July 2020</div>
+            <div className={`${styles.posted_date}`}>
+              Posted on <br />
+              20 July 2020
+            </div>
             <div>
-                <button className={`${styles.view_details_button} px-3 py-1`}>View Details</button>
+              <button className={`${styles.view_details_button} px-3 py-1`}>
+                View Details
+              </button>
             </div>
           </div>
         </div>
-
-
-
-
       </div>
     </div>
   );

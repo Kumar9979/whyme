@@ -1,5 +1,45 @@
 .property_location {
-    height: 20rem;
+   
     border-radius: 15px;
     background-color: #FFFFFF;
 }
+.map_container {
+    width:100%;
+    height: 220px;
+    border-radius: .25rem;
+    
+    }
+    .location_text {
+        color: #000000;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .location_heading {
+        color: #BCC7CE;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .location_address {
+        color: #1D72DB;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .view_map {
+        background-color: transparent;
+        color: #1D72DB;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        text-decoration: underline;
+        border: none;
+
+    }
+    .location_icon {
+        color: #50BF97;
+    }
+    .horizontal_line {
+        color: #DBE9F2;
+    }

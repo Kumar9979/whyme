@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import styles from "../../styles/propertydetails/agentproperties.module.css";
 import image from "../../assets/images/imagereview/people.png";
@@ -6,10 +6,17 @@ import star from "../../assets/images/star.svg";
 import RelatedProperties from "../related-properties-card";
 
 const AgentProperties = () => {
+  let n=5;
+  const ref = useRef();
+  const onScroll = (scroll) => {
+    ref.current.scrollLeft += scroll;
+  };
+ 
   return (
+
     <div>
-      <div className={`${styles.agent_properties} p-4 mt-4`}>
-        <div className={`row `}>
+      <div className={`${styles.agent_properties} p-4 mt-4 position-relative`}>
+        <div className={`row`}>
           <div className="col-12 col-lg-4">
             <div className={`${styles.agent_properties_text}`}>
               Want to see more <br />
@@ -58,15 +65,26 @@ const AgentProperties = () => {
               </div>
             </div>
           </div>
-         
-          <div className={`col-6 col-lg-3 `}>
+          <div className={`${styles.scrollmenu} `}>
+            <div ref={ref} className={`${styles.row} d-flex`}>
+              {[...Array(n)].map((item, index) => {
+                return <RelatedProperties />;
+              })}
+            </div>
+          </div>
+          
+          
+          {/* <div className={`col-6 col-lg-4 `}>
             <RelatedProperties/>
           </div>
-          <div className="col-6 col-lg-3">
+          <div className="col-6 col-lg-4">
           <RelatedProperties/>
-          </div>
+          </div> */}
           <div></div>
         </div>
+        <div className={`${styles.prev_button} position-absolute`}><button onClick={() => {onScroll(-400)}}><i class="ri-arrow-left-s-line"></i></button></div>
+        <div className={`${styles.next_button} position-absolute`}><button onClick={() => {onScroll(+400)}}><i class="ri-arrow-right-s-line"></i></button></div>
+
       </div>
     </div>
   );
