@@ -6,15 +6,24 @@ body {
   overflow-x: hidden;
 }
 
+
 a{
   text-decoration: none !important;
 }
-
+/* [data-reach-combobox-popover]{
+  z-index: 9999 !important;
+} */
 .fs_10{
   font-size: 10px;
 }
 .fs_12{
   font-size: 12px;
+}
+.fs_13{
+  font-size: 13px;
+}
+.fs_14{
+  font-size: 14px;
 }
 .fs_15{
   font-size: 15px;
@@ -106,6 +115,9 @@ a{
   }
   .fs_sm_12{
     font-size: 12px;
+  }
+  .fs_sm_13{
+    font-size: 13px;
   }
   .fs_sm_15{
     font-size: 15px;

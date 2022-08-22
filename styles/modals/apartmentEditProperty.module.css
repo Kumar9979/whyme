@@ -1,0 +1,30 @@
+.upload_heading_text{
+    color: #323D5A;
+    font-family: Poppins;
+}
+.total_floors_input{
+    border: none;
+    background-color: #F4F8FB;
+    border-radius: 5px;
+}
+.total_floors_input:focus-visible{
+    outline: 1px solid #1d72db
+  }
+.total_floors_text{
+    font-family: Poppins;
+    color: #1D1E1F;
+}
+.total_floors_input::placeholder{
+    color: "#BCC7CE";
+        font-family: "Poppins"
+}
+.save_btn{
+    background-color: #1D72DB;
+    border-radius: 5px;
+    border: none;
+    color: #FFFF;
+    font-family: Poppins;
+  }       
+  .card_radius{
+    border-radius: 10px;
+}

@@ -8,3 +8,4 @@ const PropertyLocation = () => {
 }
 
 export default PropertyLocation;
+
