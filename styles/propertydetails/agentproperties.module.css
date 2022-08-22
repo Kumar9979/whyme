@@ -69,14 +69,19 @@
 }
 
 .prev_button {
-  border-radius: 50%;
   right: 65%;
   top: 50%;
 }
 .next_button {
-  border-radius: 50% !important;
   right: 0%;
   top: 50%;
+}
+.prev_decor {
+  border-radius: 50%;
+  background-color: #DDDBDB;
+  border: none;
+  width: 30px;
+  height: 30px;
 }
 @media only screen and (max-width: 992px) {
   .scrollmenu {

@@ -4,16 +4,17 @@ import styles from "../../styles/propertydetails/agentproperties.module.css";
 import image from "../../assets/images/imagereview/people.png";
 import star from "../../assets/images/star.svg";
 import RelatedProperties from "../related-properties-card";
+import arrowleft from "../../assets/images/arrow_left.svg";
+import arrowright from "../../assets/images/arrow_right.svg";
 
 const AgentProperties = () => {
-  let n=5;
+  let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
- 
-  return (
 
+  return (
     <div>
       <div className={`${styles.agent_properties} p-4 mt-4 position-relative`}>
         <div className={`row`}>
@@ -60,7 +61,9 @@ const AgentProperties = () => {
                     height={20}
                     className={`${styles.agent_image} `}
                   />{" "}
-                  <span className={`ps-2 ${styles.agent_rating}`}>4.7 Ratings</span>
+                  <span className={`ps-2 ${styles.agent_rating}`}>
+                    4.7 Ratings
+                  </span>
                 </div>
               </div>
             </div>
@@ -72,8 +75,7 @@ const AgentProperties = () => {
               })}
             </div>
           </div>
-          
-          
+
           {/* <div className={`col-6 col-lg-4 `}>
             <RelatedProperties/>
           </div>
@@ -82,9 +84,38 @@ const AgentProperties = () => {
           </div> */}
           <div></div>
         </div>
-        <div className={`${styles.prev_button} position-absolute`}><button onClick={() => {onScroll(-400)}}><i class="ri-arrow-left-s-line"></i></button></div>
-        <div className={`${styles.next_button} position-absolute`}><button onClick={() => {onScroll(+400)}}><i class="ri-arrow-right-s-line"></i></button></div>
-
+        <div className={`${styles.prev_button} position-absolute d-none d-lg-block`}>
+          <button
+            className={`${styles.prev_decor} d-flex align-items-center`}
+            onClick={() => {
+              onScroll(-400);
+            }}
+          >
+             <Image
+                  src={arrowleft}
+                  alt="Picture of the author"
+                  width={20}
+                  height={20}
+                  className={`${styles.agent_image} `}
+                />
+          </button>
+        </div>
+        <div className={`${styles.next_button} position-absolute d-none d-lg-block`}>
+          <button
+            className={`${styles.prev_decor} d-flex align-items-center`}
+            onClick={() => {
+              onScroll(+400);
+            }}
+          >
+            <Image
+                  src={arrowright}
+                  alt="Picture of the author"
+                  width={20}
+                  height={20}
+                  className={`${styles.agent_image} `}
+                />
+          </button>
+        </div>
       </div>
     </div>
   );
