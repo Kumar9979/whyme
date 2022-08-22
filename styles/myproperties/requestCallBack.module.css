@@ -1,0 +1,25 @@
+.request_callback_heading{
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.request_callback_table_container{
+    overflow-x: auto;
+}
+.request_table{
+    border-radius: 10px;
+}
+.table_heading{
+    background-color: #1D72DB33;
+}
+.table_data_name{
+    align-items: center;
+}
+.dropdown_icon{
+    background-color: transparent;
+    border: none;
+}
+
+@media only screen and (max-width: 480px) {
+    
+}
