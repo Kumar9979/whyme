@@ -17,7 +17,7 @@ const ImageGrid = () => {
 
   const handleShow = () => setIsVisible(true);
   const handleClose = () => setIsVisible(false);
-  const number = 20;
+  const number = 10;
   return (
     <div>
       <div className={`row mt-5 mt-lg-2 d-flex justify-content-center`}>

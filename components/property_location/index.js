@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePosition } from "../../pages/post-property/property-details/usePosition";
 import styles from "../../styles/propertydetails/propertylocation.module.css";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
@@ -8,7 +8,7 @@ import Geocode from "react-geocode";
 const PropertyLocation = () => {
   const libraries = ["places"];
   const { latitude: lat, longitude: lng, error } = usePosition();
-  const [currentPage, setCurrentPage] = useState("propertyDetails");
+  const [currentPage, setCurrentPage] = useState("property-details");
 
   const [zoom, setZoom] = useState(10);
   const [markedAddress, setMarkedAddress] = useState("");
@@ -23,7 +23,7 @@ const PropertyLocation = () => {
   function markerSetOn() {
     setmarkerStat(true);
   }
-
+console.log(selected)
   Geocode.setApiKey("AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU");
 
   function markerChange() {
@@ -38,6 +38,17 @@ const PropertyLocation = () => {
       }
     );
   }
+
+  useEffect(() => {
+    setSelected({ lat, lng });
+    if (lat !== undefined) {
+      const timer = setTimeout(() => {
+        markerSetOn();
+      }, 1000);
+    }
+    return () => clearTimeout(timer);
+  }, [lat, lng]);
+  
   return (
     <div className={`mt-3 ${styles.property_location} p-4`}>
       <div className={`${styles.location_text}`}>Location</div>
