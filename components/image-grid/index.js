@@ -11,7 +11,7 @@ import proptertyimagegrid6 from "../../assets/images/proptertyimagegrid6.png";
 const ImageGrid = () => {
   return (
     <div>
-      <div className={`row mt-5 mt-lg-2 d-flex justify-content-center`}>
+      <div className={`row mt-5 mt-lg-4 d-flex justify-content-center`}>
         <div className={`col-6 p-1`}>
           <div className="pb-1">
           <Image

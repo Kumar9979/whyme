@@ -28,9 +28,15 @@
 }
 .related_properties_location {
   color: #000000;
-  font-size: 8px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    max-width: 
+13rem
+;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .ready_to_move {
   color: #aca9a9;
