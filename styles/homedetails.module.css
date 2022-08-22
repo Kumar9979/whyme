@@ -11,12 +11,6 @@
   font-weight: 400;
   font-size: 24px;
 }
-.details_location {
-  color: #5f5c5c;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-}
 
 .details_move {
   background: var(--unnamed-color-24734e) 0% 0% no-repeat padding-box;

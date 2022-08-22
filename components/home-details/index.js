@@ -8,9 +8,8 @@ const HomeDetails = () => {
         <div className="col-5">
           <p className={`${styles.HomeDetails_apartment} mb-0`}>
             3BHK Apartment{" "}
-            <span className={`${styles.details_location} `}>
               in Vijayanagar, Mysuru
-            </span>
+            
           </p>
           <span className={`${styles.details_move} p-1`}>Ready to move</span>
         </div>
