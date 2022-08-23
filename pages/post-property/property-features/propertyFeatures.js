@@ -136,6 +136,8 @@ const propertyFeatures = () => {
     }
   };
 
+  console.log(formik.values);
+
   return (
     <div>
       <div className="container mt-5">
