@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import ApartmentDeletePhoto from "../components/modals/apartmentDeletePhoto";
 import ApartmentEditProperty from "../components/modals/apartmentEditProperty";
+import ApartmentAreaPrice from "../components/modals/apartmentModals/apartmentAreaPrice";
 import ApartmentEditAmenities from "../components/modals/apartmentModals/apartmentEditAmenities";
 import ApartmentUpdateMap from "../components/modals/apartmentUpdateMap";
 
@@ -17,7 +18,8 @@ const Hello = () => {
      <Button onClick={handleShow}>modal</Button>
      </div>
       
-     <ApartmentEditAmenities handleClose={handleClose} show={show} />
+     <ApartmentAreaPrice handleClose={handleClose} show={show} />
+     {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
      {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}

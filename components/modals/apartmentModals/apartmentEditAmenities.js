@@ -66,12 +66,12 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
             </div>
             <hr/>
            <form onSubmit={formik.handleSubmit}>
-            <div className="px-3 px-lg-0">
+            <div className="px-3 ">
               <div className=" text-start">
                 <div className="row">
                   <div className="col-lg-6">
                    
-                        <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                        <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                           <input
                             className="form-check-input mt-2 "
                             type="checkbox"
@@ -89,7 +89,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                             Elevators/Lifts
                           </label>
                         </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -107,7 +107,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                         Sauna Steam Room
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -125,7 +125,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                         Kids Play Area
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -143,7 +143,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                         Guest Parking Spaces
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -161,7 +161,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                         Swimming Pool
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -179,7 +179,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                         Play Ground
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -197,7 +197,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        Gym
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -215,7 +215,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        Yoga Meditation Area
                       </label>
                     </div>
-                    <div className="form-check me-4 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 mb-lg-0 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -236,7 +236,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                    
                   </div>
                   <div className="col-6">
-                  <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                  <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -254,7 +254,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        CCTV Surveillance
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -272,7 +272,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        Private Parking Space
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -290,7 +290,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        Community Clubhouse
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -308,7 +308,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        Pet Washing Stations
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -326,7 +326,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                        E-Vehicle Charging Points
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-3 fs_12 fs_sm_12">
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
@@ -384,33 +384,4 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
 
 export default ApartmentEditAmenities;
 
-const data = [
-  {
-    name: "Elevators/Lifts",
-  },
-  {
-  name: "Sauna Steam Room",
-  },
-  {
-    name: "Kids Play Area",
-  },
-  {
-    name: "Guest Parking Spaces",
-  },
-  {
-    name: "Swimming Pool",
-  },
-  {
-    name: "Play Ground",
-  },
-  {
-    name: "Gym",
-  },
-  {
-    name: "Yoga Meditation Area",
-  },
-  {
-    name: "BBQ Lounge Area",
-  },
- 
-];
+
