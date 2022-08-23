@@ -4,7 +4,7 @@ import ProfileLayout from "../../components/sidebarLayout/Sidebar";
 const AddAProperty = () => {
   return (
     <ProfileLayout>
-      <div>addAProperty</div>
+      <div style={{height:"900rem"}}>addAProperty</div>
     </ProfileLayout>
   );
 };
