@@ -1,0 +1,49 @@
+.requestcall_width {
+  max-width: 350px;
+}
+
+.close_button {
+  background-color: transparent;
+  border: none;
+}
+
+.request_input:focus-visible{
+  
+    outline: none !important;
+} 
+.request_call_heading {
+  color: #323d5a;
+  opacity: 1;
+}
+.request_call_title {
+  color: #323d5a;
+  opacity: 0.6;
+}
+.submit_button {
+    border-radius: 7px;
+    background-color: #1D72DB;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 12px;   
+    border: none;
+}
+.request_label {
+  color: #1d1e1f;
+}
+.request_input {
+  border-color: #dddbdb;
+  height: 2rem;
+  border: 1px solid #dddbdb;
+  border-radius: 7px;
+  opacity: 1;
+  
+}
+.request_input::placeholder {
+    color: #DDDBDB;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;   
+    position: absolute;
+    top: 20%;
+}

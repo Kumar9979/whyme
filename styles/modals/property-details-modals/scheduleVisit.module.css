@@ -1,0 +1,22 @@
+.schedule_visit_heading {
+    color: #323D5A;
+}
+.close_button {
+    background-color: transparent;
+    border: none;
+}
+.select_date {
+    color: #1D1E1F;
+}
+.Schedule_visit {
+    max-width: 500px;
+}
+.schedule_day_date {
+    border-width: 5px;
+    border-color: black;
+    border: 1px solid var(--unnamed-color-dddbdb);
+    background: #DBE9F200 0% 0% no-repeat padding-box;
+    border: 1px solid #DDDBDB;
+    border-radius: 7px;
+    opacity: 1;
+}

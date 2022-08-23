@@ -5,7 +5,9 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
+.fontFam_poppins {
+  font-family:"Poppins", sans-serif;
+}
 a{
   text-decoration: none !important;
 }
@@ -15,6 +17,9 @@ a{
 }
 .fs_12{
   font-size: 12px;
+}
+.fs_14{
+  font-size: 14px;
 }
 .fs_15{
   font-size: 15px;
