@@ -35,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`handbook-section ${Styles.container}`}>
+    <div className={`handbook-section fixed-top ${Styles.container}`}>
       {mobile === false && (
         <div className="header container-fluid">
           <nav className="navbar navbar-expand-lg ">
