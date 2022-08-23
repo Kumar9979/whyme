@@ -73,8 +73,8 @@ const Home = () => {
           </div>
         </div>
         <div className="col-lg-3 col-11">
-          <OwnerContact />
-          <ContactUs />
+          {/* <OwnerContact />
+          <ContactUs /> */}
           <RequestCall />
           <LoremIpsum />
           <LoremText />
