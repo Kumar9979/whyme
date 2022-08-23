@@ -8,7 +8,7 @@ import ApartmentDescription from "../components/modals/apartmentModals/apartment
 import ApartmentEditAmenities from "../components/modals/apartmentModals/apartmentEditAmenities";
 import ApartmentUpdateMap from "../components/modals/apartmentUpdateMap";
 
-// import ApartmentUploadPhoto from "../components/modals/apartmentUploadPhoto";
+import ApartmentUploadPhoto from "../components/modals/apartmentUploadPhoto";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -20,14 +20,14 @@ const Hello = () => {
      <Button onClick={handleShow}>modal</Button>
      </div>
       
-     <ApartmentDescription handleClose={handleClose} show={show} />
+     {/* <ApartmentDescription handleClose={handleClose} show={show} /> */}
      {/* <ApartmentAreaPriceRent handleClose={handleClose} show={show} /> */}
      {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
      {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
-      {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
+      <ApartmentUploadPhoto handleClose={handleClose} show={show} />
     </>
   );
 };

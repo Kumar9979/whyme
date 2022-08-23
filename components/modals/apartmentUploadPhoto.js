@@ -25,23 +25,28 @@ dialogClassName={`${styles.card_width}`}
     
       <Modal.Body
       
-      > <div className="p-lg-3">
-        <div className={`${styles.heading} d-flex justify-content-between `}>
-          <span
-            className={`${styles.upload_heading_text} fs_30 fw_600 fs_sm_20`}
-          >
-            Upload Photos
-          </span>
-          <span onClick={handleClose}>
-            <Image src={closeIcon} />
-          </span>
-        </div>
-        <div>
+      > <div className="px-lg-3">
+        <div
+              className={`${styles.heading} d-flex justify-content-between `}
+            >
+              <div className="pt-2">
+                <span
+                  className={`${styles.upload_heading_text} fs_30 fw_600 fs_sm_20 `}
+                >
+                  Upload Photos
+                </span>
+              </div>
+              <div>
+                <span onClick={handleClose} className={`${styles.close_icon}`}>
+                  <Image src={closeIcon} width="20px" height="20px" />
+                </span>
+              </div>
+            </div>
+        <div className="mt-1 mt-lg-0">
           <span
             className={`${styles.upload_subheading_text} fs_18 fw_500 fs_sm_15`}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy.
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.
           </span>
         </div>
         <div className={`${styles.card}`}>
