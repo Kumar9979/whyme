@@ -35,11 +35,11 @@ const Home = () => {
   
   return (
     <div className={`${styles.body_background}`}>
-      <HomeDetails />
+      {/* <HomeDetails /> */}
       <div className="row d-flex justify-content-center">
         <div className="col-lg-7 col-11">
           <ImageGrid />
-          <Review />
+          {/* <Review /> */}
           <Aboutproperty />
           <Amenties />
           <ContactOwner />

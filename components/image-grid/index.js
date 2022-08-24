@@ -12,6 +12,10 @@ import arrowleft from "../../assets/images/carouselArrowL.svg";
 import arrowright from "../../assets/images/carouselArrowR.svg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import location from "../../assets/icons/location-icon.svg";
+import menu from "../../assets/images/menu.svg";
+import LocationIcon from "../../assets/icons/locationIcon";
+
 const ImageGrid = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,8 +23,54 @@ const ImageGrid = () => {
   const handleClose = () => setIsVisible(false);
   const number = 10;
   return (
-    <div>
-      <div className={`row mt-5 mt-lg-2 d-flex justify-content-center`}>
+    <div className={`${styles.property_details} p-4 mt-5 mt-lg-4`}>
+      <div className="d-flex justify-content-between">
+        <div>
+          <div className="d-flex align-items-center">
+            <p
+              className={`${styles.property_area} m-0 fs_22 fw_600 fontFam_poppins me-2`}
+            >
+              3BHK Apartment in Vijayanagar, Mysuru
+            </p>
+            <div
+              className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins`}
+            >
+              Project by Brigade
+            </div>
+            <div
+              className={`${styles.ready_apartment} px-1 fs_12 fw_500 fontFam_poppins`}
+            >
+              Ready to move
+            </div>
+          </div>
+          <p
+            className={`${styles.property_location} px-1 fs_12 fw_500 fontFam_poppins`}
+          >
+            <span className="pe-1">
+              {" "}
+              {/* <Image src={location} alt="Picture of the author"
+              width={12}
+              height={12} /> */}
+              <LocationIcon fill="#1D72DB" />
+            </span>
+            2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
+            Karnataka 570017
+          </p>
+        </div>
+
+        <button
+          className={`${styles.property_share_report} p-0 d-flex justify-content-top`}
+        >
+          <Image
+            src={menu}
+            alt="Picture of the author"
+            width={20}
+            height={20}
+            className={`${styles.agent_image} p-0`}
+          />
+        </button>
+      </div>
+      <div className={`row  d-flex justify-content-center`}>
         <div className={`col-6 p-1`}>
           <div className="pb-1">
             <Image
@@ -68,11 +118,12 @@ const ImageGrid = () => {
                 width={250}
                 height={300}
               />
-                <div onClick={handleShow}
-                  className={`${styles.seemore_button} position-absolute px-3 py-2`}
-                >
-                  See More
-                </div>{" "}
+              <div
+                onClick={handleShow}
+                className={`${styles.seemore_button} position-absolute px-3 py-2`}
+              >
+                See More
+              </div>{" "}
             </div>
           </div>
           <div className="pt-1">
@@ -85,6 +136,24 @@ const ImageGrid = () => {
           </div>
         </div>
       </div>
+      <div className="d-flex justify-content-between">
+        <div
+          className={`fw_700 fs_28 fontFam_poppins ${styles.property_price} `}
+        >
+          ₹ 70Lac
+          <span
+            className={`${styles.property_price_per_sqft} fs_15 fw_600 fontFam_poppins ps-2`}
+          >
+            ₹ 2920 per Sqft
+          </span>
+        </div>
+
+        <div className="d-flex">
+          <button className={`${styles.property_save} fw_600 fs_14 fontFam_poppins px-5 py-1`}>Save</button>
+          <button className={`${styles.property_owner_contact} fs_14 fw_400 fontFam_poppins px-5 py-1 ms-2`}>Contact</button>
+        </div>
+      </div>
+
       <Modal
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -128,7 +197,7 @@ const renderArrow = (direction) => (onClickHandler, shouldBeEnabled, label) => {
   const styles = {
     position: "absolute",
     top: "50%",
-    zIndex: 2
+    zIndex: 2,
   };
 
   if (direction === "prev") {

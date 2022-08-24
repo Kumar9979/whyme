@@ -24,5 +24,64 @@
 .arrows {
   width: 2rem;
   z-index: 99;
-  border:1px solid black
+  border: 1px solid black;
+}
+
+.property_details {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  opacity: 1;
+}
+.property_area {
+  color: #000000;
+}
+.construction_company {
+  color: #f77223;
+  text-align: left;
+  font: normal normal medium 14px/21px Poppins;
+  letter-spacing: 0.14px;
+  opacity: 0.87;
+  background: #f7722333 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+}
+.ready_apartment {
+  color: #24734e;
+  text-align: left;
+  font: normal normal medium 14px/21px Poppins;
+  letter-spacing: 0.14px;
+  background: #24734e33 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  border-radius: 4px;
+}
+.property_location {
+  color: #323d5a;
+}
+
+.property_share_report {
+  border: none;
+  background-color: transparent;
+  height: 20;
+}
+.property_price {
+  color: #1d72db;
+}
+.property_price_per_sqft {
+  color: #323d5a;
+  opacity: 0.87;
+}
+.property_save {
+  background: #1d72db00 0% 0% no-repeat padding-box;
+  border: 2px solid #bcc7ce;
+  border-radius: 26px;
+  opacity: 1;
+  color: #BCC7CE;
+}
+
+.property_owner_contact {
+  background: #1d72db 0% 0% no-repeat padding-box;
+  border-radius: 26px;
+  opacity: 1;
+  border: none;
+  color: #ffffff;
 }
