@@ -41,3 +41,12 @@
 .footer_list_link{
     color: #323D5A;
 }
+.input_bar {
+    align-self: stretch;
+    background-color: rgb(204, 204, 204);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    width: 1px;
+    box-sizing: border-box;
+   
+  }

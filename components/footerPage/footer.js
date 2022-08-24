@@ -10,12 +10,12 @@ const Footer = () => {
       <div className={`${styles.footer_container} p-3 p-lg-5 border `}>
         <div className="container-fluid text-start ">
           <div className="row">
-            <div className="col-lg-4 col-md-12 col-sm-12 ps-lg-5 ">
+            <div className="col-lg-4 col-md-6 col-sm-12 ps-lg-5 ">
               <div className={`${styles.footer_logo} w-50`}>
                 <Image src={ZameenLogo} alt="zameen-square logo" />
               </div>
               <div
-                className={`${styles.footer_subheading} fontFam_poppins fs_12 mt-2 fw_400`}
+                className={`${styles.footer_subheading} fontFam_poppins fs_12 mt-2 fw_400 pe-lg-3`}
               >
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -38,34 +38,119 @@ const Footer = () => {
                   />
 
                   <div className="row pe-3 p-1">
-                    <button className={`${styles.subscribe_btn} `}>
+                    <button className={`${styles.subscribe_btn} fontFam_poppins`}>
                       Subscribe
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-12 col-sm-12 ps-3">
+            <div className="col-lg-3 col-md-6 col-sm-12 ps-lg-5">
               <div
-                className={`${styles.quick_heading} fw_600 fs_19 mt-3 mt-lg-0`}
+                className={`${styles.quick_heading} fw_600 fs_20 mt-3 mt-lg-0 fontFam_poppins`}
               >
                 Quick Links
               </div>
-              <p className={`${styles.footer_link}`}>
+              <div className={`${styles.footer_link} mt-2 mt-lg-3`}>
                 <Link
                   href=""
                   className={`${styles.footer_link} `}
                 >
                   <a
-                    className={`${styles.footer_list_link} fs_17 fw_500`}
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
                   >
                     {" "}
                     Blogs
                   </a>
                 </Link>
-              </p>
+              </div>
+              <div className={`${styles.footer_link} mt-1 mt-lg-2`}>
+                <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins `}
+                  >
+                    {" "}
+                    About Us
+                  </a>
+                </Link>
+              </div>
+              <div className={`${styles.footer_link} mt-1 mt-lg-2`}>
+                <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
+                  >
+                    {" "}
+                    Contact Us
+                  </a>
+                </Link>
+              </div>
+              <div className={`${styles.footer_link} mt-1 mt-lg-2`}>
+                <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
+                  >
+                    {" "}
+                    Privacy Policy
+                  </a>
+                </Link>
+              </div>
+              <div className={`${styles.footer_link} mt-1 mt-lg-2`}>
+                <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
+                  >
+                    {" "}
+                    Terms & Condition
+                  </a>
+                </Link>
+              </div>
             </div>
-            <div className="col-lg-5 col-md-12 col-sm-12">Column</div>
+            <div className="col-lg-5 col-md-12 col-sm-12">
+            <div
+                className={`${styles.quick_heading} fw_600 fs_20 mt-3 mt-lg-0 fontFam_poppins`}
+              >
+                Top Localities
+              </div>
+              <div>
+              <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
+                  >
+                    {" "}
+                    Terms & Condition
+                    
+                  </a>
+                </Link>
+              </div>
+              <div>
+              <Link
+                  href=""
+                  className={`${styles.footer_link} `}
+                >
+                  <a
+                    className={`${styles.footer_list_link} fs_16 fw_500 fontFam_poppins`}
+                  >
+                    {" "}
+                    Terms 
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
