@@ -64,7 +64,7 @@ const ApartmentDescription = ({show, handleClose}) => {
                 </div>
                 {formik.errors.Description && formik.touched.Description && (
                   <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1  "></i>
+                    <i className="ri-error-warning-line me-1 ps-2 "></i>
                     <span>{formik.errors.Description}</span>
                   </div>
                 )}

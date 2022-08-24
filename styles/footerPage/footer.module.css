@@ -1,0 +1,43 @@
+.footer_container{
+    background-color: #DBE9F24D;
+}
+.footer_subheading{
+    color: #323D5A;
+}
+.subscribe_heading{
+    color: #1D72DB;
+}
+
+.subscribe_input{
+   width: 100%;
+}
+.input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+   
+}
+.input_box{
+    width: 100%;
+    background-color: #DBE9F24D;
+    border-radius: 5px;
+    
+}
+.input:focus-visible{
+    outline: none;
+}
+.input::placeholder{
+   color: #BCC7CE;
+}
+.subscribe_btn{
+    background-color: #50BF97;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+.quick_heading{
+    color: #1D72DB;
+}
+.footer_list_link{
+    color: #323D5A;
+}
