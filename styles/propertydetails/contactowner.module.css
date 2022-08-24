@@ -1,7 +1,7 @@
 .contact_owner {
     border-radius: 12px;
     background-color: #1D72DB;
-
+   
 }
 
 .contact_owner_button {
@@ -15,8 +15,8 @@
 }
 .contact_owner_text {
     color: #FFFFFF;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
   font-family: "Poppins", sans-serif;
 
 }

@@ -4,7 +4,7 @@
 }
 .agent_properties_text {
   color: #323d5a;
-  font-size: 16px;
+  font-size: 24px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
@@ -49,7 +49,7 @@
     background-color: #DDDBDB;
 }
 .scrollmenu {
-  width:63%;
+  width:100%;
 }
 .scrollmenu > .row {
   overflow-x: auto;
@@ -82,6 +82,12 @@
   border: none;
   width: 30px;
   height: 30px;
+}
+.agent_name {
+  color: #1D72DB;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 @media only screen and (max-width: 992px) {
   .scrollmenu {
