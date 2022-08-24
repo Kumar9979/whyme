@@ -6,6 +6,7 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import Navbar from "../components/navbar/navbar";
+import 'antd/dist/antd.css';
 function MyApp({ Component, pageProps }) {
   const profilePaths = [
     "/profile/recently-viewed",
