@@ -9,7 +9,7 @@ const PropertyLocation = () => {
   const libraries = ["places"];
   const { latitude: lat, longitude: lng, error } = usePosition();
   const [currentPage, setCurrentPage] = useState("property-details");
-
+const windowDoc = typeof window!=="undefined" && window
   const [zoom, setZoom] = useState(10);
   const [markedAddress, setMarkedAddress] = useState("");
 
@@ -48,7 +48,7 @@ console.log(selected)
     }
     return () => clearTimeout(timer);
   }, [lat, lng]);
-  
+
   return (
     <div className={`mt-3 ${styles.property_location} p-4`}>
       <div className={`${styles.location_text}`}>Location</div>
@@ -72,6 +72,8 @@ console.log(selected)
             <>
               <div className="mt-3">
                 <GoogleMap
+                id="map" 
+                 onGoogleApiLoaded={({map, maps}) => console.log(map, maps,"lsdnhfioubn")}
                   zoom={16}
                   center={selected}
                   mapContainerClassName={`${styles.map_container}`}
@@ -81,7 +83,7 @@ console.log(selected)
                 >
                   {markerStat && (
                     <Marker
-                      draggable={true}
+                      draggable={false}
                       onDragEnd={(e) => {
                         markerChange();
                         setSelected({

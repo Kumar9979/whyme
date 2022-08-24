@@ -12,11 +12,7 @@ const Navbar = () => {
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const router = useRouter();
-  useEffect(() => {
-    if (window.innerWidth < 1065) {
-      setMobile(true);
-    }
-  }, []);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,7 +29,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  console.log(typeof window!=="undefined" && window.innerWidth)
   return (
     <div className={`handbook-section fixed-top ${Styles.container}`}>
       {mobile === false && (
