@@ -91,6 +91,72 @@ a{
 
 
 @media only screen and (max-width: 992px) {
+  .fs_md_7{
+    font-size: 7px;
+  }
+  .fs_md_8{
+    font-size: 8px;
+  }
+  .fs_md_9{
+    font-size: 9px;
+  }
+  .fs_md_10{
+    font-size: 10px;
+  }
+  .fs_md_11{
+    font-size: 11px;
+  }
+  .fs_md_12{
+    font-size: 12px;
+  }
+  .fs_md_13{
+    font-size: 13px;
+  }
+  .fs_md_14{
+    font-size: 14px;
+  }
+  .fs_md_15{
+    font-size: 15px;
+  }
+  .fs_md_16{
+    font-size: 16px;
+  }
+  .fs_md_17{
+    font-size: 17px;
+  }
+  
+  .fs_md_18{
+    font-size: 18px;
+  }
+  .fs_md_20{
+    font-size: 20px;
+  }
+  .fs_md_22{
+    font-size: 22px;
+  }
+  .fs_md_23{
+    font-size: 23px;
+  }
+  
+  .fs_md_24{
+    font-size: 24px;
+  }
+  
+  .fs_md_25{
+    font-size: 25px;
+  }
+  .fw_md_400{
+    font-weight: 400;
+  }
+  .fw_md_500{
+    font-weight: 500;
+  }
+  .fw_md_600{
+    font-weight: 600;
+  }
+  .fw_md_700{
+    font-weight: 700;
+  }
   .mt_md_3{
     margin-top: 3rem;
   }
@@ -112,8 +178,17 @@ a{
   .fs_sm_10{
     font-size: 10px;
   }
+  .fs_sm_11{
+    font-size: 11px;
+  }
   .fs_sm_12{
     font-size: 12px;
+  }
+  .fs_sm_13{
+    font-size: 13px;
+  }
+  .fs_sm_14{
+    font-size: 14px;
   }
   .fs_sm_15{
     font-size: 15px;
@@ -133,6 +208,13 @@ a{
   }
   .fs_sm_22{
     font-size: 22px;
+  }
+  .fs_sm_23{
+    font-size: 23px;
+  }
+  
+  .fs_sm_24{
+    font-size: 24px;
   }
   
   .fs_sm_25{

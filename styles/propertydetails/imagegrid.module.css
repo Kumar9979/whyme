@@ -21,6 +21,20 @@
   transform: translate(50%, -50%);
   font-style: Poppins;
 }
+.mobile_seemore_button {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #0000001f;
+  text-transform: capitalize;
+  border-radius: 4px;
+  opacity: 1;
+  font-family: Poppins;
+  color: #013ea3;
+  bottom: 1%;
+  right: 9%;
+  transform: translate(50%, -50%);
+  font-style: Poppins;
+}
 .arrows {
   width: 2rem;
   z-index: 99;
@@ -38,21 +52,21 @@
 .construction_company {
   color: #f77223;
   text-align: left;
-  font: normal normal medium 14px/21px Poppins;
   letter-spacing: 0.14px;
   opacity: 0.87;
   background: #f7722333 0% 0% no-repeat padding-box;
   border-radius: 4px;
+  white-space: nowrap;
 }
 .ready_apartment {
   color: #24734e;
   text-align: left;
-  font: normal normal medium 14px/21px Poppins;
   letter-spacing: 0.14px;
   background: #24734e33 0% 0% no-repeat padding-box;
   border-radius: 4px;
   opacity: 1;
   border-radius: 4px;
+  white-space: nowrap;
 }
 .property_location {
   color: #323d5a;
@@ -75,7 +89,14 @@
   border: 2px solid #bcc7ce;
   border-radius: 26px;
   opacity: 1;
-  color: #BCC7CE;
+  color: #bcc7ce;
+}
+.property_saved {
+  background: #1d72db00 0% 0% no-repeat padding-box;
+  border: 2px solid #50bf97;
+  border-radius: 26px;
+  opacity: 1;
+  color: #50bf97;
 }
 
 .property_owner_contact {
@@ -85,3 +106,33 @@
   border: none;
   color: #ffffff;
 }
+.menu {
+  width: 20px;
+  width: 20px;
+}
+@media only screen and (max-width: 992px) {
+  .mobile_seemore_button {
+    right: 11%;
+  }
+  .property_save {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  .property_saved {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mobile_seemore_button {
+    right: 18%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .mobile_seemore_button {
+    right: 24%;
+  }
+}
+
