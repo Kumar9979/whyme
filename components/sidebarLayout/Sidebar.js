@@ -31,11 +31,11 @@ const ProfileLayout = ({ children }) => {
 
   return (
     <>
-      <div className="">
+      <div>
         <div className="row">
           <div className="col-md-3">
             {mobile !== true && (
-              <div className={`${styles.sidebar}`}>
+              <div className={`${styles.sidebar} position-fixed`}>
                 <div>
                   <div className={`${styles.card} card`}>
                     <div className="card-body">

@@ -7,17 +7,19 @@ import Link from "next/link";
 import Dp from "../../assets/images/dp.jpg";
 import styles from "../../styles/sidebar/sidebar.module.css";
 import { Offcanvas } from "react-bootstrap";
+import ProfileImage from "../../assets/images/dp.jpg";
+import { Button, Dropdown, Menu, Space } from "antd";
+import UserIcon from "../../assets/icons/user.svg";
+import Clock from "../../assets/icons/clock.svg";
+import Key from "../../assets/icons/key.svg";
+import Settings from "../../assets/icons/settings.svg";
+import Heart from "../../assets/icons/heart.svg";
 const Navbar = () => {
   const [mobile, setMobile] = useState(false);
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const router = useRouter();
-  useEffect(() => {
-    if (window.innerWidth < 1065) {
-      setMobile(true);
-    }
-  }, []);
-
+  var login = true;
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1065) {
@@ -34,8 +36,90 @@ const Navbar = () => {
     };
   }, []);
 
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: "1",
+          label: (
+            <Link href="https://www.antgroup.com">
+              <a
+                className="d-flex align-items-center mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image className={Styles.DropdownIcon} width={13} height={13} src={UserIcon} />
+                <div className={`ms-3 ${Styles.DropdownText}`}>My Profile</div>
+              </a>
+            </Link>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <Link href="https://www.antgroup.com">
+              <a
+                className="d-flex align-items-center mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image className={Styles.DropdownIcon} width={13} height={13} src={Clock} />
+                <div className={`ms-3 ${Styles.DropdownText}`}>Recent Activities</div>
+              </a>
+            </Link>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <Link href="https://www.antgroup.com">
+              <a
+                className="d-flex align-items-center mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image className={Styles.DropdownIcon} width={13} height={13} src={Heart} />
+                <div className={`ms-3 ${Styles.DropdownText}`}>Saved Properties</div>
+              </a>
+            </Link>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <Link href="https://www.antgroup.com">
+              <a
+                className="d-flex align-items-center mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image className={Styles.DropdownIcon} width={13} height={13} src={Key} />
+                <div className={`ms-3 ${Styles.DropdownText}`}>My Properties</div>
+              </a>
+            </Link>
+          ),
+        },
+        {
+          key: "3",
+          label: (
+            <Link href="https://www.antgroup.com">
+              <a
+                className="d-flex align-items-center mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image className={Styles.DropdownIcon} width={13} height={13} src={Settings} />
+                <div className={`ms-3 ${Styles.DropdownText}`}>Settings</div>
+              </a>
+            </Link>
+          ),
+        },
+      ]}
+    />
+  );
+
   return (
-    <div className={`handbook-section ${Styles.container}`}>
+    <div className={`handbook-section fixed-top ${Styles.container}`}>
       {mobile === false && (
         <div className="header container-fluid">
           <nav className="navbar navbar-expand-lg ">
@@ -52,7 +136,7 @@ const Navbar = () => {
                 className={`collapse navbar-collapse pt-2`}
                 id="navbarSupportedContent"
               >
-                <ul className="navbar-nav ms-auto">
+                <ul className="navbar-nav ms-auto align-items-center">
                   <li className={`${Styles.navbar} nav-item ms-5 `}>
                     <Link href="#">
                       <a className={`${Styles.headermenu}`}> Buy</a>
@@ -68,36 +152,48 @@ const Navbar = () => {
                       <a className={`${Styles.headermenu}`}>Sell</a>
                     </Link>
                   </li>
-                  <li
-                    className={`${Styles.navbar} nav-item ms-5 d-lg-flex align-items-center`}
-                  >
-                    <Link href="#">
-                      <a className={`${Styles.headerIcon}`}>
-                        <i
-                          className={`ms-2 me-2 mt-5 pt-1  ri-heart-3-fill `}
-                        ></i>
-                      </a>
-                    </Link>
+                  <li>
+                    <button
+                      type="button"
+                      className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
+                      onClick={() => {
+                        router.push("/registercompany/userType");
+                      }}
+                    >
+                      Post Property
+                    </button>
                   </li>
-                  <li
-                    className={`${Styles.navbar} nav-item ms-5 d-lg-flex align-items-center `}
-                  >
-                    <Link href="#">
-                      <a className={`${Styles.headerIcon}`}>
-                        <i className="ms-2 me-2 mt-5   ri-user-add-line "></i>
-                      </a>
-                    </Link>
-                  </li>
-
-                  <button
-                    type="button"
-                    className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-                    onClick={() => {
-                      router.push("/registercompany/userType");
-                    }}
-                  >
-                    Post Property
-                  </button>
+                  {login !== false ? (
+                    <li className={`${Styles.navbar} nav-item`}>
+                      <Dropdown overlay={menu} placement="bottomLeft">
+                        <div
+                          className={`ms-5 ${Styles.navProfile}`}
+                          onClick={() => {
+                            router.push("/registercompany/userType");
+                          }}
+                        >
+                          <Image
+                            className={`${Styles.navProfile}`}
+                            src={ProfileImage}
+                            width={40}
+                            height={40}
+                          />
+                        </div>
+                      </Dropdown>
+                    </li>
+                  ) : (
+                    <li>
+                      <button
+                        type="button"
+                        className={`ms-5 px-5 btn text-nowrap ${Styles.loginBtn}`}
+                        onClick={() => {
+                          router.push("/registercompany/userType");
+                        }}
+                      >
+                        Login
+                      </button>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -107,7 +203,7 @@ const Navbar = () => {
       {mobile === true && (
         <div className={`container-fluid handbook-section ${Styles.container}`}>
           <nav className="p-2">
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center mb-2">
               <div className={Styles.zameenimage}>
                 <Image
                   src={ZameenSquareImage}

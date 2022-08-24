@@ -1,0 +1,32 @@
+.LoremIpsum {
+  background: transparent
+    linear-gradient(262deg, #68acff 0%, var(--unnamed-color-ffffff) 100%) 0% 0%
+    no-repeat padding-box;
+  background: transparent linear-gradient(262deg, #68acff 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 20px;
+}
+.lorem_title {
+    color: #1D1E1F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+.lorem_heading {
+    color: #1D1E1F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+}
+.lorem_button {
+    color: #013EA3;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+}
+.image_position {
+    right: 7%;
+    bottom: 3%;
+}

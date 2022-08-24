@@ -16,7 +16,7 @@ const Aboutproperty = () => {
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
   return (
-    <div className={`${styles.aboutproperty} mt-5 p-4`}>
+    <div className={`${styles.aboutproperty} mt-2 p-4`}>
       <h1 className={`${styles.about_property_text}`}>About the Property</h1>
       <hr className={`${styles.about_property_horizontal}`}></hr>
       <div className={`row ps-2 ps-lg-5 ps-lg-4`}>

@@ -1,0 +1,38 @@
+.LoremText {
+  background: transparent
+    linear-gradient(256deg, #e4e4e4 0%, var(--unnamed-color-ffffff) 100%) 0% 0%
+    no-repeat padding-box;
+  background: transparent linear-gradient(256deg, #e4e4e4 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 20px;
+}
+.lorem_text_title {
+  color: #1d1e1f;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+.lorem_text_heading {
+  color: #1d1e1f;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+}
+.lorem_text_button {
+  color: #013ea3;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+}
+.image_position {
+  right: 7%;
+  bottom: 3%;
+}
+.lorem_text_properties {
+  color: #5F5C5C;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}

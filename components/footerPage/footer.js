@@ -15,14 +15,14 @@ const Footer = () => {
                 <Image src={ZameenLogo} alt="zameen-square logo" />
               </div>
               <div
-                className={`${styles.footer_subheading} font_FamPoppins fs_12 mt-2 fw_400`}
+                className={`${styles.footer_subheading} fontFam_poppins fs_12 mt-2 fw_400`}
               >
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua.
               </div>
               <div
-                className={`${styles.subscribe_heading} font_FamPoppins fw_600 fs_18 mt-3`}
+                className={`${styles.subscribe_heading} fontFam_poppins fw_600 fs_18 mt-3`}
               >
                 Subscribe Us
               </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                   className={`${styles.footer_link} `}
                 >
                   <a
-                    className={`${styles.footer_list_link} fs_18 fw_500`}
+                    className={`${styles.footer_list_link} fs_17 fw_500`}
                   >
                     {" "}
                     Blogs

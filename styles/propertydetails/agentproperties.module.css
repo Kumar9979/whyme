@@ -4,7 +4,7 @@
 }
 .agent_properties_text {
   color: #323d5a;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
@@ -48,4 +48,45 @@
     border-radius: 50%;
     background-color: #DDDBDB;
 }
+.scrollmenu {
+  width:63%;
+}
+.scrollmenu > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.scrollmenu > .row::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none; 
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; 
+}
+
+.prev_button {
+  right: 65%;
+  top: 50%;
+}
+.next_button {
+  right: 0%;
+  top: 50%;
+}
+.prev_decor {
+  border-radius: 50%;
+  background-color: #DDDBDB;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+@media only screen and (max-width: 992px) {
+  .scrollmenu {
+    width:100%;
+  }
+}
+
 

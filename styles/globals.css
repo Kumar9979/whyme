@@ -5,8 +5,9 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
-
-
+.fontFam_poppins {
+  font-family:"Poppins", sans-serif;
+}
 a{
   text-decoration: none !important;
 }
@@ -96,9 +97,9 @@ a{
   margin-top: 5rem;
 }
 
-.font_FamPoppins{
+/* .font_FamPoppins{
   font-family: Poppins;
-}
+} */
 
 @media only screen and (max-width: 992px) {
   .mt_md_3{
