@@ -21,11 +21,13 @@
     width: 100%;
     background-color: #DBE9F24D;
     border-radius: 5px;
+    border: 1px solid #D7E4F5;
     
 }
 .input:focus-visible{
     outline: none;
 }
+
 .input::placeholder{
    color: #BCC7CE;
 }
@@ -41,12 +43,18 @@
 .footer_list_link{
     color: #323D5A;
 }
-.input_bar {
-    align-self: stretch;
-    background-color: rgb(204, 204, 204);
-    margin-bottom: 8px;
-    margin-top: 8px;
-    width: 1px;
-    box-sizing: border-box;
-   
-  }
+.footer_top_localities_list{
+    color: #323D5A;
+    border-right: 1px solid #323D5A;
+}
+.copy_right_text{
+    color:#323D5A;
+}
+.footer_line{
+    color: #DBE9F2;
+}
+@media only screen and (max-width: 480px) {
+    .footer_icon{
+        width: 20px !important;
+    }
+}

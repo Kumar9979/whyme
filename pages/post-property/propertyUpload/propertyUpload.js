@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
 import ImageUploading from "react-images-uploading";
 import closeIcon from "../../../assets/icons/close.png";
-import Footer from "../../../components/footerPage/footer";
 
 const PropertyUpload = () => {
   const [images, setImages] = useState([]);
@@ -55,7 +54,7 @@ const PropertyUpload = () => {
 
   return (
     <div>
-      <div className="container mt-5 pt-3 mb-5">
+      <div className="container mt-5 pt-3">
         <div className="row">
           <div
             className={`col-lg-3 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}
@@ -302,9 +301,7 @@ const PropertyUpload = () => {
           </div>
         </div>
       </div>
- <Footer/>
     </div>
-  
   );
 };
 

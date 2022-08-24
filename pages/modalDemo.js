@@ -16,7 +16,7 @@ const Hello = () => {
   const handleShow =() => setShow(true)
   return (
     <>
-     <div className="mt_md_4">
+     <div className="mt_4">
      <Button onClick={handleShow}>modal</Button>
      </div>
       
