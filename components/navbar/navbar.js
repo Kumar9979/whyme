@@ -85,7 +85,7 @@ const Navbar = () => {
           ),
         },
         {
-          key: "3",
+          key: "4",
           label: (
             <Link href="https://www.antgroup.com">
               <a
@@ -100,7 +100,7 @@ const Navbar = () => {
           ),
         },
         {
-          key: "3",
+          key: "5",
           label: (
             <Link href="https://www.antgroup.com">
               <a
@@ -213,7 +213,7 @@ const Navbar = () => {
                 />
               </div>
 
-              <div className="float-end">
+              <div className="ms-auto">
                 <button onClick={() => setSidebar(!sidebar)} className="btn">
                   <i className="ri-user-3-fill"></i>
                 </button>
