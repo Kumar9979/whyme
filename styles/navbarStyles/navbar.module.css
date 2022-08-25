@@ -60,9 +60,12 @@
 }
 .DropdownText {
   color: #323d5a;
-
   font-family: Poppins;
-  font-size: 0.9rem;
+  font-size: 1rem;
+}
+
+.linkMenu :hover{
+  color: #1d72db !important;
 }
 @media only screen and (max-width: 992px) {
   .zameenimage {
