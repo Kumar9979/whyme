@@ -13,11 +13,10 @@ import AgentProperties from "../../components/agent-properties";
 import seeall from "../../assets/images/seeall.svg";
 import Image from "next/image";
 import RelatedProperties from "../../components/related-properties-card";
-import OwnerContact from "../../components/owner-contact";
-import ContactUs from "../../components/contact_us";
 import LoremIpsum from "../../components/lorem-ipsum";
 import RequestCall from "../../components/request-callback";
 import LoremText from "../../components/lorem-text";
+import SimilarProperties from "../../components/similar-properties";
 
 const Home = () => {
   const number = 20;
@@ -32,20 +31,21 @@ const Home = () => {
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
-  
+
   return (
-    <div className={`${styles.body_background}`}>
-      {/* <HomeDetails /> */}
-      <div className="row d-flex justify-content-center">
-        <div className="col-lg-7 col-11">
-          <ImageGrid />
-          {/* <Review /> */}
-          <Aboutproperty />
-          <Amenties />
-          <ContactOwner />
-          <PropertyLocation />
-          <AgentProperties />
-          <div className={`d-flex justify-content-between my-2 `}>
+    <div>
+      <div className={`${styles.body_background} pb-5`}>
+        {/* <HomeDetails /> */}
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-7 col-11">
+            <ImageGrid />
+            {/* <Review /> */}
+            <Aboutproperty />
+            <Amenties />
+            <ContactOwner />
+            <PropertyLocation />
+            <AgentProperties />
+            {/* <div className={`d-flex justify-content-between my-2 `}>
             <div className={`${styles.related_properties}`}>
               Related Properties
             </div>
@@ -70,16 +70,25 @@ const Home = () => {
                 return <RelatedProperties />;
               })}
             </div>
+          </div> */}
+          </div>
+          <div className="col-lg-3 col-11">
+            {/* <OwnerContact />
+          <ContactUs /> */}
+            <RequestCall />
+            <LoremIpsum />
+            <LoremText />
           </div>
         </div>
-        <div className="col-lg-3 col-11">
-          {/* <OwnerContact />
-          <ContactUs /> */}
-          <RequestCall />
-          <LoremIpsum />
-          <LoremText />
-        </div>
       </div>
+      <div className="row row d-flex justify-content-center pt-3">
+      <div className="col-lg-7 ">
+        <SimilarProperties />        
+       
+      </div>
+      <div className="col-lg-3"> </div>
+      </div>
+      
     </div>
   );
 };

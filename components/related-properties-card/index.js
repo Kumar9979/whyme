@@ -3,11 +3,10 @@ import Image from "next/image";
 import images from "../../assets/images/proptertyimagegrid1.png";
 import styles from "../../styles/propertydetails/relatedproperties.module.css";
 import likeimage from "../../assets/images/likeimage.svg";
-import squarearea from "../../assets/icons/square-area.svg";
-import facing from "../../assets/icons/facing.svg";
-import floor from "../../assets/icons/floor.svg";
-import bathroom from "../../assets/icons/bathroom.svg";
-
+import squarearea from "../../assets/images/about-property-images/sqft.svg";
+import facing from "../../assets/images/about-property-images/facing.svg";
+import bathroom from "../../assets/images/about-property-images/bathroom.svg";
+import furniture from "../../assets/images/about-property-images/furniture.svg"
 const RelatedProperties = () => {
   const number = 20;
   return (
@@ -17,8 +16,8 @@ const RelatedProperties = () => {
           <Image
             src={images}
             alt="Picture of the author"
-            width={600}
-            height={400}
+            width={900}
+            height={600}
             className={``}
           />
           <div className={`${styles.luxurius} position-absolute`}>
@@ -40,20 +39,20 @@ const RelatedProperties = () => {
             2 BHK flat in Vijayanagar, Mysuru
           </div>
           <div
-            className={`${styles.ready_to_move} pt-1 d-flex align-items-center`}
+            className={`${styles.ready_to_move} pt-1 d-flex `}
           >
             <i className="ri-map-pin-2-fill "></i>
-            <span>Mysuru | Ready To Move</span>
+            <span>2Nd Floor, Dejgow Building, Kannada Sahithya <br/>Parishath Rd, Mysuru - 570017</span>
           </div>
-          <div className="row mt-1">
+          <div className="row mt-2">
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-6 d-flex mb-2`}>
+                <div className={`col-4 d-flex mb-2`}>
                   <Image
                     src={item.image}
                     alt="Picture of the author"
-                    width={10}
-                    height={10}
+                    width={20}
+                    height={20}
                   />
                   <div className="d-flex flex-column ps-2">
                     <span className={`${styles.card_heading}`}>
@@ -68,7 +67,7 @@ const RelatedProperties = () => {
             })}
           </div>
 
-          <div className={`d-flex justify-content-between`}>
+          <div className={`d-flex justify-content-between mt-2`}>
             <div className={`${styles.posted_date}`}>
               Posted on <br />
               20 July 2020
@@ -100,13 +99,9 @@ const aboutproperties = [
   },
 
   {
-    image: floor,
+    image: furniture,
     heading: "Floor",
     amenity: "3 out of 15",
   },
-  {
-    image: facing,
-    heading: "Facing",
-    amenity: "North",
-  },
+ 
 ];

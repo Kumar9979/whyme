@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "../../styles/propertydetails/aboutproperty.module.css";
 import Image from "next/image";
-import facing from "../../assets/icons/facing.svg";
-import floor from "../../assets/icons/floor.svg";
-import furniture from "../../assets/icons/furniture.svg";
-import bathroom from "../../assets/icons/bathroom.svg";
-import transaction from "../../assets/icons/transaction.svg";
-import squarearea from "../../assets/icons/square-area.svg";
+import facing from "../../assets/images/about-property-images/facing.svg";
+import floor from "../../assets/images/about-property-images/floor.svg";
+import furniture from "../../assets/images/about-property-images/furniture.svg";
+import bathroom from "../../assets/images/about-property-images/bathroom.svg";
+import transaction from "../../assets/images/about-property-images/transactions.svg";
+import squarearea from "../../assets/images/about-property-images/sqft.svg";
 import bedroom from "../../assets/images/about-property-images/bedroom.svg";
-import cars from "../../assets/images/about-property-images/cars.svg";
+import cars from "../../assets/images/about-property-images/car.svg";
 import underconstruction from "../../assets/images/about-property-images/underconstruction.svg";
 
 const Aboutproperty = () => {
@@ -50,7 +50,7 @@ const Aboutproperty = () => {
           className={`${styles.about_readmore_button}`}
           onClick={() => setReadless(!readless)}
         >
-          {readless === true ? "Know Less" : "Know More"}
+          {readless === true ? "Read Less" : "Read More"}
         </button>
       </p>
     </div>
@@ -60,10 +60,9 @@ const Aboutproperty = () => {
 export default Aboutproperty;
 
 const aboutproperties = [
-  {
-    image: squarearea,
-    heading: "super Area",
-    amenity: "2400sqft",
+  { image: bedroom,
+    heading: "Bedroom",
+    amenity: "3",
   },
   {
     image: bathroom,
@@ -71,29 +70,35 @@ const aboutproperties = [
     amenity: "3",
   },
   {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
     image: furniture,
     heading: "Furnishing Status",
     amenity: "Furnished",
+
+   
   },
   {
     image: floor,
     heading: "Floor",
     amenity: "3 out of 15",
+
+  
   },
   {
     image: facing,
     heading: "Facing",
     amenity: "North",
+
+   
   },
   {
     image: transaction,
     heading: "Transactions",
     amenity: "New",
-  },
-  {
-    image: bedroom,
-    heading: "Bedroom",
-    amenity: "3",
   },
   {
     image: underconstruction,

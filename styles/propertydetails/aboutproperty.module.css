@@ -16,13 +16,13 @@
 
 .about_property_heading {
     color: #BCC7CE; 
-    font-size: 10px;
+    font-size: 13px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
 }
 .about_property_amenity {
     color: #1D72DB; 
-    font-size: 10px;
+    font-size: 13px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
 }
@@ -47,5 +47,6 @@
     font-family: "Poppins", sans-serif;
     border: none;
     text-decoration: underline;
+    background-color: transparent;
 
 }
