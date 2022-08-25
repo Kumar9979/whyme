@@ -1,0 +1,25 @@
+
+  .upload_heading_text{
+    color: #323D5A;
+    font-family: Poppins;
+  }
+  .save_btn{
+    background-color: #1D72DB;
+    border-radius: 5px;
+    border: none;
+    color: #FFFF;
+    font-family: Poppins;
+  } 
+  .card_radius{
+    border-radius: 10px;
+}
+.description{
+    height: 11rem;
+    width: 100%;
+    resize: none;
+    border-color: #BCC7CE;
+    border-radius: 5px;
+}
+.description:focus-visible {
+    outline: none;
+  }

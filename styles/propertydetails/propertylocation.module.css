@@ -3,11 +3,17 @@
     border-radius: 15px;
     background-color: #FFFFFF;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> f8a481954d1fdc4be0b1ecaac54659d6318b3c3e
 .map_container {
     width:100%;
     height: 220px;
     border-radius: .25rem;
     
+<<<<<<< HEAD
+=======
     }
     .location_text {
         color: #000000;
@@ -42,4 +48,5 @@
     }
     .horizontal_line {
         color: #DBE9F2;
+>>>>>>> f8a481954d1fdc4be0b1ecaac54659d6318b3c3e
     }

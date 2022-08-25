@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+ import styles from "../../../styles/modals/apartmentUpdateMap.module.css";
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -12,11 +13,7 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 
-const PlacesAutocomplete = ({
-  setSelected,
-  markerSetOn,
-  markedAddress,
-}) => {
+const PlacesAutocomplete = ({ setSelected, markerSetOn, markedAddress }) => {
   const {
     ready,
     value,
@@ -26,7 +23,7 @@ const PlacesAutocomplete = ({
   } = usePlacesAutocomplete();
 
   useEffect(() => {
-    setValue(markedAddress,false);
+    setValue(markedAddress, false);
 
     return () => {
       console.log("Address updated");
@@ -44,17 +41,17 @@ const PlacesAutocomplete = ({
 
   return (
     <>
-      <Combobox onSelect={handleSelect}>
+      <Combobox onSelect={handleSelect} style={{ position: "relative" }}>
         <ComboboxInput
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
           }}
           disabled={!ready}
-          className="combobox-input"
+          className={`${styles.comboboxInput} ps-2 mt-2 fs_12 py-2`}
           placeholder="Enter your property location"
         />
-        <ComboboxPopover>
+        <ComboboxPopover   style={{zIndex:9999}}>
           <ComboboxList>
             {status === "OK" &&
               data.map(({ place_id, description }) => (

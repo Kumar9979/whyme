@@ -1,51 +1,43 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { StylesContext } from "@material-ui/styles";
-import ImageUploading from "react-images-uploading";
-import closeIcon from "../../assets/icons/close.png";
-import Image from "next/image";
-import * as Yup from "yup";
-import { useFormik } from "formik";
-import upload from "../../assets/icons/upload.png";
-import styles from "../../styles/modals/apartmentUploadPhoto.module.css";
+
+import styles from "../../styles/modals/apartmentDeletePhoto.module.css";
 
 const ApartmentDeletePhoto = ({ show, handleClose }) => {
     return (
       <Modal centered show={show} onHide={handleClose}
   dialogClassName={`${styles.deleteCard_width}`}
-//       contentClassName={`${styles.card_radius}`}
-      // size={'lg'}
+      contentClassName={`${styles.card_radius}`}
+      size={'sm'}
       >
       
         <Modal.Body
         
-        > <div className="p-lg-3">
+        > <div className="">
           <div className={`${styles.heading} d-flex justify-content-between `}>
             <span
-              className={`${styles.upload_heading_text} fs_30 fw_600 fs_sm_20`}
+              className={`${styles.upload_heading_text} fs_20 fw_600 fs_sm_20 px-lg-2`}
             >
               Are you sure?
             </span>
             
           </div>
-          <div>
+          <div className="px-lg-2">
             <span
-              className={`${styles.upload_subheading_text} fs_18 fw_500 fs_sm_15`}
+              className={`${styles.upload_subheading_text} fs_12 fw_500 fs_sm_15 `}
             >
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.
             </span>
           </div>
-          <div className={`d-flex justify-content-between `}>
-          <Button className={`${styles.delete_btn}`} onClick={handleClose}
+          <div className={`d-flex justify-content-center mt-3 mb-1 px-lg-2`}>
+          <button className={`${styles.delete_btn} py-2 `} onClick={handleClose}
           >
-          <span className={`${styles.delete_text} fs_20 fw_500`}>Delete</span>
-          </Button>
-          <Button className={`${styles.edit_btn} ms-5`} onClick={handleClose}>
-            <span className={`${styles.edit_text} fs_20 fw_500`}>No</span>
-          </Button>
+          <span className={`${styles.delete_text} fs_15 fw_500 `}>Delete</span>
+          </button>
+          <button className={`${styles.no_btn} ms-4 `} onClick={handleClose}>
+            <span className={`${styles.no_text} fs_15 fw_500`}>No</span>
+          </button>
           </div>
           
         </div>
