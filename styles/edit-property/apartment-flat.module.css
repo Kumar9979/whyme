@@ -17,6 +17,34 @@
   .flat_heading{
     color: #323D5A;
   }
+  .address_heading{
+    color: #BCC7CE;
+  }
+  .id_text{
+    color:#323D5A;
+  }
+  .complete_status_text{
+    color: #323D5A;
+  }
+  .complete_list{
+    list-style-type: none;
+    padding: 0; /* Remove padding */
+    margin: 0;
+    color: #323D5A;
+  }
+  .response_text{
+    color: #323D5A;
+    background-color: #DBE9F24D;
+    border-radius: 5px;
+  }
+.add_photo_btn{
+    border: none;
+    background-color: #013EA3;
+    border-radius: 5px;
+    color: #ffffff;
+}
+  
+  
 
   @media only screen and (max-width: 990px) {
     .abcd{
