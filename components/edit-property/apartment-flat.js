@@ -4,23 +4,39 @@ import Image from "next/image";
 import backIcon from "../../assets/icons/back-icon.svg";
 import Location from "../../assets/icons/location-icon.svg";
 import ApartmentUploadPhoto from "../modals/apartmentUploadPhoto";
+import ApartmentDeletePhoto from "../modals/apartmentDeletePhoto";
 import closeIcon from "../../assets/icons/close.png";
-import Delete from "../../assets/icons/delete.svg"
+import Delete from "../../assets/icons/delete.svg";
+
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import ImageUpload from "../ImageUpload/Image-upload";
 
 const ApartmentFlat = () => {
   const [show, setShow] = useState(false);
+  const [imageNumber, setImageNumber] = useState("");
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const handleClose = () => setShow(false);
+  const handleDeleteModalClose = () => setShowDeleteModal(false);
   const handleShow = () => setShow(true);
   const [image, setimage] = useState([]);
-  function handleImageUpload(image) {
-    setimage(image);
+  function handleImageUpload(images, handleClose) {
+    images.map((item) => {
+      setimage((prev) => [...prev, item]);
+    });
+    console.log(image);
+    handleClose();
   }
-
-  const onImageRemove = (index) => {
+  const onImageRemove = (imageNumber) => {
     setimage([
-      ...image.slice(0, index),
-      ...image.slice(index + 1, image.length)
+      ...image.slice(0, imageNumber),
+      ...image.slice(imageNumber + 1, image.length),
     ]);
+  };
+
+  function handleImageDelete(index) {
+    setImageNumber(index);
+    setShowDeleteModal(true);
   }
   return (
     <div className={`d-flex justify-content-center`}>
@@ -93,73 +109,107 @@ const ApartmentFlat = () => {
                   >
                     Get 5 times more response! just add the following
                   </span>
+                  {/* <div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Something else here
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          className={`${styles.card}  px-2 pt-3 `}
-        >
-          <div
-            className={`${styles.card_body}  pt-2 pt-lg-3 pb-2`}
-          >
+        <div className={`${styles.card}  px-2 pt-3 `}>
+          <div className={`${styles.card_body}  pt-2 pt-lg-3 pb-2`}>
             <div className="d-flex  justify-content-between">
-            <span
-              className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
-            >
-              Photos
-            </span>
-            <button
-              onClick={handleShow}
-              className={`${styles.add_photo_btn} me-3 px-3 px-lg-4 fs_13 fontFam_poppins`}
-            >
-              Add Photos
-            </button>
+              <span
+                className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
+              >
+                Photos
+              </span>
+              {image.length != 0 ? (
+                <button
+                  onClick={handleShow}
+                  className={`${styles.add_photo_btn} me-3 px-3 px-lg-4 fs_13 fontFam_poppins`}
+                >
+                  Add Photos
+                </button>
+              ) : null}
             </div>
-            
 
-            <div className="col-4 d-flex mb-2 p-3">
-          {image?.map((image, index) => (
-            <div className={``} key={index}>
-            <div
-              className={`${styles.property_upload_preview_image_container}  position-relative`}
-            >
-              <Image
-                src={image.data_url}
-                name="uploaded-images"
-                width={50}
-                height={50}
-               
-              />
-               <button
-              type="button"
-              className={`${styles.delete} border-0 bg-white`}
-              onClick={() => onImageRemove(index)}
-             
-            >
-              <Image
-                src={Delete}
-                alt="remove image icon"
-                width={20}
-                height={20}
-                className={`${styles.delete_icon}  p-1`}
-              />
-            </button>
+            <div className="row gx-2 mt-2 pt-2 p-4">
+              {image.length === 0 ? (
+                <div>
+                  <ImageUpload handleImageUpload={handleImageUpload} />
+                </div>
+              ) : (
+                image?.map((image, index) => (
+                  <div className={`col-lg-2 col-md-3 col-4`} key={index}>
+                    <div
+                      className={`${styles.property_upload_preview_image_container}  position="relative"s`}
+                    >
+                      <Image
+                        src={image.data_url}
+                        name="uploaded-images"
+                        width={100}
+                        height={100}
+                        className={`${styles.image_container}`}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      className={`${styles.delete}`}
+                      onClick={() => handleImageDelete(index)}
+                    >
+                      <Image
+                        src={Delete}
+                        alt="remove image icon"
+                        width={20}
+                        height={20}
+                        className={`${styles.delete_icon} p-1 `}
+                      />
+                    </button>
+                  </div>
+                ))
+              )}
             </div>
-           
           </div>
-          ))}
         </div>
-          </div>
-          
-        </div>
-        
       </div>
       <ApartmentUploadPhoto
         handleClose={handleClose}
         handleImageUpload={handleImageUpload}
         show={show}
+      />
+      <ApartmentDeletePhoto
+        deleteFn={onImageRemove}
+        index={imageNumber}
+        handleClose={handleDeleteModalClose}
+        show={showDeleteModal}
       />
     </div>
   );

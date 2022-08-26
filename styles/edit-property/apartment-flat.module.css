@@ -51,14 +51,29 @@
 }
 .delete{
   position: relative;
-  left:-4rem;
+  top:-102px;
+  right:-70px;
   z-index: 999;
+  border: none;
+  background-color: transparent;
 }
-
+.image_container{
+  border-radius: 7px;
+}
   
 
   @media only screen and (max-width: 990px) {
     .abcd{
     width: 100%;
     }
+  }
+
+
+  @media only screen and (max-width: 480px) {
+   .delete{
+    position: relative;
+    top:-92px;
+    right:-60px;
+    z-index: 999;
+   } 
   }
