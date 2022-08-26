@@ -187,11 +187,16 @@ border-radius: 12px !important;
 
 
 @media only screen and (max-width: 778px) {
-  
+  .hideSidebar{
+    display: none;
+  }
 }
 
 
 @media only screen and (max-width: 480px) {
+  .hideSidebar{
+    display: none;
+  }
   .fs_sm_8{
     font-size: 8px;
   }

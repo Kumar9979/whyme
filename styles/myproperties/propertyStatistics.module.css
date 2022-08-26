@@ -1,12 +1,12 @@
 .background_card {
   box-shadow: 0px 0px 7px #ccc;
-  border-radius: 7px;
+  border-radius: 10px;
   background-color: #ffffff;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 0 auto;
-  margin-top: 2rem;
-  width: max-content;
-  padding: 2rem;
+  margin-top: 6rem;
+  width: 100%;
+ ;
 }
 
 
@@ -19,6 +19,12 @@
 .luxuries_image {
   width: 15rem;
 }
+
+.flat_heading{
+  color: red !important;
+}
+
+
 .address_details {
   width: 25rem;
 }
@@ -199,16 +205,17 @@
   display: none !important;
 }
 
+
 @media only screen and (max-width: 992px) {
   .background_card {
-    box-shadow: 0px 0px 7px #ccc;
+    box-shadow: none;
     border-radius: 7px;
     background-color: #ffffff;
     max-width: auto;
     margin: 0 auto;
-    width: auto;
-    margin-top: 2rem;
-    padding: 0rem !important;
+    width: 100%;
+    margin-top: 6rem;
+    padding: 0rem ;
   }
   
   .card_body {
@@ -237,8 +244,8 @@
     background-color: #ffffff;
     max-width: auto;
     margin: 0 auto;
-    width: auto;
-    margin-top: 2rem;
+    width: 100%;
+    margin-top: 6rem;
     padding: 0rem ;
   }
   .card_body {
@@ -293,15 +300,7 @@
     width: auto;
     padding: 0px;
   }
-  .luxuries_image {
-    width: 8rem;
-  }
-  .address_details {
-    width: 12rem;
-  }
-  .flat_heading {
-    font-size: 11px;
-  }
+
   .address_heading {
     font-size: 10px;
   }
