@@ -1,3 +1,30 @@
 .deleteCard_width{
     width: fit-content;
 }
+.delete_btn{
+    width: 45%;
+    background-color: #BCC7CE;
+    border-radius: 10px;
+    border: none;
+    color: #323D5A;
+    font-family: Poppins;
+}
+.no_btn{
+    width: 45%;
+    background-color: #1D72DB;
+    border-radius: 10px;
+    border: none;
+    color: #ffff;
+    font-family: Poppins;
+}
+.upload_subheading_text{
+    color: #323D5A99;
+    font-family: Poppins;
+}
+.upload_heading_text{
+    color: #323D5A;
+    font-family: Poppins;
+}
+.card_radius{
+    border-radius: 10px;
+}

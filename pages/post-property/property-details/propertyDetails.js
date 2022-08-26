@@ -5,11 +5,11 @@ import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
-import Navbar from "../../navbar/navbar";
+// import Navbar from "../../navbar/navbar";
 import StepperNew from "../../stepper/stepper";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import PlacesAutocomplete from "./placesAutocomplete";
-import { usePosition } from "./usePosition";
+import { usePosition } from "../../post-property/property-details/usePosition";
 import Geocode from "react-geocode";
 
 const libraries = ["places"];
@@ -81,10 +81,13 @@ const PropertyDetails = () => {
       }
     );
   }
+  const defaultMapOptions = {
+    fullscreenControl: false,
+  };
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={`${styles.whole_container} mt-5 container`}>
         <div className="row mb-2">
           <div
@@ -143,6 +146,7 @@ const PropertyDetails = () => {
                             setMap(map);
                             formik.setFieldValue("Map", selected);
                           }}
+                          
                         >
                           {markerStat && (
                             <Marker

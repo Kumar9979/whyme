@@ -42,16 +42,16 @@ const Navbar = () => {
         {
           key: "1",
           label: (
-            <Link href="https://www.antgroup.com">
-              <a
-                className="d-flex align-items-center mb-2"
+            <div href="https://www.antgroup.com">
+              <div
+                className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={13} height={13} src={UserIcon} />
+                <Image className={Styles.DropdownIcon} width={16} height={16} src={UserIcon} />
                 <div className={`ms-3 ${Styles.DropdownText}`}>My Profile</div>
-              </a>
-            </Link>
+              </div>
+            </div>
           ),
         },
         {
@@ -59,11 +59,11 @@ const Navbar = () => {
           label: (
             <Link href="https://www.antgroup.com">
               <a
-                className="d-flex align-items-center mb-2"
+                className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={13} height={13} src={Clock} />
+                <Image className={Styles.DropdownIcon} width={16} height={16} src={Clock} />
                 <div className={`ms-3 ${Styles.DropdownText}`}>Recent Activities</div>
               </a>
             </Link>
@@ -74,41 +74,41 @@ const Navbar = () => {
           label: (
             <Link href="https://www.antgroup.com">
               <a
-                className="d-flex align-items-center mb-2"
+                className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={13} height={13} src={Heart} />
+                <Image className={Styles.DropdownIcon} width={16} height={16} src={Heart} />
                 <div className={`ms-3 ${Styles.DropdownText}`}>Saved Properties</div>
               </a>
             </Link>
           ),
         },
         {
-          key: "3",
+          key: "4",
           label: (
             <Link href="https://www.antgroup.com">
               <a
-                className="d-flex align-items-center mb-2"
+                className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={13} height={13} src={Key} />
+                <Image className={Styles.DropdownIcon} width={16} height={16} src={Key} />
                 <div className={`ms-3 ${Styles.DropdownText}`}>My Properties</div>
               </a>
             </Link>
           ),
         },
         {
-          key: "3",
+          key: "5",
           label: (
             <Link href="https://www.antgroup.com">
               <a
-                className="d-flex align-items-center mb-2"
+                className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={13} height={13} src={Settings} />
+                <Image className={Styles.DropdownIcon} width={16} height={16} src={Settings} />
                 <div className={`ms-3 ${Styles.DropdownText}`}>Settings</div>
               </a>
             </Link>
@@ -167,7 +167,7 @@ const Navbar = () => {
                     <li className={`${Styles.navbar} nav-item`}>
                       <Dropdown overlay={menu} placement="bottomLeft">
                         <div
-                          className={`ms-5 ${Styles.navProfile}`}
+                          className={`ms-5 ${Styles.navProfile} pe-5`}
                           onClick={() => {
                             router.push("/registercompany/userType");
                           }}
@@ -203,7 +203,7 @@ const Navbar = () => {
       {mobile === true && (
         <div className={`container-fluid handbook-section ${Styles.container}`}>
           <nav className="p-2">
-            <div className="d-flex align-items-center mb-2">
+            <div className={`${styles.linkMenu} d-flex align-items-center mb-2`}>
               <div className={Styles.zameenimage}>
                 <Image
                   src={ZameenSquareImage}
@@ -213,7 +213,7 @@ const Navbar = () => {
                 />
               </div>
 
-              <div className="float-end">
+              <div className="ms-auto">
                 <button onClick={() => setSidebar(!sidebar)} className="btn">
                   <i className="ri-user-3-fill"></i>
                 </button>

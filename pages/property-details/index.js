@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import * as dummyApis from "../../redux/actions/josnApisAction";
 import ImageGrid from "../../components/image-grid";
 import HomeDetails from "../../components/home-details";
 import styles from "../../styles/homepage/homepage.module.css";
@@ -21,12 +19,6 @@ import SimilarProperties from "../../components/similar-properties";
 const Home = () => {
   const number = 20;
   const ref = useRef();
-  const reducer = useSelector((store) => store);
-  console.log(reducer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(dummyApis.jsonAction());
-  }, []);
 
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;

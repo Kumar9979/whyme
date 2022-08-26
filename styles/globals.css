@@ -11,15 +11,30 @@ body {
 a{
   text-decoration: none !important;
 }
+<<<<<<< HEAD
 
 .fs_9{
   font-size: 9px;
 }
+=======
+/* [data-reach-combobox-popover]{
+  z-index: 9999 !important;
+} */
+>>>>>>> 5a8598ec6e493ecbb002efc1ed3a684529db4c86
 .fs_10{
   font-size: 10px;
 }
+.modal-content{
+border-radius: 12px !important;
+}
+.fs_11{
+  font-size: 11px;
+}
 .fs_12{
   font-size: 12px;
+}
+.fs_13{
+  font-size: 13px;
 }
 .fs_14{
   font-size: 14px;
@@ -35,6 +50,9 @@ a{
 }
 .fs_18{
   font-size: 18px;
+}
+.fs_19{
+  font-size: 19px;
 }
 .fs_20{
   font-size: 20px;
@@ -92,6 +110,9 @@ a{
   margin-top: 5rem;
 }
 
+/* .font_FamPoppins{
+  font-family: Poppins;
+} */
 
 @media only screen and (max-width: 992px) {
   .fs_md_7{
@@ -178,6 +199,12 @@ a{
 
 
 @media only screen and (max-width: 480px) {
+  .fs_sm_8{
+    font-size: 8px;
+  }
+  .fs_sm_9{
+    font-size: 9px;
+  }
   .fs_sm_10{
     font-size: 10px;
   }

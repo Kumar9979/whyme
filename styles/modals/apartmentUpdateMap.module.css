@@ -1,0 +1,55 @@
+.property_location {
+  height: 20rem;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+}
+
+.map_container {
+  width:100%;
+  height: 220px;
+  border-radius: .25rem;
+  
+  }
+.placesAutocomplete{
+z-index: 999;
+}
+.comboboxInput{
+  border: none;
+  width: 100%;
+  background-color: #DBE9F24D;
+  border-radius: 10px;
+}
+.comboboxInput:focus-visible{
+  outline: none;
+}
+.comboboxInput::placeholder{
+  color: #BCC7CE;
+}
+.save_btn{
+  background-color: #1D72DB;
+  border-radius: 5px;
+  border: none;
+  color: #FFFF;
+  font-family: Poppins;
+}
+.card_radius{
+  border-radius: 10px;
+}
+.close_icon{
+  width:10% !important;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .modal {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        max-height: max-content;
+        /* max-width: max-content; */
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+}

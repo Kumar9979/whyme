@@ -10,7 +10,7 @@ export function* fetchDataWorker(action) {
     const response = yield call(jsonApi);
     console.log(response.data);
     if (response.status == 200) {
-      yield put({type: LOADED, data: response.data});
+      yield put({type: LOADED, datae: response.data});
     } else {
       yield put({type: FAILED});
     }
