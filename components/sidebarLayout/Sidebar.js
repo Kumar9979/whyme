@@ -33,7 +33,7 @@ const ProfileLayout = ({ children }) => {
     <>
       <div>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-lg-3  hideSidebar">
             {mobile !== true && (
               <div className={`${styles.sidebar} position-fixed`}>
                 <div>
@@ -133,7 +133,7 @@ const ProfileLayout = ({ children }) => {
               </div>
             )}
           </div>
-          <div className="col-md-8">{children}</div>
+          <div className="col-lg-8">{children}</div>
         </div>
       </div>
     </>

@@ -10,22 +10,11 @@ import RequestCallback from "../../components/myproperties/request-callback";
 const PropertyStatics = () => {
   return (
     <ProfileLayout>
-      <div className={`${styles.background_card}`}>
-        <div className={`${styles.back_icon} ps-2 ps-lg-0`}>
-          <span>
-            {" "}
-            <Image src={backIcon} />
-            <span className={`${styles.back_text} ms-2`}>Back</span>{" "}
-          </span>
-        </div>
-        <div className={`${styles.property_heading} ps-2 ps-lg-0`}>
-          Property Statistics
-        </div>
-        <hr className={``} />
+      
         <ApartmentCard />
-        <CardsViewsTotalCallback />
-        <RequestCallback/>
-      </div>
+        {/* <CardsViewsTotalCallback />
+        <RequestCallback/> */}
+     
     </ProfileLayout>
   );
 };
