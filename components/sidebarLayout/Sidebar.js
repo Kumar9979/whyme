@@ -64,14 +64,6 @@ const ProfileLayout = ({ children }) => {
                             <div className={`${styles.phone_number}`}>
                               +91 9875643210
                             </div>
-                            <div
-                              className={`${styles.edit_profile} d-flex align-item-center`}
-                            >
-                              <i
-                                className={`${styles.icon} ri-edit-box-line me-2`}
-                              ></i>
-                              <div> Edit Profile</div>
-                            </div>
                           </div>
                         </div>
                       </div>

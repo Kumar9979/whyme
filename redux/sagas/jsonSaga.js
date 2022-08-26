@@ -4,13 +4,13 @@ import {jsonApi} from '../apis/jsonApi';
 import {FAILED, LOADED, LOADING} from '../actions/returnTypes';
 
 export function* fetchDataWorker(action) {
-  console.log(':sdlkvno', action);
+  console.log('redux', action);
   try {
     yield put({type: LOADING});
     const response = yield call(jsonApi);
     console.log(response.data);
     if (response.status == 200) {
-      yield put({type: LOADED, datae: response.data});
+      yield put({type: LOADED, data: response.data});
     } else {
       yield put({type: FAILED});
     }
