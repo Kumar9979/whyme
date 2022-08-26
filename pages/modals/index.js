@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import { Button } from "react-bootstrap";
-import RequestCallBack from "../../components/modals/property-details/request-call";
-import ScheduleVisit from "../../components/modals/property-details/schedule-visit";
+import Activities from "../../components/modals/property-details/activities";
+import ReportProperty from "../../components/modals/property-details/report-property";
+// import RequestCallBack from "../../components/modals/property-details/request-call";
+// import ScheduleVisit from "../../components/modals/property-details/schedule-visit";
 
 const Modals = () => {
     const [show, setShow] = useState(false);
@@ -14,7 +15,9 @@ const Modals = () => {
       </button>
       {/* <RequestCallBack handleClose={handleClose} show={show}/> */}
       {/* <ScheduleVisit handleClose={handleClose} show={show}/> */}
-      
+      {/* <ReportProperty handleClose={handleClose} show={show}/> */}
+      <Activities handleClose={handleClose} show={show}/>
+
 
     </div>
   );

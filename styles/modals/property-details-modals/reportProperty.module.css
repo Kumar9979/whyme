@@ -1,0 +1,44 @@
+.reportProperty_width {
+  max-width: 420px;
+}
+.close_button {
+  background-color: transparent;
+  border: none;
+}
+.report_reason {
+  margin-top: 0.25rem;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #a5a5a5;
+  appearance: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transition: all ease-in 0.2s;
+  margin: 1px;
+}
+.report_reason:checked {
+  background-color: #112f6a;
+  box-shadow: 0 0 0 1px #112f6a;
+}
+.report_property_heading {
+  color: #323d5a;
+}
+.report_property_title {
+  letter-spacing: 0px;
+  color: #323d5a;
+  opacity: 0.6;
+}
+.report_property_reason {
+  color: #1D1E1F;
+
+}
+
+  .report_label_reason {
+    color: #323D5A;
+  }
+  .report_label_reason::after{
+   color: red;
+
+ 
+    } 

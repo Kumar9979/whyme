@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import * as dummyApis from "../../redux/actions/josnApisAction";
 import ImageGrid from "../../components/image-grid";
 import HomeDetails from "../../components/home-details";
 import styles from "../../styles/homepage/homepage.module.css";
@@ -22,12 +20,6 @@ import LoremText from "../../components/lorem-text";
 const Home = () => {
   const number = 20;
   const ref = useRef();
-  const reducer = useSelector((store) => store);
-  console.log(reducer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(dummyApis.jsonAction());
-  }, []);
 
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
@@ -35,11 +27,11 @@ const Home = () => {
   
   return (
     <div className={`${styles.body_background}`}>
-      <HomeDetails />
+      {/* <HomeDetails /> */}
       <div className="row d-flex justify-content-center">
         <div className="col-lg-7 col-11">
           <ImageGrid />
-          <Review />
+          {/* <Review /> */}
           <Aboutproperty />
           <Amenties />
           <ContactOwner />
@@ -73,8 +65,8 @@ const Home = () => {
           </div>
         </div>
         <div className="col-lg-3 col-11">
-          <OwnerContact />
-          <ContactUs />
+          {/* <OwnerContact />
+          <ContactUs /> */}
           <RequestCall />
           <LoremIpsum />
           <LoremText />

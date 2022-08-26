@@ -14,7 +14,7 @@
 }
 .amenties_list {
   color: #323d5a;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
@@ -30,10 +30,10 @@
   width: 1rem;
   margin-left: -1em;
 }
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
   .amenties_list {
-    font-size: 10px;
+    font-size: 15px;
  
   }
     
-}
+} */

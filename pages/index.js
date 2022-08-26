@@ -1,8 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import { useSelector, useDispatch } from "react-redux";
+import * as dummyApis from "../redux/actions/josnApisAction";
+import { useEffect } from 'react';
 export default function Home() {
+  const reducer = useSelector((store) => store);
+  console.log(reducer);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(dummyApis.jsonAction());
+  }, []);
+
+  
   return (
     <div className={styles.container}>
       <Head>

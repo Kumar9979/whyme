@@ -1,0 +1,21 @@
+.login_button {
+  background-color: #1d72db;
+  color: white;
+}
+.modal_position {
+   padding-top: 3rem;
+   padding-left: 75%;
+}
+@media only screen and (max-width: 768px) {
+    .modal_position {
+      display: flex ;
+      justify-content: center;
+      padding-left: 0%;
+     }
+}
+@media only screen and (max-width: 992px) {
+    .modal_position {
+        padding-top: 3rem;
+        padding-left: 60%;
+     }
+}

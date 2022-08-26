@@ -10,7 +10,7 @@ const Amenties = () => {
         {
           amenties.map((item, index) => {
             return (
-              <div className='col-lg-4 col-6'>
+              <div className='col-lg-4 col-12'>
                 <ul className={`${styles.amenties_bullet}`}>
                   <li className={`${styles.amenties_list}`}>{item.list}</li>
                 </ul>
