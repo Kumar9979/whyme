@@ -4,6 +4,11 @@ import Dp from "../../assets/images/dp.jpg";
 import styles from "../../styles/sidebar/sidebar.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import UserIcon from "../../assets/icons/user.svg";
+import Clock from "../../assets/icons/clock.svg";
+import Key from "../../assets/icons/key.svg";
+import Settings from "../../assets/icons/settings.svg";
+import Heart from "../../assets/icons/heart.svg";
 const ProfileLayout = ({ children }) => {
   const router = useRouter();
   const [mobile, setMobile] = useState(false);
@@ -82,10 +87,10 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     } mb-3 d-flex align-items-center`}
                   >
-                    <i className={`${styles.icon} ri-time-fill me-2`}></i>
+                    <Image className={styles.DropdownIcon} width={16} height={16} src={Clock} />
                     <Link href="/profile/recently-viewed">
-                      <a className={`${styles.sidebar_links}`}>
-                        Recently Viewed
+                      <a className={`ms-3 ${styles.sidebar_links}`}>
+                        Recent Activities
                       </a>
                     </Link>
                   </li>
@@ -96,10 +101,10 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                    <i className={`${styles.icon} ri-heart-fill me-2`}></i>
+                      <Image className={styles.DropdownIcon} width={16} height={16} src={Heart} />
                     <Link href="/profile/shortlisted-properties">
-                      <a className={`${styles.sidebar_links}`}>
-                        Shortlisted Properties
+                      <a className={`ms-3 ${styles.sidebar_links}`}>
+                        Saved Properties
                       </a>
                     </Link>
                   </li>
@@ -110,9 +115,9 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                    <i className={`${styles.icon} ri-key-fill me-2`}></i>
+                      <Image className={styles.DropdownIcon} width={16} height={16} src={Key} />
                     <Link href="/profile/my-properties">
-                      <a className={`${styles.sidebar_links}`}>My Properties</a>
+                      <a className={` ms-3 ${styles.sidebar_links}`}>My Properties</a>
                     </Link>
                   </li>
                   <li
@@ -122,10 +127,10 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                    <i className={`${styles.icon} ri-add-box-fill me-2`}></i>
+                      <Image className={styles.DropdownIcon} width={16} height={16} src={Settings} />
                     <Link href="/profile/add-a-property">
-                      <a className={`${styles.sidebar_links}`}>
-                        Add a Property
+                      <a className={` ms-3 ${styles.sidebar_links}`}>
+                        Settings
                       </a>
                     </Link>
                   </li>

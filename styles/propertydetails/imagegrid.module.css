@@ -6,7 +6,9 @@
   text-transform: capitalize;
   opacity: 1;
 }
-
+.closeBtn{
+  font-size: 1.5rem;
+}
 .seemore_button {
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -48,6 +50,9 @@
 }
 .property_area {
   color: #000000;
+}
+.property_area_corousel{
+  font-size: 1.2rem;
 }
 .construction_company {
   color: #f77223;
@@ -128,6 +133,16 @@
 @media only screen and (max-width: 768px) {
   .mobile_seemore_button {
     right: 18%;
+    
+  }
+  .property_area_corousel {
+    color: #000000;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 14rem;
+    
   }
 }
 @media only screen and (max-width: 320px) {

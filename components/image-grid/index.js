@@ -212,12 +212,16 @@ const ImageGrid = () => {
           >
             <span className="d-flex align-items-center pe-0 pe-lg-2">
               {" "}
-              <Image src={liked ? saved : save} alt="Picture of the author"
-              width={20}
-              height={20} />
+              <Image
+                src={liked ? saved : save}
+                alt="Picture of the author"
+                width={20}
+                height={20}
+              />
             </span>
-            <span className="d-none d-lg-block">{liked ? "saved" : "save"}</span>
-            
+            <span className="d-none d-lg-block">
+              {liked ? "saved" : "save"}
+            </span>
           </button>
 
           {mobile ? (
@@ -240,6 +244,7 @@ const ImageGrid = () => {
       </div>
 
       <Modal
+
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -247,7 +252,20 @@ const ImageGrid = () => {
         onHide={handleClose}
       >
         <Modal.Body>
-          {" "}
+          <div className="d-flex align-items-center justify-content-between">
+            <p
+              className={`${styles.property_area_corousel} m-0 fs_22 fw_600 fontFam_poppins me-lg-2 me-0 `}
+            >
+              3BHK Apartment in Vijayanagar, Mysuru
+            </p>
+            <button
+              onClick={handleClose}
+              className={`${styles.closeBtn} btn float-end`}
+            >
+              <i class="ri-close-circle-fill"></i>
+            </button>
+          </div>
+
           <Carousel
             infiniteLoop={true}
             autoPlay
@@ -258,7 +276,7 @@ const ImageGrid = () => {
           >
             {[...Array(number)].map((item, index) => {
               return (
-                <div>
+                <div key={index}>
                   <img
                     alt=""
                     src="https://images.pexels.com/photos/920384/pexels-photo-920384.jpeg"

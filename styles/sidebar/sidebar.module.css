@@ -20,6 +20,10 @@
   font-size: 1rem;
   font-weight: 500;
 }
+.DropdownIcon {
+  object-fit: contain;
+  width: 0.2rem;
+}
 .arrow{
 border: 1px solid #1D72DB;
 width:1.3rem;
