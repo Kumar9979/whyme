@@ -1,0 +1,12 @@
+.back_icon{
+    margin-top: 5rem;
+}
+.back_text{
+    color: #24734E;
+}
+.card_body {
+    border-radius: 10px;
+    border: none !important;
+    box-shadow: 0px 0px 7px #ccc;
+    width: auto;
+  }
