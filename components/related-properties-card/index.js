@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import images from "../../assets/images/proptertyimagegrid1.png";
+import home from "../../assets/images/home.png";
 import styles from "../../styles/propertydetails/relatedproperties.module.css";
 import likeimage from "../../assets/images/likeimage.svg";
 import squarearea from "../../assets/images/about-property-images/sqft.svg";
-import facing from "../../assets/images/about-property-images/facing.svg";
 import bathroom from "../../assets/images/about-property-images/bathroom.svg";
 import furniture from "../../assets/images/about-property-images/furniture.svg"
 const RelatedProperties = () => {
@@ -14,11 +13,11 @@ const RelatedProperties = () => {
       <div className={`${styles.related_image} `}>
         <div className={`position-relative`}>
           <Image
-            src={images}
+            src={home}
             alt="Picture of the author"
             width={900}
             height={600}
-            className={``}
+            className={`${styles.property_photo}`}
           />
           <div className={`${styles.luxurius} position-absolute`}>
             Luxurious
@@ -51,8 +50,8 @@ const RelatedProperties = () => {
                   <Image
                     src={item.image}
                     alt="Picture of the author"
-                    width={20}
-                    height={20}
+                    width={15}
+                    height={15}
                   />
                   <div className="d-flex flex-column ps-2">
                     <span className={`${styles.card_heading}`}>

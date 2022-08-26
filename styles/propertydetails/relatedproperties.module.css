@@ -1,7 +1,7 @@
 .related_image {
   box-shadow: 0px 0px 7px #0000001f;
   border-radius: 10px;
-  width: 22rem;
+  width: 18rem;
 }
 .luxurius {
   color: #000000;
@@ -24,7 +24,7 @@
 }
 .related_properties_price {
   color: #1d72db;
-  font-size: 13px;
+  font-size: 17px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
@@ -32,7 +32,7 @@
   color: #000000;
   font-size: 13px;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   max-width: 13rem;
   white-space: nowrap;
   overflow: hidden;
@@ -40,19 +40,19 @@
 }
 .ready_to_move {
   color: #bcc7ce;
-  font-size: 11px;
+  font-size: 10px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 .card_heading {
   color: #bcc7ce;
-  font-size: 10px;
+  font-size: 9px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 .card_amenity {
   color: #1d72db;
-  font-size: 10px;
+  font-size: 9px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
@@ -71,4 +71,10 @@
   font-size: 11px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+}
+.property_photo {
+  background: transparent  0% 0%
+    no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
 }

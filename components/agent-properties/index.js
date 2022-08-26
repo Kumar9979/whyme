@@ -17,8 +17,8 @@ const AgentProperties = () => {
 
   return (
     <div>
-      <div className={`${styles.agent_properties} p-4 mt-4`}>
-        <div className="d-flex justify-content-between pb-3">
+      <div className={`${styles.agent_properties} p-3 mt-4`}>
+        <div className="d-flex justify-content-between align-items-center ">
           <div className={`${styles.agent_properties_text}`}>
             See More Properties By{" "}
             <span className={`${styles.agent_name}`}>Amal Sabu</span>
@@ -39,7 +39,7 @@ const AgentProperties = () => {
           </button>
         </div>
 
-        <div className={`row`}>
+        <div className={`row mt-3`}>
           <div className={`${styles.scrollmenu} `}>
             <div ref={ref} className={`${styles.row} d-flex`}>
               {[...Array(n)].map((item, index) => {
@@ -99,14 +99,4 @@ const AgentProperties = () => {
 
 export default AgentProperties;
 
-const agenthelp = [
-  {
-    text: "Residential Spaces",
-  },
-  {
-    text: "Agricultural Land",
-  },
-  {
-    text: "Commercial Spaces",
-  },
-];
+

@@ -6,7 +6,7 @@
   color: #50BF97;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   border: none;
   background-color: transparent;
 }
@@ -101,4 +101,13 @@
   .scrollmenu {
     width: 100%;
   }
+  
+.agent_name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.agent_properties_text {
+  font-size: 14px;
+  font-weight: 600;
+}
 }

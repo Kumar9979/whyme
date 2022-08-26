@@ -81,8 +81,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="row row d-flex justify-content-center pt-3">
-      <div className="col-lg-7 ">
+      <div className="row d-flex justify-content-center pt-4">
+      <div className="col-lg-7">
         <SimilarProperties />        
        
       </div>
