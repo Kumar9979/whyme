@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 import upload from "../../assets/icons/upload.png";
 import styles from "../../styles/modals/apartmentUploadPhoto.module.css";
 
-const ApartmentUploadPhoto = ({ show, handleClose }) => {
+const ApartmentUploadPhoto = ({ show, handleClose ,handleImageUpload}) => {
   const [images, setImages] = useState([]);
   const maxNumber = 10;
   const [currentPage, setCurrentPage] = useState("photoDesc");
@@ -39,6 +39,7 @@ const ApartmentUploadPhoto = ({ show, handleClose }) => {
   });
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
+  handleImageUpload(imageList)
     console.log(imageList, addUpdateIndex);
     setImgTot(imageList.length);
     setImages(imageList);
