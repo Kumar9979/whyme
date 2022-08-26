@@ -8,5 +8,18 @@
     border-radius: 10px;
     border: none !important;
     box-shadow: 0px 0px 7px #ccc;
-    width: auto;
+    width: 100%;
+  }
+
+  .abcd{
+    width: 60rem;
+  }
+  .flat_heading{
+    color: #323D5A;
+  }
+
+  @media only screen and (max-width: 990px) {
+    .abcd{
+    width: 100%;
+    }
   }
