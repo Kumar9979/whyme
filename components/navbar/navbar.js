@@ -255,7 +255,10 @@ const Navbar = () => {
                     height={30}
                   />
                 </div>
-                <button onClick={() => setTopBar(!topBar)} className={`${Styles.mobile_burger}`}>
+                <button
+                  onClick={() => setTopBar(!topBar)}
+                  className={`${Styles.mobile_burger}`}
+                >
                   <i className="ri-menu-3-fill"></i>
                 </button>
               </div>
@@ -321,15 +324,15 @@ const Navbar = () => {
         </Offcanvas.Body>
       </Offcanvas>
       <Offcanvas
-        style={{ width: "20rem" }}
+        style={{ width: "18rem" }}
         show={sidebar}
         onHide={() => setSidebar(!sidebar)}
       >
-        <Offcanvas.Header>
-          <Offcanvas.Title>
+        <Offcanvas.Body>
+          <div>
             <div className={`${styles.card} card`}>
               <div className="card-body">
-                <div className="d-flex justify-content-between">
+                <div className="d-flex">
                   <div className="me-3">
                     <div className={`${styles.DpContainer}`}>
                       <Image
@@ -352,14 +355,10 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div>
             <hr />
             <ul
               onClick={() => setSidebar(false)}
-              className="list-unstyled  mt-5"
+              className="list-unstyled  mt-4"
             >
               <li
                 className={`${
