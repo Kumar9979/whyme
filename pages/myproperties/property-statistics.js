@@ -10,7 +10,6 @@ import RequestCallback from "../../components/myproperties/request-callback";
 const PropertyStatics = () => {
   return (
     <ProfileLayout>
-      
         <ApartmentCard />
         {/* <CardsViewsTotalCallback />
         <RequestCallback/> */}

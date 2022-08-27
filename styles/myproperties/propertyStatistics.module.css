@@ -1,4 +1,6 @@
-
+.back_ttt{
+  display: flex;
+}
 .back_text{
   color: #24734E;
 }
@@ -60,13 +62,15 @@
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #1d72db;
-    color: #1d72db;
-   
+    color: #1d72db;  
 }
-/* .row{
-  display: flex;
-   flex-flow: column-reverse;
-    } */
+/* .address_heading{
+  font-family: Poppins !important;
+} */
+
+.posted_text{
+  justify-content: end;
+}
 @media only screen and (max-width: 990px) {
   .abcd{
   width: 100%;

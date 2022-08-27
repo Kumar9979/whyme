@@ -49,7 +49,7 @@ const ApartmentCard = () => {
         <div
           className={`${styles.back_icon} d-flex justify-content-start ps-2 ps-lg-4 pt-lg-2`}
         >
-          <span>
+          <span className={`${styles.back_ttt}`}>
             {" "}
             <Image src={backIcon} />
             <span
@@ -120,7 +120,7 @@ const ApartmentCard = () => {
                       >
                         2BHK flat in Vijayanagar, Mysuru
                       </div>
-                      <div className={`d-flex mb-3 ps-2 ps-lg-1 ms-lg-0`}>
+                      <div className={`d-flex mb-lg-3 ps-2 ps-lg-1 ms-lg-0`}>
                         <span className="">
                           <Image
                             src={Location}
@@ -128,7 +128,7 @@ const ApartmentCard = () => {
                           />
                         </span>
                         <span
-                          className={`${styles.address_heading} ms-1 fs_14 fs_sm_12 fw_400 `}
+                          className={`${styles.address_heading} ms-1 fs_14 fs_sm_12 fw_400 fontFam_poppins`}
                         >
                           2Nd Floor, Dejgow Building, Kannada Sahithya Parishath
                           Rd, Mysuru, Karnataka 570017
@@ -242,7 +242,7 @@ const ApartmentCard = () => {
                           />
                         </span>
                         <span
-                          className={`${styles.address_heading} ms-1 fs_14 fs_sm_12 fw_400 `}
+                          className={`${styles.address_heading} ms-1 fs_14 fs_sm_12 fw_400 fontFam_poppins `}
                         >
                           2Nd Floor, Dejgow Building, Kannada Sahithya Parishath
                           Rd, Mysuru, Karnataka 570017
@@ -370,15 +370,15 @@ const ApartmentCard = () => {
                   </>
                 )}
 
-                <div className={`d-flex justify-content-between`}>
+                <div className={`d-flex justify-content-between mb-2`}>
                   <div
-                    className={`${styles.posted_text} d-flex flex-column mb-2 ps-2`}
+                    className={`${styles.posted_text} d-flex flex-column  ps-2 fs_13 fw_500`}
                   >
-                    <span className="lh-sm">Posted On </span>
+                    <span className={`lh-sm`}>Posted On </span>
                     <span className={`lh-sm`}>20 June 2020</span>
                   </div>
                   <div>
-                    <div className={`${styles.edit_delete} d-flex mb-2`}>
+                    <div className={`${styles.edit_delete} d-flex `}>
                       <div className={`${styles.icon} d-flex mt-2 `}>
                         <button
                           className={`${styles.edit_btn} px-3 fs_14 fw_500 fontFam_poppins`}
@@ -390,11 +390,12 @@ const ApartmentCard = () => {
                         </button>
                       </div>
                       <div className={`${styles.delete} d-flex ms-3 me-2 mt-2`}>
-                        <button
-                          className={`${styles.delete_btn} px-3 pt-1 pb-1 fs_14 fw_500 fontFam_poppins`}
+                        <button 
+                          className={`${styles.delete_btn} px-3 pt-1 pb-1 fs_14 fw_500 fontFam_poppins `}
                         >
                           <span className={`${styles.delete_icon} `}>
-                            <Image src={Delete} alt="" />
+                            <Image src={Delete} alt="" 
+                            className={``}/>
                           </span>{" "}
                           <span className="">Delete</span>
                         </button>
