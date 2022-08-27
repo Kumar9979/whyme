@@ -68,7 +68,7 @@ const ImageGrid = () => {
             </div>
           </div>
           <p
-            className={`${styles.property_location} px-1 mt-2 fs_12 fw_500 fontFam_poppins`}
+            className={`${styles.property_location} px-1 mt-2 fs_12 fw_500 fontFam_poppins d-flex align-items-center`}
           >
             <span className="pe-1">
               {" "}

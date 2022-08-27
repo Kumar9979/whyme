@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../../styles/propertydetails/loremipsum.module.css";
 import pointing from "../../../assets/images/pointing.svg";
-// import pointing from "../../../assets/images/pointing.svg";
 import Image from "next/dist/client/image";
 
 const LoremIpsum = () => {
@@ -20,7 +19,7 @@ const LoremIpsum = () => {
         <Image
           src={pointing}
           alt="Picture of the author"
-          width={90}
+          width={80}
         />
       </div>
     </div>

@@ -21,7 +21,7 @@ const LoremText = () => {
         Click Here
       </button>
       <div className={`position-absolute ${styles.image_position}`}>
-        <Image src={pointing} alt="Picture of the author" width={90} />
+        <Image src={pointing} alt="Picture of the author" width={80} />
       </div>
     </div>
   );

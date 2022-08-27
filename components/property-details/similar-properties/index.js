@@ -115,7 +115,7 @@ const SimilarProperties = () => {
                 2BHK flat in Vijayanagar, Mysuru
               </div>
               <div
-                className={`px-1 py-1 ms-2 fs_10 fw_500 fontFam_poppins ${styles.ready_house} `}
+                className={`px-1 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
               >
                 Ready to move
               </div>
@@ -169,7 +169,7 @@ const SimilarProperties = () => {
 
           <div className="col-lg-2 d-flex flex-column justify-content-between">
             <div
-              className={`fs_20 fw_700 fontFam_poppins d-flex justify-content-end`}
+              className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
             >
               ₹ 30 Lac
             </div>

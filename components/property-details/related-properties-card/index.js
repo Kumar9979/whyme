@@ -14,7 +14,7 @@ const RelatedProperties = () => {
   const number = 20;
   return (
     <div className="me-4">
-      <div className={`${styles.related_image} mb-1 mb-lg-2`}>
+      <div className={`${styles.related_image} mb-1 p-2 mb-lg-2`}>
         <div className={`position-relative`}>
           <Image
             src={home}
@@ -35,8 +35,8 @@ const RelatedProperties = () => {
                 className="d-flex justify-content-center pt-2"
                 src={liked ? saved : save}
                 alt="Picture of the author"
-                width={25}
-                height={25}
+                width={30}
+                height={30}
               />
             </button>
           </div>
@@ -57,14 +57,13 @@ const RelatedProperties = () => {
           <div className="row mt-2">
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-4 d-flex mb-2`}>
+                <div className={`col-4 d-flex mb-2 alignn-items-center`}>
                   <Image
                     src={item.image}
                     alt="Picture of the author"
-                    width={15}
-                    height={15}
+                    width={20}
                   />
-                  <div className="d-flex flex-column ps-2">
+                  <div className="d-flex flex-column ps-1 pt-2">
                     <span className={`${styles.card_heading}`}>
                       {item.heading}
                     </span>

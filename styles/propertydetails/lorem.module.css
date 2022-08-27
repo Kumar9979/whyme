@@ -5,34 +5,53 @@
   background: transparent linear-gradient(256deg, #e4e4e4 0%, #ffffff 100%) 0%
     0% no-repeat padding-box;
   border-radius: 20px;
+  width: 85%;
 }
 .lorem_text_title {
   color: #1d1e1f;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
 }
 .lorem_text_heading {
   color: #1d1e1f;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 35px;
+  font-size: 30px;
 }
 .lorem_text_button {
   color: #013ea3;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   background-color: transparent;
 }
 .image_position {
-  right: 7%;
-  bottom: 3%;
+  right: 1%;
+  bottom: 1%;
 }
 .lorem_text_properties {
-  color: #5F5C5C;
+  color: #5f5c5c;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 10px;
+}
+@media only screen and (max-width: 1320px) {
+  .lorem_text_title {
+    font-size: 10px;
+  }
+  .lorem_text_heading {
+    font-size: 20px;
+  }
+  .image_position {
+    right: 5%;
+    bottom: 20%;
+  }
+  .lorem_text_button {
+    font-size: 20px;
+  }
+.LoremText {
+  width: 100%;
+}
 }

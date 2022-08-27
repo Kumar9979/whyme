@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/propertydetails/contactus.module.css";
+import styles from "../../../styles/propertydetails/contactus.module.css";
 
 const ContactUs = () => {
   return (
@@ -7,7 +7,7 @@ const ContactUs = () => {
       <div className={`${styles.contactus_heading}`}>Contact Us</div>
       <hr className={`${styles.horizontal_line}`}></hr>
       <div>
-        <form>
+     
           <div className="form-group">
             <label
               className={`${styles.contact_us_label}`}
@@ -36,7 +36,7 @@ const ContactUs = () => {
               className={`form-control ${styles.form_input}`}
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Enter yournemail address"
+              placeholder="Enter your email address"
             />
           </div>
 
@@ -55,13 +55,10 @@ const ContactUs = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className={`${styles.form_submit} mt-4 w-100 py-2`}
-          >
+          <button className={`${styles.form_submit} mt-4 w-100 py-2`}>
             Submit
           </button>
-        </form>
+ 
       </div>
     </div>
   );

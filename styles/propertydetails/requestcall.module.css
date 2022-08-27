@@ -67,3 +67,8 @@
   font-weight: 500;
   font-size: 13px;
 }
+@media only screen and (max-width: 992px)  {
+  .request_call {
+    width: 100%;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import ImageGrid from "../../components/property-details/image-grid";
-import styles from "../../styles/propertydetails/homepage.module.css"
+import styles from "../../styles/propertydetails/homepage.module.css";
 import Aboutproperty from "../../components/property-details/about-property";
 import Amenties from "../../components/property-details/amenties";
 import ContactOwner from "../../components/property-details/contact_owner";
@@ -13,6 +13,7 @@ import LoremIpsum from "../../components/property-details/lorem-ipsum";
 import RequestCall from "../../components/property-details/request-callback";
 import LoremText from "../../components/property-details/lorem-text";
 import SimilarProperties from "../../components/property-details/similar-properties";
+import ContactUs from "../../components/property-details/contact_us";
 
 const Home = () => {
   const number = 20;
@@ -35,7 +36,14 @@ const Home = () => {
             <AgentProperties />
           </div>
           <div className="col-lg-3 col-11">
-            <RequestCall />
+            <div className="row">
+              <div className="col-12 col-lg-12 col-md-6">
+                <RequestCall />
+              </div>
+              <div className="col-12 col-lg-12 col-md-6">
+                <ContactUs />
+              </div>
+            </div>
             <LoremIpsum />
             <LoremText />
           </div>
