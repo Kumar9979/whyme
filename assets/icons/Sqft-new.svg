@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42.121" height="42.121" viewBox="0 0 42.121 42.121">
+  <g id="Sqft" transform="translate(-526.439 -527.239)">
+    <g id="Group_19192" data-name="Group 19192" transform="translate(527.5 528.3)">
+      <g id="Group_19186" data-name="Group 19186" transform="translate(0 6.106)">
+        <line id="Line_113" data-name="Line 113" y1="32.878" transform="translate(6.101)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        <line id="Line_114" data-name="Line 114" x1="6.101" y1="6.101" transform="translate(0 27.793)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        <line id="Line_115" data-name="Line 115" x1="5.932" y2="6.101" transform="translate(6.101 27.793)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+      <g id="Group_19187" data-name="Group 19187" transform="translate(6.101)">
+        <line id="Line_116" data-name="Line 116" x1="33.052" transform="translate(0 5.932)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        <line id="Line_117" data-name="Line 117" x1="6.101" y2="6.101" transform="translate(27.798 5.932)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        <line id="Line_118" data-name="Line 118" x2="6.101" y2="5.932" transform="translate(27.798)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+      <g id="Group_19189" data-name="Group 19189" transform="translate(38.305 13.054)">
+        <g id="Group_19188" data-name="Group 19188">
+          <line id="Line_119" data-name="Line 119" y2="5.084" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+          <line id="Line_120" data-name="Line 120" y2="7.965" transform="translate(0 10.338)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5" stroke-dasharray="3.106 3.106"/>
+          <line id="Line_121" data-name="Line 121" y2="5.084" transform="translate(0 20.845)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        </g>
+      </g>
+      <g id="Group_19191" data-name="Group 19191" transform="translate(11.359 38.983)">
+        <g id="Group_19190" data-name="Group 19190">
+          <line id="Line_122" data-name="Line 122" x2="5.084" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+          <line id="Line_123" data-name="Line 123" x2="7.796" transform="translate(10.507)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5" stroke-dasharray="3.106 3.106"/>
+          <line id="Line_124" data-name="Line 124" x2="5.084" transform="translate(21.015)" fill="none" stroke="#1d72db" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
