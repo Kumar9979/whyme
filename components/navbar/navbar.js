@@ -48,7 +48,12 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={16} height={16} src={UserIcon} />
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={UserIcon}
+                />
                 <div className={`ms-3 ${Styles.DropdownText}`}>My Profile</div>
               </div>
             </div>
@@ -63,8 +68,15 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={16} height={16} src={Clock} />
-                <div className={`ms-3 ${Styles.DropdownText}`}>Recent Activities</div>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Clock}
+                />
+                <div className={`ms-3 ${Styles.DropdownText}`}>
+                  Recent Activities
+                </div>
               </a>
             </Link>
           ),
@@ -78,8 +90,15 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={16} height={16} src={Heart} />
-                <div className={`ms-3 ${Styles.DropdownText}`}>Saved Properties</div>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Heart}
+                />
+                <div className={`ms-3 ${Styles.DropdownText}`}>
+                  Saved Properties
+                </div>
               </a>
             </Link>
           ),
@@ -93,8 +112,15 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={16} height={16} src={Key} />
-                <div className={`ms-3 ${Styles.DropdownText}`}>My Properties</div>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Key}
+                />
+                <div className={`ms-3 ${Styles.DropdownText}`}>
+                  My Properties
+                </div>
               </a>
             </Link>
           ),
@@ -108,7 +134,12 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image className={Styles.DropdownIcon} width={16} height={16} src={Settings} />
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Settings}
+                />
                 <div className={`ms-3 ${Styles.DropdownText}`}>Settings</div>
               </a>
             </Link>
@@ -203,7 +234,9 @@ const Navbar = () => {
       {mobile === true && (
         <div className={`container-fluid handbook-section ${Styles.container}`}>
           <nav className="p-2">
-            <div className={`${styles.linkMenu} d-flex align-items-center mb-2`}>
+            <div
+              className={`${styles.linkMenu} d-flex align-items-center mb-2`}
+            >
               <div className={Styles.zameenimage}>
                 <Image
                   src={ZameenSquareImage}
@@ -213,11 +246,19 @@ const Navbar = () => {
                 />
               </div>
 
-              <div className="ms-auto">
-                <button onClick={() => setSidebar(!sidebar)} className="btn">
-                  <i className="ri-user-3-fill"></i>
-                </button>
-                <button onClick={() => setTopBar(!topBar)} className="btn">
+              <div className="d-flex align-items-center justify-content-between ms-auto">
+                <div onClick={() => setSidebar(!sidebar)} className="btn">
+                  <Image
+                    className={`${Styles.mobile_ProfileIcon}`}
+                    src={ProfileImage}
+                    width={30}
+                    height={30}
+                  />
+                </div>
+                <button
+                  onClick={() => setTopBar(!topBar)}
+                  className={`${Styles.mobile_burger}`}
+                >
                   <i className="ri-menu-3-fill"></i>
                 </button>
               </div>
@@ -258,47 +299,40 @@ const Navbar = () => {
                 <a className={`${Styles.headermenu}`}>Sell</a>
               </Link>
             </li>
-            <li
-              className={`${Styles.navbar} nav-item mb-4 d-lg-flex align-items-center`}
-            >
-              <Link href="#">
-                <a className={`${Styles.headerIcon}`}>
-                  <i className={`ms-2 me-2 mt-5 pt-1  ri-heart-3-fill `}></i>
-                </a>
-              </Link>
-            </li>
-            <li
-              className={`${Styles.navbar} nav-item mb-4 d-lg-flex align-items-center `}
-            >
-              <Link href="#">
-                <a className={`${Styles.headerIcon}`}>
-                  <i className="ms-2 me-2 mt-5   ri-user-add-line "></i>
-                </a>
-              </Link>
-            </li>
-
-            <button
-              type="button"
-              className={`px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-              onClick={() => {
-                router.push("/registercompany/userType");
-              }}
-            >
-              Post Property
-            </button>
+            {login === true ? (
+              <button
+                type="button"
+                className={`px-5  btn-primary text-nowrap ${Styles.landingheader}`}
+                onClick={() => {
+                  router.push("/registercompany/userType");
+                }}
+              >
+                Post Property
+              </button>
+            ) : (
+              <button
+                type="button"
+                className={`px-5 btn text-nowrap ${Styles.loginBtn}`}
+                onClick={() => {
+                  router.push("/registercompany/userType");
+                }}
+              >
+                Login
+              </button>
+            )}
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
       <Offcanvas
-        style={{ width: "20rem" }}
+        style={{ width: "18rem" }}
         show={sidebar}
         onHide={() => setSidebar(!sidebar)}
       >
-        <Offcanvas.Header>
-          <Offcanvas.Title>
+        <Offcanvas.Body>
+          <div>
             <div className={`${styles.card} card`}>
               <div className="card-body">
-                <div className="d-flex justify-content-between">
+                <div className="d-flex">
                   <div className="me-3">
                     <div className={`${styles.DpContainer}`}>
                       <Image
@@ -316,27 +350,15 @@ const Navbar = () => {
                       <div className={`${styles.phone_number}`}>
                         +91 9875643210
                       </div>
-                      <div
-                        className={`${styles.edit_profile} d-flex align-item-center`}
-                      >
-                        <i
-                          className={`${styles.icon} ri-edit-box-line me-2`}
-                        ></i>
-                        <div> Edit Profile</div>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div>
             <hr />
             <ul
               onClick={() => setSidebar(false)}
-              className="list-unstyled  mt-5"
+              className="list-unstyled  mt-4"
             >
               <li
                 className={`${
@@ -345,9 +367,33 @@ const Navbar = () => {
                     : styles.sidebar_list
                 } mb-3 d-flex align-items-center`}
               >
-                <i className={`${styles.icon} ri-time-fill me-2`}></i>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={UserIcon}
+                />
                 <Link href="/profile/recently-viewed">
-                  <a className={`${styles.sidebar_links}`}>Recently Viewed</a>
+                  <a className={`ms-3 ${styles.sidebar_links}`}>My Profile</a>
+                </Link>
+              </li>
+              <li
+                className={`${
+                  router.pathname === "/profile/recently-viewed"
+                    ? styles.sidebar_listActive
+                    : styles.sidebar_list
+                } mb-3 d-flex align-items-center`}
+              >
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Clock}
+                />
+                <Link href="/profile/recently-viewed">
+                  <a className={`ms-3 ${styles.sidebar_links}`}>
+                    Recently Viewed
+                  </a>
                 </Link>
               </li>
               <li
@@ -357,10 +403,15 @@ const Navbar = () => {
                     : styles.sidebar_list
                 }  mb-3 d-flex align-items-center`}
               >
-                <i className={`${styles.icon} ri-heart-fill me-2`}></i>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Heart}
+                />
                 <Link href="/profile/shortlisted-properties">
-                  <a className={`${styles.sidebar_links}`}>
-                    Shortlisted Properties
+                  <a className={`ms-3 ${styles.sidebar_links}`}>
+                    Saved Properties
                   </a>
                 </Link>
               </li>
@@ -371,9 +422,16 @@ const Navbar = () => {
                     : styles.sidebar_list
                 }  mb-3 d-flex align-items-center`}
               >
-                <i className={`${styles.icon} ri-key-fill me-2`}></i>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Key}
+                />
                 <Link href="/profile/my-properties">
-                  <a className={`${styles.sidebar_links}`}>My Properties</a>
+                  <a className={`ms-3 ${styles.sidebar_links}`}>
+                    My Properties
+                  </a>
                 </Link>
               </li>
               <li
@@ -383,9 +441,14 @@ const Navbar = () => {
                     : styles.sidebar_list
                 }  mb-3 d-flex align-items-center`}
               >
-                <i className={`${styles.icon} ri-add-box-fill me-2`}></i>
+                <Image
+                  className={Styles.DropdownIcon}
+                  width={16}
+                  height={16}
+                  src={Settings}
+                />
                 <Link href="/profile/add-a-property">
-                  <a className={`${styles.sidebar_links}`}>Add a Property</a>
+                  <a className={`ms-3 ${styles.sidebar_links}`}>Settings</a>
                 </Link>
               </li>
             </ul>

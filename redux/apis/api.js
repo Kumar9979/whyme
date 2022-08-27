@@ -1,5 +1,5 @@
 import axios from 'axios';
-let url = 'https://jsonplaceholder.typicode.com/posts'
+import { url } from '../config';
 
 export const api = axios.create({
   baseURL: url,

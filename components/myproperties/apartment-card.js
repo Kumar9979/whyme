@@ -72,12 +72,15 @@ const ApartmentCard = () => {
             <div className="">
               <div className="row gx-0 gy-0">
                 <div className="col-sm-3">
-                  <div>
-                  <Image
-                  src={Luxuries}
-                  />
-                  </div>
-                  
+                  {mobile ? (
+                    <div>
+                      <Image src={Luxuries_mobile} />
+                    </div>
+                  ) : (
+                    <div >
+                      <Image src={Luxuries} />
+                    </div>
+                  )}
                 </div>
                 <div className="col-sm-6">Column</div>
                 <div className="col-sm-3">Column</div>
