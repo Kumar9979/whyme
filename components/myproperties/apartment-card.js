@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import backIcon from "../../assets/icons/back-icon.svg";
 import Image from "next/image";
 import styles from "../../styles/myproperties/propertyStatistics.module.css";
 import Luxuries from "../../assets/images/luxuries-image.png";
+import Luxuries_mobile from "../../assets/images/luxuries-mobile-image.png";
 import square from "../../assets/icons/square-area.svg";
 import bathroom from "../../assets/icons/bathroom.svg";
 import furniture from "../../assets/icons/furniture.svg";
@@ -19,206 +20,83 @@ const ApartmentCard = () => {
 
   const text = ` Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Diam. Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Diam. `;
   const allText = ReadLess === true ? text : text.slice(0, 122);
- 
+
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 569) {
+      setMobile(true);
+    }
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 568) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className={`ms-2 ms-lg-0`}>
-        <div className="d-flex justify-content-start">
-          <div className={`${styles.card_container} card `}>
-            <div className={`${styles.card_body} card-body p-lg-2`}>
-              <div className="d-flex">
-                <div className={`${styles.luxuries_image}`}>
-                  <Image
-                    src={Luxuries}
-                    className={`${styles.luxuries_img}`}
-                    alt="luxuries-image"
-                    layout="responsive"
-                    objectFit="cover"
-                  />
-                  <div className={`${styles.verified_mobile}  px-2`}>
-                    <div className="d-flex justify-content-center">
-                      <div className={`${styles.tick_icon}`}>
-                        <span>
-                          {" "}
-                          <Image src={Tick} />
-                        </span>
-                      </div>
-                      <div>
-                        <span className={`${styles.verified_text} ms-1`}>
-                          Verified
-                        </span>
-                      </div>
+    <div className={`d-flex justify-content-center`}>
+      <div className={`${styles.abcd} `}>
+        <div
+          className={`${styles.back_icon} d-flex justify-content-start ps-2 ps-lg-4 pt-lg-2`}
+        >
+          <span>
+            {" "}
+            <Image src={backIcon} />
+            <span
+              className={`${styles.back_text} ms-2 fs_15 fw_500 fontFam_poppins`}
+            >
+              Back
+            </span>{" "}
+          </span>
+        </div>
+        <span
+          className={`${styles.property_heading} color_cloudBurst ps-2 ps-lg-4 fs_22 fw_500 fs_sm_18 fontFam_poppins`}
+        >
+          Property Statistics
+        </span>
+        <hr />
+        <div
+          className={`${styles.card} d-flex justify-content-center px-2 pt-2 px-lg-5`}
+        >
+          <div className={`${styles.card_body}   `}>
+            <div className="">
+              <div className="row gx-0 gy-0">
+                <div className="col-sm-3">
+                  {mobile ? (
+                    <div className={`${styles.luxuries_image_mobile} p-2 text-center w-100`}>
+                      <Image src={Luxuries_mobile}
+                      layout="fill"
+                      
+                      objectFit="cover"/>
                     </div>
-                  </div>
-                  <div
-                    className={`${styles.posted_on} d-flex flex-column pt-2`}
-                  >
-                    <span>Posted On </span>
-                    <span>20 June 2020</span>
-                  </div>
+                  ) : (
+                    <div className={`${styles.luxuries_image} p-2`}>
+                      <Image src={Luxuries} />
+                    </div>
+                  )}
                 </div>
-                <div className={`${styles.address_details} `}>
-                  <div className={`d-flex `}>
-                    <div className={`${styles.flat_heading} ps-2 ps-lg-3`}>
-                      2BHK flat in Vijayanagar, Mysuru
-                    </div>
-                  </div>
-                  <div className={`d-flex mb-3 ms-2 ms-lg-3`}>
-                    <span className={`${styles.location_icon}`}>
-                      <Image src={Location} />
-                    </span>
-                    <span className={`${styles.address_heading} ms-1`}>
-                      2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
-                      Mysuru, Karnataka 570017
-                    </span>
-                  </div>
-                  <div
-                    className={`${styles.posted_on_mobile} d-flex flex-column ps-2 pt-3`}
-                  >
-                    <span>
-                      Posted On <br />
-                      20 June 2020
-                    </span>
-                  </div>
-                  <div className="d-flex">
-                    <div className={`${styles.rupee_text_mobile} ps-2 pt-1`}>
-                      ₹ 30 Lac
-                    </div>
-                    <div className="d-flex">
-                      <div
-                        className={`${styles.edit_delete_mobile} d-flex ms-5`}
-                      >
-                        <div className={`${styles.icon} d-flex`}>
-                          <button className={`${styles.edit_btn}  ps-2 pe-2`}>
-                            <span className={`${styles.edit_icon} `}>
-                              <Image src={Edit} alt="" />
-                            </span>
-                          </button>
-                          <div className={`${styles.delete} ms-1 `}>
-                            <button
-                              className={`${styles.delete_btn} ps-2 pe-2 `}
-                            >
-                              <span className={`${styles.delete_icon} `}>
-                                <Image src={Delete} alt="" />
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.flat_details}`}>
-                    <div className={`${styles.ameneties} d-flex`}>
-                      {ameneties.map((item, index) => {
-                        return (
-                          <div className={` ms-lg-3 d-flex mb-3`}>
-                            <div className={`${styles.imageContainer}`}>
-                              <Image
-                                className={`${styles.cards_images}`}
-                                src={item.image}
-                                alt=""
-                                layout="fixed"
-                              />
-                            </div>
-
-                            <div className="d-flex flex-column">
-                              <span
-                                className={`${styles.super_area} d-inline-block text-truncate ms-2 `}
-                              >
-                                {item.heading}
-                              </span>
-                              <span className={`${styles.super_area_sub} ms-2`}>
-                                {item.amenity}
-                              </span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <div className={`${styles.ameneties2} d-flex`}>
-                      {ameneties2.map((item, index) => {
-                        return (
-                          <div className={` ms-lg-3 d-flex mb-3`}>
-                            <div className={`${styles.imageContainer}`}>
-                              <Image
-                                className={`${styles.cards_images}`}
-                                src={item.image}
-                                alt=""
-                                layout="fixed"
-                              />
-                            </div>
-
-                            <div className="d-flex flex-column">
-                              <span
-                                className={`${styles.super_area} d-inline-block text-truncate ms-2 `}
-                              >
-                                {item.heading}
-                              </span>
-                              <span className={`${styles.super_area_sub} ms-2`}>
-                                {item.amenity}
-                              </span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div
-                    className={`${styles.lorem_text_container} ps-2 ps-lg-3`}
-                  >
-                    <p className={`${styles.lorem_text}`}>
-                      {allText}
-                      <button
-                        className={`${styles.readmore_btn}`}
-                        onClick={() => setReadLess(!ReadLess)}
-                      >
-                        {ReadLess === true ? "Read less" : "...Read more"}
-                      </button>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className={`${styles.edit_delete_container} positive-relative`}
-                >
-                  <div className={`${styles.verified} d-flex px-2 pb-1`}>
-                    <div className={`${styles.tick_icon}`}>
-                      <Image src={Tick} />
-                    </div>
-                    <div>
-                      <span className={`${styles.verified_text} ms-1`}>
-                        Verified
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.rupee_text} text-end  `}>
-                    ₹ 30 Lac
-                  </div>
-                  <div className={`${styles.edit_delete} d-flex`}>
-                    <div className={`${styles.icon} d-flex`}>
-                      <button className={`${styles.edit_btn} px-3 `}>
-                        <span className={`${styles.edit_icon} `}>
-                          <Image src={Edit} alt="" />
-                        </span>{" "}
-                        <span className="">Edit</span>
-                      </button>
-                    </div>
-                    <div className={`${styles.delete} d-flex ms-3  `}>
-                      <button
-                        className={`${styles.delete_btn} ps-3 pe-3 pt-1 pb-1`}
-                      >
-                        <span className={`${styles.delete_icon} `}>
-                          <Image src={Delete} alt="" />
-                        </span>{" "}
-                        <span className="">Delete</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <div className="col-sm-6">Column</div>
+                <div className="col-sm-3">Column</div>
               </div>
             </div>
           </div>
         </div>
+        <div className={`${styles.card}  px-2 pt-3 `}>
+          <div className={`${styles.card_body}  pt-2 pt-lg-3 pb-2`}>
+            <div className="d-flex  justify-content-between"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

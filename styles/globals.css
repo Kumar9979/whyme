@@ -5,6 +5,9 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
+p{
+  margin-bottom: 0;
+}
 .fontFam_poppins {
   font-family:"Poppins", sans-serif;
 }
@@ -90,6 +93,9 @@ border-radius: 12px !important;
 .fw_200{
   font-weight: 200;
 }
+.fw_400{
+  font-weight: 400;
+}
 .fw_300{
   font-weight: 300;
 }
@@ -119,6 +125,10 @@ border-radius: 12px !important;
 /* .font_FamPoppins{
   font-family: Poppins;
 } */
+
+.color_cloudBurst{
+  color: #323D5A;
+}
 
 @media only screen and (max-width: 992px) {
   .fs_md_7{
@@ -200,11 +210,16 @@ border-radius: 12px !important;
 
 
 @media only screen and (max-width: 778px) {
-  
+  .hideSidebar{
+    display: none;
+  }
 }
 
 
 @media only screen and (max-width: 480px) {
+  .hideSidebar{
+    display: none;
+  }
   .fs_sm_8{
     font-size: 8px;
   }

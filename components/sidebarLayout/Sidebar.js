@@ -38,7 +38,7 @@ const ProfileLayout = ({ children }) => {
     <>
       <div>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-lg-3  hideSidebar">
             {mobile !== true && (
               <div className={`${styles.sidebar} position-fixed`}>
                 <div>
@@ -63,14 +63,6 @@ const ProfileLayout = ({ children }) => {
                             </div>
                             <div className={`${styles.phone_number}`}>
                               +91 9875643210
-                            </div>
-                            <div
-                              className={`${styles.edit_profile} d-flex align-item-center`}
-                            >
-                              <i
-                                className={`${styles.icon} ri-edit-box-line me-2`}
-                              ></i>
-                              <div> Edit Profile</div>
                             </div>
                           </div>
                         </div>
@@ -146,7 +138,7 @@ const ProfileLayout = ({ children }) => {
               </div>
             )}
           </div>
-          <div className="col-md-8">{children}</div>
+          <div className="col-lg-8">{children}</div>
         </div>
       </div>
     </>
