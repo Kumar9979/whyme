@@ -7,7 +7,7 @@ import Image from "next/dist/client/image";
 const LoremIpsum = () => {
   return (
     <div
-      className={`${styles.LoremIpsum}  d-flex flex-column align-items-between p-4 mt-4 position-relative`}
+      className={`${styles.LoremIpsum}  d-flex flex-column align-items-between  p-4 mt-4 position-relative`}
     >
   
         <div className={`${styles.lorem_title} py-3`}>Lorem ipsum</div>

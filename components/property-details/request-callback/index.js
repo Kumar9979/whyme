@@ -19,8 +19,8 @@ const RequestCall = () => {
           <Image
             src={image}
             alt="Picture of the author"
-            width={100}
-            height={70}
+            width={80}
+            height={80}
             className={`${styles.agent_image} `}
           />
         </div>
@@ -28,11 +28,11 @@ const RequestCall = () => {
         <div className="d-flex col-8 col-lg-12  justify-content-start justify-content-lg-center">
           <div className={`d-flex flex-column mt-1`}>
             <div
-              className={`${styles.agent_name} d-flex justify-content-start justify-content-lg-center`}
+              className={`${styles.agent_name} d-flex justify-content-start justify-content-lg-center pt-1`}
             >
               Amal Sabu
             </div>
-            <div className="d-flex align-items-center justify-content-start justify-content-lg-center">
+            <div className="d-flex align-items-center justify-content-start justify-content-lg-center pt-1">
               <Image
                 src={star}
                 alt="Picture of the author"
@@ -44,22 +44,22 @@ const RequestCall = () => {
               <span className={`${styles.rating_number} pt-1`}>{`(236) `}</span>
             </div>
             <div
-              className={`${styles.more_properties} d-flex justify-content-center`}
+              className={`${styles.more_properties} d-flex justify-content-center pt-1`}
             >
               2 More properties by this agent
             </div>
             <div
-              className={`${styles.agent_number} d-flex justify-content-start justify-content-lg-center`}
+              className={`${styles.agent_number} d-flex justify-content-start justify-content-lg-center pt-1`}
             >
               Call : 9876XXXXXX
             </div>
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-1 mt-3`}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
         Request Callback
       </button>
-      <button className={`${styles.agent_profile} w-100 py-1 mt-3`}>
+      <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
         View Profile
       </button>
     </div>
