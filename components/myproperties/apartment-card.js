@@ -44,60 +44,50 @@ const ApartmentCard = () => {
   }, []);
 
   return (
-    <div className={`ms-2 me-2`}>
-      <div className={`${styles.background_card}`}>
-        <div className={`${styles.back_icon} ps-3 pt-lg-3 `}>
+    <div className={`d-flex justify-content-center`}>
+      <div className={`${styles.abcd} `}>
+        <div
+          className={`${styles.back_icon} d-flex justify-content-start ps-2 ps-lg-4 pt-lg-2`}
+        >
           <span>
             {" "}
             <Image src={backIcon} />
-            <span className={`${styles.back_text} ms-2`}>Back</span>{" "}
+            <span
+              className={`${styles.back_text} ms-2 fs_15 fw_500 fontFam_poppins`}
+            >
+              Back
+            </span>{" "}
           </span>
         </div>
-        <div className={`${styles.property_heading} ps-3 pt-lg-3 `}>
+        <span
+          className={`${styles.property_heading} color_cloudBurst ps-2 ps-lg-4 fs_22 fw_500 fs_sm_18 fontFam_poppins`}
+        >
           Property Statistics
-        </div>
-        <hr className={``} />
-        <div className={`${styles.card} px-lg-5 px-md-5`}>
-          <div className={`${styles.card_body} `}>
-            <div className=" text-center">
-              <div className="row gx-0">
-                {mobile ? (
-                  <div className="col-lg-3 col-md-3 col-sm-12">
-                    <Image
-                      src={Luxuries_mobile}
-                      className={`${styles.luxuries_image} p-lg-2 p-md-2`}
-                      width="320px"
-                      height="200px"
-                    />
+        </span>
+        <hr />
+        <div
+          className={`${styles.card} d-flex justify-content-center px-2 pt-2 px-lg-5`}
+        >
+          <div className={`${styles.card_body}   `}>
+            <div className="">
+              <div className="row gx-0 gy-0">
+                <div className="col-sm-3">
+                  <div>
+                  <Image
+                  src={Luxuries}
+                  />
                   </div>
-                ) : (
-                  <div className="col-lg-3 col-md-3 col-sm-12">
-                    <Image
-                      src={Luxuries}
-                      className={`${styles.luxuries_image} p-lg-2 p-md-2`}
-                    />
-                  </div>
-                )}
-
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                  <div className={`d-flex `}>
-                    <div className={`pt-lg-2 pt-md-2 ps-2 ps-lg-0 fontFam_poppins`}>
-                      <span className={`${styles.flat_heading} `}>2BHK flat in Vijayanagar, Mysuru</span>
-                    </div>
-                  </div>
-                  <div className={`d-flex mb-3`}>
-                    <span className={`${styles.location_icon} mt-0`}>
-                      <Image src={Location} />
-                    </span>
-                    <span className={`${styles.address_heading} ms-1`}>
-                      2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
-                      Mysuru, Karnataka 570017
-                    </span>
-                  </div>
+                  
                 </div>
-                <div className="col-lg-3 col-md-3 col-sm-12">Column</div>
+                <div className="col-sm-6">Column</div>
+                <div className="col-sm-3">Column</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className={`${styles.card}  px-2 pt-3 `}>
+          <div className={`${styles.card_body}  pt-2 pt-lg-3 pb-2`}>
+            <div className="d-flex  justify-content-between"></div>
           </div>
         </div>
       </div>
