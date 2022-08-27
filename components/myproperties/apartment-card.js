@@ -24,13 +24,13 @@ const ApartmentCard = () => {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 480) {
+    if (window.innerWidth < 569) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 480) {
+      if (window.innerWidth < 568) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -73,11 +73,14 @@ const ApartmentCard = () => {
               <div className="row gx-0 gy-0">
                 <div className="col-sm-3">
                   {mobile ? (
-                    <div>
-                      <Image src={Luxuries_mobile} />
+                    <div className={`${styles.luxuries_image_mobile} p-2 text-center w-100`}>
+                      <Image src={Luxuries_mobile}
+                      layout="fill"
+                      
+                      objectFit="cover"/>
                     </div>
                   ) : (
-                    <div >
+                    <div className={`${styles.luxuries_image} p-2`}>
                       <Image src={Luxuries} />
                     </div>
                   )}
