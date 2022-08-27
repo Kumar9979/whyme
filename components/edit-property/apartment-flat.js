@@ -265,7 +265,7 @@ const ApartmentFlat = () => {
               </div>
 
               <button
-                onClick={() => {}}
+                onClick={() => {setLocationModal(true)}}
                 className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
               >
                 Edit Location
