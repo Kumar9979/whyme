@@ -155,14 +155,15 @@ const Navbar = () => {
         <div className="header container-fluid">
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid academy-header">
-              <div className={Styles.zameenimage}>
+              <Link href="/">
                 <Image
                   src={ZameenSquareImage}
                   alt="Picture of the author"
                   width={300}
                   height={50}
                 />
-              </div>
+              </Link>{" "}
+              <div className={Styles.zameenimage}></div>
               <div
                 className={`collapse navbar-collapse pt-2`}
                 id="navbarSupportedContent"
