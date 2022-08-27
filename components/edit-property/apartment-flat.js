@@ -7,7 +7,7 @@ import ApartmentUploadPhoto from "../modals/apartmentUploadPhoto";
 import ApartmentDeletePhoto from "../modals/apartmentDeletePhoto";
 import closeIcon from "../../assets/icons/close.png";
 import Delete from "../../assets/icons/delete.svg";
-
+import { Progress } from 'antd';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ImageUpload from "../ImageUpload/Image-upload";
@@ -92,8 +92,8 @@ const ApartmentFlat = () => {
                   >
                     Complete Status
                   </div>
-                  <div className="d-flex">
-                    <div className="col">
+                  <div className="d-flex align-items-center justify-content-between pe-3 ">
+                    <div className="">
                       <ul
                         className={`${styles.complete_list} fontFam_poppins fs_14 fw_400 pt-1`}
                       >
@@ -102,7 +102,10 @@ const ApartmentFlat = () => {
                         <li className="text-nowrap">Property Images</li>
                       </ul>
                     </div>
-                    <div className="col ">kjhjk</div>
+                    <div className="">
+                    <Progress strokeColor={"#50BF97"} width={60} strokeWidth={12} type="circle" percent={75} />
+
+                    </div>
                   </div>
                   <span
                     className={`${styles.response_text} fs_12 fw_500 p-1 fontFam_poppins`}
