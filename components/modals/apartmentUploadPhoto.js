@@ -11,16 +11,15 @@ import { useFormik } from "formik";
 import upload from "../../assets/icons/upload.png";
 import styles from "../../styles/modals/apartmentUploadPhoto.module.css";
 
-const ApartmentUploadPhoto = ({ show, handleClose }) => {
+const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   const [images, setImages] = useState([]);
   const maxNumber = 10;
-  const [currentPage, setCurrentPage] = useState("photoDesc");
-  // const router = useRouter();
-  const [file, setFile] = useState(upload);
-  const [uploaded, setUploaded] = useState(false);
-  const [size, setSize] = useState(35);
-  const [imgName, setImgName] = useState("");
-  const [imgTot, setImgTot] = useState(0);
+  // const [currentPage, setCurrentPage] = useState("photoDesc");
+  // const [file, setFile] = useState(upload);
+  // const [uploaded, setUploaded] = useState(false);
+  // const [size, setSize] = useState(35);
+  // const [imgName, setImgName] = useState("");
+  // const [imgTot, setImgTot] = useState(0);
 
   const formik = useFormik({
     initialValues: {
@@ -38,11 +37,11 @@ const ApartmentUploadPhoto = ({ show, handleClose }) => {
     },
   });
   const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
-    setImgTot(imageList.length);
-    setImages(imageList);
-    formik.setFieldValue("image", imageList);
+    console.log(imageList);
+    handleImageUpload(imageList, handleClose);
+    // setImgTot(imageList.length);
+
+    // formik.setFieldValue("image", imageList);
   };
 
   //   const [show, setShow] = useState(false);
@@ -101,101 +100,47 @@ const ApartmentUploadPhoto = ({ show, handleClose }) => {
                 dragProps,
                 errors,
               }) => (
-                <div
-                  {...dragProps}
-                  className={`${styles.upload_image} `}
-                >
-                  {images.length === 0 ? (
-                    <div>
-                      <div
-                        htmlFor="upload"
-                        className="d-flex justify-content-center mt-3 mb-2"
-                      >
-                        <label htmlFor="upload">
-                          {" "}
-                          <Image
-                            src={upload}
-                            name="image"
-                            value={formik.values.image}
-                            alt="image of camera"
-                          />
-                        </label>
-                      </div>
-                      <div className="d-flex flex-column align-items-center justify-content-center ">
-                        <p className={`${styles.upload_text_1}`}>
-                          Drag & drop the image of an property
-                        </p>
-
-                        <p className={`${styles.upload_text_2}`}>
-                          JPG and PNG images - max 20MB each
-                        </p>
-                        <p className={`${styles.upload_text_2}`}>
-                          <span className={`${styles.or_text}`}>-</span>OR
-                          <span>-</span>
-                        </p>
-                        <button
-                          {...dragProps}
-                          onClick={onImageUpload}
-                          className={`${styles.upload_button}`}
-                          type="button"
-                          variant="contained"
-                          component="label"
-                        >
-                          Browse Photos
-                        </button>
-                        {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
-                      </div>
+                <div {...dragProps} className={`${styles.upload_image} `}>
+                  <div>
+                    <div
+                      htmlFor="upload"
+                      className="d-flex justify-content-center mt-3 mb-2"
+                    >
+                      <label htmlFor="upload">
+                        {" "}
+                        <Image
+                          src={upload}
+                          name="image"
+                          value={formik.values.image}
+                          alt="image of camera"
+                        />
+                      </label>
                     </div>
-                  ) : (
-                    <>
-                      {" "}
-                      <div className={`row p-2 ps-4`}>
-                        {/* {imageList.slice(0,6).map((image, index) => ( */}
-                        {images.map((image, index) => (
-                          <div className={`col-4 d-flex mb-2`} key={index}>
-                            <div
-                              className={`${styles.property_upload_preview_image_container}`}
-                            >
-                              <Image
-                                src={image.data_url}
-                                name="uploaded-images"
-                                layout="fill"
-                                objectFit="cover"
-                                className={`${styles.property_upload_preview_image}`}
-                              />
-                            </div>
-                            <button
-                              type="button"
-                              className={`border-0 bg-white`}
-                              onClick={() => onImageRemove(index)}
-                            >
-                              <Image
-                                src={closeIcon}
-                                alt="remove image icon"
-                                width={18}
-                                height={18}
-                              />
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                      {images.length > 5 ? (
-                        <span>{imgTot - 6} more images</span>
-                      ) : null}
-                      <div className={`d-flex justify-content-center  mt-4`}>
-                        <button
-                          {...dragProps}
-                          onClick={onImageUpload}
-                          className={`${styles.upload_button}`}
-                          type="button"
-                          variant="contained"
-                          component="label"
-                        >
-                          Browse Photos
-                        </button>
-                      </div>
-                    </>
-                  )}
+                    <div className="d-flex flex-column align-items-center justify-content-center ">
+                      <p className={`${styles.upload_text_1}`}>
+                        Drag & drop the image of an property
+                      </p>
+
+                      <p className={`${styles.upload_text_2}`}>
+                        JPG and PNG images - max 20MB each
+                      </p>
+                      <p className={`${styles.upload_text_2}`}>
+                        <span className={`${styles.or_text}`}>-</span>OR
+                        <span>-</span>
+                      </p>
+                      <button
+                        {...dragProps}
+                        onClick={onImageUpload}
+                        className={`${styles.upload_button}`}
+                        type="button"
+                        variant="contained"
+                        component="label"
+                      >
+                        Browse Photos
+                      </button>
+                      {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
+                    </div>
+                  </div>
                 </div>
               )}
             </ImageUploading>
