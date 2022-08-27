@@ -1,20 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import ImageGrid from "../../components/image-grid";
-import HomeDetails from "../../components/home-details";
-import styles from "../../styles/homepage/homepage.module.css";
-import Review from "../../components/image-grid-review";
-import Aboutproperty from "../../components/about-property";
-import Amenties from "../../components/amenties";
-import ContactOwner from "../../components/contact_owner";
-import PropertyLocation from "../../components/property_location";
-import AgentProperties from "../../components/agent-properties";
+import ImageGrid from "../../components/property-details/image-grid";
+import styles from "../../styles/propertydetails/homepage.module.css"
+import Aboutproperty from "../../components/property-details/about-property";
+import Amenties from "../../components/property-details/amenties";
+import ContactOwner from "../../components/property-details/contact_owner";
+import PropertyLocation from "../../components/property-details/property_location";
+import AgentProperties from "../../components/property-details/agent-properties";
 import seeall from "../../assets/images/seeall.svg";
 import Image from "next/image";
-import RelatedProperties from "../../components/related-properties-card";
-import LoremIpsum from "../../components/lorem-ipsum";
-import RequestCall from "../../components/request-callback";
-import LoremText from "../../components/lorem-text";
-import SimilarProperties from "../../components/similar-properties";
+import RelatedProperties from "../../components/property-details/related-properties-card";
+import LoremIpsum from "../../components/property-details/lorem-ipsum";
+import RequestCall from "../../components/property-details/request-callback";
+import LoremText from "../../components/property-details/lorem-text";
+import SimilarProperties from "../../components/property-details/similar-properties";
 
 const Home = () => {
   const number = 20;
@@ -27,46 +25,16 @@ const Home = () => {
   return (
     <div>
       <div className={`${styles.body_background} pb-5`}>
-        {/* <HomeDetails /> */}
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
             <ImageGrid />
-            {/* <Review /> */}
             <Aboutproperty />
             <Amenties />
             <ContactOwner />
             <PropertyLocation />
             <AgentProperties />
-            {/* <div className={`d-flex justify-content-between my-2 `}>
-            <div className={`${styles.related_properties}`}>
-              Related Properties
-            </div>
-            <button
-              className={`${styles.seeall_button} d-flex align-items-center `}
-            >
-              <span>See All </span>
-              <span className={`mt-1 ms-2 `}>
-                {" "}
-                <Image
-                  src={seeall}
-                  alt="Picture of the autho"
-                  width={15}
-                  height={15}
-                />
-              </span>
-            </button>
-          </div>
-          <div className={`${styles.scrollmenu}`}>
-            <div ref={ref} className={`${styles.row} d-flex`}>
-              {[...Array(number)].map((item, index) => {
-                return <RelatedProperties />;
-              })}
-            </div>
-          </div> */}
           </div>
           <div className="col-lg-3 col-11">
-            {/* <OwnerContact />
-          <ContactUs /> */}
             <RequestCall />
             <LoremIpsum />
             <LoremText />
@@ -74,13 +42,11 @@ const Home = () => {
         </div>
       </div>
       <div className="row d-flex justify-content-center pt-4">
-      <div className="col-lg-7">
-        <SimilarProperties />        
-       
+        <div className="col-lg-7">
+          <SimilarProperties />
+        </div>
+        <div className="col-lg-3"> </div>
       </div>
-      <div className="col-lg-3"> </div>
-      </div>
-      
     </div>
   );
 };

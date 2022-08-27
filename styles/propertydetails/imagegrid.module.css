@@ -45,7 +45,7 @@
 
 .property_details {
   background: #ffffff 0% 0% no-repeat padding-box;
-  border-radius: 20px;
+  border-radius: 8px;
   opacity: 1;
 }
 .property_area {
@@ -115,19 +115,18 @@
   width: 20px;
   width: 20px;
 }
+
 @media only screen and (max-width: 992px) {
+
   .mobile_seemore_button {
     right: 11%;
   }
   .property_save {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+   border: none;
   }
   .property_saved {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+ 
+    border: none;
   }
 }
 @media only screen and (max-width: 768px) {

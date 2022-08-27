@@ -1,16 +1,20 @@
 import React from "react";
+import { useState } from "react";
+import saved from "../../../assets/icons/saved.svg";
+import save from "../../../assets/icons/save.svg";
 import Image from "next/image";
-import home from "../../assets/images/home.png";
-import styles from "../../styles/propertydetails/relatedproperties.module.css";
-import likeimage from "../../assets/images/likeimage.svg";
-import squarearea from "../../assets/images/about-property-images/sqft.svg";
-import bathroom from "../../assets/images/about-property-images/bathroom.svg";
-import furniture from "../../assets/images/about-property-images/furniture.svg"
+import home from "../../../assets/images/home.png";
+import styles from "../../../styles/propertydetails/relatedproperties.module.css";
+import likeimage from "../../../assets/images/likeimage.svg";
+import squarearea from "../../../assets/images/about-property-images/sqft.svg";
+import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
+import furniture from "../../../assets/images/about-property-images/furniture.svg";
 const RelatedProperties = () => {
+  const [liked, setLiked] = useState(false);
   const number = 20;
   return (
     <div className="me-4">
-      <div className={`${styles.related_image} `}>
+      <div className={`${styles.related_image} mb-1 mb-lg-2`}>
         <div className={`position-relative`}>
           <Image
             src={home}
@@ -23,12 +27,18 @@ const RelatedProperties = () => {
             Luxurious
           </div>
           <div className={`${styles.like_image} position-absolute`}>
-            <Image
-              src={likeimage}
-              alt="Picture of the author"
-              width={30}
-              height={30}
-            />
+            <button
+              onClick={() => setLiked(!liked)}
+              className={`${styles.save_image_button} `}
+            >
+              <Image
+                className="d-flex justify-content-center pt-2"
+                src={liked ? saved : save}
+                alt="Picture of the author"
+                width={25}
+                height={25}
+              />
+            </button>
           </div>
         </div>
 
@@ -37,11 +47,12 @@ const RelatedProperties = () => {
           <div className={`${styles.related_properties_location} `}>
             2 BHK flat in Vijayanagar, Mysuru
           </div>
-          <div
-            className={`${styles.ready_to_move} pt-1 d-flex `}
-          >
+          <div className={`${styles.ready_to_move} pt-1 d-flex `}>
             <i className="ri-map-pin-2-fill "></i>
-            <span>2Nd Floor, Dejgow Building, Kannada Sahithya <br/>Parishath Rd, Mysuru - 570017</span>
+            <span>
+              2Nd Floor, Dejgow Building, Kannada Sahithya <br />
+              Parishath Rd, Mysuru - 570017
+            </span>
           </div>
           <div className="row mt-2">
             {aboutproperties.map((item, index) => {
@@ -102,5 +113,4 @@ const aboutproperties = [
     heading: "Floor",
     amenity: "3 out of 15",
   },
- 
 ];

@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import people from "../../assets/images/imagereview/people.png";
-import seeall from "../../assets/images/seeall.svg";
-import styles from "../../styles/propertydetails/similarProperties.module.css";
-import proptertyimagegrid1 from "../../assets/images/proptertyimagegrid1.png";
-import facing from "../../assets/images/about-property-images/facing.svg";
-import floor from "../../assets/images/about-property-images/floor.svg";
-import furniture from "../../assets/images/about-property-images/furniture.svg";
-import bathroom from "../../assets/images/about-property-images/bathroom.svg";
-import transaction from "../../assets/images/about-property-images/transactions.svg";
-import squarearea from "../../assets/images/about-property-images/sqft.svg";
+import people from "../../../assets/images/imagereview/people.png";
+import seeall from "../../../assets/images/seeall.svg";
+import styles from "../../../styles/propertydetails/similarProperties.module.css";
+import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
+import facing from "../../../assets/images/about-property-images/facing.svg";
+import floor from "../../../assets/images/about-property-images/floor.svg";
+import furniture from "../../../assets/images/about-property-images/furniture.svg";
+import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
+import transaction from "../../../assets/images/about-property-images/transactions.svg";
+import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import RelatedProperties from "../related-properties-card";
+import homeimage from "../../../assets/images/home.png"
 
 const SimilarProperties = () => {
   let n = 10;
@@ -43,7 +44,7 @@ const SimilarProperties = () => {
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,`;
   const Alltext = readless === true ? text : text.slice(0, 200);
   return (
-    <div>
+    <div className="">
       <div className="d-flex justify-content-between px-2">
         <div
           className={`fs_24 fw_600 fontFam_poppins ${styles.similar_properties_heading}`}
@@ -70,8 +71,8 @@ const SimilarProperties = () => {
 
       {mobile ? (
         <div>
-          <div className={`row p-3`}>
-            <div className={`${styles.scrollmenu} `}>
+          <div className={`row p-3  `}>
+            <div className={`${styles.scrollmenu}  `}>
               <div ref={ref} className={`${styles.row} d-flex`}>
                 {[...Array(n)].map((item, index) => {
                   return <RelatedProperties/>;
@@ -92,10 +93,12 @@ const SimilarProperties = () => {
         <div className={`${styles.similar_properties_card} p-2 row mt-3`}>
           <div className={`position-relative col-lg-3 `}>
             <Image
-              src={proptertyimagegrid1}
+              src={homeimage}
               alt="Picture of the autho"
+              className={`${styles.home_image}`}
               width={200}
               height={280}
+              layout="fill"
             />
             <div
               className={`${styles.luxurius} position-absolute fs_15 fw_500 fontFam_poppins`}
@@ -104,7 +107,7 @@ const SimilarProperties = () => {
             </div>
           </div>
 
-          <div className={`d-flex flex-column ps-1 col-lg-7`}>
+          <div className={`d-flex flex-column ps-2 col-lg-7`}>
             <div className="d-flex align-items-center">
               <div
                 className={`${styles.similar_property_location} fs_18 fw_500 fontFam_poppins`}
@@ -132,17 +135,17 @@ const SimilarProperties = () => {
                     <Image
                       src={item.image}
                       alt="Picture of the author"
-                      width={25}
-                      height={25}
+                      width={20}
+                      height={20}
                     />
                     <div className="d-flex flex-column ps-2">
                       <span
-                        className={`${styles.about_property_heading} fs_9  fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_heading} fs_8  fw_500 fontFam_poppins`}
                       >
                         {item.heading}
                       </span>
                       <span
-                        className={`${styles.about_property_amenity} fs_9 fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_amenity} fs_8 fw_500 fontFam_poppins`}
                       >
                         {item.amenity}
                       </span>

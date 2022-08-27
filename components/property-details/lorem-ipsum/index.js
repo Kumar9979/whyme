@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../styles/propertydetails/loremipsum.module.css";
-import pointing from "../../assets/images/pointing.svg";
+import styles from "../../../styles/propertydetails/loremipsum.module.css";
+import pointing from "../../../assets/images/pointing.svg";
+// import pointing from "../../../assets/images/pointing.svg";
 import Image from "next/dist/client/image";
 
 const LoremIpsum = () => {

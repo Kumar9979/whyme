@@ -22,18 +22,25 @@
    list-style: none;
 
 }
-.amenties_list::before {
+.amenties_list::marker {
   content: "\2022";
   color: #24734E;
-  font-weight: bold;
+  font-weight: 900;
   display: inline-block; 
-  width: 1rem;
-  margin-left: -1em;
+  font-size: 20px;
+  
+  
 }
-/* @media only screen and (max-width: 992px) {
+
+
+/* .amenties_list::marker{
+font-size: 20px;
+content: "/2022";
+} */
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
   .amenties_list {
-    font-size: 15px;
+    font-size: 10px;
  
   }
     
-} */
+}

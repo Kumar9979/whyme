@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-import styles from "../../styles/propertydetails/agentproperties.module.css";
-import image from "../../assets/images/imagereview/people.png";
-import star from "../../assets/images/star.svg";
+import styles from "../../../styles/propertydetails/agentproperties.module.css";
+import image from "../../../assets/images/imagereview/people.png";
+import star from "../../../assets/images/star.svg";
 import RelatedProperties from "../related-properties-card";
-import arrowleft from "../../assets/images/arrow_left.svg";
-import arrowright from "../../assets/images/arrow_right.svg";
-import seeall from "../../assets/images/seeall.svg";
+import arrowleft from "../../../assets/images/arrow_left.svg";
+import arrowright from "../../../assets/images/arrow_right.svg";
+import seeall from "../../../assets/images/seeall.svg";
 
 const AgentProperties = () => {
   let n = 10;
@@ -17,7 +17,7 @@ const AgentProperties = () => {
 
   return (
     <div>
-      <div className={`${styles.agent_properties} p-3 mt-4`}>
+      <div className={`${styles.agent_properties} p-3 mt-4 `}>
         <div className="d-flex justify-content-between align-items-center ">
           <div className={`${styles.agent_properties_text}`}>
             See More Properties By{" "}

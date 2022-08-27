@@ -1,7 +1,7 @@
 import React from "react";
-import pointing from "../../assets/images/pointing.svg";
+import pointing from "../../../assets/images/pointing.svg";
 import Image from "next/dist/client/image";
-import styles from "../../styles/propertydetails/lorem.module.css";
+import styles from "../../../styles/propertydetails/lorem.module.css";
 
 const LoremText = () => {
   return (

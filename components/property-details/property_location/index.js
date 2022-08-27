@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { usePosition } from "../../pages/post-property/property-details/usePosition";
-import styles from "../../styles/propertydetails/propertylocation.module.css";
+import {usePosition} from "../../../pages/post-property/property-details/usePosition"
+// import { usePosition } from "../../pages/post-property/property-details/usePosition";
+import styles from "../../../styles/propertydetails/propertylocation.module.css";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import PlacesAutocomplete from "../../pages/post-property/property-details/placesAutocomplete";
+import PlacesAutocomplete from "../../../pages/post-property/property-details/placesAutocomplete";
 import Geocode from "react-geocode";
 
 const PropertyLocation = () => {
@@ -50,7 +51,7 @@ console.log(selected)
   }, [lat, lng]);
 
   return (
-    <div className={`mt-3 ${styles.property_location} p-4`}>
+    <div className={`mt-4 ${styles.property_location} p-3 p-lg-4`}>
       <div className={`${styles.location_text}`}>Location</div>
       <hr className={`${styles.horizontal_line}`}></hr>
       <div className="row">
@@ -60,8 +61,8 @@ console.log(selected)
             2nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
             Karnataka 570017
           </div>
-          <div>
-            <i className={`${styles.location_icon} ri-map-pin-2-fill mt-1`}></i>
+          <div className="d-flex align-items-center">
+            <i className={`${styles.location_icon} ri-map-pin-2-fill`}></i>
             <span>
               <button className={`${styles.view_map}`}>View on map</button>
             </span>

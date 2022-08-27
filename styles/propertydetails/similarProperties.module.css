@@ -60,13 +60,13 @@
   border-radius: 26px;
   opacity: 1;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .owner_image {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .posted_date {
-    color: #323D5A;
+  color: #323d5a;
 }
 .scrollmenu {
   width: 100%;
@@ -86,4 +86,8 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
+}
+.home_image {
+  border-radius: 10px;
+  opacity: 1;
 }
