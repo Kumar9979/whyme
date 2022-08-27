@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
     "/profile/my-properties",
     "/profile/add-a-property",
   ];
+  
   return (
     <>
       <Head>

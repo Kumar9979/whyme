@@ -75,7 +75,7 @@ const ApartmentFlat = ({ show, handleClose }) => {
                     <div className="">
                       <Progress
                         type="circle"
-                        percent={70}
+                        percent={77}
                         width={60}
                         strokeWidth={15}
                         strokeColor="#50BF97"
