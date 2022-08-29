@@ -13,6 +13,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
+  const [menuOpen, setMenuOpen] = useState(false);
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -143,8 +144,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
       contentClassName={`${styles.card_radius}`}
       //   size={'lg'}
     >
-      <Modal.Body
-      contentClassName={`${styles.card_radius}`}>
+      <Modal.Body contentClassName={`${styles.card_radius}`}>
         {" "}
         <div className="px-lg-2">
           <div className={`${styles.heading} d-flex justify-content-between `}>
@@ -161,7 +161,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
               </span>
             </div>
           </div>
-          <hr/>
+          <hr />
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className=" text-start mt-3">
@@ -415,8 +415,15 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                           >
                             Furnishing status{" "}
                           </label>
-                          <div onClick={() => setoptionType("furnishingStatus")}>
+                          <div
+                                onMouseEnter={() => setMenuOpen(true)}
+                            onClick={() => setoptionType("furnishingStatus")}
+                          >
+
                             <Select
+                         
+
+                              menuIsOpen={menuOpen}
                               id="FurnishedStatus"
                               options={furnishingStatus}
                               type="text"
@@ -425,7 +432,9 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                               styles={customStyles}
                               name="FurnishedStatus"
                               value={furnishingStatus.filter((option) => {
-                                return option.value === formik.values.FurnishedStatus;
+                                return (
+                                  option.value === formik.values.FurnishedStatus
+                                );
                               })}
                               onChange={(selectedOption) => {
                                 let event = {
@@ -441,18 +450,18 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                               }}
                             />
                           </div>
-                          {formik.errors.FurnishedStatus && formik.touched.FurnishedStatus && (
-                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                              <i className="ri-error-warning-line me-1  "></i>
-                              <span> {formik.errors.FurnishedStatus}</span>
-                            </div>
-                          )}
+                          {formik.errors.FurnishedStatus &&
+                            formik.touched.FurnishedStatus && (
+                              <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
+                                <i className="ri-error-warning-line me-1  "></i>
+                                <span> {formik.errors.FurnishedStatus}</span>
+                              </div>
+                            )}
                         </div>
                       </div>
                     </div>
                     <div class="col-4">
-                      
-                    <div class="">
+                      <div class="">
                         <div className={`${styles.total_floors_text} `}>
                           <label
                             htmlFor="Status"
@@ -494,11 +503,8 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                           )}
                         </div>
                       </div>
-                      
                     </div>
                     <div class="col-4">
-                      
-                      
                       <div class="">
                         <div className={`${styles.total_floors_text}  mb-3`}>
                           <label
@@ -517,7 +523,9 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                               styles={customStyles}
                               name="Transaction"
                               value={transaction.filter((option) => {
-                                return option.value === formik.values.Transaction;
+                                return (
+                                  option.value === formik.values.Transaction
+                                );
                               })}
                               onChange={(selectedOption) => {
                                 let event = {
@@ -533,28 +541,28 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                               }}
                             />
                           </div>
-                          {formik.errors.Transaction && formik.touched.Transaction && (
-                            <div className="d-flex align-items-center text-danger mt-1 fs_sm_12 fs_13 ">
-                              <i className="ri-error-warning-line me-1  "></i>
-                              <span> {formik.errors.Transaction}</span>
-                            </div>
-                          )}
+                          {formik.errors.Transaction &&
+                            formik.touched.Transaction && (
+                              <div className="d-flex align-items-center text-danger mt-1 fs_sm_12 fs_13 ">
+                                <i className="ri-error-warning-line me-1  "></i>
+                                <span> {formik.errors.Transaction}</span>
+                              </div>
+                            )}
                         </div>
                       </div>
-                      
-                      
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className={`d-flex justify-content-end`}>
-            <button type="submit" className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 fs_sm_15 mt-2`}>
-                <span>
-                Save
-                </span>
-            </button>
-          </div>
+              <button
+                type="submit"
+                className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 fs_sm_15 mt-2`}
+              >
+                <span>Save</span>
+              </button>
+            </div>
           </form>
         </div>
       </Modal.Body>

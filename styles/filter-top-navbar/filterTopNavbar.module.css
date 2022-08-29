@@ -14,3 +14,79 @@
 .buy_text{
     color: #50BF97;
 }
+.dropDown_property_type{
+    max-width: 18rem;
+}
+.property_types_text{
+    color: #BCC7CE;
+}
+.first_row_button{
+    background-color: #50BF97;
+    border: none;
+    border-radius: 5px;
+}
+.first_button:hover{
+    background-color: #50BF97 !important;
+}
+
+.second_row_button{
+   background-color: #DBE9F200;
+    border: none;
+    border-radius: 5px;
+    border:1px solid #BCC7CE;
+}
+.second_button:hover{
+    background-color: #50BF97 !important;
+}
+
+
+
+.App {
+    font-family: sans-serif;
+  }
+  
+  .dropdown {
+    margin: 0 auto;
+    z-index: 10000;
+    width: 300px;
+    position: relative;
+  }
+  
+  .dropdown  {
+    z-index: 10;
+  }
+  .dropdown_btn {
+    cursor: pointer;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #777;
+    font-weight: 500;
+  }
+  .dropdown_content {
+    position: absolute;
+    /* top: 110%; */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  }
+  .item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  .item:hover {
+    background: #fcfcfc;
+  }
+  
+  .button {
+    z-index: -1;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
