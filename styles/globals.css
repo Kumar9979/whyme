@@ -130,6 +130,12 @@ border-radius: 12px !important;
   color: #323D5A;
 }
 
+
+
+.color_black {
+  color: #000000;
+}
+
 @media only screen and (max-width: 992px) {
   .fs_md_7{
     font-size: 7px;

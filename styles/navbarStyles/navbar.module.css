@@ -58,22 +58,23 @@
   object-fit: contain;
   width: 0.2rem;
 }
-.mobile_ProfileIcon{
+.mobile_ProfileIcon {
   border-radius: 2px;
   object-fit: cover;
 }
-.mobile_burger{
+.mobile_burger {
   border: none;
   background: none;
   font-size: 1.2rem;
 }
 .DropdownText {
-  color: #323d5a;
   font-family: Poppins;
   font-size: 1rem;
 }
-
-.linkMenu :hover{
+.linkMenu {
+  color: #323d5a;
+}
+.linkMenu:hover {
   color: #1d72db !important;
 }
 @media only screen and (max-width: 992px) {
