@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import * as dummyApis from "../redux/actions/josnApisAction";
 import { useEffect } from "react";
+import Dropdown from "../components/dropdown/dropdown";
 export default function Home() {
   const reducer = useSelector((store) => store);
   console.log(reducer);
@@ -24,7 +25,7 @@ export default function Home() {
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
-
+<Dropdown/>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>

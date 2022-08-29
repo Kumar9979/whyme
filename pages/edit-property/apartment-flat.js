@@ -1,11 +1,16 @@
-import React from 'react'
-import ApartmentFlat from '../../components/edit-property/apartment-flat'
+import React from "react";
+import EditAgiculture from "../../components/edit-property/edit-agriculture/agriculture";
+import EditCommercial from "../../components/edit-property/edit-commercial/commercial";
+import EditApartmentFlat from "../../components/edit-property/edit-resedential/apartment-flat";
 
 const ApartmentFlatPage = () => {
   return (
+    <>
+      <EditApartmentFlat />
+      {/* <EditCommercial /> */}
+      {/* <EditAgiculture/> */}
+    </>
+  );
+};
 
-        <ApartmentFlat/>
-  )
-}
-
-export default ApartmentFlatPage
+export default ApartmentFlatPage;

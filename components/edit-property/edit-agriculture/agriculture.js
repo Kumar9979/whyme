@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/edit-property/apartment-flat.module.css";
+import styles from "../../../styles/edit-property/apartment-flat.module.css";
 import Image from "next/image";
-import backIcon from "../../assets/icons/back-icon.svg";
-import Location from "../../assets/icons/location-icon.svg";
-import ApartmentUploadPhoto from "../modals/apartmentUploadPhoto";
-import ApartmentDeletePhoto from "../modals/apartmentDeletePhoto";
-import closeIcon from "../../assets/icons/close.png";
-import Delete from "../../assets/icons/delete.svg";
+import backIcon from "../../../assets/icons/back-icon.svg";
+import Location from "../../../assets/icons/location-icon.svg";
+import ApartmentUploadPhoto from "../../modals/apartmentUploadPhoto";
+import ApartmentDeletePhoto from "../../modals/apartmentDeletePhoto";
+import closeIcon from "../../../assets/icons/close.png";
+import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import ImageUpload from "../ImageUpload/Image-upload";
-import { usePosition } from "../../pages/post-property/property-details/usePosition";
+import ImageUpload from "../../ImageUpload/Image-upload";
+import { usePosition } from "../../../pages/post-property/property-details/usePosition";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
 
-const ApartmentFlat = () => {
+const EditAgiculture = () => {
   const [show, setShow] = useState(false);
   const [imageNumber, setImageNumber] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -162,35 +162,6 @@ const ApartmentFlat = () => {
                   >
                     Get 5 times more response! just add the following
                   </span>
-                  {/* <div>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Dropdown button
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Something else here
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -360,45 +331,7 @@ const ApartmentFlat = () => {
             </div>
           </div>
         </div>
-        <div className={`${styles.card} card mt-4`}>
-          <div className={`card-body`}>
-            <div
-              className={`d-flex align-items-center justify-content-between`}
-            >
-              <div
-                className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
-              >
-                Amenities
-              </div>
-              <button
-                onClick={() => {}}
-                className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
-              >
-                Edit Amenities
-              </button>
-            </div>
-            <hr className={`${styles.hr}`} />
-            <div className={`row mt-4`}>
-              {AmentiesData.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={`col-md-4 col-6 col-sm-6 col-xl-4`}
-                  >
-                    <p
-                      className={`${styles.Amenities_text} d-flex align-items-center fontFam_poppins`}
-                    >
-                      <span className={`${styles.Amenities_dot}`}>
-                        {"\u2022"}
-                      </span>
-                      {item}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+
         <div className={`${styles.card} card mt-4`}>
           <div className={`card-body`}>
             <div
@@ -450,8 +383,8 @@ const ApartmentFlat = () => {
                 <p className={`fontFam_poppins ${styles.priceHeading}`}>
                   Area Details
                 </p>
-                <div className="d-flex align-item-center justify-content-between">
-                  <div>
+                <div className="row">
+                  <div className={`col-6 mb-3`}>
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -461,7 +394,7 @@ const ApartmentFlat = () => {
                       1200Sqft
                     </div>
                   </div>
-                  <div>
+                  <div className={`col-6 mb-3`}>
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -469,6 +402,36 @@ const ApartmentFlat = () => {
                     </div>
                     <div className={`fontFam_poppins ${styles.price_text}`}>
                       1000Sqft
+                    </div>
+                  </div>
+                  <div className={`col-6 mb-3`}>
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                     Plot Length
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                    1200 ft
+                    </div>
+                  </div>
+                  <div className={`col-6 mb-3`}>
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                     Plot Width
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                      1000Sqft
+                    </div>
+                  </div>
+                  <div className={`col-6 mb-3`}>
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                     Plot Area
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                    1200Sqft
                     </div>
                   </div>
                 </div>
@@ -566,7 +529,7 @@ const ApartmentFlat = () => {
   );
 };
 
-export default ApartmentFlat;
+export default EditAgiculture;
 
 const propertyData = [
   {
@@ -578,7 +541,7 @@ const propertyData = [
     text: "3",
   },
   {
-    heading: "Balconies",
+    heading: "Road Facing Plot Width",
     text: "7",
   },
   {
@@ -590,24 +553,8 @@ const propertyData = [
     text: "2",
   },
   {
-    heading: "Facing",
-    text: "North",
-  },
-  {
     heading: "Furnishing Status",
     text: "Furnished",
-  },
-  {
-    heading: "Status",
-    text: "Ready To Move",
-  },
-  {
-    heading: "Transaction",
-    text: "Resale",
-  },
-  {
-    heading: "Age Of Construction",
-    text: "7",
   },
 ];
 

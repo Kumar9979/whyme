@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../assets/icons/close.png";
+import closeIcon from "../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../styles/modals/apartmentEditProperty.module.css";
+import styles from "../../../styles/modals/apartmentEditProperty.module.css";
 import Select from "react-select";
 
 import { useFormik } from "formik";

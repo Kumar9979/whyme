@@ -90,6 +90,12 @@
   color:#1D72DB;
   font-weight: 500;
 }
+.saveBtn{
+  background-color: #1D72DB;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px 25px 8px 25px;
+}
 .Amenities_text{
   font-size: 14px;
   color: #323d5a;
