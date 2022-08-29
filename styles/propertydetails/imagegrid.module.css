@@ -96,6 +96,14 @@
   opacity: 1;
   color: #bcc7ce;
 }
+
+.property_save:hover {
+  background: #1d72db00 0% 0% no-repeat padding-box;
+  border: 2px solid #50bf97;
+  border-radius: 26px;
+  opacity: 1;
+  color: #50bf97;
+}
 .property_saved {
   background: #1d72db00 0% 0% no-repeat padding-box;
   border: 2px solid #50bf97;
@@ -115,8 +123,19 @@
   width: 20px;
   width: 20px;
 }
+.button_width {
+  width: 8rem;
+}
+.mobile_button_width {
+  width: 4rem;
+}
 
 @media only screen and (max-width: 992px) {
+  .property_save:hover {
+    background: #1d72db00 0% 0% no-repeat padding-box;
+    border: none
+  
+  }
 
   .mobile_seemore_button {
     right: 11%;
@@ -147,6 +166,14 @@
 @media only screen and (max-width: 320px) {
   .mobile_seemore_button {
     right: 24%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1380px) {
+  .construction_company {
+   margin-bottom: 2rem;
+  }
+  .ready_apartment {
+   margin-bottom: 2rem;
   }
 }
 

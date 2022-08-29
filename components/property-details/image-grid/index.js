@@ -19,11 +19,20 @@ import calling from "../../../assets/icons/calling.svg";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 
-
 const ImageGrid = () => {
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
-
+  const [like, setLike] = useState(false);
+  const [saveIcon, setSaveIcon] = useState(save);
+  function likeHovered(state) {
+    if (state === "hovered") {
+      setSaveIcon(saved);
+    } else if (state === "leaved" && liked === false) {
+      setSaveIcon(save);
+    } else if ( state === "leaved" && liked === true) {
+      setSaveIcon(saved);
+    } 
+  }
   useEffect(() => {
     if (window.innerWidth < 992) {
       setMobile(true);
@@ -54,11 +63,13 @@ const ImageGrid = () => {
         <div className="col-11">
           <div className="d-flex align-items-center">
             <p
-              className={`${styles.property_area} lh-sm m-0 p-0 fs_22 fw_600 fontFam_poppins me-lg-2 me-0 `}>
+              className={`${styles.property_area} lh-sm m-0 p-0 fs_22 fw_600 fontFam_poppins me-lg-2 me-0 `}
+            >
               3BHK Apartment in Vijayanagar, Mysuru
             </p>
             <div
-              className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}>
+              className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
+            >
               Project by Brigade
             </div>
             <div
@@ -68,7 +79,7 @@ const ImageGrid = () => {
             </div>
           </div>
           <p
-            className={`${styles.property_location} px-1 mt-2 fs_12 fw_500 fontFam_poppins d-flex align-items-center`}
+            className={`${styles.property_location} px-1 mt-2 fs_12 fw_500 fontFam_poppins d-flex justify-content-spacearound`}
           >
             <span className="pe-1">
               {" "}
@@ -200,41 +211,60 @@ const ImageGrid = () => {
           </span>
         </div>
 
-        <div className="d-flex align-items-center pe-2">
-          <button
-            onClick={() => setLiked(!liked)}
-            className={
-              liked
-                ? `${styles.property_saved} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                : `${styles.property_save} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-            }
-          >
-            <span className="d-flex align-items-center pe-0 pe-lg-2">
-              {" "}
-              {
-                mobile? ( <Image
-                  src={liked ? saved : save}
+        <div className={`d-flex align-items-center pe-2`}>
+          {mobile ? (
+            <div className={``}>
+            <button
+              onClick={() => setLike(!like)}
+              className={
+                like
+                  ? ` ${styles.property_saved} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                  : ` ${styles.property_save} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+              }
+            >
+              <span className="d-flex align-items-center pe-0 pe-lg-2">
+                {" "}
+                <Image
+                  src={like ? save : saved}
                   alt="Picture of the author"
                   className={`${styles.save_image}`}
                   width={25}
                   height={25}
-                />):(
-                  <Image
-                src={liked ? saved : save}
-                alt="Picture of the author"
-                className={`${styles.save_image}`}
-                width={15}
-                height={15}
-              />
-                )
+                />
+              </span>
+              <span className="d-none d-lg-block">
+                {liked ? "saved" : "save"}
+              </span>
+            </button>
+            </div>
+          ) : (
+            <div className={``}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={
+                liked
+                  ? `${styles.property_saved} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                  : `${styles.property_save} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
               }
-             
-              
-            </span>
-            <span className="d-none d-lg-block">
-              {liked ? "saved" : "save"}
-            </span>
-          </button>
+            >
+              <span className="d-flex align-items-center pe-0 pe-lg-2">
+                {" "}
+                <Image
+                  src={saveIcon}
+                  alt="Picture of the author"
+                  className={`${styles.save_image}`}
+                  width={20}
+                  height={20}
+                />
+              </span>
+              <span className="d-none d-lg-block">
+                {liked ? "saved" : "save"}
+              </span>
+            </button>
+            </div>
+          )}
 
           {mobile ? (
             <div className="ps-4  ">
@@ -256,7 +286,6 @@ const ImageGrid = () => {
       </div>
 
       <Modal
-
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered

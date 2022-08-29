@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import saved from "../../../assets/icons/saved.svg";
+import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
 import styles from "../../../styles/propertydetails/similarProperties.module.css";
@@ -11,7 +13,7 @@ import bathroom from "../../../assets/images/about-property-images/bathroom.svg"
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import RelatedProperties from "../related-properties-card";
-import homeimage from "../../../assets/images/home.png"
+import homeimage from "../../../assets/images/home.png";
 
 const SimilarProperties = () => {
   let n = 10;
@@ -19,6 +21,19 @@ const SimilarProperties = () => {
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
+
+  const [liked, setLiked] = useState(false);
+  const [saveIcon, setSaveIcon] = useState(save);
+  function likeHovered(state) {
+    if (state === "hovered") {
+      setSaveIcon(saved);
+    } else if (state === "leaved" && liked === false) {
+      setSaveIcon(save);
+    } else if (state === "leaved" && liked === true) {
+      setSaveIcon(saved);
+    }
+  }
+
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     if (window.innerWidth < 992) {
@@ -45,7 +60,7 @@ const SimilarProperties = () => {
   const Alltext = readless === true ? text : text.slice(0, 200);
   return (
     <div className="">
-      <div className="d-flex justify-content-between px-2">
+      <div className="d-flex justify-content-between px-2 ">
         <div
           className={`fs_24 fw_600 fontFam_poppins ${styles.similar_properties_heading}`}
         >
@@ -71,11 +86,11 @@ const SimilarProperties = () => {
 
       {mobile ? (
         <div>
-          <div className={`row p-3  `}>
+          <div className={`row p-3  mb-5`}>
             <div className={`${styles.scrollmenu}  `}>
               <div ref={ref} className={`${styles.row} d-flex`}>
                 {[...Array(n)].map((item, index) => {
-                  return <RelatedProperties/>;
+                  return <RelatedProperties />;
                 })}
               </div>
             </div>
@@ -86,11 +101,10 @@ const SimilarProperties = () => {
           <div className="col-6 col-lg-4">
           <RelatedProperties/>
           </div> */}
-          
           </div>
         </div>
       ) : (
-        <div className={`${styles.similar_properties_card} p-2 row mt-3`}>
+        <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
           <div className={`position-relative col-lg-3 `}>
             <Image
               src={homeimage}
@@ -100,6 +114,22 @@ const SimilarProperties = () => {
               height={280}
               layout="fill"
             />
+            <div className={`${styles.like_image} position-absolute`}>
+              <button
+                onMouseEnter={() => likeHovered("hovered")}
+                onMouseLeave={() => likeHovered("leaved")}
+                onClick={() => setLiked(!liked)}
+                className={`${styles.save_image_button} `}
+              >
+                <Image
+                  className="d-flex justify-content-center pt-2"
+                  src={saveIcon}
+                  alt="Picture of the author"
+                  width={25}
+                  height={25}
+                />
+              </button>
+            </div>
             <div
               className={`${styles.luxurius} position-absolute fs_15 fw_500 fontFam_poppins`}
             >

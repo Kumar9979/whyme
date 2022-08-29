@@ -1,7 +1,7 @@
 .contactus {
   box-shadow: 0px 0px 7px #ccc;
   border-radius: 12px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 85%;
 }
 .contactus_heading {
@@ -11,38 +11,64 @@
   font-size: 17px;
 }
 .horizontal_line {
-    color: #DBE9F2;
+  color: #dbe9f2;
 }
 .contact_us_label {
-    color: #1D1E1F;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+  color: #1d1e1f;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
 }
 .form_input {
-    background-color: #DBE9F200;
-    border-radius: 7px;
-    border-color: #DDDBDB;
+  background-color: #dbe9f200;
+  border-radius: 7px;
+  border-color: #dddbdb;
 }
-.form_input::placeholder {
+/* .form_input::placeholder {
     color: #DDDBDB;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 11px;   
     position: absolute;
     top: 30%;
-}
+} */
 .form_submit {
-    border-radius: 7px;
-    background-color: #1D72DB;
-    color: #FFFFFF;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 12px;   
-    border: none;
+  border-radius: 7px;
+  background-color: #1d72db;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  border: none;
 }
-@media only screen and (max-width: 992px)  {
-    .contactus {
-      width: 100%;
-    }
+.form_input:focus-visible {
+  outline: none !important;
+}
+.form_input {
+  border-color: #dddbdb;
+  height: 2rem;
+  border: 1px solid #dddbdb;
+  border-radius: 7px;
+  opacity: 1;
+}
+.form_input::placeholder  {
+  color: #dddbdb;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  position: absolute;
+  top: 20%;
+}
+.nmm{
+  height: 2rem;
+}
+@media only screen and (max-width: 992px) {
+  .contactus {
+    width: 100%;
   }
+}
+@media only screen and (min-width: 992px) and (max-width: 1320px) {
+  .contactus {
+    width: 100%;
+  }
+}

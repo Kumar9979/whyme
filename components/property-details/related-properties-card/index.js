@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import Image from "next/image";
@@ -11,6 +11,38 @@ import bathroom from "../../../assets/images/about-property-images/bathroom.svg"
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
 const RelatedProperties = () => {
   const [liked, setLiked] = useState(false);
+  const [mobile, setMobile] = useState(false);
+
+  const [like, setLike] = useState(false);
+  const [saveIcon, setSaveIcon] = useState(save);
+  function likeHovered(state) {
+    if (state === "hovered") {
+      setSaveIcon(saved);
+    } else if (state === "leaved" && liked === false) {
+      setSaveIcon(save);
+    } else if (state === "leaved" && liked === true) {
+      setSaveIcon(saved);
+    }
+  }
+  useEffect(() => {
+    if (window.innerWidth < 992) {
+      setMobile(true);
+    }
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 992) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const number = 20;
   return (
     <div className="me-4">
@@ -27,18 +59,36 @@ const RelatedProperties = () => {
             Luxurious
           </div>
           <div className={`${styles.like_image} position-absolute`}>
-            <button
-              onClick={() => setLiked(!liked)}
-              className={`${styles.save_image_button} `}
-            >
-              <Image
-                className="d-flex justify-content-center pt-2"
-                src={liked ? saved : save}
-                alt="Picture of the author"
-                width={30}
-                height={30}
-              />
-            </button>
+            {mobile ? (
+              <button
+               
+                onClick={() => setLike(!like)}
+                className={`${styles.save_image_button} `}
+              >
+                <Image
+                  className="d-flex justify-content-center pt-2"
+                  src={like ? save : saved}
+                  alt="Picture of the author"
+                  width={25}
+                  height={25}
+                />
+              </button>
+            ) : (
+              <button
+                onMouseEnter={() => likeHovered("hovered")}
+                onMouseLeave={() => likeHovered("leaved")}
+                onClick={() => setLiked(!liked)}
+                className={`${styles.save_image_button} `}
+              >
+                <Image
+                  className="d-flex justify-content-center pt-2"
+                  src={saveIcon}
+                  alt="Picture of the author"
+                  width={25}
+                  height={25}
+                />
+              </button>
+            )}
           </div>
         </div>
 
