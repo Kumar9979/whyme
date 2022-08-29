@@ -153,7 +153,7 @@ const App = () => (
             >
               <Image src={Rupee} />
             </span>
-            <span className=""  placeholder="Property types">kjkjkjk</span>
+            <span className=""  placeholder="Property types"></span>
             <span
               className={`${styles.dropdown} ms-4 d-flex align-items-center`}
             >
