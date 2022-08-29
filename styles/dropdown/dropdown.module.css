@@ -44,3 +44,7 @@
     margin: 0 auto;
   }
   
+.close_btn{
+    border: none;
+    background-color: transparent;
+}
