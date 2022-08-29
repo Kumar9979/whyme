@@ -13,6 +13,8 @@ const ProfileLayout = ({ children }) => {
   const router = useRouter();
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const fname = "Tony";
+  const lname = "Stark";
   useEffect(() => {
     if (window.innerWidth < 1065) {
       setMobile(true);
@@ -79,8 +81,15 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     } mb-3 d-flex align-items-center`}
                   >
-                    <Image className={styles.DropdownIcon} width={16} height={16} src={Clock} />
-                    <Link href="/profile/recently-viewed">
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Clock}
+                    />
+                    <Link
+                      href={`/profile/recently-viewed?first_name=${fname}&last_name=${lname}`}
+                    >
                       <a className={`ms-3 ${styles.sidebar_links}`}>
                         Recent Activities
                       </a>
@@ -93,7 +102,12 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                      <Image className={styles.DropdownIcon} width={16} height={16} src={Heart} />
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Heart}
+                    />
                     <Link href="/profile/shortlisted-properties">
                       <a className={`ms-3 ${styles.sidebar_links}`}>
                         Saved Properties
@@ -107,9 +121,16 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                      <Image className={styles.DropdownIcon} width={16} height={16} src={Key} />
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Key}
+                    />
                     <Link href="/profile/my-properties">
-                      <a className={` ms-3 ${styles.sidebar_links}`}>My Properties</a>
+                      <a className={` ms-3 ${styles.sidebar_links}`}>
+                        My Properties
+                      </a>
                     </Link>
                   </li>
                   <li
@@ -119,7 +140,12 @@ const ProfileLayout = ({ children }) => {
                         : styles.sidebar_list
                     }  mb-3 d-flex align-items-center`}
                   >
-                      <Image className={styles.DropdownIcon} width={16} height={16} src={Settings} />
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Settings}
+                    />
                     <Link href="/profile/add-a-property">
                       <a className={` ms-3 ${styles.sidebar_links}`}>
                         Settings
