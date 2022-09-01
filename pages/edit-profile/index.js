@@ -6,6 +6,7 @@ import Image from "next/image";
 import people from "../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import verified from "../../assets/icons/edit-profile-icons/verified.svg";
 
 const EditProfile = () => {
   const phoneregex = /^([+]\d{2})?\d{10}$/;
@@ -14,31 +15,32 @@ const EditProfile = () => {
     /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
   const formik = useFormik({
     initialValues: {
-      name: "",
-      phone: "",
-      email: "",
+      name: "Iman Khan",
+      phone: "6360749419",
+      email: "imankhan.coorg@gmail.com",
+      city: "Mysore",
     },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .matches(nameregex, "Invalid First Name")
-        .required("Required"),
-      phone: Yup.string()
-        .matches(phoneregex, "Invalid Phone Number")
-        .required("Required"),
-      email: Yup.string().email().required("Required"),
-    }),
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      localStorage.setItem("User", JSON.stringify(values));
-      alert(values);
-      resetForm();
-    },
+    // validationSchema: Yup.object({
+    //   name: Yup.string()
+    //     .matches(nameregex, "Invalid First Name")
+    //     .required("Required"),
+    //   phone: Yup.string()
+    //     .matches(phoneregex, "Invalid Phone Number")
+    //     .required("Required"),
+    //   email: Yup.string().email().required("Required"),
+    // }),
+    // onSubmit: (values, { resetForm }) => {
+    //   console.log(values);
+    //   localStorage.setItem("User", JSON.stringify(values));
+    //   alert(values);
+    //   resetForm();
+    // },
   });
   return (
     <ProfileLayout>
-      <div className={`${styles.edit_profile} mt-5 pt-5`}>
-        <div className={`${styles.edit_profile_card} p-5`}>
-          <div className="d-flex align-items-center">
+      <div className={`${styles.edit_profile} me-lg-5 me-0`}>
+        <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
+          <div className="d-flex align-items-center ">
             <button
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
@@ -52,170 +54,163 @@ const EditProfile = () => {
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_400 ms-2`}
             >
-              Edit Profile
+              My Profile
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
-          <div className="row">
-            <div className="col-9">
-              <div className="row">
-                <div className="col-4 d-flex flex-column">
-                  <h3
-                    className={`${styles.profile_picture_heading} fs_15 fw_500 fontFam_poppins`}
-                  >
-                    Profile Picture
-                  </h3>
-                  <Image
-                    src={people}
-                    className={`${styles.profile_photo}`}
-                    alt="Picture of the author"
-                    width={120}
-                    height={190}
-                  />
-                  <button
-                    className={`${styles.change_photo} py-1 mt-4 fs_14 fw_400 w-100`}
-                  >
-                    Change Picture
-                  </button>
-                  <button
-                    className={`${styles.remove_photo} py-1 mt-4 fs_14 fw_400 w-100`}
-                  >
-                    Remove Picture
-                  </button>
-                </div>
-                <div className="col-8 ">
-                  <div className={`${styles.form_width}`}>
-                  <div className="ps-2">
+
+          <div className="row ms-lg-4 ms-0 ">
+            <div className="col-lg-8 col-12">
+              <div className="row ">
+                <div className="col-6 col-lg-3 d-flex justify-content-center ">
+                  <div className="d-flex flex-column">
                     <h1
-                      className={`${styles.profile_type} fs_15 fw_500 fontFam_poppins`}
+                      className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
                     >
                       Profile Type{" "}
                       <span className={`${styles.type_buyer} fw_600 ps-3`}>
                         Buyer
                       </span>
                     </h1>
+                    <h3
+                      className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
+                    >
+                      Profile Picture
+                    </h3>
+                    <div className="">
+                      <Image
+                        src={people}
+                        className={`${styles.profile_photo}`}
+                        alt="Picture of the author"
+                        // width={60}
+                        height={210}
+                      />
+                    </div>
+                  </div>
+                </div>
 
-                    <form onSubmit={formik.handleSubmit}>
-                      <div className=" mt-3">
-                        <div className="form-group">
-                          <label
-                            className={`${styles.contact_us_label}`}
-                            for="exampleInputEmail1"
-                          >
-                            Full Name
-                          </label>
-                          <input
-                            type="text"
-                            className={` ${styles.form_input} w-100 ps-3 px-5`}
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
-                            placeholder="Enter your name"
-                            name="name"
-                            value={formik.name}
-                            onChange={formik.handleChange}
-                          />
-                          <div className={`${styles.error_height}`}>
-                            {formik.errors.name && formik.touched.name && (
-                              <span className={`text-danger fs_14 mb-0 `}>
-                                {formik.errors.name}
+                <div className="col-12 col-lg-9 d-flex justify-content-center justify-content-lg-start">
+                  <div className={`${styles.form_width}`}>
+                    <div className="ps-lg-2 ps-0">
+                      <h1
+                        className={`${styles.profile_type} fs_15 d-none d-lg-block fw_500 mt-4 mt-lg-0 d-flex justify-content-center fontFam_poppins`}
+                      >
+                        Profile Type{" "}
+                        <span className={`${styles.type_buyer} fw_600 ps-3`}>
+                          Buyer
+                        </span>
+                      </h1>
+
+                      <form onSubmit={formik.handleSubmit}>
+                        <div className="">
+                          <div className="form-group mt-3">
+                            <label
+                              className={`${styles.contact_us_label}`}
+                              for="exampleInputEmail1"
+                            >
+                              Full Name
+                            </label>
+
+                            <input
+                              type="text"
+                              readOnly
+                              className={` ${styles.form_input} w-100 py-1 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter your name"
+                              name="name"
+                              value={formik.values.name}
+                            />
+                          </div>
+
+                          <div className="form-group mt-3">
+                            <label
+                              className={`${styles.contact_us_label} `}
+                              for="exampleInputEmail1"
+                            >
+                              Email Address
+                            </label>
+                            <div
+                              className={`${styles.verified_input} w-100 py-1 mt-1 d-flex justify-content-between `}
+                            >
+                              <input
+                                type="email"
+                                readOnly
+                                className={` ${styles.email_input} w-75 ps-3  fs_15 fw_600 fontFam_poppins`}
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter your email address"
+                                name="email"
+                                value={formik.values.email}
+                              />
+                              <span className="d-flex align-items-center pe-2">
+                                <Image
+                                  src={verified}
+                                  alt="Picture of the author"
+                                  width={13}
+                                  height={13}
+                                />
+                                <span
+                                  className={`${styles.verified_text} ps-1 fw_500 fs_13 fontFam_poppins`}
+                                >
+                                  verified
+                                </span>
                               </span>
-                            )}
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="form-group ">
-                          <label
-                            className={`${styles.contact_us_label}`}
-                            for="exampleInputEmail1"
-                          >
-                            Email Address
-                          </label>
-                          <input
-                            type="email"
-                            className={` ${styles.form_input} w-100 ps-3`}
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
-                            placeholder="Enter your email address"
-                            name="email"
-                            value={formik.email}
-                            onChange={formik.handleChange}
-                          />
-                          <div className={`${styles.error_height}`}>
-                            {formik.errors.email && formik.touched.email && (
-                              <p className={`text-danger fs_14`}>
-                                {formik.errors.email}
-                              </p>
-                            )}
+                          <div className="form-group mt-3">
+                            <label
+                              className={`${styles.contact_us_label}`}
+                              for="exampleInputPassword1"
+                            >
+                              Mobile Number
+                            </label>
+                            <input
+                              readOnly
+                              type="text"
+                              className={` ${styles.form_input} w-100 mt-1 ps-3 py-1 fs_15 fw_600 fontFam_poppins`}
+                              id="exampleInputPassword1"
+                              placeholder="Enter your contact number"
+                              name="phone"
+                              value={formik.values.phone}
+                            />
                           </div>
-                        </div>
+                          <div className="form-group mt-3">
+                            <label
+                              className={`${styles.contact_us_label}`}
+                              for="exampleInputEmail1"
+                            >
+                              City
+                            </label>
+                            <input
+                              readOnly
+                              type="text"
+                              className={` ${styles.form_input} mt-1 w-100 py-1 ps-3 fs_15 fw_600 fontFam_poppins`}
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter your name"
+                              name="city"
+                              value={formik.values.city}
+                            />
+                          </div>
 
-                        <div className="form-group ">
-                          <label
-                            className={`${styles.contact_us_label}`}
-                            for="exampleInputPassword1"
-                          >
-                            Mobile Number
-                          </label>
-                          <input
-                            type="text"
-                            className={` ${styles.form_input} w-100 ps-3`}
-                            id="exampleInputPassword1"
-                            placeholder="Enter your contact number"
-                            name="phone"
-                            value={formik.values.phone}
-                            onChange={formik.handleChange}
-                          />
-                          <div className={`${styles.error_height}`}>
-                            {formik.errors.phone && formik.touched.phone && (
-                              <p className="text-danger fs_14">
-                                {formik.errors.phone}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <label
-                            className={`${styles.contact_us_label}`}
-                            for="exampleInputEmail1"
-                          >
-                            City
-                          </label>
-                          <input
-                            type="text"
-                            className={` ${styles.form_input} w-100 ps-3`}
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
-                            placeholder="Enter your name"
-                            name="name"
-                            value={formik.name}
-                            onChange={formik.handleChange}
-                          />
-                          <div className={`${styles.nmm}`}>
-                            {formik.errors.name && formik.touched.name && (
-                              <span className={`text-danger fs_14 mb-0 `}>
-                                {formik.errors.name}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="d-flex justify-content-between mt-5 w-75 ">
-                          <button
-                            className={`${styles.save_button_width} px-3 py-1 fs_15 fw_400`}
-                          >
-                            Save Changes
-                          </button>
-                          <button
+                          <div className="d-flex justify-content-between mt-4 w-75 ">
+                            <button
+                              className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
+                            >
+                              Edit Profile
+                            </button>
+                            {/* <button
                             className={`${styles.undo_button_width}  px-3 py-1 ms-4 fs_15 fw_500`}
                           >
                             Undo Changes
-                          </button>
+                          </button> */}
+                          </div>
                         </div>
-                      </div>
-                    </form>
+                      </form>
+                    </div>
                   </div>
-                  </div>
-                  
                 </div>
               </div>
             </div>
