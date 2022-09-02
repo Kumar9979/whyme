@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import styles from "../../styles/dropdown/dropdown.module.css";
 import { motion } from "framer-motion";
 import { Space } from "antd";
-import Close from "../../assets/icons/close.png";
+import CloseIcon from "../../assets/icons/close-new-icon.svg";
 import Image from "next/image";
-const Dropdown = ({ children, placeholder, onRemoveTag }) => {
+import Home from "../../assets/icons/home-new.svg";
+import DropDownImage from "../../assets/icons/dropdown.svg";
+
+const Dropdown = ({ children, placeholder = [], onRemoveTag }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState(placeholder);
-  const [isHover, toggleHover] = React.useState(false);
-console.log(selected);
-  const toggleHoverMenu = () => {
-    toggleHover(!isHover);
+
+  const [isHover, toggleHover] = useState(false);
+  console.log(selected);
+  const toggleHoverMenu = (state) => {
+    if(state==="hovered"){
+      toggleHover(true);
+
+      
+    }
+    else{
+      toggleHover(false);
+    }
   };
-  const [isMouse, toggleMouse] = React.useState(false);
+  const [isMouse, toggleMouse] = useState(false);
   const toggleMouseMenu = () => {
     toggleMouse(!isMouse);
   };
@@ -41,41 +52,56 @@ console.log(selected);
     },
   };
   return (
-    <motion.div onHoverStart={toggleHoverMenu} className={`${styles.dropdown}`}>
+    <motion.div onHoverStart={()=>toggleHoverMenu("hovered")}
+    onHoverEnd={()=>toggleHoverMenu("leaved")} className={`${styles.dropdown}`}>
       <div
         onClick={(e) => {
           setIsActive(!isActive);
+
         }}
-        className={`${styles.dropdown_btn}`}
+        
+        
+        className={`${styles.dropdown_btn} my-2 fw_500 py-2`}
       >
-        {placeholder.length !== 0 ? (
-          placeholder.slice(0, 2).map((item, index) => {
+        <div className={`${styles.home_icon} d-flex align-items-center ps-2`}>
+          <Image src={Home} width={15} height={15} />
+        </div>
+        {placeholder?.length !== 0 ? (
+          placeholder?.slice(0, 2).map((item, index) => {
             return (
-              <div key={index} className={`card`}>
-                <div className="d-flex">
-                  <div className="card-body px-1 py-1">
-                    <div className={``}>{item}</div>
-                  </div>
-                  <button className={`${styles.close_btn} d-flex align-items-center`}>
+              <div key={index} className={`${styles.card} card ms-2`}>
+                <div className="d-flex ">
+                  <div className={`${styles.card_box} card-body px-1 py-0 d-flex`}>
+                    <div className={`${styles.card_items} fs_9 p-1 fw_500 fontFam_poppins`}>{item}</div>
+                 
+                  <button
+                    className={`${styles.close_btn} d-flex align-items-center`}
+                  >
                     <Image
-                      src={Close}
-                      onClick={()=>onRemoveTag(index)}
+                      src={CloseIcon}
+                      onClick={() => onRemoveTag(index)}
                       className={``}
-                      width={15}
-                      height={15}
+                      width={8}
+                      height={8}
                     />
                   </button>
+                  </div>
                 </div>
               </div>
             );
           })
         ) : (
           <Space
-            className={`${styles.property_types_text} fs_12 fw_400 ms-2 fontFam_poppins`}
+            className={`${styles.property_types_text} fs_12 fw_400 ms-2 fontFam_poppins d-flex justify-content-start `}
           >
             Property Type
           </Space>
         )}
+        <div
+          className={`${styles.dropdown_icon} ms-auto me-2 d-flex align-items-center `}
+        >
+          <Image src={DropDownImage} />
+        </div>
         <span className={isActive ? "fas fa-caret-up" : "fas fa-caret-down"} />
       </div>
       <motion.div

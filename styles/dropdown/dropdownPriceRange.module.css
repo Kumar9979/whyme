@@ -1,0 +1,36 @@
+.price_input .field{
+  display: flex;
+}
+.slider{
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    position: relative;
+}
+
+.slider .progress{
+    height: 5px;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    border-radius: 5px;
+    background: #17a2bb;
+}
+.field input{
+    -moz-appearance: none;
+}
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.range_input{
+    position: relative;
+}
+.range_input input{
+    position: absolute;
+    top:0px;
+    height: 5px;
+    width: 100%;
+    background:none;
+    -webkit-appearance: none;
+}

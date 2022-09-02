@@ -14,12 +14,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     color: #777;
-    font-weight: 500;
+   
   }
   .dropdown_content {
     position: absolute;
@@ -47,4 +46,16 @@
 .close_btn{
     border: none;
     background-color: transparent;
+}
+
+.card_box{
+  background-color: #50BF9733;
+  border-radius: 5px;
+}
+.card_items{
+  color: #50BF97;
+}
+.card{
+  border: none ;
+ 
 }

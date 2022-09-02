@@ -1,0 +1,19 @@
+.comboboxInput{
+    border: none;
+    width: 250px;
+    background-color:#FFFFFF;
+    border-radius: 5px;
+   
+  }
+  .comboboxInput:focus-visible{
+    outline: none;
+  }
+  .comboboxInput::placeholder{
+    color: #BCC7CE;
+  }
+  .location_icon{
+    position: absolute;
+    top:17px;
+    left:23px
+  }
+ 

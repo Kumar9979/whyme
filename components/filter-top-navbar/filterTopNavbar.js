@@ -5,32 +5,33 @@ import Image from "next/image";
 import { Space } from "antd";
 import Home from "../../assets/icons/home-new.svg";
 import Dropdown from "../dropdown/dropdown";
-import { Select } from "@material-ui/core";
+import AddIcon from "../../assets/icons/add-icon.svg";
+import TickIcon from "../../assets/icons/tick-icon.svg";
+import PlacesAutocomplete from "../../pages/post-property/property-details/placesAutocomplete";
+import PlacesAutocompleteSearch from "./placesAutoCompeleteSearch";
+import PropertyLocation from "../modal-location";
+import DropdownPriceRange from "../dropdown/dropdown-price-range";
 
 const FilterTopNavbar = () => {
   const [label, setLabel] = useState("");
   const [data, setData] = useState([]);
-  
 
   const handleClick = (text) => {
-    return setData([...data, text]);
+    data.includes(text) ? null : setData([...data, text]);
   };
 
-  const onTagRemove= (index) => {
-  setData([
-      ...data.slice(0, index),
-      ...data.slice( index+ 1, data.length),
-    ]);
-  }
-  console.log(data);
+  const onTagRemove = (index) => {
+    setData([...data.slice(0, index), ...data.slice(index + 1, data.length)]);
+  };
 
+  console.log(data);
   return (
     <div className={`${styles.filter_navbar} px-5`}>
-      <div className={`d-flex`}>
+      <div className={`d-flex justify-content-start`}>
         <div>
           <div className="dropdown fontFam_poppins">
             <button
-              className={`${styles.buy_btn} btn  my-2`}
+              className={`${styles.buy_btn} btn  my-2 py-2`}
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -57,104 +58,187 @@ const FilterTopNavbar = () => {
             </div>
           </div>
         </div>
-     
-        <Dropdown placeholder= {data} onRemoveTag={onTagRemove}
- >
-          <div className="fontFam_poppins">
-            <span>Residential</span>
-            <div className={`d-flex `}>
-              <button
-                onClick={(e) => handleClick(e.target.textContent)}
-                className={`${styles.first_row_button}`}
-              >
-                <span>Flat</span>
-                
-              </button>
-              <button
-                onClick={(event) => handleClick(event.target.textContent)}
-                
-                className={`${styles.first_row_button} ms-2`}
-              >
-                <span>House/Villa</span>
-              </button>
-              <button
-                onClick={(e) => handleClick(e.target.textContent)}
-                className={`${styles.first_row_button} ms-2`}
-              >
-                <span>Plot/Land</span>
-              </button>
+
+        <PlacesAutocompleteSearch/>              
+
+        <div className="fontFam_poppins ms-2">
+          <Dropdown placeholder={data} onRemoveTag={onTagRemove}>
+            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Residential</span>
+
+            <div className={`d-flex mt-1`}>
+              {property.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClick(item.propertyType)}
+                    className={
+                      data.includes(item.propertyType)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        data.includes(item.propertyType)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          data.includes(item.propertyType) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.propertyType}</span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
-            <div className={`mt-2`}>Commercial</div>
-            <div className={`d-flex `}>
-              <button
-                onClick={(e) => handleClick(e.target.textContent)}
-                className={`${styles.second_row_button}`}
-              >
-                <span className={`text-nowrap`}>Office Space</span>
-              </button>
-              <button className={`${styles.second_row_button} ms-2`}>
-                <span className={`text-nowrap`}>Shop/Showroom</span>
-              </button>
+            <div className={`mt-2 ${styles.property_heading_text} fs_12 fw_500`}>Commercial</div>
+            <div className={`d-flex mt-1`}>
+              {property2.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClick(item.propertyType2)}
+                    className={
+                      data.includes(item.propertyType2)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        data.includes(item.propertyType2)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          data.includes(item.propertyType2) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.propertyType2}</span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
             <div className={`d-flex mt-2`}>
-              <button className={`${styles.second_row_button}`}>
-                <span className={`text-nowrap`}>Warehouse/Godown</span>
-              </button>
-              <button className={`${styles.second_row_button} ms-2`}>
-                <span className={`text-nowrap`}>Industrial Shed</span>
-              </button>
+              {property3.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClick(item.propertyType3)}
+                    className={
+                      data.includes(item.propertyType3)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        data.includes(item.propertyType3)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          data.includes(item.propertyType3) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.propertyType3}</span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
             <div className={`d-flex mt-2`}>
-              <button className={`${styles.second_row_button}`}>
-                <span className={`text-nowrap`}>Industrial Building</span>
-              </button>
-              <button className={`${styles.second_row_button} ms-2`}>
-                <span className={`text-nowrap`}>Commercial Land</span>
-              </button>
+              {property4.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClick(item.propertyType4)}
+                    className={
+                      data.includes(item.propertyType4)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        data.includes(item.propertyType4)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          data.includes(item.propertyType4) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.propertyType4}</span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-            <div className={`mt-2`}>Agriculture</div>
-            <div className={`d-flex `}>
-              <button className={`${styles.second_row_button}`}>
-                <span>Agriculture Land</span>
-              </button>
-              <button className={`${styles.second_row_button} ms-2`}>
-                <span>Farm House</span>
-              </button>
+            <div className={`mt-2 ${styles.property_heading_text} fs_12 fw_500`}>Agriculture</div>
+            <div className={`d-flex mt-1`}>
+              {property5.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClick(item.propertyType5)}
+                    className={
+                      data.includes(item.propertyType5)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        data.includes(item.propertyType5)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          data.includes(item.propertyType5) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.propertyType5}</span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-          </div>
-        </Dropdown>
-        <div className={`${styles.dropDown_property_type}`}>
-          <div
-            className={`${styles.dropDown_property_type} ms-2 fontFam_poppins`}
-          >
+          </Dropdown>
+        </div>
+        <div>
+          <div className="dropdown fontFam_poppins">
             <button
-              className={`${styles.buy_btn} btn  my-2 `}
+              className={`${styles.buy_btn} btn  my-2 py-2`}
               type="button"
               data-bs-toggle="dropdown"
-              data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              <div className={`${styles.home_icon} d-flex align-items-center`}>
-                <Image src={Home} width={15} height={15} />
-              </div>
-              {data.length !== 0 ? (
-                data.slice(0, 2).map((item, index) => {
-                  return (
-                    <div key={index} className={`card`}>
-                      <div className="card-body">
-                        <div>{item}</div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
-                <Space
-                  className={`${styles.property_types_text} fs_12 fw_400 ms-2 fontFam_poppins`}
-                >
-                  Property Type
-                </Space>
-              )}
+              <Space
+                className={`${styles.buy_text} fs_14 fw_500 fontFam_poppins`}
+              >
+                {" "}
+                Buy{" "}
+              </Space>
 
               <div
                 className={`${styles.dropdown_icon} ms-4 d-flex align-items-center`}
@@ -163,71 +247,63 @@ const FilterTopNavbar = () => {
               </div>
             </button>
             <div className="dropdown-menu p-2 fontFam_poppins">
-              <span>Residential</span>
               <div className={`d-flex `}>
-                <button
-                  onClick={(e) => handleClick(e.target.textContent)}
-                  className={`${styles.first_row_button}`}
-                >
-                  <span>Flat</span>
-                </button>
-                <button
-                  onClick={(event) => handleClick(event.target.textContent)}
-                  className={`${styles.first_row_button} ms-2`}
-                >
-                  <span>House/Villa</span>
-                </button>
-                <button
-                  onClick={(e) => handleClick(e.target.textContent)}
-                  className={`${styles.first_row_button} ms-2`}
-                >
-                  <span>Plot/Land</span>
-                </button>
-              </div>
-
-              <div className={`mt-2`}>Commercial</div>
-              <div className={`d-flex `}>
-                <button
-                  onClick={(e) => handleClick(e.target.textContent)}
-                  className={`${styles.second_row_button}`}
-                >
-                  <span className={`text-nowrap`}>Office Space</span>
-                </button>
-                <button className={`${styles.second_row_button} ms-2`}>
-                  <span className={`text-nowrap`}>Shop/Showroom</span>
-                </button>
-              </div>
-              <div className={`d-flex mt-2`}>
-                <button className={`${styles.second_row_button}`}>
-                  <span className={`text-nowrap`}>Warehouse/Godown</span>
-                </button>
-                <button className={`${styles.second_row_button} ms-2`}>
-                  <span className={`text-nowrap`}>Industrial Shed</span>
-                </button>
-              </div>
-              <div className={`d-flex mt-2`}>
-                <button className={`${styles.second_row_button}`}>
-                  <span className={`text-nowrap`}>Industrial Building</span>
-                </button>
-                <button className={`${styles.second_row_button} ms-2`}>
-                  <span className={`text-nowrap`}>Commercial Land</span>
-                </button>
-              </div>
-              <div className={`mt-2`}>Agriculture</div>
-              <div className={`d-flex `}>
-                <button className={`${styles.second_row_button}`}>
-                  <span>Agriculture Land</span>
-                </button>
-                <button className={`${styles.second_row_button} ms-2`}>
-                  <span>Farm House</span>
-                </button>
+                <div><DropdownPriceRange/></div>
               </div>
             </div>
           </div>
         </div>
+      
+    
+     
       </div>
     </div>
   );
 };
 
 export default FilterTopNavbar;
+
+const property = [
+  {
+    propertyType: "Flat",
+  },
+  {
+    propertyType: " House/Villa",
+  },
+  {
+    propertyType: "Plot/Land",
+  },
+];
+
+const property2 = [
+  {
+    propertyType2: "Office Space",
+  },
+  {
+    propertyType2: "Shop/Showroom",
+  },
+];
+const property3 = [
+  {
+    propertyType3: "Warehouse/Godown",
+  },
+  {
+    propertyType3: "Industrial Shed",
+  },
+];
+const property4 = [
+  {
+    propertyType4: "Industrial Building",
+  },
+  {
+    propertyType4: "Commercial Land",
+  },
+];
+const property5 = [
+  {
+    propertyType5: "Agriculture Land",
+  },
+  {
+    propertyType5: "Farm House",
+  },
+];
