@@ -1,7 +1,6 @@
 .edit_profile {
   margin-top: 5rem;
   width: 95%;
-
 }
 .edit_profile_card {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -13,6 +12,7 @@
 .arrow_left_button {
   background: #323d5a 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 20px #0000001f;
+  border: none;
   border-radius: 5px;
   opacity: 1;
   width: 20px;
@@ -23,7 +23,7 @@
 }
 .edit_horizontal_line {
   border: 0.5px solid var(--unnamed-color-dbe9f2);
-  border: 0.5px solid #DBE9F2;
+  border: 0.5px solid #dbe9f2;
 }
 .profile_picture_heading {
   color: #bcc7ce;
@@ -33,18 +33,7 @@
   border-radius: 10px;
   opacity: 1;
 }
-.change_photo {
-  color: #ffffff;
-  background-color: #1d72db;
-  border: none;
-  border-radius: 4px;
-  opacity: 1;
-}
-.remove_photo {
-  color: #f77223;
-  border: none;
-  background-color: transparent;
-}
+
 .profile_type {
   color: #1d1e1f;
   white-space: nowrap;
@@ -54,7 +43,7 @@
 }
 
 .contact_us_label {
-  color: #bcc7ce;
+  color: #1d1e1f;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -63,7 +52,6 @@
   background: #dbe9f200 0% 0% no-repeat padding-box;
   border-radius: 7px;
   border-color: #dddbdb;
-  
 }
 .email_input {
   border: none;
@@ -75,23 +63,7 @@
   border-width: 1px;
   border-style: solid;
 }
-/* .form_input::placeholder {
-    color: #DDDBDB;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 11px;   
-    position: absolute;
-    top: 30%;
-} */
-.form_submit {
-  border-radius: 7px;
-  background-color: #1d72db;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  border: none;
-}
+
 .form_input:focus-visible {
   outline: none !important;
 }
@@ -113,10 +85,14 @@
   position: absolute;
   top: 20%;
 }
-.error_height {
-  height: 1.5rem;
+.email_input::placeholder {
+  color: #dddbdb;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  position: absolute;
+  top: 10%;
 }
-
 .save_button_width {
   border: none;
   background: #1d72db 0% 0% no-repeat padding-box;
@@ -126,13 +102,14 @@
   white-space: nowrap;
 }
 .undo_button_width {
+  border: 2px solid var(--unnamed-color-1d72db);
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 2px solid #1d72db;
-  border-radius: 5px;
+  border-radius: 7px;
   opacity: 1;
   color: #1d72db;
-  white-space: nowrap;
 }
+
 .form_width {
   width: 80%;
 }
@@ -147,17 +124,17 @@
     width: 100%;
   }
 }
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 992px) {
   .form_width {
     width: 75%;
   }
 }
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
   .form_width {
     width: 85%;
   }
 }
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: 600px) {
   .form_width {
     width: 100%;
   }

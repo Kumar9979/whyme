@@ -158,8 +158,8 @@ const ProfileLayout = ({ children }) => {
                     <hr></hr>
                     <div className="d-flex align-items-center justify-content-between ">
                       <p className={`${styles.logoutText}`}>Logout</p>
-                      <p className={`${styles.arrow} `}>
-                        <i className="ri-arrow-right-s-line fw_700"></i>
+                      <p className={`${styles.arrow} d-flex align-items-center`}>
+                        <i className="ri-arrow-right-s-line fw_700 fs_14"></i>
                       </p>
                     </div>
                   </div>

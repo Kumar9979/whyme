@@ -1,18 +1,15 @@
-import React from "react";
+import { React } from "react";
 import ProfileLayout from "../../components/sidebarLayout/Sidebar";
-import styles from "../../styles/Edit-profile/edit-profile.module.css";
+import styles from "../../styles/profile-pages/my-profile.module.css";
 import arrow_left from "../../assets/images/arrow_left.svg";
 import Image from "next/image";
 import people from "../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import verified from "../../assets/icons/edit-profile-icons/verified.svg";
+import { useRouter } from "next/router";
 
-const EditProfile = () => {
-  const phoneregex = /^([+]\d{2})?\d{10}$/;
-  const nameregex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/;
-  const emailregex =
-    /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
+const MyProfile = () => {
   const formik = useFormik({
     initialValues: {
       name: "Iman Khan",
@@ -36,6 +33,8 @@ const EditProfile = () => {
     //   resetForm();
     // },
   });
+  const router = useRouter();
+
   return (
     <ProfileLayout>
       <div className={`${styles.edit_profile} me-lg-5 me-0`}>
@@ -101,7 +100,7 @@ const EditProfile = () => {
                         </span>
                       </h1>
 
-                      <form onSubmit={formik.handleSubmit}>
+                      <form>
                         <div className="">
                           <div className="form-group mt-3">
                             <label
@@ -197,6 +196,12 @@ const EditProfile = () => {
 
                           <div className="d-flex justify-content-between mt-4 w-75 ">
                             <button
+                              type="button"
+                              onClick={() => {
+                                router.push(
+                                  "/profile-pages/edit-profile"
+                                );
+                              }}
                               className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
                             >
                               Edit Profile
@@ -221,4 +226,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default MyProfile;
