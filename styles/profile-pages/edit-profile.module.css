@@ -7,7 +7,8 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 10px;
   opacity: 1;
-  height: 40rem;
+  height: fit-content;
+  padding-bottom: 10rem !important;
 }
 .arrow_left_button {
   background: #323d5a 0% 0% no-repeat padding-box;
@@ -108,6 +109,7 @@
   border-radius: 7px;
   opacity: 1;
   color: #1d72db;
+  white-space: nowrap;
 }
 
 .form_width {
@@ -115,6 +117,25 @@
 }
 .verified_text {
   color: #50bf97;
+}
+.change_photo {
+  background: #013ea3 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  color: #FFFFFF;
+  white-space: nowrap;
+  border: none;
+}
+.remove_photo {
+  background-color: transparent;
+  border-radius: 7px;
+  color: #F77223;
+  white-space: nowrap;
+  border: none;
+}
+.image_container {
+    width: 140px;
+    height: 160px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1320px) {
   .edit_profile {
@@ -126,12 +147,12 @@
 }
 @media only screen and (max-width: 992px) {
   .form_width {
-    width: 75%;
+    width: 70%;
   }
 }
 @media only screen and (max-width: 768px) {
   .form_width {
-    width: 85%;
+    width: 75%;
   }
 }
 @media only screen and (max-width: 600px) {

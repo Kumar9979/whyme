@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfileLayout from "../../components/sidebarLayout/Sidebar";
 import styles from "../../styles/profile-pages/edit-profile.module.css";
 import arrow_left from "../../assets/images/arrow_left.svg";
@@ -6,11 +6,15 @@ import Image from "next/image";
 import people from "../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import camera from "../../assets/icons/camera.png";
 
 const EditProfile = () => {
   const phoneregex = /^([+]\d{2})?\d{10}$/;
   const nameregex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/;
-
+  const [file, setFile] = useState(people);
+  const [uploaded, setuploaded] = useState(true);
+  const [size, setSize] = useState(160);
+  const [width, setWidth] = useState(140);
   const formik = useFormik({
     initialValues: {
       name: "Iman Khan",
@@ -19,6 +23,7 @@ const EditProfile = () => {
       city: "Mysore",
     },
     validationSchema: Yup.object({
+      image: Yup.mixed().required("Upload an Image"),
       name: Yup.string()
         .matches(nameregex, "Invalid First Name")
         .required("Required"),
@@ -35,6 +40,20 @@ const EditProfile = () => {
       resetForm();
     },
   });
+  function handleChange(e) {
+    if (e.target?.files.length !== 0) {
+      setSize(160);
+      setWidth(140);
+      setuploaded(true);
+      setFile(URL.createObjectURL(e.target.files[0]));
+    }
+  }
+
+  function formReset() {
+    setuploaded(false);
+    formik.setFieldValue("image", "");
+  }
+
   return (
     <ProfileLayout>
       <div className={`${styles.edit_profile} me-lg-5 me-0`}>
@@ -76,15 +95,43 @@ const EditProfile = () => {
                     >
                       Profile Picture
                     </h3>
-                    <div className="">
+                    <div className={`${styles.image_container}`}>
                       <Image
-                        src={people}
+                        src={uploaded ? file : camera}
                         className={`${styles.profile_photo}`}
                         alt="Picture of the author"
-                        // width={60}
-                        height={210}
+                        height={size}
+                        width={width}
+                      />
+                      <input
+                        type={"file"}
+                        style={{ visibility: "hidden" }}
+                        id="profile"
+                        name="img"
+                        accept="image/*;capture=camera"
+                        // onChange={(e) => {
+                        //   handleChange(e);
+                        // }}
+                        onChange={(e) => {
+                          formik.setFieldValue("image", e.target.files[0]);
+                          handleChange(e);
+                        }}
                       />
                     </div>
+
+                    <button
+                      className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
+                      //   onClick={setRemove(!remove)}
+                    >
+                      <label htmlFor="profile">Change Picture </label>
+                    </button>
+
+                    <button
+                      className={`${styles.remove_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
+                      onClick={() => setuploaded(false)}
+                    >
+                      Remove Picture
+                    </button>
                   </div>
                 </div>
 
@@ -209,7 +256,7 @@ const EditProfile = () => {
                             </div>
                           </div>
 
-                          <div className="d-flex justify-content-between mt-4 w-75 ">
+                          <div className="d-flex justify-content-lg-between  mt-4 w-75 ">
                             <button
                               className={`${styles.save_button_width} px-4 py-1 fs_15 fw_400`}
                             >

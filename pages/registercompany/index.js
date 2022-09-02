@@ -37,7 +37,7 @@ const RegisterCompany = () => {
       console.log(values);
       resetForm();
       handleSellRentShow();
-      formReset()
+      formReset();
       router.replace("/sellrent");
     },
   });
@@ -89,6 +89,7 @@ const RegisterCompany = () => {
 
             <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
               <label
+               htmlFor="profile"
                 className={`${styles.color_1D1E1F} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} mb-1 `}
               >
                 Company Logo
