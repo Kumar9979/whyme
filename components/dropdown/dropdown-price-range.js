@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Space } from "antd";
 import CloseIcon from "../../assets/icons/close-new-icon.svg";
 import Image from "next/image";
-import BedroomIcon from "../../assets/icons/bedroom-green-icon.svg";
+import RupeeIcon from "../../assets/icons/rupee-icon.svg";
 import DropDownImage from "../../assets/icons/dropdown.svg";
 
 const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
@@ -59,7 +59,7 @@ const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
         className={`${styles.dropdown_btn} my-2 fw_500 py-2`}
       >
         <div className={`${styles.home_icon} d-flex align-items-center ps-2`}>
-          <Image src={BedroomIcon} width={15} height={15} />
+          <Image src={RupeeIcon} width={15} height={15} />
         </div>
         {placeholder?.length !== 0 ? (
           placeholder?.map((item, index) => {

@@ -1,8 +1,8 @@
 .container {
-  height: 100vh;
+  height: 10vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items:flex-end;
+  /* justify-content: center; */
 }
 
 .slider {
@@ -38,7 +38,10 @@
 .slider_right_value {
   color: #dee2e6;
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: -50px;
+  color: black;
+  border: 1px solid #323D5A;
+  border-radius: 5px;
 }
 
 .slider_left_value {
@@ -65,11 +68,11 @@
 }
 
 .thum_left {
-  z-index: 3;
+  z-index: 999;
 }
 
 .thum_right {
-  z-index: 4;
+  z-index: 999;
 }
 
 /* For Chrome browsers */

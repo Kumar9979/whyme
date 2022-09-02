@@ -254,7 +254,7 @@ const FilterTopNavbar = () => {
       
         <div className="fontFam_poppins ms-2">
         <DropdownPriceRange placeholder={dataPrice} >
-            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Select posted by here</span>
+            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Select your budget moving Arrows</span>
 
             <div className={`d-flex mt-1`}>
               
