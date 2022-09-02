@@ -3,10 +3,10 @@
 }
 .delete_btn{
     width: 45%;
-    background-color: #BCC7CE;
+    background-color: #fff;
     border-radius: 10px;
-    border: none;
-    color: #323D5A;
+    border: 2px solid #1D72DB;
+    color: #1D72DB;
     font-family: Poppins;
 }
 .no_btn{

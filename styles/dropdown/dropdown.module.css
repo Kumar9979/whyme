@@ -24,7 +24,7 @@
     position: absolute;
     /* top: 110%; */
     left: 0;
-    width:max-content;
+    width:30rem;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
     background-color: #fcfcfc;
   }
