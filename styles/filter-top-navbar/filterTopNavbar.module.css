@@ -18,26 +18,29 @@
     max-width: 18rem;
 }
 .property_types_text{
-    color: #BCC7CE;
+    color: white;
 }
-.first_row_button{
-    background-color: #50BF97;
-    border: none;
-    border-radius: 5px;
-}
-.first_button:hover{
-    background-color: #50BF97 !important;
+.property_types_text_before{
+  color: #323D5A;
 }
 
-.second_row_button{
-   background-color: #DBE9F200;
+.property_heading_text{
+  color: #BCC7CE;
+}
+
+.second_row_button_after{
+   background-color: #50BF97;
     border: none;
     border-radius: 5px;
     border:1px solid #BCC7CE;
 }
-.second_button:hover{
-    background-color: #50BF97 !important;
+.second_row_button{
+  background-color: #DBE9F200;
+   border: none;
+   border-radius: 5px;
+   border:1px solid #BCC7CE;
 }
+
 
 
 

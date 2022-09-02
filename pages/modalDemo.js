@@ -24,8 +24,8 @@ const Hello = () => {
      {/* <ApartmentAreaPriceRent handleClose={handleClose} show={show} /> */}
      {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
-     <ApartmentEditProperty handleClose={handleClose} show={show} />
-     {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
+     {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
+     <ApartmentUpdateMap handleClose={handleClose} show={show} />
      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
     </>

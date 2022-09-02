@@ -17,13 +17,13 @@ const Main = () => {
 
   return (
     <>
-      <div>
-
-
-      </div>
+      <div cla>
       <Button variant="primary" onClick={handleShow}>
         Launch
       </Button>
+
+      </div>
+
       <Modals show={show} onShow={handleShow} onHide={handleClose} />
       {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
 

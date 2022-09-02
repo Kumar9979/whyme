@@ -56,7 +56,7 @@ const PropertyLocation = () => {
               <div>
                 <PlacesAutocomplete
                   markerSetOn={markerSetOn}
-                  markedAddress={markedAddress}
+                  markedAddress={markedAddress} 
                   setSelected={setSelected}
                 />
               </div>

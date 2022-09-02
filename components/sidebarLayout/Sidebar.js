@@ -13,6 +13,8 @@ const ProfileLayout = ({ children }) => {
   const router = useRouter();
   const [mobile, setMobile] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  const fname = "Tony";
+  const lname = "Stark";
   useEffect(() => {
     if (window.innerWidth < 992) {
       setMobile(true);
@@ -154,6 +156,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
+<<<<<<< HEAD
                   <div className={`${styles.logout} p-3 mb-4`}>
                     <hr></hr>
                     <div className="d-flex align-items-center justify-content-between ">
@@ -162,6 +165,96 @@ const ProfileLayout = ({ children }) => {
                         <i className="ri-arrow-right-s-line fw_700 fs_14"></i>
                       </p>
                     </div>
+=======
+                </div>
+                <hr />
+                <ul className="list-unstyled  mt-5">
+                  <li
+                    className={`${
+                      router.pathname === "/profile/recently-viewed"
+                        ? styles.sidebar_listActive
+                        : styles.sidebar_list
+                    } mb-3 d-flex align-items-center`}
+                  >
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Clock}
+                    />
+                    <Link
+                      href={`/profile/recently-viewed?first_name=${fname}&last_name=${lname}`}
+                    >
+                      <a className={`ms-3 ${styles.sidebar_links}`}>
+                        Recent Activities
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    className={`${
+                      router.pathname === "/profile/shortlisted-properties"
+                        ? styles.sidebar_listActive
+                        : styles.sidebar_list
+                    }  mb-3 d-flex align-items-center`}
+                  >
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Heart}
+                    />
+                    <Link href="/profile/shortlisted-properties">
+                      <a className={`ms-3 ${styles.sidebar_links}`}>
+                        Saved Properties
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    className={`${
+                      router.pathname === "/profile/my-properties"
+                        ? styles.sidebar_listActive
+                        : styles.sidebar_list
+                    }  mb-3 d-flex align-items-center`}
+                  >
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Key}
+                    />
+                    <Link href="/profile/my-properties">
+                      <a className={` ms-3 ${styles.sidebar_links}`}>
+                        My Properties
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    className={`${
+                      router.pathname === "/profile/add-a-property"
+                        ? styles.sidebar_listActive
+                        : styles.sidebar_list
+                    }  mb-3 d-flex align-items-center`}
+                  >
+                    <Image
+                      className={styles.DropdownIcon}
+                      width={16}
+                      height={16}
+                      src={Settings}
+                    />
+                    <Link href="/profile/add-a-property">
+                      <a className={` ms-3 ${styles.sidebar_links}`}>
+                        Settings
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+                <div className={`${styles.logout}`}>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <p className={`${styles.logoutText}`}>Logout</p>
+                    <p className={`${styles.arrow}`}>
+                      <i className="ri-arrow-right-s-line"></i>
+                    </p>
+>>>>>>> 4f795ca6a6de9190f4f2071df968c9dc6d32805f
                   </div>
                 </div>
               </div>

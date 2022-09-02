@@ -36,6 +36,9 @@ a{
 .modal-content{
 border-radius: 12px !important;
 }
+.fs_9{
+  font-size: 9px;
+}
 .fs_11{
   font-size: 11px;
 }

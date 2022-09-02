@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import styles from "../../styles/dropdown/dropdown.module.css";
+import styles from "../../styles/dropdown/dropdownPosted.module.css";
 import { motion } from "framer-motion";
 import { Space } from "antd";
 import CloseIcon from "../../assets/icons/close-new-icon.svg";
 import Image from "next/image";
-import Home from "../../assets/icons/home-new.svg";
+import PostedByIcon from "../../assets/icons/postedBy-icon.svg";
 import DropDownImage from "../../assets/icons/dropdown.svg";
 
-const Dropdown = ({ children, placeholder = [], onRemoveTag }) => {
+const DropdownPosted = ({ children, placeholder = [], onRemoveTag }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState(placeholder);
 
@@ -64,7 +64,7 @@ const Dropdown = ({ children, placeholder = [], onRemoveTag }) => {
         className={`${styles.dropdown_btn} my-2 fw_500 py-2`}
       >
         <div className={`${styles.home_icon} d-flex align-items-center ps-2`}>
-          <Image src={Home} width={15} height={15} />
+          <Image src={PostedByIcon} width={15} height={15} />
         </div>
         {placeholder?.length !== 0 ? (
           placeholder?.slice(0, 2).map((item, index) => {
@@ -94,7 +94,7 @@ const Dropdown = ({ children, placeholder = [], onRemoveTag }) => {
           <Space
             className={`${styles.property_types_text} fs_12 fw_400 ms-2 fontFam_poppins d-flex justify-content-start `}
           >
-            Property Type
+            Posted By
           </Space>
         )}
         <div
@@ -116,4 +116,4 @@ const Dropdown = ({ children, placeholder = [], onRemoveTag }) => {
   );
 };
 
-export default Dropdown;
+export default DropdownPosted;
