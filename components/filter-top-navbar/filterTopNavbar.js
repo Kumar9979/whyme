@@ -11,6 +11,9 @@ import PlacesAutocomplete from "../../pages/post-property/property-details/place
 import PlacesAutocompleteSearch from "./placesAutoCompeleteSearch";
 import PropertyLocation from "../modal-location";
 import DropdownPriceRange from "../dropdown/dropdown-price-range";
+import DropdownBedroom from "../dropdown/dropdown-bedroom";
+import DropdownPosted from "../dropdown/dropdown-posted";
+import PriceRanger from "../dropdown/price-ranger";
 
 const FilterTopNavbar = () => {
   const [label, setLabel] = useState("");
@@ -22,6 +25,29 @@ const FilterTopNavbar = () => {
 
   const onTagRemove = (index) => {
     setData([...data.slice(0, index), ...data.slice(index + 1, data.length)]);
+  };
+
+
+
+  const [dataBedrooom, setDataBedroom] = useState([]);
+  const handleClickBedroom = (text) => {
+    dataBedrooom.includes(text) ? null : setDataBedroom([...dataBedrooom, text]);
+  };
+  const onTagRemoveBedroom = (index) => {
+    setDataBedroom([...dataBedrooom.slice(0, index), ...dataBedrooom.slice(index + 1, dataBedrooom.length)]);
+  };
+
+  const [dataPostedBy, setDataPostedBy] = useState([]);
+  const handleClickPostedBy = (text) => {
+    dataPostedBy.includes(text) ? null : setDataPostedBy([...dataPostedBy, text]);
+  };
+  const onTagRemovePostedBy = (index) => {
+    setDataPostedBy([...dataPostedBy.slice(0, index), ...dataPostedBy.slice(index + 1, dataPostedBy.length)]);
+  };
+
+  const [dataPrice, setDataPrice] = useState([]);
+  const handleClickPrice = (text) => {
+    dataPrice.includes(text) ? null : setDataPrice([...dataPrice, text]);
   };
 
   console.log(data);
@@ -225,37 +251,127 @@ const FilterTopNavbar = () => {
             </div>
           </Dropdown>
         </div>
-        <div>
-          <div className="dropdown fontFam_poppins">
-            <button
-              className={`${styles.buy_btn} btn  my-2 py-2`}
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <Space
-                className={`${styles.buy_text} fs_14 fw_500 fontFam_poppins`}
-              >
-                {" "}
-                Buy{" "}
-              </Space>
-
-              <div
-                className={`${styles.dropdown_icon} ms-4 d-flex align-items-center`}
-              >
-                <Image src={DropDownImage} />
-              </div>
-            </button>
-            <div className="dropdown-menu p-2 fontFam_poppins">
-              <div className={`d-flex `}>
-                <div><DropdownPriceRange/></div>
-              </div>
-            </div>
-          </div>
-        </div>
       
-    
-     
+        <div className="fontFam_poppins ms-2">
+        <DropdownPriceRange placeholder={dataPrice} >
+            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Select posted by here</span>
+
+            <div className={`d-flex mt-1`}>
+              
+              <PriceRanger/>
+              
+            </div>
+            </DropdownPriceRange>
+            </div>
+      
+        <div className="fontFam_poppins ms-2">
+        <DropdownBedroom placeholder={dataBedrooom} onRemoveTag={onTagRemoveBedroom}>
+            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Select number of bedrooms here</span>
+
+            <div className={`d-flex mt-1`}>
+              {Bedroom1.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClickBedroom(item.Bedroom)}
+                    className={
+                      dataBedrooom.includes(item.Bedroom)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        dataBedrooom.includes(item.Bedroom)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          dataBedrooom.includes(item.Bedroom) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.Bedroom}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className={`d-flex mt-1`}>
+              {Bedroom2.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClickBedroom(item.Bedroom)}
+                    className={
+                      dataBedrooom.includes(item.Bedroom)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        dataBedrooom.includes(item.Bedroom)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          dataBedrooom.includes(item.Bedroom) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.Bedroom}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            </DropdownBedroom>
+            </div>
+
+            <div className="fontFam_poppins ms-2">
+        <DropdownPosted placeholder={dataPostedBy} onRemoveTag={onTagRemovePostedBy}>
+            <span className={`${styles.property_heading_text} fs_12 fw_500 `}>Select posted by here</span>
+
+            <div className={`d-flex mt-1`}>
+              {PostedBy.map((item, index) => {
+                return (
+                  <button
+                    onClick={(e) => handleClickPostedBy(item.postedBy)}
+                    className={
+                      dataPostedBy.includes(item.postedBy)
+                        ? `${styles.second_row_button_after} fontFam_poppins fs_12 fw_500 me-2`
+                        : `${styles.second_row_button} me-2`
+                    }
+                  >
+                    <span
+                      className={
+                        dataPostedBy.includes(item.postedBy)
+                          ? `${styles.property_types_text} fontFam_poppins fs_12 fw_500 `
+                          : `${styles.property_types_text_before} fs_12 fw_500 `
+                      }
+                    >
+                      <Image
+                        src={
+                          dataPostedBy.includes(item.postedBy) ? TickIcon : AddIcon
+                        }
+                        width={10}
+                        height={10}
+                      />
+                      <span className="ps-1 text-nowrap"> {item.postedBy}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            </DropdownPosted>
+            </div>
+
       </div>
     </div>
   );
@@ -305,5 +421,43 @@ const property5 = [
   },
   {
     propertyType5: "Farm House",
+  },
+];
+
+const Bedroom1 = [
+  {
+    Bedroom: "Any",
+  },
+  {
+    Bedroom: "1 BHK",
+  },
+  {
+    Bedroom: "2 BHK",
+  },
+  {
+    Bedroom: "3 BHK",
+  },
+];
+const Bedroom2 = [
+  {
+    Bedroom: "4 BHK",
+  },
+  {
+    Bedroom: "5 BHK",
+  },
+  {
+    Bedroom: "5+ BHK",
+  },
+];
+
+const PostedBy = [
+  {
+    postedBy: "Owner",
+  },
+  {
+    postedBy: "Agent",
+  },
+  {
+    postedBy: "Builder",
   },
 ];
