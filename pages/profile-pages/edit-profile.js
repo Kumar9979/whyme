@@ -7,14 +7,40 @@ import people from "../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import camera from "../../assets/icons/camera.png";
+import verified from "../../assets/icons/edit-profile-icons/verified.svg";
+import dropdown from "../../assets/icons/cityDropdown.svg";
+import PlacesAutocomplete from "../post-property/property-details/placesAutocomplete";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import AutoCityLoad from "../../components/profile-pages/auto-city";
 
 const EditProfile = () => {
+  const libraries = ["places"];
   const phoneregex = /^([+]\d{2})?\d{10}$/;
   const nameregex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/;
   const [file, setFile] = useState(people);
   const [uploaded, setuploaded] = useState(true);
-  const [size, setSize] = useState(160);
-  const [width, setWidth] = useState(140);
+  const [size, setSize] = useState(170);
+  const [width, setWidth] = useState(160);
+  const [markedAddress, setMarkedAddress] = useState("");
+  const [selected, setSelected] = useState();
+  const [map, setMap] = useState(null);
+  const [markerStat, setmarkerStat] = useState(false);
+  function markerSetOn() {
+    setmarkerStat(true);
+  }
+  function markerChange() {
+    Geocode.fromLatLng(selected.lat, selected.lng).then(
+      (response) => {
+        setMarkedAddress(response.results[0].formatted_address);
+        console.log(markedAddress);
+      },
+
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
   const formik = useFormik({
     initialValues: {
       name: "Iman Khan",
@@ -42,8 +68,8 @@ const EditProfile = () => {
   });
   function handleChange(e) {
     if (e.target?.files.length !== 0) {
-      setSize(160);
-      setWidth(140);
+      setSize(170);
+      setWidth(160);
       setuploaded(true);
       setFile(URL.createObjectURL(e.target.files[0]));
     }
@@ -53,6 +79,10 @@ const EditProfile = () => {
     setuploaded(false);
     formik.setFieldValue("image", "");
   }
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
+    libraries,
+  });
 
   return (
     <ProfileLayout>
@@ -80,7 +110,7 @@ const EditProfile = () => {
           <div className="row ms-lg-4 ms-0 ">
             <div className="col-lg-8 col-12">
               <div className="row ">
-                <div className="col-6 col-lg-3 d-flex justify-content-center ">
+                <div className="col-6 col-lg-3 d-flex justify-content-lg-center  justify-content-start">
                   <div className="d-flex flex-column">
                     <h1
                       className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
@@ -127,7 +157,7 @@ const EditProfile = () => {
                     </button>
 
                     <button
-                      className={`${styles.remove_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
+                      className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
                       onClick={() => setuploaded(false)}
                     >
                       Remove Picture
@@ -135,8 +165,8 @@ const EditProfile = () => {
                   </div>
                 </div>
 
-                <div className="col-12 col-lg-9 d-flex justify-content-center justify-content-lg-start">
-                  <div className={`${styles.form_width}`}>
+                <div className="col-12 col-lg-9 d-flex  justify-content-lg-start">
+                  <div className={`${styles.form_width} `}>
                     <div className="ps-lg-2 ps-0">
                       <h1
                         className={`${styles.profile_type} fs_15 d-none d-lg-block fw_500 mt-4 mt-lg-0 d-flex justify-content-center fontFam_poppins`}
@@ -159,7 +189,7 @@ const EditProfile = () => {
 
                             <input
                               type="text"
-                              className={` ${styles.form_input} w-100 py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                               placeholder="Enter your name"
@@ -232,21 +262,33 @@ const EditProfile = () => {
                           </div>
                           <div className="form-group mt-3">
                             <label
-                              className={`${styles.contact_us_label}`}
+                              className={`${styles.contact_us_label} `}
                               for="exampleInputEmail1"
                             >
                               City
                             </label>
-                            <input
-                              type="text"
-                              className={` ${styles.form_input} mt-1 w-100 py-1 ps-2 fs_15 fw_600 fontFam_poppins`}
-                              id="exampleInputEmail1"
-                              aria-describedby="emailHelp"
-                              placeholder="Enter your name"
-                              name="city"
-                              value={formik.values.city}
-                              onChange={formik.handleChange}
-                            />
+                            {/* <div
+                              className={`${styles.verified_input} w-100 py-1 mt-1 d-flex justify-content-between `}
+                            >
+                              <input
+                                type="text"
+                                className={` ${styles.email_input} w-75 ps-2  fs_15 fw_600 fontFam_poppins`}
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter your city"
+                                name="city"
+                                value={formik.values.city}
+                                onChange={formik.handleChange}
+                              />
+                              <span className="d-flex align-items-center pe-2">
+                                <Image
+                                  src={dropdown}
+                                  alt="Picture of the author"
+                                  width={13}
+                                  height={13}
+                                />
+                              </span>
+                            </div> */}
                             <div className={`${styles.nmm}`}>
                               {formik.errors.city && formik.touched.city && (
                                 <span className={`text-danger fs_14 mb-0 `}>
@@ -256,7 +298,56 @@ const EditProfile = () => {
                             </div>
                           </div>
 
-                          <div className="d-flex justify-content-lg-between  mt-4 w-75 ">
+                          <div>
+                            {isLoaded ? (
+                              <>
+                                <div>
+                                  <AutoCityLoad
+                                    markerSetOn={markerSetOn}
+                                    markedAddress={markedAddress}
+                                    setSelected={setSelected}
+                                  />
+                                </div>
+                                <div className="mt-3">
+                                  <GoogleMap
+                                    zoom={16}
+                                    center={selected}
+                                    mapContainerClassName={`${styles.map_container}`}
+                                    onLoad={(map) => {
+                                      setMap(map);
+                                      formik.setFieldValue("Map", selected);
+                                    }}
+                                  >
+                                    {markerStat && (
+                                      <Marker
+                                        draggable={true}
+                                        onDragEnd={(e) => {
+                                          markerChange();
+                                          setSelected({
+                                            lat: e.latLng.lat(),
+                                            lng: e.latLng.lng(),
+                                          });
+                                          formik.setFieldValue("Map", selected);
+                                        }}
+                                        position={selected}
+                                      />
+                                    )}
+                                  </GoogleMap>
+                                </div>
+                              </>
+                            ) : (
+                              <p>Map Loading</p>
+                            )}
+
+                            {formik.errors.Map && formik.touched.Map && (
+                              <div className="d-flex align-items-center text-danger mt-2">
+                                <i className="ri-error-warning-line me-1  "></i>
+                                <span>{formik.errors.Map.lat}</span>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="d-lg-flex justify-content-lg-between d-flex   mt-4 w-75 ">
                             <button
                               className={`${styles.save_button_width} px-4 py-1 fs_15 fw_400`}
                             >

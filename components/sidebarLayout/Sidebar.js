@@ -45,14 +45,14 @@ const ProfileLayout = ({ children }) => {
                   <div>
                     <div className={`${styles.card} card mt-4`}>
                       <div className="card-body">
-                        <div className="d-flex justify-content-between">
-                          <div className="me-3">
+                        <div className="d-flex justify-content-center align-items-center">
+                          <div className="me-2">
                             <div className={`${styles.DpContainer}`}>
                               <Image
                                 className={`${styles.Dp}`}
                                 src={Dp}
-                                width={800}
-                                height={800}
+                                width={600}
+                                height={600}
                               />
                             </div>
                           </div>
