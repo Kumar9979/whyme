@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
-import styles from "../../styles/profile-pages/autoCity.module.css";
-import dropdown from "../../assets/icons/cityDropdown.svg";
+import styles from "../../../styles/profile/profile-pages/autoCity.module.css";
+import dropdown from "../../../assets/icons/cityDropdown.svg";
 import Image from "next/image";
 import usePlacesAutocomplete, {
   getGeocode,

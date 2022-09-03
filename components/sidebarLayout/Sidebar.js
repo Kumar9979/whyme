@@ -80,7 +80,7 @@ const ProfileLayout = ({ children }) => {
                     <ul className="list-unstyled  mt-3 p-3">
                       <li
                         className={`${
-                          router.pathname === "/profile/recently-viewed"
+                          router.pathname === "/profile/recent-activities/recently-viewed"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         } mb-3 d-flex align-items-center`}
@@ -91,7 +91,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Clock}
                         />
-                        <Link href="/profile/recently-viewed">
+                        <Link href="/profile/recent-activities/recently-viewed">
                           <a className={`ms-3 ${styles.sidebar_links}`}>
                             Recent Activities
                           </a>

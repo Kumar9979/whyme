@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import ProfileLayout from "../../components/sidebarLayout/Sidebar";
-import styles from "../../styles/profile-pages/edit-profile.module.css";
-import arrow_left from "../../assets/images/arrow_left.svg";
+import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
+import styles from "../../../styles/profile/profile-pages/edit-profile.module.css";
+import arrow_left from "../../../assets/images/arrow_left.svg";
 import Image from "next/image";
-import people from "../../assets/images/imagereview/people.png";
+import people from "../../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import camera from "../../assets/icons/camera.png";
-import verified from "../../assets/icons/edit-profile-icons/verified.svg";
-import dropdown from "../../assets/icons/cityDropdown.svg";
-import PlacesAutocomplete from "../post-property/property-details/placesAutocomplete";
+import camera from "../../../assets/icons/camera.png";
+import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
+import dropdown from "../../../assets/icons/cityDropdown.svg";
+import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import AutoCityLoad from "../../components/profile-pages/auto-city";
+import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 
 const EditProfile = () => {
   const libraries = ["places"];

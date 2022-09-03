@@ -1,12 +1,12 @@
 import { React } from "react";
-import ProfileLayout from "../../components/sidebarLayout/Sidebar";
-import styles from "../../styles/profile-pages/agent-my-profile.module.css";
-import arrow_left from "../../assets/images/arrow_left.svg";
+import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
+import styles from "../../../styles/profile/profile-pages/agent-my-profile.module.css";
+import arrow_left from "../../../assets/images/arrow_left.svg";
 import Image from "next/image";
-import people from "../../assets/images/imagereview/people.png";
+import people from "../../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import verified from "../../assets/icons/edit-profile-icons/verified.svg";
+import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
 import { useRouter } from "next/router";
 
 const MyProfile = () => {
