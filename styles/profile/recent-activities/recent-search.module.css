@@ -1,0 +1,13 @@
+.recent_search_text {
+  color: #323d5a;
+}
+.explore_search {
+  color: #bcc7ce;
+}
+.explore_button {
+  background: #1d72db 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  border: none;
+  color: #FFFFFF;
+}
