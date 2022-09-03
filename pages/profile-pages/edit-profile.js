@@ -347,14 +347,14 @@ const EditProfile = () => {
                             )}
                           </div>
 
-                          <div className="d-lg-flex justify-content-lg-between d-flex   mt-4 w-75 ">
+                          <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-4 py-1 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15  fw_400`}
                             >
                               Save Changes
                             </button>
                             <button
-                              className={`${styles.undo_button_width}  px-4 py-1 ms-4 fs_15 fw_500`}
+                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-1 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
                             >
                               Undo Changes
                             </button>

@@ -38,7 +38,7 @@ const MyProfile = () => {
 
   return (
     <ProfileLayout>
-      <div className={`${styles.edit_profile} me-lg-5 me-0`}>
+      <div className={`${styles.edit_profile} me-lg-3 me-0 p-2`}>
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
@@ -60,16 +60,16 @@ const MyProfile = () => {
           <hr className={`${styles.edit_horizontal_line}`}></hr>
 
           <div className="row ms-lg-4 ms-0 ">
-            <div className="col-12">
+            <div className="col-12 ">
               <div className="row ">
-                <div className="col-6 col-lg-3 d-flex justify-content-center ">
+                <div className="col-6 col-lg-3 d-flex justify-content-lg-end justify-content-start ">
                   <div className="d-flex flex-column">
                     <h1
                       className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
                     >
                       Profile Type{" "}
                       <span className={`${styles.type_buyer} fw_600 ps-3`}>
-                      Agent
+                        Agent
                       </span>
                     </h1>
                     <h3
@@ -89,7 +89,7 @@ const MyProfile = () => {
                   </div>
                 </div>
 
-                <div className="col-12 col-lg-9 d-flex justify-content-center justify-content-lg-start">
+                <div className="col-12 col-lg-9 d-flex justify-content-start justify-content-lg-start">
                   <div className={`${styles.form_width}`}>
                     <div className="ps-lg-2 ps-0">
                       <h1
@@ -104,7 +104,7 @@ const MyProfile = () => {
                       <form>
                         <div className="">
                           <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                               <div className="form-group mt-3">
                                 <label
                                   className={`${styles.contact_us_label}`}
@@ -161,7 +161,7 @@ const MyProfile = () => {
                               </div>
                             </div>
 
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                               <div className="form-group mt-3">
                                 <label
                                   className={`${styles.contact_us_label}`}
@@ -219,7 +219,9 @@ const MyProfile = () => {
                             <button
                               type="button"
                               onClick={() => {
-                                router.push("/profile-pages/edit-profile");
+                                router.push(
+                                  "/profile-pages/agent-edit-profile"
+                                );
                               }}
                               className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
                             >

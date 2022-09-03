@@ -7,7 +7,8 @@
     box-shadow: 0px 0px 20px #0000001f;
     border-radius: 10px;
     opacity: 1;
-    height: 40rem;
+    padding-bottom: 10rem !important;
+    height: fit-content;
   }
   .arrow_left_button {
     background: #323d5a 0% 0% no-repeat padding-box;
@@ -104,7 +105,7 @@
   }
   
   .form_width {
-    width: 90%;
+    width: 95%;
   }
   .verified_text {
     color: #50bf97;
@@ -112,6 +113,11 @@
   .description_box {
     height: 6rem;
     color: #323D5A;
+     background: #dbe9f200 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    border-color: #dddbdb;
+    border-width: 1px;
+    border-style: solid;
   }
   .description_box:focus-visible {
     outline: none !important;
@@ -127,6 +133,7 @@
   @media only screen and (min-width: 992px) and (max-width: 1320px) {
     .edit_profile {
       padding-left: 5rem;
+      width: 88%;
     }
     .form_width {
       width: 100%;
@@ -134,17 +141,26 @@
   }
   @media only screen and (max-width: 992px) {
     .form_width {
-      width: 75%;
+      width: 100%;
+    }
+    .edit_profile {
+      width: 97%;
     }
   }
   @media only screen and (max-width: 768px) {
     .form_width {
       width: 85%;
     }
+    .edit_profile {
+      width: 97%;
+    }
   }
   @media only screen and (max-width: 600px) {
     .form_width {
       width: 100%;
+    }
+    .edit_profile {
+      width: 97%;
     }
   }
   
