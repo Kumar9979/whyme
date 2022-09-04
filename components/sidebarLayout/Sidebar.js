@@ -80,7 +80,7 @@ const ProfileLayout = ({ children }) => {
                     <ul className="list-unstyled  mt-3 p-3">
                       <li
                         className={`${
-                          router.pathname === "/profile/recent-activities/recently-viewed"
+                          router.pathname === "/profile/sidebar-pages/recent-activities"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         } mb-3 d-flex align-items-center`}
@@ -91,7 +91,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Clock}
                         />
-                        <Link href="/profile/recent-activities/recently-viewed">
+                        <Link href="/profile/sidebar-pages/recent-activities">
                           <a className={`ms-3 ${styles.sidebar_links}`}>
                             Recent Activities
                           </a>
@@ -99,7 +99,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/shortlisted-properties"
+                          router.pathname === "/profile/sidebar-pages/saved-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -110,7 +110,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Heart}
                         />
-                        <Link href="/profile/shortlisted-properties">
+                        <Link href="/profile/sidebar-pages/saved-properties">
                           <a className={`ms-3 ${styles.sidebar_links}`}>
                             Saved Properties
                           </a>

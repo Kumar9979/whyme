@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/profile/recent-activities/recent-search.module.css";
+import styles from "../../../styles/profile/sidebar-pages/recent-activities.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
 

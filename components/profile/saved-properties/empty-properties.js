@@ -1,11 +1,12 @@
 import React from "react";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import styles from "../../../styles/profile/sidebar-pages/recent-activities.module.css";
+import styles from "../../../styles/profile/sidebar-pages/saved-properties.module.css";
 
-const NoRecentSearch = () => {
+const EmptySearch = () => {
   return (
-    <div className="d-flex h-100 flex-column d-flex justify-content-center align-items-center pe-5">
+    <div className="d-flex vh-100 justify-content-center align-items-center">
+        <div className="d-flex  flex-column d-flex justify-content-center align-items-center  pe-5">
       <Image src={view} alt="Picture of the author" width={50} />
       <h2
         className={`${styles.recent_search_text} fs_24 fontFam_poppins fw_500`}
@@ -21,7 +22,9 @@ const NoRecentSearch = () => {
         Explore
       </button>
     </div>
+    </div>
+    
   );
 };
 
-export default NoRecentSearch;
+export default EmptySearch;

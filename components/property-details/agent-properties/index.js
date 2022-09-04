@@ -8,6 +8,7 @@ import arrowleft from "../../../assets/images/arrow_left.svg";
 import arrowright from "../../../assets/images/arrow_right.svg";
 import seeall from "../../../assets/images/seeall.svg";
 
+
 const AgentProperties = () => {
   let n = 10;
   const ref = useRef();
@@ -47,56 +48,11 @@ const AgentProperties = () => {
               })}
             </div>
           </div>
+        </div>
 
-          {/* <div className={`col-6 col-lg-4 `}>
-            <RelatedProperties/>
-          </div>
-          <div className="col-6 col-lg-4">
-          <RelatedProperties/>
-          </div> */}
-          <div></div>
-        </div>
-        {/* <div
-          className={`${styles.prev_button} position-absolute d-none d-lg-block`}
-        >
-          <button
-            className={`${styles.prev_decor} d-flex align-items-center`}
-            onClick={() => {
-              onScroll(-400);
-            }}
-          >
-            <Image
-              src={arrowleft}
-              alt="Picture of the author"
-              width={20}
-              height={20}
-              className={`${styles.agent_image} `}
-            />
-          </button>
-        </div>
-        <div
-          className={`${styles.next_button} position-absolute d-none d-lg-block`}
-        >
-          <button
-            className={`${styles.prev_decor} d-flex align-items-center`}
-            onClick={() => {
-              onScroll(+400);
-            }}
-          >
-            <Image
-              src={arrowright}
-              alt="Picture of the author"
-              width={20}
-              height={20}
-              className={`${styles.agent_image} `}
-            />
-          </button>
-        </div> */}
       </div>
     </div>
   );
 };
 
 export default AgentProperties;
-
-

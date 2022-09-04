@@ -17,3 +17,11 @@ const AddAProperty = () => {
 };
 
 export default AddAProperty;
+// const n = 200;
+//  <div>
+// {Array(n)
+//   .fill("akash","singh")
+//   .map((_, index) => {
+//     return <p key={index}>{_}</p>;
+//   })}
+// </div> 

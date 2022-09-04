@@ -1,28 +1,84 @@
-import React from "react";
-import styles from "../../../styles/profile/recent-activities/recent-search.module.css";
+import { React, useRef, useState, useEffect } from "react";
+import styles from "../../../styles/profile/sidebar-pages/recent-activities.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-
+import SimilarProperties from "../../property-details/similar-properties";
+import RelatedProperties from "../../property-details/related-properties-card";
 
 const RecentView = () => {
+  let n = 10;
+  const ref = useRef();
+  const onScroll = (scroll) => {
+    ref.current.scrollLeft += scroll;
+  };
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 1200) {
+      setMobile(true);
+    }
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1200) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <div className="d-flex h-100 flex-column d-flex justify-content-center align-items-center pe-5">
-      <Image src={view} alt="Picture of the author" width={50} />
-      <h2
-        className={`${styles.recent_search_text} fs_24 fontFam_poppins fw_500`}
-      >
-        No Recent Searches
-      </h2>
-      <p className={`${styles.explore_search} fs_16 fontFam_poppins fw_400`}>
-        We guess this is your first time! explore properties now.
-      </p>
-      <button
-        className={`${styles.explore_button} fs_13 fontFam_poppins fw_400 px-5 py-1`}
-      >
-        Explore
-      </button>
+    <div className="d-flex h-100 flex-column pe-1">
+      <div className={`mt-3`}>
+        <div>
+          {mobile ? (
+            <div>
+              <div className={`row p-3  mb-5`}>
+                <div className={`${styles.scrollmenuMobile}  `}>
+                  <div ref={ref} className={`${styles.row} d-flex`}>
+                    {[...Array(n)].map((item, index) => {
+                      return <RelatedProperties />;
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className={`${styles.scrollmenu} `}>
+              <div ref={ref} className={`${styles.row}`}>
+                {[...Array(n)].map((item, index) => {
+                  return (
+                    <div className={`${styles.width_properties} mb-0`}>
+                      <SimilarProperties />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
 
 export default RecentView;
+
+const dates = [
+  {
+    date: "Yesterday",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+];

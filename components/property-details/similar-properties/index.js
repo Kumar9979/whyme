@@ -60,31 +60,7 @@ const SimilarProperties = () => {
   const Alltext = readless === true ? text : text.slice(0, 200);
   return (
     <div className="">
-      <div className="d-flex justify-content-between px-2 ">
-        <div
-          className={`fs_24 fw_600 fontFam_poppins ${styles.similar_properties_heading}`}
-        >
-          Related Properties
-        </div>
-        <div>
-          <button
-            className={`${styles.seeall_button} d-flex align-items-center `}
-          >
-            <span>See All </span>
-            <span className={`mt-1 ms-2 `}>
-              {" "}
-              <Image
-                src={seeall}
-                alt="Picture of the autho"
-                width={15}
-                height={15}
-              />
-            </span>
-          </button>
-        </div>
-      </div>
-
-      {mobile ? (
+      {/* {mobile ? (
         <div>
           <div className={`row p-3  mb-5`}>
             <div className={`${styles.scrollmenu}  `}>
@@ -94,16 +70,9 @@ const SimilarProperties = () => {
                 })}
               </div>
             </div>
-
-            {/* <div className={`col-6 col-lg-4 `}>
-            <RelatedProperties/>
-          </div>
-          <div className="col-6 col-lg-4">
-          <RelatedProperties/>
-          </div> */}
           </div>
         </div>
-      ) : (
+      ) : ( */}
         <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
           <div className={`position-relative col-lg-3 `}>
             <Image
@@ -140,7 +109,7 @@ const SimilarProperties = () => {
           <div className={`d-flex flex-column ps-2 col-lg-7`}>
             <div className="d-flex align-items-center">
               <div
-                className={`${styles.similar_property_location} fs_18 fw_500 fontFam_poppins`}
+                className={`${styles.similar_property_location} fs_14 fw_500 fontFam_poppins`}
               >
                 2BHK flat in Vijayanagar, Mysuru
               </div>
@@ -185,7 +154,7 @@ const SimilarProperties = () => {
               })}
             </div>
             <p
-              className={`${styles.about_readmore_text} fs_10 fw_500 fontFam_poppins`}
+              className={`${styles.about_readmore_text} fs_8 fw_500 fontFam_poppins`}
             >
               {Alltext}
               <button
@@ -199,7 +168,7 @@ const SimilarProperties = () => {
 
           <div className="col-lg-2 d-flex flex-column justify-content-between">
             <div
-              className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+              className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
             >
               ₹ 30 Lac
             </div>
@@ -210,7 +179,7 @@ const SimilarProperties = () => {
                 Posted On 20 June 2020
               </div>
               <span
-                className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
+                className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date}`}
               >
                 By Amal Sabu
               </span>
@@ -232,7 +201,7 @@ const SimilarProperties = () => {
             </div>
           </div>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };
