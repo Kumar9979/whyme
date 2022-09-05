@@ -127,10 +127,11 @@ const SimilarProperties = () => {
                 Mysuru - 570017
               </span>
             </div>
-            <div className={`row ps-2 pt-1`}>
+            <div className={`row ps-2 ${styles.amenties_width} pt-1`}>
               {aboutproperties.map((item, index) => {
                 return (
                   <div className={`col-lg-4 col-6 d-flex mb-3`}>
+                    <div className="d-flex align-items-center">
                     <Image
                       src={item.image}
                       alt="Picture of the author"
@@ -149,12 +150,14 @@ const SimilarProperties = () => {
                         {item.amenity}
                       </span>
                     </div>
+                    </div>
+                    
                   </div>
                 );
               })}
             </div>
             <p
-              className={`${styles.about_readmore_text} fs_8 fw_500 fontFam_poppins`}
+              className={`${styles.about_readmore_text} fs_8 w-75 fw_500 fontFam_poppins`}
             >
               {Alltext}
               <button
