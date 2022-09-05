@@ -5,7 +5,7 @@ import styles from "../../../styles/profile/sidebar-pages/saved-properties.modul
 
 const EmptySearch = () => {
   return (
-    <div className="d-flex vh-100 justify-content-center align-items-center">
+    <div className={`${styles.empty_search_container} d-flex h-100 justify-content-center align-items-center`}>
         <div className="d-flex  flex-column d-flex justify-content-center align-items-center  pe-5">
       <Image src={view} alt="Picture of the author" width={50} />
       <h2
