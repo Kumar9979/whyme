@@ -19,6 +19,7 @@ const Modals = () => {
       {/* <ReportProperty handleClose={handleClose} show={show}/> */}
       {/* <Activities handleClose={handleClose} show={show}/> */}
       <SaveChanges handleClose={handleClose} show={show}/>
+      <SaveChanges handleClose={handleClose} show={show}/>
 
 
     </div>
