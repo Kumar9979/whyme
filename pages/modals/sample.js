@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Sample from "../../components/modals/edit-profile-modals/sample";
 import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import Activities from "../../components/modals/property-details/activities";
 import ReportProperty from "../../components/modals/property-details/report-property";
@@ -18,7 +19,7 @@ const Modals = () => {
       {/* <ScheduleVisit handleClose={handleClose} show={show}/> */}
       {/* <ReportProperty handleClose={handleClose} show={show}/> */}
       {/* <Activities handleClose={handleClose} show={show}/> */}
-      <SaveChanges handleClose={handleClose} show={show}/>
+      <Sample handleClose={handleClose} show={show}/>
 
 
     </div>
