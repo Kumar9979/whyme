@@ -192,7 +192,6 @@ const SimilarProperties = () => {
           </div>
         </div>
       </div>
-      {/* )} */}
     </div>
   );
 };

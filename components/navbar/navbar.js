@@ -96,7 +96,7 @@ const Navbar = () => {
           label: (
             <div onClick={() => {
               router.push(
-                "/profile/sidebar-pages/recent-activities"
+                "/profile/sidebar-pages/saved-properties"
               );
             }}>
               <a

@@ -31,7 +31,7 @@ const RecentlyViewed = () => {
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div>
-            <SavedProperties/>
+            <EmptySearch/>
           </div>
         </div>
       </div>
