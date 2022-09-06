@@ -45,7 +45,13 @@ const ProfileLayout = ({ children }) => {
               <div className={`${styles.sidebar}    position-fixed`}>
                 <div className="d-flex flex-column h-100 justify-content-between">
                   <div>
-                    <div className={`${styles.card} card mt-4`}>
+                    <div 
+                    onClick={() => {
+                      router.push(
+                        "/profile/profile-pages/agent-my-profile"
+                      );
+                    }}
+                     className={`${styles.card} card mt-4`}>
                       <div className="card-body">
                         <div className="d-flex justify-content-center align-items-center">
                           <div className="me-2">

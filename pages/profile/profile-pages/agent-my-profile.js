@@ -16,7 +16,8 @@ const MyProfile = () => {
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
       city: "Mysore",
-      message: "lorem ipsum",
+      message:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
     // validationSchema: Yup.object({
     //   name: Yup.string()
@@ -207,7 +208,9 @@ const MyProfile = () => {
                               Message
                             </label>
                             <textarea
+                            type ="text"
                               readOnly
+                        
                               className={`${styles.description_box} w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Message"
                               id="exampleInputEmail1"
@@ -220,7 +223,7 @@ const MyProfile = () => {
                               type="button"
                               onClick={() => {
                                 router.push(
-                                  "/profile-pages/agent-edit-profile"
+                                  "/profile/profile-pages/agent-edit-profile"
                                 );
                               }}
                               className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}

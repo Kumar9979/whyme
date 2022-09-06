@@ -46,7 +46,9 @@ const EditProfile = () => {
       name: "Iman Khan",
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
-      city: "Mysore",
+      city: "",
+      message:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+
     },
     validationSchema: Yup.object({
       image: Yup.mixed().required("Upload an Image"),
@@ -83,6 +85,10 @@ const EditProfile = () => {
     googleMapsApiKey: "AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU",
     libraries,
   });
+  function formikHandle(value) {
+    formik.setFieldValue("city", value);
+  }
+  console.log(formik.values);
 
   return (
     <ProfileLayout>
@@ -139,9 +145,6 @@ const EditProfile = () => {
                         id="profile"
                         name="img"
                         accept="image/*;capture=camera"
-                        // onChange={(e) => {
-                        //   handleChange(e);
-                        // }}
                         onChange={(e) => {
                           formik.setFieldValue("image", e.target.files[0]);
                           handleChange(e);
@@ -151,7 +154,7 @@ const EditProfile = () => {
 
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
-                      //   onClick={setRemove(!remove)}
+                      
                     >
                       <label htmlFor="profile">Change Picture </label>
                     </button>
@@ -273,97 +276,69 @@ const EditProfile = () => {
                                 </div>
                               </div>
                               <div className="form-group mt-3">
-                                <label
-                                  className={`${styles.contact_us_label} `}
-                                  for="exampleInputEmail1"
-                                >
-                                  City
-                                </label>
-                                {/* <div
-                              className={`${styles.verified_input} w-100 py-1 mt-1 d-flex justify-content-between `}
+                            <label
+                              className={`${styles.contact_us_label} `}
+                              for="exampleInputEmail1"
                             >
-                              <input
-                                type="text"
-                                className={` ${styles.email_input} w-75 ps-2  fs_15 fw_600 fontFam_poppins`}
-                                id="exampleInputEmail1"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter your city"
-                                name="city"
-                                value={formik.values.city}
-                                onChange={formik.handleChange}
-                              />
-                              <span className="d-flex align-items-center pe-2">
-                                <Image
-                                  src={dropdown}
-                                  alt="Picture of the author"
-                                  width={13}
-                                  height={13}
-                                />
-                              </span>
-                            </div> */}
-                                <div className={`${styles.nmm}`}>
-                                  {formik.errors.city &&
-                                    formik.touched.city && (
-                                      <span
-                                        className={`text-danger fs_14 mb-0 `}
-                                      >
-                                        {formik.errors.city}
-                                      </span>
-                                    )}
-                                </div>
-                              </div>
-
-                              <div>
-                                {isLoaded ? (
-                                  <>
-                                    <div>
-                                      <AutoCityLoad
-                                        markerSetOn={markerSetOn}
-                                        markedAddress={markedAddress}
-                                        setSelected={setSelected}
-                                      />
-                                    </div>
-                                    <div className="mt-3">
-                                      <GoogleMap
-                                        zoom={16}
-                                        center={selected}
-                                        mapContainerClassName={`${styles.map_container}`}
-                                        onLoad={(map) => {
-                                          setMap(map);
-                                          formik.setFieldValue("Map", selected);
-                                        }}
-                                      >
-                                        {markerStat && (
-                                          <Marker
-                                            draggable={true}
-                                            onDragEnd={(e) => {
-                                              markerChange();
-                                              setSelected({
-                                                lat: e.latLng.lat(),
-                                                lng: e.latLng.lng(),
-                                              });
-                                              formik.setFieldValue(
-                                                "Map",
-                                                selected
-                                              );
-                                            }}
-                                            position={selected}
-                                          />
+                              City
+                            </label>
+                            <div>
+                              {isLoaded ? (
+                                <>
+                                  <div>
+                                    <AutoCityLoad
+                                      result={selected}
+                                      formikUpdate={formikHandle}
+                                      markerSetOn={markerSetOn}
+                                      markedAddress={markedAddress}
+                                      setSelected={setSelected}
+                                    />
+                                    <div className={`${styles.nmm}`}>
+                                      {formik.errors.city &&
+                                        formik.touched.city && (
+                                          <span
+                                            className={`text-danger fs_14 mb-0 `}
+                                          >
+                                            {formik.errors.city}
+                                          </span>
                                         )}
-                                      </GoogleMap>
                                     </div>
-                                  </>
-                                ) : (
-                                  <p>Map Loading</p>
-                                )}
-
-                                {formik.errors.Map && formik.touched.Map && (
-                                  <div className="d-flex align-items-center text-danger mt-2">
-                                    <i className="ri-error-warning-line me-1  "></i>
-                                    <span>{formik.errors.Map.lat}</span>
                                   </div>
-                                )}
-                              </div>
+                                  <div className="mt-3">
+                                    <GoogleMap
+                                      zoom={16}
+                                      center={selected}
+                                      mapContainerClassName={`${styles.map_container}`}
+                                      onLoad={(map) => {
+                                        setMap(map);
+                                        formik.setFieldValue("Map", selected);
+                                      }}
+                                    >
+                                      {markerStat && (
+                                        <Marker
+                                          draggable={true}
+                                          onDragEnd={(e) => {
+                                            markerChange();
+                                            setSelected({
+                                              lat: e.latLng.lat(),
+                                              lng: e.latLng.lng(),
+                                            });
+                                            formik.setFieldValue(
+                                              "Map",
+                                              selected
+                                            );
+                                          }}
+                                          position={selected}
+                                        />
+                                      )}
+                                    </GoogleMap>
+                                  </div>
+                                </>
+                              ) : (
+                                <p>Map Loading</p>
+                              )}
+                            </div>
+                          </div>
                             </div>
                           </div>
 
@@ -375,11 +350,13 @@ const EditProfile = () => {
                               Message
                             </label>
                             <textarea
-                              className={`${styles.description_box} w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
+                            
+                              className={`${styles.description_box}  w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Message"
                               id="exampleInputEmail1"
                               name="message"
                               value={formik.values.message}
+                              onChange={formik.handleChange}
                             ></textarea>
                           </div>
 

@@ -199,7 +199,7 @@ const MyProfile = () => {
                               type="button"
                               onClick={() => {
                                 router.push(
-                                  "/profile-pages/edit-profile"
+                                  "/profile/profile-pages/edit-profile"
                                 );
                               }}
                               className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
