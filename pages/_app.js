@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <Navbar />
           <Component {...pageProps} />
-      
+                
       </Provider>
     </>
   );

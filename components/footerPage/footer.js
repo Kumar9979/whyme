@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 // import { useMediaQuery } from "react-responsive";
 
-const Footer = () => {
+const Foter = () => {
   // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const [isTabletOrMobile, setMobile] = useState(false);
@@ -324,4 +324,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Foter;

@@ -46,9 +46,9 @@ const EditProfile = () => {
       name: "Iman Khan",
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
-      city: "",
-      message:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
-
+      city: "mysore",
+      description:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
     validationSchema: Yup.object({
       image: Yup.mixed().required("Upload an Image"),
@@ -56,6 +56,7 @@ const EditProfile = () => {
         .matches(nameregex, "Invalid First Name")
         .required("Required"),
       city: Yup.string().required("Required"),
+      description: Yup.string().required("Required"),
       phone: Yup.string()
         .matches(phoneregex, "Invalid Phone Number")
         .required("Required"),
@@ -154,7 +155,6 @@ const EditProfile = () => {
 
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
-                      
                     >
                       <label htmlFor="profile">Change Picture </label>
                     </button>
@@ -276,69 +276,72 @@ const EditProfile = () => {
                                 </div>
                               </div>
                               <div className="form-group mt-3">
-                            <label
-                              className={`${styles.contact_us_label} `}
-                              for="exampleInputEmail1"
-                            >
-                              City
-                            </label>
-                            <div>
-                              {isLoaded ? (
-                                <>
-                                  <div>
-                                    <AutoCityLoad
-                                      result={selected}
-                                      formikUpdate={formikHandle}
-                                      markerSetOn={markerSetOn}
-                                      markedAddress={markedAddress}
-                                      setSelected={setSelected}
-                                    />
-                                    <div className={`${styles.nmm}`}>
-                                      {formik.errors.city &&
-                                        formik.touched.city && (
-                                          <span
-                                            className={`text-danger fs_14 mb-0 `}
-                                          >
-                                            {formik.errors.city}
-                                          </span>
-                                        )}
-                                    </div>
-                                  </div>
-                                  <div className="mt-3">
-                                    <GoogleMap
-                                      zoom={16}
-                                      center={selected}
-                                      mapContainerClassName={`${styles.map_container}`}
-                                      onLoad={(map) => {
-                                        setMap(map);
-                                        formik.setFieldValue("Map", selected);
-                                      }}
-                                    >
-                                      {markerStat && (
-                                        <Marker
-                                          draggable={true}
-                                          onDragEnd={(e) => {
-                                            markerChange();
-                                            setSelected({
-                                              lat: e.latLng.lat(),
-                                              lng: e.latLng.lng(),
-                                            });
+                                <label
+                                  className={`${styles.contact_us_label} `}
+                                  for="exampleInputEmail1"
+                                >
+                                  City
+                                </label>
+                                <div>
+                                  {isLoaded ? (
+                                    <>
+                                      <div>
+                                        <AutoCityLoad
+                                          result={selected}
+                                          formikUpdate={formikHandle}
+                                          markerSetOn={markerSetOn}
+                                          markedAddress={markedAddress}
+                                          setSelected={setSelected}
+                                        />
+                                        <div className={`${styles.nmm}`}>
+                                          {formik.errors.city &&
+                                            formik.touched.city && (
+                                              <span
+                                                className={`text-danger fs_14 mb-0 `}
+                                              >
+                                                {formik.errors.city}
+                                              </span>
+                                            )}
+                                        </div>
+                                      </div>
+                                      <div className="mt-3">
+                                        <GoogleMap
+                                          zoom={16}
+                                          center={selected}
+                                          mapContainerClassName={`${styles.map_container}`}
+                                          onLoad={(map) => {
+                                            setMap(map);
                                             formik.setFieldValue(
                                               "Map",
                                               selected
                                             );
                                           }}
-                                          position={selected}
-                                        />
-                                      )}
-                                    </GoogleMap>
-                                  </div>
-                                </>
-                              ) : (
-                                <p>Map Loading</p>
-                              )}
-                            </div>
-                          </div>
+                                        >
+                                          {markerStat && (
+                                            <Marker
+                                              draggable={true}
+                                              onDragEnd={(e) => {
+                                                markerChange();
+                                                setSelected({
+                                                  lat: e.latLng.lat(),
+                                                  lng: e.latLng.lng(),
+                                                });
+                                                formik.setFieldValue(
+                                                  "Map",
+                                                  selected
+                                                );
+                                              }}
+                                              position={selected}
+                                            />
+                                          )}
+                                        </GoogleMap>
+                                      </div>
+                                    </>
+                                  ) : (
+                                    <p>Map Loading</p>
+                                  )}
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -350,14 +353,23 @@ const EditProfile = () => {
                               Description
                             </label>
                             <textarea
-                            
                               className={`${styles.description_box}  w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Enter description"
                               id="exampleInputEmail1"
-                              name="message"
-                              value={formik.values.message}
+                              name="description"
+                              value={formik.values.description}
                               onChange={formik.handleChange}
                             ></textarea>
+                              <div className={`${styles.nmm}`}>
+                                  {formik.errors.description &&
+                                    formik.touched.description && (
+                                      <span
+                                        className={`text-danger fs_14 mb-0 `}
+                                      >
+                                        {formik.errors.description}
+                                      </span>
+                                    )}
+                                </div>
                           </div>
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">

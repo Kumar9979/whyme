@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/profile-pages/every-edit-profile.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -12,6 +13,7 @@ import dropdown from "../../../assets/icons/cityDropdown.svg";
 import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
+import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
 
 const CompanyEditProfile = () => {
   const libraries = ["places"];
@@ -46,7 +48,7 @@ const CompanyEditProfile = () => {
       name: "Iman Khan",
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
-      city: "",
+      city: "mysore",
       company: "Brigade Group",
       role: "Marketing Executive",
       message:
@@ -93,6 +95,9 @@ const CompanyEditProfile = () => {
     formik.setFieldValue("city", value);
   }
   console.log(formik.values);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <ProfileLayout>
@@ -100,6 +105,8 @@ const CompanyEditProfile = () => {
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
+              onClick={handleShow}
+             
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
               <Image
@@ -108,12 +115,14 @@ const CompanyEditProfile = () => {
                 width={20}
                 height={15}
               />
+              
             </button>
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_400 ms-2`}
             >
               Edit Profile
             </span>
+            <SaveChanges handleClose={handleClose} show={show} />
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
 
@@ -366,7 +375,7 @@ const CompanyEditProfile = () => {
                                             )}
                                         </div>
                                       </div>
-                                      <div className="mt-2">
+                                      <div className="mt-3">
                                         <GoogleMap
                                           zoom={16}
                                           center={selected}
