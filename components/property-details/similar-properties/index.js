@@ -96,7 +96,7 @@ const SimilarProperties = () => {
         <div className={`d-flex flex-column ps-2 col-lg-7`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location} fs_14 fw_500 fontFam_poppins`}
+              className={`${styles.similar_property_location}  fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
             </div>
@@ -128,12 +128,12 @@ const SimilarProperties = () => {
                    
                     <div className="d-flex flex-column ps-2">
                       <span
-                        className={`${styles.about_property_heading} fs_8  fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_heading} fontFam_poppins`}
                       >
                         {item.heading}
                       </span>
                       <span
-                        className={`${styles.about_property_amenity} fs_8 fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_amenity} fontFam_poppins`}
                       >
                         {item.amenity}
                       </span>
@@ -144,7 +144,7 @@ const SimilarProperties = () => {
             })}
           </div>
           <p
-            className={`${styles.about_readmore_text} fs_8  fw_500 fontFam_poppins`}
+            className={`${styles.about_readmore_text} fontFam_poppins`}
           >
             {Alltext}
             <button
