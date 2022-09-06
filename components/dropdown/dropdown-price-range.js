@@ -11,7 +11,7 @@ const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState(placeholder);
 
-  const [isHover, toggleHover] = useState(false);
+  const [isHover, toggleHover] = useState(true);
   console.log(selected);
   const toggleHoverMenu = (state) => {
     if (state === "hovered") {
@@ -48,8 +48,8 @@ const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
   };
   return (
     <motion.div
-      onHoverStart={() => toggleHoverMenu("hovered")}
-      onHoverEnd={() => toggleHoverMenu("leaved")}
+      // onHoverStart={() => toggleHoverMenu("hovered")}
+      // onHoverEnd={() => toggleHoverMenu("leaved")}
       className={`${styles.dropdown}`}
     >
       <div
