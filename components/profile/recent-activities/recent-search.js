@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const RecentSearch = () => {
   return (
-    <div className="d-flex h-100 flex-column pe-3">
+    <div className="d-flex h-100 flex-column pe-3 p-4">
       <ul className="list-unstyled">
         <li className="mt-3">
           <h1 className={`${styles.search_dates} fs_18 fw_500 fontFam_poppins`}>

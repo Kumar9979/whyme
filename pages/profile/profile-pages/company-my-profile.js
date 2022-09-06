@@ -9,13 +9,15 @@ import * as Yup from "yup";
 import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
 import { useRouter } from "next/router";
 
-const MyProfile = () => {
+const CompanyProfile = () => {
   const formik = useFormik({
     initialValues: {
       name: "Iman Khan",
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
       city: "Mysore",
+      company: "Brigade Group",
+      role: "Marketing Executive",
       message:
         "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
@@ -76,7 +78,7 @@ const MyProfile = () => {
                     <h3
                       className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
                     >
-                      Profile Picture
+                      Company Logo
                     </h3>
                     <div className="">
                       <Image
@@ -111,7 +113,7 @@ const MyProfile = () => {
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputEmail1"
                                 >
-                                  Full Name
+                                  Company Name
                                 </label>
 
                                 <input
@@ -120,11 +122,12 @@ const MyProfile = () => {
                                   className={` ${styles.form_input} w-100 py-1 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
                                   id="exampleInputEmail1"
                                   aria-describedby="emailHelp"
-                                  placeholder="Enter your name"
-                                  name="name"
-                                  value={formik.values.name}
+                                  placeholder="Enter company name"
+                                  name="company"
+                                  value={formik.values.company}
                                 />
                               </div>
+
                               <div className="form-group mt-3">
                                 <label
                                   className={`${styles.contact_us_label} `}
@@ -160,9 +163,50 @@ const MyProfile = () => {
                                   </span>
                                 </div>
                               </div>
+
+
+                              <div className="form-group mt-3">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Role
+                                </label>
+
+                                <input
+                                  type="text"
+                                  readOnly
+                                  className={` ${styles.form_input} w-100 py-1 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your Role"
+                                  name="role"
+                                  value={formik.values.role}
+                                />
+                              </div>
+                              
                             </div>
 
                             <div className="col-12 col-lg-6 col-md-6">
+                                <div className="form-group">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Full Name
+                                </label>
+
+                                <input
+                                  type="text"
+                                  readOnly
+                                  className={` ${styles.form_input} w-100 py-1 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your name"
+                                  name="name"
+                                  value={formik.values.name}
+                                />
+                              </div>
                               <div className="form-group mt-3">
                                 <label
                                   className={`${styles.contact_us_label}`}
@@ -200,19 +244,19 @@ const MyProfile = () => {
                               </div>
                             </div>
                           </div>
+
                           <div id="comment-message" className="form-group mt-3">
                             <label
                               className={`${styles.contact_us_label} `}
                               htmlFor="exampleInputEmail1"
                             >
-                              Deacription
+                              Message
                             </label>
                             <textarea
-                            type ="text"
+                              type="text"
                               readOnly
-                        
                               className={`${styles.description_box} w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
-                              placeholder="Enter desctiption"
+                              placeholder="Message"
                               id="exampleInputEmail1"
                               name="message"
                               value={formik.values.message}
@@ -223,18 +267,14 @@ const MyProfile = () => {
                               type="button"
                               onClick={() => {
                                 router.push(
-                                  "/profile/profile-pages/agent-edit-profile"
+                                  "/profile/profile-pages/company-edit-profile"
                                 );
                               }}
                               className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
                             >
                               Edit Profile
                             </button>
-                            {/* <button
-                            className={`${styles.undo_button_width}  px-3 py-1 ms-4 fs_15 fw_500`}
-                          >
-                            Undo Changes
-                          </button> */}
+                           
                           </div>
                         </div>
                       </form>
@@ -250,4 +290,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default CompanyProfile;
