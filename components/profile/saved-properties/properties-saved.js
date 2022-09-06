@@ -4,6 +4,9 @@ import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
 import SimilarProperties from "../../property-details/similar-properties";
 import RelatedProperties from "../../property-details/related-properties-card";
+import ProfileRelatedProperties from "../profile-related-properties";
+import PlotProperties from "../recent-activities/plot-similar-properties";
+// import PlotProperties from "./plot-similar-properties";
 
 const SavedProperties = () => {
   let n = 10;
@@ -13,13 +16,13 @@ const SavedProperties = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 1150) {
+    if (window.innerWidth < 992) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1150) {
+      if (window.innerWidth < 992) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -32,39 +35,77 @@ const SavedProperties = () => {
     };
   }, []);
   return (
-    <div className="d-flex h-100 flex-column pe-1 col-8">
+    <div className="d-flex h-100 flex-column">
       <div className={`mt-3`}>
-        <div>
-          {mobile ? (
-            <div>
-              <div className={`row p-3  mb-5`}>
-                <div className={`${styles.scrollmenuMobile}  `}>
-                  <div ref={ref} className={`${styles.row} d-flex`}>
-                    {[...Array(n)].map((item, index) => {
-                      return <RelatedProperties />;
-                    })}
+        {mobile ? (
+          <div className="d-flex justify-content-center">
+            <div className={`row  mb-5 `}>
+              <div className={`${styles.scrollmenu}  `}>
+                <div ref={ref} className={`${styles.row}`}>
+                  <div>
+                    <div className="mb-4 m-2 d-flex justify-content-center">
+                      <ProfileRelatedProperties />
+                    </div>
+                  </div>
+
+                  <div className="mb-4 m-2 d-flex justify-content-center">
+                    <ProfileRelatedProperties />
+                  </div>
+                  <div>
+                    <div className="mb-4 m-2 d-flex justify-content-center">
+                      <ProfileRelatedProperties />
+                    </div>
+                  </div>
+                  <div className="mb-4 m-2 d-flex justify-content-center">
+                    <ProfileRelatedProperties />
+                  </div>
+                  <div className="mb-4 m-2 d-flex justify-content-center">
+                    <ProfileRelatedProperties />
                   </div>
                 </div>
               </div>
             </div>
-          ) : (
-            <div className={`${styles.scrollmenu} `}>
-              <div ref={ref} className={`${styles.row}`}>
-                {[...Array(n)].map((item, index) => {
-                  return (
-                    <div className={`${styles.width_properties} mb-0`}>
-                      <SimilarProperties />
-                    </div>
-                  );
-                })}
+          </div>
+        ) : (
+          <div className={`${styles.scrollmenu} `}>
+            <div ref={ref} className={`${styles.row}`}>
+              <div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+              </div>
+              <div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <PlotProperties />
+                </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
 export default SavedProperties;
 
-
+const dates = [
+  {
+    date: "Yesterday",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+  {
+    date: "26 Aug 2022",
+  },
+];

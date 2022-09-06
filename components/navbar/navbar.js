@@ -100,6 +100,11 @@ const Navbar = () => {
               );
             }}>
               <a
+              onClick={() => {
+                router.push(
+                  "/profile/sidebar-pages/saved-properties"
+                );
+              }}
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"

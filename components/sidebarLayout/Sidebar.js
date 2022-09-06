@@ -47,7 +47,9 @@ const ProfileLayout = ({ children }) => {
                   <div>
                     <div
                       onClick={() => {
-                        router.push("/profile/profile-pages/company-my-profile");
+                        router.push(
+                          "/profile/profile-pages/company-my-profile"
+                        );
                       }}
                       className={`${styles.card} card mt-4`}
                     >
@@ -144,7 +146,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/add-a-property"
+                          router.pathname === "/profile/sidebar-pages/settings"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -155,7 +157,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Settings}
                         />
-                        <Link href="/profile/add-a-property">
+                        <Link href="/profile/sidebar-pages/settings">
                           <a className={` ms-3 ${styles.sidebar_links}`}>
                             Settings
                           </a>
@@ -163,6 +165,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
+
                   <div className={`${styles.logout} p-3 mb-4`}>
                     <hr></hr>
                     <div className="d-flex align-items-center justify-content-between ">
