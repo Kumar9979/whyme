@@ -14,6 +14,7 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 12px;
   opacity: 1;
+  width: 90%;
 }
 .luxurius {
   color: #000000;
@@ -54,6 +55,12 @@
 }
 .about_readmore_text {
   color: #323d5a;
+  width: 90%;
+  padding-top: 1rem;
+}
+.image_size {
+  width: 20px;
+  height: 20px;
 }
 .about_readmore_button {
   background-color: transparent;
@@ -111,10 +118,31 @@
   right: 5%;
 }
 .amenties_width {
-  width: 95%;
+  width: 98%;
+  padding-top: 1rem;
 }
 /* @media only screen and (min-width: 992px) and (max-width: 1300px) {
   .ready_house {
     font-size: 5px;
   }
 } */
+@media only screen and  (max-width: 1200px) {
+  .similar_properties_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+    border-radius: 12px;
+    opacity: 1;
+    width: 99%;
+  }
+  .about_readmore_text {
+    padding-top: 0rem;
+  }
+  .amenties_width {
+    padding-top: 0rem;
+   
+  }
+  .image_size {
+    width: 15px;
+    height: 15px;
+  }
+}

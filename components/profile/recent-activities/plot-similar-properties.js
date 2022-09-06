@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/propertydetails/similarProperties.module.css";
+import styles from "../../../styles/profile/sidebar-pages/plot-similar.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -12,10 +12,9 @@ import furniture from "../../../assets/images/about-property-images/furniture.sv
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
-import RelatedProperties from "../related-properties-card";
 import homeimage from "../../../assets/images/home.png";
 
-const SimilarProperties = () => {
+const PlotProperties = () => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -106,7 +105,7 @@ const SimilarProperties = () => {
               Ready to move
             </div>
           </div>
-          <div className={`${styles.exact_location}  d-flex `}>
+          <div className={`${styles.exact_location} pt-1 d-flex `}>
             <i className="ri-map-pin-2-fill "></i>
             <span className="ps-1">
               2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
@@ -119,13 +118,12 @@ const SimilarProperties = () => {
               return (
                 <div className={`col-lg-4 col-6 d-flex mb-3`}>
                   <div className="d-flex align-items-center">
-                    <div className={`${styles.image_size} `}>
                     <Image
                       src={item.image}
                       alt="Picture of the author"
+                      width={20}
+                      height={20}
                     />
-                    </div>
-                   
                     <div className="d-flex flex-column ps-2">
                       <span
                         className={`${styles.about_property_heading} fs_8  fw_500 fontFam_poppins`}
@@ -191,12 +189,12 @@ const SimilarProperties = () => {
           </div>
         </div>
       </div>
-      {/* )} */}
+    
     </div>
   );
 };
 
-export default SimilarProperties;
+export default PlotProperties;
 const aboutproperties = [
   {
     image: squarearea,

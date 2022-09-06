@@ -14,6 +14,8 @@ import RequestCall from "../../components/property-details/request-callback";
 import LoremText from "../../components/property-details/lorem-text";
 import SimilarProperties from "../../components/property-details/similar-properties";
 import ContactUs from "../../components/property-details/contact_us";
+import { Footer } from "antd/lib/layout/layout";
+import Foter from "../../components/footerPage/footer";
 
 const Home = () => {
   const number = 20;
@@ -116,6 +118,7 @@ const Home = () => {
         </div>
         <div className="col-lg-3"> </div>
       </div>
+      <Foter/>
     </div>
   );
 };

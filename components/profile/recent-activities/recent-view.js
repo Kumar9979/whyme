@@ -5,6 +5,7 @@ import Image from "next/image";
 import SimilarProperties from "../../property-details/similar-properties";
 import RelatedProperties from "../../property-details/related-properties-card";
 import ProfileRelatedProperties from "../profile-related-properties";
+import PlotProperties from "./plot-similar-properties";
 
 const RecentView = () => {
   let n = 10;
@@ -77,13 +78,32 @@ const RecentView = () => {
         ) : (
           <div className={`${styles.scrollmenu} `}>
             <div ref={ref} className={`${styles.row}`}>
-              {[...Array(n)].map((item, index) => {
-                return (
-                  <div className={`${styles.width_properties} mb-0`}>
-                    <SimilarProperties />
-                  </div>
-                );
-              })}
+              <div>
+                <h1
+                  className={`fs_15 fw_500 fontFam_poppins  ${styles.searched_dates} py-2 px-2 mb-3`}
+                >
+                  Yesterday
+                </h1>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+              </div>
+              <div>
+                <h1
+                  className={`fs_15 fw_500 fontFam_poppins  ${styles.searched_dates} py-2 px-2 mb-3`}
+                >
+                  26 Aug 2022
+                </h1>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <SimilarProperties />
+                </div>
+                <div className={`${styles.width_properties} mb-0`}>
+                  <PlotProperties />
+                </div>
+              </div>
             </div>
           </div>
         )}
