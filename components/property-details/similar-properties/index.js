@@ -56,7 +56,7 @@ const SimilarProperties = () => {
   }, []);
 
   const [readless, setReadless] = useState(false);
-  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,`;
+  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt , `;
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
@@ -96,12 +96,12 @@ const SimilarProperties = () => {
         <div className={`d-flex flex-column ps-2 col-lg-7`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location}  fontFam_poppins`}
+              className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
             </div>
             <div
-              className={`px-1 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
+              className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
             >
               Ready to move
             </div>
@@ -114,10 +114,10 @@ const SimilarProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-2 ${styles.amenties_width} `}>
+          <div className={`row ps-3 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex mb-3`}>
+                <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
                     <Image
@@ -128,12 +128,12 @@ const SimilarProperties = () => {
                    
                     <div className="d-flex flex-column ps-2">
                       <span
-                        className={`${styles.about_property_heading} fontFam_poppins`}
+                        className={`${styles.about_property_heading} fontFam_poppins fw_500`}
                       >
                         {item.heading}
                       </span>
                       <span
-                        className={`${styles.about_property_amenity} fontFam_poppins`}
+                        className={`${styles.about_property_amenity} fontFam_poppins fw_500`}
                       >
                         {item.amenity}
                       </span>
@@ -144,7 +144,7 @@ const SimilarProperties = () => {
             })}
           </div>
           <p
-            className={`${styles.about_readmore_text} fontFam_poppins`}
+            className={`${styles.about_readmore_text} fontFam_poppins fw_400`}
           >
             {Alltext}
             <button
@@ -175,17 +175,18 @@ const SimilarProperties = () => {
             </span>
             <div className="d-flex justify-content-end mt-2 w-100">
               <button
-                className={` py-1  ${styles.contact_button} d-flex align-items-center`}
+                className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
               >
-                {" "}
+               <div className={`pe-2  py-1 pe-1`}>
+          
                 <Image
-                  className={`${styles.owner_image} `}
+                  className={`${styles.owner_image}`}
                   src={people}
                   alt="Picture of the author"
                   width={30}
                   height={30}
-                />
-                <span className={` ps-2 pe-4`}>Contact</span>
+                /></div>
+                <span className={` fs_14 d-flex align-items-center`}>Contact</span>
               </button>
             </div>
           </div>
