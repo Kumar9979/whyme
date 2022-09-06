@@ -13,7 +13,7 @@ import PlacesAutocomplete from "../../post-property/property-details/placesAutoc
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 
-const EditProfile = () => {
+const CompanyEditProfile = () => {
   const libraries = ["places"];
   const phoneregex = /^([+]\d{2})?\d{10}$/;
   const nameregex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/;
@@ -47,8 +47,10 @@ const EditProfile = () => {
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
       city: "",
-      message:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
-
+      company: "Brigade Group",
+      role: "Marketing Executive",
+      message:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
     validationSchema: Yup.object({
       image: Yup.mixed().required("Upload an Image"),
@@ -56,6 +58,8 @@ const EditProfile = () => {
         .matches(nameregex, "Invalid First Name")
         .required("Required"),
       city: Yup.string().required("Required"),
+      company: Yup.string().required("Required"),
+      role: Yup.string().required("Required"),
       phone: Yup.string()
         .matches(phoneregex, "Invalid Phone Number")
         .required("Required"),
@@ -154,7 +158,6 @@ const EditProfile = () => {
 
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
-                      
                     >
                       <label htmlFor="profile">Change Picture </label>
                     </button>
@@ -189,7 +192,7 @@ const EditProfile = () => {
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputEmail1"
                                 >
-                                  Full Name
+                                  Company Name
                                 </label>
 
                                 <input
@@ -197,24 +200,24 @@ const EditProfile = () => {
                                   className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
                                   id="exampleInputEmail1"
                                   aria-describedby="emailHelp"
-                                  placeholder="Enter your name"
-                                  name="name"
-                                  value={formik.values.name}
+                                  placeholder="Enter Company name"
+                                  name="company"
+                                  value={formik.values.company}
                                   onChange={formik.handleChange}
                                 />
                                 <div className={`${styles.nmm}`}>
-                                  {formik.errors.name &&
-                                    formik.touched.name && (
+                                  {formik.errors.company &&
+                                    formik.touched.company && (
                                       <span
                                         className={`text-danger fs_14 mb-0 `}
                                       >
-                                        {formik.errors.name}
+                                        {formik.errors.company}
                                       </span>
                                     )}
                                 </div>
                               </div>
 
-                              <div className="form-group mt-3">
+                              <div className="form-group mt-2">
                                 <label
                                   className={`${styles.contact_us_label} `}
                                   for="exampleInputEmail1"
@@ -246,9 +249,68 @@ const EditProfile = () => {
                                     )}
                                 </div>
                               </div>
+
+                              <div className="form-group mt-2">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Role
+                                </label>
+
+                                <input
+                                  type="text"
+                                  className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your name"
+                                  name="role"
+                                  value={formik.values.role}
+                                  onChange={formik.handleChange}
+                                />
+                                <div className={`${styles.nmm}`}>
+                                  {formik.errors.role &&
+                                    formik.touched.role && (
+                                      <span
+                                        className={`text-danger fs_14 mb-0 `}
+                                      >
+                                        {formik.errors.role}
+                                      </span>
+                                    )}
+                                </div>
+                              </div>
                             </div>
                             <div className="col-12 col-lg-6 col-md-6">
-                              <div className="form-group ">
+                              <div className="form-group">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Full Name
+                                </label>
+
+                                <input
+                                  type="text"
+                                  className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your name"
+                                  name="name"
+                                  value={formik.values.name}
+                                  onChange={formik.handleChange}
+                                />
+                                <div className={`${styles.nmm}`}>
+                                  {formik.errors.name &&
+                                    formik.touched.name && (
+                                      <span
+                                        className={`text-danger fs_14 mb-0 `}
+                                      >
+                                        {formik.errors.name}
+                                      </span>
+                                    )}
+                                </div>
+                              </div>
+                              <div className="form-group mt-2">
                                 <label
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputPassword1"
@@ -275,70 +337,73 @@ const EditProfile = () => {
                                     )}
                                 </div>
                               </div>
-                              <div className="form-group mt-3">
-                            <label
-                              className={`${styles.contact_us_label} `}
-                              for="exampleInputEmail1"
-                            >
-                              City
-                            </label>
-                            <div>
-                              {isLoaded ? (
-                                <>
-                                  <div>
-                                    <AutoCityLoad
-                                      result={selected}
-                                      formikUpdate={formikHandle}
-                                      markerSetOn={markerSetOn}
-                                      markedAddress={markedAddress}
-                                      setSelected={setSelected}
-                                    />
-                                    <div className={`${styles.nmm}`}>
-                                      {formik.errors.city &&
-                                        formik.touched.city && (
-                                          <span
-                                            className={`text-danger fs_14 mb-0 `}
-                                          >
-                                            {formik.errors.city}
-                                          </span>
-                                        )}
-                                    </div>
-                                  </div>
-                                  <div className="mt-3">
-                                    <GoogleMap
-                                      zoom={16}
-                                      center={selected}
-                                      mapContainerClassName={`${styles.map_container}`}
-                                      onLoad={(map) => {
-                                        setMap(map);
-                                        formik.setFieldValue("Map", selected);
-                                      }}
-                                    >
-                                      {markerStat && (
-                                        <Marker
-                                          draggable={true}
-                                          onDragEnd={(e) => {
-                                            markerChange();
-                                            setSelected({
-                                              lat: e.latLng.lat(),
-                                              lng: e.latLng.lng(),
-                                            });
+                              <div className="form-group mt-2">
+                                <label
+                                  className={`${styles.contact_us_label} `}
+                                  for="exampleInputEmail1"
+                                >
+                                  City
+                                </label>
+                                <div>
+                                  {isLoaded ? (
+                                    <>
+                                      <div>
+                                        <AutoCityLoad
+                                          result={selected}
+                                          formikUpdate={formikHandle}
+                                          markerSetOn={markerSetOn}
+                                          markedAddress={markedAddress}
+                                          setSelected={setSelected}
+                                        />
+                                        <div className={`${styles.nmm}`}>
+                                          {formik.errors.city &&
+                                            formik.touched.city && (
+                                              <span
+                                                className={`text-danger fs_14 mb-0 `}
+                                              >
+                                                {formik.errors.city}
+                                              </span>
+                                            )}
+                                        </div>
+                                      </div>
+                                      <div className="mt-2">
+                                        <GoogleMap
+                                          zoom={16}
+                                          center={selected}
+                                          mapContainerClassName={`${styles.map_container}`}
+                                          onLoad={(map) => {
+                                            setMap(map);
                                             formik.setFieldValue(
                                               "Map",
                                               selected
                                             );
                                           }}
-                                          position={selected}
-                                        />
-                                      )}
-                                    </GoogleMap>
-                                  </div>
-                                </>
-                              ) : (
-                                <p>Map Loading</p>
-                              )}
-                            </div>
-                          </div>
+                                        >
+                                          {markerStat && (
+                                            <Marker
+                                              draggable={true}
+                                              onDragEnd={(e) => {
+                                                markerChange();
+                                                setSelected({
+                                                  lat: e.latLng.lat(),
+                                                  lng: e.latLng.lng(),
+                                                });
+                                                formik.setFieldValue(
+                                                  "Map",
+                                                  selected
+                                                );
+                                              }}
+                                              position={selected}
+                                            />
+                                          )}
+                                        </GoogleMap>
+                                      </div>
+                                    </>
+                                  ) : (
+                                    <p>Map Loading</p>
+                                  )}
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -350,7 +415,6 @@ const EditProfile = () => {
                               Description
                             </label>
                             <textarea
-                            
                               className={`${styles.description_box}  w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Enter description"
                               id="exampleInputEmail1"
@@ -386,4 +450,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default CompanyEditProfile;

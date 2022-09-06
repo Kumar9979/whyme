@@ -45,13 +45,12 @@ const ProfileLayout = ({ children }) => {
               <div className={`${styles.sidebar}    position-fixed`}>
                 <div className="d-flex flex-column h-100 justify-content-between">
                   <div>
-                    <div 
-                    onClick={() => {
-                      router.push(
-                        "/profile/profile-pages/agent-my-profile"
-                      );
-                    }}
-                     className={`${styles.card} card mt-4`}>
+                    <div
+                      onClick={() => {
+                        router.push("/profile/profile-pages/company-my-profile");
+                      }}
+                      className={`${styles.card} card mt-4`}
+                    >
                       <div className="card-body">
                         <div className="d-flex justify-content-center align-items-center">
                           <div className="me-2">
@@ -86,7 +85,8 @@ const ProfileLayout = ({ children }) => {
                     <ul className="list-unstyled  mt-3 p-3">
                       <li
                         className={`${
-                          router.pathname === "/profile/sidebar-pages/recent-activities"
+                          router.pathname ===
+                          "/profile/sidebar-pages/recent-activities"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         } mb-3 d-flex align-items-center`}
@@ -105,7 +105,8 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/sidebar-pages/saved-properties"
+                          router.pathname ===
+                          "/profile/sidebar-pages/saved-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -166,7 +167,9 @@ const ProfileLayout = ({ children }) => {
                     <hr></hr>
                     <div className="d-flex align-items-center justify-content-between ">
                       <p className={`${styles.logoutText}`}>Logout</p>
-                      <p className={`${styles.arrow} d-flex align-items-center`}>
+                      <p
+                        className={`${styles.arrow} d-flex align-items-center`}
+                      >
                         <i className="ri-arrow-right-s-line fw_700 fs_14"></i>
                       </p>
                     </div>

@@ -117,14 +117,6 @@ const EditProfile = () => {
               <div className="row ">
                 <div className="col-6 col-lg-3 d-flex justify-content-lg-center  justify-content-start">
                   <div className="d-flex flex-column">
-                    <h1
-                      className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
-                    >
-                      Profile Type{" "}
-                      <span className={`${styles.type_buyer} fw_600 ps-2`}>
-                        Buyer
-                      </span>
-                    </h1>
                     <h3
                       className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
                     >
@@ -169,18 +161,9 @@ const EditProfile = () => {
                 <div className="col-12 col-lg-9 d-flex  justify-content-lg-start">
                   <div className={`${styles.form_width} `}>
                     <div className="ps-lg-2 ps-0">
-                      <h1
-                        className={`${styles.profile_type} fs_15 d-none d-lg-block fw_500 mt-4 mt-lg-0 d-flex justify-content-center fontFam_poppins`}
-                      >
-                        Profile Type{" "}
-                        <span className={`${styles.type_buyer} fw_600 ps-2`}>
-                          Buyer
-                        </span>
-                      </h1>
-
                       <form onSubmit={formik.handleSubmit}>
                         <div className="">
-                          <div className="form-group mt-3">
+                          <div className="form-group">
                             <label
                               className={`${styles.contact_us_label}`}
                               for="exampleInputEmail1"
