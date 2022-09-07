@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/sidebar-pages/settings.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -9,25 +9,53 @@ import Notification from "../../../components/profile/settings/settings-notifica
 import SettingFaq from "../../../components/profile/settings/settings-faqs";
 import TermsAndCondition from "../../../components/profile/settings/terms-condition";
 import PrivacyPolicy from "../../../components/profile/settings/privacy-policy";
+import UseResponisve from "../../../components/useResponsive";
 
 const Settings = () => {
-  const [component, setComponent] = useState("notification");
-  const [rendered, setRendered] = useState();
-  function clickHandler(component) {
-    switch (component) {
+  const [show, setShow] = useState(true);
+  const [rendered, setRendered] = useState("notification");
+  function clickHandler(value) {
+    switch (value) {
       case "notification":
-        setRendered(<Notification />);
+        setRendered("notification");
+        mobile ? setShow(false) : null;
         break;
       case "faq":
-        setRendered(<SettingFaq />);
+        setRendered("faq");
+        mobile  ? setShow(false) : null;
         break;
       case "terms":
-        setRendered(<TermsAndCondition />);
+        setRendered("terms");
+        mobile ? setShow(false) : null;
+        break;
       case "privacy":
-        setRendered(<PrivacyPolicy />);
+        setRendered("privacy");
+        mobile ? setShow(false) : null;
+    
     }
   }
 
+  
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setMobile(true);
+    }
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <ProfileLayout>
       <div className={`${styles.recent_activities} mt-5 pt-4`}>
@@ -51,65 +79,76 @@ const Settings = () => {
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div className="row">
-            <div className="col-4">
-              <ul className="list-unstyled">
-                <li
-                  className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
-                >
-                  <a
-                    className={`${
-                      rendered == <Notification/>
-                        ? styles.selected_component
-                        : styles.not_selected_component
-                    }`}
-                    onClick={() => clickHandler("notification")}
+            {show ? (
+              <div className="col-12 col-md-3 col-lg-2">
+                <ul className="list-unstyled">
+                  <li
+                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
                   >
-                    Notification Settings
-                  </a>
-                </li>
-                <li
-                  className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
-                >
-                  <a
-                    className={`${
-                      rendered == <SettingFaq/>
-                        ? styles.selected_component
-                        : styles.not_selected_component
-                    }`}
-                    onClick={() => clickHandler("faq")}
+                    <a
+                      className={`${
+                        rendered == "notification"
+                          ? styles.selected_component
+                          : styles.not_selected_component
+                      }`}
+                      onClick={() => clickHandler("notification")}
+                    >
+                      Notification Settings
+                    </a>
+                  </li>
+                  <li
+                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
                   >
-                    FAQ's
-                  </a>
-                </li>
-                <li
-                  className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
-                >
-                  <a
-                    className={`${
-                      rendered == "terms"
-                        ? styles.selected_component
-                        : styles.not_selected_component
-                    }`}
-                    onClick={() => clickHandler("terms")}
+                    <a
+                      className={`${
+                        rendered == "faq"
+                          ? styles.selected_component
+                          : styles.not_selected_component
+                      }`}
+                      onClick={() => clickHandler("faq")}
+                    >
+                      FAQ's
+                    </a>
+                  </li>
+                  <li
+                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
                   >
-                    Terms & Condition
-                  </a>
-                </li>
-                <li className={` fs_13 fw_600 fontFam_poppins mb-4`}>
-                  <a
-                    className={`${
-                      rendered == "privacy"
-                        ? styles.selected_component
-                        : styles.not_selected_component
-                    }`}
-                    onClick={() => clickHandler("privacy")}
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-              </ul>
+                    <a
+                      className={`${
+                        rendered == "terms"
+                          ? styles.selected_component
+                          : styles.not_selected_component
+                      }`}
+                      onClick={() => clickHandler("terms")}
+                    >
+                      Terms & Condition
+                    </a>
+                  </li>
+                  <li className={` fs_13 fw_600 fontFam_poppins mb-4`}>
+                    <a
+                      className={`${
+                        rendered == "privacy"
+                          ? styles.selected_component
+                          : styles.not_selected_component
+                      }`}
+                      onClick={() => clickHandler("privacy")}
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            ) : null}
+
+            <div className="col-12 col-md-8 col-lg-10">
+              {mobile == false ? null : (
+                <button onClick={() => setShow(true)}>back</button>
+              )}
+              {rendered === "notification" ? <div><Notification/></div> : null}
+              {rendered === "faq" ? <SettingFaq /> : null}
+              {rendered === "terms" ? <TermsAndCondition/> : null}
+              {rendered === "privacy" ? <PrivacyPolicy /> : null}
             </div>
-            <div className="col-8">{rendered}</div>
           </div>
         </div>
       </div>
