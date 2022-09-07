@@ -1,5 +1,16 @@
 .requestcall_width {
   max-width: 350px;
+   
+}
+.requestcall_modal
+{
+  border-radius: 2px;
+}
+.requestcall_div{
+  opacity: 1;
+  box-shadow:  0px 0.5px #00000029 ;
+  align-items: center;
+ 
 }
 
 .close_button {
@@ -20,7 +31,7 @@
   opacity: 0.6;
 }
 .submit_button {
-    border-radius: 7px;
+    border-radius: 5px;
     background-color: #1D72DB;
     color: #FFFFFF;
     font-family: "Poppins", sans-serif;
@@ -29,15 +40,20 @@
     border: none;
 }
 .request_label {
-  color: #1d1e1f;
+  color: #bcc7ce;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
 }
 .request_input {
   border-color: #dddbdb;
   height: 2rem;
   border: 1px solid #dddbdb;
-  border-radius: 7px;
-  opacity: 1;
-  
+  border-radius: 5px;
+  opacity: 1;  
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+ 
 }
 .request_input::placeholder {
     color: #DDDBDB;
@@ -46,4 +62,10 @@
     font-size: 12px;   
     position: absolute;
     top: 20%;
+    
+}
+.checkbox_label{
+  color: #bcc7ce;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.14px;
 }

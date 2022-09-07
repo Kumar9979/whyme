@@ -30,7 +30,7 @@ const RequestCallBack = ({ show, handleClose }) => {
 
   return (
     <Modal
-      className={`d-flex justify-content-center`}
+      className={`${styles.requestcall_modal}d-flex justify-content-center`}
       centered
       show={show}
       onHide={handleClose}
@@ -38,35 +38,36 @@ const RequestCallBack = ({ show, handleClose }) => {
       //       contentClassName={`${styles.card_radius}`}
       // size={'lg'}
     >
-      <Modal.Body className="p-0">
-        <div className={`p-1`}>
-          <div className={`d-flex justify-content-end`}>
-            <button
-              onClick={handleClose}
-              className={`${styles.close_button} pe-1`}
+      <Modal.Body className={`${styles.requestcall_modal}`}>
+        <div className={``}>
+          <div className={`${styles.requestcall_div} d-flex justify-content-between pb-2`}>
+          <div
+              className={` fs_18 fw_600 fontFam_poppins pt-0 ms-2  ${styles.request_call_heading}`}
             >
-              <i className={`fs_22 fw-700 ri-close-circle-line`}></i>
+              Request callback
+            </div>
+            <button
+              onClick={()=>{formik.setErrors({}); handleClose() ; }}
+              className={`${styles.close_button} `}
+            >
+              <i className={`fs_22 fw-700 ri-close-circle-line `}></i>
             </button>
           </div>
-          <div className={`pe-4 ps-4 pb-4`}>
-            <div
-              className={`pt-0 fs_18 fw_700 fontFam_poppins ${styles.request_call_heading}`}
-            >
-              Request call back
-            </div>
-            <div
+          <div className={`pe-2 ms-2 pb-2`}>
+           
+            {/* <div
               className={`pt-0 fs_12 fw_500 fontFam_poppins mt-1 ${styles.request_call_title}`}
             >
               Allow our agent to get in contact with <br />
               you
-            </div>
+            </div> */}
             <form onSubmit={formik.handleSubmit}>
               <div className="d-flex flex-column mt-3">
                 <label
-                  className={`${styles.request_label} fs_15 fw_700`}
+                  className={`${styles.request_label} fs_14 mb-1 fw_400`}
                   for="exampleInputEmail1"
                 >
-                  Name
+                 Full Name
                 </label>
                 <input
                   type="text"
@@ -85,27 +86,31 @@ const RequestCallBack = ({ show, handleClose }) => {
 
               <div className="form-group mt-3">
                 <label
-                  className={`${styles.request_label} fs_15 fw_700 `}
+                  className={`${styles.request_label} fs_14 mb-1 fw_400 `}
                   for="exampleInputEmail1"
                 >
-                  Contact Number
+                  Mobile Number
                 </label>
                 <input
                   type="text"
-                  className={`w-100  ${styles.request_input}  py-3 ps-4`}
+                  className={`w-100 ${styles.request_input} py-3 ps-4`}
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  placeholder="Enter your contact number"
+                  placeholder="Enter your Mobile Number"
                   name="phone"
-                  value={formik.values.phone}
+                  value={formik.values.phone }
                   onChange={formik.handleChange}
                 />
                 {formik.errors.phone && formik.touched.phone && (
                   <p className="text-danger fs_14">{formik.errors.phone}</p>
                 )}
+                <div className={`d-flex`}>
+                <input type="checkbox" />
+                <label className={`${styles.checkbox_label} fs_10 mt-2 mb-2 ms-1`}>This is your WhatsApp number</label>
+                </div>
               </div>
-              <button className={`w-100 mt-4 py-2 ${styles.submit_button}`}>
-                Submit
+              <button className={`w-100 mt-3 py-2 ${styles.submit_button}`}>
+              Request Callback
               </button>
             </form>
           </div>
