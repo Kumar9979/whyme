@@ -162,7 +162,7 @@ const Shareproperty = ({ show, handleClose }) => {
                 </div>
 
                 <input
-                  className={`${styles.copy_input} ms-lg-2 fw_400 fs_16  w-100`}
+                  className={`${styles.copy_input} ms-lg-2 fw_500 fs_16  w-100`}
                   value="https://www.indiaproperty.com..."
                 />
 

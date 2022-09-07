@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const ReportProperty = ({ show, handleClose }) => {
+const ReportAdvertiser = ({ show, handleClose }) => {
   const [checked, setChecked] = useState(false);
   const [other, setOther] = useState(false);
   const formik = useFormik({
@@ -76,124 +76,40 @@ const ReportProperty = ({ show, handleClose }) => {
           <form onSubmit={formik.handleSubmit}>
             <div className={`mt-lg-3 mt-md-3 mt-sm-2`}>
               <span className={`${styles.report_texthead} fs_16 fw_600`}>
-                What detail(s) was/were not correct?
+              What was wrong?
               </span>
 
               <div className={`d-flex align-items-center `}>
                 <input
                   type="checkbox"
-                  id="Property Sold/Rented Out"
-                  name="Property Sold/Rented Out"
+                  id="Wrong or invalid Number"
+                  name="Wrong or invalid Number"
                   onChange={handleCheckbox}
-                  checked={formik.values.Report.includes(
-                    "Property Sold/Rented Out"
-                  )}
+                  checked={formik.values.Report.includes("Wrong or invalid Number")}
                 />
                 <label
                   className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
-                  htmlFor="Property Sold/Rented Out"
+                  htmlFor="Wrong or invalid Number"
                 >
-                  Property Sold/Rented Out
+                  Wrong or invalid Number
                 </label>
               </div>
               <div className={`d-flex align-items-center `}>
                 <input
                   type="checkbox"
                   onChange={handleCheckbox}
-                  id="Inappropriate Price"
-                  name="Inappropriate Price"
-                  checked={formik.values.Report.includes("Inappropriate Price")}
+                  id="Switched Off/Not Reachable"
+                  name="Switched Off/Not Reachable"
+                  checked={formik.values.Report.includes("Switched Off/Not Reachable")}
                 />
                 <label
-                  htmlFor="Inappropriate Price"
+                  htmlFor="Switched Off/Not Reachable"
                   className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
                 >
-                  Inappropriate Price
+                 Switched Off/Not Reachable
                 </label>
               </div>
-              <div className={`d-flex align-items-center `}>
-                <input
-                  type="checkbox"
-                  id="Fake/Incorrect Photos"
-                  name="Fake/Incorrect Photos"
-                  onChange={handleCheckbox}
-                  checked={formik.values.Report.includes(
-                    "Fake/Incorrect Photos"
-                  )}
-                />
-                <label
-                  htmlFor="Fake/Incorrect Photos"
-                  className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
-                >
-                  Fake/Incorrect Photos
-                </label>
-              </div>
-              <div className={`d-flex align-items-center`}>
-                <input
-                  type="checkbox"
-                  id="Incorrect Price"
-                  name="Incorrect Price"
-                  onChange={handleCheckbox}
-                  checked={formik.values.Report.includes("Incorrect Price")}
-                />
-                <label
-                  htmlFor="Incorrect Price"
-                  className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
-                >
-                  Incorrect Price
-                </label>
-              </div>
-              <div className={`d-flex align-items-center`}>
-                <input
-                  type="checkbox"
-                  id="Incorrect Location/Address"
-                  name="Incorrect Location/Address"
-                  onChange={handleCheckbox}
-                  checked={formik.values.Report.includes(
-                    "Incorrect Location/Address"
-                  )}
-                />
-                <label
-                  htmlFor="Incorrect Location/Address"
-                  className={`${styles.checkbox_label} ffs_14 fw_500 mt-2 mb-2 ms-1`}
-                >
-                  Incorrect Location/Address
-                </label>
-              </div>
-              <div className={`d-flex align-items-center`}>
-                <input
-                  type="checkbox"
-                  id="Incorrect Sale/Rent Type"
-                  name="Incorrect Sale/Rent Type"
-                  onChange={handleCheckbox}
-                  checked={formik.values.Report.includes(
-                    "Incorrect Sale/Rent Type"
-                  )}
-                />
-                <label
-                  htmlFor="Incorrect Sale/Rent Type"
-                  className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
-                >
-                  Incorrect Sale/Rent Type
-                </label>
-              </div>
-              <div className={`d-flex align-items-center`}>
-                <input
-                  type="checkbox"
-                  id="Broker Property As Owner"
-                  name="Broker Property As Owner"
-                  onChange={handleCheckbox}
-                  checked={formik.values.Report.includes(
-                    "Broker Property As Owner"
-                  )}
-                />
-                <label
-                  htmlFor="Broker Property As Owner"
-                  className={`${styles.checkbox_label} fs_14 fw_500 mt-2 mb-2 ms-1`}
-                >
-                  Broker Property As Owner
-                </label>
-              </div>
+              
               <div className={`d-flex align-items-center`}>
                 <div>
                   <input
@@ -238,6 +154,11 @@ const ReportProperty = ({ show, handleClose }) => {
               <button
                 className={`${styles.report_button}  px-1 py-2 ms-4 fs_15 fw_400`}
                 type="submit"
+                onClick={() => {
+                    
+                    setOther(false);
+                    formik.resetForm();
+                  }}
               >
                 Report Property
               </button>
@@ -249,4 +170,4 @@ const ReportProperty = ({ show, handleClose }) => {
   );
 };
 
-export default ReportProperty;
+export default ReportAdvertiser;

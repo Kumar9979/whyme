@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import Shareproperty from "../../components/modals/property-details/share-property";
+import SuccessSave from "../../components/modals/property-details/success-saved";
+// import ReportAdvertiser from "../../components/modals/property-details/report-advertiser";
+// import Shareproperty from "../../components/modals/property-details/share-property";
 // import Sample from "../../components/modals/edit-profile-modals/sample";
 // import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 // import Activities from "../../components/modals/property-details/activities";
@@ -16,13 +18,16 @@ const Modals = () => {
       <button onClick={handleShow} className="btn btn-primary" type="submit">
         Button
       </button>
-      {/* <RequestCallBack handleClose={handleClose} show={show}/> */}
-      {/* <ScheduleVisit handleClose={handleClose} show={show}/> */}
-      {/* <ReportProperty handleClose={handleClose} show={show}/> */}
+
+      {/* <ScheduleVisit handleClose={handleClose} show={show}/> */}      
       {/* <Activities handleClose={handleClose} show={show}/> */}
+
       {/* <Sample handleClose={handleClose} show={show}/> */}
-      <Shareproperty ies handleClose={handleClose} show={show}/> 
-     
+      {/* <Shareproperty ies handleClose={handleClose} show={show}/>  */}
+      {/* <ReportProperty handleClose={handleClose} show={show}/> */}
+      {/* <RequestCallBack handleClose={handleClose} show={show}/> */}
+      {/* <ReportAdvertiser handleClose={handleClose} show={show}/> */}
+      <SuccessSave handleClose={handleClose} show={show}/>
 
 
     </div>

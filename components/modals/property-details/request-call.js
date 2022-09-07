@@ -47,8 +47,10 @@ const RequestCallBack = ({ show, handleClose }) => {
               Request callback
             </div>
             <button
-              onClick={()=>{formik.setErrors({}); handleClose() ; }}
+              onClick={()=>{formik.setErrors({}); handleClose() ; formik.resetForm(); }}
               className={`${styles.close_button} `}
+             
+           
             >
               <i className={`fs_22 fw-700 ri-close-circle-line `}></i>
             </button>
@@ -109,7 +111,10 @@ const RequestCallBack = ({ show, handleClose }) => {
                 <label className={`${styles.checkbox_label} fs_10 mt-2 mb-2 ms-1`}>This is your WhatsApp number</label>
                 </div>
               </div>
-              <button className={`w-100 mt-3 py-2 ${styles.submit_button}`}>
+              <button className={`w-100 mt-3 py-2 ${styles.submit_button}`}
+              
+              
+              >
               Request Callback
               </button>
             </form>
