@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useFormik } from "formik";
 import OtpModal from "./otpModal";
-import LImage from "../../assets/icons/login.png";
+import LoginImage from "../../assets/icons/login.png";
 import * as Yup from "yup";
 import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
-// import Select from "react-select";
+import Select from "react-select";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
@@ -48,16 +48,16 @@ const Modals = ({ show, onShow, onHide }) => {
   });
 
   return (
-    <div>
-      <Modal show={show} onHide={onHide} centered>
+    <div >
+      <Modal show={show} onHide={onHide} centered  dialogClassName={`${styles.login_modal_container}`} >
         <div className="d-flex justify-content-end mt-3 me-2">
           <Image src={Close} onClick={onHide} />
         </div>
 
-        <Modal.Body>
+        <Modal.Body className={``}>
           <form onSubmit={formik.handleSubmit}>
             <div className="d-flex justify-content-center mb-5">
-              <Image src={LImage} />
+              <Image src={LoginImage} />
             </div>
             <div
               className={` ${styles.head} d-flex justify-content-center mb-2`}
@@ -83,7 +83,7 @@ const Modals = ({ show, onShow, onHide }) => {
                 options={options}
               /> */}
 
-              {formik.errors.phoneNumber &&
+              {/* {formik.errors.phoneNumber &&
               formik.touched.phoneNumber ? null : (
                 <input
                   type="text"
@@ -91,9 +91,39 @@ const Modals = ({ show, onShow, onHide }) => {
                   placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
-                  className={`${styles.input_text} w-100 px-3`}
+                  className={`${styles.input_text}  px-3`}
                 />
-              )}
+              )} */}
+              
+{/* <Select
+                  defaultValue={{ label: "+91", value: "+91" }}
+                  id="countrycode"
+                  instanceId="countrycode"
+                  options={Options}
+                  placeholder="Select.."
+                  styles={
+                    formik.errors.countryCode && formik.touched.countryCode
+                      ? reactSelectSignUpError
+                      : reactSelectSignUp
+                  }
+                  name="residentStatus"
+                  // value={Options.filter((option) => {
+                  //   return option.value === formik.values.countryCode;
+                  // })}
+                  onChange={(selectedOption) => {
+                    let event = {
+                      target: {
+                        name: "countryCode",
+                        value: selectedOption.value,
+                      },
+                    };
+                    formik.handleChange(event);
+                  }}
+                  components={{
+                    IndicatorSeparator: () => null,
+                    // DropdownIndicator,
+                  }}
+                /> */}
             </div>
             <div className="d-flex  justify-content-center">
               <div className=" w-100 ms-3 me-3 mt-2">
@@ -107,6 +137,9 @@ const Modals = ({ show, onShow, onHide }) => {
                       onChange={formik.handleChange}
                       className={`${styles.input_text} ${styles.input_text_warning} w-100`}
                     />
+
+
+
 
                     <div>
                       {" "}

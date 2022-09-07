@@ -1,3 +1,11 @@
+/* .login_modal_container{
+  max-width: 25% !important;
+} */
+
+.login_modal_container{
+  max-width: 450px;
+}
+
 .heading {
   font-size: 21px;
   font-weight: 600;
