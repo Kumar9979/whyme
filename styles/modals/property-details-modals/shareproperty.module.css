@@ -1,10 +1,7 @@
 .shareproperty_container{
    width: 490px;
 }
-.shareproperty_dev{
-    opacity: 1;
-    align-items:center;
-}
+
 .share_label{
     color: #bcc7ce;
     font-family: "Poppins", sans-serif;
@@ -53,7 +50,7 @@
     font-family: "Poppins", sans-serif;
     width: 160px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   .copy_input:focus-visible{
     outline: none !important;

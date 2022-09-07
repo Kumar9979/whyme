@@ -64,7 +64,7 @@ const Shareproperty = ({ show, handleClose }) => {
               Share link via
             </span>
             <div
-              className={`mt-lg-1 d-flex justify-content-start align-items-center `}
+              className={`mt-lg-1 mt-md-1 mt-sm-1 d-flex justify-content-start align-items-center `}
             >
               <div className=" ms-lg-1 me-lg-2 me-md-2  ms-sm-1 me-sm-2  ms-2 me-2">
                 <div className={`${styles.scoial_image} ms-2 ps-1`}>
@@ -168,7 +168,7 @@ const Shareproperty = ({ show, handleClose }) => {
 
                 <button
                   onClick={ (e) =>copyText(e) }
-                  className={` m-lg-2 fs_18 py-md-2 py-sm-2 py-lg-2 ${styles.copy_button}`}
+                  className={` m-lg-2 fs_18 py-md-1 py-sm-1 py-lg-1 ${styles.copy_button}`}
                 >
                  {copied  ? "copied" : "copy"}
                 </button>
