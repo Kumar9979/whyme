@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useFormik } from "formik";
 import OtpModal from "./otpModal";
-import LImage from "../../assets/icons/login.png";
+import LoginImage from "../../assets/icons/login.png";
 import * as Yup from "yup";
 import Close from "../../assets/icons/close.png";
 import Image from "next/image";
@@ -48,16 +48,16 @@ const Modals = ({ show, onShow, onHide }) => {
   });
 
   return (
-    <div>
-      <Modal show={show} onHide={onHide} centered>
+    <div >
+      <Modal show={show} onHide={onHide} centered  >
         <div className="d-flex justify-content-end mt-3 me-2">
           <Image src={Close} onClick={onHide} />
         </div>
 
-        <Modal.Body>
+        <Modal.Body className={``}>
           <form onSubmit={formik.handleSubmit}>
             <div className="d-flex justify-content-center mb-5">
-              <Image src={LImage} />
+              <Image src={LoginImage} />
             </div>
             <div
               className={` ${styles.head} d-flex justify-content-center mb-2`}
@@ -91,7 +91,7 @@ const Modals = ({ show, onShow, onHide }) => {
                   placeholder="Enter your phone number"
                   value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
-                  className={`${styles.input_text} w-100 px-3`}
+                  className={`${styles.input_text}  px-3`}
                 />
               )}
             </div>
