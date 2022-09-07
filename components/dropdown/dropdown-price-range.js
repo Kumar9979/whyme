@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/dropdown/dropdownBedroom.module.css";
+import styles from "../../styles/dropdown/dropdownPriceRange.module.css";
 import { motion } from "framer-motion";
 import { Space } from "antd";
 import CloseIcon from "../../assets/icons/close-new-icon.svg";
@@ -11,7 +11,7 @@ const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setIsSelected] = useState(placeholder);
 
-  const [isHover, toggleHover] = useState(true);
+  const [isHover, toggleHover] = useState(false);
   console.log(selected);
   const toggleHoverMenu = (state) => {
     if (state === "hovered") {
@@ -48,8 +48,8 @@ const DropdownPriceRange = ({ children, placeholder = [], onRemoveTag }) => {
   };
   return (
     <motion.div
-      // onHoverStart={() => toggleHoverMenu("hovered")}
-      // onHoverEnd={() => toggleHoverMenu("leaved")}
+      onHoverStart={() => toggleHoverMenu("hovered")}
+      onHoverEnd={() => toggleHoverMenu("leaved")}
       className={`${styles.dropdown}`}
     >
       <div
