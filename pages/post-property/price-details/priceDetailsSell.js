@@ -43,8 +43,8 @@ const PriceDetailsSell = () => {
 
   return (
     <div>
-      <div className="container mt-0 mt-sm-5 pt-5">
-        <div className={`row justify-content-center`}>
+      <div className={`${styles.whole_container} container `}>
+        <div className={`row justify-content-center mx-2 mx-lg-0`}>
         <div className={`col-12 mt-5`}></div>
           <div
             className={`col-lg-3  col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}

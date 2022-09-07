@@ -15,6 +15,8 @@ import Geocode from "react-geocode";
 const libraries = ["places"];
 
 const PropertyDetails = () => {
+
+
   const { latitude: lat, longitude: lng, error } = usePosition();
   useEffect(() => {
     setSelected({ lat, lng });
@@ -87,16 +89,15 @@ const PropertyDetails = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
-      <div className={`${styles.whole_container} mt-5 container`}>
-        <div className="row mb-2">
+      <div className={`${styles.whole_container}  container`}>
+        <div className="row mb-2 justify-content-lg-center mx-1">
           <div
             className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} ${styles.stepper_property_details}`}
           >
             <StepperNew currentPage={currentPage} />
           </div>
           <div
-            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-5 pt-3 `}
+            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} col-lg-7 col-md-12 col-sm-12 px-2 px-lg-5 pt-3 `}
           >
             {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
             <form
