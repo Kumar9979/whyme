@@ -141,7 +141,7 @@
     padding-right: 0rem;
     padding-left: 0rem;
   }
-  
+
   .edit_profile_heading {
     text-align: center;
   }
@@ -149,10 +149,20 @@
     border-right: 0.5px solid #dbe9f2;
     height: fit-content;
   }
- 
+
   .sad_emoji {
     margin-top: 8rem;
   }
 }
 
-
+@media only screen and (width: 992px) {
+  .recent_activities {
+    width: 85%;
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+  .recent_activities_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+  }
+}

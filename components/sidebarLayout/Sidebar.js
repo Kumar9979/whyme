@@ -127,7 +127,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/my-properties"
+                          router.pathname === "/profile/sidebar-pages/my-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -138,7 +138,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Key}
                         />
-                        <Link href="/profile/my-properties">
+                        <Link href="/profile/sidebar-pages/my-properties">
                           <a className={` ms-3 ${styles.sidebar_links}`}>
                             My Properties
                           </a>
