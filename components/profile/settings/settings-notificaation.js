@@ -18,8 +18,8 @@ const Notification = () => {
 
   return (
     <div className={`${styles.settings_container}`}>
-      <span className={`color_light_blue fw_500 fs_20 fontFam_poppins`}>
-        Notification Settings{" "}
+      <span className={`color_light_blue fw_500 fs_20 fontFam_poppins d-none d-md-blocks`}>
+        Notification Settings
       </span>
       <div className="mt-0 pt-0 color_grey fs_11 fontFam_poppins fw_500">
         Please note that it might take up to a few days for your preferences to

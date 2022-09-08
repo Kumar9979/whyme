@@ -146,17 +146,119 @@ const Settings = () => {
                 </div>
               ) : (
                 <div className="col-12 col-md-8 col-lg-10">
-                  {mobile == false ? null : (
-                    <button onClick={() => setShow(true)}>back</button>
-                  )}
+                  {/* {mobile == false ? null : (
+                    <button >back</button>
+                  )} */}
                   {rendered === "notification" ? (
                     <div>
+                      <div>
+                        <div className="d-flex align-items-center ">
+                          <button
+                            onClick={() => setShow(true)}
+                            className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+                          >
+                            <Image
+                              src={arrow_left}
+                              alt="Picture of the author"
+                              width={20}
+                              height={15}
+                            />
+                          </button>
+
+                          <span
+                            className={`${styles.edit_profile_heading} fs_20 fw_600 pe-4 text-center w-100`}
+                          >
+                            Notification Settings
+                          </span>
+                        </div>
+                        <hr className={`${styles.edit_horizontal_line}`}></hr>
+                      </div>
                       <Notification />
                     </div>
                   ) : null}
-                  {rendered === "faq" ? <SettingFaq /> : null}
-                  {rendered === "terms" ? <TermsAndCondition /> : null}
-                  {rendered === "privacy" ? <PrivacyPolicy /> : null}
+                  {rendered === "faq" ? (
+                    <div>
+                      <div>
+                        <div className="d-flex align-items-center">
+                          <button
+                            onClick={() => setShow(true)}
+                            className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+                          >
+                            <Image
+                              src={arrow_left}
+                              alt="Picture of the author"
+                              width={20}
+                              height={15}
+                            />
+                          </button>
+
+                          <span
+                            className={`${styles.edit_profile_heading} fs_20 fw_600 pe-4 text-center w-100`}
+                          >
+                            Frequently asked question{" "}
+                          </span>
+                        </div>
+                        <hr className={`${styles.edit_horizontal_line}`}></hr>
+                      </div>
+                      <SettingFaq />
+                    </div>
+                  ) : null}
+                  {rendered === "terms" ? (
+                    <div>
+                      <div>
+                        <div className="d-flex align-items-center ">
+                          <button
+                            onClick={() => setShow(true)}
+                            className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+                          >
+                            <Image
+                              src={arrow_left}
+                              alt="Picture of the author"
+                              width={20}
+                              height={15}
+                            />
+                          </button>
+
+                          <span
+                            className={`${styles.edit_profile_heading} fs_20 fw_600 pe-4 text-center w-100`}
+                          >
+                            Terms & Condition
+                          </span>
+                        </div>
+                        <hr className={`${styles.edit_horizontal_line}`}></hr>
+                      </div>
+                      <TermsAndCondition/>
+                    </div>
+                  ) : null}
+                  {rendered === "privacy" ? (
+                    <div>
+                      <div>
+                        <div className="d-flex align-items-center ">
+                          <button
+                            onClick={() => setShow(true)}
+                            className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+                          >
+                            <Image
+                              src={arrow_left}
+                              alt="Picture of the author"
+                              width={20}
+                              height={15}
+                            />
+                          </button>
+
+                          <span
+                            className={`${styles.edit_profile_heading} fs_20 fw_600 pe-4 text-center w-100`}
+                          >
+                            Privact Policy{" "}
+                          </span>
+                        </div>
+                        <hr className={`${styles.edit_horizontal_line}`}></hr>
+                      </div>
+                      <PrivacyPolicy />
+                    </div>
+                  ) : null}
+
+             
                 </div>
               )}
             </div>
