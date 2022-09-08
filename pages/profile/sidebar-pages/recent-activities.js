@@ -21,13 +21,13 @@ const RecentlyViewed = () => {
 
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1200) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 1200) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -119,7 +119,7 @@ const RecentlyViewed = () => {
                 </div>
               </div>
             ) : (
-              <div className={` col-lg-3`}>
+              <div className={` col-xl-3`}>
                 <div className={`${styles.first_column}`}>
                   <ul
                     className={`list-unstyled  mt-3 p-3 ${styles.vertical_line}`}
@@ -172,7 +172,7 @@ const RecentlyViewed = () => {
               </div>
             )}
            
-            <div className="col-lg-9 col-12">
+            <div className="col-xl-9 col-12">
               {activityType === "search" ? <RecentSearch /> : <RecentView />}
             </div>
           </div>

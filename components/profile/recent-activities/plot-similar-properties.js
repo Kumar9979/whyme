@@ -60,7 +60,7 @@ const PlotProperties = () => {
   return (
     <div className="">
       <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
-        <div className={`position-relative col-lg-3 `}>
+        <div className={`position-relative col-lg-3 col-md-3  `}>
           <Image
             src={homeimage}
             alt="Picture of the autho"
@@ -92,7 +92,7 @@ const PlotProperties = () => {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-7`}>
+        <div className={`d-flex flex-column ps-2 col-lg-7 col-md-7`}>
           <div className="d-flex align-items-center">
             <div
               className={`${styles.similar_property_location} fs_14 fw_500 fontFam_poppins`}
@@ -154,7 +154,7 @@ const PlotProperties = () => {
           </p>
         </div>
 
-        <div className="col-lg-2 d-flex flex-column justify-content-between">
+        <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between">
           <div
             className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >

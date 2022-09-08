@@ -15,13 +15,13 @@ const RecentView = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -84,7 +84,7 @@ const RecentView = () => {
                 >
                   Yesterday
                 </h1>
-                <div className={`${styles.width_properties} mb-0`}>
+                <div className={`${styles.width_properties} ms-3`}>
                   <SimilarProperties />
                 </div>
               </div>
@@ -94,13 +94,13 @@ const RecentView = () => {
                 >
                   26 Aug 2022
                 </h1>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
+                  <PlotProperties/>
                 </div>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
+                  <PlotProperties />
                 </div>
-                <div className={`${styles.width_properties} mb-0`}>
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
                   <PlotProperties />
                 </div>
               </div>
