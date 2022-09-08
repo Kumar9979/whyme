@@ -12,9 +12,9 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
       centered
       show={show}
       onHide={handleClose}
-      dialogClassName={`${styles.deleteCard_width}`}
+      dialogClassName={`${styles.map_container}`}
       contentClassName={`${styles.card_radius}`}
-      //   size={'lg'}
+    
     >
       <Modal.Body>
         {" "}
@@ -28,7 +28,7 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
             </span></div>
             <div>
                  <span onClick={handleClose} className={`${styles.close_icon}`}>
-              <Image src={closeIcon} width="20px" height="20px"
+              <Image src={closeIcon} width="23px" height="23px"
               
               />
             </span>
@@ -37,7 +37,7 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
           </div>
           <PropertyLocation/>
           <div className={`d-flex justify-content-end`}>
-            <button onClick={handleClose} className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 mt-2`}>
+            <button onClick={handleClose} className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_15 mt-3`}>
                 <span>
                 Save
                 </span>

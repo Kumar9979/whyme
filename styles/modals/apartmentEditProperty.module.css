@@ -1,3 +1,8 @@
+.property_features_container{
+    max-width: 35rem;
+}
+
+
 .upload_heading_text{
     color: #323D5A;
     font-family: Poppins;
@@ -8,7 +13,7 @@
     border-radius: 5px;
 }
 .total_floors_input:focus-visible{
-    outline: 1px solid #1d72db
+    outline:none;
   }
 .total_floors_text{
     font-family: Poppins;

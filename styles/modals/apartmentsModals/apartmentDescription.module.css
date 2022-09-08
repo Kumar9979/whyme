@@ -1,4 +1,6 @@
-
+.description_container{
+  max-width: 32rem;
+}
   .upload_heading_text{
     color: #323D5A;
     font-family: Poppins;

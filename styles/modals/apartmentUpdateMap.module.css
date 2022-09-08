@@ -1,3 +1,8 @@
+.map_container{
+  max-width: 38rem;
+}
+
+
 .property_location {
   height: 20rem;
   border-radius: 15px;
@@ -6,8 +11,8 @@
 
 .map_container {
   width:100%;
-  height: 220px;
-  border-radius: .25rem;
+  height: 260px;
+  border-radius: 5px;
   
   }
 .placesAutocomplete{
@@ -17,7 +22,7 @@ z-index: 999;
   border: none;
   width: 100%;
   background-color: #DBE9F24D;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .comboboxInput:focus-visible{
   outline: none;

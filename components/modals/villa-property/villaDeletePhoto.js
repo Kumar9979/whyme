@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-import styles from "../../styles/modals/apartmentDeletePhoto.module.css";
+import styles from "../../../styles/modals/apartmentDeletePhoto.module.css";
 
-const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
+const VillaDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   function handleDelete() {
     deleteFn(index);
     handleClose();
@@ -16,7 +16,6 @@ const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
       onHide={handleClose}
       dialogClassName={`${styles.deleteCard_width}`}
       contentClassName={`${styles.card_radius}`}
-      size={"sm"}
     >
       <Modal.Body>
         {" "}
@@ -41,7 +40,7 @@ const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
               className={`${styles.delete_btn} py-2 `}
               onClick={handleDelete}
             >
-              <span className={`${styles.delete_text} fs_15 fw_500 `}>
+              <span className={`${styles.delete_text} fs_15 fw_600 `}>
                 Delete
               </span>
             </button>
@@ -55,4 +54,4 @@ const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   );
 };
 
-export default ApartmentDeletePhoto;
+export default VillaDeletePhoto;

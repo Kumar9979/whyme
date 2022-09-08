@@ -12,3 +12,7 @@
     color: #FFFF;
     font-family: Poppins;
   }  
+
+  .amenities_container{
+    max-width: 35rem;
+  }
