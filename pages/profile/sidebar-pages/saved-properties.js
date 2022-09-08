@@ -4,6 +4,7 @@ import styles from "../../../styles/profile/sidebar-pages/saved-properties.modul
 import arrow_left from "../../../assets/images/arrow_left.svg";
 import Image from "next/image";
 import EmptySearch from "../../../components/profile/saved-properties/empty-properties";
+import SavedProperties from "../../../components/profile/saved-properties/properties-saved";
 
 
 const RecentlyViewed = () => {
@@ -29,8 +30,8 @@ const RecentlyViewed = () => {
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
-          <div>
-            <EmptySearch/>
+          <div className={`${styles.cards_width}`}>
+            <SavedProperties/>
           </div>
         </div>
       </div>

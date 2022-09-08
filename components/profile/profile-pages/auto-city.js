@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import styles from "../../../styles/profile/profile-pages/autoCity.module.css";
 import dropdown from "../../../assets/icons/cityDropdown.svg";
 import Image from "next/image";
+
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -15,7 +16,13 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 
-const AutoCityLoad = ({ setSelected, markerSetOn, markedAddress }) => {
+const AutoCityLoad = ({
+  setSelected,
+  result,
+  formikUpdate,
+  markerSetOn,
+  markedAddress,
+}) => {
   const {
     ready,
     value,
@@ -23,6 +30,7 @@ const AutoCityLoad = ({ setSelected, markerSetOn, markedAddress }) => {
     suggestions: { status, data },
     clearSuggestions,
   } = usePlacesAutocomplete();
+
 
   useEffect(() => {
     setValue(markedAddress, false);
@@ -39,7 +47,9 @@ const AutoCityLoad = ({ setSelected, markerSetOn, markedAddress }) => {
     const results = await getGeocode({ address });
     const { lat, lng } = getLatLng(results[0]);
     setSelected({ lat, lng });
+    formikUpdate(address);
   };
+  
 
   return (
     <>
@@ -51,14 +61,15 @@ const AutoCityLoad = ({ setSelected, markerSetOn, markedAddress }) => {
             onChange={(e) => {
               setValue(e.target.value);
             }}
+            defaultValue="mysore"
             disabled={!ready}
             className={`${styles.comboboxInput} w-75 ps-2  fs_15 fw_600 fontFam_poppins`}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter your city"
-            name="city"
-            // value={formik.values.city}
+            
           />
+          <div className={`${styles.nmm}`}></div>
           <span className="d-flex align-items-center pe-2">
             <Image
               src={dropdown}

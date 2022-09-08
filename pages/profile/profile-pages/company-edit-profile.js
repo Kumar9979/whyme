@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/profile-pages/every-edit-profile.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -12,8 +13,9 @@ import dropdown from "../../../assets/icons/cityDropdown.svg";
 import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
+import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
 
-const EditProfile = () => {
+const CompanyEditProfile = () => {
   const libraries = ["places"];
   const phoneregex = /^([+]\d{2})?\d{10}$/;
   const nameregex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/;
@@ -47,7 +49,9 @@ const EditProfile = () => {
       phone: "6360749419",
       email: "imankhan.coorg@gmail.com",
       city: "mysore",
-      description:
+      company: "Brigade Group",
+      role: "Marketing Executive",
+      message:
         "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
     validationSchema: Yup.object({
@@ -56,7 +60,8 @@ const EditProfile = () => {
         .matches(nameregex, "Invalid First Name")
         .required("Required"),
       city: Yup.string().required("Required"),
-      description: Yup.string().required("Required"),
+      company: Yup.string().required("Required"),
+      role: Yup.string().required("Required"),
       phone: Yup.string()
         .matches(phoneregex, "Invalid Phone Number")
         .required("Required"),
@@ -90,6 +95,9 @@ const EditProfile = () => {
     formik.setFieldValue("city", value);
   }
   console.log(formik.values);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <ProfileLayout>
@@ -97,6 +105,8 @@ const EditProfile = () => {
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
+              onClick={handleShow}
+             
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
               <Image
@@ -105,12 +115,14 @@ const EditProfile = () => {
                 width={20}
                 height={15}
               />
+              
             </button>
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_400 ms-2`}
             >
               Edit Profile
             </span>
+            <SaveChanges handleClose={handleClose} show={show} />
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
 
@@ -189,7 +201,7 @@ const EditProfile = () => {
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputEmail1"
                                 >
-                                  Full Name
+                                  Company Name
                                 </label>
 
                                 <input
@@ -197,24 +209,24 @@ const EditProfile = () => {
                                   className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
                                   id="exampleInputEmail1"
                                   aria-describedby="emailHelp"
-                                  placeholder="Enter your name"
-                                  name="name"
-                                  value={formik.values.name}
+                                  placeholder="Enter Company name"
+                                  name="company"
+                                  value={formik.values.company}
                                   onChange={formik.handleChange}
                                 />
                                 <div className={`${styles.nmm}`}>
-                                  {formik.errors.name &&
-                                    formik.touched.name && (
+                                  {formik.errors.company &&
+                                    formik.touched.company && (
                                       <span
                                         className={`text-danger fs_14 mb-0 `}
                                       >
-                                        {formik.errors.name}
+                                        {formik.errors.company}
                                       </span>
                                     )}
                                 </div>
                               </div>
 
-                              <div className="form-group mt-3">
+                              <div className="form-group mt-2">
                                 <label
                                   className={`${styles.contact_us_label} `}
                                   for="exampleInputEmail1"
@@ -246,9 +258,68 @@ const EditProfile = () => {
                                     )}
                                 </div>
                               </div>
+
+                              <div className="form-group mt-2">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Role
+                                </label>
+
+                                <input
+                                  type="text"
+                                  className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your name"
+                                  name="role"
+                                  value={formik.values.role}
+                                  onChange={formik.handleChange}
+                                />
+                                <div className={`${styles.nmm}`}>
+                                  {formik.errors.role &&
+                                    formik.touched.role && (
+                                      <span
+                                        className={`text-danger fs_14 mb-0 `}
+                                      >
+                                        {formik.errors.role}
+                                      </span>
+                                    )}
+                                </div>
+                              </div>
                             </div>
                             <div className="col-12 col-lg-6 col-md-6">
-                              <div className="form-group ">
+                              <div className="form-group">
+                                <label
+                                  className={`${styles.contact_us_label}`}
+                                  for="exampleInputEmail1"
+                                >
+                                  Full Name
+                                </label>
+
+                                <input
+                                  type="text"
+                                  className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                                  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp"
+                                  placeholder="Enter your name"
+                                  name="name"
+                                  value={formik.values.name}
+                                  onChange={formik.handleChange}
+                                />
+                                <div className={`${styles.nmm}`}>
+                                  {formik.errors.name &&
+                                    formik.touched.name && (
+                                      <span
+                                        className={`text-danger fs_14 mb-0 `}
+                                      >
+                                        {formik.errors.name}
+                                      </span>
+                                    )}
+                                </div>
+                              </div>
+                              <div className="form-group mt-2">
                                 <label
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputPassword1"
@@ -275,7 +346,7 @@ const EditProfile = () => {
                                     )}
                                 </div>
                               </div>
-                              <div className="form-group mt-3">
+                              <div className="form-group mt-2">
                                 <label
                                   className={`${styles.contact_us_label} `}
                                   for="exampleInputEmail1"
@@ -356,20 +427,10 @@ const EditProfile = () => {
                               className={`${styles.description_box}  w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Enter description"
                               id="exampleInputEmail1"
-                              name="description"
-                              value={formik.values.description}
+                              name="message"
+                              value={formik.values.message}
                               onChange={formik.handleChange}
                             ></textarea>
-                              <div className={`${styles.nmm}`}>
-                                  {formik.errors.description &&
-                                    formik.touched.description && (
-                                      <span
-                                        className={`text-danger fs_14 mb-0 `}
-                                      >
-                                        {formik.errors.description}
-                                      </span>
-                                    )}
-                                </div>
                           </div>
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
@@ -398,4 +459,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default CompanyEditProfile;

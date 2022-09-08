@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/propertydetails/similarProperties.module.css";
+import styles from "../../../styles/profile/sidebar-pages/plot-similar.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -12,10 +12,9 @@ import furniture from "../../../assets/images/about-property-images/furniture.sv
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
-import RelatedProperties from "../related-properties-card";
 import homeimage from "../../../assets/images/home.png";
 
-const SimilarProperties = () => {
+const PlotProperties = () => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -56,7 +55,7 @@ const SimilarProperties = () => {
   }, []);
 
   const [readless, setReadless] = useState(false);
-  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt , `;
+  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,`;
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
@@ -96,17 +95,17 @@ const SimilarProperties = () => {
         <div className={`d-flex flex-column ps-2 col-lg-7`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
+              className={`${styles.similar_property_location} fs_14 fw_500 fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
             </div>
             <div
-              className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
+              className={`px-1 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
             >
               Ready to move
             </div>
           </div>
-          <div className={`${styles.exact_location}  d-flex `}>
+          <div className={`${styles.exact_location} pt-1 d-flex `}>
             <i className="ri-map-pin-2-fill "></i>
             <span className="ps-1">
               2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
@@ -114,26 +113,25 @@ const SimilarProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-2 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
+                <div className={`col-lg-4 col-6 d-flex mb-3`}>
                   <div className="d-flex align-items-center">
-                    <div className={`${styles.image_size} `}>
                     <Image
                       src={item.image}
                       alt="Picture of the author"
+                      width={20}
+                      height={20}
                     />
-                    </div>
-                   
                     <div className="d-flex flex-column ps-2">
                       <span
-                        className={`${styles.about_property_heading} fontFam_poppins fw_500`}
+                        className={`${styles.about_property_heading} fs_8  fw_500 fontFam_poppins`}
                       >
                         {item.heading}
                       </span>
                       <span
-                        className={`${styles.about_property_amenity} fontFam_poppins fw_500`}
+                        className={`${styles.about_property_amenity} fs_8 fw_500 fontFam_poppins`}
                       >
                         {item.amenity}
                       </span>
@@ -144,7 +142,7 @@ const SimilarProperties = () => {
             })}
           </div>
           <p
-            className={`${styles.about_readmore_text} fontFam_poppins fw_400`}
+            className={`${styles.about_readmore_text} fs_8  fw_500 fontFam_poppins`}
           >
             {Alltext}
             <button
@@ -175,28 +173,28 @@ const SimilarProperties = () => {
             </span>
             <div className="d-flex justify-content-end mt-2 w-100">
               <button
-                className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
+                className={` py-1  ${styles.contact_button} d-flex align-items-center`}
               >
-               <div className={`pe-2  py-1 pe-1`}>
-          
+                {" "}
                 <Image
-                  className={`${styles.owner_image}`}
+                  className={`${styles.owner_image} `}
                   src={people}
                   alt="Picture of the author"
                   width={30}
                   height={30}
-                /></div>
-                <span className={` fs_14 d-flex align-items-center`}>Contact</span>
+                />
+                <span className={` ps-2 pe-4`}>Contact</span>
               </button>
             </div>
           </div>
         </div>
       </div>
+    
     </div>
   );
 };
 
-export default SimilarProperties;
+export default PlotProperties;
 const aboutproperties = [
   {
     image: squarearea,

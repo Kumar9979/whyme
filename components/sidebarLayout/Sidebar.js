@@ -45,7 +45,14 @@ const ProfileLayout = ({ children }) => {
               <div className={`${styles.sidebar}    position-fixed`}>
                 <div className="d-flex flex-column h-100 justify-content-between">
                   <div>
-                    <div className={`${styles.card} card mt-4`}>
+                    <div
+                      onClick={() => {
+                        router.push(
+                          "/profile/profile-pages/company-my-profile"
+                        );
+                      }}
+                      className={`${styles.card} card mt-4`}
+                    >
                       <div className="card-body">
                         <div className="d-flex justify-content-center align-items-center">
                           <div className="me-2">
@@ -80,7 +87,8 @@ const ProfileLayout = ({ children }) => {
                     <ul className="list-unstyled  mt-3 p-3">
                       <li
                         className={`${
-                          router.pathname === "/profile/sidebar-pages/recent-activities"
+                          router.pathname ===
+                          "/profile/sidebar-pages/recent-activities"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         } mb-3 d-flex align-items-center`}
@@ -99,7 +107,8 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/sidebar-pages/saved-properties"
+                          router.pathname ===
+                          "/profile/sidebar-pages/saved-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -137,7 +146,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/add-a-property"
+                          router.pathname === "/profile/sidebar-pages/settings"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -148,7 +157,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Settings}
                         />
-                        <Link href="/profile/add-a-property">
+                        <Link href="/profile/sidebar-pages/settings">
                           <a className={` ms-3 ${styles.sidebar_links}`}>
                             Settings
                           </a>
@@ -156,11 +165,14 @@ const ProfileLayout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
+
                   <div className={`${styles.logout} p-3 mb-4`}>
                     <hr></hr>
                     <div className="d-flex align-items-center justify-content-between ">
                       <p className={`${styles.logoutText}`}>Logout</p>
-                      <p className={`${styles.arrow} d-flex align-items-center`}>
+                      <p
+                        className={`${styles.arrow} d-flex align-items-center`}
+                      >
                         <i className="ri-arrow-right-s-line fw_700 fs_14"></i>
                       </p>
                     </div>

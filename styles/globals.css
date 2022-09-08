@@ -132,11 +132,35 @@ border-radius: 12px !important;
 .color_cloudBurst{
   color: #323D5A;
 }
-
-
-
+.color_green {
+  color: #24734E;
+}
+.color_light_green {
+  color: #50BF97;
+}
+.color_orange {
+  color: #F77223;
+}
+.color_dark_blue {
+  color: #013EA3;
+}
+.color_light_blue {
+  color: #1D72DB;
+}
+.color_red {
+  color: #D91C30;
+}
+.color_yellow {
+  color: #FBC352;
+}
+.color_sky_blue {
+  color: #DBE9F2;
+}
+.color_grey{
+  color: #BCC7CE;
+}
 .color_black {
-  color: #000000;
+  color: #1D1E1F;
 }
 
 @media only screen and (max-width: 992px) {

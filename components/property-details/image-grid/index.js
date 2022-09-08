@@ -29,9 +29,9 @@ const ImageGrid = () => {
       setSaveIcon(saved);
     } else if (state === "leaved" && liked === false) {
       setSaveIcon(save);
-    } else if ( state === "leaved" && liked === true) {
+    } else if (state === "leaved" && liked === true) {
       setSaveIcon(saved);
-    } 
+    }
   }
   useEffect(() => {
     if (window.innerWidth < 992) {
@@ -214,55 +214,55 @@ const ImageGrid = () => {
         <div className={`d-flex align-items-center pe-2`}>
           {mobile ? (
             <div className={``}>
-            <button
-              onClick={() => setLike(!like)}
-              className={
-                like
-                  ? ` ${styles.property_saved} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                  : ` ${styles.property_save} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-              }
-            >
-              <span className="d-flex align-items-center pe-0 pe-lg-2">
-                {" "}
-                <Image
-                  src={like ? save : saved}
-                  alt="Picture of the author"
-                  className={`${styles.save_image}`}
-                  width={25}
-                  height={25}
-                />
-              </span>
-              <span className="d-none d-lg-block">
-                {liked ? "saved" : "save"}
-              </span>
-            </button>
+              <button
+                onClick={() => setLike(!like)}
+                className={
+                  like
+                    ? ` ${styles.property_saved} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                    : ` ${styles.property_save} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                }
+              >
+                <span className="d-flex align-items-center pe-0 pe-lg-2">
+                  {" "}
+                  <Image
+                    src={like ? save : saved}
+                    alt="Picture of the author"
+                    className={`${styles.save_image}`}
+                    width={25}
+                    height={25}
+                  />
+                </span>
+                <span className="d-none d-lg-block">
+                  {liked ? "saved" : "save"}
+                </span>
+              </button>
             </div>
           ) : (
             <div className={``}>
-            <button
-              onMouseEnter={() => likeHovered("hovered")}
-              onMouseLeave={() => likeHovered("leaved")}
-              onClick={() => setLiked(!liked)}
-              className={
-                liked
-                  ? `${styles.property_saved} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                  : `${styles.property_save} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-              }
-            >
-              <span className="d-flex align-items-center pe-0 pe-lg-2">
-                {" "}
-                <Image
-                  src={saveIcon}
-                  alt="Picture of the author"
-                  className={`${styles.save_image}`}
-                  width={20}
-                  height={20}
-                />
-              </span>
-              <span className="d-none d-lg-block">
-                {liked ? "saved" : "save"}
-              </span>
-            </button>
+              <button
+                onMouseEnter={() => likeHovered("hovered")}
+                onMouseLeave={() => likeHovered("leaved")}
+                onClick={() => setLiked(!liked)}
+                className={
+                  liked
+                    ? `${styles.property_saved} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                    : `${styles.property_save} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
+                }
+              >
+                <span className="d-flex align-items-center pe-0 pe-lg-2">
+                  {" "}
+                  <Image
+                    src={saveIcon}
+                    alt="Picture of the author"
+                    className={`${styles.save_image}`}
+                    width={20}
+                    height={20}
+                  />
+                </span>
+                <span className="d-none d-lg-block">
+                  {liked ? "saved" : "save"}
+                </span>
+              </button>
             </div>
           )}
 

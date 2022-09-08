@@ -42,7 +42,13 @@ const Navbar = () => {
         {
           key: "1",
           label: (
-            <div href="https://www.antgroup.com">
+            <div 
+            onClick={() => {
+              router.push(
+                "/profile/profile-pages/my-profile"
+              );
+            }}
+            >
               <div
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
@@ -62,7 +68,11 @@ const Navbar = () => {
         {
           key: "2",
           label: (
-            <Link href="https://www.antgroup.com">
+            <div  onClick={() => {
+              router.push(
+                "/profile/sidebar-pages/recent-activities"
+              );
+            }}>
               <a
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
@@ -78,14 +88,23 @@ const Navbar = () => {
                   Recent Activities
                 </div>
               </a>
-            </Link>
+            </div>
           ),
         },
         {
           key: "3",
           label: (
-            <Link href="https://www.antgroup.com">
+            <div onClick={() => {
+              router.push(
+                "/profile/sidebar-pages/saved-properties"
+              );
+            }}>
               <a
+              onClick={() => {
+                router.push(
+                  "/profile/sidebar-pages/saved-properties"
+                );
+              }}
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,13 +119,17 @@ const Navbar = () => {
                   Saved Properties
                 </div>
               </a>
-            </Link>
+            </div>
           ),
         },
         {
           key: "4",
           label: (
-            <Link href="https://www.antgroup.com">
+            <div onClick={() => {
+              router.push(
+                "/profile/sidebar-pages/recent-activities"
+              );
+            }}>
               <a
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
@@ -122,13 +145,17 @@ const Navbar = () => {
                   My Properties
                 </div>
               </a>
-            </Link>
+            </div>
           ),
         },
         {
           key: "5",
           label: (
-            <Link href="https://www.antgroup.com">
+            <div onClick={() => {
+              router.push(
+                "/profile/sidebar-pages/recent-activities"
+              );
+            }}>
               <a
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
@@ -142,7 +169,7 @@ const Navbar = () => {
                 />
                 <div className={`ms-3 ${Styles.DropdownText}`}>Settings</div>
               </a>
-            </Link>
+            </div>
           ),
         },
       ]}
@@ -201,9 +228,10 @@ const Navbar = () => {
                         <div
                           className={`ms-5 ${Styles.navProfile} pe-5`}
                           onClick={() => {
-                            router.push("/registercompany/userType");
+                            router.push("");
                           }}
                         >
+                         
                           <Image
                             className={`${Styles.navProfile}`}
                             src={ProfileImage}
@@ -363,7 +391,7 @@ const Navbar = () => {
             >
               <li
                 className={`${
-                  router.pathname === "/profile/recently-viewed"
+                  router.pathname === "/profile/profile-pages/my-profile"
                     ? styles.sidebar_listActive
                     : styles.sidebar_list
                 } mb-3 d-flex align-items-center`}
@@ -374,7 +402,7 @@ const Navbar = () => {
                   height={16}
                   src={UserIcon}
                 />
-                <Link href="/profile/recently-viewed">
+                <Link href="/profile/profile-pages/my-profile">
                   <a className={`ms-3 ${styles.sidebar_links}`}>My Profile</a>
                 </Link>
               </li>
