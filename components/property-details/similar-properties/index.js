@@ -173,7 +173,9 @@ const SimilarProperties = () => {
             >
               By Amal Sabu
             </span>
-            <div className="d-flex justify-content-end mt-2 w-100">
+            <div
+            style={{minWidth:"100px"}}
+            className="d-flex justify-content-end mt-2 ">
               <button
                 className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
               >
