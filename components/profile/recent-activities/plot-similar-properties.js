@@ -116,7 +116,7 @@ const PlotProperties = () => {
           <div className={`row ps-2 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex mb-3`}>
+                <div className={`col-lg-4 col-md-4 d-flex mb-3`}>
                   <div className="d-flex align-items-center">
                     <Image
                       src={item.image}

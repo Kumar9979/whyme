@@ -16,13 +16,13 @@ const SavedProperties = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -71,15 +71,13 @@ const SavedProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
-                </div>
+                <PlotProperties />                </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
-                </div>
+                <PlotProperties />                </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <PlotProperties />
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
                   <PlotProperties />
