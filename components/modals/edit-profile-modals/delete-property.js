@@ -4,7 +4,7 @@ import styles from "../../../styles/modals/edit-profile-modals/edit-profile.modu
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const Sample = ({ show, handleClose }) => {
+const Delete = ({ show, handleClose }) => {
   return (
     <Modal
       className={`d-flex justify-content-center`}
@@ -40,4 +40,4 @@ const Sample = ({ show, handleClose }) => {
   );
 };
 
-export default Sample;
+export default Delete;
