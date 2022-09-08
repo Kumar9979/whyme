@@ -85,7 +85,7 @@ const RecentView = () => {
                   Yesterday
                 </h1>
                 <div className={`${styles.width_properties} ms-3`}>
-                  <SimilarProperties />
+                  <PlotProperties />
                 </div>
               </div>
               <div>
@@ -95,13 +95,13 @@ const RecentView = () => {
                   26 Aug 2022
                 </h1>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties/>
+                <PlotProperties />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties />
+                <PlotProperties />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties />
+                <PlotProperties />
                 </div>
               </div>
             </div>

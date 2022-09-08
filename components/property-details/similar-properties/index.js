@@ -14,6 +14,7 @@ import transaction from "../../../assets/images/about-property-images/transactio
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import RelatedProperties from "../related-properties-card";
 import homeimage from "../../../assets/images/home.png";
+import photo from "../../../assets/icons/photo.png"
 
 const SimilarProperties = () => {
   let n = 10;
@@ -60,7 +61,7 @@ const SimilarProperties = () => {
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
-      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
+      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}>
         <div className={`position-relative col-lg-3 `}>
           <Image
             src={homeimage}
@@ -120,12 +121,9 @@ const SimilarProperties = () => {
                 <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
-                    <Image
-                      src={item.image}
-                      alt="Picture of the author"
-                    />
+                      <Image src={item.image} alt="Picture of the author" />
                     </div>
-                   
+
                     <div className="d-flex flex-column ps-2">
                       <span
                         className={`${styles.about_property_heading} fontFam_poppins fw_500`}
@@ -143,9 +141,7 @@ const SimilarProperties = () => {
               );
             })}
           </div>
-          <p
-            className={`${styles.about_readmore_text} fontFam_poppins fw_400`}
-          >
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
@@ -156,43 +152,39 @@ const SimilarProperties = () => {
           </p>
         </div>
 
-        <div className="col-lg-2 d-flex flex-column justify-content-between">
+        <div className="col-lg-2 d-flex flex-column justify-content-between position-relative">
           <div
             className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >
             ₹ 30 Lac
           </div>
-          <div className="pb-4">
+          <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date}`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2`}
             >
               By Amal Sabu
             </span>
-            <div
-            style={{minWidth:"100px"}}
-            className="d-flex justify-content-end mt-2 ">
-              <button
-                className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
-              >
-               <div className={`pe-2  py-1 pe-1`}>
-          
-                <Image
-                  className={`${styles.owner_image}`}
-                  src={people}
-                  alt="Picture of the author"
-                  width={30}
-                  height={30}
-                /></div>
-                <span className={` fs_14 d-flex align-items-center`}>Contact</span>
-              </button>
-            </div>
           </div>
         </div>
+        <button
+          className={`  ${styles.contact_button} d-flex align-items-center position-absolute`}
+        >
+          <div className={`d-flex justify-content-start`}>
+            <Image
+              className={`${styles.owner_image}`}
+              src={photo}
+              alt="Picture of the author"
+              width={25}
+              height={25}
+            />
+          </div>
+          <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
+        </button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 .edit_profile {
   margin-top: 5rem;
-  width: 100%;
+  width: 90%;
+
 }
 .edit_profile_card {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -163,8 +164,9 @@
 }
 @media only screen and (min-width: 992px) and (max-width: 1320px) {
   .edit_profile {
-    padding-left: 5rem;
-    width: 88%;
+    width: 85%;
+    padding-right: 0rem;
+    margin-left: 4rem;
   }
   .form_width {
     width: 100%;
@@ -176,6 +178,9 @@
   }
   .edit_profile {
     width: 97%;
+  }
+  .edit_profile_card {
+    height: fit-content;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -194,3 +199,22 @@
     width: 97%;
   }
 }
+@media only screen and (width: 992px) {
+  /* .edit_profile {
+    width: 80%;
+    padding-right: 0rem;
+    
+  } */
+  .edit_profile_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+  }
+}
+@media only screen and (max-width: 992px) {
+  
+  .edit_profile_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+  }
+}
+
