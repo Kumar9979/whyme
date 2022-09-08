@@ -17,7 +17,7 @@ const Main = () => {
 
   return (
     <>
-      <div cla>
+      <div className="mt-5 pt-5">
       <Button variant="primary" onClick={handleShow}>
         Launch
       </Button>

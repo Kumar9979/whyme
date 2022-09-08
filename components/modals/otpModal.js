@@ -68,7 +68,7 @@ const OtpModals = ({
             onHide();
             timerReset("close");
           }}
-          centered
+          centered        dialogClassName={`${styles.login_otp_modal_container}`}
         >
           <div
             className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}

@@ -1,3 +1,8 @@
+.whole_container{
+  margin-top: 8rem;
+}
+
+
 .fontFam_poppins {
   font-family: "Poppins";
 }
@@ -117,7 +122,7 @@
   border-bottom-left-radius: 2rem;
 }
 .PriceDetails_margin_top_res {
-  margin-top: 11rem;
+  margin-top: 9rem;
 }
 .input_container {
   margin-left: 3.5rem;
