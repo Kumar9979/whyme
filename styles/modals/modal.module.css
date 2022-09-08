@@ -2,8 +2,8 @@
   max-width: 25% !important;
 } */
 
-.login_modal_container{
-  max-width: 450px;
+.login_modal_container {
+  max-width: 382px;
 }
 
 .heading {
@@ -16,10 +16,10 @@
   color: #323d5a99;
 }
 
-.login_text_2{
+.login_text_2 {
   font-size: 15px;
   color: #323d5a99;
-  margin-top:-4%;
+  margin-top: -4%;
 }
 
 .login_button {
@@ -42,46 +42,51 @@
   color: #1d72db;
   font-size: 14px;
 }
-
+.login_input_container {
+  border-bottom: 1px solid #dddbdb;
+}
+.login_input_container_error {
+  border-bottom: 1px solid #d91c30;;
+}
 .input_text {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #00000029;
-  width:90%;
+  border: none;
+  width: 90%;
+  border-left: 1px solid #dddbdb;
 }
 
 .input_text::placeholder {
   color: #dddbdb;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
 }
 
 .input_text:focus-visible {
   outline: none;
 }
-
+.input_text_warning_border {
+  border: none;
+  width: 90%;
+  border-left: 1px solid #d91c30;
+}
 .input_text_warning {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #d91c30;
 }
-.otp_warning{
-    padding-left:2.1rem;
-}
-
-.resend_link{
-    padding-right:5.1rem;
-    /* margin-top:-1.6rem; */
+.otp_warning {
+  padding-left: 2.1rem;
 }
 
-.otp_timer{
-    color:black;
-    padding-right:5.1rem;
+.resend_link {
+  padding-right: 5.1rem;
+  /* margin-top:-1.6rem; */
 }
 
-.cursor_pointer{
-    cursor: pointer;
+.otp_timer {
+  color: black;
+  padding-right: 5.1rem;
+}
 
-
+.cursor_pointer {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 945px) {
@@ -96,30 +101,27 @@
     top: 0;
   }
 
-  
-.login_text {
+  .login_text {
     font-size: 12px;
     color: #323d5a99;
   }
 
-  .otp_warning{
-    padding-left:0.3rem;
-}
+  .otp_warning {
+    padding-left: 0.3rem;
+  }
 
-.resend_link{
-    padding-right:0rem;
-}
+  .resend_link {
+    padding-right: 0rem;
+  }
 
-.otp_timer{
-    color:black;
-    padding-right:1rem;
-}
+  .otp_timer {
+    color: black;
+    padding-right: 1rem;
+  }
 
-.login_text_2{
-  font-size: 12px;
-  color: #323d5a99;
-  margin-top:-4%;
-}
-
-
+  .login_text_2 {
+    font-size: 12px;
+    color: #323d5a99;
+    margin-top: -4%;
+  }
 }
