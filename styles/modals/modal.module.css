@@ -3,7 +3,10 @@
 } */
 
 .login_modal_container {
-  max-width: 382px;
+  max-width: 362px;
+}
+.login_otp_modal_container{
+  max-width: 462px;
 }
 
 .heading {
@@ -46,7 +49,7 @@
   border-bottom: 1px solid #dddbdb;
 }
 .login_input_container_error {
-  border-bottom: 1px solid #d91c30;;
+  border-bottom: 1px solid #d91c30;
 }
 .input_text {
   border: none;
@@ -59,8 +62,16 @@
   font-weight: 400;
   font-size: 16px;
 }
+.input_text_warning_border::placeholder {
+  color: #dddbdb;
+  font-weight: 400;
+  font-size: 16px;
+}
 
 .input_text:focus-visible {
+  outline: none;
+}
+.input_text_warning_border:focus-visible {
   outline: none;
 }
 .input_text_warning_border {

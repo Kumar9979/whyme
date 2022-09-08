@@ -9,10 +9,7 @@ import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
 import Select from "react-select";
 import { countryData } from "../../../../upcide-web/components/countryCode";
-import {
-  reactSelectSignUp,
-  reactSelectSignUpError,
-} from "../../components/reactSelectStyle";
+import { reactSelectSignUp } from "../../components/reactSelectStyle";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
@@ -43,8 +40,8 @@ const Modals = ({ show, onShow, onHide }) => {
       phoneNumber: Yup.string()
         .matches(phoneRegex, "Please enter the valid phone number")
         .required("Required"),
-      countryCode: Yup.string()
-        .matches(phoneRegex, "Please select your country code")
+      countryCode:
+        Yup.string()
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -60,7 +57,7 @@ const Modals = ({ show, onShow, onHide }) => {
     value: item.dial_code,
     label: item.dial_code,
   }));
-  console.log(formik.values);
+
   return (
     <div>
       <Modal
@@ -97,8 +94,8 @@ const Modals = ({ show, onShow, onHide }) => {
             <div
               className={`${
                 formik.errors.phoneNumber && formik.touched.phoneNumber
-                ? styles.login_input_container_error :styles.login_input_container
-            
+                  ? styles.login_input_container_error
+                  : styles.login_input_container
               } d-flex justify-content-center align-items-center me-4 ms-4 `}
             >
               <Select
