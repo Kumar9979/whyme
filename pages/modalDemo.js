@@ -9,6 +9,7 @@ import ApartmentEditAmenities from "../components/modals/apartmentModals/apartme
 import ApartmentUpdateMap from "../components/modals/apartmentUpdateMap";
 
 import ApartmentUploadPhoto from "../components/modals/apartmentUploadPhoto";
+import ResidentialUploadPhoto from "../components/modals/residential/residentialUploadPhoto";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -25,9 +26,13 @@ const Hello = () => {
      {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
      {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
-     <ApartmentUpdateMap handleClose={handleClose} show={show} />
+     {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
+
+
+       {/* residential  */}
+     <ResidentialUploadPhoto handleClose={handleClose} show={show}/>
     </>
   );
 };
