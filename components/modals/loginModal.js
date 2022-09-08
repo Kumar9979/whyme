@@ -8,13 +8,19 @@ import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
 import Select from "react-select";
+import { countryData } from "../../../../upcide-web/components/countryCode";
+import {
+  reactSelectSignUp,
+  reactSelectSignUpError,
+} from "../../components/reactSelectStyle";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
   const [timer, setTimer] = useState(false);
 
   const [number, setNumber] = useState(undefined);
-  const phoneRegex =/(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
+  const phoneRegex =
+    /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
   // const options = [
   //   { value: "+91", label: "+91" },
   //   { value: "+92", label: "+92" },
@@ -22,7 +28,6 @@ const Modals = ({ show, onShow, onHide }) => {
   // ];
 
   const [selectedOption, setSelectedOption] = useState(null);
-
 
   const ShowOtpModal = () => setShowOtp(true);
   const closeOtpModal = () => setShowOtp(false);
@@ -43,13 +48,23 @@ const Modals = ({ show, onShow, onHide }) => {
       setNumber(values.phoneNumber);
       setShowOtp(true);
       onHide();
-      setTimer(true)
+      setTimer(true);
     },
   });
 
+  const Options = countryData.map((item) => ({
+    value: item.dial_code,
+    label: item.dial_code,
+  }));
+  console.log(formik.values);
   return (
-    <div >
-      <Modal show={show} onHide={onHide} centered  dialogClassName={`${styles.login_modal_container}`} >
+    <div>
+      <Modal
+        show={show}
+        onHide={onHide}
+        centered
+        dialogClassName={`${styles.login_modal_container}`}
+      >
         <div className="d-flex justify-content-end mt-3 me-2">
           <Image src={Close} onClick={onHide} />
         </div>
@@ -94,36 +109,8 @@ const Modals = ({ show, onShow, onHide }) => {
                   className={`${styles.input_text}  px-3`}
                 />
               )} */}
-              
-{/* <Select
-                  defaultValue={{ label: "+91", value: "+91" }}
-                  id="countrycode"
-                  instanceId="countrycode"
-                  options={Options}
-                  placeholder="Select.."
-                  styles={
-                    formik.errors.countryCode && formik.touched.countryCode
-                      ? reactSelectSignUpError
-                      : reactSelectSignUp
-                  }
-                  name="residentStatus"
-                  // value={Options.filter((option) => {
-                  //   return option.value === formik.values.countryCode;
-                  // })}
-                  onChange={(selectedOption) => {
-                    let event = {
-                      target: {
-                        name: "countryCode",
-                        value: selectedOption.value,
-                      },
-                    };
-                    formik.handleChange(event);
-                  }}
-                  components={{
-                    IndicatorSeparator: () => null,
-                    // DropdownIndicator,
-                  }}
-                /> */}
+
+          
             </div>
             <div className="d-flex  justify-content-center">
               <div className=" w-100 ms-3 me-3 mt-2">
@@ -137,9 +124,6 @@ const Modals = ({ show, onShow, onHide }) => {
                       onChange={formik.handleChange}
                       className={`${styles.input_text} ${styles.input_text_warning} w-100`}
                     />
-
-
-
 
                     <div>
                       {" "}
