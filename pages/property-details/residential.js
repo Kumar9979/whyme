@@ -28,13 +28,13 @@ const Home = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 1200) {
+    if (window.innerWidth < 992) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1200) {
+      if (window.innerWidth < 992) {
         setMobile(true);
       } else {
         setMobile(false);

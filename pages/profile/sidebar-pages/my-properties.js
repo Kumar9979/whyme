@@ -1,13 +1,16 @@
 import React from "react";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
-import styles from "../../../styles/profile/sidebar-pages/saved-properties.module.css";
+import styles from "../../../styles/profile/sidebar-pages/my-properties.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
 import Image from "next/image";
 import EmptySearch from "../../../components/profile/saved-properties/empty-properties";
 import SavedProperties from "../../../components/profile/saved-properties/properties-saved";
+import ZeroPostedProperties from "../../../components/profile/my-properties/empty-properties";
+import Postproperties from "../../../components/profile/my-properties/posted-properties";
+import SentProperties from "../../../components/profile/my-properties/posted-properties";
 
 
-const RecentlyViewed = () => {
+const MyProperties = () => {
   return (
     <ProfileLayout>
       <div className={`${styles.recent_activities} mt-5 pt-4`}>
@@ -26,12 +29,12 @@ const RecentlyViewed = () => {
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
             >
-              Saved Properties
+              My Properties
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div className={`${styles.cards_width}`}>
-            <SavedProperties/>
+            <SentProperties/>
           </div>
         </div>
       </div>
@@ -39,4 +42,4 @@ const RecentlyViewed = () => {
   );
 };
 
-export default RecentlyViewed;
+export default MyProperties;

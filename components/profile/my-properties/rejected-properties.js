@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/propertydetails/similarProperties.module.css";
+import styles from "../../../styles/profile/sidebar-pages/post-property.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -12,10 +12,12 @@ import furniture from "../../../assets/images/about-property-images/furniture.sv
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
-import RelatedProperties from "../related-properties-card";
 import homeimage from "../../../assets/images/home.png";
+import edit_icon from "../../../assets/icons/profile-icons/editicon.svg";
+import delete_icon from "../../../assets/icons/profile-icons/delete.svg";
+import rejected from "../../../assets/icons/profile-icons/rejected_icon.svg";
 
-const SimilarProperties = () => {
+const RejectedProperties = () => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -55,12 +57,11 @@ const SimilarProperties = () => {
     };
   }, []);
 
-  const [readless, setReadless] = useState(false);
-  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt , `;
-  const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
-      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
+      <div
+        className={`${styles.similar_properties_card} p-1 row mt-3 mb-5 position-relative`}
+      >
         <div className={`position-relative col-lg-3 `}>
           <Image
             src={homeimage}
@@ -70,22 +71,7 @@ const SimilarProperties = () => {
             height={300}
             layout="fill"
           />
-          <div className={`${styles.like_image} position-absolute`}>
-            <button
-              onMouseEnter={() => likeHovered("hovered")}
-              onMouseLeave={() => likeHovered("leaved")}
-              onClick={() => setLiked(!liked)}
-              className={`${styles.save_image_button} `}
-            >
-              <Image
-                className="d-flex justify-content-center pt-2"
-                src={saveIcon}
-                alt="Picture of the author"
-                width={25}
-                height={25}
-              />
-            </button>
-          </div>
+
           <div
             className={`${styles.luxurius} position-absolute fs_13 fw_500 fontFam_poppins`}
           >
@@ -93,17 +79,12 @@ const SimilarProperties = () => {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-7`}>
+        <div className={`d-flex flex-column ps-2 col-lg-6`}>
           <div className="d-flex align-items-center">
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
-            </div>
-            <div
-              className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
-            >
-              Ready to move
             </div>
           </div>
           <div className={`${styles.exact_location}  d-flex `}>
@@ -120,12 +101,9 @@ const SimilarProperties = () => {
                 <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
-                    <Image
-                      src={item.image}
-                      alt="Picture of the author"
-                    />
+                      <Image src={item.image} alt="Picture of the author" />
                     </div>
-                   
+
                     <div className="d-flex flex-column ps-2">
                       <span
                         className={`${styles.about_property_heading} fontFam_poppins fw_500`}
@@ -143,26 +121,19 @@ const SimilarProperties = () => {
               );
             })}
           </div>
-          <p
-            className={`${styles.about_readmore_text} fontFam_poppins fw_400`}
+          <div
+            className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}
           >
-            {Alltext}
-            <button
-              className={`${styles.about_readmore_button}`}
-              onClick={() => setReadless(!readless)}
-            >
-              {readless === true ? "Read Less" : "Read More"}
-            </button>
-          </p>
+            {" "}
+            <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
+              ₹ 30 Lac
+            </div>
+            
+          </div>
         </div>
 
-        <div className="col-lg-2 d-flex flex-column justify-content-between">
-          <div
-            className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
-          >
-            ₹ 30 Lac
-          </div>
-          <div className="pb-4">
+        <div className="col-lg-3 d-flex flex-column ">
+          <div className=" mt-auto">
             <div
               className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
             >
@@ -173,30 +144,55 @@ const SimilarProperties = () => {
             >
               By Amal Sabu
             </span>
-            <div className="d-flex justify-content-end mt-2 w-100">
+            <div
+              // style={{ width: "" }}
+              className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
+            >
               <button
-                className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
+                className={`${styles.edit_property_button} fs_9 fw_500  fontFam_poppins color_white px-3 d-flex align-items-center py-1`}
               >
-               <div className={`pe-2  py-1 pe-1`}>
-          
                 <Image
-                  className={`${styles.owner_image}`}
-                  src={people}
+                  src={edit_icon}
+                  width={15}
+                  height={15}
                   alt="Picture of the author"
-                  width={30}
-                  height={30}
-                /></div>
-                <span className={` fs_14 d-flex align-items-center`}>Contact</span>
+                />
+
+                <span className="ms-1"> Edit</span>
+              </button>
+              <button
+                className={`${styles.delete_property_button} ms-2 fs_9 fw_500 fontFam_poppins color_white px-2 d-flex align-items-center py-1`}
+              >
+                <div className={`${styles.edit_image_size}`}>
+                  <Image
+                    src={delete_icon}
+                    width={15}
+                    height={15}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <span className="ms-1 color_light_blue"> Delete</span>
               </button>
             </div>
           </div>
+        </div>
+        <div className={`${styles.rejected} position-absolute `}>
+          <Image
+            src={rejected}
+            alt="Picture of the author"
+            width={12}
+            height={12}
+          />
+          <span className="color_white fontFam_poppins fw_400 fs_12 ms-1 ">
+            Rejected
+          </span>
         </div>
       </div>
     </div>
   );
 };
 
-export default SimilarProperties;
+export default RejectedProperties;
 const aboutproperties = [
   {
     image: squarearea,

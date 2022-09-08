@@ -1,14 +1,15 @@
 import { React, useRef, useState, useEffect } from "react";
-import styles from "../../../styles/profile/sidebar-pages/saved-properties.module.css";
+import styles from "../../../styles/profile/sidebar-pages/my-properties.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import SimilarProperties from "../../property-details/similar-properties";
-import RelatedProperties from "../../property-details/related-properties-card";
 import ProfileRelatedProperties from "../profile-related-properties";
-import PlotProperties from "../recent-activities/plot-similar-properties";
+import PropertiesCard from "./verified_card";
+import VerifiedProperties from "./verified_card";
+import UnderReviewProperties from "./under_review_properties_card";
+import RejectedProperties from "./rejected-properties";
 // import PlotProperties from "./plot-similar-properties";
 
-const SavedProperties = () => {
+const SentProperties = () => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -71,18 +72,15 @@ const SavedProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                  <VerifiedProperties />
                 </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <UnderReviewProperties  />
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
-                </div>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <PlotProperties />
+                <RejectedProperties  />
                 </div>
               </div>
             </div>
@@ -93,7 +91,7 @@ const SavedProperties = () => {
   );
 };
 
-export default SavedProperties;
+export default SentProperties;
 
 const dates = [
   {
