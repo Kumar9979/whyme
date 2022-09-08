@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import SuccessSave from "../../components/modals/property-details/success-saved";
+import SuccessSave from "../../components/modals/edit-profile-modals/success-saved";
 // import ReportAdvertiser from "../../components/modals/property-details/report-advertiser";
 // import Shareproperty from "../../components/modals/property-details/share-property";
 // import Sample from "../../components/modals/edit-profile-modals/sample";
