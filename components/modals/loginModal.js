@@ -109,8 +109,6 @@ const Modals = ({ show, onShow, onHide }) => {
                   className={`${styles.input_text}  px-3`}
                 />
               )} */}
-
-          
             </div>
             <div className="d-flex  justify-content-center">
               <div className=" w-100 ms-3 me-3 mt-2">
