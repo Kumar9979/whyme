@@ -3,7 +3,10 @@ import styles from "../../../styles/profile/sidebar-pages/my-properties.module.c
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
 import ProfileRelatedProperties from "../profile-related-properties";
-import PropertiesCard from "./post-property-card";
+import PropertiesCard from "./verified_card";
+import VerifiedProperties from "./verified_card";
+import UnderReviewProperties from "./under_review_properties_card";
+import RejectedProperties from "./rejected-properties";
 // import PlotProperties from "./plot-similar-properties";
 
 const SentProperties = () => {
@@ -69,18 +72,15 @@ const SentProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <PropertiesCard />
+                  <VerifiedProperties />
                 </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PropertiesCard />
+                <UnderReviewProperties  />
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PropertiesCard />
-                </div>
-                <div className={`${styles.width_properties} mb-0`}>
-                <PropertiesCard />
+                <RejectedProperties  />
                 </div>
               </div>
             </div>

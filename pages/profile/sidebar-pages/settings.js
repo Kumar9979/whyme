@@ -93,9 +93,10 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          rendered == "notification"
-                            ? styles.selected_component
-                            : styles.not_selected_component
+                          // rendered == "notification"
+                          //   ? styles.selected_component
+                          //   : 
+                            styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("notification")}
                       >
@@ -107,9 +108,10 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          rendered == "faq"
-                            ? styles.selected_component
-                            : styles.not_selected_component
+                          // rendered == "faq"
+                          //   // ? styles.selected_component
+                          //   // :
+                             styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("faq")}
                       >
@@ -121,9 +123,10 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          rendered == "terms"
-                            ? styles.selected_component
-                            : styles.not_selected_component
+                          // rendered == "terms"
+                          //   ? styles.selected_component
+                          //   : 
+                            styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("terms")}
                       >
@@ -133,9 +136,10 @@ const Settings = () => {
                     <li className={` fs_13 fw_600 fontFam_poppins mb-4`}>
                       <a
                         className={`${
-                          rendered == "privacy"
-                            ? styles.selected_component
-                            : styles.not_selected_component
+                          // rendered == "privacy"
+                          //   ? styles.selected_component
+                          //   : 
+                            styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("privacy")}
                       >

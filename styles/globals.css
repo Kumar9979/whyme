@@ -12,9 +12,7 @@ p{
   font-family:"Poppins", sans-serif;
 }
 
-a{
-  text-decoration: none !important;
-}
+ 
 /* [data-reach-combobox-popover]{
   z-index: 9999 !important;
 } */
@@ -161,6 +159,9 @@ border-radius: 12px !important;
 }
 .color_black {
   color: #1D1E1F;
+}
+.color_white {
+  color: #FFFFFF;
 }
 
 @media only screen and (max-width: 992px) {

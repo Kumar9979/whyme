@@ -1,6 +1,6 @@
 .recent_activities {
-  width: 100%;
-  padding-right: 5rem;
+  width: 90%;
+  /* padding-right: 4rem; */
 }
 
 .recent_activities_card {
@@ -39,7 +39,7 @@
   white-space: nowrap;
 }
 .first_column {
-  padding-right: 3rem;
+  padding-right: 1rem;
 }
 
 .scrollmenu {
@@ -47,7 +47,7 @@
 }
 .width_properties {
   width: 100%;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   padding: 0px;
 }
 .scrollmenu > .row {
@@ -119,9 +119,9 @@
 }
 @media only screen and (min-width: 992px) and (max-width: 1350px) {
   .recent_activities {
-    width: 90%;
+    width: 85%;
     padding-right: 0rem;
-    padding-left: 1rem;
+    padding-left: 4rem;
   }
   .width_properties {
     width: 85%;
@@ -157,7 +157,7 @@
 
 @media only screen and (width: 992px) {
   .recent_activities {
-    width: 85%;
+    width: 80%;
     padding-right: 0rem;
     padding-left: 0rem;
   }

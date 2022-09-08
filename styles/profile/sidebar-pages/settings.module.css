@@ -1,6 +1,5 @@
 .recent_activities {
-  width: 100%;
-  padding-right: 5rem;
+  width: 90%;
 }
 
 .recent_activities_card {
@@ -101,15 +100,21 @@
   border-radius: 7px;
   opacity: 1;
 }
+.answer_opened {
+  color: #50bf97;
+}
+.answer_closed {
+  color: #323d5a;
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1350px) {
   .cards_width {
     width: 100%;
   }
   .recent_activities {
-    width: 90%;
+    width: 85%;
     padding-right: 0rem;
-    padding-left: 1rem;
+    padding-left: 4rem;
   }
 }
 
@@ -138,12 +143,14 @@
   .faqsContainer {
     width: 100%;
   }
+  .conditions_card_width {
+    width: 100%;
+  }
 }
-
 
 @media only screen and (width: 992px) {
   .recent_activities {
-    width: 85%;
+    width: 80%;
     padding-right: 0rem;
     padding-left: 0rem;
   }
