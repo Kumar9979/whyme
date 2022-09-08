@@ -54,8 +54,8 @@ const PropertyUpload = () => {
 
   return (
     <div>
-      <div className="container mt-5 pt-3">
-        <div className="row">
+      <div className={`${styles.whole_container} container mb-5 mb-lg-0`}>
+        <div className="row justify-content-center mx-2 mx-lg-0">
           <div
             className={`col-lg-3 col-md-11 col-sm-11 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB}`}
           >
