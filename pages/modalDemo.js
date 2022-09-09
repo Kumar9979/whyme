@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import ApartmentDeletePhoto from "../components/modals/apartmentDeletePhoto";
+import ApartmentDeletePhoto from "../components/modals/apartmentModals/apartmentDeletePhoto";
 
 import ApartmentAreaPrice from "../components/modals/apartmentModals/apartmentAreaPrice";
 import ApartmentAreaPriceRent from "../components/modals/apartmentModals/apartmentAreaPriceRent";
 import ApartmentDescription from "../components/modals/apartmentModals/apartmentDescription";
 import ApartmentEditAmenities from "../components/modals/apartmentModals/apartmentEditAmenities";
 import ApartmentEditProperty from "../components/modals/apartmentModals/apartmentEditProperty";
-import ApartmentUpdateMap from "../components/modals/apartmentUpdateMap";
+import ApartmentUpdateMap from "../components/modals/apartmentModals/apartmentUpdateMap";
 
-import ApartmentUploadPhoto from "../components/modals/apartmentUploadPhoto";
+import ApartmentUploadPhoto from "../components/modals/apartmentModals/apartmentUploadPhoto";
 import VillaDeletePhoto from "../components/modals/villa-property/villaDeletePhoto";
 import VillaUploadPhoto from "../components/modals/villa-property/villaUploadPhoto";
 
@@ -30,7 +30,7 @@ const Hello = () => {
      {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
      {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
-      {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
+      <ApartmentUploadPhoto handleClose={handleClose} show={show} />
 
 
       {/* villa */}
