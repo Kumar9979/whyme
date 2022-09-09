@@ -9,7 +9,7 @@ const RecentSearch = () => {
       <ul className="list-unstyled">
         <li className="mt-3">
           <h1
-            className={`fs_15 fw_500 fontFam_poppins  ${styles.searched_dates} py-2 px-2 mb-3`}
+            className={`fs_15 fw_500 fontFam_poppins  ${styles.searched_dates} py-2  mb-3`}
           >
             Yesterday
           </h1>

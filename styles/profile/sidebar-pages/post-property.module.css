@@ -14,7 +14,7 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 12px;
   opacity: 1;
-  width: 100%;
+  width: 90%;
 }
 .luxurius {
   color: #000000;
@@ -41,7 +41,7 @@
 }
 .exact_location {
   color: #bcc7ce;
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -65,8 +65,8 @@
   font-size: 13px;
 }
 .image_size {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 }
 .about_readmore_button {
   background-color: transparent;
@@ -83,7 +83,7 @@
 }
 .owner_image {
   border-radius: 50%;
-  background: transparent  0% 0% no-repeat padding-box;
+  background: transparent 0% 0% no-repeat padding-box;
   border: 3px solid #1d72db;
   opacity: 1;
 }
@@ -134,11 +134,62 @@
 .container {
   margin-bottom: 0.5rem;
 }
-/* @media only screen and (min-width: 992px) and (max-width: 1300px) {
-  .ready_house {
-    font-size: 5px;
-  }
-} */
+
+.verified {
+  background: #50bf97 0% 0% no-repeat padding-box;
+  border-radius: 0px 12px;
+  opacity: 1;
+  width: 10%;
+  right: 0%;
+  top: 0%;
+  white-space: nowrap;
+}
+.reviewed {
+  background: #f77223 0% 0% no-repeat padding-box;
+  border-radius: 0px 12px;
+  opacity: 1;
+  width: 15%;
+  right: 0%;
+  top: 0%;
+  white-space: nowrap;
+}
+ .rejected {
+  background: #D91C30 0% 0% no-repeat padding-box;
+  border-radius: 0px 12px;
+  opacity: 1;
+  width: 12%;
+  right: 0%;
+  top: 0%;
+  white-space: nowrap;
+}
+.edit_property_button {
+  background: #1d72db 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  opacity: 1;
+  border: none;
+  white-space: nowrap;
+}
+.edit_image_size {
+  width: 15;
+  height: 15;
+}
+.buttons_position {
+  white-space: nowrap;
+}
+.delete_property_button {
+  border: 1px solid var(--unnamed-color-1d72db);
+  border: 1px solid #1d72db;
+  border-radius: 7px;
+  opacity: 1;
+  background-color: #ffffff;
+}
+.view_properties_statistics {
+  text-decoration: underline;
+}
+.property_statistics_width {
+  width: 90%;
+}
+
 @media only screen and (max-width: 1300px) {
   .similar_properties_card {
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -146,6 +197,9 @@
     border-radius: 12px;
     opacity: 1;
     width: 99%;
+  }
+  .verified {
+    width: 15%;
   }
   .container {
     margin-bottom: 1rem;
@@ -157,8 +211,8 @@
     padding-top: 0.5rem;
   }
   .image_size {
-    width: 13px;
-    height: 13px;
+    width: 25px;
+    height: 25px;
   }
   .similar_property_location {
     color: #000000;
