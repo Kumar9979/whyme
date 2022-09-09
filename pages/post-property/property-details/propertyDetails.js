@@ -89,7 +89,7 @@ const PropertyDetails = () => {
 
   return (
     <>
-      <div className={`${styles.whole_container}  container`}>
+      <div className={`${styles.whole_container}  abijith  container`}>
         <div className="row mb-2 justify-content-lg-center mx-1">
           <div
             className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} ${styles.stepper_property_details}`}
