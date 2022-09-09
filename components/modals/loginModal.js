@@ -41,7 +41,7 @@ const Modals = ({ show, onShow, onHide }) => {
         .matches(phoneRegex, "Please enter the valid phone number")
         .required("Required"),
       countryCode:
-        Yup.string()
+         Yup.string()
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
