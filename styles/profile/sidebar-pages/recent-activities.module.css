@@ -136,6 +136,10 @@
     background: transparent 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 20px transparent;
   }
+  .width_properties {
+    width: 80%;
+    
+  }
   .recent_activities {
     width: 100%;
     padding-right: 0rem;

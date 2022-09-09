@@ -5,7 +5,6 @@ import Image from "next/image";
 import PlotProperties from "../../cards/profile-pages-cards/plot-similar-properties";
 import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-related-properties";
 
-
 const RecentView = () => {
   let n = 10;
   const ref = useRef();
@@ -94,13 +93,13 @@ const RecentView = () => {
                   26 Aug 2022
                 </h1>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                <PlotProperties />
+                  <PlotProperties />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                <PlotProperties />
+                  <PlotProperties />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                <PlotProperties />
+                  <PlotProperties data={1} />
                 </div>
               </div>
             </div>

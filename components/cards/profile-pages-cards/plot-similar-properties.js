@@ -12,15 +12,22 @@ import furniture from "../../../assets/images/about-property-images/furniture.sv
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
+import boundry from "../../../assets/images/about-property-images/boundry_wall.svg";
+import colony from "../../../assets/images/about-property-images/colony.svg";
+import construction from "../../../assets/images/about-property-images/construction_done.svg";
+import corner from "../../../assets/images/about-property-images/corner_sites.svg";
+import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
+import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 import homeimage from "../../../assets/images/home.png";
-import photo from "../../../assets/icons/photo.png"
+import photo from "../../../assets/icons/photo.png";
 
-const PlotProperties = () => {
+const PlotProperties = ({ data }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
+  const [nm, setNm] = useState(data === 1 ?  aboutproperties2 : aboutProperties );
 
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
@@ -60,7 +67,9 @@ const PlotProperties = () => {
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
-      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}>
+      <div
+        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
+      >
         <div className={`position-relative col-lg-3 col-md-3 `}>
           <Image
             src={homeimage}
@@ -98,7 +107,7 @@ const PlotProperties = () => {
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
-              2BHK flat in Vijayanagar, Mysuru
+              1200Sqft Plot in Vijaynagar Mysore
             </div>
             <div
               className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
@@ -115,9 +124,11 @@ const PlotProperties = () => {
             </span>
           </div>
           <div className={`row ps-3 ${styles.amenties_width} `}>
-            {aboutproperties.map((item, index) => {
+            {nm.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
+                <div
+                  className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
+                >
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
@@ -153,7 +164,7 @@ const PlotProperties = () => {
 
         <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >
             ₹ 30 Lac
           </div>
@@ -190,7 +201,40 @@ const PlotProperties = () => {
 };
 
 export default PlotProperties;
-const aboutproperties = [
+const aboutproperties2 = [
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors", 
+  },
+  {
+    image: construction,
+    heading: "Construction Done",
+    amenity: "Yes",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: boundry,
+    heading: "Boundry Wall",
+    amenity: "Yes",
+  },
+  {
+    image: colony,
+    heading: "Gated Colony",
+    amenity: "Yes",
+  },
+  {
+    image: corner,
+    heading: "Corner Site",
+    amenity: "Yes",
+  },
+];
+
+const aboutProperties = [
   {
     image: squarearea,
     heading: "super Area",
