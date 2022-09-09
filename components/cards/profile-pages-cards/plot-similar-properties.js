@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/propertydetails/similarProperties.module.css";
+import styles from "../../../styles/cards/profile-pages-card/plot-similar.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -117,7 +117,7 @@ const PlotProperties = () => {
           <div className={`row ps-3 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
+                <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />

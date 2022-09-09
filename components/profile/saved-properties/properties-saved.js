@@ -2,11 +2,9 @@ import { React, useRef, useState, useEffect } from "react";
 import styles from "../../../styles/profile/sidebar-pages/saved-properties.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import SimilarProperties from "../../property-details/similar-properties";
-import RelatedProperties from "../../property-details/related-properties-card";
-import ProfileRelatedProperties from "../profile-related-properties";
-import PlotProperties from "../recent-activities/plot-similar-properties";
-// import PlotProperties from "./plot-similar-properties";
+import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-related-properties";
+import PlotProperties from "../../cards/profile-pages-cards/plot-similar-properties";
+
 
 const SavedProperties = () => {
   let n = 10;
@@ -44,12 +42,12 @@ const SavedProperties = () => {
                 <div ref={ref} className={`${styles.row}`}>
                   <div>
                     <div className="mb-4 m-2 d-flex justify-content-center">
-                      <ProfileRelatedProperties />
+                      <ProfileRelatedPropert />
                     </div>
                   </div>
 
                   <div className="mb-4 m-2 d-flex justify-content-center">
-                    <ProfileRelatedProperties />
+                    <ProfileRelatedProperties/>
                   </div>
                   <div>
                     <div className="mb-4 m-2 d-flex justify-content-center">

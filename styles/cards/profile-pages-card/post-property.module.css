@@ -153,8 +153,8 @@
   top: 0%;
   white-space: nowrap;
 }
- .rejected {
-  background: #D91C30 0% 0% no-repeat padding-box;
+.rejected {
+  background: #d91c30 0% 0% no-repeat padding-box;
   border-radius: 0px 12px;
   opacity: 1;
   width: 12%;
@@ -198,6 +198,9 @@
     opacity: 1;
     width: 99%;
   }
+  .reviewed {
+    width: 20%;
+  }
   .verified {
     width: 15%;
   }
@@ -231,5 +234,10 @@
   }
   .about_readmore_text {
     font-size: 8px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .reviewed {
+    width: 15%;
   }
 }

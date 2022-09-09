@@ -2,10 +2,9 @@ import { React, useRef, useState, useEffect } from "react";
 import styles from "../../../styles/profile/sidebar-pages/recent-activities.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import SimilarProperties from "../../property-details/similar-properties";
-import RelatedProperties from "../../property-details/related-properties-card";
-import ProfileRelatedProperties from "../profile-related-properties";
-import PlotProperties from "./plot-similar-properties";
+import PlotProperties from "../../cards/profile-pages-cards/plot-similar-properties";
+import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-related-properties";
+
 
 const RecentView = () => {
   let n = 10;

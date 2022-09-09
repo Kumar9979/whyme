@@ -133,3 +133,13 @@
     box-shadow: 0px 0px 20px #0000001f;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .recent_activities {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .recent_activities {
+    width: 100%;
+  }
+}
