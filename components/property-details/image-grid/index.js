@@ -19,8 +19,9 @@ import calling from "../../../assets/icons/calling.svg";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import ShareIcon from "../../../assets/images/about-property-images/share";
-
+import caution from "../../../assets/images/about-property-images/report_icon.svg";
 const ImageGrid = () => {
+  const [show, setShow] = useState(false)
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
   const [like, setLike] = useState(false);
@@ -59,7 +60,9 @@ const ImageGrid = () => {
   const handleClose = () => setIsVisible(false);
   const number = 10;
   return (
-    <div className={`${styles.property_details} p-2 p-lg-4 mt-lg-4 position-relative`}>
+    <div
+      className={`${styles.property_details} p-2 p-lg-4 mt-lg-4 position-relative`}
+    >
       <div className="d-flex justify-content-between ">
         <div className="col-11">
           <div className="d-flex align-items-center">
@@ -84,7 +87,6 @@ const ImageGrid = () => {
           >
             <span className="pe-1">
               {" "}
-              
               <LocationIcon fill="#1D72DB" />
             </span>
             2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
@@ -93,6 +95,8 @@ const ImageGrid = () => {
         </div>
 
         <button
+         onClick={() => setShow(!show)}
+        
           className={`${styles.property_share_report} pe-3 d-flex justify-content-end  align-items-top  col-1`}
         >
           <Image
@@ -235,7 +239,7 @@ const ImageGrid = () => {
             className={`${styles.shareIcon}  d-flex align-items-center ms-4 justify-content-center`}
           >
             <div className={`${styles.saveIcon}`}>
-             <ShareIcon fill="#1D72DB"/>
+              <ShareIcon fill="#1D72DB" width={20} height={25} />
             </div>
           </button>
           {/* )} */}
@@ -302,9 +306,28 @@ const ImageGrid = () => {
           </Carousel>
         </Modal.Body>
       </Modal>
-      <div className={`${styles.share_report_card} p-5`}>
-
-      </div>
+      {
+        show ? (<div className={`${styles.share_report_card} p-3  position-absolute`}>
+        <div className="d-flex align-items-center justify-content-center mb-2">
+          <ShareIcon fill="#323D5A" width={15} height={15}/>
+          <span className="fontFam_poppins text-nowrap fs_17  color_cloudBurst fw_600 ps-3">
+            Share Property
+          </span>
+        </div>
+        <div className="d-flex align-items-center justify-content-center">
+          <Image
+            src={caution}
+            alt="Picture of the author"
+            width={15}
+            height={15}
+          />
+          <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
+            Report an Issue
+          </span>
+        </div>
+      </div>):null
+      }
+      
     </div>
   );
 };
