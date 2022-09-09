@@ -29,7 +29,7 @@
 }
 .similar_property_location {
   color: #000000;
-  font-size: 17px;
+  font-size: 14px;
 }
 .ready_house {
   color: #ffffff;
@@ -41,7 +41,7 @@
 }
 .exact_location {
   color: #bcc7ce;
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -62,7 +62,7 @@
   color: #323d5a;
   width: 90%;
   padding-top: 1rem;
-  font-size: 13px;
+  font-size: 11px;
 }
 .image_size {
   width: 25px;
@@ -79,11 +79,14 @@
   opacity: 1;
   border: none;
   color: #ffffff;
-  width: 6.25rem;
+  width: 7.8rem;
+  height: 2.4rem;
+  right: 2%;
+  bottom: 3%;
 }
 .owner_image {
   border-radius: 50%;
-  background: transparent  0% 0% no-repeat padding-box;
+  background: transparent 0% 0% no-repeat padding-box;
   border: 3px solid #1d72db;
   opacity: 1;
 }
@@ -134,6 +137,7 @@
 .container {
   margin-bottom: 0.5rem;
 }
+
 /* @media only screen and (min-width: 992px) and (max-width: 1300px) {
   .ready_house {
     font-size: 5px;
@@ -157,8 +161,8 @@
     padding-top: 0.5rem;
   }
   .image_size {
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
   }
   .similar_property_location {
     color: #000000;
@@ -177,5 +181,15 @@
   }
   .about_readmore_text {
     font-size: 8px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
+  .contact_button {
+    width: 7.2rem;
+    height: 2rem;
+  }
+  .position_image {
+    
+    top: 10px;
   }
 }

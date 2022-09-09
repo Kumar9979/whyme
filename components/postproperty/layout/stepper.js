@@ -57,7 +57,7 @@ const StepperNew = ({ currentPage }) => {
 
   return (
     <div
-      className={`container ${`${styles.stepper_cont_flex_res}`}    justify-content-around  ${
+      className={`container ${`${styles.stepper_cont_flex_res}`}  justify-content-around  ${
         styles.stepper_bg_color
       }`}
     >

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import saved from "../../assets/icons/saved.svg";
-import save from "../../assets/icons/save.svg";
+
+import saved from "../../../assets/icons/saved.svg";
+import save from "../../../assets/icons/save.svg";
 import Image from "next/image";
-import home from "../../assets/images/home.png";
-import styles from "../../styles/profile/profile-related.module.css";
-import likeimage from "../../assets/images/likeimage.svg";
-import squarearea from "../../assets/images/about-property-images/sqft.svg";
-import bathroom from "../../assets/images/about-property-images/bathroom.svg";
-import furniture from "../../assets/images/about-property-images/furniture.svg";
-const ProfileRelatedProperties = () => {
+import home from "../../../assets/images/home.png";
+import styles from "../../../styles/cards/property-details-cards/relatedProperties.module.css";
+import likeimage from "../../../assets/images/likeimage.svg";
+import squarearea from "../../../assets/images/about-property-images/sqft.svg";
+import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
+import furniture from "../../../assets/images/about-property-images/furniture.svg";
+const RelatedProperties = () => {
   const [liked, setLiked] = useState(false);
   const [mobile, setMobile] = useState(false);
 
@@ -44,7 +45,8 @@ const ProfileRelatedProperties = () => {
   }, []);
   const number = 20;
   return (
-      <div className={`${styles.related_image} mb-1 p-1 mb-lg-2`}>
+    <div className="me-4">
+      <div className={`${styles.related_image} mb-1 p-2 mb-lg-2`}>
         <div className={`position-relative`}>
           <Image
             src={home}
@@ -52,7 +54,6 @@ const ProfileRelatedProperties = () => {
             width={900}
             height={600}
             className={`${styles.property_photo}`}
-            priority
           />
           <div className={`${styles.luxurius} position-absolute`}>
             Luxurious
@@ -138,11 +139,11 @@ const ProfileRelatedProperties = () => {
           </div>
         </div>
       </div>
-    
+    </div>
   );
 };
 
-export default ProfileRelatedProperties;
+export default RelatedProperties;
 
 const aboutproperties = [
   {

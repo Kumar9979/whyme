@@ -1,3 +1,22 @@
+.propertydetail_main__container{
+  box-shadow: 0px 0px 20px #323D5A1F;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .sidebar {
   background-color: #1d72db;
   height: 100%;
@@ -8,7 +27,6 @@
   
 }
 
-/* abijith */
 
 .map_container {
   width: 100%;

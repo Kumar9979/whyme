@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/profile/sidebar-pages/plot-similar.module.css";
+import styles from "../../../styles/cards/profile-pages-card/post-property.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -13,8 +13,10 @@ import bathroom from "../../../assets/images/about-property-images/bathroom.svg"
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import homeimage from "../../../assets/images/home.png";
-
-const PlotProperties = () => {
+import tick from "../../../assets/icons/profile-icons/tick.svg";
+import edit_icon from "../../../assets/icons/profile-icons/editicon.svg";
+import delete_icon from "../../../assets/icons/profile-icons/delete.svg";
+const VerifiedProperties = () => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -33,34 +35,14 @@ const PlotProperties = () => {
     }
   }
 
-  const [mobile, setMobile] = useState(false);
-  useEffect(() => {
-    if (window.innerWidth < 992) {
-      setMobile(true);
-    }
-  }, []);
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 992) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-      }
-    };
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
-  const [readless, setReadless] = useState(false);
-  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,`;
-  const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
-      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5`}>
-        <div className={`position-relative col-lg-3 `}>
+      <div
+        className={`${styles.similar_properties_card} p-1 row mt-3 mb-5 position-relative`}
+      >
+        <div className={`position-relative col-lg-3 col-md-3`}>
           <Image
             src={homeimage}
             alt="Picture of the autho"
@@ -69,22 +51,7 @@ const PlotProperties = () => {
             height={300}
             layout="fill"
           />
-          <div className={`${styles.like_image} position-absolute`}>
-            <button
-              onMouseEnter={() => likeHovered("hovered")}
-              onMouseLeave={() => likeHovered("leaved")}
-              onClick={() => setLiked(!liked)}
-              className={`${styles.save_image_button} `}
-            >
-              <Image
-                className="d-flex justify-content-center pt-2"
-                src={saveIcon}
-                alt="Picture of the author"
-                width={25}
-                height={25}
-              />
-            </button>
-          </div>
+
           <div
             className={`${styles.luxurius} position-absolute fs_13 fw_500 fontFam_poppins`}
           >
@@ -92,20 +59,15 @@ const PlotProperties = () => {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-7`}>
+        <div className={`d-flex flex-column ps-2 col-lg-6 col-md-6`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location} fs_14 fw_500 fontFam_poppins`}
+              className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
             </div>
-            <div
-              className={`px-1 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
-            >
-              Ready to move
-            </div>
           </div>
-          <div className={`${styles.exact_location} pt-1 d-flex `}>
+          <div className={`${styles.exact_location}  d-flex `}>
             <i className="ri-map-pin-2-fill "></i>
             <span className="ps-1">
               2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
@@ -113,25 +75,23 @@ const PlotProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-2 ${styles.amenties_width} `}>
+          <div className={`row ps-3 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex mb-3`}>
+                <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
-                    <Image
-                      src={item.image}
-                      alt="Picture of the author"
-                      width={20}
-                      height={20}
-                    />
+                    <div className={`${styles.image_size} `}>
+                      <Image src={item.image} alt="Picture of the author" />
+                    </div>
+
                     <div className="d-flex flex-column ps-2">
                       <span
-                        className={`${styles.about_property_heading} fs_8  fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_heading} fontFam_poppins fw_500`}
                       >
                         {item.heading}
                       </span>
                       <span
-                        className={`${styles.about_property_amenity} fs_8 fw_500 fontFam_poppins`}
+                        className={`${styles.about_property_amenity} fontFam_poppins fw_500`}
                       >
                         {item.amenity}
                       </span>
@@ -141,26 +101,19 @@ const PlotProperties = () => {
               );
             })}
           </div>
-          <p
-            className={`${styles.about_readmore_text} fs_8  fw_500 fontFam_poppins`}
-          >
-            {Alltext}
-            <button
-              className={`${styles.about_readmore_button}`}
-              onClick={() => setReadless(!readless)}
-            >
-              {readless === true ? "Read Less" : "Read More"}
-            </button>
-          </p>
+          <div className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}>
+            {" "}
+            <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
+              ₹ 30 Lac
+            </div>
+            <a className={`${styles.view_properties_statistics} pt-1`}>
+              View Property Statistics
+            </a>
+          </div>
         </div>
 
-        <div className="col-lg-2 d-flex flex-column justify-content-between">
-          <div
-            className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
-          >
-            ₹ 30 Lac
-          </div>
-          <div className="pb-4">
+        <div className="col-lg-3 col-md-3 d-flex flex-column ">
+          <div className=" mt-auto">
             <div
               className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
             >
@@ -171,30 +124,55 @@ const PlotProperties = () => {
             >
               By Amal Sabu
             </span>
-            <div className="d-flex justify-content-end mt-2 w-100">
+            <div
+              // style={{ width: "" }}
+              className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
+            >
               <button
-                className={` py-1  ${styles.contact_button} d-flex align-items-center`}
+                className={`${styles.edit_property_button} fs_9 fw_500  fontFam_poppins color_white px-3 d-flex align-items-center py-1`}
               >
-                {" "}
                 <Image
-                  className={`${styles.owner_image} `}
-                  src={people}
+                  src={edit_icon}
+                  width={15}
+                  height={15}
                   alt="Picture of the author"
-                  width={30}
-                  height={30}
                 />
-                <span className={` ps-2 pe-4`}>Contact</span>
+
+                <span className="ms-1"> Edit</span>
+              </button>
+              <button
+                className={`${styles.delete_property_button} ms-2 fs_9 fw_500 fontFam_poppins color_white px-2 d-flex align-items-center py-1`}
+              >
+                <div className={`${styles.edit_image_size}`}>
+                  <Image
+                    src={delete_icon}
+                    width={15}
+                    height={15}
+                    alt="Picture of the author"
+                  />
+                </div>
+                <span className="ms-1 color_light_blue"> Delete</span>
               </button>
             </div>
           </div>
         </div>
+        <div className={`${styles.verified} position-absolute `}>
+          <Image
+            src={tick}
+            alt="Picture of the author"
+            width={12}
+            height={12}
+          />
+          <span className="color_white fontFam_poppins fw_400 fs_12 ms-1 ">
+            Verified
+          </span>
+        </div>
       </div>
-    
     </div>
   );
 };
 
-export default PlotProperties;
+export default VerifiedProperties;
 const aboutproperties = [
   {
     image: squarearea,

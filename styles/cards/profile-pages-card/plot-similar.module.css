@@ -1,0 +1,195 @@
+.seeall_button {
+  color: #50bf97;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+}
+.similar_properties_heading {
+  color: #323d5a;
+}
+.similar_properties_card {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #0000001f;
+  border-radius: 12px;
+  opacity: 1;
+  width: 100%;
+}
+.luxurius {
+  color: #000000;
+  background-color: #fbc352;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* border-radius: 5px; */
+  width: 50%;
+  text-align: center;
+  top: 0%;
+  left: 0%;
+}
+.similar_property_location {
+  color: #000000;
+  font-size: 14px;
+}
+.ready_house {
+  color: #ffffff;
+  background: #24734e 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  opacity: 1;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.exact_location {
+  color: #bcc7ce;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.about_property_heading {
+  color: #bcc7ce;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.about_property_amenity {
+  color: #1d72db;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.about_readmore_text {
+  color: #323d5a;
+  width: 90%;
+  padding-top: 1rem;
+  font-size: 11px;
+}
+.image_size {
+  width: 25px;
+  height: 25px;
+}
+.about_readmore_button {
+  background-color: transparent;
+  border: none;
+  color: #f77223;
+}
+.contact_button {
+  background: #1d72db 0% 0% no-repeat padding-box;
+  border-radius: 26px;
+  opacity: 1;
+  border: none;
+  color: #ffffff;
+  width: 7.8rem;
+  height: 2.4rem;
+  right: 2%;
+  bottom: 3%;
+}
+.owner_image {
+  border-radius: 50%;
+  background: transparent 0% 0% no-repeat padding-box;
+  border: 3px solid #1d72db;
+  opacity: 1;
+}
+.posted_date {
+  color: #323d5a;
+  white-space: nowrap;
+}
+.scrollmenu {
+  width: 100%;
+}
+.scrollmenu > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.scrollmenu > .row::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+}
+.home_image {
+  border-radius: 10px;
+  opacity: 1;
+}
+.save_image_button {
+  border: none;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #0000001f;
+  border-radius: 26px;
+  opacity: 1;
+  width: 35px;
+  height: 35px;
+}
+.like_image {
+  bottom: 5%;
+  right: 5%;
+}
+.amenties_width {
+  width: 100%;
+  padding-top: 1rem;
+}
+.container {
+  margin-bottom: 0.5rem;
+}
+
+/* @media only screen and (min-width: 992px) and (max-width: 1300px) {
+  .ready_house {
+    font-size: 5px;
+  }
+} */
+@media only screen and (max-width: 1300px) {
+  .similar_properties_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+    border-radius: 12px;
+    opacity: 1;
+    width: 99%;
+  }
+  .container {
+    margin-bottom: 1rem;
+  }
+  .about_readmore_text {
+    padding-top: 0rem;
+  }
+  .amenties_width {
+    padding-top: 0.5rem;
+  }
+  .image_size {
+    width: 15px;
+    height: 15px;
+  }
+  .similar_property_location {
+    color: #000000;
+    font-size: 12px;
+  }
+  .exact_location {
+    color: #bcc7ce;
+    font-size: 8px;
+  }
+  .about_property_heading {
+    color: #bcc7ce;
+    font-size: 8px;
+  }
+  .about_property_amenity {
+    font-size: 8px;
+  }
+  .about_readmore_text {
+    font-size: 8px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
+  .contact_button {
+    width: 7.2rem;
+    height: 2rem;
+  }
+  .position_image {
+    
+    top: 10px;
+  }
+}

@@ -4,7 +4,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import people from "../../../assets/images/imagereview/people.png";
 import seeall from "../../../assets/images/seeall.svg";
-import styles from "../../../styles/profile/sidebar-pages/post-property.module.css";
+import styles from "../../../styles/cards/profile-pages-card/plot-similar.module.css";
 import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
@@ -12,17 +12,22 @@ import furniture from "../../../assets/images/about-property-images/furniture.sv
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
+import boundry from "../../../assets/images/about-property-images/boundry_wall.svg";
+import colony from "../../../assets/images/about-property-images/colony.svg";
+import construction from "../../../assets/images/about-property-images/construction_done.svg";
+import corner from "../../../assets/images/about-property-images/corner_sites.svg";
+import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
+import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 import homeimage from "../../../assets/images/home.png";
-import edit_icon from "../../../assets/icons/profile-icons/editicon.svg";
-import delete_icon from "../../../assets/icons/profile-icons/delete.svg";
-import rejected from "../../../assets/icons/profile-icons/rejected_icon.svg";
+import photo from "../../../assets/icons/photo.png";
 
-const RejectedProperties = () => {
+const PlotProperties = ({ data }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
+  const [nm, setNm] = useState(data === 1 ?  aboutproperties2 : aboutProperties );
 
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
@@ -57,12 +62,15 @@ const RejectedProperties = () => {
     };
   }, []);
 
+  const [readless, setReadless] = useState(false);
+  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren`;
+  const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
       <div
-        className={`${styles.similar_properties_card} p-1 row mt-3 mb-5 position-relative`}
+        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
       >
-        <div className={`position-relative col-lg-3 `}>
+        <div className={`position-relative col-lg-3 col-md-3 `}>
           <Image
             src={homeimage}
             alt="Picture of the autho"
@@ -71,7 +79,22 @@ const RejectedProperties = () => {
             height={300}
             layout="fill"
           />
-
+          <div className={`${styles.like_image} position-absolute`}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={`${styles.save_image_button} `}
+            >
+              <Image
+                className="d-flex justify-content-center pt-2"
+                src={saveIcon}
+                alt="Picture of the author"
+                width={25}
+                height={25}
+              />
+            </button>
+          </div>
           <div
             className={`${styles.luxurius} position-absolute fs_13 fw_500 fontFam_poppins`}
           >
@@ -79,12 +102,17 @@ const RejectedProperties = () => {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-6`}>
+        <div className={`d-flex flex-column ps-2 col-lg-7 col-md-7`}>
           <div className="d-flex align-items-center">
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
-              2BHK flat in Vijayanagar, Mysuru
+              1200Sqft Plot in Vijaynagar Mysore
+            </div>
+            <div
+              className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
+            >
+              Ready to move
             </div>
           </div>
           <div className={`${styles.exact_location}  d-flex `}>
@@ -96,9 +124,11 @@ const RejectedProperties = () => {
             </span>
           </div>
           <div className={`row ps-3 ${styles.amenties_width} `}>
-            {aboutproperties.map((item, index) => {
+            {nm.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
+                <div
+                  className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
+                >
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
@@ -121,79 +151,90 @@ const RejectedProperties = () => {
               );
             })}
           </div>
-          <div
-            className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}
-          >
-            {" "}
-            <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
-              ₹ 30 Lac
-            </div>
-            
-          </div>
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
+            {Alltext}
+            <button
+              className={`${styles.about_readmore_button}`}
+              onClick={() => setReadless(!readless)}
+            >
+              {readless === true ? "Read Less" : "Read More"}
+            </button>
+          </p>
         </div>
 
-        <div className="col-lg-3 d-flex flex-column ">
-          <div className=" mt-auto">
+        <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
+          <div
+            className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+          >
+            ₹ 30 Lac
+          </div>
+          <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date}`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2`}
             >
               By Amal Sabu
             </span>
-            <div
-              // style={{ width: "" }}
-              className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
-            >
-              <button
-                className={`${styles.edit_property_button} fs_9 fw_500  fontFam_poppins color_white px-3 d-flex align-items-center py-1`}
-              >
-                <Image
-                  src={edit_icon}
-                  width={15}
-                  height={15}
-                  alt="Picture of the author"
-                />
-
-                <span className="ms-1"> Edit</span>
-              </button>
-              <button
-                className={`${styles.delete_property_button} ms-2 fs_9 fw_500 fontFam_poppins color_white px-2 d-flex align-items-center py-1`}
-              >
-                <div className={`${styles.edit_image_size}`}>
-                  <Image
-                    src={delete_icon}
-                    width={15}
-                    height={15}
-                    alt="Picture of the author"
-                  />
-                </div>
-                <span className="ms-1 color_light_blue"> Delete</span>
-              </button>
-            </div>
           </div>
         </div>
-        <div className={`${styles.rejected} position-absolute `}>
-          <Image
-            src={rejected}
-            alt="Picture of the author"
-            width={12}
-            height={12}
-          />
-          <span className="color_white fontFam_poppins fw_400 fs_12 ms-1 ">
-            Rejected
-          </span>
-        </div>
+        <button
+          className={`  ${styles.contact_button} d-flex align-items-center position-absolute`}
+        >
+          <div className={`d-flex justify-content-start`}>
+            <Image
+              className={`${styles.owner_image}`}
+              src={photo}
+              alt="Picture of the author"
+              width={25}
+              height={25}
+            />
+          </div>
+          <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
+        </button>
       </div>
     </div>
   );
 };
 
-export default RejectedProperties;
-const aboutproperties = [
+export default PlotProperties;
+const aboutproperties2 = [
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors", 
+  },
+  {
+    image: construction,
+    heading: "Construction Done",
+    amenity: "Yes",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: boundry,
+    heading: "Boundry Wall",
+    amenity: "Yes",
+  },
+  {
+    image: colony,
+    heading: "Gated Colony",
+    amenity: "Yes",
+  },
+  {
+    image: corner,
+    heading: "Corner Site",
+    amenity: "Yes",
+  },
+];
+
+const aboutProperties = [
   {
     image: squarearea,
     heading: "super Area",

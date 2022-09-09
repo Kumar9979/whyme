@@ -8,14 +8,14 @@ import PropertyLocation from "../../components/property-details/property_locatio
 import AgentProperties from "../../components/property-details/agent-properties";
 import seeall from "../../assets/images/seeall.svg";
 import Image from "next/image";
-import RelatedProperties from "../../components/property-details/related-properties-card";
 import LoremIpsum from "../../components/property-details/lorem-ipsum";
 import RequestCall from "../../components/property-details/request-callback";
 import LoremText from "../../components/property-details/lorem-text";
-import SimilarProperties from "../../components/property-details/similar-properties";
 import ContactUs from "../../components/property-details/contact_us";
 import { Footer } from "antd/lib/layout/layout";
 import Foter from "../../components/footerPage/footer";
+import SimilarProperties from "../../components/cards/property-details-cards/similar-properties";
+import RelatedProperties from "../../components/cards/property-details-cards/related-properties";
 
 const Home = () => {
   const number = 20;
