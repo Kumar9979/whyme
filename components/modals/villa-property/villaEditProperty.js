@@ -9,7 +9,7 @@ import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const ApartmentEditProperty = ({ show, handleClose }) => {
+const VillaEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
@@ -101,6 +101,21 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
     },
   });
 
+  // const handleCheckbox = (e) => {
+  //   const { checked, name } = e.target;
+  //   if (e.target.checked) {
+  //     formik.setFieldValue("Amenities", [
+  //       ...formik.values.Amenities,
+  //       e.target.name,
+  //     ]);
+  //   } else {
+  //     formik.setFieldValue(
+  //       "Amenities",
+  //       formik.values.Amenities.filter((item) => item !== e.target.name)
+  //     );
+  //   }
+  // };
+
   const facing = [
     { value: "North", label: "North" },
     { value: "South", label: "South" },
@@ -151,6 +166,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
                   <div className="col-4 col-lg-3">
+                   
                     <div className="">
                       <label
                         htmlFor="totalFloors"
@@ -178,6 +194,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
+                  
                     <div className="">
                       <label
                         htmlFor="FloorNumber"
@@ -205,6 +222,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-5">
+                    
                     <div className="">
                       <label
                         htmlFor="CarParkingCount"
@@ -237,6 +255,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
                   <div className="col-4 col-lg-3">
+                  
                     <div className="">
                       <label
                         htmlFor="bedRoom"
@@ -264,6 +283,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
+                    
                     <div className="">
                       <label
                         htmlFor="bathRoom"
@@ -496,4 +516,4 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
   );
 };
 
-export default ApartmentEditProperty;
+export default VillaEditProperty;

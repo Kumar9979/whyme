@@ -9,7 +9,7 @@ import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const ApartmentEditProperty = ({ show, handleClose }) => {
+const ResidentialEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
@@ -333,10 +333,10 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                 </div>
-                <div class=" text-start mt-3">
+                <div className=" text-start mt-3">
                 <div className={width<992?`row gx-2` : `row `} >
-                    <div class="col-4">
-                      <div class="">
+                    <div className="col-4">
+                      <div className="">
                         <div className={`${styles.total_floors_text}  `}>
                           <label
                             htmlFor="FurnishedStatus"
@@ -386,8 +386,8 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                         </div>
                       </div>
                     </div>
-                    <div class="col-4">
-                      <div class="">
+                    <div className="col-4">
+                      <div className="">
                         <div className={`${styles.total_floors_text} `}>
                           <label
                             htmlFor="Status"
@@ -430,8 +430,8 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
                         </div>
                       </div>
                     </div>
-                    <div class="col-4">
-                      <div class="">
+                    <div className="col-4">
+                      <div className="">
                         <div className={`${styles.total_floors_text}  mb-3`}>
                           <label
                             htmlFor="Transaction"
@@ -496,4 +496,4 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
   );
 };
 
-export default ApartmentEditProperty;
+export default ResidentialEditProperty;
