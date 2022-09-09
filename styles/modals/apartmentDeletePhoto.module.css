@@ -1,6 +1,4 @@
-.deleteCard_width{
-    max-width: 21rem;
-}
+
 .delete_btn{
     width: 45%;
     background-color: #BCC7CE;
@@ -27,4 +25,18 @@
 }
 .card_radius{
     border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .modal {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        max-height: max-content;
+       
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
 }

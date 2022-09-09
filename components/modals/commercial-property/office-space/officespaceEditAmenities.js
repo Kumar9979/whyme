@@ -106,7 +106,7 @@ const OfficeSpaceAmenities = ({ show, handleClose }) => {
                           Guest Parking Spaces
                         </label>
                       </div>
-                     
+
                       <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                         <input
                           className="form-check-input mt-2 "
@@ -129,16 +129,16 @@ const OfficeSpaceAmenities = ({ show, handleClose }) => {
                         <input
                           className="form-check-input mt-2 "
                           type="checkbox"
-                          id="Gym"
-                          name="Gym"
+                          id="Lounge Area"
+                          name="Lounge Area"
                           onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes("Gym")}
+                          checked={formik.values.Amenities.includes("Lounge Area")}
                         />
                         <label
                           className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_600`}
-                          htmlFor="Gym"
+                          htmlFor="Lounge Area"
                         >
-                          Gym
+                         Lounge Area
                         </label>
                       </div>
                     </div>
@@ -166,53 +166,53 @@ const OfficeSpaceAmenities = ({ show, handleClose }) => {
                         <input
                           className="form-check-input mt-2 "
                           type="checkbox"
-                          id="Pet Washing Stations"
-                          name="Pet Washing Stations"
+                          id="Hardwood Floors"
+                          name="Hardwood Floors"
                           onChange={handleCheckbox}
                           checked={formik.values.Amenities.includes(
-                            "Pet Washing Stations"
+                            "Hardwood Floors"
                           )}
                         />
                         <label
                           className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_600`}
-                          htmlFor="Pet Washing Stations"
+                          htmlFor="Hardwood Floors"
                         >
-                          Pet Washing Stations
+                          Hardwood Floors
                         </label>
                       </div>
-                     
+
                       <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                         <input
                           className="form-check-input mt-2 "
                           type="checkbox"
-                          id="Rooftop Lounge Areas"
-                          name="Rooftop Lounge Areas"
+                          id="Pet Room"
+                          name="Pet Room"
                           onChange={handleCheckbox}
                           checked={formik.values.Amenities.includes(
-                            "Rooftop Lounge Areas"
+                            "Pet Room"
                           )}
                         />
                         <label
                           className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_600`}
-                          htmlFor="Rooftop Lounge Areas"
+                          htmlFor="Pet Room"
                         >
-                          Rooftop Lounge Areas
+                          Pet Room
                         </label>
                       </div>
                       <div className="form-check me-4  fs_12 fs_sm_12">
                         <input
                           className="form-check-input mt-2 "
                           type="checkbox"
-                          id="Garden"
-                          name="Garden"
+                          id="Garden Area"
+                          name="Garden Area"
                           onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes("Garden")}
+                          checked={formik.values.Amenities.includes("Garden Area")}
                         />
                         <label
                           className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_600`}
-                          htmlFor="Garden"
+                          htmlFor="Garden Area"
                         >
-                          Garden
+                          Garden Area
                         </label>
                       </div>
                     </div>
@@ -221,7 +221,7 @@ const OfficeSpaceAmenities = ({ show, handleClose }) => {
                 <div className={`d-flex justify-content-end`}>
                   <button
                     type="submit"
-                    className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-2`}
+                    className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-3 mt-lg-4`}
                   >
                     <span>Save</span>
                   </button>
