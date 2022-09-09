@@ -28,9 +28,8 @@ const Modals = () => {
       {/* <ReportProperty handleClose={handleClose} show={show}/> */}
       {/* <RequestCallBack handleClose={handleClose} show={show}/> */}
       {/* <ReportAdvertiser handleClose={handleClose} show={show}/> */}
-      {/* <SuccessSave handleClose={handleClose} show={show}/> */}
-         
-          {/* <Logout handleClose={handleClose} show={show} /> */}
+      {/* <SuccessSave handleClose={handleClose} show={show}/> */}         
+      {/* <Logout handleClose={handleClose} show={show} /> */}
 
     </div>
   );
