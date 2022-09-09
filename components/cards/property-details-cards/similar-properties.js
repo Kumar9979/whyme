@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
-import people from "../../../assets/images/imagereview/people.png";
-import seeall from "../../../assets/images/seeall.svg";
 import styles from "../../../styles/cards/property-details-cards/similarProperties.module.css";
-import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -13,7 +10,7 @@ import bathroom from "../../../assets/images/about-property-images/bathroom.svg"
 import transaction from "../../../assets/images/about-property-images/transactions.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import homeimage from "../../../assets/images/home.png";
-import photo from "../../../assets/icons/photo.png"
+import photo from "../../../assets/icons/photo.png";
 
 const SimilarProperties = () => {
   let n = 10;
@@ -60,7 +57,9 @@ const SimilarProperties = () => {
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
-      <div className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}>
+      <div
+        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
+      >
         <div className={`position-relative col-lg-3 `}>
           <Image
             src={homeimage}
@@ -87,7 +86,7 @@ const SimilarProperties = () => {
             </button>
           </div>
           <div
-            className={`${styles.luxurius} position-absolute fs_13 fw_500 fontFam_poppins`}
+            className={`${styles.luxurius} position-absolute fs_14 fw_500 fontFam_poppins`}
           >
             Luxurious
           </div>
@@ -114,7 +113,7 @@ const SimilarProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-2 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
                 <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
@@ -140,7 +139,7 @@ const SimilarProperties = () => {
               );
             })}
           </div>
-          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-2`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
@@ -153,7 +152,7 @@ const SimilarProperties = () => {
 
         <div className="col-lg-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_16 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >
             ₹ 30 Lac
           </div>
@@ -170,36 +169,22 @@ const SimilarProperties = () => {
             </span>
           </div>
         </div>
+        
         <button
           className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
-          <div className={`d-flex justify-content-start`}>
+          <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+          <div className={`position-absolute ${styles.round_image}`}>
             <Image
               className={`${styles.owner_image}`}
               src={photo}
               alt="Picture of the author"
-              width={25}
-              height={25}
+              width={28}
+              height={28}
             />
           </div>
-          <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
-          <div>
-          <button
-            className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
-          >
-            <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
-            <div className={`position-absolute ${styles.round_image}`}>
-              <Image
-                className={`${styles.owner_image}`}
-                src={photo}
-                alt="Picture of the author"
-                width={28}
-                height={28}
-              />
-            </div>
-          </button>
-        </div>
         </button>
+        
       </div>
     </div>
   );
