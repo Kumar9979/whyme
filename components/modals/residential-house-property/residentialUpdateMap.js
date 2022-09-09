@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import closeIcon from "../../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../../styles/modals/apartmentUpdateMap.module.css";
-import PropertyLocation from "../../../components/modal-location/index.js";
+import PropertyLocation from "../../modal-location/index.js";
 
 const ResidentialUpdateMap = ({ show, handleClose }) => {
   return (

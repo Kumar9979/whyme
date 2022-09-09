@@ -171,57 +171,7 @@ const RecentlyViewed = () => {
                 </div>
               </div>
             )}
-            {/* <div className={` col-lg-3`}>
-              <div className={`${styles.first_column}`}>
-                <ul
-                  className={`list-unstyled  mt-3 p-3 ${styles.vertical_line}`}
-                >
-                  <li
-                    onClick={() => SetActivityType("search")}
-                    className={`mb-4 d-flex align-items-center ${
-                      activityType == "search"
-                        ? styles.selected_activities_text
-                        : styles.search_activities_text
-                    }`}
-                  >
-                    <div className={` d-flex align-items-center p-0`}>
-                      {activityType == "search" ? (
-                        <SearchIcon fill="#1D72DB" />
-                      ) : (
-                        <SearchIcon fill="#323D5A" />
-                      )}
-                    </div>
-                    <a>
-                      <span className="ms-2 fs_14 fw_500 fontFam_poppins">
-                        {" "}
-                        Search Activities
-                      </span>
-                    </a>
-                  </li>
-                  <li
-                    onClick={() => SetActivityType("viewed")}
-                    className={`mb-4 d-flex align-items-center ${
-                      activityType == "search"
-                        ? styles.search_activities_text
-                        : styles.selected_activities_text
-                    }`}
-                  >
-                    <div className={` d-flex align-items-center p-0`}>
-                      {activityType == "search" ? (
-                        <See fill="#323D5A" />
-                      ) : (
-                        <See fill="#1D72DB " />
-                      )}
-                    </div>
-                    <a>
-                      <span className="ms-2 fs_14 fw_500 fontFam_poppins">
-                        Viewed Properties
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div> */}
+           
             <div className="col-lg-9 col-12">
               {activityType === "search" ? <RecentSearch /> : <RecentView />}
             </div>
@@ -233,3 +183,5 @@ const RecentlyViewed = () => {
 };
 
 export default RecentlyViewed;
+
+

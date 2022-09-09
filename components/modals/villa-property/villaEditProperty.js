@@ -9,7 +9,7 @@ import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const ResidentialEditProperty = ({ show, handleClose }) => {
+const VillaEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
@@ -142,7 +142,6 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
       onHide={handleClose}
       dialogClassName={`${styles.property_features_container}`}
       contentClassName={`${styles.card_radius}`}
-      
     >
       <Modal.Body contentClassName={`${styles.card_radius}`}>
         {" "}
@@ -167,17 +166,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
                   <div className="col-4 col-lg-3">
-                    {/* <div className="  ">
-                    <label
-                      className={`${styles.total_floors_text} fs_15 fs_sm_13`}
-                    >
-                      Total floors
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.total_floors_input} w-50`}
-                    />
-                  </div> */}
+                   
                     <div className="">
                       <label
                         htmlFor="totalFloors"
@@ -205,17 +194,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
-                    {/* <div className="  ">
-                    <label
-                      className={`${styles.total_floors_text} fs_15 text-nowrap fs_sm_13`}
-                    >
-                      Floor number
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.total_floors_input} w-50`}
-                    />
-                  </div> */}
+                  
                     <div className="">
                       <label
                         htmlFor="FloorNumber"
@@ -243,17 +222,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-5">
-                    {/* <div className="  ">
-                    <label
-                      className={`${styles.total_floors_text} fs_15 text-nowrap fs_sm_13`}
-                    >
-                      Car Parking Count
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.total_floors_input} w-50 `}
-                    />
-                  </div> */}
+                    
                     <div className="">
                       <label
                         htmlFor="CarParkingCount"
@@ -286,17 +255,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
                   <div className="col-4 col-lg-3">
-                    {/* <div className="  ">
-                    <label
-                      className={`${styles.total_floors_text} fs_15 fs_sm_13`}
-                    >
-                      Bedroom
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.total_floors_input} w-50 mt-2`}
-                    />
-                  </div> */}
+                  
                     <div className="">
                       <label
                         htmlFor="bedRoom"
@@ -324,17 +283,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
-                    {/* <div className="  ">
-                    <label
-                      className={`${styles.total_floors_text} fs_15 text-nowrap fs_sm_13`}
-                    >
-                      Bathroom
-                    </label>
-                    <input
-                      type="text"
-                      className={`${styles.total_floors_input} w-50 mt-2`}
-                    />
-                  </div> */}
+                    
                     <div className="">
                       <label
                         htmlFor="bathRoom"
@@ -405,7 +354,7 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
                   </div>
                 </div>
                 <div class=" text-start mt-3">
-                  <div class="row gx-2">
+                <div className={width<992?`row gx-2` : `row `} >
                     <div class="col-4">
                       <div class="">
                         <div className={`${styles.total_floors_text}  `}>
@@ -416,14 +365,11 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
                             Furnishing status{" "}
                           </label>
                           <div
-                                onMouseEnter={() => setMenuOpen(true)}
+                            onMouseEnter={() => setMenuOpen(true)}
                             onClick={() => setoptionType("furnishingStatus")}
                           >
-
                             <Select
-                         
-
-                              menuIsOpen={menuOpen}
+                              // menuIsOpen={menuOpen}
                               id="FurnishedStatus"
                               options={furnishingStatus}
                               type="text"
@@ -570,4 +516,4 @@ const ResidentialEditProperty = ({ show, handleClose }) => {
   );
 };
 
-export default ResidentialEditProperty;
+export default VillaEditProperty;

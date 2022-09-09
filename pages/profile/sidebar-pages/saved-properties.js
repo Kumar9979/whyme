@@ -26,11 +26,11 @@ const RecentlyViewed = () => {
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
             >
-              Recent Activities
+              Saved Properties
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
-          <div>
+          <div className={`${styles.cards_width}`}>
             <SavedProperties/>
           </div>
         </div>

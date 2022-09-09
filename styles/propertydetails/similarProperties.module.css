@@ -14,7 +14,7 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 12px;
   opacity: 1;
-  width: 90%;
+  width: 100%;
 }
 .luxurius {
   color: #000000;
@@ -29,6 +29,7 @@
 }
 .similar_property_location {
   color: #000000;
+  font-size: 17px;
 }
 .ready_house {
   color: #ffffff;
@@ -40,7 +41,7 @@
 }
 .exact_location {
   color: #bcc7ce;
-  font-size: 10px;
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -49,18 +50,23 @@
 }
 .about_property_heading {
   color: #bcc7ce;
+  font-size: 12px;
+  white-space: nowrap;
 }
 .about_property_amenity {
   color: #1d72db;
+  font-size: 12px;
+  white-space: nowrap;
 }
 .about_readmore_text {
   color: #323d5a;
   width: 90%;
   padding-top: 1rem;
+  font-size: 13px;
 }
 .image_size {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 .about_readmore_button {
   background-color: transparent;
@@ -73,9 +79,13 @@
   opacity: 1;
   border: none;
   color: #ffffff;
+  width: 6.25rem;
 }
 .owner_image {
   border-radius: 50%;
+  background: transparent  0% 0% no-repeat padding-box;
+  border: 3px solid #1d72db;
+  opacity: 1;
 }
 .posted_date {
   color: #323d5a;
@@ -121,12 +131,15 @@
   width: 98%;
   padding-top: 1rem;
 }
+.container {
+  margin-bottom: 0.5rem;
+}
 /* @media only screen and (min-width: 992px) and (max-width: 1300px) {
   .ready_house {
     font-size: 5px;
   }
 } */
-@media only screen and  (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .similar_properties_card {
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 20px #0000001f;
@@ -134,15 +147,35 @@
     opacity: 1;
     width: 99%;
   }
+  .container {
+    margin-bottom: 1rem;
+  }
   .about_readmore_text {
     padding-top: 0rem;
   }
   .amenties_width {
-    padding-top: 0rem;
-   
+    padding-top: 0.5rem;
   }
   .image_size {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
+  }
+  .similar_property_location {
+    color: #000000;
+    font-size: 12px;
+  }
+  .exact_location {
+    color: #bcc7ce;
+    font-size: 8px;
+  }
+  .about_property_heading {
+    color: #bcc7ce;
+    font-size: 8px;
+  }
+  .about_property_amenity {
+    font-size: 8px;
+  }
+  .about_readmore_text {
+    font-size: 8px;
   }
 }
