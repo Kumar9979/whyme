@@ -8,8 +8,9 @@ import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
 import Select from "react-select";
-import { countryData } from "../../../../upcide-web/components/countryCode";
+
 import { reactSelectSignUp } from "../../components/reactSelectStyle";
+import { countryData } from "../countryCode";
 
 const Modals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
