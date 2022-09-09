@@ -1,0 +1,166 @@
+.edit_profile {
+    margin-top: 5rem;
+    width: 100%;
+  }
+  .edit_profile_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+    border-radius: 10px;
+    opacity: 1;
+    padding-bottom: 10rem !important;
+    height: 85vh;
+  }
+  .arrow_left_button {
+    background: #323d5a 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+    border: none;
+    border-radius: 5px;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+  }
+  .edit_profile_heading {
+    color: #323d5a;
+  }
+  .edit_horizontal_line {
+    border: 0.5px solid var(--unnamed-color-dbe9f2);
+    border: 0.5px solid #dbe9f2;
+  }
+  .profile_picture_heading {
+    color: #bcc7ce;
+    white-space: nowrap;
+  }
+  .profile_photo {
+    border-radius: 10px;
+    opacity: 1;
+  }
+  
+  .profile_type {
+    color: #1d1e1f;
+    white-space: nowrap;
+  }
+  .type_buyer {
+    color: #1d72db;
+  }
+  
+  .contact_us_label {
+    color: #bcc7ce;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .form_input {
+    background: #dbe9f200 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    border-color: #dddbdb;
+  }
+  .email_input {
+    border: none;
+  }
+  .email_input::placeholder {
+    color: #dddbdb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    position: absolute;
+    top: 20%;
+  }
+  .verified_input {
+    background: #dbe9f200 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    border-color: #dddbdb;
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .form_input:focus-visible {
+    outline: none !important;
+  }
+  .email_input:focus-visible {
+    outline: none !important;
+  }
+  .form_input {
+    border-color: #dddbdb;
+    height: 2rem;
+    border: 1px solid #dddbdb;
+    border-radius: 4px;
+    opacity: 1;
+  }
+  .form_input::placeholder {
+    color: #dddbdb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    position: absolute;
+    top: 20%;
+  }
+  
+  .save_button_width {
+    border: none;
+    background: #1d72db 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    color: #ffffff;
+    opacity: 1;
+    white-space: nowrap;
+  }
+  
+  .form_width {
+    width: 95%;
+  }
+  .verified_text {
+    color: #50bf97;
+  }
+  .description_box {
+    height: 6rem;
+    color: #323D5A;
+     background: #dbe9f200 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    border-color: #dddbdb;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .description_box:focus-visible {
+    outline: none !important;
+  }
+  .description_box ::placeholder {
+    color: #dddbdb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    position: absolute;
+    top: 20%;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1320px) {
+    .edit_profile {
+      padding-left: 5rem;
+      width: 88%;
+    }
+    .form_width {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .form_width {
+      width: 100%;
+    }
+    .edit_profile {
+      width: 97%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .form_width {
+      width: 85%;
+    }
+    .edit_profile {
+      width: 97%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .form_width {
+      width: 100%;
+    }
+    .edit_profile {
+      width: 97%;
+    }
+  }
+  

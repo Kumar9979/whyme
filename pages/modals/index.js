@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import Activities from "../../components/modals/property-details/activities";
 import ReportProperty from "../../components/modals/property-details/report-property";
 // import RequestCallBack from "../../components/modals/property-details/request-call";
@@ -9,14 +10,15 @@ const Modals = () => {
     const handleClose = () => setShow(false);
     const handleShow =() => setShow(true)
   return (
-    <div className="d-flex">
+    <div className="d-flex mt-5 pt-5">
       <button onClick={handleShow} className="btn btn-primary" type="submit">
         Button
       </button>
       {/* <RequestCallBack handleClose={handleClose} show={show}/> */}
       {/* <ScheduleVisit handleClose={handleClose} show={show}/> */}
       {/* <ReportProperty handleClose={handleClose} show={show}/> */}
-      <Activities handleClose={handleClose} show={show}/>
+      {/* <Activities handleClose={handleClose} show={show}/> */}
+      <SaveChanges handleClose={handleClose} show={show}/>
 
 
     </div>

@@ -1,10 +1,10 @@
 .deleteCard_width{
-    width: fit-content;
+    max-width: 21rem;
 }
 .delete_btn{
     width: 45%;
     background-color: #BCC7CE;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     color: #323D5A;
     font-family: Poppins;
@@ -12,7 +12,7 @@
 .no_btn{
     width: 45%;
     background-color: #1D72DB;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     color: #ffff;
     font-family: Poppins;

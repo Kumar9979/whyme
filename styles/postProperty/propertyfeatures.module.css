@@ -1,4 +1,6 @@
-
+.whole_container {
+  margin-top: 8rem;
+}
 
 
 
@@ -9,7 +11,6 @@
   min-width: 10rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
-  
 }
 
 .property_boxShadow {
@@ -47,7 +48,7 @@
 
 .font_24 {
   font-size: 1.25rem;
-  }
+}
 
 .font_18 {
   font-size: 16px;
@@ -112,15 +113,14 @@
   width: 50%;
 }
 
-.input_container{
+.input_container {
   margin-left: 3.5rem;
-  margin-right:3.5rem;
+  margin-right: 3.5rem;
 }
 
-.amenities_list_title{
-  font-size:14px;
+.amenities_list_title {
+  font-size: 14px;
 }
-
 
 @media only screen and (max-width: 1200px) {
   .stepper_border_radius {
@@ -134,36 +134,35 @@
   .amenities_list_flex_res {
     display: block;
   }
-  .propertyFeature_padding_l_res {
-    padding-left: 20px;
-  }
+ .styles.property_boxShadow{
+  box-shadow: none !important;
+ }
 
   .sidebar {
     background-color: #1d72db;
     height: 100%;
     max-width: 50rem;
     min-width: 10rem;
-   border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem; 
-    border-bottom-right-radius: 2rem; 
-    margin-top:5%;
-  
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-top: 5%;
   }
 
   .propertyFeature_width_50_to_75 {
     width: 75%;
   }
 
-.amenities_width{
-  width:100% !important;
-}
+  .amenities_width {
+    width: 100% !important;
+  }
 
   .propertyFeature_width_50_to_75 {
     width: 100% !important;
   }
 
-  .input_container{
-    margin-left:0rem !important;
+  .input_container {
+    margin-left: 0rem !important;
     margin-right: 0rem !important;
   }
 
@@ -180,23 +179,22 @@
     border-bottom-left-radius: 20px;
   }
 
-  .font_24{
+  .font_24 {
     font-size: 20px;
   }
 
-  .font_20{
+  .font_20 {
     font-size: 16px;
   }
 
-  .amenities_list_title{
-    font-size:14px;
+  .amenities_list_title {
+    font-size: 14px;
     font-weight: 500;
   }
 
-  .property_features_list_container{
+  .property_features_list_container {
     width: 100% !important;
   }
-
 }
 /* 
 @media only screen and (min-width: 1198px) {
@@ -205,10 +203,9 @@
   }
 } */
 
-@media only screen and (max-width: 1100px)  {
-  
-  .input_container{
-    margin-left:0rem !important;
+@media only screen and (max-width: 1100px) {
+  .input_container {
+    margin-left: 0rem !important;
   }
 
   .sidebar {
@@ -216,10 +213,12 @@
     height: 100%;
     max-width: 50rem;
     min-width: 10rem;
-   border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem; 
-    border-bottom-right-radius: 2rem; 
-    margin-top:5%;
-  
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-top: 5%;
   }
+
+
+
 }

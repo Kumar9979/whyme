@@ -2,6 +2,14 @@
   border-radius: 20px;
   background-color: #ffffff;
 }
+.seeall_button {
+  color: #50BF97;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+}
 .agent_properties_text {
   color: #323d5a;
   font-size: 24px;
@@ -39,17 +47,17 @@
   font-family: "Poppins", sans-serif;
 }
 .agent_rating {
-    color: #1D72DB;
+  color: #1d72db;
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 500;
 }
 .agent_properties_navigation {
-    border-radius: 50%;
-    background-color: #DDDBDB;
+  border-radius: 50%;
+  background-color: #dddbdb;
 }
 .scrollmenu {
-  width:100%;
+  width: 100%;
 }
 .scrollmenu > .row {
   overflow-x: auto;
@@ -63,9 +71,9 @@
 }
 .scrollmenu > .row::-webkit-scrollbar {
   display: none;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   scroll-behavior: smooth;
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
 }
 
 .prev_button {
@@ -78,21 +86,28 @@
 }
 .prev_decor {
   border-radius: 50%;
-  background-color: #DDDBDB;
+  background-color: #dddbdb;
   border: none;
   width: 30px;
   height: 30px;
 }
 .agent_name {
-  color: #1D72DB;
+  color: #1d72db;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 @media only screen and (max-width: 992px) {
   .scrollmenu {
-    width:100%;
+    width: 100%;
   }
+  
+.agent_name {
+  font-weight: 600;
+  font-size: 14px;
 }
-
-
+.agent_properties_text {
+  font-size: 14px;
+  font-weight: 600;
+}
+}

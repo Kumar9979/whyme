@@ -1,21 +1,20 @@
 .sidebar {
-  position: absolute;
   box-shadow: 0px 0px 7px #ccc;
-  height: 60rem;
-  padding: 2rem;
+  height: 100vh;
   margin-top: 3rem;
+  /* width: 30vh; */
 }
 .sidebar_links {
   color: inherit;
   font-family: Poppins;
   font-size: 1rem;
 }
-.logout{
+.logout {
   position: relative;
-  margin-top: 30rem;
+  /* margin-top: 17rem; */
 }
-.logoutText{
-  color: #1D72DB;
+.logoutText {
+  color: #1d72db;
   font-family: Poppins;
   font-size: 1rem;
   font-weight: 500;
@@ -24,44 +23,50 @@
   object-fit: contain;
   width: 0.2rem;
 }
-.arrow{
-border: 1px solid #1D72DB;
-width:1.3rem;
-height: 1.5rem;
-justify-content: center;
-padding-left: 2px;
-color:#1D72DB;
-border-radius: 3px;
-font-size: 1rem;
-overflow: hidden;
+.arrow {
+  border: 2px solid #1d72db;
+  width: 1.1rem;
+  height: 1.1rem;
+  justify-content: center;
+  padding-left: 2px;
+  color: #1d72db;
+  border-radius:4px;
+  font-size: 1rem;
+  overflow: hidden;
 }
-.sidebar_list{
-    font-weight: 500;
-    color:#323D5A
+.sidebar_list {
+  font-weight: 500;
+  color: #323d5a;
 }
-.sidebar_listActive{
-    font-weight: 500;
-    color:#1D72DB
+.sidebar_listActive {
+  font-weight: 500;
+  color: #1d72db;
 }
-.DpContainer{
-    width: 4rem;
-    height: 4rem;
-    border-radius: 7px;
-    overflow: hidden;
+.DpContainer {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .card {
+  border-radius: 0;
   border: none;
-  background-color: #fff;
+  background: linear-gradient(to right, #50bf97,  #1d72db);
+  /* background: transparent
+    radial-gradient(closest-side at 27% 80%, #50bf97 0%, #1d72db 100%) 0% 0%
+    no-repeat padding-box; */
+  opacity: 1;
+  opacity: 1;
 }
 .profile_name {
   font-family: Poppins;
-  color: #323d5a;
-  font-size: 1.1rem;
+  color: #ffffff;
+  font-size: 0.8rem;
 }
 .phone_number {
   font-family: Poppins;
-  font-size: 0.8rem;
-  color: #bcc7ce;
+  font-size: 0.6rem;
+  color: #ffffff;
 }
 .edit_profile {
   font-family: Poppins;
