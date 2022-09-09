@@ -26,7 +26,7 @@ const ApartmentDescription = ({show, handleClose}) => {
         centered
         show={show}
         onHide={handleClose}
-        dialogClassName={`${styles.deleteCard_width}`}
+        dialogClassName={`${styles.description_container}`}
         contentClassName={`${styles.card_radius}`}
         //   size={'lg'}
       >
@@ -46,7 +46,7 @@ const ApartmentDescription = ({show, handleClose}) => {
               </div>
               <div>
                 <span onClick={handleClose} className={`${styles.close_icon}`}>
-                  <Image src={closeIcon} width="20px" height="20px" />
+                  <Image src={closeIcon} width="23px" height="23px" />
                 </span>
               </div>
             </div>
@@ -56,7 +56,7 @@ const ApartmentDescription = ({show, handleClose}) => {
                     type="text"
                     className={`${styles.description}   ps-2`}
                     id="Description"
-                    placeholder="Enter"
+                    placeholder="Enter the description"
                     name="Description"
                     value={formik.values.Description}
                     onChange={formik.handleChange}
@@ -71,7 +71,7 @@ const ApartmentDescription = ({show, handleClose}) => {
                 <div className={`d-flex justify-content-end`}>
                 <button
                   type="submit"
-                  className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 fs_sm_15 mt-2`}
+                  className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-3 me-2`}
                 >
                   <span>Save</span>
                 </button>

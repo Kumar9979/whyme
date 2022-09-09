@@ -4,14 +4,14 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { StylesContext } from "@material-ui/styles";
 import ImageUploading from "react-images-uploading";
-import closeIcon from "../../assets/icons/close.png";
+import closeIcon from "../../../assets/icons/close.png";
 import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import upload from "../../assets/icons/upload.png";
-import styles from "../../styles/modals/apartmentUploadPhoto.module.css";
+import upload from "../../../assets/icons/upload.png";
+import styles from "../../../styles/modals/apartmentUploadPhoto.module.css";
 
-const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
+const VillaUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   const [images, setImages] = useState([]);
   const maxNumber = 10;
   // const [currentPage, setCurrentPage] = useState("photoDesc");
@@ -55,7 +55,7 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
       onHide={handleClose}
       dialogClassName={`${styles.card_width}`}
       contentClassName={`${styles.card_radius}`}
-      // size={'lg'}
+   
     >
       <Modal.Body>
         {" "}
@@ -70,7 +70,7 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
             </div>
             <div>
               <span onClick={handleClose} className={`${styles.close_icon}`}>
-                <Image src={closeIcon} width="20px" height="20px" />
+                <Image src={closeIcon} width="23px" height="23px" />
               </span>
             </div>
           </div>
@@ -100,7 +100,7 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
                 dragProps,
                 errors,
               }) => (
-                <div {...dragProps} className={`${styles.upload_image} `}>
+                <div {...dragProps} className={`${styles.upload_image} m-2 `}>
                   <div>
                     <div
                       htmlFor="upload"
@@ -195,4 +195,4 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   );
 };
 
-export default ApartmentUploadPhoto;
+export default VillaUploadPhoto;

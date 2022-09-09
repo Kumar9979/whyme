@@ -8,7 +8,6 @@ import Close from "../../assets/icons/close.png";
 import Image from "next/image";
 import styles from "../../styles/modals/modal.module.css";
 import Select from "react-select";
-
 import { reactSelectSignUp } from "../../components/reactSelectStyle";
 import { countryData } from "../countryCode";
 

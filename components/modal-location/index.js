@@ -68,6 +68,7 @@ const PropertyLocation = () => {
                   onLoad={(map) => {
                     setMap(map);
                   }}
+                  
                 >
                   {markerStat && (
                     <Marker
