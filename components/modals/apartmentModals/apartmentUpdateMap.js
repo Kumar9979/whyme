@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../assets/icons/close.png";
+import closeIcon from "../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../styles/modals/apartmentUpdateMap.module.css";
-import PropertyLocation from "../../components/modal-location/index.js";
+import styles from "../../../styles/modals/apartmentUpdateMap.module.css";
+import PropertyLocation from "../../modal-location";
 
 const ApartmentUpdateMap = ({ show, handleClose }) => {
   return (
@@ -12,9 +12,9 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
       centered
       show={show}
       onHide={handleClose}
-      dialogClassName={`${styles.deleteCard_width}`}
+      dialogClassName={`${styles.map_container}`}
       contentClassName={`${styles.card_radius}`}
-      //   size={'lg'}
+    
     >
       <Modal.Body>
         {" "}
@@ -28,7 +28,7 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
             </span></div>
             <div>
                  <span onClick={handleClose} className={`${styles.close_icon}`}>
-              <Image src={closeIcon} width="20px" height="20px"
+              <Image src={closeIcon} width="23px" height="23px"
               
               />
             </span>
@@ -37,7 +37,7 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
           </div>
           <PropertyLocation/>
           <div className={`d-flex justify-content-end`}>
-            <button onClick={handleClose} className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 mt-2`}>
+            <button onClick={handleClose} className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_15 mt-3`}>
                 <span>
                 Save
                 </span>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import OtpModals from "../components/modals/otpModal";
-import Modals from "../components/modals/loginModal";
+
+
+import LoginModals from "../components/modals/auth/loginModal";
+import OtpModals from "../components/modals/auth/otpModal";
 
 
 const Main = () => {
@@ -24,7 +26,7 @@ const Main = () => {
 
       </div>
 
-      <Modals show={show} onShow={handleShow} onHide={handleClose} />
+      <LoginModals show={show} onShow={handleShow} onHide={handleClose} />
       {/* <OtpModals show={showModal} onHide={handleCloseOtp}/> */}
 
     </>

@@ -47,28 +47,7 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
   console.log(formik.values);
 
 
-  // const [mobile, setMobile] = useState(false);
-
-//   useEffect(() => {
-//     if (window.innerWidth < 786) {
-//       setMobile(true);
-//     }
-//   }, []);
-//   useEffect(() => {
-//     const handleResize = () => {
-//       if (window.innerWidth < 786) {
-//         setMobile(true);
-//       } else {
-//         setMobile(false);
-//       }
-//     };
-
-//     window.addEventListener("resize", handleResize);
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//     };
-//   }, []);
-
+  
 
 
   return (
@@ -95,7 +74,7 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
               </div>
               <div>
                 <span onClick={handleClose} className={`${styles.close_icon}`}>
-                  <Image src={closeIcon} width="20px" height="20px" />
+                  <Image src={closeIcon} width="23px" height="23px" />
                 </span>
               </div>
             </div>
@@ -139,30 +118,7 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
                         <span>{formik.errors.BuildUpArea}</span>
                       </div>
                     )}
-                    {/* <div className={`${styles.login_form_error_container} mt-1`}>
-                      {formik.errors.BuildUpArea && formik.touched.BuildUpArea && (
-                        <div className={`d-flex `}>
-                          <div
-                            className={`${styles.login_form_error_icon_container } `}
-                          >
-                            <Image
-                              src={errorIcon}
-                              alt="error icon"
-                              layout="fill"
-                              objectFit="cover"
-                              width="10px"
-                              height={mobile ? "700px" : "500px"}
-
-
-                            />{" "}
-                          </div>
-
-                          <span className="text-danger fw_500 align-middle fs_12 fs_sm_12">
-                            {formik.errors.BuildUpArea}
-                          </span>
-                        </div>
-                      )}
-                    </div> */}
+                  
                   </div>
                   <div class="col mt-3 mt-lg-0">
                     <label
@@ -200,31 +156,12 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
                         <span className="">{formik.errors.CarpetArea}</span>
                       </div>
                     )}
-                    {/* <div className={`${styles.login_form_error_container}`}>
-                      {formik.errors.CarpetArea && formik.touched.CarpetArea && (
-                        <div className={`d-flex align-items-center`}>
-                          <div
-                            className={`${styles.login_form_error_icon_container} `}
-                          >
-                            <Image
-                              src={errorIcon}
-                              alt="error icon"
-                              layout="fill"
-                              objectFit="cover"
-                            />{" "}
-                          </div>
-
-                          <span className="text-danger fw_500 align-middle fs_15">
-                            {formik.errors.CarpetArea}
-                          </span>
-                        </div>
-                      )}
-                    </div> */}
+                   
                   </div>
                 </div>
               </div>
               <div>
-                <div className={`mb-3 mt-3`}>
+                <div className={`mb-3 mt-3 mt-lg-4`}>
                   <label
                     htmlFor="ExpectedPrice"
                     className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
@@ -256,28 +193,9 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
                       <span>{formik.errors.ExpectedPrice}</span>
                     </div>
                   )}
-                  {/* <div className={`${styles.login_form_error_container}`}>
-                      {formik.errors.ExpectedPrice && formik.touched.ExpectedPrice && (
-                        <div className={`d-flex align-items-center`}>
-                          <div
-                            className={`${styles.login_form_error_icon_container} `}
-                          >
-                            <Image
-                              src={errorIcon}
-                              alt="error icon"
-                              layout="fill"
-                              objectFit="cover"
-                            />{" "}
-                          </div>
-
-                          <span className="text-danger fw_500 align-middle fs_15">
-                            {formik.errors.ExpectedPrice}
-                          </span>
-                        </div>
-                      )}
-                    </div> */}
+                 
                 </div>
-                <div className={`mb-2 mt-3`}>
+                <div className={`mb-2 mt-3 mt-lg-4`}>
                   <label
                     htmlFor="MaintenanceFees"
                     className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
@@ -310,32 +228,13 @@ const ApartmentAreaPrice = ({ show, handleClose }) => {
                         <span>{formik.errors.MaintenanceFees}</span>
                       </div>
                     )}
-                    {/* <div className={`${styles.login_form_error_container}`}>
-                      {formik.errors.MaintenanceFees && formik.touched.MaintenanceFees && (
-                        <div className={`d-flex align-items-center`}>
-                          <div
-                            className={`${styles.login_form_error_icon_container} `}
-                          >
-                            <Image
-                              src={errorIcon}
-                              alt="error icon"
-                              layout="fill"
-                              objectFit="cover"
-                            />{" "}
-                          </div>
-
-                          <span className="text-danger fw_500 align-middle fs_15 ">
-                            {formik.errors.MaintenanceFees}
-                          </span>
-                        </div>
-                      )}
-                    </div> */}
+                
                 </div>
               </div>
               <div className={`d-flex justify-content-end`}>
                 <button
                   type="submit"
-                  className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_12 fs_sm_15 mt-2`}
+                  className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-2`}
                 >
                   <span>Save</span>
                 </button>

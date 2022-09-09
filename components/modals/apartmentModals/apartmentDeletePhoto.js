@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-import styles from "../../styles/modals/apartmentDeletePhoto.module.css";
+import styles from "../../../styles/modals/apartmentDeletePhoto.module.css";
 
 const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   function handleDelete() {
@@ -36,7 +36,7 @@ const ApartmentDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
               nonumy.
             </span>
           </div>
-          <div className={`d-flex justify-content-center mt-3 mb-1 px-lg-2`}>
+          <div className={`d-flex justify-content-center mt-4 mb-1 px-lg-2`}>
             <button
               className={`${styles.delete_btn} py-2 `}
               onClick={handleDelete}

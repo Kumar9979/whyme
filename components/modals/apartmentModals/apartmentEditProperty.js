@@ -140,9 +140,9 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
       centered
       show={show}
       onHide={handleClose}
-      dialogClassName={`${styles.deleteCard_width}`}
+      dialogClassName={`${styles.property_features_container}`}
       contentClassName={`${styles.card_radius}`}
-      //   size={'lg'}
+      
     >
       <Modal.Body contentClassName={`${styles.card_radius}`}>
         {" "}
@@ -157,7 +157,7 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
             </div>
             <div>
               <span onClick={handleClose} className={`${styles.close_icon}`}>
-                <Image src={closeIcon} width="20px" height="20px" />
+                <Image src={closeIcon} width="23px" height="23px" />
               </span>
             </div>
           </div>
