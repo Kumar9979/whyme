@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useFormik } from "formik";
-import OtpModal from "./otpModal";
-import LoginImage from "../../assets/icons/login.png";
+import OtpModals from "./otpModal";
+import LoginImage from "../../../assets/icons/login.png";
 import * as Yup from "yup";
-import Close from "../../assets/icons/close.png";
+import Close from "../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../styles/modals/modal.module.css";
+import styles from "../../../styles/modals/modal.module.css";
 import Select from "react-select";
-import { reactSelectSignUp } from "../../components/reactSelectStyle";
-import { countryData } from "../countryCode";
+import { reactSelectSignUp } from "../../reactSelectStyle";
+import { countryData } from "../../countryCode";
 
-const Modals = ({ show, onShow, onHide }) => {
+const LoginModals = ({ show, onShow, onHide }) => {
   const [showOtp, setShowOtp] = useState(false);
   const [timer, setTimer] = useState(false);
 
@@ -41,7 +41,7 @@ const Modals = ({ show, onShow, onHide }) => {
         .matches(phoneRegex, "Please enter the valid phone number")
         .required("Required"),
       countryCode:
-        Yup.string()
+         Yup.string()
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -159,7 +159,7 @@ const Modals = ({ show, onShow, onHide }) => {
         </Modal.Body>
       </Modal>
 
-      <OtpModal
+      <OtpModals
         onShowModal={onShow}
         number={number}
         show={showOtp}
@@ -171,4 +171,4 @@ const Modals = ({ show, onShow, onHide }) => {
   );
 };
 
-export default Modals;
+export default LoginModals;

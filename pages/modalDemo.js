@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import OfficeSpacePriceRent from "../components/modals/commercial-property/office-space/officespaceAreapriceRent";
+import OfficespaceAreaPrice from "../components/modals/commercial-property/office-space/officespaceAreaPrice";
+import OfficeSpaceAmenities from "../components/modals/commercial-property/office-space/officespaceEditAmenities";
+import OfficeSpaceProperty from "../components/modals/commercial-property/office-space/officeSpaceProperty";
+import OfficeSpaceDescription from "../components/modals/commercial-property/office-space/officeSpaceDescription";
+import CommercialShopUploadPhoto from "../components/modals/commercial-property/commercial-shop/commercialshopUploadPhoto";
+import CommercialShopDeletePhoto from "../components/modals/commercial-property/commercial-shop/commercialshopDeletePhoto";
 import ApartmentDeletePhoto from "../components/modals/apartmentModals/apartmentDeletePhoto";
 
 import ApartmentAreaPrice from "../components/modals/apartmentModals/apartmentAreaPrice";
@@ -12,6 +19,12 @@ import ApartmentUpdateMap from "../components/modals/apartmentModals/apartmentUp
 import ApartmentUploadPhoto from "../components/modals/apartmentModals/apartmentUploadPhoto";
 import VillaDeletePhoto from "../components/modals/villa-property/villaDeletePhoto";
 import VillaUploadPhoto from "../components/modals/villa-property/villaUploadPhoto";
+import OfficeSpaceUploadPhoto from "../components/modals/commercial-property/office-space/officespaceUploadPhoto";
+
+import OfficespaceDeletePhoto from "../components/modals/commercial-property/office-space/officespaceDeletePhoto";
+import OfficeSpaceUpdateMap from "../components/modals/commercial-property/office-space/officespaceUpdateMap";
+import CommercialShopUpdateMap from "../components/modals/commercial-property/commercial-shop/commercialshopUpdateMap";
+
 import ResidentialEditProperty from "../components/modals/residential-house-property/residentialEditProperty";
 import ResidentialEditAmenities from "../components/modals/residential-house-property/residentialEditAmenities";
 import ResidentialAreaPrice from "../components/modals/residential-house-property/residentialAreaPrice";
@@ -74,6 +87,26 @@ const Hello = () => {
       {/* villa */}
  {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
  {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
+
+{/* officespace */}
+
+{/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
+{/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
+{/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
+{/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
+{/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}
+{/* <OfficeSpaceDescription handleClose={handleClose} show={show}/> */}
+
+{/* commercial shop */}
+
+
+{/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
+{/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
+
+
  {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
  {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
  {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}

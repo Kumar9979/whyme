@@ -1,17 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { StylesContext } from "@material-ui/styles";
 import ImageUploading from "react-images-uploading";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import upload from "../../../assets/icons/upload.png";
-import styles from "../../../styles/modals/apartmentUploadPhoto.module.css";
+import upload from "../../../../assets/icons/upload.png";
+import styles from "../../../../styles/modals/apartmentUploadPhoto.module.css";
 
-const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
+const CommercialShopUploadPhoto = ({
+  show,
+  handleClose,
+  handleImageUpload,
+}) => {
   const [images, setImages] = useState([]);
   const maxNumber = 10;
 
@@ -21,6 +23,8 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
     },
     validationSchema: Yup.object({
       image: Yup.mixed().required("Upload an Image"),
+
+   
     }),
 
     onSubmit: (values, { resetForm }) => {
@@ -40,6 +44,7 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
       onHide={handleClose}
       dialogClassName={`${styles.card_width}`}
       contentClassName={`${styles.card_radius}`}
+     
     >
       <Modal.Body>
         {" "}
@@ -60,7 +65,7 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
           </div>
           <div className={`${styles.upload_photo_text} mt-1 mt-lg-0 px-lg-2 `}>
             <span
-              className={`${styles.upload_subheading_text} fs_15 fw_500 fs_sm_15`}
+              className={`${styles.upload_subheading_text} fs_15 fw_500 fs_sm_15 `}
             >
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy.
@@ -144,4 +149,4 @@ const ApartmentUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   );
 };
 
-export default ApartmentUploadPhoto;
+export default CommercialShopUploadPhoto;

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
-import OtpImage from "../../assets/icons/otp.png";
-import RegisterUserModal from "./registerUserModal";
-import Close from "../../assets/icons/close.png";
+import OtpImage from "../../../assets/icons/otp.png";
+import Close from "../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../styles/modals/modal.module.css";
+import styles from "../../../styles/modals/modal.module.css";
 import OtpInput from "react-otp-input";
-import Modals from "./loginModal";
+import RegisterUserModal from "../registerUserModal";
+
 
 const OtpModals = ({
   onShowModal,
