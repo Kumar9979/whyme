@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
-import people from "../../../assets/images/imagereview/people.png";
-import seeall from "../../../assets/images/seeall.svg";
 import styles from "../../../styles/cards/profile-pages-card/plot-similar.module.css";
-import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -27,7 +24,7 @@ const PlotProperties = ({ data }) => {
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
-  const [nm, setNm] = useState(data === 1 ?  aboutproperties2 : aboutProperties );
+  const [nm, setNm] = useState(data === 1 ? aboutproperties2 : aboutProperties);
 
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
@@ -181,20 +178,22 @@ const PlotProperties = ({ data }) => {
             </span>
           </div>
         </div>
-        <button
-          className={`  ${styles.contact_button} d-flex align-items-center position-absolute`}
-        >
-          <div className={`d-flex justify-content-start`}>
-            <Image
-              className={`${styles.owner_image}`}
-              src={photo}
-              alt="Picture of the author"
-              width={25}
-              height={25}
-            />
-          </div>
-          <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
-        </button>
+        <div>
+          <button
+            className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
+          >
+            <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+            <div className={`position-absolute ${styles.round_image}`}>
+              <Image
+                className={`${styles.owner_image}`}
+                src={photo}
+                alt="Picture of the author"
+                width={28}
+                height={28}
+              />
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -205,7 +204,7 @@ const aboutproperties2 = [
   {
     image: floors_allowed,
     heading: "Floors Allowed",
-    amenity: "Floors", 
+    amenity: "Floors",
   },
   {
     image: construction,

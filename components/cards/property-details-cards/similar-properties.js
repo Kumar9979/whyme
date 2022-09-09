@@ -171,7 +171,7 @@ const SimilarProperties = () => {
           </div>
         </div>
         <button
-          className={`  ${styles.contact_button} d-flex align-items-center position-absolute`}
+          className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
           <div className={`d-flex justify-content-start`}>
             <Image
@@ -183,6 +183,22 @@ const SimilarProperties = () => {
             />
           </div>
           <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
+          <div>
+          <button
+            className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
+          >
+            <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+            <div className={`position-absolute ${styles.round_image}`}>
+              <Image
+                className={`${styles.owner_image}`}
+                src={photo}
+                alt="Picture of the author"
+                width={28}
+                height={28}
+              />
+            </div>
+          </button>
+        </div>
         </button>
       </div>
     </div>

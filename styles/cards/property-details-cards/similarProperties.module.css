@@ -137,6 +137,10 @@
 .container {
   margin-bottom: 0.5rem;
 }
+.round_image {
+  left: 2.4%;
+  top: 9%;
+}
 
 /* @media only screen and (min-width: 992px) and (max-width: 1300px) {
   .ready_house {
@@ -192,4 +196,12 @@
     
     top: 10px;
   }
+  .round_image {
+    left: 2%;
+    top: 5%;
+  }
+}
+.round_image {
+  left: 3%;
+  top: 9%;
 }

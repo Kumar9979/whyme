@@ -42,7 +42,7 @@ const SavedProperties = () => {
                 <div ref={ref} className={`${styles.row}`}>
                   <div>
                     <div className="mb-4 m-2 d-flex justify-content-center">
-                      <ProfileRelatedPropert />
+                      <ProfileRelatedProperties />
                     </div>
                   </div>
 
@@ -58,7 +58,7 @@ const SavedProperties = () => {
                     <ProfileRelatedProperties />
                   </div>
                   <div className="mb-4 m-2 d-flex justify-content-center">
-                    <ProfileRelatedProperties />
+                    <ProfileRelatedProperties/>
                   </div>
                 </div>
               </div>
@@ -69,16 +69,16 @@ const SavedProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties />                </div>
+                <PlotProperties/>                </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties />                </div>
+                <PlotProperties/>                </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties />
+                <PlotProperties/>
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <PlotProperties />
+                  <PlotProperties/>
                 </div>
               </div>
             </div>
