@@ -13,23 +13,23 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
   function handleRadioButton(e) {
     setDiscloseIdentity(e.target.value);
   }
-  const [discloseIdentity, setDiscloseIdentity] = useState("no");
+  const [discloseIdentity, setDiscloseIdentity] = useState("yes");
 
 
   function handleBoundaryWallRadioButton(e) {
     setBoundaryWallIdentity(e.target.value);
   }
-  const [boundaryWallIdentity, setBoundaryWallIdentity] = useState("no");
+  const [boundaryWallIdentity, setBoundaryWallIdentity] = useState("yes");
 
   function handleGatedColonyRadioButton(e) {
     setGatedColonyIdentity(e.target.value);
   }
-  const [gatedColonyIdentity, setGatedColonyIdentity] = useState("no");
+  const [gatedColonyIdentity, setGatedColonyIdentity] = useState("yes");
 
     function handleConerSiteRadioButton(e) {
     setConerSiteIdentity(e.target.value);
   }
-  const [conerSiteIdentity, setConerSiteIdentity] = useState("no");
+  const [conerSiteIdentity, setConerSiteIdentity] = useState("yes");
 
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
