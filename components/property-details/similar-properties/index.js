@@ -120,12 +120,9 @@ const SimilarProperties = () => {
                 <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
                   <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
-                    <Image
-                      src={item.image}
-                      alt="Picture of the author"
-                    />
+                      <Image src={item.image} alt="Picture of the author" />
                     </div>
-                   
+
                     <div className="d-flex flex-column ps-2">
                       <span
                         className={`${styles.about_property_heading} fontFam_poppins fw_500`}
@@ -143,9 +140,7 @@ const SimilarProperties = () => {
               );
             })}
           </div>
-          <p
-            className={`${styles.about_readmore_text} fontFam_poppins fw_400`}
-          >
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
@@ -174,21 +169,24 @@ const SimilarProperties = () => {
               By Amal Sabu
             </span>
             <div
-            style={{minWidth:"100px"}}
-            className="d-flex justify-content-end mt-2 ">
+              style={{ minWidth: "100px" }}
+              className="d-flex justify-content-end mt-2 "
+            >
               <button
                 className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
               >
-               <div className={`pe-2  py-1 pe-1`}>
-          
-                <Image
-                  className={`${styles.owner_image}`}
-                  src={people}
-                  alt="Picture of the author"
-                  width={30}
-                  height={30}
-                /></div>
-                <span className={` fs_14 d-flex align-items-center`}>Contact</span>
+                <div className={`pe-2  py-1 pe-1`}>
+                  <Image
+                    className={`${styles.owner_image}`}
+                    src={people}
+                    alt="Picture of the author"
+                    width={30}
+                    height={30}
+                  />
+                </div>
+                <span className={` fs_14 d-flex align-items-center`}>
+                  Contact
+                </span>
               </button>
             </div>
           </div>
