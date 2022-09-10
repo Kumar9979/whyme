@@ -49,7 +49,7 @@ const Home = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
             <ImageGrid  propertyType="3BHK Villa in Vijayanagar, Mysuru" />
-            <Aboutproperty data ={1}/>
+            <Aboutproperty />
             <Amenties />
             <ContactOwner />
             <PropertyLocation />

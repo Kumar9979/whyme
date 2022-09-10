@@ -12,9 +12,15 @@ import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import bedroom from "../../../assets/images/about-property-images/bedroom.svg";
 import cars from "../../../assets/images/about-property-images/car.svg";
 import underconstruction from "../../../assets/images/about-property-images/underconstruction.svg";
+import boundry from "../../../assets/images/about-property-images/boundry_wall.svg";
+import colony from "../../../assets/images/about-property-images/colony.svg";
+import construction from "../../../assets/images/about-property-images/construction_done.svg";
+import corner from "../../../assets/images/about-property-images/corner_sites.svg";
+import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
+import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 
 const Aboutproperty = ({data}) => {
-  const [properties, setProperties] = useState(data === 1 ? aboutproperties2 : aboutProperties);
+  const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
@@ -23,7 +29,7 @@ const Aboutproperty = ({data}) => {
       <h1 className={`${styles.about_property_text}`}>About the Property</h1>
       <hr className={`${styles.about_property_horizontal}`}></hr>
       <div className={`row ps-2 ps-lg-5 ps-lg-4`}>
-        {aboutproperties.map((item, index) => {
+        {properties.map((item, index) => {
           return (
             <div className={`col-lg-4 col-6 d-flex mb-5`}>
               <Image
@@ -114,3 +120,38 @@ const aboutproperties = [
     amenity: "1",
   },
 ];
+
+
+const aboutproperties1 = [
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: construction,
+    heading: "Construction Done",
+    amenity: "Yes",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: boundry,
+    heading: "Boundry Wall",
+    amenity: "Yes",
+  },
+  {
+    image: colony,
+    heading: "Gated Colony",
+    amenity: "Yes",
+  },
+  {
+    image: corner,
+    heading: "Corner Site",
+    amenity: "Yes",
+  },
+];
+
