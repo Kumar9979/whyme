@@ -93,7 +93,7 @@ const Hello = () => {
 {/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
 {/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
 {/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
+<OfficeSpaceProperty handleClose={handleClose} show={show}/>
 {/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
 {/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
 {/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}

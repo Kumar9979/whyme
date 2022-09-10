@@ -15,7 +15,6 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
   }
   const [discloseIdentity, setDiscloseIdentity] = useState("no");
 
-
   function handleBoundaryWallRadioButton(e) {
     setBoundaryWallIdentity(e.target.value);
   }
@@ -26,7 +25,7 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
   }
   const [gatedColonyIdentity, setGatedColonyIdentity] = useState("no");
 
-    function handleConerSiteRadioButton(e) {
+  function handleConerSiteRadioButton(e) {
     setConerSiteIdentity(e.target.value);
   }
   const [conerSiteIdentity, setConerSiteIdentity] = useState("no");
@@ -214,187 +213,202 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                 </div>
               </div>
               <div className=" text-start mt-3">
-        
                 <div className="row gx-0">
                   <div className="d-flex">
-                  <div className="col-6">
-                  <div className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}>Any construction Done</div>
-                    <div className="d-flex">
-                    <input
-                      className={` ms-1 cursor_pointer`}
-                      name="disclose"
-                      id="yes"
-                      type="radio"
-                      value="yes"
-                      checked={discloseIdentity === "yes"}
-                      onChange={handleRadioButton}
-                    />
-                    <label
-                      htmlFor="yes"
-                      className={
-                        discloseIdentity === "yes"
-                          ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      Yes
-                    </label>
-                    <input
-                      className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                      name="disclose"
-                      id="no"
-                      type="radio"
-                      value="no"
-                      checked={discloseIdentity === "no"}
-                      onChange={handleRadioButton}
-                    />{" "}
-                    <label
-                      htmlFor="no"
-                      className={
-                        discloseIdentity === "no"
-                        ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                        : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      No
-                    </label>
+                    <div className="col-6">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Any construction Done
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="disclose"
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={discloseIdentity === "yes"}
+                          onChange={handleRadioButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            discloseIdentity === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="disclose"
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={discloseIdentity === "no"}
+                          onChange={handleRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            discloseIdentity === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="col-6">
-                  <div className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}>Boundary Wall made</div>
-                    <div className="d-flex">
-                    <input
-                      className={` ms-1 cursor_pointer`}
-                      name="boundaryWall"
-                      id="yes"
-                      type="radio"
-                      value="yes"
-                      checked={boundaryWallIdentity === "yes"}
-                      onChange={handleBoundaryWallRadioButton}
-                    />
-                    <label
-                      htmlFor="yes"
-                      className={
-                        boundaryWallIdentity === "yes"
-                          ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      Yes
-                    </label>
-                    <input
-                      className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                      name="boundaryWall"
-                      id="no"
-                      type="radio"
-                      value="no"
-                      checked={boundaryWallIdentity === "no"}
-                      onChange={handleBoundaryWallRadioButton}
-                    />{" "}
-                    <label
-                      htmlFor="no"
-                      className={
-                        boundaryWallIdentity === "no"
-                        ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                        : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      No
-                    </label>
-                  </div>
-                  </div>
+
+                    <div className="col-6">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Boundary Wall made
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="boundaryWall"
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={boundaryWallIdentity === "yes"}
+                          onChange={handleBoundaryWallRadioButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            boundaryWallIdentity === "yes"
+                              ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="boundaryWall"
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={boundaryWallIdentity === "no"}
+                          onChange={handleBoundaryWallRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            boundaryWallIdentity === "no"
+                              ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="row gx-0 mt-3">
                   <div className="d-flex">
-                  <div className="col-6">
-                  <div className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}>Gated colony</div>
-                    <div className="d-flex">
-                    <input
-                      className={` ms-1 cursor_pointer`}
-                      name="gatedColony"
-                      id="yes"
-                      type="radio"
-                      value="yes"
-                      checked={gatedColonyIdentity === "yes"}
-                      onChange={handleGatedColonyRadioButton}
-                    />
-                    <label
-                      htmlFor="yes"
-                      className={
-                        gatedColonyIdentity === "yes"
-                          ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      Yes
-                    </label>
-                    <input
-                      className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                      name="gatedColony"
-                      id="no"
-                      type="radio"
-                      value="no"
-                      checked={gatedColonyIdentity === "no"}
-                      onChange={handleGatedColonyRadioButton}
-                    />{" "}
-                    <label
-                      htmlFor="no"
-                      className={
-                        gatedColonyIdentity === "no"
-                        ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                        : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      No
-                    </label>
+                    <div className="col-6">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Gated colony
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="gatedColony"
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={gatedColonyIdentity === "yes"}
+                          onChange={handleGatedColonyRadioButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            gatedColonyIdentity === "yes"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="gatedColony"
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={gatedColonyIdentity === "no"}
+                          onChange={handleGatedColonyRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            gatedColonyIdentity === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="col-6">
-                  <div className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}>Corner site</div>
-                    <div className="d-flex">
-                    <input
-                      className={` ms-1 cursor_pointer`}
-                      name="conerSite"
-                      id="yes"
-                      type="radio"
-                      value="yes"
-                      checked={conerSiteIdentity === "yes"}
-                      onChange={handleConerSiteRadioButton}
-                    />
-                    <label
-                      htmlFor="yes"
-                      className={
-                        conerSiteIdentity === "yes"
-                          ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      Yes
-                    </label>
-                    <input
-                      className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                      name="conerSite"
-                      id="no"
-                      type="radio"
-                      value="no"
-                      checked={conerSiteIdentity === "no"}
-                      onChange={handleConerSiteRadioButton}
-                    />{" "}
-                    <label
-                      htmlFor="no"
-                      className={
-                        conerSiteIdentity === "no"
-                        ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                        : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                      }
-                    >
-                      No
-                    </label>
-                  </div>
-                  </div>
+
+                    <div className="col-6">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Corner site
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="conerSite"
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={conerSiteIdentity === "yes"}
+                          onChange={handleConerSiteRadioButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            conerSiteIdentity === "yes"
+                              ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="conerSite"
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={conerSiteIdentity === "no"}
+                          onChange={handleConerSiteRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            conerSiteIdentity === "no"
+                              ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -415,195 +429,3 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
 };
 
 export default ResidentialLandEditProperty;
-
-/*
-
-import React from "react";
-import styles from "../../../styles/component/modals/memebertradeoffer.module.css";
-import { useState } from "react";
-import Modal from "react-bootstrap/Modal";
-import Image from "next/image";
-import HoldingProgressBar from "../../../pages/profile/holdingProgressBar";
-import logo from "../../../assets/icons/myholdings/logo.svg";
-import ModalTopSection from "../modalTopSection";
-import InputRangeSlider from "../../inputRangeSlider";
-
-const MemberTradeOfferModal = (props) => {
-  const closeModal = () => setShow(false);
-
-  const [show, setShow] = useState(props.modalShow);
-
-  const [discloseIdentity, setDiscloseIdentity] = useState("no");
-
-  const currentAmount = 0.6;
-  const totalAmount = 1.13;
-  const percentage = (currentAmount / totalAmount) * 100;
-
-  function handleRadioButton(e) {
-    setDiscloseIdentity(e.target.value);
-  }
-
-  return (
-    <>
-      <button
-        className={` d-flex align-items-center px-3 py-2 ${styles.memebertrade_modal_offer_btn_generatecode}`}
-        onClick={() => {
-          setShow(true);
-        }}
-      >
-        <span className={`secondary_color fontFam_montserrat fw_600 fs_14`}>
-          offer popup
-        </span>
-      </button>
-      <Modal
-        show={show}
-        backdropClassName={`${styles.membertrade_modal_offer_backdrop}`}
-        dialogClassName={`${styles.membertrade_modal_offer_container}`}
-        centered
-        contentClassName={`${styles.membertrade_modal_offer_modal_content}`}
-      >
-        {" "}
-        <Modal.Body bsPrefix={`${styles.membertrade_modal_offer_modal_body} `}>
-          <ModalTopSection closeModalFn={closeModal} />
-
-          <h5
-            className={`fontFam_montserrat fs_16 fw_500 secondary_color mb-0 `}
-          >
-            Buy in Disclosure:
-          </h5>
-          <p
-            className={`fontFam_nunito fw_600 secondary_color mb-2 mt-1 ${styles.membertrade_modal_offer_fs_13} ${styles.membertrade_modal_offer_lh_small}`}
-          >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna
-          </p>
-
-          <div
-            className={`d-flex w-100 flex-column mb-3 justify-content-center align-items-center`}
-          >
-            <div className={`fs_12 fontFam_montserrat fw_600`}>
-              <span className={`secondary_color pe-1`}>₹ XX,XX,XX,XX,XXX</span>
-              <span
-                className={`${styles.membertrade_modal_offer_color_green_2} fs_12`}
-              >
-                O/S OF ₹ XX,XX,XX,XX,XXX
-              </span>
-            </div>
-
-            <HoldingProgressBar height={"12px"} done={percentage} />
-          </div>
-
-          <h6
-            className={`black_color fs_13 fontFam_montserrat fw_600 fs_md_12`}
-          >
-            YOUR BUY IN AMOUNT:
-          </h6>
-
-          <div
-            className={`d-flex  ${styles.membertrade_modal_offer_inputrange_container} justify-content-center align-items-center position-relative mb-5 mb-sm-4  mx-auto flex-column`}
-          >
-            <InputRangeSlider />
-            <div
-              className={`d-flex justify-content-between w-100 fontFam_roboto fw_600 fs_12 mt-1 secondary_color`}
-            >
-              <span className={``}>50,000</span>{" "}
-              <span className={` `}>25,00,000</span>
-            </div>
-          </div>
-
-          <div className={`d-flex mx-2 mx-sm-4  pt-2  justify-content-between`}>
-            <span
-              className={`black_color fontFam_montserrat fw_600 text-nowrap  fs_13 fs_md_12 `}
-            >
-              DISCLOSE IDENTITY :
-            </span>
-
-            <div className={`d-flex mb-2`}>
-              <div className={`d-flex align-items-center`}>
-                <input
-                  className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer`}
-                  name="disclose"
-                  id="yes"
-                  type="radio"
-                  value="yes"
-                  checked={discloseIdentity === "yes"}
-                  onChange={handleRadioButton}
-                />
-                <label
-                  htmlFor="yes"
-                  className={
-                    discloseIdentity === "yes"
-                      ? `ps-1 secondary_color fs_13 fs_md_12 cursor_pointer`
-                      : `${styles.membertrade_modal_offer_color_gray} ps-1 fs_13 fs_md_12 cursor_pointer`
-                  }
-                >
-                  Yes
-                </label>
-              </div>
-
-              <div className={`d-flex align-items-center ms-3`}>
-                <input
-                  className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer`}
-                  name="disclose"
-                  id="no"
-                  type="radio"
-                  value="no"
-                  checked={discloseIdentity === "no"}
-                  onChange={handleRadioButton}
-                />{" "}
-                <label
-                  htmlFor="no"
-                  className={
-                    discloseIdentity === "no"
-                      ? `ps-1 secondary_color fs_13 fs_md_12 cursor_pointer`
-                      : `${styles.membertrade_modal_offer_color_gray} ps-1 fs_13 fs_md_12 cursor_pointer`
-                  }
-                >
-                  No
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <span
-            className={`${styles.membertrade_modal_offer_color_gray} d-block  fontFam_nunito fs_12 lh-base`}
-          >
-            Lorem ipsum dolor sit amet, consetetur adipscingelit dsats
-          </span>
-
-          <div className="d-flex w-100 align-items-center justify-content-start mt-2">
-            <div
-              className={`${styles.membertrade_modal_offer_icon_logo} me-3 me-sm-2  `}
-            >
-              <Image
-                src={logo}
-                alt="upcide logo"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-
-            <span
-              className={`fs_12 fontFam_nunito fw_600 ${styles.membertrade_modal_offer_color_gray_2}  ${styles.membertrade_modal_offer_text_size}`}
-            >
-              Lorem ipsum dolor sit{" "}
-              <span className={`secondary_color`}> 10% is my commission</span>{" "}
-              itr,se diam nonumy eirmod tempori nvidunt ut labore et
-            </span>
-          </div>
-
-          <div className={`w-100 d-flex justify-content-end mx-auto mt-3`}>
-            <button
-              className={`${styles.membertrade_modal_offer_btn_submit}  me-2 rounded  border-0 primary_bg  fs_12 fontFam_montserrat fw_600 `}
-            >
-              SUBMIT
-            </button>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
-};
-
-export default MemberTradeOfferModal;
-*/

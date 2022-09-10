@@ -12,6 +12,8 @@ import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
 const OfficeSpaceProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
+  const [discloseIdentity, setDiscloseIdentity] = useState("no");
+  const [washroom, setWashroom] = useState("no");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,15 +63,13 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   };
 
   const formik = useFormik({
-    // enableReinitialize: true,
     initialValues: {
       TotalFloors: "",
       FloorNumber: "",
-
       WashRoom: "",
-      Pantry: "",
-      PersonalWashroom: "",
 
+      cafeteria: "no",
+      PersonalWashRoom: "no",
       FurnishedStatus: "",
       Status: "",
       Transaction: "",
@@ -86,13 +86,9 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
       WashRoom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      Pantry: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      PersonalWashroom: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
 
+      cafeteria: Yup.string(),
+      PersonalWashRoom: Yup.string(),
       FurnishedStatus: Yup.string().required("Required"),
       Status: Yup.string().required("Required"),
       Transaction: Yup.string().required("Required"),
@@ -116,6 +112,32 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
     { value: "Resale", label: "Resale" },
     { value: "Fresh", label: "Fresh" },
   ];
+
+  function handleRadioButton(e) {
+    // setDiscloseIdentity(e.target.value);
+    // formik.handleChange;
+
+    setDiscloseIdentity(e.target.value);
+    let event = {
+      target: {
+        name: "cafeteria",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
+  function handleWashRoomButton(e) {
+    setWashroom(e.target.value);
+    let event = {
+      target: {
+        name: "PersonalWashRoom",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
   return (
     <Modal
       centered
@@ -244,27 +266,44 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       >
                         Pantry/Cafeteria
                       </label>
-                      <div>
+                      <div className="d-flex mt-2">
                         <input
-                          type="text"
-                          className={
-                            width < 992
-                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
-                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
-                          }
-                          id="pantry"
-                          placeholder="Ex : 2"
-                          name="Pantry"
-                          value={formik.values.Pantry}
-                          onChange={formik.handleChange}
+                          className={` ms-1 cursor_pointer`}
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={discloseIdentity === "yes"}
+                          onChange={handleRadioButton}
                         />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            discloseIdentity === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={discloseIdentity === "no"}
+                          onChange={handleRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            discloseIdentity === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
                       </div>
-                      {formik.errors.Pantry && formik.touched.Pantry && (
-                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                          <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.Pantry}</span>
-                        </div>
-                      )}
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
@@ -275,28 +314,44 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       >
                         Personal Washroom
                       </label>
-                      <div>
+                      <div className="d-flex mt-2">
                         <input
-                          type="text"
-                          className={
-                            width < 992
-                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
-                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2 `
-                          }
-                          id="PersonalWashroom"
-                          placeholder="Ex : 2"
-                          name="PersonalWashroom"
-                          value={formik.values.PersonalWashroom}
-                          onChange={formik.handleChange}
+                          className={` ms-1 cursor_pointer`}
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={washroom === "yes"}
+                          onChange={handleWashRoomButton}
                         />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            washroom === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={washroom === "no"}
+                          onChange={handleWashRoomButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            washroom === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
                       </div>
-                      {formik.errors.PersonalWashroom &&
-                        formik.touched.PersonalWashroom && (
-                          <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                            <i className="ri-error-warning-line me-1  "></i>
-                            <span>{formik.errors.PersonalWashroom}</span>
-                          </div>
-                        )}
                     </div>
                   </div>
                 </div>
