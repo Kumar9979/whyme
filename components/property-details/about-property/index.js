@@ -14,7 +14,7 @@ import cars from "../../../assets/images/about-property-images/car.svg";
 import underconstruction from "../../../assets/images/about-property-images/underconstruction.svg";
 
 const Aboutproperty = ({data}) => {
-  const [nm, setNm] = useState(data === 1 ? aboutproperties2 : aboutProperties);
+  const [properties, setProperties] = useState(data === 1 ? aboutproperties2 : aboutProperties);
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
