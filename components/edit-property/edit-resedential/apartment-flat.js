@@ -5,7 +5,7 @@ import backIcon from "../../../assets/icons/back-icon.svg";
 import Location from "../../../assets/icons/location-icon.svg";
 import ApartmentUploadPhoto from "../../modals/apartmentModals/apartmentUploadPhoto";
 import ApartmentDeletePhoto from "../../modals/apartmentModals/apartmentDeletePhoto";
-import closeIcon from "../../../assets/icons/close.png";
+
 import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";
