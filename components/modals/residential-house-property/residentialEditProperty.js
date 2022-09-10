@@ -8,12 +8,14 @@ import Select from "react-select";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useScreenSizeDetector from "../../useScreenSizeDetector";
 
 const ResidentialEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
+  const width=useScreenSizeDetector();
   const customStyles = {
     control: (base, state) => ({
       ...base,

@@ -73,6 +73,12 @@ import CommercialPlotUploadPhoto from "../components/modals/commercial-property/
 import CommercialPlotDeletePhoto from "../components/modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
 import CommercialPlotUpdateMap from "../components/modals/commercial-property/commercial-plot/commercialplotUpdateMap";
 import CommercialPlotFeatures from "../components/modals/commercial-property/commercial-plot/commercialplotFeatures";
+import CommercialPlotAmenities from "../components/modals/commercial-property/commercial-plot/commercialplotAmenities";
+import CommercialPlotDescription from "../components/modals/commercial-property/commercial-plot/commercialplotDescription";
+import AgricultureFarmHouseUploadPhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUploadPhoto";
+import AgricultureFarmHouseDeletePhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agriculturefarmHouseDeletePhoto";
+import AgricultureFarmHouseUpdateMap from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUpdateMap";
+import AgricultureFarmHouseFeatures from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseFeatures";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -234,7 +240,21 @@ const Hello = () => {
       {/* <CommercialPlotUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
-      <CommercialPlotFeatures handleClose={handleClose} show={show} />
+      {/* <CommercialPlotFeatures handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
+
+      {/* AgricultureFarmHouseUploadPhoto */}
+
+      {/* <AgricultureFarmHouseUploadPhoto handleClose={handleClose} show={show} />  */}
+      {/* <AgricultureFarmHouseDeletePhoto  handleClose={handleClose} show={show} /> */}
+      {/* <AgricultureFarmHouseUpdateMap handleClose={handleClose} show={show} /> */}
+      <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} />
+
+
+
+
+      {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
     </>
   );
 };
