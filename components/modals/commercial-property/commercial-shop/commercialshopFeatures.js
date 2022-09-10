@@ -14,6 +14,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [discloseIdentity, setDiscloseIdentity] = useState("no");
   const [washroom, setWashroom] = useState("no");
+  const [cornerShop, setCornerShop] = useState("no");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,6 +71,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
 
       cafeteria: "no",
       PersonalWashRoom: "no",
+      CornerShop: "no",
       FurnishedStatus: "",
       Status: "",
       Transaction: "",
@@ -93,6 +95,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
 
       cafeteria: Yup.string(),
       PersonalWashRoom: Yup.string(),
+      CornerShop: Yup.string(),
       FurnishedStatus: Yup.string().required("Required"),
       Status: Yup.string().required("Required"),
       Transaction: Yup.string().required("Required"),
@@ -118,8 +121,6 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
   ];
 
   function handleRadioButton(e) {
-
-
     setDiscloseIdentity(e.target.value);
     let event = {
       target: {
@@ -135,6 +136,17 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
     let event = {
       target: {
         name: "PersonalWashRoom",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
+  function handleCornerShopButton(e) {
+    setCornerShop(e.target.value);
+    let event = {
+      target: {
+        name: "CornerShop",
         value: e.target.value,
       },
     };
@@ -170,7 +182,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-5">
+                <div className="d-flex gx-0 gap-lg-5 gap-2">
                   <div className="col-4 col-lg-3">
                     <div className="">
                       <label
@@ -226,15 +238,11 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                       )}
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-5 ">
                   <div className="col-4 col-lg-3">
                     <div className="">
                       <label
                         htmlFor="washroom"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                        className={`form-label text-nowrap ${styles.total_floors_text} w-100 fs_15 fs_sm_12 fw_500`}
                       >
                         Washrooms
                       </label>
@@ -259,6 +267,60 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                           <span>{formik.errors.WashRoom}</span>
                         </div>
                       )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" text-start mt-3">
+                <div className="d-flex gx-0 gap-lg-5 gap-2">
+                  <div className="col-4 col-lg-3">
+                    <div className="">
+                      <div className={`${styles.total_floors_text}  `}>
+                        <label
+                          htmlFor="FurnishedStatus"
+                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
+                        >
+                          Furnishing status{" "}
+                        </label>
+                        <div
+                          onMouseEnter={() => setMenuOpen(true)}
+                          onClick={() => setoptionType("furnishingStatus")}
+                        >
+                          <Select
+                            id="FurnishedStatus"
+                            options={furnishingStatus}
+                            type="text"
+                            className={` w-100  fs_15 fs_sm_12 `}
+                            placeholder="Select.."
+                            styles={customStyles}
+                            name="FurnishedStatus"
+                            value={furnishingStatus.filter((option) => {
+                              return (
+                                option.value === formik.values.FurnishedStatus
+                              );
+                            })}
+                            onChange={(selectedOption) => {
+                              let event = {
+                                target: {
+                                  name: "FurnishedStatus",
+                                  value: selectedOption.value,
+                                },
+                              };
+                              formik.handleChange(event);
+                            }}
+                            components={{
+                              IndicatorSeparator: () => null,
+                            }}
+                          />
+                        </div>
+                        {formik.errors.FurnishedStatus &&
+                          formik.touched.FurnishedStatus && (
+                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
+                              <i className="ri-error-warning-line me-1  "></i>
+                              <span> {formik.errors.FurnishedStatus}</span>
+                            </div>
+                          )}
+                      </div>
                     </div>
                   </div>
                   <div className="col-4 col-lg-3">
@@ -313,7 +375,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                     <div className="">
                       <label
                         htmlFor="PersonalWashroom"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_11 fw_500`}
                       >
                         Personal Washroom
                       </label>
@@ -358,147 +420,143 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                     </div>
                   </div>
                 </div>
-                <div className=" text-start mt-3">
-                  <div className={width < 992 ? `row gx-2` : `row `}>
-                    <div className="col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text}  `}>
-                          <label
-                            htmlFor="FurnishedStatus"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
-                          >
-                            Furnishing status{" "}
-                          </label>
-                          <div
-                            onMouseEnter={() => setMenuOpen(true)}
-                            onClick={() => setoptionType("furnishingStatus")}
-                          >
-                            <Select
-                              id="FurnishedStatus"
-                              options={furnishingStatus}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="FurnishedStatus"
-                              value={furnishingStatus.filter((option) => {
-                                return (
-                                  option.value === formik.values.FurnishedStatus
-                                );
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "FurnishedStatus",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
-                          </div>
-                          {formik.errors.FurnishedStatus &&
-                            formik.touched.FurnishedStatus && (
-                              <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                                <i className="ri-error-warning-line me-1  "></i>
-                                <span> {formik.errors.FurnishedStatus}</span>
-                              </div>
-                            )}
-                        </div>
+              </div>
+              <div className=" text-start mt-3">
+                <div className="d-flex gx-0 gap-lg-5 gap-2">
+                  <div className="col-4 col-lg-3">
+                    <div className="">
+                      <label
+                        htmlFor="CornerShop"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                      >
+                        Corner Shop
+                      </label>
+                      <div className="d-flex mt-2">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={cornerShop === "yes"}
+                          onChange={handleCornerShopButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            cornerShop === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={cornerShop === "no"}
+                          onChange={handleCornerShopButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            cornerShop === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
                       </div>
                     </div>
-                    <div className="col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text} `}>
-                          <label
-                            htmlFor="Status"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500 ms-2 ms-lg-0`}
-                          >
-                            Status{" "}
-                          </label>
-                          <div onClick={() => setoptionType("status")}>
-                            <Select
-                              id="Status"
-                              options={status}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="Status"
-                              value={status.filter((option) => {
-                                return option.value === formik.values.Status;
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "Status",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
+                  </div>
+                  <div className="col-4 ">
+                    <div className="">
+                      <div className={`${styles.total_floors_text} `}>
+                        <label
+                          htmlFor="Status"
+                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500 ms-2 ms-lg-0`}
+                        >
+                          Status{" "}
+                        </label>
+                        <div onClick={() => setoptionType("status")}>
+                          <Select
+                            id="Status"
+                            options={status}
+                            type="text"
+                            className={` w-100  fs_15 fs_sm_12 `}
+                            placeholder="Select.."
+                            styles={customStyles}
+                            name="Status"
+                            value={status.filter((option) => {
+                              return option.value === formik.values.Status;
+                            })}
+                            onChange={(selectedOption) => {
+                              let event = {
+                                target: {
+                                  name: "Status",
+                                  value: selectedOption.value,
+                                },
+                              };
+                              formik.handleChange(event);
+                            }}
+                            components={{
+                              IndicatorSeparator: () => null,
+                            }}
+                          />
+                        </div>
+                        {formik.errors.Status && formik.touched.Status && (
+                          <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
+                            <i className="ri-error-warning-line me-1 "></i>
+                            <span> {formik.errors.Status}</span>
                           </div>
-                          {formik.errors.Status && formik.touched.Status && (
-                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                              <i className="ri-error-warning-line me-1 "></i>
-                              <span> {formik.errors.Status}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-3 col-4">
+                    <div className="">
+                      <div className={`${styles.total_floors_text}  mb-3`}>
+                        <label
+                          htmlFor="Transaction"
+                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
+                        >
+                          Transaction{" "}
+                        </label>
+                        <div onClick={() => setoptionType("transaction")}>
+                          <Select
+                            id="Transaction"
+                            options={transaction}
+                            type="text"
+                            className={` w-100  fs_15 fs_sm_12 `}
+                            placeholder="Select.."
+                            styles={customStyles}
+                            name="Transaction"
+                            value={transaction.filter((option) => {
+                              return option.value === formik.values.Transaction;
+                            })}
+                            onChange={(selectedOption) => {
+                              let event = {
+                                target: {
+                                  name: "Transaction",
+                                  value: selectedOption.value,
+                                },
+                              };
+                              formik.handleChange(event);
+                            }}
+                            components={{
+                              IndicatorSeparator: () => null,
+                            }}
+                          />
+                        </div>
+                        {formik.errors.Transaction &&
+                          formik.touched.Transaction && (
+                            <div className="d-flex align-items-center text-danger mt-1 fs_sm_12 fs_13 ">
+                              <i className="ri-error-warning-line me-1  "></i>
+                              <span> {formik.errors.Transaction}</span>
                             </div>
                           )}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-3 col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text}  mb-3`}>
-                          <label
-                            htmlFor="Transaction"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
-                          >
-                            Transaction{" "}
-                          </label>
-                          <div onClick={() => setoptionType("transaction")}>
-                            <Select
-                              id="Transaction"
-                              options={transaction}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="Transaction"
-                              value={transaction.filter((option) => {
-                                return (
-                                  option.value === formik.values.Transaction
-                                );
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "Transaction",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
-                          </div>
-                          {formik.errors.Transaction &&
-                            formik.touched.Transaction && (
-                              <div className="d-flex align-items-center text-danger mt-1 fs_sm_12 fs_13 ">
-                                <i className="ri-error-warning-line me-1  "></i>
-                                <span> {formik.errors.Transaction}</span>
-                              </div>
-                            )}
-                        </div>
                       </div>
                     </div>
                   </div>
