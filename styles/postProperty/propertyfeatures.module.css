@@ -123,6 +123,9 @@
 .propertyFeature_width_75_to_100 {
   width: 75%;
 }
+.propertyFeature_width_50_to_100 {
+  width: 50%;
+}
 .input_container {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
@@ -141,7 +144,10 @@
   }
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 992px) {
+  .propertyFeature_width_50_to_100 {
+    width: 100%;
+  }
   .amenities_list_flex_res {
     display: block;
   }
