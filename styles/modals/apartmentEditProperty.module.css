@@ -8,7 +8,9 @@
 /* .floor_allowed{
     width: 90%;
 } */
-
+.meters_text{
+    color: #BCC7CE;
+}
 
 .upload_heading_text{
     color: #323D5A;

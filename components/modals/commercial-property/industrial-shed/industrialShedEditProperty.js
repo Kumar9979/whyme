@@ -10,7 +10,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
-const WarehouseEditProperty = ({ show, handleClose }) => {
+const IndustrialShedEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
@@ -64,31 +64,21 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
-      TotalFloors: "",
-      FloorNumber: "",
+      
 
       Washrooms: "",
       OpenSites:"",
       FloorsAllowed: "",
       RoadFacing:"",
 
-      FurnishedStatus: "",
+     
       Status: "",
       Transaction: "",
       Amenities: [],
     },
 
     validationSchema: Yup.object({
-      TotalFloors: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      FloorNumber: Yup.number()
-        .typeError("invalid value")
-        .max(
-          Yup.ref("TotalFloors"),
-          "Must be less than or equal to TotalFloors"
-        )
-        .required("Required"),
+     
 
       Washrooms: Yup.string()
         .matches(numRegex, "Invalid value")
@@ -103,7 +93,7 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-      FurnishedStatus: Yup.string().required("Required"),
+   
       Status: Yup.string().required("Required"),
       Transaction: Yup.string().required("Required"),
       Amenitities: Yup.string(),
@@ -161,116 +151,7 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
           <hr />
           <form onSubmit={formik.handleSubmit}>
             <div>
-              <div className=" text-start mt-3">
-                <div className="d-flex gx-0">
-                  <div className="col-4 col-lg-4">
-                    <div className="">
-                      <label
-                        htmlFor="totalFloors"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
-                      >
-                        Total floors
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`}
-                          id="totalFloors"
-                          placeholder="Ex : 13"
-                          name="TotalFloors"
-                          value={formik.values.TotalFloors}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.TotalFloors && formik.touched.TotalFloors && (
-                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                          <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.TotalFloors}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="col-4 col-lg-4">
-                    <div className="">
-                      <label
-                        htmlFor="FloorNumber"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 `}
-                      >
-                        Floor number
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`}
-                          id="FloorNumber"
-                          placeholder="Ex : 13"
-                          name="FloorNumber"
-                          value={formik.values.FloorNumber}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.FloorNumber && formik.touched.FloorNumber && (
-                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                          <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.FloorNumber}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="">
-                      <div className={`${styles.total_floors_text}  `}>
-                        <label
-                          htmlFor="FurnishedStatus"
-                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
-                        >
-                          Furnishing status{" "}
-                        </label>
-                        <div
-                          onMouseEnter={() => setMenuOpen(true)}
-                          onClick={() => setoptionType("furnishingStatus")}
-                        >
-                          <Select
-                            // menuIsOpen={menuOpen}
-                            id="FurnishedStatus"
-                            options={furnishingStatus}
-                            type="text"
-                            className={` w-100  fs_15 fs_sm_12 `}
-                            placeholder="Select.."
-                            styles={customStyles}
-                            name="FurnishedStatus"
-                            value={furnishingStatus.filter((option) => {
-                              return (
-                                option.value === formik.values.FurnishedStatus
-                              );
-                            })}
-                            onChange={(selectedOption) => {
-                              let event = {
-                                target: {
-                                  name: "FurnishedStatus",
-                                  value: selectedOption.value,
-                                },
-                              };
-                              formik.handleChange(event);
-                            }}
-                            components={{
-                              IndicatorSeparator: () => null,
-                            }}
-                          />
-                        </div>
-                        {formik.errors.FurnishedStatus &&
-                          formik.touched.FurnishedStatus && (
-                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                              <i className="ri-error-warning-line me-1  "></i>
-                              <span> {formik.errors.FurnishedStatus}</span>
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
                   <div className="col-4 col-lg-4">
@@ -498,4 +379,4 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
   );
 };
 
-export default WarehouseEditProperty;
+export default IndustrialShedEditProperty;
