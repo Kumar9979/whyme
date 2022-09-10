@@ -1,7 +1,6 @@
-.whole_container{
-  margin-top:  8rem;
+.whole_container {
+  margin-top: 8rem;
 }
-
 
 .fontFam_poppins {
   font-family: "Poppins";
@@ -134,11 +133,11 @@
   width:600px;
 } */
 
-.sq_ft{
+/* .sq_ft{
   font-size: 15px;
-}
+} */
 
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   .stepper_border_radius {
     padding: 0px;
     padding-left: 10px;
@@ -194,4 +193,4 @@
   .super_area_container {
     margin-bottom: 20px;
   }
-}
+} */

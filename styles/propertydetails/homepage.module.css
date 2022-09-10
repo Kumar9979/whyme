@@ -1,16 +1,16 @@
 .body_background {
- background-color: #F6F5F5;
+  background-color: #f6f5f5;
   opacity: 1;
   padding-top: 5rem;
 }
 .related_properties {
-  color: #323D5A;
+  color: #323d5a;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 24px;
 }
 .seeall_button {
-  color: #50BF97;
+  color: #50bf97;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -18,7 +18,7 @@
   background-color: transparent;
 }
 .scrollmenu {
-  width:100%;
+  width: 100%;
 }
 .scrollmenu > .row {
   overflow-x: auto;
@@ -35,4 +35,9 @@
   scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
+}
+.other_properties_background {
+  background-color: #f6f5f5;
+  opacity: 1;
+
 }

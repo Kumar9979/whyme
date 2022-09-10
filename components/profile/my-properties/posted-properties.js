@@ -2,12 +2,10 @@ import { React, useRef, useState, useEffect } from "react";
 import styles from "../../../styles/profile/sidebar-pages/my-properties.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import ProfileRelatedProperties from "../profile-related-properties";
-import PropertiesCard from "./verified_card";
-import VerifiedProperties from "./verified_card";
-import UnderReviewProperties from "./under_review_properties_card";
-import RejectedProperties from "./rejected-properties";
-// import PlotProperties from "./plot-similar-properties";
+import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-related-properties";
+import VerifiedProperties from "../../cards/profile-pages-cards/verified_card";
+import UnderReviewProperties from "../../cards/profile-pages-cards/under_review_properties_card";
+import RejectedProperties from "../../cards/profile-pages-cards/rejected-properties";
 
 const SentProperties = () => {
   let n = 10;
@@ -17,13 +15,13 @@ const SentProperties = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -72,15 +70,15 @@ const SentProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <VerifiedProperties />
+                  <VerifiedProperties housetype="2BHK flat in Vijayanagar, Mysuru" />
                 </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <UnderReviewProperties  />
+                  <UnderReviewProperties housetype="2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <RejectedProperties  />
+                  <RejectedProperties housetype="2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
               </div>
             </div>
