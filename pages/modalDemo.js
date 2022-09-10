@@ -66,10 +66,7 @@ import WarehouseAreaRent from "../components/modals/commercial-property/warehous
 import WarehouseDescription from "../components/modals/commercial-property/warehouse-property/warehouseDescription";
 import IndusrialShedUploadPhoto from "../components/modals/commercial-property/industrial-shed/industrialShedUploadPhoto";
 import IndustrialShedDeletePhoto from "../components/modals/commercial-property/industrial-shed/industrialShedDeletePhoto";
-import WarehouseUploadPhoto from "../components/modals/warehouse-property/warehouseUploadPhoto";
-import WarehouseDeletePhoto from "../components/modals/warehouse-property/warehouseDeletePhoto";
-import WarehouseUpdateMap from "../components/modals/warehouse-property/warehouseUpdateMap";
-import WarehouseEditProperty from "../components/modals/warehouse-property/warehouseEditProperty";
+
 import IndustryBuildingUploadPhoto from "../components/modals/commercial-property/industrial-building/industrybuildingUploadPhoto";
 import IndustryBuildingDeletePhoto from "../components/modals/commercial-property/industrial-building/industrybuildingDeletePhoto";
 import IndustryBuildingUpdateMap from "../components/modals/commercial-property/industrial-building/industrybuildingUpdateMap";
@@ -80,6 +77,12 @@ import IndustryBuildingDescription from "../components/modals/commercial-propert
 import CommercialPlotUploadPhoto from "../components/modals/commercial-property/commercial-plot/commercialplotUploadPhoto";
 import CommercialPlotDeletePhoto from "../components/modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
 import CommercialPlotUpdateMap from "../components/modals/commercial-property/commercial-plot/commercialplotUpdateMap";
+import IndustrialShedUpdateMap from "../components/modals/commercial-property/industrial-shed/industrialShedUpdateMap";
+import IndustrialShedEditProperty from "../components/modals/commercial-property/industrial-shed/industrialShedEditProperty";
+import IndustrialShedEditAmenities from "../components/modals/commercial-property/industrial-shed/industrialShedEditAmenities";
+import IndustrialShedAreaPrice from "../components/modals/commercial-property/industrial-shed/industrialShedAreaPrice";
+import IndustrialShedPriceRent from "../components/modals/commercial-property/industrial-shed/industrialShedAreapriceRent";
+import IndustrialShedDescription from "../components/modals/commercial-property/industrial-shed/industrialShedDescription";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -165,7 +168,7 @@ const Hello = () => {
 {/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
 {/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
 {/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
-{/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
+<CommercialShowroomEditProperty handleClose={handleClose} show={show}/>
 
 {/* industrial building */}
 
@@ -186,14 +189,13 @@ const Hello = () => {
 {/* Indusrial Shed  */}
 {/* <IndusrialShedUploadPhoto handleClose={handleClose} show={show} /> */}
 {/* <IndustrialShedDeletePhoto handleClose={handleClose} show={show}/> */}
-      {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
-      {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
-      {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
-      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
-      {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
-      {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
-      {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
-      {/* <VillaDescription handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedEditProperty handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedEditAmenities handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedPriceRent handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedDescription handleClose={handleClose} show={show}/> */}
+
 
       {/* officespace */}
 
@@ -227,11 +229,7 @@ const Hello = () => {
       {/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
       {/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
 
-      {/* warehouse  */}
-      {/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
-      {/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
-      {/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
-      {/* <WarehouseEditProperty handleClose={handleClose} show={show} /> */}
+   
 
       {/* industrial building */}
 

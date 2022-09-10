@@ -272,8 +272,8 @@ const CommercialShowroomEditProperty = ({ show, handleClose }) => {
                 </div>
               </div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-5 gap-2">
-                  <div className="col-4 col-lg-3">
+                <div className="row gx-0 gap-lg-5 gap-2">
+                  <div className="col-12 col-lg-3">
                     <div className="">
                       <div className={`${styles.total_floors_text}  `}>
                         <label
@@ -323,7 +323,7 @@ const CommercialShowroomEditProperty = ({ show, handleClose }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-4 col-lg-3">
+                  <div className="col-5 col-lg-3">
                     <div className="">
                       <label
                         htmlFor="PersonalWashroom"
@@ -371,8 +371,7 @@ const CommercialShowroomEditProperty = ({ show, handleClose }) => {
                       </div>
                     </div>
                   </div>
-
-                  <div className="col-4 col-lg-3">
+                  <div className="col-5 col-lg-3">
                     <div className="">
                       <label
                         htmlFor="CornerShop"
@@ -424,8 +423,8 @@ const CommercialShowroomEditProperty = ({ show, handleClose }) => {
               </div>
 
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-5 gap-2">
-                  <div className="col-4 col-lg-3">
+                <div className="row gx-0 gap-lg-5 gap-2">
+                  <div className="col-6 col-lg-3">
                     <div className="">
                       <label
                         htmlFor="pantry"
@@ -474,7 +473,7 @@ const CommercialShowroomEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
 
-                  <div className="col-4 ">
+                  <div className="col-4 col-lg-3">
                     <div className="">
                       <div className={`${styles.total_floors_text} `}>
                         <label
