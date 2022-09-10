@@ -2,10 +2,14 @@ import React from "react";
 import styles from "../../../styles/postProperty/propertydetails.module.css";
 import LocationAndSearch from "../layout/locationAndSearch";
 
-const PropertyDetailComp = () => {
+const PropertyDetailComp = ({children}) => {
   return (
-    <div className={`${styles.propertydetail_main__container} col-8 bg-white`}>
-      <h1 className={`color_light_blue fs_20`}>Property Details</h1>
+    <div
+      className={`${styles.propertydetail_main__container} d-flex flex-column align-items-center   bg-white`}
+    >
+      <h1 className={`color_light_blue fs_20 text-start w-75`}>
+        Property Details
+      </h1>
       <div className={`w-75 `}>
         <h5 className={`fs_16`}>Select Your Property In Map</h5>
 
@@ -44,6 +48,8 @@ const PropertyDetailComp = () => {
           />
         </div>
       </div>
+
+      {children}
     </div>
   );
 };

@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   overflow-x: hidden;
 }
 
@@ -12,9 +12,9 @@ p {
 .fontFam_poppins {
   font-family: "Poppins", sans-serif;
 }
-.cursor_pointer{
+.cursor_pointer {
   cursor: pointer;
-  }
+}
 /* [data-reach-combobox-popover]{
   z-index: 9999 !important;
 } */
