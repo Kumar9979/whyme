@@ -1,6 +1,10 @@
 .property_features_container{
     max-width: 37rem;
 }
+
+.property_features_commercial_plot_container{
+    max-width: 35rem;
+}
 /* .floor_allowed{
     width: 90%;
 } */
