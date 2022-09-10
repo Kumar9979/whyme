@@ -398,7 +398,7 @@ const propertyFeatures = () => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label  ps-2 pe-2  pt-2 pb-2 ${styles.propertyFeature_width_50_to_75} ${styles.propetyfeature_input}`}
+                          className={`form-label  ps-2 pe-2  pt-2 pb-2 ${styles.propertyFeature_width_75_to_100} ${styles.propetyfeature_input}`}
                           id="AgeOfConstruction"
                           placeholder="Ex : 7"
                           name="AgeOfConstruction"
@@ -533,7 +533,7 @@ const propertyFeatures = () => {
                         Transaction{" "}
                       </label>
                       <div
-                        className={`mb-1`}
+                        className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
                         onClick={() => setoptionType("transaction")}
                       >
                         <Select
@@ -594,7 +594,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2 "
+                          className="form-check-input rounded-0 mt-2 "
                           type="checkbox"
                           id="Private Parking Space"
                           name="Private Parking Space"
@@ -615,7 +615,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Guest Parking Spaces"
                           name="Guest Parking Spaces"
@@ -634,7 +634,7 @@ const propertyFeatures = () => {
 
                       <div className={`form-check  ${styles.margin_bottom}`}>
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Gym"
                           name="Gym"
@@ -655,7 +655,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input mt-2 rounded-0"
                           type="checkbox"
                           id="Sauna Steam Room"
                           name="Sauna Steam Room"
@@ -676,7 +676,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Swimming Pool"
                           name="Swimming Pool"
@@ -695,7 +695,7 @@ const propertyFeatures = () => {
 
                       <div className={`form-check ${styles.margin_bottom}`}>
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Yoga Meditation Area"
                           name="Yoga Meditation Area"
@@ -718,7 +718,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Kids Play Area"
                           name="Kids Play Area"
@@ -739,7 +739,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Hardwood Floors"
                           name="Hardwood Floors"
@@ -760,7 +760,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4  ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Play Ground"
                           name="Play Ground"
@@ -778,7 +778,7 @@ const propertyFeatures = () => {
                       </div>
                       <div className={`form-check  ${styles.margin_bottom}`}>
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="BBQ Lounge Area"
                           name="BBQ Lounge Area"
@@ -801,7 +801,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Pet Room"
                           name="Pet Room"
@@ -820,7 +820,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Rooftop Lounge Areas"
                           name="Rooftop Lounge Areas"
@@ -840,7 +840,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Lounge Area"
                           name="Lounge Area"
@@ -858,7 +858,7 @@ const propertyFeatures = () => {
                       </div>
                       <div className={`form-check ${styles.margin_bottom}`}>
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Garden Area"
                           name="Garden Area"
@@ -881,7 +881,7 @@ const propertyFeatures = () => {
                         className={`form-check me-4  ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           name="Electronic Vehicle Charging Points"
                           id="Electronic Vehicle Charging Points"
@@ -902,7 +902,7 @@ const propertyFeatures = () => {
                         className={`form-check me-3 ${styles.margin_bottom}`}
                       >
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Barbecue Areas"
                           name="Barbecue Areas"
@@ -921,7 +921,7 @@ const propertyFeatures = () => {
 
                       <div className={`form-check ${styles.margin_bottom}`}>
                         <input
-                          className="form-check-input mt-2"
+                          className="form-check-input rounded-0 mt-2"
                           type="checkbox"
                           id="Pet Wash Station"
                           name="Pet Wash Station"
