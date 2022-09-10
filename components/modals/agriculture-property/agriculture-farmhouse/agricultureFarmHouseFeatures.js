@@ -10,8 +10,7 @@ import useScreenSizeDetector from "../../../useScreenSizeDetector";
 import Select from "react-select";
 const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
-  const [discloseIdentity, setDiscloseIdentity] = useState("no");
-  const [status, setStatus] = useState("no");
+  const [optionType, setoptionType] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const numRegex = /^[0-9]+$/;
 
@@ -39,7 +38,7 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
       FacingWidth: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        BedRoom: Yup.string()
+      BedRoom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       BathRoom: Yup.string()
@@ -48,7 +47,7 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
       FloorsAllowed: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        FurnishedStatus: Yup.string().required("Required"),
+      FurnishedStatus: Yup.string().required("Required"),
       BoundaryWall: Yup.string(),
       RegistrationStatus: Yup.string(),
     }),
@@ -58,32 +57,10 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
     },
   });
 
-  function handleRadioButton(e) {
-    setDiscloseIdentity(e.target.value);
-    let event = {
-      target: {
-        name: "BoundaryWall",
-        value: e.target.value,
-      },
-    };
-    formik.handleChange(event);
-  }
-
-  function handleStatusButton(e) {
-    setStatus(e.target.value);
-    let event = {
-      target: {
-        name: "RegistrationStatus",
-        value: e.target.value,
-      },
-    };
-    formik.handleChange(event);
-  }
   const furnishingStatus = [
     { value: "Furnished", label: "Furnished" },
     { value: "Unfurnished", label: "Unfurnished" },
   ];
-
 
   const customStyles = {
     control: (base, state) => ({
@@ -157,7 +134,7 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
           <hr />
           <form onSubmit={formik.handleSubmit}>
             <div>
-            <div className=" text-start mt-3">
+              <div className=" text-start mt-3">
                 <div className="d-flex gx-0 gap-lg-5 gap-2">
                   <div className="col-4 col-lg-3">
                     <div className="">
@@ -170,7 +147,11 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          className={
+                            width < 992
+                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
+                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
+                          }
                           id="bedRoom"
                           placeholder="Ex : 2"
                           name="BedRoom"
@@ -197,7 +178,11 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          className={
+                            width < 992
+                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
+                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
+                          }
                           id="bathRoom"
                           placeholder="Ex : 2"
                           name="BathRoom"
@@ -224,7 +209,11 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          className={
+                            width < 992
+                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
+                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
+                          }
                           id="totalFloors"
                           placeholder="Ex : 13"
                           name="TotalFloors"
@@ -239,56 +228,6 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
                         </div>
                       )}
                     </div>
-                  </div>
-                </div>
-                <div className=" text-start mt-3">
-                <div className={width<992?`row gx-2` : `row `} >
-                   
-                    {/* <div className="col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text} `}>
-                          <label
-                            htmlFor="Status"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500 ms-2 ms-lg-0`}
-                          >
-                            Status{" "}
-                          </label>
-                          <div onClick={() => setoptionType("status")}>
-                            <Select
-                              id="Status"
-                              options={status}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="Status"
-                              value={status.filter((option) => {
-                                return option.value === formik.values.Status;
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "Status",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
-                          </div>
-                          {formik.errors.Status && formik.touched.Status && (
-                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                              <i className="ri-error-warning-line me-1 "></i>
-                              <span> {formik.errors.Status}</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div> */}
-                  
                   </div>
                 </div>
               </div>
@@ -353,61 +292,58 @@ const AgricultureFarmHouseFeatures = ({ show, handleClose }) => {
               </div>
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0 gap-lg-4 ">
-                <div className="col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text}  `}>
-                          <label
-                            htmlFor="FurnishedStatus"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
-                          >
-                            Furnishing status{" "}
-                          </label>
-                          <div
-                            onMouseEnter={() => setMenuOpen(true)}
-                            onClick={() => setoptionType("furnishingStatus")}
-                          >
-                            <Select
-                              // menuIsOpen={menuOpen}
-                              id="FurnishedStatus"
-                              options={furnishingStatus}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="FurnishedStatus"
-                              value={furnishingStatus.filter((option) => {
-                                return (
-                                  option.value === formik.values.FurnishedStatus
-                                );
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "FurnishedStatus",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
-                          </div>
-                          {formik.errors.FurnishedStatus &&
-                            formik.touched.FurnishedStatus && (
-                              <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                                <i className="ri-error-warning-line me-1  "></i>
-                                <span> {formik.errors.FurnishedStatus}</span>
-                              </div>
-                            )}
+                  <div className="col-4">
+                    <div className="">
+                      <div className={`${styles.total_floors_text}  `}>
+                        <label
+                          htmlFor="FurnishedStatus"
+                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
+                        >
+                          Furnishing status{" "}
+                        </label>
+                        <div
+                          onMouseEnter={() => setMenuOpen(true)}
+                          onClick={() => setoptionType("furnishingStatus")}
+                        >
+                          <Select
+                            // menuIsOpen={menuOpen}
+                            id="FurnishedStatus"
+                            options={furnishingStatus}
+                            type="text"
+                            className={` w-100  fs_15 fs_sm_12 `}
+                            placeholder="Select.."
+                            styles={customStyles}
+                            name="FurnishedStatus"
+                            value={furnishingStatus.filter((option) => {
+                              return (
+                                option.value === formik.values.FurnishedStatus
+                              );
+                            })}
+                            onChange={(selectedOption) => {
+                              let event = {
+                                target: {
+                                  name: "FurnishedStatus",
+                                  value: selectedOption.value,
+                                },
+                              };
+                              formik.handleChange(event);
+                            }}
+                            components={{
+                              IndicatorSeparator: () => null,
+                            }}
+                          />
                         </div>
+                        {formik.errors.FurnishedStatus &&
+                          formik.touched.FurnishedStatus && (
+                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
+                              <i className="ri-error-warning-line me-1  "></i>
+                              <span> {formik.errors.FurnishedStatus}</span>
+                            </div>
+                          )}
                       </div>
                     </div>
-
-                 
+                  </div>
                 </div>
-               
               </div>
             </div>
             <div className={`d-flex justify-content-end`}>

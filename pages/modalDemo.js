@@ -249,7 +249,7 @@ const Hello = () => {
       {/* <AgricultureFarmHouseUploadPhoto handleClose={handleClose} show={show} />  */}
       {/* <AgricultureFarmHouseDeletePhoto  handleClose={handleClose} show={show} /> */}
       {/* <AgricultureFarmHouseUpdateMap handleClose={handleClose} show={show} /> */}
-      <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} />
+      {/* <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} /> */}
 
 
 
