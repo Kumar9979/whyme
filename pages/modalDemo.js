@@ -43,6 +43,10 @@ import ResidentialLandEditProperty from "../components/modals/residential-land-p
 import ResidentialLandEditAmenities from "../components/modals/residential-land-property/residentialLandEditAmenities";
 import ResidentialLandAreaPrice from "../components/modals/residential-land-property/residentialLandAreaPrice";
 import ResidentialLandDescription from "../components/modals/residential-land-property/residentialLandDescription";
+import CommercialShowroomUploadPhoto from "../components/modals/commercial-property/commercial-showroom/commercialShowroomUploadLoadPhoto";
+import CommercialShowroomDeletePhoto from "../components/modals/commercial-property/commercial-showroom/commercialShowroomDeletePhoto";
+import CommercialShowroomEditAmenities from "../components/modals/commercial-property/commercial-showroom/commercialShowroomEditAmenities";
+import CommercialShowroomAreaPrice from "../components/modals/commercial-property/commercial-showroom/commercialShowroomAreaPrice";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -79,7 +83,7 @@ const Hello = () => {
 {/* <ResidentialLandUploadPhoto handleClose={handleClose} show={show}/> */}
 {/* <ResidentialLandDeletePhoto handleClose={handleClose} show={show}/> */}
 {/* <ResidentialLandUpdateMap handleClose={handleClose} show={show}/> */}
-<ResidentialLandEditProperty handleClose={handleClose} show={show}/>
+{/* <ResidentialLandEditProperty handleClose={handleClose} show={show}/> */}
 {/* <ResidentialLandEditAmenities handleClose={handleClose} show={show} /> */}
 {/* <ResidentialLandAreaPrice handleClose={handleClose} show={show} /> */}
 {/* <ResidentialLandDescription handleClose={handleClose} show={show} />  */}
@@ -87,6 +91,13 @@ const Hello = () => {
       {/* villa */}
  {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
  {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
+ {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
+ {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
+ {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
+ {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
+ {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
+ {/* <VillaDescription handleClose={handleClose} show={show} /> */}
+
 
 {/* officespace */}
 
@@ -107,13 +118,15 @@ const Hello = () => {
 {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
 
 
- {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
- {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
- {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
- {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
- {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
- {/* <VillaDescription handleClose={handleClose} show={show} /> */}
 
+
+
+{/* commercial Showroom */}
+{/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
     </>
   );
 };

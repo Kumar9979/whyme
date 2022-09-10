@@ -77,9 +77,10 @@ const VillaEditProperty = ({ show, handleClose }) => {
       TotalFloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      FloorNumber: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
+      FloorNumber: Yup.number()
+      .typeError("invalid value")
+      .max(Yup.ref("TotalFloors"), "Must be less then TotalFloors")
+      .required("Required"),
       CarParkingCount: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
