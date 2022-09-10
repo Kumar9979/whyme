@@ -82,6 +82,15 @@ import IndustrialShedDescription from "../components/modals/commercial-property/
 import CommercialPlotFeatures from "../components/modals/commercial-property/commercial-plot/commercialplotFeatures";
 import CommercialPlotAreaPrice from "../components/modals/commercial-property/commercial-plot/commercialPlotAreaPrice";
 import CommercialPlotRent from "../components/modals/commercial-property/commercial-plot/commercialPlotRent";
+import CommercialPlotAmenities from "../components/modals/commercial-property/commercial-plot/commercialplotAmenities";
+import CommercialPlotDescription from "../components/modals/commercial-property/commercial-plot/commercialplotDescription";
+import AgricultureFarmHouseUploadPhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUploadPhoto";
+import AgricultureFarmHouseDeletePhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agriculturefarmHouseDeletePhoto";
+import AgricultureFarmHouseUpdateMap from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUpdateMap";
+import AgricultureFarmHouseFeatures from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseFeatures";
+import IndustryPlotUploadPhoto from "../components/modals/commercial-property/industrial-plot/industryPlotUploadPhoto";
+import IndustryPlotUpdateMap from "../components/modals/commercial-property/industrial-plot/industryPlotUpdateMap";
+import IndustryPlotFeatures from "../components/modals/commercial-property/industrial-plot/industryPlotEditFeatures";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -267,10 +276,16 @@ const Hello = () => {
       {/* <IndustryBuildingUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingUpdateMap handleClose={handleClose} show={show} /> */}
-      {/* <IndustryBuildingFeatures handleClose={handleClose} show={show} />  */}
+      <IndustryBuildingFeatures handleClose={handleClose} show={show} /> 
       {/* <IndustryBuildingAmenities handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingAreaPrice handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingDescription handleClose={handleClose} show={show} /> */}
+
+     {/* Industrial Plot  */}
+     {/* <IndustryPlotUploadPhoto handleClose={handleClose} show={show} />  */}
+     {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
 
       {/* commercial plot */}
 
@@ -279,8 +294,21 @@ const Hello = () => {
       {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotFeatures handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotAreaPrice handleClose={handleClose} show={show} /> */}
-      <CommercialPlotRent handleClose={handleClose} show={show} />
+      {/* <CommercialPlotRent handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
 
+      {/* AgricultureFarmHouseUploadPhoto */}
+
+      {/* <AgricultureFarmHouseUploadPhoto handleClose={handleClose} show={show} />  */}
+      {/* <AgricultureFarmHouseDeletePhoto  handleClose={handleClose} show={show} /> */}
+      {/* <AgricultureFarmHouseUpdateMap handleClose={handleClose} show={show} /> */}
+      {/* <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} /> */}
+
+
+
+
+      {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
     </>
   );
 };
