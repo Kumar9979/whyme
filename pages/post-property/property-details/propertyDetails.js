@@ -15,8 +15,6 @@ import Geocode from "react-geocode";
 const libraries = ["places"];
 
 const PropertyDetails = () => {
-
-
   const { latitude: lat, longitude: lng, error } = usePosition();
   useEffect(() => {
     setSelected({ lat, lng });
@@ -147,7 +145,6 @@ const PropertyDetails = () => {
                             setMap(map);
                             formik.setFieldValue("Map", selected);
                           }}
-                          
                         >
                           {markerStat && (
                             <Marker

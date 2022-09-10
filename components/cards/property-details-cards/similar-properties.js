@@ -237,6 +237,30 @@ const SimilarProperties = ({ data }) => {
             >
               By Amal Sabu
             </span>
+<<<<<<< HEAD:components/property-details/similar-properties/index.js
+            <div
+              style={{ minWidth: "100px" }}
+              className="d-flex justify-content-end mt-2 "
+            >
+              <button
+                className={`justify-content-between  ${styles.contact_button} d-flex align-items-center `}
+              >
+                <div className={`pe-2  py-1 pe-1`}>
+                  <Image
+                    className={`${styles.owner_image}`}
+                    src={people}
+                    alt="Picture of the author"
+                    width={30}
+                    height={30}
+                  />
+                </div>
+                <span className={` fs_14 d-flex align-items-center`}>
+                  Contact
+                </span>
+              </button>
+            </div>
+=======
+>>>>>>> 5efba5997961439f764ba11ef11d8c10943fce25:components/cards/property-details-cards/similar-properties.js
           </div>
         </div>
 
