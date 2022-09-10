@@ -52,6 +52,7 @@ import CommercialShopAmenities from "../components/modals/commercial-property/co
 import CommercialShopAreaPrice from "../components/modals/commercial-property/commercial-shop/commercialshopAreaPrice";
 import CommercialShopRent from "../components/modals/commercial-property/commercial-shop/commercialshopRent";
 import CommercialShopDescription from "../components/modals/commercial-property/commercial-shop/commercialshopDescription";
+import IndustryBuildingRent from "../components/modals/commercial-property/industrial-building/industrybuildingRent";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -121,7 +122,7 @@ const Hello = () => {
 {/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
-<CommercialShopFeatures handleClose={handleClose} show={show}/>
+{/* <CommercialShopFeatures handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopAmenities handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopAreaPrice handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopRent handleClose={handleClose} show={show}/> */}
@@ -136,6 +137,11 @@ const Hello = () => {
 {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
 {/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
 {/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
+
+
+{/* industrial building */}
+
+<IndustryBuildingRent handleClose={handleClose} show={show} /> 
     </>
   );
 };
