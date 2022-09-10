@@ -69,6 +69,7 @@ import IndustryBuildingAreaPrice from "../components/modals/commercial-property/
 import IndustryBuildingDescription from "../components/modals/commercial-property/industrial-building/industrybuildingDescription";
 import CommercialPlotUploadPhoto from "../components/modals/commercial-property/commercial-plot/commercialplotUploadPhoto";
 import CommercialPlotDeletePhoto from "../components/modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
+import CommercialPlotUpdateMap from "../components/modals/commercial-property/commercial-plot/commercialplotUpdateMap";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -171,7 +172,8 @@ const Hello = () => {
       {/* commercial plot */}
 
       {/* <CommercialPlotUploadPhoto handleClose={handleClose} show={show} /> */}
-      <CommercialPlotDeletePhoto handleClose={handleClose} show={show} />
+      {/* <CommercialPlotDeletePhoto handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
     </>
   );
 };
