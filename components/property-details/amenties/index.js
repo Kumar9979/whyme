@@ -61,3 +61,30 @@ const amenties = [
   }
   
 ]
+
+
+const plotAmenties = [
+  {
+   list: "Basic Amenities"    
+  },
+  
+  {
+   list: "Underground Drainage System"    
+  },
+  
+  {
+   list: "Highway Access"    
+  },
+  
+  {
+   list: "Main Road Access"    
+  },
+  
+  {
+   list: "Electricity Line"    
+  },
+  
+  {
+   list: "Pet Room"    
+  },  
+]

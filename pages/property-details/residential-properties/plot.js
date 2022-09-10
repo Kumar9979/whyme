@@ -48,9 +48,9 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid  properTytype="3BHK Apartment in Vijayanagar, Mysuru" data={1}/>
+            <ImageGrid propertyType="3BHK House in Vijayanagar, Mysuru" />
             <Aboutproperty />
-            <Amenties />
+            <Amenties data={1} />
             <ContactOwner />
             <PropertyLocation />
             <AgentProperties />
@@ -58,7 +58,7 @@ const Home = () => {
           <div className="col-lg-3 col-11">
             <div className="row">
               <div className="col-12 col-lg-12 col-md-6">
-                <RequestCall  />
+                <RequestCall />
               </div>
               <div className="col-12 col-lg-12 col-md-6">
                 <ContactUs />
@@ -70,9 +70,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className={`${styles.other_properties_background} row d-flex justify-content-center `}>
+      <div
+        className={`${styles.other_properties_background} row d-flex justify-content-center `}
+      >
         <div className="col-lg-7">
-          <OtherProperties/>
+          <OtherProperties />
         </div>
 
         <div className="col-lg-3"> </div>

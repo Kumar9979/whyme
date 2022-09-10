@@ -48,7 +48,7 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid  properTytype="3BHK Apartment in Vijayanagar, Mysuru" data={1}/>
+            <ImageGrid  propertyType="3BHK Villa in Vijayanagar, Mysuru" />
             <Aboutproperty />
             <Amenties />
             <ContactOwner />

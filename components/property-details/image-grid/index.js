@@ -20,7 +20,8 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import ShareIcon from "../../../assets/images/about-property-images/share";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
-const ImageGrid = () => {
+import { date } from "yup";
+const ImageGrid = ({ propertyType }) => {
   const [show, setShow] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -55,7 +56,6 @@ const ImageGrid = () => {
     };
   }, []);
   const [isVisible, setIsVisible] = useState(false);
-
   const handleShow = () => setIsVisible(true);
   const handleClose = () => setIsVisible(false);
   const number = 10;
@@ -69,13 +69,16 @@ const ImageGrid = () => {
             <p
               className={`${styles.property_area} lh-sm m-0 p-0 fs_22  fs_sm_15 fw_600 fontFam_poppins me-lg-2 me-0 `}
             >
-              3BHK Apartment in Vijayanagar, Mysuru
+              {propertyType}
             </p>
-            <div
-              className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
-            >
-              Project by Brigade
-            </div>
+            {date == 1 ? (
+              <div
+                className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
+              >
+                Project by Brigade
+              </div>
+            ) : null}
+
             <div
               className={`${styles.ready_apartment} px-1 fs_12 fw_500 fontFam_poppins d-none d-lg-block`}
             >
@@ -237,7 +240,9 @@ const ImageGrid = () => {
           <button
             className={`${styles.shareIcon}  d-flex align-items-center ms-2 ms-lg-4 justify-content-center`}
           >
-            <div className={`${styles.saveIcon} d-flex align-items-center justify-content-center`}>
+            <div
+              className={`${styles.saveIcon} d-flex align-items-center justify-content-center`}
+            >
               <ShareIcon fill="#1D72DB" width={20} height={20} />
             </div>
           </button>
@@ -307,13 +312,17 @@ const ImageGrid = () => {
       </Modal>
       {show ? (
         <div className={`${styles.share_report_card} p-3  position-absolute`}>
-          <button className={`${styles.share_button} d-flex align-items-center justify-content-center mb-2`}>
+          <button
+            className={`${styles.share_button} d-flex align-items-center justify-content-center mb-2`}
+          >
             <ShareIcon fill="#323D5A" width={15} height={15} />
             <span className="fontFam_poppins text-nowrap fs_17  color_cloudBurst fw_600 ps-3">
               Share Property
             </span>
           </button>
-          <button className={`${styles.share_button} d-flex align-items-center justify-content-center `}>
+          <button
+            className={`${styles.share_button} d-flex align-items-center justify-content-center `}
+          >
             <Image
               src={caution}
               alt="Picture of the author"
