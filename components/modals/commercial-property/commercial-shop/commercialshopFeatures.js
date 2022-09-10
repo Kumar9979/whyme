@@ -272,7 +272,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                 </div>
               </div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-5 gap-2">
+                <div className="d-flex gx-0 gap-lg-5 gap-2 ">
                   <div className="col-4 col-lg-3">
                     <div className="">
                       <div className={`${styles.total_floors_text}  `}>
@@ -327,7 +327,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                     <div className="">
                       <label
                         htmlFor="pantry"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 margin_top`}
                       >
                         Pantry/Cafeteria
                       </label>
@@ -375,7 +375,7 @@ const CommercialShopFeatures = ({ show, handleClose }) => {
                     <div className="">
                       <label
                         htmlFor="PersonalWashroom"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_11 fw_500`}
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_11 fw_500 margin_top`}
                       >
                         Personal Washroom
                       </label>
