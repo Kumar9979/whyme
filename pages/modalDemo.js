@@ -276,7 +276,7 @@ const Hello = () => {
       {/* <IndustryBuildingUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingUpdateMap handleClose={handleClose} show={show} /> */}
-      <IndustryBuildingFeatures handleClose={handleClose} show={show} /> 
+      {/* <IndustryBuildingFeatures handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingAmenities handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingAreaPrice handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingDescription handleClose={handleClose} show={show} /> */}
@@ -285,7 +285,7 @@ const Hello = () => {
      {/* <IndustryPlotUploadPhoto handleClose={handleClose} show={show} />  */}
      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
-     {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
+     <IndustryPlotFeatures handleClose={handleClose} show={show} />
 
       {/* commercial plot */}
 
