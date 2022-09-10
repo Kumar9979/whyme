@@ -91,6 +91,14 @@ import AgricultureFarmHouseFeatures from "../components/modals/agriculture-prope
 import IndustryPlotUploadPhoto from "../components/modals/commercial-property/industrial-plot/industryPlotUploadPhoto";
 import IndustryPlotUpdateMap from "../components/modals/commercial-property/industrial-plot/industryPlotUpdateMap";
 import IndustryPlotFeatures from "../components/modals/commercial-property/industrial-plot/industryPlotEditFeatures";
+import AgricultureFarmHouseAreaPrice from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseAreaPrice";
+import AgricultureFarmHouseRent from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseRent";
+import AgricultureFarmHouseDescription from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseDescription";
+import AgricultureLandFeatures from "../components/modals/agriculture-property/agriculture-land/agricultureLandFeatures";
+import AgricultureLandUploadPhoto from "../components/modals/agriculture-property/agriculture-land/agricultureLandUploadPhoto";
+import AgricultureLandDeletePhoto from "../components/modals/agriculture-property/agriculture-land/agricultureLandDeletePhoto";
+import AgricultureLandUpdateMap from "../components/modals/agriculture-property/agriculture-land/agricultureLandUpdateMap";
+import AgricultureLandDescription from "../components/modals/agriculture-property/agriculture-land/agricultureLandDescription";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -276,7 +284,7 @@ const Hello = () => {
       {/* <IndustryBuildingUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingUpdateMap handleClose={handleClose} show={show} /> */}
-      <IndustryBuildingFeatures handleClose={handleClose} show={show} /> 
+      {/* <IndustryBuildingFeatures handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingAmenities handleClose={handleClose} show={show} /> */}
       {/* <IndustryBuildingAreaPrice handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingDescription handleClose={handleClose} show={show} /> */}
@@ -298,15 +306,22 @@ const Hello = () => {
       {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
 
-      {/* AgricultureFarmHouseUploadPhoto */}
+      {/* AgricultureFarmHouse */}
 
       {/* <AgricultureFarmHouseUploadPhoto handleClose={handleClose} show={show} />  */}
       {/* <AgricultureFarmHouseDeletePhoto  handleClose={handleClose} show={show} /> */}
       {/* <AgricultureFarmHouseUpdateMap handleClose={handleClose} show={show} /> */}
       {/* <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseAreaPrice  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseRent  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseDescription handleClose={handleClose} show={show} /> */}
 
-
-
+{/* AgricultureLand */}
+{/* <AgricultureLandFeatures handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandDeletePhoto handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandUpdateMap handleClose={handleClose} show={show} /> */}
+<AgricultureLandDescription handleClose={handleClose} show={show} />
 
       {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
     </>
