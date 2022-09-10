@@ -1,86 +1,82 @@
+.upload_heading_text {
+  color: #323d5a;
+  font-family: Poppins;
+}
+.propetyfeature_input {
+  border: none;
+  background-color: #dbe9f24d;
+  color: black;
+  font-family: "Poppins", light;
+  border-radius: 5px !important;
+}
+.propetyfeature_input_sqft {
+  background-color: #dbe9f24d;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.propetyfeature_input_placeholder {
+  background-color: #dbe9f24d;
+  border: none;
+  font-weight: 500;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.propetyfeature_input_placeholder::placeholder {
+  font-family: "Poppins", light;
+  font-size: 10px;
+  color: #bcc7ce;
+}
 
-  .upload_heading_text{
-    color: #323D5A;
-    font-family: Poppins;
-  }
-  .propetyfeature_input {
-      border: none;
-      background-color: #DBE9F24D;
-      color: black;
-    
-      font-family: "Poppins", light;
-      border-radius: 5px !important;
-    }
-    .propetyfeature_input_sqft{
-      background-color: #DBE9F24D;
-      border: none;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-    .propetyfeature_input_placeholder{
-      background-color: #DBE9F24D;
-      border: none;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
-    .propetyfeature_input_placeholder::placeholder {
-      font-family: "Poppins", light;
-      font-size: 10px;
-      color: #bcc7ce;
-      
-    }
-    
-    .propetyfeature_input_placeholder:focus-visible {
-      outline: none;
-    }
-    .input_bar {
-      align-self: stretch;
-      background-color: rgb(204, 204, 204);
-      margin-bottom: 8px;
-      margin-top: 8px;
-      width: 1px;
-      box-sizing: border-box;
-     
-    }
-    .built_text{
-      font-family: Poppins;
-    }
-    .sqft_text{
-      font-family: Poppins;
-      color: #323D5A;
-    }
-    .rupee_text{
-      background-color: #DBE9F24D;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      font-family: Roboto;
-      color: #323D5A;
-    }
-  
-    .propetyfeature2_input_placeholder{
-      background-color: #DBE9F24D;
-      border: none;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-    .propetyfeature2_input_placeholder::placeholder {
-      font-family: "Poppins", light;
-      font-size: 10px;
-  
-      color: #bcc7ce;
-    }
-    .propetyfeature2_input_placeholder:focus-visible {
-      outline: none;
-    }
-    .save_btn{
-      background-color: #1D72DB;
-      border-radius: 5px;
-      border: none;
-      color: #FFFF;
-      font-family: Poppins;
-    } 
-    .card_radius{
-      border-radius: 10px;
-  }
-  
- 
+.propetyfeature_input_placeholder:focus-visible {
+  outline: none;
+}
+.input_bar {
+  align-self: stretch;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
+}
+.built_text {
+  font-family: Poppins;
+}
+.sqft_text {
+  font-family: Poppins;
+  color: #323d5a;
+}
+.rupee_text {
+  background-color: #dbe9f24d;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-family: Roboto;
+  color: #323d5a;
+}
+
+.propetyfeature2_input_placeholder {
+  background-color: #dbe9f24d;
+  border: none;
+  font-weight: 500;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.propetyfeature2_input_placeholder::placeholder {
+  font-family: "Poppins", light;
+  font-size: 10px;
+
+  color: #bcc7ce;
+}
+.propetyfeature2_input_placeholder:focus-visible {
+  outline: none;
+}
+.save_btn {
+  background-color: #1d72db;
+  border-radius: 5px;
+  border: none;
+  color: #ffff;
+  font-family: Poppins;
+}
+.card_radius {
+  border-radius: 10px;
+}

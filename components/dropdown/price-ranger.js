@@ -19,7 +19,7 @@ const PriceRanger = () => {
   return (
     <MultiRangeSlider
       min={0}
-      max={1000}
+      max={100}
       onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
     />
    

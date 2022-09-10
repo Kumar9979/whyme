@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/dropdown/dropdownBedroom.module.css";
+import styles from "../../styles/dropdown/dropdownPriceRange.module.css";
 import { motion } from "framer-motion";
 import { Space } from "antd";
 import CloseIcon from "../../assets/icons/close-new-icon.svg";

@@ -1,5 +1,5 @@
 .container {
-  height: 10vh;
+  height: 12vh;
   display: flex;
   align-items:flex-end;
   /* justify-content: center; */
@@ -7,7 +7,7 @@
 
 .slider {
   position: relative;
-  width: 200px;
+  width: 230px;
 }
 
 .slider_track,
@@ -30,23 +30,24 @@
 }
 
 .slider_range {
-  background-color: #9fe5e1;
-  z-index: 2;
+  background-color: #50BF97;
+ 
 }
 
 .slider_left_value,
 .slider_right_value {
   color: #dee2e6;
   font-size: 12px;
-  margin-top: -50px;
+  margin-top: -55px;
   color: black;
   border: 1px solid #323D5A;
   border-radius: 5px;
+
 }
 
-.slider_left_value {
+/* .slider_left_value {
   left: 6px;
-}
+} */
 
 .slider_right_value {
   right: -4px;
@@ -63,42 +64,86 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 200px;
+  width: 230px;
   outline: none;
 }
 
-.thum_left {
+.left_ranger {
   z-index: 999;
 }
 
-.thum_right {
+.right_ranger {
   z-index: 999;
 }
 
 /* For Chrome browsers */
-.thumb::-webkit-slider-thumb {
-  background-color: #f1f5f7;
+.left_ranger::-webkit-slider-thumb {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  background: url("../../assets/icons/ranger-left-icon.svg") center center no-repeat;
+ -webkit-appearance: none;
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 1px 1px #ced4da;
   cursor: pointer;
-  height: 18px;
-  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+.right_ranger::-webkit-slider-thumb {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  background: url("../../assets/icons/ranger-right-icon.svg") center center no-repeat;
+ -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+  
+}
+
+
+/* For Firefox browsers */
+
+.left_ranger::-moz-range-thumb {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  background: url("../../assets/icons/ranger-left-icon.svg") center center no-repeat;
+ -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+.right_ranger::-moz-range-thumb {
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  background: url("../../assets/icons/ranger-right-icon.svg") center center no-repeat;
+ -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
   margin-top: 4px;
   pointer-events: all;
   position: relative;
 }
 
-/* For Firefox browsers */
-.thumb::-moz-range-thumb {
-  background-color: #f1f5f7;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 0 1px 1px #ced4da;
-  cursor: pointer;
-  height: 18px;
-  width: 18px;
-  margin-top: 4px;
-  pointer-events: all;
-  position: relative;
+.min_box{
+  border-radius: 5px;
+  border: 2px solid #323D5A;
+}
+
+.lac_text{
+  color: #50BF97;
 }

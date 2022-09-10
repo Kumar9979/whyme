@@ -1,17 +1,4 @@
-/* .propetyfeature_input{
-    background-color: #DBE9F24D;
-    border: none;
-} */
 
-/* .login_form_error_container {
-   height: 2rem;
-  }
-  .login_form_error_icon_container {
- width: 22px;
-  height: 16px;
- position: relative;
- margin-right: 1px;
-  } */
   
 .upload_heading_text{
   color: #323D5A;
@@ -36,6 +23,7 @@
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    font-weight: 500;
   }
   .propetyfeature_input_placeholder::placeholder {
     font-family: "Poppins", light;
@@ -76,6 +64,7 @@
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    font-weight: 500;
   }
   .propetyfeature2_input_placeholder::placeholder {
     font-family: "Poppins", light;
