@@ -21,7 +21,7 @@ import save from "../../../assets/icons/save.svg";
 import ShareIcon from "../../../assets/images/about-property-images/share";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 const ImageGrid = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
   const [like, setLike] = useState(false);
@@ -67,7 +67,7 @@ const ImageGrid = () => {
         <div className="col-11">
           <div className="d-flex align-items-center">
             <p
-              className={`${styles.property_area} lh-sm m-0 p-0 fs_22 fw_600 fontFam_poppins me-lg-2 me-0 `}
+              className={`${styles.property_area} lh-sm m-0 p-0 fs_22  fs_sm_15 fw_600 fontFam_poppins me-lg-2 me-0 `}
             >
               3BHK Apartment in Vijayanagar, Mysuru
             </p>
@@ -95,8 +95,7 @@ const ImageGrid = () => {
         </div>
 
         <button
-         onClick={() => setShow(!show)}
-        
+          onClick={() => setShow(!show)}
           className={`${styles.property_share_report} pe-3 d-flex justify-content-end  align-items-top  col-1`}
         >
           <Image
@@ -204,7 +203,7 @@ const ImageGrid = () => {
 
       <div className="d-flex justify-content-between ps-2">
         <div
-          className={` d-flex align-items-center fw_700 fs_28 fontFam_poppins ${styles.property_price} `}
+          className={` d-flex align-items-center fw_700 fs_28 fs_sm_20 text-nowrap fontFam_poppins ${styles.property_price} `}
         >
           ₹ 70Lac
           <span
@@ -236,10 +235,10 @@ const ImageGrid = () => {
             </button>
           </div>
           <button
-            className={`${styles.shareIcon}  d-flex align-items-center ms-4 justify-content-center`}
+            className={`${styles.shareIcon}  d-flex align-items-center ms-2 ms-lg-4 justify-content-center`}
           >
-            <div className={`${styles.saveIcon}`}>
-              <ShareIcon fill="#1D72DB" width={20} height={25} />
+            <div className={`${styles.saveIcon} d-flex align-items-center justify-content-center`}>
+              <ShareIcon fill="#1D72DB" width={20} height={20} />
             </div>
           </button>
           {/* )} */}
@@ -255,7 +254,7 @@ const ImageGrid = () => {
             </div>
           ) : (
             <button
-              className={`${styles.property_owner_contact} fs_14 fw_400 fontFam_poppins px-5 py-2 ms-4`}
+              className={`${styles.property_owner_contact} fs_14 fw_400 fontFam_poppins px-5 py-2 ms-0 ms-lg-4`}
             >
               Contact
             </button>
@@ -306,28 +305,27 @@ const ImageGrid = () => {
           </Carousel>
         </Modal.Body>
       </Modal>
-      {
-        show ? (<div className={`${styles.share_report_card} p-3  position-absolute`}>
-        <div className="d-flex align-items-center justify-content-center mb-2">
-          <ShareIcon fill="#323D5A" width={15} height={15}/>
-          <span className="fontFam_poppins text-nowrap fs_17  color_cloudBurst fw_600 ps-3">
-            Share Property
-          </span>
+      {show ? (
+        <div className={`${styles.share_report_card} p-3  position-absolute`}>
+          <button className={`${styles.share_button} d-flex align-items-center justify-content-center mb-2`}>
+            <ShareIcon fill="#323D5A" width={15} height={15} />
+            <span className="fontFam_poppins text-nowrap fs_17  color_cloudBurst fw_600 ps-3">
+              Share Property
+            </span>
+          </button>
+          <button className={`${styles.share_button} d-flex align-items-center justify-content-center `}>
+            <Image
+              src={caution}
+              alt="Picture of the author"
+              width={15}
+              height={15}
+            />
+            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
+              Report an Issue
+            </span>
+          </button>
         </div>
-        <div className="d-flex align-items-center justify-content-center">
-          <Image
-            src={caution}
-            alt="Picture of the author"
-            width={15}
-            height={15}
-          />
-          <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
-            Report an Issue
-          </span>
-        </div>
-      </div>):null
-      }
-      
+      ) : null}
     </div>
   );
 };

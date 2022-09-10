@@ -73,6 +73,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+      
       <div className="row d-flex justify-content-center pt-4">
         <div className="col-lg-7">
         <div className="d-flex justify-content-between px-2 ">
