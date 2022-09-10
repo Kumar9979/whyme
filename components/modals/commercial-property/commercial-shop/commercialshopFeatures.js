@@ -10,7 +10,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
-const OfficeSpaceProperty = ({ show, handleClose }) => {
+const CommercialShopFeatures = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [discloseIdentity, setDiscloseIdentity] = useState("no");
   const [washroom, setWashroom] = useState("no");
@@ -118,7 +118,8 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   ];
 
   function handleRadioButton(e) {
- 
+
+
     setDiscloseIdentity(e.target.value);
     let event = {
       target: {
@@ -519,4 +520,4 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   );
 };
 
-export default OfficeSpaceProperty;
+export default CommercialShopFeatures;

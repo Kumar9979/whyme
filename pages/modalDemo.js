@@ -43,6 +43,7 @@ import ResidentialLandEditProperty from "../components/modals/residential-land-p
 import ResidentialLandEditAmenities from "../components/modals/residential-land-property/residentialLandEditAmenities";
 import ResidentialLandAreaPrice from "../components/modals/residential-land-property/residentialLandAreaPrice";
 import ResidentialLandDescription from "../components/modals/residential-land-property/residentialLandDescription";
+import CommercialShopFeatures from "../components/modals/commercial-property/commercial-shop/commercialshopFeatures";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -93,7 +94,7 @@ const Hello = () => {
 {/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
 {/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
 {/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
-<OfficeSpaceProperty handleClose={handleClose} show={show}/>
+{/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
 {/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
 {/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
 {/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}
@@ -105,6 +106,7 @@ const Hello = () => {
 {/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
 {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
+<CommercialShopFeatures handleClose={handleClose} show={show}/>
 
 
  {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
