@@ -53,6 +53,13 @@ import CommercialShopAreaPrice from "../components/modals/commercial-property/co
 import CommercialShopRent from "../components/modals/commercial-property/commercial-shop/commercialshopRent";
 import CommercialShopDescription from "../components/modals/commercial-property/commercial-shop/commercialshopDescription";
 import IndustryBuildingRent from "../components/modals/commercial-property/industrial-building/industrybuildingRent";
+import CommercialShowroomAreaPriceRent from "../components/modals/commercial-property/commercial-showroom/commercialShowroomAreaPriceRent";
+import CommercialShowroomDescription from "../components/modals/commercial-property/commercial-showroom/commercialShowroomDescription";
+import CommercialShowroomEditProperty from "../components/modals/commercial-property/commercial-showroom/commercialshopFeatures";
+import WarehouseUploadPhoto from "../components/modals/warehouse-property/warehouseUploadPhoto";
+import WarehouseDeletePhoto from "../components/modals/warehouse-property/warehouseDeletePhoto";
+import WarehouseUpdateMap from "../components/modals/warehouse-property/warehouseUpdateMap";
+import WarehouseEditProperty from "../components/modals/warehouse-property/warehouseEditProperty";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -131,6 +138,7 @@ const Hello = () => {
 
 
 
+
 {/* commercial Showroom */}
 {/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
 {/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
@@ -142,6 +150,19 @@ const Hello = () => {
 {/* industrial building */}
 
 <IndustryBuildingRent handleClose={handleClose} show={show} /> 
+{/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
+{/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
+
+
+{/* warehouse  */}
+{/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
+<WarehouseEditProperty handleClose={handleClose} show={show} />
+
+
+
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import styles from "../../../../styles/modals/apartmentsModals/apartmentAreaPrice.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentAreaPriceRent.module.css";
 import Modal from "react-bootstrap/Modal";
 import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
@@ -9,17 +9,17 @@ import errorIcon from "../../../../assets/icons/error.svg";
 
 import { useRouter } from "next/router";
 
-const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
+const CommercialShowroomAreaPriceRent = ({ show, handleClose }) => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
       BuildUpArea: "",
-      PlotArea:"",
       CarpetArea: "",
-
-      ExpectedPrice: "",
+      PlotArea:"",
+      DepositPrice: "",
       MaintenanceFees: "",
+      RentPrice:"",
     },
 
     validationSchema: Yup.object({
@@ -33,12 +33,12 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
       PlotArea: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      ExpectedPrice: Yup.string()
+      DepositPrice: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      // RentPrice: Yup.string()
-      //   .matches(numRegex, "invalid value")
-      //   .required("Required"),
+      RentPrice: Yup.string()
+        .matches(numRegex, "invalid value")
+        .required("Required"),
       MaintenanceFees: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
@@ -52,7 +52,7 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
   console.log(formik.values);
 
 
-  
+
 
 
   return (
@@ -86,7 +86,7 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
             <hr />
             <form onSubmit={formik.handleSubmit}>
               <div class=" text-start">
-                <div class="row ">
+                <div class="row mb-lg-2">
                   <div class="col-lg-6 col-sm-12">
                     <label
                       htmlFor="BuildUpArea"
@@ -123,7 +123,7 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
                         <span>{formik.errors.BuildUpArea}</span>
                       </div>
                     )}
-                  
+
                   </div>
                   <div class="col mt-3 mt-lg-0">
                     <label
@@ -161,12 +161,10 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
                         <span className="">{formik.errors.CarpetArea}</span>
                       </div>
                     )}
-                   
+                    
                   </div>
                 </div>
-
               </div>
-
               <div class=" text-start mt-3 mt-lg-4">
                 <div class="row ">
                   <div class="col-lg-6 col-sm-12">
@@ -211,14 +209,14 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
                 </div>
 
               </div>
-
               <div>
-                <div className={`mb-3 mt-3 mt-lg-4`}>
+                <div className="row mb-lg-2">
+                <div className={` col-lg-6 col-sm-12 mb-3 mt-3`}>
                   <label
-                    htmlFor="ExpectedPrice"
+                    htmlFor="DepositPrice"
                     className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
                   >
-                    Expected Price
+                    Deposit Price
                   </label>
                   <div className={`${styles.propetyfeature_input} d-flex`}>
                     <div
@@ -232,22 +230,58 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
                     <input
                       type="text"
                       className={`py-2 ps-2 pe-2  pt-2  fs_sm_12 fs_15 w-100 ${styles.propetyfeature2_input_placeholder} `}
-                      id="ExpectedPrice"
+                      id="DepositPrice"
                       placeholder="Enter property price"
-                      name="ExpectedPrice"
-                      value={formik.values.ExpectedPrice}
+                      name="DepositPrice"
+                      value={formik.values.DepositPrice}
                       onChange={formik.handleChange}
                     />
                   </div>
-                  {formik.errors.ExpectedPrice && formik.touched.ExpectedPrice && (
+                  {formik.errors.DepositPrice && formik.touched.DepositPrice && (
                     <div className="d-flex align-items-center text-danger fs_12 mt-1">
                       <i className="ri-error-warning-line me-1  "></i>
-                      <span>{formik.errors.ExpectedPrice}</span>
+                      <span>{formik.errors.DepositPrice}</span>
                     </div>
                   )}
-                 
+                  
                 </div>
-                <div className={`mb-2 mt-3 mt-lg-4`}>
+                <div className={` col  mt-lg-3 `}>
+                  <label
+                    htmlFor="RentPrice"
+                    className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
+                  >
+                    Rent Price
+                  </label>
+                  <div className={`${styles.propetyfeature_input} d-flex`}>
+                    <div
+                      className={`d-flex ${styles.rupee_text} justify-content-center align-items-center`}
+                    >
+                      <span className={`  align-middle ms-3 fs_15 fw_500`}>
+                        ₹
+                      </span>
+                      <span className={`${styles.input_bar} mx-2`}></span>
+                    </div>
+                    <input
+                      type="text"
+                      className={`py-2 ps-2 pe-2  pt-2  fs_sm_12 fs_15 w-100 ${styles.propetyfeature2_input_placeholder} `}
+                      id="RentPrice"
+                      placeholder="Enter property price"
+                      name="RentPrice"
+                      value={formik.values.RentPrice}
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                  {formik.errors.RentPrice && formik.touched.RentPrice && (
+                    <div className="d-flex align-items-center text-danger fs_12 mt-1">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.RentPrice}</span>
+                    </div>
+                  )}
+                  
+                </div>
+                </div>
+                
+                <div className={`mb-2 mt-3 mt-lg-0`}>
                   <label
                     htmlFor="MaintenanceFees"
                     className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
@@ -280,7 +314,7 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
                         <span>{formik.errors.MaintenanceFees}</span>
                       </div>
                     )}
-                
+                    
                 </div>
               </div>
               <div className={`d-flex justify-content-end`}>
@@ -299,4 +333,4 @@ const CommercialShowroomAreaPrice = ({ show, handleClose }) => {
   );
 };
 
-export default CommercialShowroomAreaPrice;
+export default CommercialShowroomAreaPriceRent;
