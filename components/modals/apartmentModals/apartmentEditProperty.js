@@ -8,12 +8,15 @@ import Select from "react-select";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useScreenSizeDetector from "../../useScreenSizeDetector";
 
 const ApartmentEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
+const width=useScreenSizeDetector();
+
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -77,8 +80,9 @@ const ApartmentEditProperty = ({ show, handleClose }) => {
       TotalFloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      FloorNumber: Yup.string()
-        .matches(numRegex, "Invalid value")
+      FloorNumber: Yup.number()
+      .typeError("invalid value")
+        .max(Yup.ref("TotalFloors"), "Must be less than or equal to TotalFloors")
         .required("Required"),
       CarParkingCount: Yup.string()
         .matches(numRegex, "Invalid value")
