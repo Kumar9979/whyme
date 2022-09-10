@@ -301,7 +301,7 @@ const propertyFeatures = () => {
 
                   <div className={`${styles.amenities_list_flex_res} mt-2`}>
                     <div
-                      className={`${styles.property_features_list_container} w-50  mb-2 `}
+                      className={`${styles.property_features_list_container} w-50  mb-1 `}
                     >
                       <label
                         htmlFor="NoOfOpenSides"
@@ -312,7 +312,7 @@ const propertyFeatures = () => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
+                          className={`form-label ${styles.propertyFeature_width_75_to_100} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                           id="NoOfOpenSides"
                           placeholder="Ex : 13"
                           name="NoOfOpenSides"
@@ -336,7 +336,7 @@ const propertyFeatures = () => {
                       </div>{" "}
                     </div>
                     <div
-                      className={`${styles.propertyFeature_width_50_to_75}  mb-3`}
+                      className={`${styles.propertyFeature_width_50_to_75} mb-1`}
                     >
                       <label
                         htmlFor="facing"
@@ -344,7 +344,10 @@ const propertyFeatures = () => {
                       >
                         Facing{" "}
                       </label>
-                      <div className={`mb-1`} onClick={() => setoptionType("facing")}>
+                      <div
+                        className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
+                        onClick={() => setoptionType("facing")}
+                      >
                         <Select
                           id="facing"
                           options={facing}
@@ -370,22 +373,21 @@ const propertyFeatures = () => {
                         />
                       </div>
                       <div className={`${styles.error_container}`}>
-                        {formik.errors.facing &&
-                          formik.touched.facing && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.facing}
-                              </span>
-                            </div>
-                          )}
+                        {formik.errors.facing && formik.touched.facing && (
+                          <div className="d-flex align-items-center text-danger">
+                            <i
+                              style={{ fontSize: 12, marginRight: ".1rem" }}
+                              className="ri-error-warning-line   "
+                            ></i>
+                            <span className={`fs_12 lh-base `}>
+                              {formik.errors.facing}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div
-                      className={`${styles.property_features_list_container} w-50 ms-0 ms-lg-3 mb-2 `}
+                      className={`${styles.property_features_list_container} w-50 ms-0 ms-lg-3 mb-1 `}
                     >
                       <label
                         htmlFor="AgeOfConstruction"
@@ -422,14 +424,17 @@ const propertyFeatures = () => {
                   </div>
 
                   <div className={`${styles.amenities_list_flex_res} mt-2`}>
-                    <div className="me-5 w-100 mb-3">
+                    <div className="me-5 w-100 mb-1">
                       <label
                         htmlFor="FurnishedStatus"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
                         Furnishing Status{" "}
                       </label>
-                      <div className={`mb-1`} onClick={() => setoptionType("furnishingStatus")}>
+                      <div
+                        className={`mb-1`}
+                        onClick={() => setoptionType("furnishingStatus")}
+                      >
                         <Select
                           id="FurnishedStatus"
                           options={furnishingStatus}
@@ -471,14 +476,17 @@ const propertyFeatures = () => {
                           )}
                       </div>
                     </div>
-                    <div className={`me-5 w-100 mb-3`}>
+                    <div className={`me-5 w-100 mb-1`}>
                       <label
                         htmlFor="Status"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
                         Status{" "}
                       </label>
-                      <div className={`mb-1`} onClick={() => setoptionType("status")}>
+                      <div
+                        className={`mb-1`}
+                        onClick={() => setoptionType("status")}
+                      >
                         <Select
                           id="Status"
                           options={status}
@@ -504,28 +512,30 @@ const propertyFeatures = () => {
                         />
                       </div>
                       <div className={`${styles.error_container}`}>
-                        {formik.errors.Status &&
-                          formik.touched.Status && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.Status}
-                              </span>
-                            </div>
-                          )}
+                        {formik.errors.Status && formik.touched.Status && (
+                          <div className="d-flex align-items-center text-danger">
+                            <i
+                              style={{ fontSize: 12, marginRight: ".1rem" }}
+                              className="ri-error-warning-line   "
+                            ></i>
+                            <span className={`fs_12 lh-base `}>
+                              {formik.errors.Status}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div className=" mb-2 w-100">
+                    <div className=" mb-1 w-100">
                       <label
                         htmlFor="Transaction"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
                         Transaction{" "}
                       </label>
-                      <div className={`mb-1`} onClick={() => setoptionType("transaction")}>
+                      <div
+                        className={`mb-1`}
+                        onClick={() => setoptionType("transaction")}
+                      >
                         <Select
                           id="Transaction"
                           options={transaction}
@@ -868,7 +878,7 @@ const propertyFeatures = () => {
 
                     <div className={`${styles.amenities_list_flex_res}  `}>
                       <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
+                        className={`form-check me-4  ${styles.margin_bottom}`}
                       >
                         <input
                           className="form-check-input mt-2"
@@ -882,7 +892,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1  ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
                           htmlFor="Electronic Vehicle Charging Points"
                         >
                           Electronic Vehicle Charging Points
