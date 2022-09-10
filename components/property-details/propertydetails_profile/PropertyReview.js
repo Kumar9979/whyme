@@ -17,7 +17,7 @@ const PropertyReview = () => {
   const [newpost, setpost] = useState([]);
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
-  const stars = Array(5).fill(-1);
+  const stars = Array(5).fill(0);
   const [loading, setLoading] = useState(false);
   const getpost = () => {
     setLoading(true);
@@ -121,7 +121,7 @@ const PropertyReview = () => {
             ></textarea>
             <br />
             <button
-              className={`${styles.review_submit} btn my-3`}
+              className={`${styles.review_submit} fs_17 my-3`}
               type="submit"
               onClick={getpost}
             >
@@ -178,13 +178,13 @@ const PropertyReview = () => {
                             </div>
                           </div>
                         </div>
-                        <div>
+                        
                           <span
-                            className={`${styles.reviewdate} mx-lg-3 my-lg-2 mx-md-3 my-md-2 mx-sm-3 my-sm-2 mx-1 my-1 align-content-end`}
+                            className={`${styles.reviewdate} mx-lg-3 my-lg-2 mx-md-3 my-md-2 mx-sm-3 my-sm-2 mx-1 my-1 `}
                           >
                             {value.id} days ago
                           </span>
-                        </div>
+                        
                       </div>
                       <div className="mx-lg-3 my-lg-2">
                         <span>{value.description}</span>

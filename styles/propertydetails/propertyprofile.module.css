@@ -92,12 +92,13 @@
   letter-spacing: 0.2px;
   height: 12rem;
   resize: none;
+  padding-left: 10px;
 }
 .reviewtextarea::placeholder {
   font-family: "Poppins", sans-serif;
   opacity: 1;
   color: #bcc7ce;
-  padding-left: 10px;
+ 
 }
 
 .reviewtextarea:focus-visible {
@@ -109,6 +110,11 @@
   color: #ffffff;
   border-radius: 6px;
   font-family: "Poppins", sans-serif;
+  border: none;
+  height: 38px;
+}
+.review_submit:hover{
+  color: #ffffff;
 }
 .review_card {
   background: #dbe9f24d 0% 0% no-repeat padding-box;
@@ -685,7 +691,7 @@
     opacity: 1;
     color: #bcc7ce;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .review_card {
@@ -711,7 +717,23 @@
     font-family: "Poppins", sans-serif;
   }
   .profilename{
-    font-size: 18px;
+    font-size: 19px;
+  }
+  .reviewrating_number {
+    color: #1d72db;
+    font-size: 17px;
+  }
+  .reviewrating_text {
+    color: #1d72db;
+    font-size: 17px;
+  }
+  .rstarimg{
+    width: 5px;
+    height: 5px;
+  }
+  .reviewcount
+  {
+    font-size: 15px;
   }
   
 
@@ -873,11 +895,11 @@
 }
 .reviewrating_text {
   color: #1d72db;
-  font-size: 14px;
+  font-size: 13px;
 }
 .reviewcount
 {
-  font-size: 12px;
+  font-size: 10px;
 }
 .rstarimg{
   width: 8px;
@@ -901,6 +923,28 @@
   font-size: 11px;
 }
   
+}
+@media only screen and (max-width: 312px) {
+ .reviewtext {
+  color: #323d5a;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+.reviewrating_number {
+  color: #1d72db;
+  font-size: 13px;
+}
+.reviewrating_text {
+  color: #1d72db;
+  font-size: 12px;
+}
+.reviewcount
+{
+  font-size: 10px; 
+}
+.reviewdate{
+  font-size: 9px;
+}
 }
 @media only screen and (max-width: 280px) {
 /* /////////head section/////////// */
