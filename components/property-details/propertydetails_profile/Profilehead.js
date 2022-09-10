@@ -43,21 +43,24 @@ const Profilehead = () => {
             </div>
 
             <div className="  d-flex align-items-center ">
+            <span className={` ${styles.activestatus} ms-lg-1 fontFam_poppins fs_22 fw_400 `}>Active Since Aug 2022</span>
+             <div className="ms-lg-1  d-flex align-items-center">
               <Image
                 src={star}
+                width={20}
+                height={20}
                 alt="Picture of the author"
                 className={` `}
               />
-              <span
-                className={`${styles.hiderating_number}  fs_20 fw_400 ms-lg-2 `}
-              >
+              </div>
+              <span className={`${styles.hiderating_number}  fs_19 fw_400 ms-lg-2 `} >
                 4.7
                 <span
-                  className={`${styles.hiderating_number} ms-lg-1 fontFam_poppins fs_18 fw_400`}
+                  className={`${styles.hiderating_number} ms-lg-1 fontFam_poppins fs_17 fw_400`}
                 >
                   Ratings
                   <span
-                    className={`${styles.hidecount} fs_18 color_cloudBurst`}
+                    className={`${styles.hidecount} ms-lg-1 fs_17 color_cloudBurst`}
                   >
                     (236)
                   </span>
@@ -66,7 +69,7 @@ const Profilehead = () => {
             </div>
           </div>
           <div
-            className={`${styles.button_sec} mt-lg-4 pt-lg-3 ms-md-5 mt-md-1 ms-sm-5  mt-sm-3 d-flex align-items-center`}
+            className={`${styles.button_sec} mt-lg-4 pt-lg-3  mt-sm- mt-4 ms-md-5 mt-md-1 ms-sm-5  mt-sm-3 d-flex align-items-center`}
           >
             <div className="">
               <Image
@@ -105,7 +108,7 @@ const Profilehead = () => {
       </div>
 
       <div className="  d-flex align-items-center ">
-        <span>Active Since Aug 2022</span>
+       
         <Image
           src={star}
           alt="Picture of the author"
