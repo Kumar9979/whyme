@@ -118,7 +118,6 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   ];
 
   function handleRadioButton(e) {
- 
     setDiscloseIdentity(e.target.value);
     let event = {
       target: {
@@ -288,7 +287,7 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                           Yes
                         </label>
                         <input
-                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          className={`   cursor_pointer ms-3`}
                           id="no"
                           type="radio"
                           value="no"
@@ -319,14 +318,14 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       <div className="d-flex mt-2">
                         <input
                           className={` ms-1 cursor_pointer`}
-                          id="yes"
+                          id="yestext"
                           type="radio"
                           value="yes"
                           checked={washroom === "yes"}
                           onChange={handleWashRoomButton}
                         />
                         <label
-                          htmlFor="yes"
+                          htmlFor="yestext"
                           className={
                             washroom === "yes"
                               ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -336,15 +335,15 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                           Yes
                         </label>
                         <input
-                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                          id="no"
+                          className={`   cursor_pointer ms-3`}
+                          id="notext"
                           type="radio"
                           value="no"
                           checked={washroom === "no"}
                           onChange={handleWashRoomButton}
                         />{" "}
                         <label
-                          htmlFor="no"
+                          htmlFor="notext"
                           className={
                             washroom === "no"
                               ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`

@@ -1,6 +1,6 @@
 .edit_profile {
   margin-top: 5rem;
-  width: 95%;
+  width: 90%;
 }
 .edit_profile_card {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -111,7 +111,9 @@
 }
 @media only screen and (min-width: 992px) and (max-width: 1320px) {
   .edit_profile {
-    padding-left: 5rem;
+    width: 85%;
+    padding-right: 0rem;
+    margin-left: 6rem;
   }
   .form_width {
     width: 100%;
@@ -120,6 +122,9 @@
 @media only screen and (max-width: 992px) {
   .form_width {
     width: 75%;
+  }
+  .edit_profile_card {
+    height: fit-content;
   }
 }
 @media only screen and (max-width: 768px) {

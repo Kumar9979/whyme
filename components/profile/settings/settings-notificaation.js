@@ -33,7 +33,7 @@ const Notification = () => {
             </span>
             <Switch
               height={20}
-              width={56}
+              width={43}
               borderRadius = {30}
               uncheckedIcon={false}
               checkedIcon={false}
@@ -56,7 +56,7 @@ const Notification = () => {
             </span>
             <Switch
               height={20}
-              width={56}
+              width={43}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"
@@ -79,7 +79,7 @@ const Notification = () => {
             </span>
             <Switch
               height={20}
-              width={56}
+              width={43}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"

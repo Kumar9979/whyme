@@ -1,0 +1,245 @@
+.shareproperty_container{
+   width: 490px;
+}
+
+.share_label{
+    color: #bcc7ce;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.14px;
+}
+.close_button {
+    background-color: transparent;
+    border: none;
+    
+  }
+  .sharevia_label{
+    font-family: "Poppins", sans-serif;
+    color: #1D1E1F;
+    opacity: 1;
+    letter-spacing: 0.4px;
+    font-size: 15px;
+  }
+  .shareproperty_heading{
+    color: #323d5a;
+    opacity: 1;
+  }
+  .scoial_text{
+    font-family: "Poppins", sans-serif;
+    color: #1d72db;
+  }
+  .copy_text{
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.4px;
+    color: #1D1E1F;
+    opacity: 1;
+  }
+  .copy_input{
+    color: #1D1E1F;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    width: 240px;
+    height: 28px;
+    font-size: 16px;
+  }
+  .copy_button{
+    background-color: #50bf97 ;
+    letter-spacing: 0.24px;
+    color: #FFFFFF;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    width: 160px;
+    border: none;
+    border-radius: 8px;
+  }
+  .copy_input:focus-visible{
+    outline: none !important;
+  }
+  .shareinput_div{
+    border: 1px solid #DBE9F2;
+    border-radius: 12px;
+    opacity: 1;
+  }
+  @media only screen and (max-width:992px)
+ { 
+    .shareproperty_container{
+        width: 460px;
+    }
+    .copy_input{
+        color: #1D1E1F;
+        opacity: 1;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        width: 255px;
+        height: 28px;
+        font-size: 15px;
+      }
+}
+@media only screen and (max-width:768px)
+ { 
+    .shareproperty_container{
+        width: 460px;
+    }
+    .copy_input{
+      color: #1D1E1F;
+      opacity: 1;
+      font-family: "Poppins", sans-serif;
+      border: none;
+      width: 180px;
+      height: 28px;
+      font-size: 14px;
+    }
+}
+@media only screen and (max-width:568px)
+ { 
+    .shareproperty_container{
+        width: 370px;
+    }
+    .copy_input{
+        color: #1D1E1F;
+        opacity: 1;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        width: 200px;
+        height: 28px;
+        font-size: 13px;
+      }
+      .copy_button{
+        background-color: #50bf97 ;
+        letter-spacing: 0.24px;
+        color: #FFFFFF;
+        opacity: 1;
+        font-family: "Poppins", sans-serif;
+        width: 120px;
+        border: none;
+        border-radius: 10px;
+        width:90px;
+        font-size: 14px;
+      }
+}
+@media only screen and (max-width:360px)
+ { 
+    .shareproperty_container{
+        width: 330px;
+    }
+    .scoial_image{
+        width: 25px;
+        height: 24.88px;
+    }
+    .scoial_text{
+        font-family: "Poppins", sans-serif;
+        color: #1d72db;
+        font-size: 9px;
+      }
+    .copy_input{
+        color: #1D1E1F;
+        opacity: 1;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        width: 180px;
+        height: 28px;
+        font-size: 12px;
+      }
+      .copy_button{
+        background-color: #50bf97 ;
+        letter-spacing: 0.24px;
+        color: #FFFFFF;
+        opacity: 1;
+        font-family: "Poppins", sans-serif;
+        width: 120px;
+        border: none;
+        border-radius: 10px;
+        width:80px;
+        font-size: 14px;
+      }
+      .share_label{
+        color: #bcc7ce;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0.14px;
+          font-size: 10px;
+      }
+}
+@media only screen and (max-width:280px)
+{
+  .shareproperty_container{
+    width: 270px;
+}
+.scoial_image{
+    width: 22px;
+    height: 23.88px;
+}
+.scoial_text{
+    font-family: "Poppins", sans-serif;
+    color: #1d72db;
+    font-size: 8px;
+  }
+.copy_input{
+    color: #1D1E1F;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    width: 100px;
+    height: 28px;
+    font-size: 9px;
+  }
+  .copy_button{
+    background-color: #50bf97 ;
+    letter-spacing: 0.24px;
+    color: #FFFFFF;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    width:80px;
+    font-size: 12px;
+  }
+  .share_label{
+    color: #bcc7ce;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.14px;
+      font-size: 8px;
+  }
+}
+@media only screen and (max-width:240px)
+{
+  .shareproperty_container{
+    width: 230px;
+}
+.scoial_image{
+    width: 17px;
+    height: 18.88px;
+}
+.scoial_text{
+    font-family: "Poppins", sans-serif;
+    color: #1d72db;
+    font-size: 6px;
+  }
+.copy_input{
+    color: #1D1E1F;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    width: 100px;
+    height: 28px;
+    font-size: 9px;
+  }
+  .copy_button{
+    background-color: #50bf97 ;
+    letter-spacing: 0.24px;
+    color: #FFFFFF;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    width:80px;
+    font-size: 12px;
+  }
+  .share_label{
+    color: #bcc7ce;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.14px;
+      font-size: 8px;
+  }
+}

@@ -1,21 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../../styles/propertydetails/requestcall.module.css";
 import menu from "../../../assets/images/menu.svg";
 import Image from "next/dist/client/image";
 import image from "../../../assets/images/imagereview/people.png";
 import star from "../../../assets/images/star.svg";
+import caution from "../../../assets/images/about-property-images/report_icon.svg";
 
 const RequestCall = () => {
+  const [show, setShow] = useState(false);
+
   return (
-    <div className={`${styles.request_call} p-4 mt-4 `}>
-      <div className={`d-flex justify-content-between text-left text-lg-center text-md-center ms-auto`}>
+    <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
+      <div
+        className={`d-flex justify-content-between text-left text-lg-center text-md-center ms-auto`}
+      >
         <div className={`${styles.posted_by} w-100 `}>Posted By</div>
-        <button className={`${styles.request_menu} `}>
+        <button
+          className={`${styles.request_menu} `}
+          onClick={() => setShow(!show)}
+        >
           <Image src={menu} alt="Picture of the author" width={4} />
         </button>
       </div>
       <div className="row d-flex justify-content-center">
-        <div className={`pt-2 col-4 col-md-12 col-lg-12 d-flex  justify-content-center`}>
+        <div
+          className={`pt-2 col-4 col-md-12 col-lg-12 d-flex  justify-content-center`}
+        >
           <Image
             src={image}
             alt="Picture of the author"
@@ -62,6 +72,21 @@ const RequestCall = () => {
       <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
         View Profile
       </button>
+      {show ? (
+        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+          <div className="d-flex align-items-center justify-content-center">
+            <Image
+              src={caution}
+              alt="Picture of the author"
+              width={15}
+              height={15}
+            />
+            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
+              Report an Issue
+            </span>
+          </div>
+        </button>
+      ) : null}
     </div>
   );
 };

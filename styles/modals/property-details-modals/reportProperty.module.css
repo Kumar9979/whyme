@@ -1,44 +1,66 @@
-.reportProperty_width {
-  max-width: 420px;
-}
-.close_button {
-  background-color: transparent;
-  border: none;
-}
-.report_reason {
-  margin-top: 0.25rem;
-  border: 2px solid white;
-  box-shadow: 0 0 0 1px #a5a5a5;
-  appearance: none;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  transition: all ease-in 0.2s;
-  margin: 1px;
-}
-.report_reason:checked {
-  background-color: #112f6a;
-  box-shadow: 0 0 0 1px #112f6a;
-}
-.report_property_heading {
-  color: #323d5a;
-}
-.report_property_title {
-  letter-spacing: 0px;
-  color: #323d5a;
-  opacity: 0.6;
-}
-.report_property_reason {
-  color: #1D1E1F;
 
-}
 
-  .report_label_reason {
-    color: #323D5A;
+
+.reportProperty_container {
+  max-width: 382px;
+}    
+
+.cancel_button {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 2px solid #1d72db;
+      border-radius: 5px;
+      opacity: 1;
+      color: #1D72DB;
+      width: 45%;
+    }
+    .report_button {
+      border: none;
+      background: #1d72db 0% 0% no-repeat padding-box;
+      border-radius: 5px;
+      color: #FFFFFF;
+      opacity: 1;
+      width:  45%;
+    }
+    .report_text{
+    color: #bcc7ce;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.14px;
+    }
+    .report_heading{
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.2px;
+      color: #323D5A;
+      opacity: 1;
+    }
+    .report_texthead{
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.2px;
+      color: #323D5A;
+      opacity: 1;
+    }
+    .check_label{
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.2px;
+      color: #323D5A;
+      opacity: 1;
+    }
+    .check_textarea{
+      border: 1px solid #DBE9F2 ;
+      border-radius: 7px;
+      opacity: 1;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.2px;
+      width: 97%;
+      height: 6rem;
+
+    }
+    .check_textarea::placeholder {
+      font-family: "Poppins", sans-serif;
+      opacity: 1;
+      color: #BCC7CE;
+      padding-left: 10px;
   }
-  .report_label_reason::after{
-   color: red;
-
- 
-    } 
+  
+    .check_textarea:focus-visible{
+      outline: none;
+    }

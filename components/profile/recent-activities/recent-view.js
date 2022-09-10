@@ -2,10 +2,8 @@ import { React, useRef, useState, useEffect } from "react";
 import styles from "../../../styles/profile/sidebar-pages/recent-activities.module.css";
 import view from "../../../assets/icons/profile-icons/view.svg";
 import Image from "next/image";
-import SimilarProperties from "../../property-details/similar-properties";
-import RelatedProperties from "../../property-details/related-properties-card";
-import ProfileRelatedProperties from "../profile-related-properties";
-import PlotProperties from "./plot-similar-properties";
+import PlotProperties from "../../cards/profile-pages-cards/plot-similar-properties";
+import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-related-properties";
 
 const RecentView = () => {
   let n = 10;
@@ -15,13 +13,13 @@ const RecentView = () => {
   };
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -84,8 +82,8 @@ const RecentView = () => {
                 >
                   Yesterday
                 </h1>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <div className={`${styles.width_properties} ms-3`}>
+                  <PlotProperties housetype= "2BHK flat in Vijayanagar, Mysuru" />
                 </div>
               </div>
               <div>
@@ -94,14 +92,14 @@ const RecentView = () => {
                 >
                   26 Aug 2022
                 </h1>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
+                  <PlotProperties housetype= "2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <SimilarProperties />
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
+                  <PlotProperties housetype= "2BHK House in Vijayanagar, Mysuru"  />
                 </div>
-                <div className={`${styles.width_properties} mb-0`}>
-                  <PlotProperties />
+                <div className={`${styles.width_properties} mb-0 ms-3`}>
+                  <PlotProperties data={1} housetype= "1200Sqft plot in Vijayanagar, Mysuru" />
                 </div>
               </div>
             </div>

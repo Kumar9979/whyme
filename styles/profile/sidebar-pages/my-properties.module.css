@@ -25,7 +25,7 @@
   border: 0.5px solid #dbe9f2;
 }
 .cards_width {
-  width:85%;
+  width: 85%;
 }
 .empty_search_container {
   padding-top: 12rem;
@@ -48,7 +48,7 @@
   height: 100%;
 }
 .width_properties {
-  width: 100%;
+  width: 90%;
   margin-left: 1rem;
   padding: 0px;
 }
@@ -87,6 +87,11 @@
   color: blue;
   white-space: nowrap;
 }
+.background_color {
+  background-color: #50bf97;
+  border-radius: 4px;
+  opacity: 1;
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1350px) {
   .recent_activities {
@@ -95,18 +100,22 @@
     padding-left: 4rem;
   }
   .width_properties {
-    width: 100%;
+    width: 98%;
     margin-left: 1rem;
   }
   .cards_width {
     width: 100%;
   }
+  
 }
 @media only screen and (max-width: 992px) {
   .recent_activities {
     width: 100%;
     padding-right: 0rem;
     padding-left: 0rem;
+  }
+  .width_properties {
+    width: 100%;
   }
   .edit_profile_heading {
     text-align: center;
@@ -131,5 +140,15 @@
   .recent_activities_card {
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 20px #0000001f;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .recent_activities {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .recent_activities {
+    width: 100%;
   }
 }

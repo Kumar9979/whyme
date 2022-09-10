@@ -48,7 +48,7 @@ const ProfileLayout = ({ children }) => {
                     <div
                       onClick={() => {
                         router.push(
-                          "/profile/profile-pages/company-my-profile"
+                          "/profile/profile-pages/my-profile"
                         );
                       }}
                       className={`${styles.card} card mt-4 `}
