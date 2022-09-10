@@ -10,14 +10,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
-const OfficeSpaceProperty = ({ show, handleClose }) => {
+const IndustryBuildingFeatures = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
-  const [discloseIdentity, setDiscloseIdentity] = useState("no");
-  const [washroom, setWashroom] = useState("no");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
   const width = useScreenSizeDetector();
+
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -63,16 +62,20 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   };
 
   const formik = useFormik({
+    // enableReinitialize: true,
     initialValues: {
       TotalFloors: "",
       FloorNumber: "",
-      WashRoom: "",
 
-      cafeteria: "no",
-      PersonalWashRoom: "no",
+      Washrooms: "",
+      OpenSites: "",
+      FloorsAllowed: "",
+      RoadFacing: "",
+
       FurnishedStatus: "",
       Status: "",
       Transaction: "",
+      Amenities: [],
     },
 
     validationSchema: Yup.object({
@@ -87,15 +90,23 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
         )
         .required("Required"),
 
-      WashRoom: Yup.string()
+      Washrooms: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      OpenSites: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      FloorsAllowed: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
+      RoadFacing: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-      cafeteria: Yup.string(),
-      PersonalWashRoom: Yup.string(),
       FurnishedStatus: Yup.string().required("Required"),
       Status: Yup.string().required("Required"),
       Transaction: Yup.string().required("Required"),
+      Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -103,6 +114,12 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
     },
   });
 
+  const facing = [
+    { value: "North", label: "North" },
+    { value: "South", label: "South" },
+    { value: "East", label: "East" },
+    { value: "West", label: "West" },
+  ];
   const status = [
     { value: "Ready To Move", label: "Ready To Move" },
     { value: "Under Construction", label: "Under Construction" },
@@ -116,29 +133,6 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
     { value: "Resale", label: "Resale" },
     { value: "Fresh", label: "Fresh" },
   ];
-
-  function handleRadioButton(e) {
-    setDiscloseIdentity(e.target.value);
-    let event = {
-      target: {
-        name: "cafeteria",
-        value: e.target.value,
-      },
-    };
-    formik.handleChange(event);
-  }
-
-  function handleWashRoomButton(e) {
-    setWashroom(e.target.value);
-    let event = {
-      target: {
-        name: "PersonalWashRoom",
-        value: e.target.value,
-      },
-    };
-    formik.handleChange(event);
-  }
-
   return (
     <Modal
       centered
@@ -168,36 +162,8 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-5">
-                  <div className="col-4 col-lg-3">
-                    <div className="">
-                      <label
-                        htmlFor="FloorNumber"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 `}
-                      >
-                        Floor number
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
-                          id="FloorNumber"
-                          placeholder="Ex : 13"
-                          name="FloorNumber"
-                          value={formik.values.FloorNumber}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.FloorNumber && formik.touched.FloorNumber && (
-                        <div className="d-flex  text-danger fs_sm_12 fs_13 ">
-                          <i className="ri-error-warning-line me-1  "></i>
-                          <span className="">{formik.errors.FloorNumber}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="col-4 col-lg-3">
+                <div className="d-flex gx-0">
+                  <div className="col-4 col-lg-4">
                     <div className="">
                       <label
                         htmlFor="totalFloors"
@@ -208,7 +174,7 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       <div>
                         <input
                           type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          className={`form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`}
                           id="totalFloors"
                           placeholder="Ex : 13"
                           name="TotalFloors"
@@ -224,14 +190,93 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       )}
                     </div>
                   </div>
+                  <div className="col-4 col-lg-4">
+                    <div className="">
+                      <label
+                        htmlFor="FloorNumber"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 `}
+                      >
+                        Floor number
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          className={`form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`}
+                          id="FloorNumber"
+                          placeholder="Ex : 13"
+                          name="FloorNumber"
+                          value={formik.values.FloorNumber}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                      {formik.errors.FloorNumber && formik.touched.FloorNumber && (
+                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.FloorNumber}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="">
+                      <div className={`${styles.total_floors_text}  `}>
+                        <label
+                          htmlFor="FurnishedStatus"
+                          className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
+                        >
+                          Furnishing status{" "}
+                        </label>
+                        <div
+                          onMouseEnter={() => setMenuOpen(true)}
+                          onClick={() => setoptionType("furnishingStatus")}
+                        >
+                          <Select
+                            // menuIsOpen={menuOpen}
+                            id="FurnishedStatus"
+                            options={furnishingStatus}
+                            type="text"
+                            className={` w-100  fs_15 fs_sm_12 `}
+                            placeholder="Select.."
+                            styles={customStyles}
+                            name="FurnishedStatus"
+                            value={furnishingStatus.filter((option) => {
+                              return (
+                                option.value === formik.values.FurnishedStatus
+                              );
+                            })}
+                            onChange={(selectedOption) => {
+                              let event = {
+                                target: {
+                                  name: "FurnishedStatus",
+                                  value: selectedOption.value,
+                                },
+                              };
+                              formik.handleChange(event);
+                            }}
+                            components={{
+                              IndicatorSeparator: () => null,
+                            }}
+                          />
+                        </div>
+                        {formik.errors.FurnishedStatus &&
+                          formik.touched.FurnishedStatus && (
+                            <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
+                              <i className="ri-error-warning-line me-1  "></i>
+                              <span> {formik.errors.FurnishedStatus}</span>
+                            </div>
+                          )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-5 ">
-                  <div className="col-4 col-lg-3">
+                <div className="d-flex gx-0">
+                  <div className="col-4 col-lg-4">
                     <div className="">
                       <label
-                        htmlFor="washroom"
+                        htmlFor="Washrooms"
                         className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
                       >
                         Washrooms
@@ -239,177 +284,115 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                       <div>
                         <input
                           type="text"
-                          className={
-                            width < 992
-                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
-                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
-                          }
-                          id="washroom"
+                          className={`form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`}
+                          id="Washrooms"
                           placeholder="Ex : 2"
-                          name="WashRoom"
-                          value={formik.values.WashRoom}
+                          name="Washrooms"
+                          value={formik.values.Washrooms}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      {formik.errors.WashRoom && formik.touched.WashRoom && (
+                      {formik.errors.Washrooms && formik.touched.Washrooms && (
                         <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
                           <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.WashRoom}</span>
+                          <span>{formik.errors.Washrooms}</span>
                         </div>
                       )}
                     </div>
                   </div>
-                  <div className="col-4 col-lg-3">
+                  <div className="col-6 col-lg-6">
                     <div className="">
                       <label
-                        htmlFor="pantry"
+                        htmlFor="FloorsAllowed"
                         className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
                       >
-                        Pantry/Cafeteria
+                        Floors Allowed for Construction
                       </label>
-                      <div className="d-flex mt-2">
+                      <div>
                         <input
-                          className={` ms-1 cursor_pointer`}
-                          id="yes"
-                          type="radio"
-                          value="yes"
-                          checked={discloseIdentity === "yes"}
-                          onChange={handleRadioButton}
+                          type="text"
+                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          id="FloorsAllowed"
+                          placeholder="Ex : 2"
+                          name="FloorsAllowed"
+                          value={formik.values.FloorsAllowed}
+                          onChange={formik.handleChange}
                         />
-                        <label
-                          htmlFor="yes"
-                          className={
-                            discloseIdentity === "yes"
-                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          Yes
-                        </label>
-                        <input
-                          className={`   cursor_pointer ms-3`}
-                          id="no"
-                          type="radio"
-                          value="no"
-                          checked={discloseIdentity === "no"}
-                          onChange={handleRadioButton}
-                        />{" "}
-                        <label
-                          htmlFor="no"
-                          className={
-                            discloseIdentity === "no"
-                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          No
-                        </label>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-4 col-lg-3">
-                    <div className="">
-                      <label
-                        htmlFor="PersonalWashroom"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
-                      >
-                        Personal Washroom
-                      </label>
-                      <div className="d-flex mt-2">
-                        <input
-                          className={` ms-1 cursor_pointer`}
-                          id="yestext"
-                          type="radio"
-                          value="yes"
-                          checked={washroom === "yes"}
-                          onChange={handleWashRoomButton}
-                        />
-                        <label
-                          htmlFor="yestext"
-                          className={
-                            washroom === "yes"
-                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          Yes
-                        </label>
-                        <input
-                          className={`   cursor_pointer ms-3`}
-                          id="notext"
-                          type="radio"
-                          value="no"
-                          checked={washroom === "no"}
-                          onChange={handleWashRoomButton}
-                        />{" "}
-                        <label
-                          htmlFor="notext"
-                          className={
-                            washroom === "no"
-                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          No
-                        </label>
-                      </div>
+                      {formik.errors.FloorsAllowed &&
+                        formik.touched.FloorsAllowed && (
+                          <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                            <i className="ri-error-warning-line me-1  "></i>
+                            <span>{formik.errors.FloorsAllowed}</span>
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
-                <div className=" text-start mt-3">
-                  <div className={width < 992 ? `row gx-2` : `row `}>
-                    <div className="col-4">
-                      <div className="">
-                        <div className={`${styles.total_floors_text}  `}>
-                          <label
-                            htmlFor="FurnishedStatus"
-                            className={`form-label ${styles.total_floors_text} text-nowrap fs_15 fs_sm_12 fw_500`}
-                          >
-                            Furnishing status{" "}
-                          </label>
-                          <div
-                            onMouseEnter={() => setMenuOpen(true)}
-                            onClick={() => setoptionType("furnishingStatus")}
-                          >
-                            <Select
-                              id="FurnishedStatus"
-                              options={furnishingStatus}
-                              type="text"
-                              className={` w-100  fs_15 fs_sm_12 `}
-                              placeholder="Select.."
-                              styles={customStyles}
-                              name="FurnishedStatus"
-                              value={furnishingStatus.filter((option) => {
-                                return (
-                                  option.value === formik.values.FurnishedStatus
-                                );
-                              })}
-                              onChange={(selectedOption) => {
-                                let event = {
-                                  target: {
-                                    name: "FurnishedStatus",
-                                    value: selectedOption.value,
-                                  },
-                                };
-                                formik.handleChange(event);
-                              }}
-                              components={{
-                                IndicatorSeparator: () => null,
-                              }}
-                            />
-                          </div>
-                          {formik.errors.FurnishedStatus &&
-                            formik.touched.FurnishedStatus && (
-                              <div className="d-flex align-items-center text-danger mt-1 mt-lg-2 fs_sm_12 fs_13 ">
-                                <i className="ri-error-warning-line me-1  "></i>
-                                <span> {formik.errors.FurnishedStatus}</span>
-                              </div>
-                            )}
-                        </div>
+                <div className="row gx-0 mt-lg-3">
+                  <div className="col-12 col-lg-5 mt-3 mt-lg-0">
+                    <div className="">
+                      <label
+                        htmlFor="OpenSites"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                      >
+                        Number of Open Sides
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          className={
+                            width < 992
+                              ? `form-label ${styles.total_floors_input} w-100 fs_15 fs_sm_12 p-2`
+                              : `form-label ${styles.total_floors_input} w-75 fs_15 fs_sm_12 p-2`
+                          }
+                          id="OpenSites"
+                          placeholder="Ex : 2"
+                          name="OpenSites"
+                          value={formik.values.OpenSites}
+                          onChange={formik.handleChange}
+                        />
                       </div>
+                      {formik.errors.OpenSites && formik.touched.OpenSites && (
+                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.OpenSites}</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="col-4">
-                      <div className="">
+                  </div>
+                  <div className="col-12 col-lg-7 mt-3 mt-lg-0">
+                    <div className="">
+                      <label
+                        htmlFor="RoadFacing"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                      >
+                        Width of Road Facing the Plot(in meters)
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
+                          id="RoadFacing"
+                          placeholder="Ex : 2"
+                          name="RoadFacing"
+                          value={formik.values.RoadFacing}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                      {formik.errors.RoadFacing && formik.touched.RoadFacing && (
+                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                          <i className="ri-error-warning-line me-1  "></i>
+                          <span>{formik.errors.RoadFacing}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div class=" text-start mt-3">
+                  <div className={`row `}>
+                    <div class="col-5">
+                      <div class="">
                         <div className={`${styles.total_floors_text} `}>
                           <label
                             htmlFor="Status"
@@ -452,8 +435,8 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-4">
-                      <div className="">
+                    <div class="col-5">
+                      <div class="">
                         <div className={`${styles.total_floors_text}  mb-3`}>
                           <label
                             htmlFor="Transaction"
@@ -518,4 +501,4 @@ const OfficeSpaceProperty = ({ show, handleClose }) => {
   );
 };
 
-export default OfficeSpaceProperty;
+export default IndustryBuildingFeatures;
