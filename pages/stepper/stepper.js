@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 import styles from "../../styles/stepper/stepper.module.css";
@@ -57,7 +57,7 @@ const StepperNew = ({ currentPage }) => {
 
   return (
     <div
-      className={`container ${`${styles.stepper_cont_flex_res}`}    justify-content-around  ${
+      className={` ${`${styles.stepper_cont_flex_res}`} aling-items-center ps-0 ps-lg-4   justify-content-around  ${
         styles.stepper_bg_color
       }`}
     >
@@ -145,7 +145,10 @@ const StepperNew = ({ currentPage }) => {
 
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
-          <div>
+          <div
+          //  style={{ width: 40, height: 40 }}
+          className={`me-1`}
+          >
             <Image
               src={photoDesc.iconImage}
               alt="status icon"
@@ -154,7 +157,7 @@ const StepperNew = ({ currentPage }) => {
             />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white ${styles.fontFam_poppins}  ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Photos & Description
           </span>
