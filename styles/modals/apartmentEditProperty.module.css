@@ -1,6 +1,9 @@
 .property_features_container{
-    max-width: 35rem;
+    max-width: 37rem;
 }
+/* .floor_allowed{
+    width: 90%;
+} */
 
 
 .upload_heading_text{
@@ -33,3 +36,4 @@
   .card_radius{
     border-radius: 10px;
 }
+

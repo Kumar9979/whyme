@@ -165,6 +165,11 @@ p {
   color: #ffffff;
 }
 
+.margin_top{
+  margin-top: 0.15rem;
+}
+
+
 @media only screen and (max-width: 992px) {
   .fs_md_7 {
     font-size: 7px;
