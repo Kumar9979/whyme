@@ -60,109 +60,118 @@ import WarehouseUploadPhoto from "../components/modals/warehouse-property/wareho
 import WarehouseDeletePhoto from "../components/modals/warehouse-property/warehouseDeletePhoto";
 import WarehouseUpdateMap from "../components/modals/warehouse-property/warehouseUpdateMap";
 import WarehouseEditProperty from "../components/modals/warehouse-property/warehouseEditProperty";
+import IndustryBuildingUploadPhoto from "../components/modals/commercial-property/industrial-building/industrybuildingUploadPhoto";
+import IndustryBuildingDeletePhoto from "../components/modals/commercial-property/industrial-building/industrybuildingDeletePhoto";
+import IndustryBuildingUpdateMap from "../components/modals/commercial-property/industrial-building/industrybuildingUpdateMap";
+import IndustryBuildingFeatures from "../components/modals/commercial-property/industrial-building/industrybuildingEditFeatures";
+import IndustryBuildingAmenities from "../components/modals/commercial-property/industrial-building/industrybuildingEditAmenities";
+import IndustryBuildingAreaPrice from "../components/modals/commercial-property/industrial-building/industrybuildingAreaPrice";
+import IndustryBuildingDescription from "../components/modals/commercial-property/industrial-building/industrybuildingDescription";
+import CommercialPlotUploadPhoto from "../components/modals/commercial-property/commercial-plot/commercialplotUploadPhoto";
+import CommercialPlotDeletePhoto from "../components/modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow =() => setShow(true)
+  const handleShow = () => setShow(true);
   return (
     <>
-     <div className="mt_4">
-     <Button onClick={handleShow}>modal</Button>
-     </div>
-      
-     {/* <ApartmentDescription handleClose={handleClose} show={show} /> */}
-     {/* <ApartmentAreaPriceRent handleClose={handleClose} show={show} /> */}
-     {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
-     <ApartmentEditAmenities handleClose={handleClose} show={show} />
-     {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
-     {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
-     {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
+      <div className="mt_4">
+        <Button onClick={handleShow}>modal</Button>
+      </div>
+
+      {/* <ApartmentDescription handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
+      {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
 
+      {/* residential House*/}
+      {/* <ResidentialUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialDescription handleClose={handleClose} show={show} /> */}
 
-       {/* residential House*/}
-     {/* <ResidentialUploadPhoto handleClose={handleClose} show={show}/> */}
-     {/* <ResidentialDeletePhoto handleClose={handleClose} show={show}/> */}
-     {/* <ResidentialUpdateMap handleClose={handleClose} show={show}/> */}
-     {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
-     {/* <ResidentialEditAmenities handleClose={handleClose} show={show} /> */}
-     {/* <ResidentialAreaPrice handleClose={handleClose} show={show} /> */}
-     {/* <ResidentialAreaPriceRent handleClose={handleClose} show={show} /> */}
-     {/* <ResidentialDescription handleClose={handleClose} show={show} /> */}
-
-
-{/* Residentail Land */}
-{/* <ResidentialLandUploadPhoto handleClose={handleClose} show={show}/> */}
-{/* <ResidentialLandDeletePhoto handleClose={handleClose} show={show}/> */}
-{/* <ResidentialLandUpdateMap handleClose={handleClose} show={show}/> */}
-{/* <ResidentialLandEditProperty handleClose={handleClose} show={show}/> */}
-{/* <ResidentialLandEditAmenities handleClose={handleClose} show={show} /> */}
-{/* <ResidentialLandAreaPrice handleClose={handleClose} show={show} /> */}
-{/* <ResidentialLandDescription handleClose={handleClose} show={show} />  */}
+      {/* Residentail Land */}
+      {/* <ResidentialLandUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialLandDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialLandUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialLandEditProperty handleClose={handleClose} show={show}/> */}
+      {/* <ResidentialLandEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialLandAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialLandDescription handleClose={handleClose} show={show} />  */}
 
       {/* villa */}
- {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
- {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
- {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
- {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
- {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
- {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
- {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
- {/* <VillaDescription handleClose={handleClose} show={show} /> */}
+      {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
+      {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
+      {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
+      {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <VillaDescription handleClose={handleClose} show={show} /> */}
+
+      {/* officespace */}
+
+      {/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
+      {/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceDescription handleClose={handleClose} show={show}/> */}
+
+      {/* commercial shop */}
+
+      {/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
+      {/* <CommercialShopFeatures handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopAmenities handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopAreaPrice handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopRent handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopDescription handleClose={handleClose} show={show}/> */}
+
+      {/* commercial Showroom */}
+      {/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
+
+      {/* warehouse  */}
+      {/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
+      {/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <WarehouseEditProperty handleClose={handleClose} show={show} /> */}
+
+      {/* industrial building */}
+
+      {/* <IndustryBuildingRent handleClose={handleClose} show={show} />  */}
+      {/* <IndustryBuildingUploadPhoto handleClose={handleClose} show={show} /> */}
+      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
+      {/* <IndustryBuildingUpdateMap handleClose={handleClose} show={show} /> */}
+      {/* <IndustryBuildingFeatures handleClose={handleClose} show={show} />  */}
+      {/* <IndustryBuildingAmenities handleClose={handleClose} show={show} /> */}
+      {/* <IndustryBuildingAreaPrice handleClose={handleClose} show={show} />  */}
+      {/* <IndustryBuildingDescription handleClose={handleClose} show={show} /> */}
 
 
-{/* officespace */}
+      {/* commercial plot */}
 
-{/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
-{/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
-{/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}
-{/* <OfficeSpaceDescription handleClose={handleClose} show={show}/> */}
-
-{/* commercial shop */}
-
-
-{/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
-{/* <CommercialShopFeatures handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopAmenities handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopAreaPrice handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopRent handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopDescription handleClose={handleClose} show={show}/> */}
-
-
-
-
-
-{/* commercial Showroom */}
-{/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
-{/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
-{/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
-{/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
-{/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
-
-
-{/* industrial building */}
-
-<IndustryBuildingRent handleClose={handleClose} show={show} /> 
-{/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
-{/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
-{/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
-
-
-{/* warehouse  */}
-{/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
-{/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
-{/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
-<WarehouseEditProperty handleClose={handleClose} show={show} />
-
-
-
+      {/* <CommercialPlotUploadPhoto handleClose={handleClose} show={show} /> */}
+      <CommercialPlotDeletePhoto handleClose={handleClose} show={show} />
     </>
   );
 };
