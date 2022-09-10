@@ -76,6 +76,7 @@
 .hiderating_text {
   color: #1d72db;
 }
+
 /* /////////Review section/////////// */
 .reviewtext {
   color: #323d5a;
@@ -90,6 +91,7 @@
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.2px;
   height: 12rem;
+  resize: none;
 }
 .reviewtextarea::placeholder {
   font-family: "Poppins", sans-serif;
@@ -115,6 +117,7 @@
   font-family: "Poppins", sans-serif;
   width: 60%;
 }
+
 .review_profile{
     border: 3px solid #ffffff;
     border-radius: 8px;
@@ -123,6 +126,17 @@
     color: #013EA3;
     font-family: "Poppins", sans-serif;
 }
+.stars{
+  font-size: 52px;
+}
+.reviewrating_number {
+  color: #1d72db;
+}
+.reviewrating_text {
+  color: #1d72db;
+}
+
+
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1820px) {
@@ -159,9 +173,15 @@
     width: 70%;
     position: absolute;
   }
+  /* /////////head section/////////// */
+  .activestatus{
+    font-size: 20px;
+  }
+  
 }
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1350px) {
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 29%;
     top: 110%;
@@ -176,9 +196,14 @@
     width: 210px;
     height: 210px;
   }
+  .activestatus{
+    font-size: 19px;
+  }
+  
 }
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1317px) {
+  /* /////////head section/////////// */
   .profiledetails_container {
     left: 30%;
     top: 110%;
@@ -202,6 +227,10 @@
     border-radius: 26px;
     font-size: 15px;
   }
+  .activestatus{
+    font-size: 17px;
+  }
+  
 }
 .property_label {
   background-color: #f77223;
@@ -212,13 +241,14 @@
 }
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1270px) {
+  
   .profile_container {
     width: 96%;
     box-shadow: 0px 0px 20px #0000001f;
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 28%;
     top: 110%;
@@ -234,6 +264,9 @@
     width: 195px;
     height: 195px;
   }
+  .activestatus{
+    font-size: 17px;
+  }
 }
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1225px) {
@@ -243,7 +276,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+ /* /////////head section/////////// */
   .profiledetails_container {
     left: 28%;
     top: 110%;
@@ -260,7 +293,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 29%;
     top: 110%;
@@ -269,6 +302,7 @@
     justify-content: start;
   }
 }
+
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1204px) {
   .profile_container {
@@ -277,24 +311,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
-  .profiledetails_container {
-    left: 29%;
-    top: 110%;
-    width: 73%;
-    position: absolute;
-    justify-content: start;
-  }
-}
-/* //////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 1204px) {
-  .profile_container {
-    width: 99%;
-    box-shadow: 0px 0px 20px #0000001f;
-    border-radius: 20px;
-    opacity: 1;
-  }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 29%;
     top: 110%;
@@ -311,7 +328,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 28%;
     top: 110%;
@@ -336,7 +353,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 27%;
     top: 110%;
@@ -361,7 +378,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 26%;
     top: 110%;
@@ -377,16 +394,16 @@
     width: 185px;
     height: 185px;
   }
+  .activestatus{
+    font-size: 15px;
+  }
+  
 }
+
 /* //////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1075px) {
-  .profile_container {
-    width: 100%;
-    box-shadow: 0px 0px 20px #0000001f;
-    border-radius: 20px;
-    opacity: 1;
-  }
-
+  
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 25%;
     top: 110%;
@@ -402,30 +419,15 @@
     width: 185px;
     height: 185px;
   }
-}
-/* //////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 1075px) {
+  .activestatus{
+    font-size: 13px;
+  }
+  
   .profile_container {
     width: 99%;
     box-shadow: 0px 0px 20px #0000001f;
     border-radius: 20px;
     opacity: 1;
-  }
-
-  .profiledetails_container {
-    left: 25%;
-    top: 110%;
-    width: 79%;
-    position: absolute;
-    justify-content: start;
-  }
-  .profile_image {
-    left: 3%;
-    top: 65%;
-    border: 4px solid #ffffff;
-    border-radius: 8px;
-    width: 180px;
-    height: 180px;
   }
   .profile_name {
     color: #323d5a;
@@ -465,7 +467,7 @@
     border-radius: 20px;
     opacity: 1;
   }
-
+/* /////////head section/////////// */
   .profiledetails_container {
     left: 24%;
     top: 110%;
@@ -518,6 +520,7 @@
     border-radius: 20px;
     opacity: 1;
   }
+  /* /////////head section/////////// */
   .profile_image {
     left: 7%;
     top: 50%;
@@ -532,10 +535,7 @@
     width: 75%;
     position: absolute;
   }
-  .profile_name {
-    color: #323d5a;
-    font-size: 20px;
-  }
+  
   .property_label {
     background-color: #f77223;
     border-radius: 7px;
@@ -568,8 +568,36 @@
   .containerhide_second {
     display: none;
   }
+/* /////////Review section/////////// */
+.reviewtext {
+  color: #323d5a;
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+}
+
+.reviewtextarea {
+  width: 80%;
+  border: 1px solid #dbe9f2;
+  border-radius: 7px;
+  opacity: 1;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  height: 12rem;
+  resize: none;
+}
+.review_card {
+  background: #dbe9f24d 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  opacity: 1;
+  font-family: "Poppins", sans-serif;
+  width: 80%;
+}
+.stars{
+  font-size: 42px;
+}
 }
 @media only screen and (max-width: 768px) {
+ /* /////////head section/////////// */
   .profiledetails_container {
     left: 33%;
     top: 100%;
@@ -588,6 +616,27 @@
     );
     position: relative;
   }
+/* /////////review section/////////// */
+  .reviewtextarea {
+    width: 85%;
+    border: 1px solid #dbe9f2;
+    border-radius: 7px;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.2px;
+    height: 12rem;
+    resize: none;
+  }
+  .review_card {
+    background: #dbe9f24d 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    width: 85%;
+  }
+  .profilename{
+    font-size: 22px;
+  }
 }
 @media only screen and (max-width: 576px) {
   .profile_container {
@@ -595,8 +644,9 @@
     box-shadow: 0px 0px 20px #0000001f;
     border-radius: 20px;
     opacity: 1;
-    height: 85vh;
+   
   }
+  /* /////////head section/////////// */
   .profile_headsec {
     width: 105%;
     height: 200px;
@@ -614,8 +664,60 @@
     margin-left: 10%;
     margin-top: 2%;
   }
+  /* /////////review section/////////// */
+  .reviewtext {
+    color: #323d5a;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+  }
+  .reviewtextarea {
+    width: 85%;
+    border: 1px solid #dbe9f2;
+    border-radius: 7px;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.2px;
+    height: 10rem;
+    resize: none;
+  }
+  .reviewtextarea::placeholder {
+    font-family: "Poppins", sans-serif;
+    opacity: 1;
+    color: #bcc7ce;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  
+  .review_card {
+    background: #dbe9f24d 0% 0% no-repeat padding-box;
+    border-radius: 7px;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    width: 85%;
+  }
+  .reviewtext {
+    color: #323d5a;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+  }
+  .stars{
+    font-size: 32px;
+  }
+  .review_submit {
+    background-color: #fbc352;
+    width: 7rem;
+    color: #ffffff;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+  }
+  .profilename{
+    font-size: 18px;
+  }
+  
+
 }
 @media only screen and (max-width: 470px) {
+ /* /////////head section/////////// */
   .profile_headsec {
     width: 104%;
     height: 160px;
@@ -664,13 +766,54 @@
     top: 158%;
     position: absolute;
   }
+/* /////////review section/////////// */
+.reviewtext {
+  color: #323d5a;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+}
+.reviewrating_number {
+  color: #1d72db;
+  font-size: 16px;
+}
+.reviewrating_text {
+  color: #1d72db;
+  font-size: 16px;
+}
+.rstarimg{
+  width: 5px;
+  height: 5px;
+}
+.reviewcount
+{
+  font-size: 14px;
+}
+.reviewtextarea {
+  width: 85%;
+  border: 1px solid #dbe9f2;
+  border-radius: 7px;
+  opacity: 1;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  height: 8rem;
+  resize: none;
+}
 }
 @media only screen and (max-width: 380px) {
+/* /////////head section/////////// */
   .contact_btn {
     color: #ffffff;
     width: 90px;
     border-radius: 26px;
     font-size: 12px;
+  }
+  .profile_image {
+    left: 8%;
+    top: 70%;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+    width: 115px;
+    height: 115px;
   }
   .button_sec {
     margin-left: 18%;
@@ -714,8 +857,53 @@
     );
     position: relative;
   }
+  .button_sec {
+    margin-left: 12%;
+    margin-top: 2%;
+  }
+/* /////////review section/////////// */
+.reviewtext {
+  color: #323d5a;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+.reviewrating_number {
+  color: #1d72db;
+  font-size: 14px;
+}
+.reviewrating_text {
+  color: #1d72db;
+  font-size: 14px;
+}
+.reviewcount
+{
+  font-size: 12px;
+}
+.rstarimg{
+  width: 8px;
+  height: 8px;
+}
+.reviewtextarea {
+  width: 85%;
+  border: 1px solid #dbe9f2;
+  border-radius: 7px;
+  opacity: 1;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+  height: 6rem;
+  resize: none;
+}
+.profilepic{
+  width: 45px;
+  height: 45px;
+}
+.reviewdate{
+  font-size: 11px;
+}
+  
 }
 @media only screen and (max-width: 280px) {
+/* /////////head section/////////// */
   .profile_image {
     left: 7%;
     top: 60%;
@@ -776,5 +964,37 @@
     left: 5%;
     top: 160%;
     position: absolute;
+  }
+/* /////////review section/////////// */
+.reviewtext {
+  color: #323d5a;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+  .reviewrating_number {
+    color: #1d72db;
+    font-size: 11px;
+  }
+  .reviewrating_text {
+    color: #1d72db;
+    font-size: 11px;
+  }
+  .reviewcount
+  {
+    font-size: 10px;
+  }
+  .rstarimg{
+    width: 8px;
+    height: 8px;
+  }
+  .reviewtextarea {
+    width: 85%;
+    border: 1px solid #dbe9f2;
+    border-radius: 7px;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.2px;
+    height: 5rem;
+    resize: none;
   }
 }
