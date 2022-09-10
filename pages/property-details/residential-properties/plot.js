@@ -48,12 +48,12 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid propertyType="3BHK House in Vijayanagar, Mysuru" />
+            <ImageGrid propertyType="1200Sqft Plot in Vijayanagar, Mysuru" />
             <Aboutproperty data={1} />
             <Amenties data={1} />
             <ContactOwner />
             <PropertyLocation />
-            <AgentProperties />
+            <AgentProperties propertyType="1200Sqft Plot in Vijayanagar, Mysuru" />
           </div>
           <div className="col-lg-3 col-11">
             <div className="row">
@@ -74,7 +74,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties />
+          <OtherProperties amenties = {1} />
         </div>
 
         <div className="col-lg-3"> </div>

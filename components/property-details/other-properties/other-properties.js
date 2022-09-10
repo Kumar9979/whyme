@@ -9,7 +9,7 @@ import seeall from "../../../assets/images/seeall.svg";
 import RelatedProperties from "../../cards/property-details-cards/related-properties";
 import SimilarProperties from "../../cards/property-details-cards/similar-properties";
 
-const OtherProperties = () => {
+const OtherProperties = ({amenties}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -75,19 +75,19 @@ const OtherProperties = () => {
           ) : (
             <div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties />
+                <SimilarProperties plot={1}  />
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties />
+                <SimilarProperties plot={1} />
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} />
+                <SimilarProperties data = {1} plot={1} amenties={amenties} />
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} />
+                <SimilarProperties data = {1} plot={1} amenties={amenties} />
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} />
+                <SimilarProperties data = {1} plot={1} amenties={amenties}/>
               </div>
             </div>
           )}

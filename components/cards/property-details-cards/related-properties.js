@@ -9,7 +9,7 @@ import likeimage from "../../../assets/images/likeimage.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
-const RelatedProperties = () => {
+const RelatedProperties = ({data}) => {
   const [liked, setLiked] = useState(false);
   const [mobile, setMobile] = useState(false);
 
@@ -95,7 +95,7 @@ const RelatedProperties = () => {
         <div className="p-2">
           <div className={`${styles.related_properties_price}`}>₹ 70 Lac</div>
           <div className={`${styles.related_properties_location} `}>
-            2 BHK flat in Vijayanagar, Mysuru
+            {data}
           </div>
           <div className={`${styles.ready_to_move} pt-1 d-flex `}>
             <i className="ri-map-pin-2-fill "></i>

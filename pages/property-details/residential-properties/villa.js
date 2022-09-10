@@ -53,7 +53,7 @@ const Home = () => {
             <Amenties />
             <ContactOwner />
             <PropertyLocation />
-            <AgentProperties />
+            <AgentProperties propertyType="2BHK Villa in Vijayanagar, Mysuru"/>
           </div>
           <div className="col-lg-3 col-11">
             <div className="row">
