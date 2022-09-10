@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 
 const WarehouseEditAmenities = ({ show, handleClose }) => {
@@ -75,56 +75,39 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
                           <input
                             className="form-check-input mt-2 "
                             type="checkbox"
-                            id="Elevators/Lifts"
-                            name="Elevators/Lifts"
+                            id="Godown For Any Dry Storage"
+                            name="Godown For Any Dry Storage"
                             onChange={handleCheckbox}
                             checked={formik.values.Amenities.includes(
-                                "Elevators/Lifts"
+                                "Godown For Any Dry Storage"
                             )}
                           />
                           <label
                             className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                            htmlFor="Elevators/Lifts"
+                            htmlFor="Godown For Any Dry Storage"
                           >
-                            Elevators/Lifts
+                            Godown For Any Dry Storage
                           </label>
                         </div>
                     <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="Sauna Steam Room"
-                        name="Sauna Steam Room"
+                        id="Godown For Cold Storage"
+                        name="Godown For Cold Storage"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "Sauna Steam Room"
+                          "Godown For Cold Storage"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Sauna Steam Room"
+                        htmlFor="Godown For Cold Storage"
                       >
-                        Sauna Steam Room
+                        Godown For Cold Storage
                       </label>
                     </div>
-                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
-                      <input
-                        className="form-check-input mt-2 "
-                        type="checkbox"
-                        id="Kids Play Area"
-                        name="Kids Play Area"
-                        onChange={handleCheckbox}
-                        checked={formik.values.Amenities.includes(
-                          "Kids Play Area"
-                        )}
-                      />
-                      <label
-                        className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Kids Play Area"
-                      >
-                        Kids Play Area
-                      </label>
-                    </div>
+                  
                    
                    
                   </div>
@@ -133,43 +116,43 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="CCTV Surveillance"
-                        name="CCTV Surveillance"
+                        id="Distribution Center"
+                        name="Distribution Center"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "CCTV Surveillance"
+                          "Distribution Center"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="CCTV Surveillance"
+                        htmlFor="Distribution Center"
                       >
-                       CCTV Surveillance
+                       Distribution Center
                       </label>
                     </div>
                     <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="Private Parking Space"
-                        name="Private Parking Space"
+                        id="Godown With Climate Control"
+                        name="Godown With Climate Control"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "Private Parking Space"
+                          "Godown With Climate Control"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Private Parking Space"
+                        htmlFor="Godown With Climate Control"
                       >
-                       Private Parking Space
+                       Godown With Climate Control
                       </label>
                     </div>
                   
                   </div>
                 </div>
               </div>
-              <div className={`d-flex justify-content-end`}>
+              <div className={`d-flex justify-content-end mt-3`}>
             <button type="submit" className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-2`}>
                 <span>
                 Save

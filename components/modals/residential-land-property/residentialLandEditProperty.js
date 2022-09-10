@@ -207,14 +207,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={` ms-1 cursor_pointer`}
                           name="disclose"
-                          id="yes"
+                          id="Doneyes"
                           type="radio"
                           value="yes"
                           checked={discloseIdentity === "yes"}
                           onChange={handleRadioButton}
                         />
                         <label
-                          htmlFor="yes"
+                          htmlFor="Doneyes"
                           className={
                             discloseIdentity === "yes"
                               ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -226,14 +226,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
                           name="disclose"
-                          id="no"
+                          id="Doneno"
                           type="radio"
                           value="no"
                           checked={discloseIdentity === "no"}
                           onChange={handleRadioButton}
                         />{" "}
                         <label
-                          htmlFor="no"
+                        htmlFor="Doneno"
                           className={
                             discloseIdentity === "no"
                               ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -255,14 +255,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={` ms-1 cursor_pointer`}
                           name="boundaryWall"
-                          id="yes"
+                          id="Wallyes"
                           type="radio"
                           value="yes"
                           checked={boundaryWallIdentity === "yes"}
                           onChange={handleBoundaryWallRadioButton}
                         />
                         <label
-                          htmlFor="yes"
+                           htmlFor="Wallyes"
                           className={
                             boundaryWallIdentity === "yes"
                               ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -274,14 +274,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
                           name="boundaryWall"
-                          id="no"
+                  id="Wallno"
                           type="radio"
                           value="no"
                           checked={boundaryWallIdentity === "no"}
                           onChange={handleBoundaryWallRadioButton}
                         />{" "}
                         <label
-                          htmlFor="no"
+                  htmlFor="Wallno"
                           className={
                             boundaryWallIdentity === "no"
                               ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -306,14 +306,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={` ms-1 cursor_pointer`}
                           name="gatedColony"
-                          id="yes"
+                   id="Colonyyes"
                           type="radio"
                           value="yes"
                           checked={gatedColonyIdentity === "yes"}
                           onChange={handleGatedColonyRadioButton}
                         />
                         <label
-                          htmlFor="yes"
+                     htmlFor="Colonyyes"
                           className={
                             gatedColonyIdentity === "yes"
                               ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -325,14 +325,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
                           name="gatedColony"
-                          id="no"
+                      id="Colonyno"
                           type="radio"
                           value="no"
                           checked={gatedColonyIdentity === "no"}
                           onChange={handleGatedColonyRadioButton}
                         />{" "}
                         <label
-                          htmlFor="no"
+                        htmlFor="Colonyno"
                           className={
                             gatedColonyIdentity === "no"
                               ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -354,14 +354,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={` ms-1 cursor_pointer`}
                           name="conerSite"
-                          id="yes"
+                     id="siteyes"
                           type="radio"
                           value="yes"
                           checked={conerSiteIdentity === "yes"}
                           onChange={handleConerSiteRadioButton}
                         />
                         <label
-                          htmlFor="yes"
+                        htmlFor="siteyes"
                           className={
                             conerSiteIdentity === "yes"
                               ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
@@ -373,14 +373,14 @@ const ResidentialLandEditProperty = ({ show, handleClose }) => {
                         <input
                           className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
                           name="conerSite"
-                          id="no"
+                       id="siteno"
                           type="radio"
                           value="no"
                           checked={conerSiteIdentity === "no"}
                           onChange={handleConerSiteRadioButton}
                         />{" "}
                         <label
-                          htmlFor="no"
+                      htmlFor="siteno"
                           className={
                             conerSiteIdentity === "no"
                               ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
