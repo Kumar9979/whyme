@@ -109,7 +109,25 @@ const propertyFeatures = () => {
       );
     }
   };
+  function handleRadioButton(e) {
+    setDiscloseIdentity(e.target.value);
+  }
+  const [discloseIdentity, setDiscloseIdentity] = useState("yes");
 
+  function handleBoundaryWallRadioButton(e) {
+    setBoundaryWallIdentity(e.target.value);
+  }
+  const [boundaryWallIdentity, setBoundaryWallIdentity] = useState("yes");
+
+  function handleGatedColonyRadioButton(e) {
+    setGatedColonyIdentity(e.target.value);
+  }
+  const [gatedColonyIdentity, setGatedColonyIdentity] = useState("yes");
+
+  function handleConerSiteRadioButton(e) {
+    setConerSiteIdentity(e.target.value);
+  }
+  const [conerSiteIdentity, setConerSiteIdentity] = useState("yes");
   console.log(formik.values);
 
   return (
@@ -137,7 +155,7 @@ const propertyFeatures = () => {
               </div>
               <form onSubmit={formik.handleSubmit}>
                 <div className={`${styles.propertyFeature_padding_l_res}`}>
-                  <div className={`d-flex gap-5 `}>
+                  <div className={`d-flex flex-column flex-lg-row gap-1 gap-lg-0 `}>
                     <div className="mb-1">
                       <label
                         htmlFor="FloorsAllowed"
@@ -171,8 +189,6 @@ const propertyFeatures = () => {
                           )}
                       </div>
                     </div>
-
-           
 
                     <div className=" mb-1 ">
                       <label
@@ -209,9 +225,208 @@ const propertyFeatures = () => {
                     </div>
                   </div>
 
+                  <div className="row gx-0">
+                  
+                      <div className="col-12 col-sm-6 mb-3 mb-sm-0">
+                        <div
+                          className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                        >
+                          Any construction Done
+                        </div>
+                        <div className="d-flex">
+                          <input
+                            className={` ms-1 cursor_pointer`}
+                            name="disclose"
+                            id="yes"
+                            type="radio"
+                            value="yes"
+                            checked={discloseIdentity === "yes"}
+                            onChange={handleRadioButton}
+                          />
+                          <label
+                            htmlFor="yes"
+                            className={
+                              discloseIdentity === "yes"
+                                ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            Yes
+                          </label>
+                          <input
+                            className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                            name="disclose"
+                            id="no"
+                            type="radio"
+                            value="no"
+                            checked={discloseIdentity === "no"}
+                            onChange={handleRadioButton}
+                          />{" "}
+                          <label
+                            htmlFor="no"
+                            className={
+                              discloseIdentity === "no"
+                                ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            No
+                          </label>
+                        </div>
+                      </div>
+
+                      <div className="col-6">
+                        <div
+                          className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                        >
+                          Boundary Wall made
+                        </div>
+                        <div className="d-flex">
+                          <input
+                            className={` ms-1 cursor_pointer`}
+                            name="boundaryWall"
+                            id="yeswall"
+                            type="radio"
+                            value="yes"
+                            checked={boundaryWallIdentity === "yes"}
+                            onChange={handleBoundaryWallRadioButton}
+                          />
+                          <label
+                            htmlFor="yeswall"
+                            className={
+                              boundaryWallIdentity === "yes"
+                                ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            Yes
+                          </label>
+                          <input
+                            className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                            name="boundaryWall"
+                            id="nowall"
+                            type="radio"
+                            value="no"
+                            checked={boundaryWallIdentity === "no"}
+                            onChange={handleBoundaryWallRadioButton}
+                          />{" "}
+                          <label
+                            htmlFor="nowall"
+                            className={
+                              boundaryWallIdentity === "no"
+                                ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            No
+                          </label>
+                        </div>
+                      </div>
+               
+                  </div>
+                  <div className="row gx-0 mt-3">
+
+                      <div className="col-12 col-sm-6 mb-3 mb-sm-0" >
+                        <div
+                          className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                        >
+                          Gated colony
+                        </div>
+                        <div className="d-flex">
+                          <input
+                            className={` ms-1 cursor_pointer`}
+                            name="gatedColony"
+                            id="yesGated"
+                            type="radio"
+                            value="yes"
+                            checked={gatedColonyIdentity === "yes"}
+                            onChange={handleGatedColonyRadioButton}
+                          />
+                          <label
+                            htmlFor="yesGated"
+                            className={
+                              gatedColonyIdentity === "yes"
+                                ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            Yes
+                          </label>
+                          <input
+                            className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                            name="gatedColony"
+                            id="noGated"
+                            type="radio"
+                            value="no"
+                            checked={gatedColonyIdentity === "no"}
+                            onChange={handleGatedColonyRadioButton}
+                          />{" "}
+                          <label
+                            htmlFor="noGated"
+                            className={
+                              gatedColonyIdentity === "no"
+                                ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            No
+                          </label>
+                        </div>
+                      </div>
+
+                      <div className="col-6 ">
+                        <div
+                          className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                        >
+                          Corner site
+                        </div>
+                        <div className="d-flex ">
+                          <input
+                            className={` ms-1 cursor_pointer`}
+                            name="conerSite"
+                            id="yesCorner"
+                            type="radio"
+                            value="yes"
+                            checked={conerSiteIdentity === "yes"}
+                            onChange={handleConerSiteRadioButton}
+                          />
+                          <label
+                            htmlFor="yesCorner"
+                            className={
+                              conerSiteIdentity === "yes"
+                                ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            Yes
+                          </label>
+                          <input
+                            className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                            name="conerSite"
+                            id="noCorner"
+                            type="radio"
+                            value="no"
+                            checked={conerSiteIdentity === "no"}
+                            onChange={handleConerSiteRadioButton}
+                          />{" "}
+                          <label
+                            htmlFor="noCorner"
+                            className={
+                              conerSiteIdentity === "no"
+                                ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                            }
+                          >
+                            No
+                          </label>
+                        </div>
+                      </div>
+              
+                  </div>
+
                   {/* CHECKBOX ITEMS */}
 
-                  <div className={`content-fourth-line mt-4 mt-lg-3 `}>
+                  <div className={`content-fourth-line mt-4 mt-lg-5 `}>
                     <div className={`content-fourth-name mb-2`}>
                       <h5
                         className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -263,8 +478,6 @@ const propertyFeatures = () => {
                           Underground Drainage System
                         </label>
                       </div>
-
-                  
                     </div>
 
                     <div className={`${styles.amenities_list_flex_res}  `}>
@@ -306,7 +519,7 @@ const propertyFeatures = () => {
                           className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
                           htmlFor="Main Road Access"
                         >
-                     Main Road Access
+                          Main Road Access
                         </label>
                       </div>
 
@@ -319,18 +532,18 @@ const propertyFeatures = () => {
                           id="Electricity Line"
                           name="Electricity Line"
                           onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes("Electricity Line")}
+                          checked={formik.values.Amenities.includes(
+                            "Electricity Line"
+                          )}
                         />
                         <label
                           className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
                           htmlFor="Electricity Line"
                         >
-         Electricity Line
+                          Electricity Line
                         </label>
                       </div>
                     </div>
-
-                
                   </div>
 
                   <div
