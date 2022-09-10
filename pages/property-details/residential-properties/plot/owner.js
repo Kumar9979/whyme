@@ -1,19 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import ImageGrid from "../../../components/property-details/image-grid";
-import styles from "../../../styles/propertydetails/homepage.module.css";
-import Aboutproperty from "../../../components/property-details/about-property";
-import Amenties from "../../../components/property-details/amenties";
-import ContactOwner from "../../../components/property-details/contact_owner";
-import PropertyLocation from "../../../components/property-details/property_location";
-import AgentProperties from "../../../components/property-details/agent-properties";
-import LoremIpsum from "../../../components/property-details/lorem-ipsum";
-import RequestCall from "../../../components/property-details/request-callback";
-import LoremText from "../../../components/property-details/lorem-text";
-import ContactUs from "../../../components/property-details/contact_us";
-import Foter from "../../../components/footerPage/footer";
-import SimilarProperties from "../../../components/cards/property-details-cards/similar-properties";
-import RelatedProperties from "../../../components/cards/property-details-cards/related-properties";
-import OtherProperties from "../../../components/property-details/other-properties/other-properties";
+import ImageGrid from "../../../../components/property-details/image-grid";
+import styles from "../../../../styles/propertydetails/homepage.module.css";
+import Aboutproperty from "../../../../components/property-details/about-property";
+import Amenties from "../../../../components/property-details/amenties";
+import ContactOwner from "../../../../components/property-details/contact_owner";
+import PropertyLocation from "../../../../components/property-details/property_location";
+import AgentProperties from "../../../../components/property-details/agent-properties";
+import LoremIpsum from "../../../../components/property-details/lorem-ipsum";
+import RequestCall, { PostedByOwner } from "../../../../components/property-details/request-callback";
+import LoremText from "../../../../components/property-details/lorem-text";
+import ContactUs from "../../../../components/property-details/contact_us";
+import Foter from "../../../../components/footerPage/footer";
+import OtherProperties from "../../../../components/property-details/other-properties/other-properties";
 
 const Home = () => {
   const number = 20;
@@ -50,17 +48,17 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid propertyType="3BHK House in Vijayanagar, Mysuru" />
-            <Aboutproperty />
-            <Amenties />
+            <ImageGrid propertyType="1200Sqft Plot in Vijayanagar, Mysuru" />
+            <Aboutproperty data={1} />
+            <Amenties data={1} />
             <ContactOwner />
             <PropertyLocation />
-            <AgentProperties propertyType="2BHK House in Vijayanagar, Mysuru" />
+            <AgentProperties propertyType="1200Sqft Plot in Vijayanagar, Mysuru" />
           </div>
           <div className="col-lg-3 col-11">
             <div className="row">
               <div className="col-12 col-lg-12 col-md-6">
-                <RequestCall />
+                <PostedByOwner/>
               </div>
               <div className="col-12 col-lg-12 col-md-6">
                 <ContactUs />
@@ -76,7 +74,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties />
+          <OtherProperties amenties = {1} />
         </div>
 
         <div className="col-lg-3"> </div>
