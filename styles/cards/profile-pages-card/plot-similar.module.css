@@ -131,6 +131,14 @@
 .container {
   margin-bottom: 0.5rem;
 }
+.ready_house {
+  color: #ffffff;
+  background: #24734e 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  opacity: 1;
+  font-size: 9px;
+  white-space: nowrap;
+}
 
 @media only screen and (max-width: 1300px) {
   .similar_properties_card {

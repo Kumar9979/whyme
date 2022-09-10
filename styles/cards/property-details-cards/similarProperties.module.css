@@ -124,7 +124,32 @@
   left: 2.4%;
   top: 9%;
 }
+.list_columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
 
+.amenties_bullet {
+  list-style: none;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.amenties_list::marker {
+  content: "\2022";
+  color: #24734e;
+  font-weight: 900;
+  display: inline-block;
+  font-size: 12px;
+}
+.slicing_button {
+  border: none;
+  background-color: transparent;
+  font-size: 10px; 
+}
 
 @media only screen and (max-width: 1300px) {
   .similar_properties_card {
@@ -147,6 +172,10 @@
     width: 15px;
     height: 15px;
   }
+.slicing_button {
+  font-size: 9px;
+}
+
   .similar_property_location {
     color: #000000;
     font-size: 12px;
@@ -165,7 +194,10 @@
   .about_readmore_text {
     font-size: 8px;
   }
-
+.amenties_bullet {
+  font-size: 8px;
+  
+}
 }
 @media only screen and (min-width: 992px) and (max-width: 1300px) {
   .contact_button {
@@ -173,7 +205,6 @@
     height: 2rem;
   }
   .position_image {
-    
     top: 10px;
   }
   .round_image {
@@ -181,4 +212,3 @@
     top: 5%;
   }
 }
-

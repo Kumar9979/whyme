@@ -12,7 +12,7 @@ import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import homeimage from "../../../assets/images/home.png";
 import photo from "../../../assets/icons/photo.png";
 
-const SimilarProperties = () => {
+const SimilarProperties = ({ data }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -21,6 +21,8 @@ const SimilarProperties = () => {
 
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
+  const [show, setShow] = useState(false);
+
   function likeHovered(state) {
     if (state === "hovered") {
       setSaveIcon(saved);
@@ -53,7 +55,7 @@ const SimilarProperties = () => {
   }, []);
 
   const [readless, setReadless] = useState(false);
-  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren`;
+  const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo `;
   const Alltext = readless === true ? text : text.slice(0, 150);
   return (
     <div className="">
@@ -86,13 +88,14 @@ const SimilarProperties = () => {
             </button>
           </div>
           <div
-            className={`${styles.luxurius} position-absolute fs_14 fw_500 fontFam_poppins`}
+            className={`${styles.luxurius} position-absolute w-50 fs_14 fw_500 fontFam_poppins`}
           >
             Luxurious
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-7`}>
+        <div className={`d-flex flex-column col-lg-7`}>
+          <div className="ps-1">
           <div className="d-flex align-items-center">
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
@@ -113,7 +116,7 @@ const SimilarProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 mt-2 ${styles.amenties_width} `}>
+          <div className={`row ps-1 mt-2 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
                 <div className={`col-lg-4 col-6 d-flex ${styles.container} `}>
@@ -139,16 +142,83 @@ const SimilarProperties = () => {
               );
             })}
           </div>
-          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-2`}>
+          {data == 1 ? (
+            <div>
+              <div className="mt-2">
+                <ul
+                  className={`${styles.amenties_bullet} color_cloudBurst  text-nowrap  fw_500 fontFam_poppins`}
+                >
+                  <li className={`${styles.amenties_list} ps-1`}>
+                    Elevators/Lifts
+                  </li>
+                  <li className={`${styles.amenties_list} ps-1 `}>
+                    Guest Parking Spaces
+                  </li>
+                  <li className={`${styles.amenties_list} ps-1 `}>
+                    CCTV Surveillance
+                  </li>
+                  <li className={`${styles.amenties_list} ps-1 `}>
+                    Swimming Pool
+                  </li>
+                  <li className={`${styles.amenties_list} ps-1 `}>Gym</li>
+                  {show ? (
+                    <div>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Play Grounds
+                      </li>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Vehicle Charging Points
+                      </li>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Community Clubhouse
+                      </li>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Garden
+                      </li>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Barbecue Areas
+                      </li>
+                      <li className={`${styles.amenties_list} ps-1 `}>
+                        Rooftop Lounge Areas
+                      </li>
+                    </div>
+                  ) : null}
+
+                  <li className="p-0">
+                    <button
+                      onClick={() => setShow(!show)}
+                      className={`${styles.slicing_button} color_orange fontFam_poppins fw_500 p-0`}
+                    >{
+                     show ? "Read Less" : "See More" 
+                    }
+                      
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : null}
+
+          <p
+            className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-0`}
+          >
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
               onClick={() => setReadless(!readless)}
             >
-              {readless === true ? "Read Less" : "Read More"}
+              {readless === true ? "Read Less" : "See More"}
             </button>
           </p>
+          </div>
         </div>
+
+
+
+
+
+
+
 
         <div className="col-lg-2 d-flex flex-column justify-content-between position-relative">
           <div
@@ -169,7 +239,7 @@ const SimilarProperties = () => {
             </span>
           </div>
         </div>
-        
+
         <button
           className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
@@ -184,7 +254,6 @@ const SimilarProperties = () => {
             />
           </div>
         </button>
-        
       </div>
     </div>
   );

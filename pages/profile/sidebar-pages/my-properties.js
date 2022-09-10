@@ -29,12 +29,13 @@ const MyProperties = () => {
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
             >
-              My Properties
+              My Properties 
             </span>
+            <div className={`${styles.background_color} px-2 py-1 fs_12 fw_400 color_white fontFam_poppins ms-3`}><span>3 Properties</span></div>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div className={`${styles.cards_width}`}>
-            <SentProperties/>
+            <SentProperties />
           </div>
         </div>
       </div>

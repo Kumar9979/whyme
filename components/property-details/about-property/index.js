@@ -52,7 +52,7 @@ const Aboutproperty = () => {
           className={`${styles.about_readmore_button}`}
           onClick={() => setReadless(!readless)}
         >
-          {readless === true ? "Read Less" : "Read More"}
+          {readless === true ? "Read Less" : "See More"}
         </button>
       </p>
     </div>

@@ -113,13 +113,11 @@ const RelatedProperties = () => {
                     alt="Picture of the author"
                     width={20}
                   />
-                  <div className="d-flex flex-column ps-1 pt-2">
+                  <div className=" ps-1 pt-2">
                     <span className={`${styles.card_heading}`}>
-                      {item.heading}
-                    </span>
-                    <span className={`${styles.card_amenity}`}>
                       {item.amenity}
                     </span>
+                   
                   </div>
                 </div>
               );
@@ -128,8 +126,8 @@ const RelatedProperties = () => {
 
           <div className={`d-flex justify-content-between mt-2`}>
             <div className={`${styles.posted_date}`}>
-              Posted on <br />
-              20 July 2020
+              Listed on <br />
+              27/sep/2021
             </div>
             <div>
               <button className={`${styles.view_details_button} px-3 py-1`}>
@@ -148,18 +146,15 @@ export default RelatedProperties;
 const aboutproperties = [
   {
     image: squarearea,
-    heading: "super Area",
     amenity: "2400sqft",
   },
   {
     image: bathroom,
-    heading: "Bathrooms",
-    amenity: "3",
+    amenity: "3 Bath",
   },
 
   {
     image: furniture,
-    heading: "Floor",
     amenity: "3 out of 15",
   },
 ];

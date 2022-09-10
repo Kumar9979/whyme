@@ -18,7 +18,7 @@ import opensides from "../../../assets/images/about-property-images/open_sides.s
 import homeimage from "../../../assets/images/home.png";
 import photo from "../../../assets/icons/photo.png";
 
-const PlotProperties = ({ data }) => {
+const PlotProperties = ({ data,housetype }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -104,7 +104,7 @@ const PlotProperties = ({ data }) => {
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
-              1200Sqft Plot in Vijaynagar Mysore
+              {housetype}
             </div>
             <div
               className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}

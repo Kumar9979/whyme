@@ -16,7 +16,7 @@ import homeimage from "../../../assets/images/home.png";
 import tick from "../../../assets/icons/profile-icons/tick.svg";
 import edit_icon from "../../../assets/icons/profile-icons/editicon.svg";
 import delete_icon from "../../../assets/icons/profile-icons/delete.svg";
-const VerifiedProperties = () => {
+const VerifiedProperties = ({housetype}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -64,7 +64,7 @@ const VerifiedProperties = () => {
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
-              2BHK flat in Vijayanagar, Mysuru
+              {housetype}
             </div>
           </div>
           <div className={`${styles.exact_location}  d-flex `}>
@@ -79,7 +79,7 @@ const VerifiedProperties = () => {
             {aboutproperties.map((item, index) => {
               return (
                 <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center mb-2">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
                     </div>
