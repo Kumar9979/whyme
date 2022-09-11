@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
-const PriceDetailsSell = () => {
+const FlatPriceDetailsSell = () => {
   const [currentPage, setCurrentPage] = useState("priceDetails");
 
   const numRegex = /^[0-9]+$/;
@@ -280,4 +280,4 @@ const PriceDetailsSell = () => {
   );
 };
 
-export default PriceDetailsSell;
+export default FlatPriceDetailsSell;

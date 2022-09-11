@@ -5,7 +5,7 @@ import { useState } from 'react';
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 
-const PostPropertySubmitButton = ({ marginEnd, containerClassName }) => {
+const PostPropertySubmitButton = ({ marginEnd, containerClassName = false }) => {
     const router = useRouter();
     const [mobile, setMobile] = useState(true);
     console.log(containerClassName && mobile);
