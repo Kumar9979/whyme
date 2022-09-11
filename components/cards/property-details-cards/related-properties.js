@@ -119,12 +119,13 @@ const RelatedProperties = ({ location, data }) => {
               return (
                 <div className={`col-4 d-flex mb-2 alignn-items-center`}>
                   <div className="d-flex align-items-center">
-                    {" "}
-                    <Image
+                    <div/>
+                    <div className=""><Image
                       src={item.image}
                       alt="Picture of the author"
                       // width={25}
-                    />
+                    /></div>
+                    
                     <div className=" ps-1 ">
                       <span className={`${styles.card_heading}`}>
                         {item.amenity}
