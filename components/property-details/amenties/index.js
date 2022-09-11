@@ -3,9 +3,20 @@ import { useState } from "react";
 import styles from "../../../styles/propertydetails/amenties.module.css";
 
 const Amenties = ({ data }) => {
-  const [properties, setProperties] = useState(
-    data == 1 ? plotAmenties : amenties
-  );
+  let type;
+  switch (data) {
+    case 0:
+      type = amenties;
+      break;
+    case 1:
+      type = amenties1;
+      break;
+    case 2:
+      type = amenties2;
+
+      break;
+  }
+  const [properties, setProperties] = useState(type);
   return (
     <div className={`${styles.amenties} p-4 mt-4`}>
       <p className={`${styles.amenties_text}`}>Amenities</p>
@@ -69,7 +80,7 @@ const amenties = [
   },
 ];
 
-const plotAmenties = [
+const amenties1 = [
   {
     list: "Basic Amenities",
   },
@@ -93,4 +104,36 @@ const plotAmenties = [
   {
     list: "Pet Room",
   },
+];
+const amenties2 = [
+  {
+    list: "Private Parking Space",
+  },
+
+  {
+    list: "Guest Parking Spaces",
+  },
+
+  {
+    list: "Play Ground",
+  },
+
+  {
+    list: "Sauna Steam Room",
+  },
+
+  {
+    list: "Hardwood Floors",
+  },
+
+  {
+    list: "Pet Room",
+  },
+  {
+    list: "Lounge Area",
+  },
+  {
+    list: "Garden Area",
+  },
+ 
 ];

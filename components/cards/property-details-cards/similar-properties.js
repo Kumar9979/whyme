@@ -18,7 +18,7 @@ import corner from "../../../assets/images/about-property-images/corner_sites.sv
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 
-const SimilarProperties = ({ data, plot, amenties }) => {
+const SimilarProperties = ({ data, plot, amenties, type }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -30,6 +30,7 @@ const SimilarProperties = ({ data, plot, amenties }) => {
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
   const [show, setShow] = useState(false);
+  console.log(type)
 
   function likeHovered(state) {
     if (state === "hovered") {
@@ -108,7 +109,7 @@ const SimilarProperties = ({ data, plot, amenties }) => {
               <div
                 className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
               >
-                2BHK flat in Vijayanagar, Mysuru
+                {type}
               </div>
               <div
                 className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}

@@ -51,8 +51,8 @@ const Home = () => {
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
             <ImageGrid propertyType="3BHK House in Vijayanagar, Mysuru" />
-            <Aboutproperty />
-            <Amenties />
+            <Aboutproperty data={0}/>
+            <Amenties data={0}/>
             <ContactOwner />
             <PropertyLocation />
             <AgentProperties propertyType="2BHK House in Vijayanagar, Mysuru" />
@@ -76,7 +76,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties />
+          <OtherProperties type="3BHK House in Vijayanagar, Mysuru"/>
         </div>
 
         <div className="col-lg-3"> </div>

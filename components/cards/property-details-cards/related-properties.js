@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import western from "../../../assets/images/about-property-images/western.svg";
 
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
@@ -9,7 +10,17 @@ import likeimage from "../../../assets/images/likeimage.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
-const RelatedProperties = ({data}) => {
+const RelatedProperties = ({ location, data }) => {
+  let type;
+  switch (data) {
+    case 0:
+      type = aboutproperties;
+      break;
+    case 1:
+      type = aboutproperties1;
+      break;
+  }
+  const [properties, setProperties] = useState(type);
   const [liked, setLiked] = useState(false);
   const [mobile, setMobile] = useState(false);
 
@@ -61,7 +72,6 @@ const RelatedProperties = ({data}) => {
           <div className={`${styles.like_image} position-absolute`}>
             {mobile ? (
               <button
-               
                 onClick={() => setLike(!like)}
                 className={`${styles.save_image_button} `}
               >
@@ -95,7 +105,7 @@ const RelatedProperties = ({data}) => {
         <div className="p-2">
           <div className={`${styles.related_properties_price}`}>₹ 70 Lac</div>
           <div className={`${styles.related_properties_location} `}>
-            {data}
+            {location}
           </div>
           <div className={`${styles.ready_to_move} pt-1 d-flex `}>
             <i className="ri-map-pin-2-fill "></i>
@@ -105,19 +115,21 @@ const RelatedProperties = ({data}) => {
             </span>
           </div>
           <div className="row mt-2">
-            {aboutproperties.map((item, index) => {
+            {properties.map((item, index) => {
               return (
                 <div className={`col-4 d-flex mb-2 alignn-items-center`}>
-                  <Image
-                    src={item.image}
-                    alt="Picture of the author"
-                    width={20}
-                  />
-                  <div className=" ps-1 pt-2">
-                    <span className={`${styles.card_heading}`}>
-                      {item.amenity}
-                    </span>
-                   
+                  <div className="d-flex align-items-center">
+                    {" "}
+                    <Image
+                      src={item.image}
+                      alt="Picture of the author"
+                      // width={25}
+                    />
+                    <div className=" ps-1 ">
+                      <span className={`${styles.card_heading}`}>
+                        {item.amenity}
+                      </span>
+                    </div>
                   </div>
                 </div>
               );
@@ -151,6 +163,21 @@ const aboutproperties = [
   {
     image: bathroom,
     amenity: "3 Bath",
+  },
+
+  {
+    image: furniture,
+    amenity: "3 out of 15",
+  },
+];
+const aboutproperties1 = [
+  {
+    image: squarearea,
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    amenity: "3 washrooms",
   },
 
   {

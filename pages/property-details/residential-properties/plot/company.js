@@ -74,7 +74,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties amenties = {1} />
+          <OtherProperties amenties = {1} type="1200Sqft Plot in Vijayanagar, Mysuru"/>
         </div>
 
         <div className="col-lg-3"> </div>

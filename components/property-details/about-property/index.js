@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../../styles/propertydetails/aboutproperty.module.css";
 // import styles from "../styles/propertydetails/aboutproperty.module.css";
 import Image from "next/image";
-import facing from "../../../assets/images/about-property-images/facing.svg"
+import facing from "../../../assets/images/about-property-images/facing.svg";
 // import facing from "../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -20,36 +20,18 @@ import floors_allowed from "../../../assets/images/about-property-images/floors_
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 import western from "../../../assets/images/about-property-images/western.svg";
 import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
-
-const Aboutproperty = ({data}) => {
-  // const [properties, setProperties] = useState(data);
-
-  // function setProperties (data) {
-  //   switch (data) {
-  //     case "1":
-  //       aboutproperties;
-  //       break;
-  //     case "1":
-  //       aboutproperties1;
-  
-  //       break;
-  //     case "2":
-  //       aboutproperties2;
-  //       break;
-  //   }
-
-  // }
-
-
-  
-
-
-
-
-
-
-
-  const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
+let type;
+const Aboutproperty = ({ data }) => {
+  switch (data) {
+    case 0:
+      type = aboutproperties;
+      break;
+    case 1:
+      type = aboutproperties1;
+        break;
+  }
+  const [properties, setProperties] = useState(type);
+  // const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
@@ -98,10 +80,7 @@ const Aboutproperty = ({data}) => {
 export default Aboutproperty;
 
 const aboutproperties = [
-  { image: bedroom,
-    heading: "Bedroom",
-    amenity: "3",
-  },
+  { image: bedroom, heading: "Bedroom", amenity: "3" },
   {
     image: bathroom,
     heading: "Bathrooms",
@@ -116,22 +95,16 @@ const aboutproperties = [
     image: furniture,
     heading: "Furnishing Status",
     amenity: "Furnished",
-
-   
   },
   {
     image: floor,
     heading: "Floor",
     amenity: "3 out of 15",
-
-  
   },
   {
     image: facing,
     heading: "Facing",
     amenity: "North",
-
-   
   },
   {
     image: transaction,
@@ -149,7 +122,6 @@ const aboutproperties = [
     amenity: "1",
   },
 ];
-
 
 const aboutproperties2 = [
   {
@@ -167,10 +139,7 @@ const aboutproperties2 = [
     heading: "Washroom",
     amenity: "3 washrooms",
   },
-  { image: Cafetaria,
-    heading: "Cafetaria",
-    amenity: "Yes",
-  },
+  { image: Cafetaria, heading: "Cafetaria", amenity: "Yes" },
   {
     image: floor,
     heading: "Floor",
@@ -196,9 +165,7 @@ const aboutproperties2 = [
     heading: "Car Parking",
     amenity: "1",
   },
-  
 ];
-
 
 const aboutproperties1 = [
   {
@@ -232,4 +199,3 @@ const aboutproperties1 = [
     amenity: "Yes",
   },
 ];
-
