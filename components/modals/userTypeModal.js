@@ -41,13 +41,13 @@ const UserTypeModal = ({ show, onHide }) => {
         <Modal.Body className={styles.modal_body_register}>
           <div className="mb-1">
             <h5
-              className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
             >
               What you are
             </h5>
 
             <p
-              className={`${styles.opacity_6} ${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
             >
               Please select the Preferred option that are right here
             </p>
@@ -59,7 +59,7 @@ const UserTypeModal = ({ show, onHide }) => {
                 handleBuilderShow();
                 onHide();
               }}
-              className={`${styles.modal_box_type}  ${styles.color_1D72DB} ${styles.cursor_pointer} d-flex  px-2 mb-3 w-100`}
+              className={`${styles.modal_box_type}  color_light_blue ${styles.cursor_pointer} d-flex  px-2 mb-3 w-100`}
             >
               <div className="d-flex  justify-content-between    align-items-center">
                 {" "}
@@ -74,7 +74,7 @@ const UserTypeModal = ({ show, onHide }) => {
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.padding_l_4}`}
+                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ${styles.padding_l_4}`}
                 >
                   Builder/Developer
                 </span>
@@ -85,10 +85,11 @@ const UserTypeModal = ({ show, onHide }) => {
             </div>
 
             <div
-              className={`${styles.modal_box_type} ${styles.color_1D72DB} ${styles.cursor_pointer}  d-flex justify-content-between  mb-3`}
+              className={`${styles.modal_box_type} color_light_blue ${styles.cursor_pointer}  d-flex justify-content-between  mb-3`}
               onClick={() => {
                 handleSellRentShow();
-                onHide();}} >
+                onHide();
+              }} >
               <div className="d-flex  justify-content-between align-items-center ">
                 <div className="mx-3 my-2">
                   <Image
@@ -101,7 +102,7 @@ const UserTypeModal = ({ show, onHide }) => {
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} ${styles.fontFam_poppins} ${styles.font_medium} ms-3`}
+                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
                 >
                   Agent
                 </span>
@@ -111,10 +112,11 @@ const UserTypeModal = ({ show, onHide }) => {
               ></i>
             </div>
             <div
-              className={`${styles.modal_box_type} ${styles.color_1D72DB} ${styles.cursor_pointer} d-flex justify-content-between`}
+              className={`${styles.modal_box_type} color_light_blue ${styles.cursor_pointer} d-flex justify-content-between`}
               onClick={() => {
                 handleSellRentShow();
-                onHide();}} >
+                onHide();
+              }} >
               <div className="d-flex  justify-content-between align-items-center">
                 {" "}
                 <div className="mx-3 my-2">
@@ -128,7 +130,7 @@ const UserTypeModal = ({ show, onHide }) => {
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} ${styles.fontFam_poppins} ${styles.font_medium} ms-3`}
+                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
                 >
                   Owner
                 </span>

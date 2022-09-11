@@ -179,7 +179,7 @@ const propertyFeatures = () => {
             <div className={`${styles.input_container}`}>
               <div className={`  mb-4`}>
                 <h5
-                  className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
                 >
                   Property Features
                 </h5>
@@ -190,7 +190,7 @@ const propertyFeatures = () => {
                     <div className="mb-1">
                       <label
                         htmlFor="FloorNumber"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Floor Number
                       </label>
@@ -224,7 +224,7 @@ const propertyFeatures = () => {
                     <div className="  mb-1  ">
                       <label
                         htmlFor="TotalFloors"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Total Floors
                       </label>
@@ -262,7 +262,7 @@ const propertyFeatures = () => {
                     >
                       <label
                         htmlFor="Washrooms"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Washrooms
                       </label>
@@ -394,7 +394,7 @@ const propertyFeatures = () => {
                     <div className="me-5 w-100 mb-1">
                       <label
                         htmlFor="FurnishedStatus"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Furnishing Status{" "}
                       </label>
@@ -446,7 +446,7 @@ const propertyFeatures = () => {
                     <div className={`me-5 w-100 mb-1`}>
                       <label
                         htmlFor="Status"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Status{" "}
                       </label>
@@ -495,7 +495,7 @@ const propertyFeatures = () => {
                     <div className=" mb-1 w-100">
                       <label
                         htmlFor="Transaction"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Transaction{" "}
                       </label>
@@ -549,7 +549,7 @@ const propertyFeatures = () => {
                   <div className={`content-fourth-line mt-4 mt-lg-3 `}>
                     <div className={`content-fourth-name mb-2`}>
                       <h5
-                        className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Amenities
                       </h5>
@@ -571,7 +571,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Private Parking Space"
                         >
                           Private Parking Space
@@ -592,7 +592,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Guest Parking Spaces"
                         >
                           Guest Parking Spaces
@@ -613,7 +613,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Play Ground"
                         >
                           Play Ground
@@ -636,7 +636,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Sauna Steam Room"
                         >
                           Sauna Steam Room
@@ -657,7 +657,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Hardwood Floors"
                         >
                           Hardwood Floors
@@ -676,7 +676,7 @@ const propertyFeatures = () => {
                           checked={formik.values.Amenities.includes("Pet Room")}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Pet Room"
                         >
                           Pet Room
@@ -699,7 +699,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Lounge Area"
                         >
                           Lounge Area
@@ -717,7 +717,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Garden Area"
                         >
                           Garden Area
@@ -748,7 +748,7 @@ const propertyFeatures = () => {
                         </span>
 
                         <span
-                          className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Back
                         </span>
@@ -758,7 +758,7 @@ const propertyFeatures = () => {
                         className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
                       >
                         <span
-                          className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Next
                         </span>

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 
-export const AmnetiesGenerator = (list, startIndex, EndIndex, formik) => {
+export const AmnetiesGenerator = ({ list, startIndex = 0, endIndex = 10, formik, inputClassName = "", labelClassName = "" }) => {
     const handleCheckbox = (e) => {
         const { checked, name } = e.target;
         if (e.target.checked) {
@@ -18,14 +18,14 @@ export const AmnetiesGenerator = (list, startIndex, EndIndex, formik) => {
         }
     };
     return list?.map((item, i) => {
-        if (i >= startIndex && i <= EndIndex) {
+        if (i >= startIndex && i <= endIndex) {
             return (
                 <div
                     key={item}
-                    className={`form-check me-4 ${styles.margin_bottom}`}
+                    className={`form-check me-4 ${styles.margin_bottom} ${inputClassName}`}
                 >
                     <input
-                        className="form-check-input rounded-0 mt-2 "
+                        className="form-check-input cursor_pointer rounded-0 mt-2 "
                         type="checkbox"
                         id={item}
                         name={item}
@@ -35,7 +35,7 @@ export const AmnetiesGenerator = (list, startIndex, EndIndex, formik) => {
                         )}
                     />
                     <label
-                        className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                        className={`${labelClassName} form-check-label mt-1 text-nowrap ms-2 fontFam_poppins fw_500 `}
                         htmlFor={item}
                     >
                         {item}
@@ -53,4 +53,7 @@ export const AmnetiesGenerator = (list, startIndex, EndIndex, formik) => {
 
 export const IndustrialPlotSuitableList = [
     "Commercial Constructions", "Industrial Construction", "Highway Access", "Main Road Access", "Electricity Line"
+]
+export const CommercialPlotSuitableList = [
+    "Any Constructions", "Industrial Construction",
 ]

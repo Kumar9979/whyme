@@ -162,7 +162,7 @@ const propertyFeatures = () => {
             <div className={`${styles.input_container}`}>
               <div className={`  mb-4`}>
                 <h5
-                  className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
                 >
                   Property Features
                 </h5>
@@ -173,7 +173,7 @@ const propertyFeatures = () => {
                     <div className="mb-1">
                       <label
                         htmlFor="TotalFloors"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Total Floors
                       </label>
@@ -207,7 +207,7 @@ const propertyFeatures = () => {
                     <div className="  me-0 me-lg-5  mb-1">
                       <label
                         htmlFor="FurnishedStatus"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Furnishing Status{" "}
                       </label>
@@ -259,7 +259,7 @@ const propertyFeatures = () => {
                     <div className="mb-1 ">
                       <label
                         htmlFor="Washrooms"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Washrooms
                       </label>
@@ -296,7 +296,7 @@ const propertyFeatures = () => {
                     <div className="mb-1 ">
                       <label
                         htmlFor="floorAllowed"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Floors Allowed for Construction
                       </label>
@@ -329,7 +329,7 @@ const propertyFeatures = () => {
                     <div className="mb-1 me-0 me-lg-5 ">
                       <label
                         htmlFor="NoOfOpenSides"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Number of Open Sides
                       </label>
@@ -365,7 +365,7 @@ const propertyFeatures = () => {
                     <div className="mb-1 me-0 me-lg-5 ">
                       <label
                         htmlFor="widthOfRoad"
-                        className={`form-label text-nowrap  ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap  ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Width of Road Facing the Plot(in meters)
                       </label>
@@ -400,7 +400,7 @@ const propertyFeatures = () => {
                     >
                       <label
                         htmlFor="Transaction"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Transaction{" "}
                       </label>
@@ -449,64 +449,64 @@ const propertyFeatures = () => {
                     </div>{" "}
                   </div>
                   <div className={`${styles.amenities_list_flex_res} mt-2`}>      <div
-                      className={`me-5 ${styles.propertyFeature_width_50_to_100} mb-1`}
+                    className={`me-5 ${styles.propertyFeature_width_50_to_100} mb-1`}
+                  >
+                    <label
+                      htmlFor="Status"
+                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                     >
-                      <label
-                        htmlFor="Status"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                      >
-                        Status{" "}
-                      </label>
-                      <div
-                        className={`mb-1`}
-                        onClick={() => setoptionType("status")}
-                      >
-                        <Select
-                          id="Status"
-                          options={status}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="Status"
-                          value={status.filter((option) => {
-                            return option.value === formik.values.Status;
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "Status",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Status && formik.touched.Status && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Status}
-                            </span>
-                          </div>
-                        )}
-                      </div>
+                      Status{" "}
+                    </label>
+                    <div
+                      className={`mb-1`}
+                      onClick={() => setoptionType("status")}
+                    >
+                      <Select
+                        id="Status"
+                        options={status}
+                        type="text"
+                        placeholder="Select.."
+                        styles={customStyles}
+                        name="Status"
+                        value={status.filter((option) => {
+                          return option.value === formik.values.Status;
+                        })}
+                        onChange={(selectedOption) => {
+                          let event = {
+                            target: {
+                              name: "Status",
+                              value: selectedOption.value,
+                            },
+                          };
+                          formik.handleChange(event);
+                        }}
+                        components={{
+                          IndicatorSeparator: () => null,
+                        }}
+                      />
                     </div>
-            
+                    <div className={`${styles.error_container}`}>
+                      {formik.errors.Status && formik.touched.Status && (
+                        <div className="d-flex align-items-center text-danger">
+                          <i
+                            style={{ fontSize: 12, marginRight: ".1rem" }}
+                            className="ri-error-warning-line   "
+                          ></i>
+                          <span className={`fs_12 lh-base `}>
+                            {formik.errors.Status}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
                   </div>
                   {/* CHECKBOX ITEMS */}
 
                   <div className={`content-fourth-line mt-4 mt-lg-3 `}>
                     <div className={`content-fourth-name mb-2`}>
                       <h5
-                        className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Suitable for
                       </h5>
@@ -528,7 +528,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Industries For The Production Of Power"
                         >
                           Industries For The Production Of Power
@@ -549,7 +549,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Manufacturing Industries"
                         >
                           Manufacturing Industries
@@ -571,7 +571,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Raw Materials Mining Industries"
                         >
                           Raw Materials Mining Industries
@@ -592,7 +592,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Textile Industries"
                         >
                           Textile Industries
@@ -613,7 +613,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Petroleum Products Industries"
                         >
                           Petroleum Products Industries
@@ -634,7 +634,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Industries Of Wood And Paper Products"
                         >
                           Industries Of Wood And Paper Products
@@ -665,7 +665,7 @@ const propertyFeatures = () => {
                         </span>
 
                         <span
-                          className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Back
                         </span>
@@ -675,7 +675,7 @@ const propertyFeatures = () => {
                         className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
                       >
                         <span
-                          className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Next
                         </span>

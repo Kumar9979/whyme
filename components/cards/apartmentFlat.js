@@ -5,7 +5,7 @@ import styles from "../../styles/cards/propertycard.module.css";
 
 const ApartmentFlat = () => {
   return (
-       <div className={`container`}>
+    <div className={`container`}>
       <div
         className={`${styles.property_card_container} ${styles.property_card_flex_res}  p-2 pt-3`}
       >
@@ -25,7 +25,7 @@ const ApartmentFlat = () => {
             <div className={`d-flex justify-content-between`}>
               <div className={`d-flex align-items-center`}>
                 <span
-                  className={`${styles.fontFam_poppins} ${styles.font_20} ${styles.font_regular} me-2`}
+                  className={`fontFam_poppins ${styles.font_20} ${styles.font_regular} me-2`}
                 >
                   2BHK flat in Vijayanagar, Mysuru
                 </span>{" "}
@@ -40,7 +40,7 @@ const ApartmentFlat = () => {
             </div>
             <div>
               <span
-                className={`${styles.property_card_color_gray} ${styles.font_14} ${styles.fontFam_poppins} ${styles.font_regular} `}
+                className={`${styles.property_card_color_gray} ${styles.font_14} fontFam_poppins ${styles.font_regular} `}
               >
                 <i className={`ri-map-pin-line`}></i> 2Nd Floor, Dejgow
                 Building, Kannada Sahithya Parishath Rd,
@@ -59,7 +59,7 @@ const ApartmentFlat = () => {
                   className={`d-flex flex-column align-items-center justify-content-start ms-2`}
                 >
                   <span
-                    className={`${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular} `}
+                    className={`${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular} `}
                   >
                     SuperArea
                   </span>
@@ -78,7 +78,7 @@ const ApartmentFlat = () => {
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
                   <span
-                    className={`w-100 ${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular}`}
+                    className={`w-100 ${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular}`}
                   >
                     Floors
                   </span>
@@ -100,7 +100,7 @@ const ApartmentFlat = () => {
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
                   <span
-                    className={`${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular}`}
+                    className={`${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular}`}
                   >
                     Bathrooms
                   </span>
@@ -119,7 +119,7 @@ const ApartmentFlat = () => {
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
                   <span
-                    className={`${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular}`}
+                    className={`${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular}`}
                   >
                     Facing
                   </span>
@@ -141,7 +141,7 @@ const ApartmentFlat = () => {
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
                   <span
-                    className={`${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular}`}
+                    className={`${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular}`}
                   >
                     Furnishing Status
                   </span>
@@ -160,7 +160,7 @@ const ApartmentFlat = () => {
 
                 <div className={`d-flex flex-column align-items-center ms-2`}>
                   <span
-                    className={`${styles.property_card_color_gray} ${styles.font_12} ${styles.fontFam_poppins} ${styles.font_regular}`}
+                    className={`${styles.property_card_color_gray} ${styles.font_12} fontFam_poppins ${styles.font_regular}`}
                   >
                     Trasactions
                   </span>
@@ -177,7 +177,7 @@ const ApartmentFlat = () => {
 
           <div className={`d-flex mt-3`}>
             <ul
-              className={`${styles.property_card_list_items} p-0 ${styles.fontFam_poppins} ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular} `}
+              className={`${styles.property_card_list_items} p-0 fontFam_poppins ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular} `}
             >
               <li>Elevators/Lifts</li>
               <li>Guest Parking Spaces</li>
@@ -187,7 +187,7 @@ const ApartmentFlat = () => {
             </ul>
 
             <ul
-              className={`${styles.property_card_list_items} ${styles.fontFam_poppins} ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular}`}
+              className={`${styles.property_card_list_items} fontFam_poppins ${styles.font_14} ${styles.property_card_color_purple} ${styles.font_regular}`}
             >
               <li>Elevators/Lifts</li>
               <li>Guest Parking Spaces</li>
@@ -195,7 +195,7 @@ const ApartmentFlat = () => {
               <li>Spaces</li>
               <li>Lifts</li>
             </ul>
-           
+
           </div>
         </div>
 
@@ -207,20 +207,20 @@ const ApartmentFlat = () => {
 
             <div>
               <div
-                className={`text-end ${styles.property_card_color_purple} ${styles.font_14} ${styles.fontFam_poppins} ${styles.font_regular} me-3`}
+                className={`text-end ${styles.property_card_color_purple} ${styles.font_14} fontFam_poppins ${styles.font_regular} me-3`}
               >
                 Posted On 20 June 2020 <br /> By Amal Sabu
               </div>
               <div className={`d-flex justify-content-end`}>
-             
-              <div
-                className={` ${styles.property_card_heart_icon_container}  p-2`}
-              >
-                <i
-                  className={`ri-heart-fill ${styles.property_card_heart_icon} `}
-                ></i>
-              </div>
-          
+
+                <div
+                  className={` ${styles.property_card_heart_icon_container}  p-2`}
+                >
+                  <i
+                    className={`ri-heart-fill ${styles.property_card_heart_icon} `}
+                  ></i>
+                </div>
+
                 <div
                   className={`d-flex align-items-center justify-content-start  ${styles.property_card_bgColor_blue} ${styles.property_card_btn_contact}`}
                 >
@@ -233,7 +233,7 @@ const ApartmentFlat = () => {
                     className={`${styles.property_card_btn_contact_icon} `}
                   />
                   <span
-                    className={`text-white align-self-center ms-4 ${styles.fontFam_poppins} ${styles.font_20} ${styles.font_medium}`}
+                    className={`text-white align-self-center ms-4 fontFam_poppins ${styles.font_20} ${styles.font_medium}`}
                   >
                     Contact
                   </span>
@@ -243,7 +243,7 @@ const ApartmentFlat = () => {
           </div>
         </div>
       </div>
-    </div>  );
+    </div>);
 };
 
 export default ApartmentFlat;

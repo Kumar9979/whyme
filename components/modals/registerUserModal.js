@@ -79,13 +79,13 @@ const RegisterUserModal = ({ show, onHide }) => {
       <Modal.Body className={styles.modal_body_register}>
         <div className="mb-1 mt-1">
           <h5
-            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
+            className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
           >
             Register your account
           </h5>
 
           <p
-            className={`${styles.opacity_6} ${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+            className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
           >
             Please register your account to manage all your property.
           </p>
@@ -93,7 +93,7 @@ const RegisterUserModal = ({ show, onHide }) => {
 
         <form onSubmit={formik.handleSubmit} className="mt-4">
           <label
-            className={`${styles.color_1D1E1F} ${styles.font_medium} ${styles.fontFam_poppins} ${styles.font_20} mb-1 `}
+            className={`${styles.color_1D1E1F} ${styles.font_medium} fontFam_poppins ${styles.font_20} mb-1 `}
           >
             Profile Picture
           </label>
@@ -137,7 +137,7 @@ const RegisterUserModal = ({ show, onHide }) => {
           <div className="mb-3">
             <label
               id="#name"
-              className={`${styles.color_1D1E1F} ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.font_20} mb-1`}
+              className={`${styles.color_1D1E1F} ${styles.font_medium}  fontFam_poppins ${styles.font_20} mb-1`}
             >
               Name
             </label>
@@ -161,7 +161,7 @@ const RegisterUserModal = ({ show, onHide }) => {
 
           <div className="">
             <label
-              className={`${styles.color_1D1E1F} ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.font_20} mb-1`}
+              className={`${styles.color_1D1E1F} ${styles.font_medium}  fontFam_poppins ${styles.font_20} mb-1`}
             >
               Email Address
             </label>

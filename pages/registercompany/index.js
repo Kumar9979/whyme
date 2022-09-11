@@ -75,13 +75,13 @@ const RegisterCompany = () => {
           <div className={styles.modal_body_register}>
             <div className="mb-1 mt-1">
               <h5
-                className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
+                className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
               >
                 Register your account
               </h5>
 
               <p
-                className={`${styles.opacity_6} ${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+                className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
               >
                 Please register your account to manage all your property.
               </p>
@@ -89,15 +89,15 @@ const RegisterCompany = () => {
 
             <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
               <label
-               htmlFor="profile"
-                className={`${styles.color_1D1E1F} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} mb-1 `}
+                htmlFor="profile"
+                className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} ${styles.font_20} mb-1 `}
               >
                 Company Logo
               </label>
               <div className="mb-3">
                 <label
                   htmlFor="profile"
-                  className={`${styles.fontFam_poppins} ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
+                  className={`fontFam_poppins ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
                 >
                   <Image
                     src={uploaded ? file : camera}
@@ -139,7 +139,7 @@ const RegisterCompany = () => {
                 <div className={`${styles.width_res_cen_half} mb-3 `}>
                   <label
                     id="#name"
-                    className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                    className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
                   >
                     Company Name
                   </label>
@@ -165,7 +165,7 @@ const RegisterCompany = () => {
                 >
                   <label
                     id="#name"
-                    className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                    className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
                   >
                     Name
                   </label>
@@ -193,7 +193,7 @@ const RegisterCompany = () => {
               >
                 <div className={`${styles.width_res_cen_half} mb-3 `}>
                   <label
-                    className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                    className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
                   >
                     Email Address
                   </label>
@@ -218,7 +218,7 @@ const RegisterCompany = () => {
                   className={`${styles.width_res_cen_half} ${styles.margin_l_3}  mb-3`}
                 >
                   <label
-                    className={`${styles.fontFam_poppins} ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                    className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
                   >
                     Role
                   </label>

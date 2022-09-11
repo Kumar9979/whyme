@@ -74,7 +74,7 @@ const PostPropertyStepper = ({ currentPage }) => {
             </div>
 
             <span
-              className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  text-center ${styles.stepper_margin_left}`}
+              className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20}  text-center ${styles.stepper_margin_left}`}
             >
               Property{" "}
               <span className={`${styles.stepper_components_title}`}>
@@ -103,7 +103,7 @@ const PostPropertyStepper = ({ currentPage }) => {
             </div>
 
             <span
-              className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${propertyFeatures.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+              className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20} ${propertyFeatures.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
             >
               Property Features
             </span>
@@ -128,7 +128,7 @@ const PostPropertyStepper = ({ currentPage }) => {
               />
             </div>
             <span
-              className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+              className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
             >
               Price Details
             </span>
@@ -153,7 +153,7 @@ const PostPropertyStepper = ({ currentPage }) => {
               />
             </div>
             <span
-              className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+              className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
             >
               Photos & Description
             </span>

@@ -3,13 +3,13 @@ import React from 'react'
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 
-const PostPropertySubmitButton = () => {
+const PostPropertySubmitButton = ({ marginEnd }) => {
     const router = useRouter();
     return (
         <div
             className={`content-btn d-flex justify-content-end mt-5 `}
         >
-            <div className={`d-flex`}>
+            <div className={`d-flex ${marginEnd} `}>
                 <button
                     type="button"
                     onClick={() =>
@@ -28,7 +28,7 @@ const PostPropertySubmitButton = () => {
                     </span>
 
                     <span
-                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                     >
                         Back
                     </span>
@@ -38,7 +38,7 @@ const PostPropertySubmitButton = () => {
                     className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
                 >
                     <span
-                        className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                     >
                         Next
                     </span>

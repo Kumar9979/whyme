@@ -69,7 +69,7 @@ const PriceDetailsRent = () => {
             <div className={`${styles.input_container} `}>
               <div className={`mb-4`}>
                 <h5
-                  className={`mx-3 mx-md-0 ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`mx-3 mx-md-0 color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
                 >
                   Price Details
                 </h5>
@@ -80,7 +80,7 @@ const PriceDetailsRent = () => {
                     <div className={`col-lg-6 col-sm-12 mb-4 mb-lg-0 `}>
                       <label
                         htmlFor="SuperArea"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Built-up Area
                       </label>
@@ -101,7 +101,7 @@ const PriceDetailsRent = () => {
                         >
                           <span className={`${styles.input_bar} mx-2`}></span>
                           <span
-                            className={`${styles.fontFam_poppins} ${styles.font_medium} align-middle me-3`}
+                            className={`fontFam_poppins ${styles.font_medium} align-middle me-3`}
                           >
                             Sqft
                           </span>
@@ -117,7 +117,7 @@ const PriceDetailsRent = () => {
                     <div className={`col-lg-6 col-sm-12`}>
                       <label
                         htmlFor="CarpetArea"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Carpet Area
                       </label>
@@ -138,7 +138,7 @@ const PriceDetailsRent = () => {
                         >
                           <span className={`${styles.input_bar} mx-2`}></span>
                           <span
-                            className={`${styles.fontFam_poppins} ${styles.font_medium} align-middle me-3`}
+                            className={`fontFam_poppins ${styles.font_medium} align-middle me-3`}
                           >
                             Sqft
                           </span>
@@ -157,7 +157,7 @@ const PriceDetailsRent = () => {
                     <div className={`col-lg-6 col-md-12 mb-4`}>
                       <label
                         htmlFor="DepositPrice"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Deposit Price
                       </label>
@@ -194,7 +194,7 @@ const PriceDetailsRent = () => {
                     <div className={`mb-4 col-lg-6 col-md-12 `}>
                       <label
                         htmlFor="DepositPrice"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Rent Price
                       </label>
@@ -231,7 +231,7 @@ const PriceDetailsRent = () => {
                   <div className={"mb-4"}>
                     <label
                       htmlFor="MaintenanceFees"
-                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                     >
                       Maintenance Fees
                     </label>
@@ -289,7 +289,7 @@ const PriceDetailsRent = () => {
                       </span>
 
                       <span
-                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                       >
                         Back
                       </span>
@@ -300,7 +300,7 @@ const PriceDetailsRent = () => {
                       className={`${styles.bg_color_1D72DB} ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
-                        className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                       >
                         Next
                       </span>

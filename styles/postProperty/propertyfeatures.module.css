@@ -12,14 +12,6 @@
   display: flex;
   justify-content: start;
 }
-.sidebar {
-  background-color: #1d72db;
-  height: 100%;
-  max-width: 20rem;
-  min-width: 10rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-}
 
 .property_boxShadow {
   box-shadow: 0px 0px 20px #323d5a1f;
@@ -38,17 +30,8 @@
   border-bottom-right-radius: 20px;
 }
 
-/* .propertyFeatures_status_width{
-  width: 30rem;
-} */
-.fontFam_poppins {
-  font-family: "Poppins";
-}
 .bg_color_1D72DB {
   background-color: #1d72db;
-}
-.color_1D72DB {
-  color: #1d72db;
 }
 
 .propetyfeature_input {
@@ -94,11 +77,6 @@
   margin-right: 3.5rem;
 }
 
-.amenities_list_title {
-  font-size: 14px;
-  margin-left: 0.5rem;
-}
-
 @media only screen and (max-width: 1200px) {
   .stepper_border_radius {
     padding: 0px;
@@ -120,25 +98,11 @@
     justify-content: end;
   }
 
-  .sidebar {
-    background-color: #1d72db;
-    height: 100%;
-    max-width: 50rem;
-    min-width: 10rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    margin-top: 5%;
-  }
-
   .propertyFeature_width_50_to_75 {
     width: 75%;
   }
   .propertyFeature_width_75_to_100 {
     width: 100%;
-  }
-  .amenities_width {
-    width: 100% !important;
   }
 
   .propertyFeature_width_50_to_75 {
@@ -161,11 +125,6 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-  }
-
-  .amenities_list_title {
-    font-size: 14px;
-    font-weight: 500;
   }
 
   .property_features_list_container {
