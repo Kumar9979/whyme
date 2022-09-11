@@ -32,6 +32,7 @@
     "react-file-drop": "^3.1.5",
     "react-geocode": "^0.2.3",
     "react-google-map-picker": "^1.2.3",
+    "react-icons": "^4.4.0",
     "react-images-uploading": "^3.1.6",
     "react-otp-input": "^2.4.0",
     "react-phone-input-2": "^2.15.0",
@@ -45,6 +46,7 @@
     "redux": "^4.2.0",
     "redux-saga": "^1.2.0",
     "remixicon": "^2.5.0",
+    "stars-rating": "^1.1.0",
     "styled-components": "^5.3.5",
     "use-places-autocomplete": "^4.0.0",
     "yup": "^0.32.11"

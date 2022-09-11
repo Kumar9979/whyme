@@ -1,14 +1,4 @@
-.seeall_button {
-  color: #50bf97;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  border: none;
-  background-color: transparent;
-}
-.similar_properties_heading {
-  color: #323d5a;
-}
+
 .similar_properties_card {
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 20px #0000001f;
@@ -31,14 +21,14 @@
   color: #000000;
   font-size: 14px;
 }
-.ready_house {
+/* .ready_house {
   color: #ffffff;
   background: #24734e 0% 0% no-repeat padding-box;
   border-radius: 5px;
   opacity: 1;
   font-size: 9px;
   white-space: nowrap;
-}
+} */
 .exact_location {
   color: #bcc7ce;
   font-size: 12px;
@@ -80,7 +70,7 @@
   border: none;
   color: #ffffff;
   width: 7.8rem;
-  height: 2.4rem;
+  height: 2rem;
   right: 2%;
   bottom: 3%;
 }
@@ -90,11 +80,15 @@
   border: 3px solid #1d72db;
   opacity: 1;
 }
+.round_image {
+  left: 2.4%;
+  top: 9%;
+}
 .posted_date {
   color: #323d5a;
   white-space: nowrap;
 }
-.scrollmenu {
+/* .scrollmenu {
   width: 100%;
 }
 .scrollmenu > .row {
@@ -112,7 +106,7 @@
   scrollbar-width: none;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
-}
+} */
 .home_image {
   border-radius: 10px;
   opacity: 1;
@@ -137,12 +131,15 @@
 .container {
   margin-bottom: 0.5rem;
 }
+.ready_house {
+  color: #ffffff;
+  background: #24734e 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  opacity: 1;
+  font-size: 9px;
+  white-space: nowrap;
+}
 
-/* @media only screen and (min-width: 992px) and (max-width: 1300px) {
-  .ready_house {
-    font-size: 5px;
-  }
-} */
 @media only screen and (max-width: 1300px) {
   .similar_properties_card {
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -150,6 +147,10 @@
     border-radius: 12px;
     opacity: 1;
     width: 99%;
+  }
+  .round_image {
+    left: 2%;
+    top: 5%;
   }
   .container {
     margin-bottom: 1rem;
@@ -189,7 +190,13 @@
     height: 2rem;
   }
   .position_image {
-    
     top: 10px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .round_image {
+    left: 3%;
+    top: 9%;
   }
 }

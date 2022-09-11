@@ -18,8 +18,11 @@ import LocationIcon from "../../../assets/icons/locationIcon";
 import calling from "../../../assets/icons/calling.svg";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
-
-const ImageGrid = () => {
+import ShareIcon from "../../../assets/images/about-property-images/share";
+import caution from "../../../assets/images/about-property-images/report_icon.svg";
+import { date } from "yup";
+const ImageGrid = ({ propertyType }) => {
+  const [show, setShow] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
   const [like, setLike] = useState(false);
@@ -53,25 +56,29 @@ const ImageGrid = () => {
     };
   }, []);
   const [isVisible, setIsVisible] = useState(false);
-
   const handleShow = () => setIsVisible(true);
   const handleClose = () => setIsVisible(false);
   const number = 10;
   return (
-    <div className={`${styles.property_details} p-2 p-lg-4 mt-lg-4`}>
+    <div
+      className={`${styles.property_details} p-2 p-lg-4 mt-lg-4 position-relative`}
+    >
       <div className="d-flex justify-content-between ">
         <div className="col-11">
           <div className="d-flex align-items-center">
             <p
-              className={`${styles.property_area} lh-sm m-0 p-0 fs_22 fw_600 fontFam_poppins me-lg-2 me-0 `}
+              className={`${styles.property_area} lh-sm m-0 p-0 fs_22  fs_sm_15 fw_600 fontFam_poppins me-lg-2 me-0 `}
             >
-              3BHK Apartment in Vijayanagar, Mysuru
+              {propertyType}
             </p>
-            <div
-              className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
-            >
-              Project by Brigade
-            </div>
+            {date == 1 ? (
+              <div
+                className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
+              >
+                Project by Brigade
+              </div>
+            ) : null}
+
             <div
               className={`${styles.ready_apartment} px-1 fs_12 fw_500 fontFam_poppins d-none d-lg-block`}
             >
@@ -83,9 +90,6 @@ const ImageGrid = () => {
           >
             <span className="pe-1">
               {" "}
-              {/* <Image src={location} alt="Picture of the author"
-              width={12}
-              height={12} /> */}
               <LocationIcon fill="#1D72DB" />
             </span>
             2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
@@ -94,6 +98,7 @@ const ImageGrid = () => {
         </div>
 
         <button
+          onClick={() => setShow(!show)}
           className={`${styles.property_share_report} pe-3 d-flex justify-content-end  align-items-top  col-1`}
         >
           <Image
@@ -201,7 +206,7 @@ const ImageGrid = () => {
 
       <div className="d-flex justify-content-between ps-2">
         <div
-          className={` d-flex align-items-center fw_700 fs_28 fontFam_poppins ${styles.property_price} `}
+          className={` d-flex align-items-center fw_700 fs_28 fs_sm_20 text-nowrap fontFam_poppins ${styles.property_price} `}
         >
           ₹ 70Lac
           <span
@@ -212,59 +217,36 @@ const ImageGrid = () => {
         </div>
 
         <div className={`d-flex align-items-center pe-2`}>
-          {mobile ? (
-            <div className={``}>
-              <button
-                onClick={() => setLike(!like)}
-                className={
-                  like
-                    ? ` ${styles.property_saved} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                    : ` ${styles.property_save} ${styles.mobile_button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                }
-              >
-                <span className="d-flex align-items-center pe-0 pe-lg-2">
-                  {" "}
-                  <Image
-                    src={like ? save : saved}
-                    alt="Picture of the author"
-                    className={`${styles.save_image}`}
-                    width={25}
-                    height={25}
-                  />
-                </span>
-                <span className="d-none d-lg-block">
-                  {liked ? "saved" : "save"}
-                </span>
-              </button>
+          <div className={``}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={
+                liked
+                  ? `${styles.property_saved} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center  justify-content-center`
+                  : `${styles.property_save} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center justify-content-center`
+              }
+            >
+              <div className={`${styles.saveIcon}`}>
+                <Image
+                  src={saveIcon}
+                  alt="Picture of the author"
+                  className={`${styles.save_image}`}
+                />
+              </div>
+            </button>
+          </div>
+          <button
+            className={`${styles.shareIcon}  d-flex align-items-center ms-2 ms-lg-4 justify-content-center`}
+          >
+            <div
+              className={`${styles.saveIcon} d-flex align-items-center justify-content-center`}
+            >
+              <ShareIcon fill="#1D72DB" width={20} height={20} />
             </div>
-          ) : (
-            <div className={``}>
-              <button
-                onMouseEnter={() => likeHovered("hovered")}
-                onMouseLeave={() => likeHovered("leaved")}
-                onClick={() => setLiked(!liked)}
-                className={
-                  liked
-                    ? `${styles.property_saved} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                    : `${styles.property_save} ${styles.button_width} fw_600 fs_14 fontFam_poppins  d-flex align-items-center px-0 px-lg-4 py-0 py-lg-2 justify-content-center`
-                }
-              >
-                <span className="d-flex align-items-center pe-0 pe-lg-2">
-                  {" "}
-                  <Image
-                    src={saveIcon}
-                    alt="Picture of the author"
-                    className={`${styles.save_image}`}
-                    width={20}
-                    height={20}
-                  />
-                </span>
-                <span className="d-none d-lg-block">
-                  {liked ? "saved" : "save"}
-                </span>
-              </button>
-            </div>
-          )}
+          </button>
+          {/* )} */}
 
           {mobile ? (
             <div className="ps-4  ">
@@ -277,7 +259,7 @@ const ImageGrid = () => {
             </div>
           ) : (
             <button
-              className={`${styles.property_owner_contact} fs_14 fw_400 fontFam_poppins px-5 py-2 ms-2`}
+              className={`${styles.property_owner_contact} fs_14 fw_400 fontFam_poppins px-5 py-2 ms-0 ms-lg-4`}
             >
               Contact
             </button>
@@ -328,6 +310,31 @@ const ImageGrid = () => {
           </Carousel>
         </Modal.Body>
       </Modal>
+      {show ? (
+        <div className={`${styles.share_report_card} p-3  position-absolute`}>
+          <button
+            className={`${styles.share_button} d-flex align-items-center justify-content-center mb-2`}
+          >
+            <ShareIcon fill="#323D5A" width={15} height={15} />
+            <span className="fontFam_poppins text-nowrap fs_17  color_cloudBurst fw_600 ps-3">
+              Share Property
+            </span>
+          </button>
+          <button
+            className={`${styles.share_button} d-flex align-items-center justify-content-center `}
+          >
+            <Image
+              src={caution}
+              alt="Picture of the author"
+              width={15}
+              height={15}
+            />
+            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
+              Report an Issue
+            </span>
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

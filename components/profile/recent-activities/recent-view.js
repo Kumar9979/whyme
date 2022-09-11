@@ -83,7 +83,7 @@ const RecentView = () => {
                   Yesterday
                 </h1>
                 <div className={`${styles.width_properties} ms-3`}>
-                  <PlotProperties />
+                  <PlotProperties housetype= "2BHK flat in Vijayanagar, Mysuru" />
                 </div>
               </div>
               <div>
@@ -93,13 +93,13 @@ const RecentView = () => {
                   26 Aug 2022
                 </h1>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties />
+                  <PlotProperties housetype= "2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties />
+                  <PlotProperties housetype= "2BHK House in Vijayanagar, Mysuru"  />
                 </div>
                 <div className={`${styles.width_properties} mb-0 ms-3`}>
-                  <PlotProperties data={1} />
+                  <PlotProperties data={1} housetype= "1200Sqft plot in Vijayanagar, Mysuru" />
                 </div>
               </div>
             </div>

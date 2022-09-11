@@ -3,14 +3,12 @@ import Image from "next/image";
 import styles from "../../../styles/propertydetails/agentproperties.module.css";
 import image from "../../../assets/images/imagereview/people.png";
 import star from "../../../assets/images/star.svg";
-// import RelatedProperties from "../../cards/property-details-cards/related-properties";
 import arrowleft from "../../../assets/images/arrow_left.svg";
 import arrowright from "../../../assets/images/arrow_right.svg";
 import seeall from "../../../assets/images/seeall.svg";
 import RelatedProperties from "../../cards/property-details-cards/related-properties";
 
-
-const AgentProperties = () => {
+const AgentProperties = ({propertyType}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -45,12 +43,11 @@ const AgentProperties = () => {
           <div className={`${styles.scrollmenu} `}>
             <div ref={ref} className={`${styles.row} d-flex`}>
               {[...Array(n)].map((item, index) => {
-                return <RelatedProperties />;
+                return <RelatedProperties data={propertyType} />;
               })}
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

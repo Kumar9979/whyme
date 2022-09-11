@@ -70,15 +70,15 @@ const SentProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <VerifiedProperties />
+                  <VerifiedProperties housetype="2BHK flat in Vijayanagar, Mysuru" />
                 </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <UnderReviewProperties />
+                  <UnderReviewProperties housetype="2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <RejectedProperties />
+                  <RejectedProperties housetype="2BHK Villa in Vijayanagar, Mysuru" />
                 </div>
               </div>
             </div>

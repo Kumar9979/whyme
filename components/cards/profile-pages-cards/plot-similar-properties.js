@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
-import people from "../../../assets/images/imagereview/people.png";
-import seeall from "../../../assets/images/seeall.svg";
 import styles from "../../../styles/cards/profile-pages-card/plot-similar.module.css";
-import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -21,13 +18,13 @@ import opensides from "../../../assets/images/about-property-images/open_sides.s
 import homeimage from "../../../assets/images/home.png";
 import photo from "../../../assets/icons/photo.png";
 
-const PlotProperties = ({ data }) => {
+const PlotProperties = ({ data,housetype }) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
-  const [nm, setNm] = useState(data === 1 ?  aboutproperties2 : aboutProperties );
+  const [nm, setNm] = useState(data === 1 ? aboutproperties2 : aboutProperties);
 
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
@@ -107,7 +104,7 @@ const PlotProperties = ({ data }) => {
             <div
               className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
             >
-              1200Sqft Plot in Vijaynagar Mysore
+              {housetype}
             </div>
             <div
               className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
@@ -181,19 +178,20 @@ const PlotProperties = ({ data }) => {
             </span>
           </div>
         </div>
+
         <button
-          className={`  ${styles.contact_button} d-flex align-items-center position-absolute`}
+          className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
-          <div className={`d-flex justify-content-start`}>
+          <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+          <div className={`position-absolute ${styles.round_image}`}>
             <Image
               className={`${styles.owner_image}`}
               src={photo}
               alt="Picture of the author"
-              width={25}
-              height={25}
+              width={28}
+              height={28}
             />
           </div>
-          <span className={`fs_16 fw_400 pb-1 ps-2`}>Contact</span>
         </button>
       </div>
     </div>
@@ -205,7 +203,7 @@ const aboutproperties2 = [
   {
     image: floors_allowed,
     heading: "Floors Allowed",
-    amenity: "Floors", 
+    amenity: "Floors",
   },
   {
     image: construction,
