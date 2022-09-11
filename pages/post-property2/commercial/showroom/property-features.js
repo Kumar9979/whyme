@@ -409,7 +409,7 @@ const propertyFeatures = () => {
                         <div
                           className={`text-nowrap  ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
                         >
-                       Corner Shop
+                          Corner Shop
                         </div>
                         <div className="d-flex mt-3">
                           <input

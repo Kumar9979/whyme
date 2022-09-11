@@ -50,40 +50,6 @@
 .color_1D72DB {
   color: #1d72db;
 }
-.cursor_pointer {
-  cursor: pointer;
-}
-
-.font_24 {
-  font-size: 1.25rem;
-}
-
-.font_18 {
-  font-size: 16px;
-}
-
-.font_20 {
-  font-size: 16px;
-}
-
-.font_14 {
-  font-size: 14px;
-}
-.font_semibold {
-  font-weight: 600;
-}
-
-.font_medium {
-  font-weight: 500;
-}
-
-.font_light {
-  font-weight: 300;
-}
-
-.font_regular {
-  font-weight: 400;
-}
 
 .propetyfeature_input {
   border: none;
@@ -92,10 +58,6 @@
   font-size: 13px;
   font-family: Poppins, light;
   border-radius: 4px;
-}
-
-.amenities_list_flex_res {
-  display: flex;
 }
 
 .propetyfeature_input:focus-visible {
@@ -116,16 +78,17 @@
   outline: 2px solid #1d72db;
   font-size: 13px;
 }
-
 .propertyFeature_width_50_to_75 {
   width: 50%;
-}
-.propertyFeature_width_75_to_100 {
-  width: 75%;
 }
 .propertyFeature_width_50_to_100 {
   width: 50%;
 }
+
+.propertyFeature_width_75_to_100 {
+  width: 75%;
+}
+
 .input_container {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
@@ -133,7 +96,7 @@
 
 .amenities_list_title {
   font-size: 14px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -148,9 +111,7 @@
   .propertyFeature_width_50_to_100 {
     width: 100%;
   }
-  .amenities_list_flex_res {
-    display: block;
-  }
+
   .styles.property_boxShadow {
     box-shadow: none !important;
   }
@@ -202,14 +163,6 @@
     border-bottom-left-radius: 20px;
   }
 
-  .font_24 {
-    font-size: 20px;
-  }
-
-  .font_20 {
-    font-size: 16px;
-  }
-
   .amenities_list_title {
     font-size: 14px;
     font-weight: 500;
@@ -219,22 +172,3 @@
     width: 100% !important;
   }
 }
-/* 
-@media only screen and (min-width: 1198px) {
-  .select_status::placeholder{
-    margin-right:85px;
-  }
-} */
-
-/* @media only screen and (max-width: 1100px) {
-  .sidebar {
-    background-color: #1d72db;
-    height: 100%;
-    max-width: 50rem;
-    min-width: 10rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    margin-top: 5%;
-  }
-} */

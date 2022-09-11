@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
-import Select from "react-select";
 import { useRouter } from "next/router";
 import StepperNew from "../../../stepper/stepper";
 
@@ -10,8 +9,8 @@ const CommercialPlotPropertyFeatures = () => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const [currentPage, setCurrentPage] = useState("propertyFeatures");
-  const [cornerShop, setCornerShop] = useState("yes");
-  const [personalWashroom, setPersonalWashroom] = useState("yes");
+  const [boundary, setBoundary] = useState("yes");
+  const [reraReg, setReraReg] = useState("yes");
   const [mainRoad, setMainRoad] = useState("yes");
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
@@ -90,7 +89,7 @@ const CommercialPlotPropertyFeatures = () => {
       Status: "",
       Transaction: "",
       FloorsAllowed: "",
-      roadFaceWidth:"",
+      roadFaceWidth: "",
       Amenities: [],
     },
 
@@ -128,7 +127,7 @@ const CommercialPlotPropertyFeatures = () => {
     },
   });
   function HandleReraStatus(e) {
-    setPantryCafeteria(e.target.value);
+    setReraReg(e.target.value);
     let event = {
       target: {
         name: "RERA",
@@ -138,7 +137,7 @@ const CommercialPlotPropertyFeatures = () => {
     formik.handleChange(event);
   }
   function handleBoundarywall(e) {
-    setPersonalWashroom(e.target.value);
+    setBoundary(e.target.value);
     let event = {
       target: {
         name: "BoundaryWall",
@@ -229,7 +228,7 @@ const CommercialPlotPropertyFeatures = () => {
                         htmlFor="roadFaceWidth"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
-       Road facing plot width
+                        Road facing plot width
                       </label>
                       <div>
                         <input
@@ -258,45 +257,14 @@ const CommercialPlotPropertyFeatures = () => {
                       </div>
                     </div>
 
-                
+
                   </div>
 
                   <div
                     className={`${styles.amenities_list_flex_res} gap-0 gap-lg-5 mb-2 mt-2`}
                   >
                     {" "}
-                    <div className="mb-1 ">
-                      <label
-                        htmlFor="Washrooms"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                      >
-                        Washrooms
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={` ${styles.propertyFeature_width_75_to_100} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="Washrooms"
-                          placeholder="Ex : 13"
-                          name="Washrooms"
-                          value={formik.values.Washrooms}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Washrooms && formik.touched.Washrooms && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Washrooms}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
+
                     <div className="mb-1 ">
                       <label
                         htmlFor="floorAllowed"
@@ -330,123 +298,121 @@ const CommercialPlotPropertyFeatures = () => {
                           )}
                       </div>
                     </div>
+
+
+                    <div className="col-6  mb-4 mb-lg-0">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Boundary Wall
+                      </div>
+                      <div className="d-flex ">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="boundaryWall"
+                          id="boundaryWallYes"
+                          type="radio"
+                          value="yes"
+                          checked={boundary === "yes"}
+                          onChange={handleBoundarywall}
+                        />
+                        <label
+                          htmlFor="boundaryWallYes"
+                          className={
+                            boundary === "yes"
+                              ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="boundaryWall"
+                          id="boundaryWallNo"
+                          type="radio"
+                          value="no"
+                          checked={boundary === "no"}
+                          onChange={handleBoundarywall}
+                        />{" "}
+                        <label
+                          htmlFor="boundaryWallNo"
+                          className={
+                            boundary === "no"
+                              ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+
                   </div>
 
                   <div className={`${styles.amenities_list_flex_res}  mt-2`}>
-       
 
 
 
 
 
 
-                  <div className="col-6 ">
-                        <div
-                          className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
-                        >
-                  RERA Registration Status
-                        </div>
-                        <div className="d-flex ">
-                          <input
-                            className={` ms-1 cursor_pointer`}
-                            name="conerSite"
-                            id="yesCorner"
-                            type="radio"
-                            value="yes"
-                            checked={personalWashroom === "yes"}
-                            onChange={[personalWashroom]}
-                          />
-                          <label
-                            htmlFor="yesCorner"
-                            className={
-                              personalWashroom === "yes"
-                                ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                                : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                            }
-                          >
-                            Yes
-                          </label>
-                          <input
-                            className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                            name="conerSite"
-                            id="noCorner"
-                            type="radio"
-                            value="no"
-                            checked={personalWashroom === "no"}
-                            onChange={handlePersonalWashroom}
-                          />{" "}
-                          <label
-                            htmlFor="noCorner"
-                            className={
-                              personalWashroom === "no"
-                                ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                                : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                            }
-                          >
-                            No
-                          </label>
-                        </div>
-                      </div>
 
-
-
-                    <div
-                      className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
-                    >
-                      <label
-                        htmlFor="Transaction"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
-                      >
-                        Transaction{" "}
-                      </label>
+                    <div className="col-6 ">
                       <div
-                        className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}
-                        onClick={() => setoptionType("transaction")}
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
                       >
-                        <Select
-                          id="Transaction"
-                          options={transaction}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="Transaction"
-                          value={transaction.filter((option) => {
-                            return option.value === formik.values.Transaction;
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "Transaction",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
+                        RERA Registration Status
+                      </div>
+                      <div className="d-flex ">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="reraReg"
+                          id="yesCorner"
+                          type="radio"
+                          value="yes"
+                          checked={reraReg === "yes"}
+                          onChange={HandleReraStatus}
                         />
+                        <label
+                          htmlFor="yesCorner"
+                          className={
+                            reraReg === "yes"
+                              ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="reraReg"
+                          id="noCorner"
+                          type="radio"
+                          value="no"
+                          checked={reraReg === "no"}
+                          onChange={HandleReraStatus}
+                        />{" "}
+                        <label
+                          htmlFor="noCorner"
+                          className={
+                            reraReg === "no"
+                              ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
                       </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Transaction &&
-                          formik.touched.Transaction && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.Transaction}
-                              </span>
-                            </div>
-                          )}
-                      </div>
-                    </div>{" "}
+                    </div>
+
+
+
                   </div>
 
                   {/* CHECKBOX ITEMS */}
 
-                  <div className={`content-fourth-line mt-4 mt-lg-3 `}>
+                  <div className={`content-fourth-line mt-4 mt-lg-4 `}>
                     <div className={`content-fourth-name mb-2`}>
                       <h5
                         className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
@@ -473,7 +439,7 @@ const CommercialPlotPropertyFeatures = () => {
                           className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
                           htmlFor="Any Construction"
                         >
-                         Any Construction
+                          Any Construction
                         </label>
                       </div>
 
@@ -498,8 +464,8 @@ const CommercialPlotPropertyFeatures = () => {
                         </label>
                       </div>
                     </div>
-    
-             
+
+
                   </div>
 
                   <div
