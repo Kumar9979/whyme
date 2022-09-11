@@ -91,17 +91,19 @@ const IndustrialPlotPropertyFeatures = () => {
                                 </div>
                                 <RadioButtonGenerator
                                     formik={formik} title={"Boundary Wall made"}
-                                    itemName={"boundaryWall"}
+                                    itemName={"boundaryWall"} containerClassName={"mt-1"}
                                 />
                                 <RadioButtonGenerator
                                     formik={formik} title={"Corner Site"}
                                     itemName={"cornerSite"}
+                                    containerClassName={"mt-1"}
                                 />
                             </div>
                             <div className={`d-block d-lg-flex  mt-2`}>
                                 <RadioButtonGenerator
                                     formik={formik} title={"RERA Registration Status"}
                                     itemName={"reraReg"}
+                                    containerClassName={"mt-1"}
                                 />
                             </div>
                             <div className={` mt-4 mt-lg-4 `}>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
-const RadioButtonGenerator = ({ formik, title, itemName, containerClassName = "mb-4 mb-lg-0", titleClassName = "mb-0", }) => {
+const RadioButtonGenerator = ({ formik, title, itemName, containerClassName = "", titleClassName = "mb-0", }) => {
     const [radioButton, setRadioButton] = useState("yes")
     function handleRadiobutton(e) {
         setRadioButton(e.target.value);
@@ -16,7 +16,7 @@ const RadioButtonGenerator = ({ formik, title, itemName, containerClassName = "m
     }
     return (
 
-        <div className={` ${containerClassName}`}>
+        <div className={` ${containerClassName} mb-4 mb-lg-0`}>
             <h5
                 className={`text-nowrap ${styles.total_floors_text} ${titleClassName} fs_16 fs_sm_12 fw_500 `}
             >

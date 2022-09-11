@@ -57,3 +57,6 @@ export const IndustrialPlotSuitableList = [
 export const CommercialPlotSuitableList = [
     "Any Constructions", "Industrial Construction",
 ]
+export const CommercialIndustrialShed = [
+    "Industries For The Production Of Power", "Manufacturing Industries", "Raw Materials Mining Industries", "Textile Industries", "Petroleum Products Industries", "Industries Of Wood And Paper Products"
+]

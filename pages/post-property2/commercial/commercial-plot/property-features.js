@@ -108,14 +108,14 @@ const CommercialPlotPropertyFeatures = () => {
                 formik={formik}
                 title={"Boundary Wall"}
                 itemName={"boundaryWall"}
-                containerClassName="mb-4 mt-1 mb-lg-0"
+                containerClassName=" mt-1 "
               />
             </div>
             <RadioButtonGenerator
               formik={formik}
               title={"RERA Registration Status"}
               itemName={"reraReg"}
-              containerClassName="mb-4 mt-1 mb-lg-0"
+              containerClassName=" mt-1 "
             />
             <div className={` mt-4 mt-lg-4 pt-0 pt-lg-1 `}>
               <h5 className={`fs_18 fw_400 fontFam_poppins`}>Suitable for</h5>
