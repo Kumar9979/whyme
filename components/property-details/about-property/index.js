@@ -18,8 +18,37 @@ import construction from "../../../assets/images/about-property-images/construct
 import corner from "../../../assets/images/about-property-images/corner_sites.svg";
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
+import western from "../../../assets/images/about-property-images/western.svg";
+import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
 
 const Aboutproperty = ({data}) => {
+  // const [properties, setProperties] = useState(data);
+
+  // function setProperties (data) {
+  //   switch (data) {
+  //     case "1":
+  //       aboutproperties;
+  //       break;
+  //     case "1":
+  //       aboutproperties1;
+  
+  //       break;
+  //     case "2":
+  //       aboutproperties2;
+  //       break;
+  //   }
+
+  // }
+
+
+  
+
+
+
+
+
+
+
   const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
@@ -119,6 +148,55 @@ const aboutproperties = [
     heading: "Car Parking",
     amenity: "1",
   },
+];
+
+
+const aboutproperties2 = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  { image: Cafetaria,
+    heading: "Cafetaria",
+    amenity: "Yes",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: cars,
+    heading: "Car Parking",
+    amenity: "1",
+  },
+  
 ];
 
 
