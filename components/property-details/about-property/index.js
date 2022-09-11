@@ -19,7 +19,7 @@ import corner from "../../../assets/images/about-property-images/corner_sites.sv
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 
-const Aboutproperty = ({data}) => {
+const Aboutproperty = ({ data }) => {
   const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
@@ -69,7 +69,8 @@ const Aboutproperty = ({data}) => {
 export default Aboutproperty;
 
 const aboutproperties = [
-  { image: bedroom,
+  {
+    image: bedroom,
     heading: "Bedroom",
     amenity: "3",
   },
@@ -88,21 +89,21 @@ const aboutproperties = [
     heading: "Furnishing Status",
     amenity: "Furnished",
 
-   
+
   },
   {
     image: floor,
     heading: "Floor",
     amenity: "3 out of 15",
 
-  
+
   },
   {
     image: facing,
     heading: "Facing",
     amenity: "North",
 
-   
+
   },
   {
     image: transaction,

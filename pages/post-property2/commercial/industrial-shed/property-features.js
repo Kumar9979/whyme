@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
@@ -11,48 +11,32 @@ import { AmnetiesGenerator, CommercialIndustrialShed } from "../../../../compone
 import InputFieldGenerator from "../../../../components/postproperty/formData/inputFieldGenerator";
 
 const IndustrialShedPropertyFeatures = () => {
-  const [optionType, setoptionType] = useState("");
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
 
   const formik = useFormik({
-    // enableReinitialize: true,
     initialValues: {
-      FloorNumber: "",
-      floorAllowed: "",
-      TotalFloors: "",
-      Washrooms: "",
-      TotalFloors: "",
-      NoOfOpenSides: "",
-      facing: "",
-      AgeOfConstruction: "",
+      floorsNumber: "",
+      washRooms: "",
+      totalFloors: "",
       furnishedStatus: "",
       currentStatus: "",
       transaction: "",
-      FloorsAllowed: "",
+      floorsAllowed: "",
       Amenities: [],
     },
 
     validationSchema: Yup.object({
-      FloorNumber: Yup.string()
+      floorsNumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      TotalFloors: Yup.string()
+      washRooms: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      Washrooms: Yup.string()
+      totalFloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      TotalFloors: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      NoOfOpenSides: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      AgeOfConstruction: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      FloorsAllowed: Yup.string()
+      floorsAllowed: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       furnishedStatus: Yup.string().required("Required"),
@@ -66,21 +50,6 @@ const IndustrialShedPropertyFeatures = () => {
     },
   });
 
-
-  const handleCheckbox = (e) => {
-    const { checked, name } = e.target;
-    if (e.target.checked) {
-      formik.setFieldValue("Amenities", [
-        ...formik.values.Amenities,
-        e.target.name,
-      ]);
-    } else {
-      formik.setFieldValue(
-        "Amenities",
-        formik.values.Amenities.filter((item) => item !== e.target.name)
-      );
-    }
-  };
 
 
   return (
@@ -99,67 +68,49 @@ const IndustrialShedPropertyFeatures = () => {
             </h5>
           </div>
           <form onSubmit={formik.handleSubmit}>
-            <div className={`${styles.propertyFeature_padding_l_res}`}>
-              <div className={`d-block d-flex `}>
-                <div className="mb-1">
+            <div className={``}>
+              <div className={`d-block d-lg-flex gap-4 `}>
+                <div className={`${styles.propertyFeature_width_25_to_100} mb-1`}>
                   <InputFieldGenerator
                     title={"Floor Number"}
-                    itemName={"floorsAllowed"}
-                    inputValue={formik.values.floorsAllowed}
+                    itemName={"floorsNumber"}
+                    inputValue={formik.values.floorsNumber}
                     onChangeFn={formik.handleChange}
                     inputClassName={"w-100"}
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.floorsAllowed}
-                    formikTouched={formik.touched.floorsAllowed}
+                    formikError={formik.errors.floorsNumber}
+                    formikTouched={formik.touched.floorsNumber}
                   />
                 </div>
 
 
 
-                <div className="mb-1">
-                  <label
-                    htmlFor="TotalFloors"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Total Floors
-                  </label>
-                  <div>
-                    <input
-                      type="text"
-                      className={` ${styles.propertyFeature_width_75_to_100} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                      id="TotalFloors"
-                      placeholder="Ex : 7"
-                      name="TotalFloors"
-                      value={formik.values.TotalFloors}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.TotalFloors &&
-                      formik.touched.TotalFloors && (
-                        <div className="d-flex align-items-center text-danger">
-                          <i
-                            style={{ fontSize: 12, marginRight: ".1rem" }}
-                            className="ri-error-warning-line   "
-                          ></i>
-                          <span className={`fs_12 lh-base `}>
-                            {formik.errors.TotalFloors}
-                          </span>
-                        </div>
-                      )}
-                  </div>
+                <div className={`mb-1 ${styles.propertyFeature_width_25_to_100}`}>
+
+                  <InputFieldGenerator
+                    title={"Total Floors"}
+                    itemName={"totalFloors"}
+                    inputValue={formik.values.totalFloors}
+                    onChangeFn={formik.handleChange}
+                    inputClassName={"w-100"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.totalFloors}
+                    formikTouched={formik.touched.totalFloors}
+                  />
+
                 </div>
 
-                <div className="  me-0 me-lg-5  mb-1">
+                <div className={`${styles.propertyFeature_width_25_to_100} me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
                     Furnishing Status{" "}
                   </label>
                   <div
-                    className={`mb-1`}
+                    className={``}
                     onClick={() => setoptionType("furnishingStatus")}
                   >
                     <SelectGenerator
@@ -176,88 +127,50 @@ const IndustrialShedPropertyFeatures = () => {
               </div>
 
               <div
-                className={`${styles.amenities_list_flex_res} gap-0 gap-lg-5 mb-2 mt-2`}
+                className={`d-block d-lg-flex gap-0 gap-lg-5 mb-2 mt-2`}
               >
                 {" "}
                 <div className="mb-1 ">
-                  <label
-                    htmlFor="Washrooms"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Washrooms
-                  </label>
-                  <div>
-                    <input
-                      type="text"
-                      className={` ${styles.propertyFeature_width_75_to_100} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                      id="Washrooms"
-                      placeholder="Ex : 13"
-                      name="Washrooms"
-                      value={formik.values.Washrooms}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.Washrooms && formik.touched.Washrooms && (
-                      <div className="d-flex align-items-center text-danger">
-                        <i
-                          style={{ fontSize: 12, marginRight: ".1rem" }}
-                          className="ri-error-warning-line   "
-                        ></i>
-                        <span className={`fs_12 lh-base `}>
-                          {formik.errors.Washrooms}
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  <InputFieldGenerator
+                    title={"Washrooms"}
+                    itemName={"washRooms"}
+                    inputValue={formik.values.washRooms}
+                    onChangeFn={formik.handleChange}
+                    inputClassName={"w-100"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.washRooms}
+                    formikTouched={formik.touched.washRooms}
+                  />
+
                 </div>
                 <div className="mb-1 ">
-                  <label
-                    htmlFor="floorAllowed"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Floors Allowed for Construction
-                  </label>
-                  <div>
-                    <input
-                      type="text"
-                      className={` mb-1 w-100 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                      id="floorAllowed"
-                      placeholder="Ex : 13"
-                      name="floorAllowed"
-                      value={formik.values.floorAllowed}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.floorAllowed &&
-                      formik.touched.floorAllowed && (
-                        <div className="d-flex align-items-center text-danger">
-                          <i
-                            style={{ fontSize: 12, marginRight: ".1rem" }}
-                            className="ri-error-warning-line   "
-                          ></i>
-                          <span className={`fs_12 lh-base `}>
-                            {formik.errors.floorAllowed}
-                          </span>
-                        </div>
-                      )}
-                  </div>
+                  <InputFieldGenerator
+                    title={"Floors Allowed for Construction"}
+                    itemName={"floorsAllowed"}
+                    inputValue={formik.values.floorsAllowed}
+                    onChangeFn={formik.handleChange}
+                    inputClassName={"w-100"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.floorsAllowed}
+                    formikTouched={formik.touched.floorsAllowed}
+                  />
                 </div>
               </div>
 
-              <div className={`${styles.amenities_list_flex_res}  mt-2`}>
+              <div className={`d-block d-lg-flex gap-0  mt-2`}>
                 <div
-                  className={`me-5 ${styles.propertyFeature_width_50_to_100} mb-1`}
+                  className={` ${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
                   <label
                     htmlFor="Status"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
                     Status{" "}
                   </label>
                   <div
-                    className={`mb-1`}
+                    className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
                     onClick={() => setoptionType("status")}
                   >
                     <SelectGenerator
@@ -274,11 +187,11 @@ const IndustrialShedPropertyFeatures = () => {
                   </div>
                 </div>
                 <div
-                  className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
+                  className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}
                 >
                   <label
                     htmlFor="Transaction"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
                     Transaction{" "}
                   </label>
@@ -302,10 +215,10 @@ const IndustrialShedPropertyFeatures = () => {
               </div>
 
 
-              <div className={`content-fourth-line mt-4 mt-lg-3 `}>
+              <div className={` mt-4 mt-lg-3 `}>
 
                 <h5
-                  className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
+                  className={`fs_18 fw_500 fontFam_poppins`}
                 >
                   Suitable for
                 </h5>

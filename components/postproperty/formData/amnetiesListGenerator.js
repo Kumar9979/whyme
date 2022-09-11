@@ -4,16 +4,16 @@ import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 export const AmnetiesGenerator = ({ list, startIndex = 0, endIndex = 10, formik, inputClassName = "", labelClassName = "" }) => {
     const handleCheckbox = (e) => {
-        const { checked, name } = e.target;
+        const { checked, name } = e?.target;
         if (e.target.checked) {
-            formik.setFieldValue("Amenities", [
-                ...formik.values.Amenities,
+            formik?.setFieldValue("Amenities", [
+                ...formik?.values?.Amenities,
                 e.target.name,
             ]);
         } else {
             formik.setFieldValue(
                 "Amenities",
-                formik.values.Amenities.filter((item) => item !== e.target.name)
+                formik?.values?.Amenities?.filter((item) => item !== e.target.name)
             );
         }
     };
@@ -30,7 +30,7 @@ export const AmnetiesGenerator = ({ list, startIndex = 0, endIndex = 10, formik,
                         id={item}
                         name={item}
                         onChange={handleCheckbox}
-                        checked={formik.values.Amenities.includes(
+                        checked={formik?.values?.Amenities?.includes(
                             item
                         )}
                     />

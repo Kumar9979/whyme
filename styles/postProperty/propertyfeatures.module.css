@@ -61,6 +61,9 @@
   outline: 2px solid #1d72db;
   font-size: 13px;
 }
+.propertyFeature_width_25_to_100 {
+  width: 25%;
+}
 .propertyFeature_width_50_to_75 {
   width: 50%;
 }
@@ -86,6 +89,9 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .propertyFeature_width_25_to_100 {
+    width: 100%;
+  }
   .propertyFeature_width_50_to_100 {
     width: 100%;
   }

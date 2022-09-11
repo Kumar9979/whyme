@@ -1,12 +1,37 @@
 import { useRouter } from 'next/router';
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 
-const PostPropertySubmitButton = ({ marginEnd }) => {
+const PostPropertySubmitButton = ({ marginEnd, containerClassName }) => {
     const router = useRouter();
+    const [mobile, setMobile] = useState(true);
+    console.log(containerClassName && mobile);
+
+    useEffect(() => {
+        if (window.innerWidth < 992) {
+            setMobile(false);
+        }
+    }, []);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 992) {
+                setMobile(false);
+            } else {
+                setMobile(true);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     return (
         <div
+            style={{ paddingTop: containerClassName && mobile ? containerClassName : "1rem" }}
             className={`content-btn d-flex justify-content-end mt-5 `}
         >
             <div className={`d-flex ${marginEnd} `}>
