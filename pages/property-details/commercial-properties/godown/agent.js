@@ -48,7 +48,7 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid propertyType="1200Sqft Commercial Showroom in Vijayanagar, Mysuru" />
+            <ImageGrid propertyType="5000Sqft Warehouse in Vijayanagar, Mysuru" />
             <Aboutproperty data={5} />
             <Amenties data={5} />
             <ContactOwner />

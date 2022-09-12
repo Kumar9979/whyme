@@ -21,7 +21,6 @@ import western from "../../../assets/images/about-property-images/western.svg";
 import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
 import road from "../../../assets/images/about-property-images/road-facing.svg";
 
-
 const SimilarProperties = ({ data, plot, amenties, type }) => {
   let available;
   switch (plot) {
@@ -42,6 +41,9 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
       break;
     case 5:
       available = Godown;
+      break;
+    case 6:
+      available = IndustrialShed;
       break;
   }
   const [facilities, setFacilities] = useState(available);
@@ -406,7 +408,7 @@ const CommercialShop = [
     heading: "Floor",
     amenity: "3 out of 15",
   },
- 
+
   {
     image: transaction,
     heading: "Transactions",
@@ -480,5 +482,37 @@ const Godown = [
     image: transaction,
     heading: "Transactions",
     amenity: "New",
+  },
+];
+const IndustrialShed = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
   },
 ];

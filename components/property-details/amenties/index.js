@@ -23,6 +23,9 @@ const Amenties = ({ data }) => {
     case 5:
       type = Gowdown;
       break;
+    case 6:
+      type = IndustrialShed;
+      break;
   }
   const [properties, setProperties] = useState(type);
   return (
@@ -113,6 +116,7 @@ const PlotAndLand = [
     list: "Pet Room",
   },
 ];
+
 const OfficeSpace = [
   {
     list: "Private Parking Space",
@@ -195,6 +199,30 @@ const Gowdown = [
 
   {
     list: "Godown With Climate Control",
+  },
+ 
+];
+const IndustrialShed = [
+  {
+    list: "The Production Of Power",
+  },
+
+  {
+    list: "Manufacturing Industries",
+  },
+
+  {
+    list: "Raw Materials Mining Industries",
+  },
+
+  {
+    list: "Textile Industries",
+  },
+  {
+    list: "Petroleum Products Industries",
+  },
+  {
+    list: "Wood And Paper Products",
   },
  
 ];

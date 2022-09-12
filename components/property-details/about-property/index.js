@@ -42,6 +42,9 @@ const Aboutproperty = ({ data }) => {
     case 5:
       type = Godown;
         break;
+    case 6:
+      type = IndustrialShed;
+        break;
   }
   const [properties, setProperties] = useState(type);
   // const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
@@ -342,4 +345,47 @@ const Godown = [
     heading: "Transactions",
     amenity: "Resale",
   },
+];
+const IndustrialShed = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "Resale",
+  },
+  
 ];

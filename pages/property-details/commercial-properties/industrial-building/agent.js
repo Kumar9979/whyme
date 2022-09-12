@@ -48,9 +48,9 @@ const Home = () => {
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
-            <ImageGrid propertyType="5000Sqft Warehouse in Vijayanagar, Mysuru" />
-            <Aboutproperty data={5} />
-            <Amenties data={5} />
+            <ImageGrid propertyType="2100Sqft Industrial Building in Vijayanagar, My..." />
+            <Aboutproperty data={6} />
+            <Amenties data={6} />
             <ContactOwner />
             <PropertyLocation />
             <AgentProperties propertyType="1200Sqft Office Space in Vijayanagar, My..." data={1}/>
@@ -58,7 +58,7 @@ const Home = () => {
           <div className="col-lg-3 col-11">
             <div className="row">
               <div className="col-12 col-lg-12 col-md-6">
-                <PostedByOwner/>
+                <RequestCall/>
               </div>
               <div className="col-12 col-lg-12 col-md-6">
                 <ContactUs />
@@ -74,7 +74,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties amenties = {1} type = "3000Sqft Godown in Vijayanagar, My..." data={1} plot={5} />
+          <OtherProperties amenties = {1} type = "3000Sqft Godown in Vijayanagar, My..." data={1} plot={6} />
         </div>
 
         <div className="col-lg-3"> </div>
