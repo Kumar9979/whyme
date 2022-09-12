@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../../styles/modals/apartmentEditProperty.module.css";
+import styles from "../../../../styles/modals/apartmentEditProperty.module.css";
 import Select from "react-select";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import useScreenSizeDetector from "../../useScreenSizeDetector";
+import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
 const WarehouseEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
@@ -329,8 +329,8 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
                     </div>
                   </div>
                 </div>
-                <div className="row gx-0">
-                  <div className="col-12 col-lg-5">
+                <div className="row gx-0 mt-lg-3">
+                  <div className="col-12 col-lg-5 mt-3 mt-lg-0">
                     <div className="">
                       <label
                         htmlFor="OpenSites"
@@ -363,7 +363,7 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
                         htmlFor="RoadFacing"
                         className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
                       >
-                        Width of Road Facing the Plot(in meters)
+                        Width of Road Facing the Plot<sapn className={`${styles.meters_text} fs_12`}>(in meters)</sapn>
                       </label>
                       <div>
                         <input
@@ -387,7 +387,7 @@ const WarehouseEditProperty = ({ show, handleClose }) => {
                   </div>
                 </div>
                 <div class=" text-start mt-3">
-                  <div className={width < 992 ? `row gx-2` : `row `}>
+                  <div className={ `row `}>
                     <div class="col-5">
                       <div class="">
                         <div className={`${styles.total_floors_text} `}>

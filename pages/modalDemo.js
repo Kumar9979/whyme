@@ -8,23 +8,19 @@ import OfficeSpaceDescription from "../components/modals/commercial-property/off
 import CommercialShopUploadPhoto from "../components/modals/commercial-property/commercial-shop/commercialshopUploadPhoto";
 import CommercialShopDeletePhoto from "../components/modals/commercial-property/commercial-shop/commercialshopDeletePhoto";
 import ApartmentDeletePhoto from "../components/modals/apartmentModals/apartmentDeletePhoto";
-
 import ApartmentAreaPrice from "../components/modals/apartmentModals/apartmentAreaPrice";
 import ApartmentAreaPriceRent from "../components/modals/apartmentModals/apartmentAreaPriceRent";
 import ApartmentDescription from "../components/modals/apartmentModals/apartmentDescription";
 import ApartmentEditAmenities from "../components/modals/apartmentModals/apartmentEditAmenities";
 import ApartmentEditProperty from "../components/modals/apartmentModals/apartmentEditProperty";
 import ApartmentUpdateMap from "../components/modals/apartmentModals/apartmentUpdateMap";
-
 import ApartmentUploadPhoto from "../components/modals/apartmentModals/apartmentUploadPhoto";
 import VillaDeletePhoto from "../components/modals/villa-property/villaDeletePhoto";
 import VillaUploadPhoto from "../components/modals/villa-property/villaUploadPhoto";
 import OfficeSpaceUploadPhoto from "../components/modals/commercial-property/office-space/officespaceUploadPhoto";
-
 import OfficespaceDeletePhoto from "../components/modals/commercial-property/office-space/officespaceDeletePhoto";
 import OfficeSpaceUpdateMap from "../components/modals/commercial-property/office-space/officespaceUpdateMap";
 import CommercialShopUpdateMap from "../components/modals/commercial-property/commercial-shop/commercialshopUpdateMap";
-
 import ResidentialEditProperty from "../components/modals/residential-house-property/residentialEditProperty";
 import ResidentialEditAmenities from "../components/modals/residential-house-property/residentialEditAmenities";
 import ResidentialAreaPrice from "../components/modals/residential-house-property/residentialAreaPrice";
@@ -56,10 +52,17 @@ import IndustryBuildingRent from "../components/modals/commercial-property/indus
 import CommercialShowroomAreaPriceRent from "../components/modals/commercial-property/commercial-showroom/commercialShowroomAreaPriceRent";
 import CommercialShowroomDescription from "../components/modals/commercial-property/commercial-showroom/commercialShowroomDescription";
 import CommercialShowroomEditProperty from "../components/modals/commercial-property/commercial-showroom/commercialshopFeatures";
-import WarehouseUploadPhoto from "../components/modals/warehouse-property/warehouseUploadPhoto";
-import WarehouseDeletePhoto from "../components/modals/warehouse-property/warehouseDeletePhoto";
-import WarehouseUpdateMap from "../components/modals/warehouse-property/warehouseUpdateMap";
-import WarehouseEditProperty from "../components/modals/warehouse-property/warehouseEditProperty";
+import WarehouseUploadPhoto from "../components/modals/commercial-property/warehouse-property/warehouseUploadPhoto";
+import WarehouseDeletePhoto from "../components/modals/commercial-property/warehouse-property/warehouseDeletePhoto";
+import WarehouseUpdateMap from "../components/modals/commercial-property/warehouse-property/warehouseUpdateMap";
+import WarehouseEditProperty from "../components/modals/commercial-property/warehouse-property/warehouseEditProperty";
+import WarehouseEditAmenities from "../components/modals/commercial-property/warehouse-property/warehouseEditAmenities";
+import WarehouseAreaPrice from "../components/modals/commercial-property/warehouse-property/warehouseAreaPrice";
+import WarehouseAreaRent from "../components/modals/commercial-property/warehouse-property/WarehouseAreaRent";
+import WarehouseDescription from "../components/modals/commercial-property/warehouse-property/warehouseDescription";
+import IndusrialShedUploadPhoto from "../components/modals/commercial-property/industrial-shed/industrialShedUploadPhoto";
+import IndustrialShedDeletePhoto from "../components/modals/commercial-property/industrial-shed/industrialShedDeletePhoto";
+
 import IndustryBuildingUploadPhoto from "../components/modals/commercial-property/industrial-building/industrybuildingUploadPhoto";
 import IndustryBuildingDeletePhoto from "../components/modals/commercial-property/industrial-building/industrybuildingDeletePhoto";
 import IndustryBuildingUpdateMap from "../components/modals/commercial-property/industrial-building/industrybuildingUpdateMap";
@@ -70,6 +73,34 @@ import IndustryBuildingDescription from "../components/modals/commercial-propert
 import CommercialPlotUploadPhoto from "../components/modals/commercial-property/commercial-plot/commercialplotUploadPhoto";
 import CommercialPlotDeletePhoto from "../components/modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
 import CommercialPlotUpdateMap from "../components/modals/commercial-property/commercial-plot/commercialplotUpdateMap";
+import IndustrialShedUpdateMap from "../components/modals/commercial-property/industrial-shed/industrialShedUpdateMap";
+import IndustrialShedEditProperty from "../components/modals/commercial-property/industrial-shed/industrialShedEditProperty";
+import IndustrialShedEditAmenities from "../components/modals/commercial-property/industrial-shed/industrialShedEditAmenities";
+import IndustrialShedAreaPrice from "../components/modals/commercial-property/industrial-shed/industrialShedAreaPrice";
+import IndustrialShedPriceRent from "../components/modals/commercial-property/industrial-shed/industrialShedAreapriceRent";
+import IndustrialShedDescription from "../components/modals/commercial-property/industrial-shed/industrialShedDescription";
+import CommercialPlotFeatures from "../components/modals/commercial-property/commercial-plot/commercialplotFeatures";
+import CommercialPlotAreaPrice from "../components/modals/commercial-property/commercial-plot/commercialPlotAreaPrice";
+import CommercialPlotRent from "../components/modals/commercial-property/commercial-plot/commercialPlotRent";
+import CommercialPlotAmenities from "../components/modals/commercial-property/commercial-plot/commercialplotAmenities";
+import CommercialPlotDescription from "../components/modals/commercial-property/commercial-plot/commercialplotDescription";
+import AgricultureFarmHouseUploadPhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUploadPhoto";
+import AgricultureFarmHouseDeletePhoto from "../components/modals/agriculture-property/agriculture-farmhouse/agriculturefarmHouseDeletePhoto";
+import AgricultureFarmHouseUpdateMap from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseUpdateMap";
+import AgricultureFarmHouseFeatures from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseFeatures";
+import IndustryPlotUploadPhoto from "../components/modals/commercial-property/industrial-plot/industryPlotUploadPhoto";
+import IndustryPlotUpdateMap from "../components/modals/commercial-property/industrial-plot/industryPlotUpdateMap";
+import IndustryPlotFeatures from "../components/modals/commercial-property/industrial-plot/industryPlotEditFeatures";
+import AgricultureFarmHouseAreaPrice from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseAreaPrice";
+import AgricultureFarmHouseRent from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseRent";
+import AgricultureFarmHouseDescription from "../components/modals/agriculture-property/agriculture-farmhouse/agricultureFarmHouseDescription";
+import AgricultureLandFeatures from "../components/modals/agriculture-property/agriculture-land/agricultureLandFeatures";
+import AgricultureLandUploadPhoto from "../components/modals/agriculture-property/agriculture-land/agricultureLandUploadPhoto";
+import AgricultureLandDeletePhoto from "../components/modals/agriculture-property/agriculture-land/agricultureLandDeletePhoto";
+import AgricultureLandUpdateMap from "../components/modals/agriculture-property/agriculture-land/agricultureLandUpdateMap";
+import AgricultureLandDescription from "../components/modals/agriculture-property/agriculture-land/agricultureLandDescription";
+import AgricultureLandAreaPrice from "../components/modals/agriculture-property/agriculture-land/agricultureLandAreaPrice";
+import AgricultureLandRent from "../components/modals/agriculture-property/agriculture-land/agricultureLandRent";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -151,11 +182,103 @@ const Hello = () => {
       {/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
       {/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
 
+      {/* industrial building */}
+
+      {/* <IndustryBuildingRent handleClose={handleClose} show={show} />  */}
+
       {/* warehouse  */}
       {/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
       {/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
       {/* <WarehouseEditProperty handleClose={handleClose} show={show} /> */}
+      {/* <WarehouseEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <WarehouseAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <WarehouseAreaRent handleClose={handleClose} show={show} />  */}
+      {/* <WarehouseDescription handleClose={handleClose} show={show} />  */}
+
+
+
+{/* commercial Showroom */}
+{/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
+{/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
+{/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
+
+{/* industrial building */}
+
+{/* <IndustryBuildingRent handleClose={handleClose} show={show} />  */}
+
+
+
+{/* warehouse  */}
+{/* <WarehouseUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <WarehouseDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <WarehouseUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <WarehouseEditProperty handleClose={handleClose} show={show} /> */}
+{/* <WarehouseEditAmenities handleClose={handleClose} show={show} /> */}
+{/* <WarehouseAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <WarehouseAreaRent handleClose={handleClose} show={show} />  */}
+{/* <WarehouseDescription handleClose={handleClose} show={show} />  */}
+
+{/* Indusrial Shed  */}
+{/* <IndusrialShedUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedDeletePhoto handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedUpdateMap handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedEditProperty handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedEditAmenities handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <IndustrialShedPriceRent handleClose={handleClose} show={show}/> */}
+{/* <IndustrialShedDescription handleClose={handleClose} show={show}/> */}
+
+      {/* Indusrial Shed  */}
+      {/* <IndusrialShedUploadPhoto handleClose={handleClose} show={show} /> */}
+      {/* <IndustrialShedDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
+      {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
+      {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
+      {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <VillaDescription handleClose={handleClose} show={show} /> */}
+
+      {/* officespace */}
+
+      {/* <OfficeSpaceUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <OfficespaceDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceProperty handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceAmenities handleClose={handleClose} show={show}/> */}
+      {/* <OfficespaceAreaPrice handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpacePriceRent handleClose={handleClose} show={show}/> */}
+      {/* <OfficeSpaceDescription handleClose={handleClose} show={show}/> */}
+
+      {/* commercial shop */}
+
+      {/* <CommercialShopUploadPhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/>  */}
+      {/* <CommercialShopFeatures handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopAmenities handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopAreaPrice handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopRent handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopDescription handleClose={handleClose} show={show}/> */}
+
+      {/* commercial Showroom */}
+      {/* <CommercialShowroomUploadPhoto handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomDeletePhoto handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShopUpdateMap handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShowroomEditAmenities handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomAreaPrice handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomAreaPriceRent handleClose={handleClose} show={show} /> */}
+      {/* <CommercialShowroomDescription handleClose={handleClose} show={show}/> */}
+      {/* <CommercialShowroomEditProperty handleClose={handleClose} show={show}/> */}
+
+   
 
       {/* industrial building */}
 
@@ -168,12 +291,43 @@ const Hello = () => {
       {/* <IndustryBuildingAreaPrice handleClose={handleClose} show={show} />  */}
       {/* <IndustryBuildingDescription handleClose={handleClose} show={show} /> */}
 
+     {/* Industrial Plot  */}
+     {/* <IndustryPlotUploadPhoto handleClose={handleClose} show={show} />  */}
+     {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
 
       {/* commercial plot */}
 
       {/* <CommercialPlotUploadPhoto handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotFeatures handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotAreaPrice handleClose={handleClose} show={show} /> */}
+      <CommercialPlotRent handleClose={handleClose} show={show} />
+      {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
+      {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
+
+      {/* AgricultureFarmHouse */}
+
+      {/* <AgricultureFarmHouseUploadPhoto handleClose={handleClose} show={show} />  */}
+      {/* <AgricultureFarmHouseDeletePhoto  handleClose={handleClose} show={show} /> */}
+      {/* <AgricultureFarmHouseUpdateMap handleClose={handleClose} show={show} /> */}
+      {/* <AgricultureFarmHouseFeatures  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseAreaPrice  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseRent  handleClose={handleClose} show={show} /> */}
+{/* <AgricultureFarmHouseDescription handleClose={handleClose} show={show} /> */}
+
+{/* AgricultureLand */}
+{/* <AgricultureLandFeatures handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandUploadPhoto handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandDeletePhoto handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandUpdateMap handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandDescription handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandRent handleClose={handleClose} show={show} /> */}
+
+      {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
     </>
   );
 };

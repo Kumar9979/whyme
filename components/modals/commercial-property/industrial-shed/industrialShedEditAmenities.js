@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 
-const WarehouseEditAmenities = ({ show, handleClose }) => {
+const IndustrialShedEditAmenities = ({ show, handleClose }) => {
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
@@ -42,7 +42,7 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
         centered
         show={show}
         onHide={handleClose}
-        dialogClassName={`${styles.amenities_container}`}
+        dialogClassName={`${styles.industrial_shed_amenities_container}`}
         contentClassName={`${styles.card_radius}`}
         //   size={'lg'}
       >
@@ -75,56 +75,57 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
                           <input
                             className="form-check-input mt-2 "
                             type="checkbox"
-                            id="Elevators/Lifts"
-                            name="Elevators/Lifts"
+                            id="Industries For The Production Of Power"
+                            name="Industries For The Production Of Power"
                             onChange={handleCheckbox}
                             checked={formik.values.Amenities.includes(
-                                "Elevators/Lifts"
+                                "Industries For The Production Of Power"
                             )}
                           />
                           <label
                             className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                            htmlFor="Elevators/Lifts"
+                            htmlFor="Industries For The Production Of Power"
                           >
-                            Elevators/Lifts
+                            Industries For The Production Of Power
                           </label>
                         </div>
                     <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="Sauna Steam Room"
-                        name="Sauna Steam Room"
+                        id="Raw Materials Mining Industries"
+                        name="Raw Materials Mining Industries"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "Sauna Steam Room"
+                          "Raw Materials Mining Industries"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Sauna Steam Room"
+                        htmlFor="Raw Materials Mining Industries"
                       >
-                        Sauna Steam Room
+                        Raw Materials Mining Industries
                       </label>
                     </div>
                     <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="Kids Play Area"
-                        name="Kids Play Area"
+                        id="Industries Of Wood And Paper Products"
+                        name="Industries Of Wood And Paper Products"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "Kids Play Area"
+                          "Industries Of Wood And Paper Products"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Kids Play Area"
+                        htmlFor="Industries Of Wood And Paper Products"
                       >
-                        Kids Play Area
+                        Industries Of Wood And Paper Products
                       </label>
                     </div>
+                  
                    
                    
                   </div>
@@ -133,43 +134,61 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="CCTV Surveillance"
-                        name="CCTV Surveillance"
+                        id="Manufacturing Industries"
+                        name="Manufacturing Industries"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "CCTV Surveillance"
+                          "Manufacturing Industries"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="CCTV Surveillance"
+                        htmlFor="Manufacturing Industries"
                       >
-                       CCTV Surveillance
+                       Manufacturing Industries
                       </label>
                     </div>
                     <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
                       <input
                         className="form-check-input mt-2 "
                         type="checkbox"
-                        id="Private Parking Space"
-                        name="Private Parking Space"
+                        id="Petroleum Products Industries"
+                        name="Petroleum Products Industries"
                         onChange={handleCheckbox}
                         checked={formik.values.Amenities.includes(
-                          "Private Parking Space"
+                          "Petroleum Products Industries"
                         )}
                       />
                       <label
                         className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
-                        htmlFor="Private Parking Space"
+                        htmlFor="Petroleum Products Industries"
                       >
-                       Private Parking Space
+                       Petroleum Products Industries
+                      </label>
+                    </div>
+                    <div className="form-check me-4 mb-2 fs_12 fs_sm_12">
+                      <input
+                        className="form-check-input mt-2 "
+                        type="checkbox"
+                        id="Textile Industries"
+                        name="Textile Industries"
+                        onChange={handleCheckbox}
+                        checked={formik.values.Amenities.includes(
+                          "Textile Industries"
+                        )}
+                      />
+                      <label
+                        className={`form-check-label mt-1 text-nowrap ${styles.amenities_title} fs_13 fs_sm_13 fw_500`}
+                        htmlFor="Textile Industries"
+                      >
+                       Textile Industries
                       </label>
                     </div>
                   
                   </div>
                 </div>
               </div>
-              <div className={`d-flex justify-content-end`}>
+              <div className={`d-flex justify-content-end mt-3`}>
             <button type="submit" className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-2`}>
                 <span>
                 Save
@@ -186,6 +205,6 @@ const WarehouseEditAmenities = ({ show, handleClose }) => {
   );
 };
 
-export default WarehouseEditAmenities;
+export default IndustrialShedEditAmenities;
 
 

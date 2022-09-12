@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-import styles from "../../../styles/modals/apartmentDeletePhoto.module.css";
+import styles from "../../../../styles/modals/apartmentDeletePhoto.module.css";
 
-const WarehouseDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
+const IndustrialShedDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   function handleDelete() {
     deleteFn(index);
     handleClose();
@@ -55,4 +55,4 @@ const WarehouseDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   );
 };
 
-export default WarehouseDeletePhoto;
+export default IndustrialShedDeletePhoto;

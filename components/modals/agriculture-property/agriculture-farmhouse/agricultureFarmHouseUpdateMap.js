@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../../styles/modals/apartmentUpdateMap.module.css";
-import PropertyLocation from "../../modal-location";
+import styles from "../../../../styles/modals/apartmentUpdateMap.module.css";
+import PropertyLocation from "../../../modal-location";
 
-const WarehouseUpdateMap = ({ show, handleClose }) => {
+const AgricultureFarmHouseUpdateMap = ({ show, handleClose }) => {
   return (
     <Modal
       centered
@@ -49,4 +49,4 @@ const WarehouseUpdateMap = ({ show, handleClose }) => {
   );
 };
 
-export default WarehouseUpdateMap;
+export default AgricultureFarmHouseUpdateMap ;
