@@ -9,7 +9,7 @@ import seeall from "../../../assets/images/seeall.svg";
 import RelatedProperties from "../../cards/property-details-cards/related-properties";
 import SimilarProperties from "../../cards/property-details-cards/similar-properties";
 
-const OtherProperties = ({amenties, type}) => {
+const OtherProperties = ({amenties, type, data, plot}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -66,7 +66,7 @@ const OtherProperties = ({amenties, type}) => {
                 <div className={`${styles.scrollmenu}  `}>
                   <div ref={ref} className={`${styles.row} d-flex`}>
                     {[...Array(n)].map((item, index) => {
-                      return <RelatedProperties />;
+                      return <RelatedProperties data={data} />;
                     })}
                   </div>
                 </div>
@@ -75,19 +75,19 @@ const OtherProperties = ({amenties, type}) => {
           ) : (
             <div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties plot={1}  type={type}/>
+                <SimilarProperties plot={plot}  type={type}/>
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties plot={1} type={type}/>
+                <SimilarProperties plot={plot} type={type}/>
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} plot={1} amenties={amenties} type={type}/>
+                <SimilarProperties data = {1} plot={plot} amenties={amenties} type={type}/>
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} plot={1} amenties={amenties} type={type}/>
+                <SimilarProperties data = {1} plot={plot} amenties={amenties} type={type}/>
               </div>
               <div className="d-flex justify-content-center">
-                <SimilarProperties data = {1} plot={1} amenties={amenties} type={type}/>
+                <SimilarProperties data = {1} plot={plot} amenties={amenties} type={type}/>
               </div>
             </div>
           )}

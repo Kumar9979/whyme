@@ -13,7 +13,6 @@ const Amenties = ({ data }) => {
       break;
     case 2:
       type = amenties2;
-
       break;
   }
   const [properties, setProperties] = useState(type);

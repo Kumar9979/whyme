@@ -20,14 +20,17 @@ import floors_allowed from "../../../assets/images/about-property-images/floors_
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 import western from "../../../assets/images/about-property-images/western.svg";
 import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
-let type;
 const Aboutproperty = ({ data }) => {
+  let type;
   switch (data) {
     case 0:
       type = aboutproperties;
       break;
     case 1:
       type = aboutproperties1;
+        break;
+    case 2:
+      type = aboutproperties2;
         break;
   }
   const [properties, setProperties] = useState(type);

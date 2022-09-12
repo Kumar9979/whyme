@@ -123,11 +123,11 @@ const RelatedProperties = ({ location, data }) => {
                     <div className=""><Image
                       src={item.image}
                       alt="Picture of the author"
-                      // width={25}
+                      width={25}
                     /></div>
                     
                     <div className=" ps-1 ">
-                      <span className={`${styles.card_heading}`}>
+                      <span className={`${styles.card_heading} text-nowrap`}>
                         {item.amenity}
                       </span>
                     </div>

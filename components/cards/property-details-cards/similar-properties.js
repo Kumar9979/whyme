@@ -17,20 +17,36 @@ import construction from "../../../assets/images/about-property-images/construct
 import corner from "../../../assets/images/about-property-images/corner_sites.svg";
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
+import western from "../../../assets/images/about-property-images/western.svg";
+import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
 
 const SimilarProperties = ({ data, plot, amenties, type }) => {
+  let available;
+  switch (plot) {
+    case 0:
+      available = aboutproperties;
+      break;
+    case 1:
+      available = aboutproperties1;
+      break;
+    case 2:
+      available = aboutproperties2;
+      break;
+  }
+  const [facilities, setFacilities] = useState(available);
+
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
-  const [facilities, setFacilities] = useState(
-    plot == 1 ? aboutproperties1 : aboutproperties
-  );
+  // const [facilities, setFacilities] = useState(
+  //   plot == 1 ? aboutproperties1 : aboutproperties
+  // );
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
   const [show, setShow] = useState(false);
-  console.log(type)
+  console.log(type);
 
   function likeHovered(state) {
     if (state === "hovered") {
@@ -323,5 +339,38 @@ const aboutproperties1 = [
     image: corner,
     heading: "Corner Site",
     amenity: "Yes",
+  },
+];
+
+const aboutproperties2 = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: Cafetaria,
+    heading: "Cafetaria",
+    amenity: "yes",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
   },
 ];

@@ -55,7 +55,7 @@ const Home = () => {
             <Amenties data={0}/>
             <ContactOwner />
             <PropertyLocation />
-            <AgentProperties propertyType="2BHK House in Vijayanagar, Mysuru" />
+            <AgentProperties propertyType="2BHK House in Vijayanagar, Mysuru" data={0}/>
           </div>
           <div className="col-lg-3 col-11">
             <div className="row">
@@ -76,7 +76,7 @@ const Home = () => {
         className={`${styles.other_properties_background} row d-flex justify-content-center `}
       >
         <div className="col-lg-7">
-          <OtherProperties type="3BHK House in Vijayanagar, Mysuru"/>
+          <OtherProperties type="3BHK House in Vijayanagar, Mysuru" data={0} plot={0}/>
         </div>
 
         <div className="col-lg-3"> </div>
