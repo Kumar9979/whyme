@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
 
-const CommercialPlotRent = ({ show, handleClose }) => {
+const AgricultureLandRent = ({ show, handleClose }) => {
   const [cornerShop, setCornerShop] = useState("no");
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
@@ -243,90 +243,84 @@ const CommercialPlotRent = ({ show, handleClose }) => {
                 </div>
               </div>
               <div>
-                {" "}
-                <div class=" text-start">
-                  <div class="row mb-lg-2 mt-3">
-                    <div className={`col-lg-6 col-sm-12 `}>
-                      <label
-                        htmlFor="DepositPrice"
-                        className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
-                      >
-                        Deposit Price
-                      </label>
-                      <div className={`${styles.propetyfeature_input} d-flex`}>
-                        <div
-                          className={`d-flex ${styles.rupee_text} justify-content-center align-items-center`}
-                        >
-                          <span className={`  align-middle ms-3 fs_14 fw_500`}>
-                            ₹
-                          </span>
-                          <span className={`${styles.input_bar} mx-2`}></span>
-                        </div>
-                        <input
-                          type="text"
-                          className={`py-2 ps-2 pe-2  pt-2  fs_sm_12 fs_15 w-100 ${styles.propetyfeature2_input_placeholder} `}
-                          id="DepositPrice"
-                          placeholder="Enter rent amount"
-                          name="DepositPrice"
-                          value={formik.values.DepositPrice}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.DepositPrice &&
-                        formik.touched.DepositPrice && (
-                          <div className="d-flex align-items-center text-danger fs_12 mt-1">
-                            <i className="ri-error-warning-line me-1  "></i>
-                            <span>{formik.errors.DepositPrice}</span>
-                          </div>
-                        )}
-                    </div>
-                    <div className="col-lg-6 col-sm-12 mt-3 mt-lg-0">
-                      <label
-                        htmlFor="CornerShop"
-                        className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
-                      >
-                        Corner Plot
-                      </label>
-                      <div className="d-flex mt-2">
-                        <input
-                          className={` ms-1 cursor_pointer`}
-                          id="yes"
-                          type="radio"
-                          value="yes"
-                          checked={cornerShop === "yes"}
-                          onChange={handleCornerShopButton}
-                        />
-                        <label
-                          htmlFor="yes"
-                          className={
-                            cornerShop === "yes"
-                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          Yes
-                        </label>
-                        <input
-                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
-                          id="no"
-                          type="radio"
-                          value="no"
-                          checked={cornerShop === "no"}
-                          onChange={handleCornerShopButton}
-                        />{" "}
-                        <label
-                          htmlFor="no"
-                          className={
-                            cornerShop === "no"
-                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
-                          }
-                        >
-                          No
-                        </label>
-                      </div>
-                    </div>
+                <div className="mt-3">
+                  <label
+                    htmlFor="CornerShop"
+                    className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                  >
+                    Corner Plot
+                  </label>
+                  <div className="d-flex mt-2">
+                    <input
+                      className={` ms-1 cursor_pointer`}
+                      id="yes"
+                      type="radio"
+                      value="yes"
+                      checked={cornerShop === "yes"}
+                      onChange={handleCornerShopButton}
+                    />
+                    <label
+                      htmlFor="yes"
+                      className={
+                        cornerShop === "yes"
+                          ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                      }
+                    >
+                      Yes
+                    </label>
+                    <input
+                      className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                      id="no"
+                      type="radio"
+                      value="no"
+                      checked={cornerShop === "no"}
+                      onChange={handleCornerShopButton}
+                    />{" "}
+                    <label
+                      htmlFor="no"
+                      className={
+                        cornerShop === "no"
+                          ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                      }
+                    >
+                      No
+                    </label>
                   </div>
+                </div>
+                <div className={`mb-2 mt-4 `}>
+                  <label
+                    htmlFor="DepositPrice"
+                    className={`form-label text-nowrap ${styles.built_text} fs_16 fw_500`}
+                  >
+                    Security Deposit/Advance
+                  </label>
+                  <div className={`${styles.propetyfeature_input} d-flex`}>
+                    <div
+                      className={`d-flex ${styles.rupee_text} justify-content-center align-items-center`}
+                    >
+                      <span className={`  align-middle ms-3 fs_14 fw_500`}>
+                        ₹
+                      </span>
+                      <span className={`${styles.input_bar} mx-2`}></span>
+                    </div>
+                    <input
+                      type="text"
+                      className={`py-2 ps-2 pe-2  pt-2  fs_sm_12 fs_15 w-100 ${styles.propetyfeature2_input_placeholder} `}
+                      id="DepositPrice"
+                      placeholder="Enter rent amount"
+                      name="DepositPrice"
+                      value={formik.values.DepositPrice}
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                  {formik.errors.DepositPrice && formik.touched.DepositPrice && (
+                    <div className="d-flex align-items-center text-danger fs_12 mt-1">
+                      <i className="ri-error-warning-line me-1  "></i>
+                      <span>{formik.errors.DepositPrice}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className={`d-flex justify-content-end`}>
@@ -345,4 +339,4 @@ const CommercialPlotRent = ({ show, handleClose }) => {
   );
 };
 
-export default CommercialPlotRent;
+export default AgricultureLandRent;

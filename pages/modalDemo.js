@@ -99,6 +99,8 @@ import AgricultureLandUploadPhoto from "../components/modals/agriculture-propert
 import AgricultureLandDeletePhoto from "../components/modals/agriculture-property/agriculture-land/agricultureLandDeletePhoto";
 import AgricultureLandUpdateMap from "../components/modals/agriculture-property/agriculture-land/agricultureLandUpdateMap";
 import AgricultureLandDescription from "../components/modals/agriculture-property/agriculture-land/agricultureLandDescription";
+import AgricultureLandAreaPrice from "../components/modals/agriculture-property/agriculture-land/agricultureLandAreaPrice";
+import AgricultureLandRent from "../components/modals/agriculture-property/agriculture-land/agricultureLandRent";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -293,7 +295,7 @@ const Hello = () => {
      {/* <IndustryPlotUploadPhoto handleClose={handleClose} show={show} />  */}
      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
-     <IndustryPlotFeatures handleClose={handleClose} show={show} />
+     {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
 
       {/* commercial plot */}
 
@@ -302,7 +304,7 @@ const Hello = () => {
       {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotFeatures handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotAreaPrice handleClose={handleClose} show={show} /> */}
-      {/* <CommercialPlotRent handleClose={handleClose} show={show} /> */}
+      <CommercialPlotRent handleClose={handleClose} show={show} />
       {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
 
@@ -321,7 +323,9 @@ const Hello = () => {
 {/* <AgricultureLandUploadPhoto handleClose={handleClose} show={show} /> */}
 {/* <AgricultureLandDeletePhoto handleClose={handleClose} show={show} /> */}
 {/* <AgricultureLandUpdateMap handleClose={handleClose} show={show} /> */}
-<AgricultureLandDescription handleClose={handleClose} show={show} />
+{/* <AgricultureLandDescription handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandAreaPrice handleClose={handleClose} show={show} /> */}
+{/* <AgricultureLandRent handleClose={handleClose} show={show} /> */}
 
       {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
     </>
