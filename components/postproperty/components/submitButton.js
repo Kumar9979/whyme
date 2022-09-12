@@ -5,10 +5,10 @@ import { useState } from 'react';
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 
-const PostPropertySubmitButton = ({ marginEnd, containerClassName = false }) => {
+const PostPropertySubmitButton = ({ marginEnd, paddingTop = false }) => {
     const router = useRouter();
     const [mobile, setMobile] = useState(true);
-    console.log(containerClassName && mobile);
+
 
     useEffect(() => {
         if (window.innerWidth < 992) {
@@ -31,7 +31,7 @@ const PostPropertySubmitButton = ({ marginEnd, containerClassName = false }) => 
     }, []);
     return (
         <div
-            style={{ paddingTop: containerClassName && mobile ? containerClassName : "1rem" }}
+            style={{ paddingTop: paddingTop && mobile ? paddingTop : "1rem" }}
             className={`content-btn d-flex justify-content-end mt-5 `}
         >
             <div className={`d-flex ${marginEnd} `}>

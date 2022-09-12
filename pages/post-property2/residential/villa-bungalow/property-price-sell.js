@@ -8,16 +8,16 @@ import PostPropertyLayout from "../../../../components/postproperty/components/p
 import PriceInputGenerator from "../../../../components/postproperty/formData/priceInputGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 
-const HousePriceDetailsSell = () => {
+const VillaPriceDetailsSell = () => {
     const numRegex = /^[0-9]+$/;
     const router = useRouter();
     const formik = useFormik({
         initialValues: {
             superArea: "",
             carpetArea: "",
-            depositPrice: "",
-            rentPrice: "",
-            maintenanceFee: "",
+          
+          
+            expectedPrice: "",
         },
 
         validationSchema: Yup.object({
@@ -28,13 +28,8 @@ const HousePriceDetailsSell = () => {
             carpetArea: Yup.string()
                 .matches(numRegex, "invalid value")
                 .required("Required"),
-            depositPrice: Yup.string()
-                .matches(numRegex, "invalid value")
-                .required("Required"),
-            rentPrice: Yup.string()
-                .matches(numRegex, "invalid value")
-                .required("Required"),
-            maintenanceFee: Yup.string()
+  
+            expectedPrice: Yup.string()
                 .matches(numRegex, "invalid value")
                 .required("Required"),
         }),
@@ -67,13 +62,13 @@ const HousePriceDetailsSell = () => {
                                     <PriceInputGenerator
                                         price={false}
                                         title={" Built-up Area"}
-                                        formikValue={formik.values.depositPrice}
+                                        formikValue={formik.values.carpetArea}
                                         formik={formik}
-                                        itemName={"depositPrice"}
-                                        placeholder={"Enter property price"}
+                                        itemName={"carpetArea"}
+                                        placeholder={"Built-up Area"}
                                     />
                                     <FormikErrorGenerator
-                                        formikError={formik.errors.depositPrice} formikTouched={formik.touched.depositPrice}
+                                        formikError={formik.errors.carpetArea} formikTouched={formik.touched.carpetArea}
                                     />
                                 </div>
                                 <div className={`col-lg-6 col-sm-12`}>
@@ -83,7 +78,7 @@ const HousePriceDetailsSell = () => {
                                         formikValue={formik.values.carpetArea}
                                         formik={formik}
                                         itemName={"carpetArea"}
-                                        placeholder={"Enter property price"}
+                                        placeholder={"Enter carpet area"}
                                     />
                                     <FormikErrorGenerator
                                         formikError={formik.errors.carpetArea} formikTouched={formik.touched.carpetArea}
@@ -91,46 +86,21 @@ const HousePriceDetailsSell = () => {
 
                                 </div>
                             </div>
-                            <div className={`row`}>
-                                <div className={`col-lg-6 col-md-12 mb-4`}>
-                                    <PriceInputGenerator
-                                        title={"Deposit Price"}
-                                        formikValue={formik.values.depositPrice}
-                                        formik={formik}
-                                        itemName={"depositPrice"}
-                                        placeholder={"Enter property price"}
-                                    />
-                                    <FormikErrorGenerator
-                                        formikError={formik.errors.depositPrice} formikTouched={formik.touched.depositPrice}
-                                    />
-                                </div>
-                                <div className={`mb-4 col-lg-6 col-md-12 `}>
-                                    <PriceInputGenerator
-                                        title={"Rent Price"}
-                                        formikValue={formik.values.rentPrice}
-                                        formik={formik}
-                                        itemName={"rentPrice"}
-                                        placeholder={"Enter property price"}
-                                    />
-                                    <FormikErrorGenerator
-                                        formikError={formik.errors.rentPrice} formikTouched={formik.touched.rentPrice}
-                                    />
-                                </div>
-                            </div>
+                       
                             <div className={"mb-4"}>
                                 <PriceInputGenerator
-                                    title={"    Maintenance Fee"}
-                                    formikValue={formik.values.maintenanceFee}
+                                    title={"Expected Price"}
+                                    formikValue={formik.values.expectedPrice}
                                     formik={formik}
-                                    itemName={"maintenanceFee"}
+                                    itemName={"expectedPrice"}
                                 />
                                 <FormikErrorGenerator
-                                    formikError={formik.errors.maintenanceFee} formikTouched={formik.touched.maintenanceFee}
+                                    formikError={formik.errors.expectedPrice} formikTouched={formik.touched.expectedPrice}
                                 />
                             </div>
                         </div>
 
-                        <PostPropertySubmitButton />
+                        <PostPropertySubmitButton paddingTop="10rem" />
                     </form>
                 </div>
             </div>
@@ -140,4 +110,4 @@ const HousePriceDetailsSell = () => {
     );
 };
 
-export default HousePriceDetailsSell;
+export default VillaPriceDetailsSell;
