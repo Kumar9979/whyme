@@ -19,7 +19,7 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
   const formik = useFormik({
     initialValues: {
       OpenSlides: "",
-      FacingWidth: "",
+
       FloorsAllowed: "",
 
       BoundaryWall: "no",
@@ -28,9 +28,6 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
 
     validationSchema: Yup.object({
       OpenSlides: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      FacingWidth: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
@@ -98,7 +95,42 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-5">
+                <div className="d-flex gx-0 ">
+                  <div className="col-sm-12 col-7">
+                    <div className="">
+                      <label
+                        htmlFor="construction"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                      >
+                        Floors Allowed for Construction
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          className={
+                           
+                         `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
+                          }
+                          id="construction"
+                          placeholder="Ex : 2"
+                          name="FloorsAllowed"
+                          value={formik.values.FloorsAllowed}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                      {formik.errors.FloorsAllowed &&
+                        formik.touched.FloorsAllowed && (
+                          <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                            <i className="ri-error-warning-line me-1  "></i>
+                            <span>{formik.errors.FloorsAllowed}</span>
+                          </div>
+                        )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" text-start mt-3">
+                <div className="d-flex gx-0 gap-lg-4 ">
                   <div className="col-4 col-lg-3">
                     <div className="">
                       <label
@@ -124,70 +156,6 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
                           <span className="">{formik.errors.OpenSlides}</span>
                         </div>
                       )}
-                    </div>
-                  </div>
-
-                  <div className="col-5 col-lg-7">
-                    <div className="">
-                      <label
-                        htmlFor="facingWidth"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
-                      >
-                        Road facing plot width
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`}
-                          id="facingWidth"
-                          placeholder="Ex : 13"
-                          name="FacingWidth"
-                          value={formik.values.FacingWidth}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.FacingWidth && formik.touched.FacingWidth && (
-                        <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                          <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.FacingWidth}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className=" text-start mt-3">
-                <div className="d-flex gx-0 gap-lg-4 ">
-                  <div className="col-8 col-lg-7">
-                    <div className="">
-                      <label
-                        htmlFor="construction"
-                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
-                      >
-                        Floors Allowed for Construction
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={
-                            width < 992
-                              ? `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
-                              : `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
-                          }
-                          id="construction"
-                          placeholder="Ex : 2"
-                          name="FloorsAllowed"
-                          value={formik.values.FloorsAllowed}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      {formik.errors.FloorsAllowed &&
-                        formik.touched.FloorsAllowed && (
-                          <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
-                            <i className="ri-error-warning-line me-1  "></i>
-                            <span>{formik.errors.FloorsAllowed}</span>
-                          </div>
-                        )}
                     </div>
                   </div>
 

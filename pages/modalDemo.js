@@ -293,7 +293,7 @@ const Hello = () => {
      {/* <IndustryPlotUploadPhoto handleClose={handleClose} show={show} />  */}
      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
-     {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
+     <IndustryPlotFeatures handleClose={handleClose} show={show} />
 
       {/* commercial plot */}
 
