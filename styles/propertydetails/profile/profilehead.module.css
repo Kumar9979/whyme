@@ -1,0 +1,649 @@
+/* ////////////head section/////  */
+.profile_headsec {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0px 0px 20px #0000001f;
+    border-radius: 10px;
+    opacity: 1;
+    background-image: radial-gradient(
+      circle at 28% 64%,
+      #50bf97 0%,
+      #1d72db 100%
+    );
+    position: relative;
+  }
+  .property_label {
+    background-color: #f77223;
+    border-radius: 7px;
+    opacity: 1;
+    color: #ffffff;
+  }
+  .profile_image {
+    left: 7%;
+    top: 50%;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+  }
+  .profiledetails_container {
+    left: 25%;
+    top: 110%;
+    width: 73%;
+    position: absolute;
+  }
+  .profile_name {
+    color: #323d5a;
+    font-size: 32px;
+  }
+  .rating_number {
+    color: #1d72db;
+  }
+  .rating_text {
+    color: #1d72db;
+  }
+  .contact_btn {
+    color: #ffffff;
+    width: 140px;
+    border-radius: 26px;
+    font-size: 15px;
+  }
+  .containerhide {
+    left: 8%;
+    top: 170%;
+    position: absolute;
+    display: none;
+  }
+  .hideprofile_name {
+    color: #323d5a;
+    font-size: 32px;
+  }
+  .hiderating_number {
+    color: #1d72db;
+  }
+  .hiderating_text {
+    color: #1d72db;
+  }
+  .active{
+    color: #BCC7CE;
+    font-size: 14px;
+  }
+  .activestatus{
+    color: #323D5A;
+    font-size: 18px;
+  }
+  
+@media only screen and (max-width: 1820px) {
+    .profiledetails_container {
+      left: 27%;
+      top: 110%;
+      width: 70%;
+      position: absolute;
+    }
+  }
+  
+  @media only screen and (max-width: 1650px) {
+    .profiledetails_container {
+      left: 28%;
+      top: 110%;
+      width: 70%;
+      position: absolute;
+    }
+  }
+  
+  @media only screen and (max-width: 1501px) {
+    .profiledetails_container {
+      left: 29%;
+      top: 110%;
+      width: 70%;
+      position: absolute;
+    }
+  }
+ 
+  @media only screen and (max-width: 1420px) {
+    .profiledetails_container {
+      left: 30%;
+      top: 110%;
+      width: 70%;
+      position: absolute;
+    }
+   
+    .activestatus{
+      font-size: 20px;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 1350px) {
+  
+    .profiledetails_container {
+      left: 29%;
+      top: 110%;
+      width: 72%;
+      position: absolute;
+    }
+    .profile_image {
+      left: 7%;
+      top: 55%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 210px;
+      height: 210px;
+    }
+    .activestatus{
+      font-size: 19px;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 1317px) {
+    
+    .profiledetails_container {
+      left: 30%;
+      top: 110%;
+      width: 72%;
+      position: absolute;
+    }
+    .profile_name {
+      color: #323d5a;
+      font-size: 30px;
+    }
+    .rating_number {
+      color: #1d72db;
+     
+    }
+    .rating_text {
+      color: #1d72db;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 140px;
+      border-radius: 26px;
+      font-size: 15px;
+    }
+    
+    
+  }
+  .property_label {
+    background-color: #f77223;
+    border-radius: 7px;
+    opacity: 1;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  @media only screen and (max-width: 1270px) {
+  
+    .profiledetails_container {
+      left: 28%;
+      top: 110%;
+      width: 73%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 7%;
+      top: 60%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 195px;
+      height: 195px;
+    }
+   
+  
+  }
+  /* //////////////////////////////////////////////////////////////////// */
+  @media only screen and (max-width: 1225px) {
+    
+    .profiledetails_container {
+      left: 28%;
+      top: 110%;
+      width: 73%;
+      position: absolute;
+      justify-content: start;
+    }
+    
+  }
+  /* //////////////////////////////////////////////////////////////////// */
+  @media only screen and (max-width: 1217px) {
+   
+    .profiledetails_container {
+      left: 29%;
+      top: 110%;
+      width: 73%;
+      position: absolute;
+      justify-content: start;
+    }
+  }
+  
+  @media only screen and (max-width: 1204px) {
+    .profiledetails_container {
+      left: 29%;
+      top: 110%;
+      width: 74%;
+      position: absolute;
+      justify-content: start;
+    }
+  }
+  @media only screen and (max-width: 1181px) {
+   
+    .profiledetails_container {
+      left: 28%;
+      top: 110%;
+      width: 75%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 7%;
+      top: 62%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 190px;
+      height: 190px;
+    }
+  }
+  @media only screen and (max-width: 1168px) {
+    .profiledetails_container {
+      left: 27%;
+      top: 110%;
+      width: 76%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 6%;
+      top: 63%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 185px;
+      height: 185px;
+    }
+  }
+  
+  @media only screen and (max-width: 1146px) {
+    .profiledetails_container {
+      left: 26%;
+      top: 110%;
+      width: 78%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 5%;
+      top: 63%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 185px;
+      height: 185px;
+    }
+    .activestatus{
+      font-size: 15px;
+    }
+  }
+  @media only screen and (max-width: 1075px) {
+ 
+    .profiledetails_container {
+      left: 25%;
+      top: 110%;
+      width: 79%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 3%;
+      top: 63%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 185px;
+      height: 185px;
+    }
+    
+    .profile_container {
+      width: 99%;
+      box-shadow: 0px 0px 20px #0000001f;
+      border-radius: 20px;
+      opacity: 1;
+    }
+    .profile_name {
+      color: #323d5a;
+      font-size: 28px;
+    }
+    .rating_number {
+      color: #1d72db;
+      font-size: 16px;
+    }
+    .rating_text {
+      color: #1d72db;
+      font-size: 16px;
+    }
+    .count {
+      font-size: 12px;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 130px;
+      border-radius: 26px;
+      font-size: 15px;
+    }
+    .property_label {
+      background-color: #f77223;
+      border-radius: 7px;
+      opacity: 1;
+      color: #ffffff;
+      font-size: 10px;
+    }
+    .active{
+      color: #BCC7CE;
+      font-size: 11px;
+    }
+    .activestatus{
+      color: #323D5A;
+      font-size: 14px;
+    }
+  }
+ 
+  @media only screen and (max-width: 1022px) {
+    .profiledetails_container {
+      left: 24%;
+      top: 110%;
+      width: 80%;
+      position: absolute;
+      justify-content: start;
+    }
+    .profile_image {
+      left: 3%;
+      top: 69%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 165px;
+      height: 165px;
+    }
+    .profile_name {
+      color: #323d5a;
+      font-size: 28px;
+    }
+    .rating_number {
+      color: #1d72db;
+      font-size: 17px;
+    }
+    .rating_text {
+      color: #1d72db;
+      font-size: 17px;
+    }
+    .count {
+      font-size: 12px;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 110px;
+      border-radius: 26px;
+      font-size: 14px;
+    }
+    .property_label {
+      background-color: #f77223;
+      border-radius: 7px;
+      opacity: 1;
+      color: #ffffff;
+      font-size: 10px;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .profile_image {
+      left: 7%;
+      top: 50%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 170px;
+      height: 170px;
+    }
+    .profiledetails_container {
+      left: 28%;
+      top: 110%;
+      width: 75%;
+      position: absolute;
+    }
+    .property_label {
+      background-color: #f77223;
+      border-radius: 7px;
+      opacity: 1;
+      color: #ffffff;
+      font-size: 8px;
+    }
+    .profile_name {
+      color: #323d5a;
+      font-size: 32px;
+    }
+    .rating_number {
+      color: #1d72db;
+    }
+    .rating_text {
+      color: #1d72db;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 100px;
+      border-radius: 26px;
+      font-size: 15px;
+    }
+    .containerhide {
+      display: block;
+      left: 6%;
+      top: 140%;
+      position: absolute;
+    }
+    .containerhide_second {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .profiledetails_container {
+      left: 33%;
+      top: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .profile_headsec {
+      height: 200px;
+      box-shadow: 0px 0px 20px #0000001f;
+      /* border-radius: 10px; */
+      opacity: 1;
+      background-image: radial-gradient(
+        circle at 28% 64%,
+        #50bf97 0%,
+        #1d72db 100%
+      );
+      position: relative;
+    }
+  
+  }
+  @media only screen and (max-width: 576px) {
+    .profile_headsec {
+      width: 105%;
+      height: 200px;
+      box-shadow: 0px 0px 20px #0000001f;
+      opacity: 1;
+      background-image: radial-gradient(
+        circle at 28% 64%,
+        #50bf97 0%,
+        #1d72db 100%
+      );
+      position: relative;
+      margin-right: 2%;
+    }
+    .button_sec {
+      margin-left: 10%;
+      margin-top: 2%;
+    }
+  
+  
+  }
+  @media only screen and (max-width: 470px) {
+    .profile_headsec {
+      width: 104%;
+      height: 160px;
+    }
+    .profile_image {
+      left: 7%;
+      top: 60%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 150px;
+      height: 150px;
+    }
+    .cautionimg {
+      width: 10px;
+      height: 100px;
+    }
+  
+    .hideprofile_name {
+      color: #323d5a;
+      font-size: 24px;
+    }
+    .hiderating_number {
+      color: #1d72db;
+      font-size: 18px;
+    }
+    .hiderating_text {
+      color: #1d72db;
+      font-size: 17px;
+      margin-right: 10%;
+    }
+    .hidecount {
+      font-size: 17px;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 100px;
+      border-radius: 26px;
+      font-size: 15px;
+    }
+    .button_sec {
+      margin-left: 12%;
+      margin-top: 1%;
+    }
+    .containerhide {
+      left: 5%;
+      top: 158%;
+      position: absolute;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    .contact_btn {
+      color: #ffffff;
+      width: 90px;
+      border-radius: 26px;
+      font-size: 12px;
+    }
+    .profile_image {
+      left: 8%;
+      top: 70%;
+      border: 4px solid #ffffff;
+      border-radius: 8px;
+      width: 115px;
+      height: 115px;
+    }
+    .button_sec {
+      margin-left: 18%;
+      margin-top: 2%;
+      width: 160px;
+    }
+    .cautionimg {
+      width: 10px;
+      height: 10px;
+    }
+    .shareimg {
+      width: 60px;
+      height: 10px;
+    }
+    .hideprofile_name {
+      color: #323d5a;
+      font-size: 20px;
+    }
+    .hiderating_number {
+      color: #1d72db;
+      font-size: 16px;
+    }
+    .hiderating_text {
+      color: #1d72db;
+      font-size: 16px;
+      margin-right: 10%;
+    }
+    .hidecount {
+      font-size: 16px;
+    }
+    .profile_headsec {
+      width: 110%;
+      height: 150px;
+      opacity: 1;
+      background-image: radial-gradient(
+        circle at 28% 64%,
+        #50bf97 0%,
+        #1d72db 100%
+      );
+      position: relative;
+    }
+    .button_sec {
+      margin-left: 12%;
+      margin-top: 2%;
+    }
+}
+  @media only screen and (max-width: 280px) {
+    .profile_image {
+      left: 7%;
+      top: 60%;
+      border: 3px solid #ffffff;
+      border-radius: 8px;
+      width: 100px;
+      height: 100px;
+    }
+    .contact_btn {
+      color: #ffffff;
+      width: 90px;
+      border-radius: 26px;
+      font-size: 10px;
+    }
+    .button_sec {
+      margin-left: 9%;
+      margin-top: 2%;
+      width: 150px;
+    }
+    .cautionimg {
+      width: 10px;
+      height: 10px;
+    }
+    .shareimg {
+      width: 60px;
+      height: 10px;
+    }
+    .hideprofile_name {
+      color: #323d5a;
+      font-size: 18px;
+    }
+    .hiderating_number {
+      color: #1d72db;
+      font-size: 12px;
+    }
+    .hiderating_text {
+      color: #1d72db;
+      font-size: 12px;
+      margin-right: 10%;
+    }
+    .hidecount {
+      font-size: 12px;
+    }
+    .profile_headsec {
+      width: 110%;
+      height: 100px;
+       opacity: 1;
+      background-image: radial-gradient(
+        circle at 28% 64%,
+        #50bf97 0%,
+        #1d72db 100%
+      );
+      position: relative;
+    }
+    .containerhide {
+      left: 5%;
+      top: 160%;
+      position: absolute;
+    }
+}

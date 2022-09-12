@@ -1,0 +1,207 @@
+.container {
+  box-shadow: 0px 0px 20px #0000001f;
+  border-radius: 20px;
+  opacity: 1;
+  
+}
+
+.cardimage {
+  border-radius: 10px;
+ 
+}
+.cardtitle {
+  letter-spacing: 0px;
+  color: #1d1e1f;
+  opacity: 1;
+  font-family: "Poppins", sans-serif;
+}
+.cardsubtitle {
+    letter-spacing: 0px;
+    color: #889197;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+  }
+.cardbutton{
+    background-color: #50BF97;
+    color: #fff;
+    width: 11rem;   
+    height: 3rem;
+    border-radius: 5px;
+    border: none;
+    
+}
+.cardtext{
+    font-family: "Poppins", sans-serif;
+  }
+  .cardprice{
+    font-family: "Poppins", sans-serif;
+  }
+
+@media only screen and (max-width: 1731px) {
+    .cardtitle {
+        font-size: 18px;
+      }
+      .cardsubtitle {
+        font-size: 16px;
+      }
+      
+}
+@media only screen and (max-width: 1473px) {
+    .cardtitle {
+        font-size: 16px;
+      }
+      .cardsubtitle {
+        font-size: 14px;
+      }
+}
+@media only screen and (max-width: 1406px) {
+    .cardtitle {
+        font-size: 15px;
+      }
+      .cardsubtitle {
+        font-size: 14px;
+      }
+      .cardbutton{
+        font-size: 14px;
+      }
+}
+@media only screen and (max-width: 992px) {
+    .profilecontainer{
+        width: 100px;
+       height: 100px;
+      }
+.cardbutton{
+    width: 7rem;   
+    height: 2rem;
+    font-size: 12px;
+}
+.cardtitle {
+    font-size: 18px;
+  }
+  .cardsubtitle {
+    font-size: 16px;
+  }
+  .cardprice{
+    font-size: 24px;
+  }
+  .cardtext{
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 886px) {
+    .profilecontainer{
+        width: 100px;
+       height: 100px;
+      }
+.cardbutton{
+    width: 7rem;   
+    height: 2rem;
+    font-size: 12px;
+}
+.cardtitle {
+    font-size: 18px;
+  }
+  .cardsubtitle {
+    font-size: 16px;
+  }
+  .cardprice{
+    font-size: 23px;
+  }
+  .cardtext{
+    font-size: 9px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .profilecontainer{
+        width: 100px;
+       height: 100px;
+      }
+.cardbutton{
+    width: 6rem;   
+    height: 2rem;
+    font-size: 11px;
+}
+.cardtitle {
+    font-size: 18px;
+  }
+  .cardsubtitle {
+    font-size: 16px;
+  }
+  .cardprice{
+    font-size: 20px;
+  }
+  .cardtext{
+    font-size: 8px;
+    font-family: "Poppins", sans-serif;
+  }
+}
+@media only screen and (max-width: 568px) {
+    .profilecontainer{
+        width: 100px;
+       height: 100px;
+      }
+.cardbutton{
+    width: 6rem;   
+    height: 2rem;
+    font-size: 11px;
+}
+.cardtitle {
+    font-size: 15px;
+  }
+  .cardsubtitle {
+    font-size: 13px;
+  }
+  .cardprice{
+    font-size: 20px;
+  }
+  .cardtext{
+    font-size: 9px;
+  }
+}
+@media only screen and (max-width: 453px) {
+    .profilecontainer{
+        width: 80px;
+       height: 80px;
+      }
+.cardbutton{
+    width: 5rem;   
+    height: 2rem;
+    font-size: 11px;
+}
+.cardtitle {
+    font-size: 14px;
+  }
+  .cardsubtitle {
+    font-size: 12px;
+  }
+  .cardprice{
+    font-size: 14px;
+  }
+  .cardtext{
+    font-size: 7px;
+  }
+}
+@media only screen and (max-width: 362px) {
+    .profilecontainer{
+        width: 50px;
+       height: 50px;
+      }
+.cardbutton{
+    width: 5rem;   
+    height: 2rem;
+    font-size: 11px;
+}
+.cardtitle {
+    font-size: 12px;
+   
+  }
+  .cardsubtitle {
+    font-size: 11px;
+  }
+  .cardprice{
+    font-size: 14px;
+  }
+  .cardtext{
+    font-size: 7px;
+  }
+}
