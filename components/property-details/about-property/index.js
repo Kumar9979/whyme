@@ -20,17 +20,27 @@ import floors_allowed from "../../../assets/images/about-property-images/floors_
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
 import western from "../../../assets/images/about-property-images/western.svg";
 import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
+import road from "../../../assets/images/about-property-images/road-facing.svg";
 const Aboutproperty = ({ data }) => {
   let type;
   switch (data) {
     case 0:
-      type = aboutproperties;
+      type = residential;
       break;
     case 1:
-      type = aboutproperties1;
+      type = PlotandLand;
         break;
     case 2:
-      type = aboutproperties2;
+      type = officeSpace;
+        break;
+    case 3:
+      type = CommercialShop;
+        break;
+    case 4:
+      type = CommercialShowroom;
+        break;
+    case 5:
+      type = Godown;
         break;
   }
   const [properties, setProperties] = useState(type);
@@ -82,7 +92,7 @@ const Aboutproperty = ({ data }) => {
 
 export default Aboutproperty;
 
-const aboutproperties = [
+const residential = [
   { image: bedroom, heading: "Bedroom", amenity: "3" },
   {
     image: bathroom,
@@ -126,7 +136,40 @@ const aboutproperties = [
   },
 ];
 
-const aboutproperties2 = [
+const PlotandLand = [
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: construction,
+    heading: "Construction Done",
+    amenity: "Yes",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: boundry,
+    heading: "Boundry Wall",
+    amenity: "Yes",
+  },
+  {
+    image: colony,
+    heading: "Gated Colony",
+    amenity: "Yes",
+  },
+  {
+    image: corner,
+    heading: "Corner Site",
+    amenity: "Yes",
+  },
+];
+
+const officeSpace = [
   {
     image: squarearea,
     heading: "super Area",
@@ -169,17 +212,125 @@ const aboutproperties2 = [
     amenity: "1",
   },
 ];
-
-const aboutproperties1 = [
+const CommercialShop= [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: western,
+    heading: "Personal Washroom",
+    amenity: "Yes",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+];
+const CommercialShowroom = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: western,
+    heading: "Personal Washroom",
+    amenity: "Yes",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+  {
+    image: road,
+    heading: "Main Road Facing",
+    amenity: "Yes",
+  },
+];
+const Godown = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
   {
     image: floors_allowed,
     heading: "Floors Allowed",
     amenity: "Floors",
-  },
-  {
-    image: construction,
-    heading: "Construction Done",
-    amenity: "Yes",
   },
   {
     image: opensides,
@@ -187,18 +338,8 @@ const aboutproperties1 = [
     amenity: "2",
   },
   {
-    image: boundry,
-    heading: "Boundry Wall",
-    amenity: "Yes",
-  },
-  {
-    image: colony,
-    heading: "Gated Colony",
-    amenity: "Yes",
-  },
-  {
-    image: corner,
-    heading: "Corner Site",
-    amenity: "Yes",
+    image: transaction,
+    heading: "Transactions",
+    amenity: "Resale",
   },
 ];

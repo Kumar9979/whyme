@@ -6,13 +6,22 @@ const Amenties = ({ data }) => {
   let type;
   switch (data) {
     case 0:
-      type = amenties;
+      type = residential;
       break;
     case 1:
-      type = amenties1;
+      type = PlotAndLand;
       break;
     case 2:
-      type = amenties2;
+      type = OfficeSpace;
+      break;
+    case 3:
+      type = CommercialShop;
+      break;
+    case 4:
+      type = CommercialShop;
+      break;
+    case 5:
+      type = Gowdown;
       break;
   }
   const [properties, setProperties] = useState(type);
@@ -29,7 +38,7 @@ const Amenties = ({ data }) => {
                   <ul
                     className={`${styles.amenties_bullet} d-flex align-items-center`}
                   >
-                    <li className={`${styles.amenties_list}  ps-2 `}>
+                    <li className={`${styles.amenties_list}  ps-2 text-nowrap`}>
                       {item.list}
                     </li>
                   </ul>
@@ -45,7 +54,7 @@ const Amenties = ({ data }) => {
 
 export default Amenties;
 
-const amenties = [
+const residential = [
   {
     list: "Elevators/Lifts",
   },
@@ -79,7 +88,7 @@ const amenties = [
   },
 ];
 
-const amenties1 = [
+const PlotAndLand = [
   {
     list: "Basic Amenities",
   },
@@ -104,7 +113,7 @@ const amenties1 = [
     list: "Pet Room",
   },
 ];
-const amenties2 = [
+const OfficeSpace = [
   {
     list: "Private Parking Space",
   },
@@ -136,3 +145,57 @@ const amenties2 = [
   },
  
 ];
+const CommercialShop = [
+  {
+    list: "Jewelry Mart",
+  },
+
+  {
+    list: "Clothing And Fashion Stores",
+  },
+
+  {
+    list: "Super Markets",
+  },
+
+  {
+    list: "Department Store",
+  },
+
+  {
+    list: "Grocery Shop",
+  },
+  {
+    list: "Clinics And Polyclinics",
+  },
+  {
+    list: "Chemist And Medical Store",
+  },
+ 
+  {
+    list: "Nursing Home",
+  },
+  {
+    list: "Optician",
+  },
+ 
+];
+const Gowdown = [
+  {
+    list: "Godown For Any Dry Storage",
+  },
+
+  {
+    list: "Distribution Center",
+  },
+
+  {
+    list: "Godown For Cold Storage",
+  },
+
+  {
+    list: "Godown With Climate Control",
+  },
+ 
+];
+
