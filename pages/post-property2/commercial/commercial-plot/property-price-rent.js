@@ -7,34 +7,39 @@ import PostPropertySubmitButton from "../../../../components/postproperty/compon
 import PostPropertyLayout from "../../../../components/postproperty/components/propertyLayout";
 import PriceInputGenerator from "../../../../components/postproperty/formData/priceInputGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
+import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
-const CommercialPlotPriceDetailsSell = () => {
+const IndustrialShedPriceDetailsSell = () => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      superArea: "",
-      carpetArea: "",
+      plotArea: "",
+      plotLength: "",
+      plotWidth: "",
       depositPrice: "",
-      rentPrice: "",
-      maintenanceFee: "",
+      rentAmount: "",
+      cornerPlot:"yes"
     },
 
     validationSchema: Yup.object({
-      superArea: Yup.number()
+      plotArea: Yup.number()
         .typeError("invalid value")
-        .moreThan(Yup.ref("CarpetArea"), "Must be more then CarpetArea")
+        .moreThan(Yup.ref("plotLength"), "Must be more then plotLength")
         .required("Required"),
-      carpetArea: Yup.string()
+      plotLength: Yup.string()
+        .matches(numRegex, "invalid value")
+        .required("Required"),
+      plotWidth: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
       depositPrice: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      rentPrice: Yup.string()
+      rentAmount: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      maintenanceFee: Yup.string()
+        cornerPlot: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
     }),
@@ -58,80 +63,93 @@ const CommercialPlotPriceDetailsSell = () => {
             </h5>
           </div>
           <form onSubmit={formik.handleSubmit}>
-            <div className={`mx-3 mx-md-0`}>
+            <div className={`mx-3 mt-2 mt-sm-5 mx-md-0`}>
               <div className={`row  mb-4`}>
                 <div className={`col-lg-6 col-sm-12 mb-4 mb-lg-0 `}>
                   <PriceInputGenerator
                     price={false}
-                    title={" Built-up Area"}
-                    formikValue={formik.values.depositPrice}
+                    title={"Plot Area"}
+                    formikValue={formik.values.plotArea}
                     formik={formik}
-                    itemName={"depositPrice"}
-                    placeholder={"Enter property price"}
+                    itemName={"plotArea"}
+                    placeholder={"Enter plot area"}
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.depositPrice}
-                    formikTouched={formik.touched.depositPrice}
+                    formikError={formik.errors.plotArea}
+                    formikTouched={formik.touched.plotArea}
                   />
                 </div>
                 <div className={`col-lg-6 col-sm-12`}>
                   <PriceInputGenerator
                     price={false}
-                    title={"Carpet Area"}
-                    formikValue={formik.values.carpetArea}
+                    title={"Plot Length"}
+                    formikValue={formik.values.plotLength}
                     formik={formik}
-                    itemName={"carpetArea"}
-                    placeholder={"Enter property price"}
+                    itemName={"plotLength"}
+                    placeholder={"Enter plot length"}
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.carpetArea}
-                    formikTouched={formik.touched.carpetArea}
+                    formikError={formik.errors.plotLength}
+                    formikTouched={formik.touched.plotLength}
+                  />
+                </div>
+              </div>
+              <div className={`row  mb-3`}>
+                <div className={`col-lg-6 col-sm-12 mb-2 mb-lg-0 `}>
+                  <PriceInputGenerator
+                    price={false}
+                    title={"Plot Width"}
+                    formikValue={formik.values.plotWidth}
+                    formik={formik}
+                    itemName={"plotWidth"}
+                    placeholder={"Enter plot width"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.plotWidth}
+                    formikTouched={formik.touched.plotWidth}
+                  />
+                </div>
+                <div className={`col-lg-6 col-sm-12 col mb-3`}>
+                  <PriceInputGenerator
+                    title={"Rent Amount"}
+                    formikValue={formik.values.rentAmount}
+                    formik={formik}
+                    itemName={"rentAmount"}
+                    placeholder={"Enter rent amount"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.rentAmount}
+                    formikTouched={formik.touched.rentAmount}
+                  />
+                </div>
+              </div>
+              <div className={`row  mb-4`}>
+                <div className={`col-lg-6 col-sm-12 mb-4 mb-lg-0 `}>
+                  <RadioButtonGenerator
+                    title={"Corner Plot"}
+                    itemName="cornerPlot"
+                    formik={formik}
                   />
                 </div>
               </div>
               <div className={`row`}>
-                <div className={`col-lg-6 col-md-12 mb-4`}>
+                <div className={`col-12 mb-3`}>
                   <PriceInputGenerator
-                    title={"Deposit Price"}
+                    title={"Security Deposit/Advance"}
                     formikValue={formik.values.depositPrice}
                     formik={formik}
                     itemName={"depositPrice"}
-                    placeholder={"Enter property price"}
+                    placeholder={"Enter security deposit/advance price"}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.depositPrice}
                     formikTouched={formik.touched.depositPrice}
                   />
                 </div>
-                <div className={`mb-4 col-lg-6 col-md-12 `}>
-                  <PriceInputGenerator
-                    title={"Rent Price"}
-                    formikValue={formik.values.rentPrice}
-                    formik={formik}
-                    itemName={"rentPrice"}
-                    placeholder={"Enter property price"}
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.rentPrice}
-                    formikTouched={formik.touched.rentPrice}
-                  />
-                </div>
-              </div>
-              <div className={"mb-4"}>
-                <PriceInputGenerator
-                  title={"    Maintenance Fee"}
-                  formikValue={formik.values.maintenanceFee}
-                  formik={formik}
-                  itemName={"maintenanceFee"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.maintenanceFee}
-                  formikTouched={formik.touched.maintenanceFee}
-                />
               </div>
             </div>
 
-            <PostPropertySubmitButton />
+            <PostPropertySubmitButton paddingTop="0rem" />
           </form>
         </div>
       </div>
@@ -139,4 +157,4 @@ const CommercialPlotPriceDetailsSell = () => {
   );
 };
 
-export default CommercialPlotPriceDetailsSell;
+export default IndustrialShedPriceDetailsSell;

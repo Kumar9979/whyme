@@ -15,7 +15,7 @@ const IndustrialShedPriceDetailsSell = () => {
   const formik = useFormik({
     initialValues: {
       plotArea: "",
-      carpetArea: "",
+      plotLength: "",
       plotWidth: "",
       expectedPrice: "",
     },
@@ -23,9 +23,9 @@ const IndustrialShedPriceDetailsSell = () => {
     validationSchema: Yup.object({
       plotArea: Yup.number()
         .typeError("invalid value")
-        .moreThan(Yup.ref("CarpetArea"), "Must be more then CarpetArea")
+        .moreThan(Yup.ref("plotLength"), "Must be more then plotLength")
         .required("Required"),
-      carpetArea: Yup.string()
+      plotLength: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
       plotWidth: Yup.string()
@@ -75,14 +75,14 @@ const IndustrialShedPriceDetailsSell = () => {
                   <PriceInputGenerator
                     price={false}
                     title={"Plot Length"}
-                    formikValue={formik.values.carpetArea}
+                    formikValue={formik.values.plotLength}
                     formik={formik}
-                    itemName={"carpetArea"}
+                    itemName={"plotLength"}
                     placeholder={"Enter plot length"}
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.carpetArea}
-                    formikTouched={formik.touched.carpetArea}
+                    formikError={formik.errors.plotLength}
+                    formikTouched={formik.touched.plotLength}
                   />
                 </div>
               </div>
