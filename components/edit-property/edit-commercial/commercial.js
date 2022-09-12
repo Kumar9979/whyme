@@ -5,7 +5,6 @@ import backIcon from "../../../assets/icons/back-icon.svg";
 import Location from "../../../assets/icons/location-icon.svg";
 import ApartmentUploadPhoto from "../../modals/apartmentModals/apartmentUploadPhoto";
 import ApartmentDeletePhoto from "../../modals/apartmentModals/apartmentDeletePhoto";
-
 import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";
@@ -16,7 +15,16 @@ import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
 
-const EditCommercial = () => {
+const EditCommercial = ({data, propertyType}) => {
+  let type
+  switch(data) {
+    case 0:
+      type = officeSpace;
+      break;
+  }
+
+
+    const [properties, setProperties] = useState(type);
     const [show, setShow] = useState(false);
     const [imageNumber, setImageNumber] = useState("");
     const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -110,7 +118,7 @@ const EditCommercial = () => {
                   <span
                     className={`${styles.flat_heading} fs_18 fw_500 ps-2 ps-lg-3 fontFam_poppins`}
                   >
-                    2BHK Flat in Vijayanagar, Mysuru
+                    {propertyType}
                   </span>
                   <div className={`d-flex`}>
                     <span
@@ -312,7 +320,7 @@ const EditCommercial = () => {
             </div>
             <hr className={`${styles.hr}`} />
             <div className={`row mt-4`}>
-              {propertyData.map((item, index) => {
+              {properties.map((item, index) => {
                 return (
                   <div
                     key={index}
@@ -551,7 +559,7 @@ const EditCommercial = () => {
 
 export default EditCommercial
 
-const propertyData = [
+const officeSpace = [
     {
       heading: "Total Floors",
       text: "45",
