@@ -3,8 +3,7 @@ import styles from "../../../styles/edit-property/apartment-flat.module.css";
 import Image from "next/image";
 import backIcon from "../../../assets/icons/back-icon.svg";
 import Location from "../../../assets/icons/location-icon.svg";
-import ApartmentUploadPhoto from "../../modals/apartmentModals/apartmentUploadPhoto";
-import ApartmentDeletePhoto from "../../modals/apartmentModals/apartmentDeletePhoto";
+
 import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";
@@ -14,10 +13,20 @@ import { usePosition } from "../../../pages/post-property/property-details/usePo
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
-import ApartmentEditProperty from "../../modals/apartmentModals/apartmentEditProperty";
-import ApartmentEditAmenities from "../../modals/apartmentModals/apartmentEditAmenities";
-import ApartmentAreaPrice from "../../modals/apartmentModals/apartmentAreaPrice";
-import ApartmentDescription from "../../modals/apartmentModals/apartmentDescription";
+import ApartmentDescription from "../../modals/residential-property/apartment/apartmentDescription";
+import ApartmentEditProperty from "../../modals/residential-property/apartment/apartmentEditProperty";
+import ApartmentEditAmenities from "../../modals/residential-property/apartment/apartmentEditAmenities";
+import ApartmentAreaPrice from "../../modals/residential-property/apartment/apartmentAreaPrice";
+import ApartmentUploadPhoto from "../../modals/residential-property/apartment/apartmentUploadPhoto";
+import ApartmentDeletePhoto from "../../modals/residential-property/apartment/apartmentDeletePhoto";
+import ApartmentUpdateMap from "../../modals/residential-property/apartment/apartmentUpdateMap";
+import VillaEditProperty from "../../modals/residential-property/villa-property/villaEditProperty";
+import VillaEditAmenities from "../../modals/residential-property/villa-property/villaEditAmenities";
+import VillaAreaPrice from "../../modals/residential-property/villa-property/villaAreaPrice";
+import VillaDescription from "../../modals/residential-property/villa-property/villaDescription";
+import VillaUploadPhoto from "../../modals/residential-property/villa-property/villaUploadPhoto";
+import VillaDeletePhoto from "../../modals/residential-property/villa-property/villaDeletePhoto";
+import VillaUpdateMap from "../../modals/residential-property/villa-property/villaUpdateMap";
 
 const EditApartmentFlat = ({ data, propertyType }) => {
   let type;
@@ -48,6 +57,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
   const [areaModal, setAreaModal] = useState(false);
   const [amenitiesModal, setAmenitiesModal] = useState(false);
   const [descriptionModal, setDescriptionModal] = useState(false);
+  const [editLocation, setEditLocation] = useState(false);
   const [imageNumber, setImageNumber] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [locationModal, setLocationModal] = useState(false);
@@ -114,7 +124,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
     setShowDeleteModal(true);
   }
   return (
-    <div className={`d-flex justify-content-center`}>
+    <div className={`d-flex justify-content-center container`}>
       <div className={`${styles.abcd}`}>
         <div
           className={`${styles.back_icon} d-flex justify-content-start ps-2`}
@@ -267,7 +277,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
 
               <button
                 onClick={() => {
-                  setLocationModal(true);
+                  setEditLocation(true);
                 }}
                 className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
               >
@@ -512,7 +522,27 @@ const EditApartmentFlat = ({ data, propertyType }) => {
           </div>
         </div>
       </div>
-      <ApartmentUploadPhoto
+      
+      
+      {data === 0 && (
+        <>
+          <ApartmentEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <ApartmentEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          <ApartmentAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <ApartmentDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <ApartmentUploadPhoto
         handleClose={handleClose}
         handleImageUpload={handleImageUpload}
         show={show}
@@ -523,86 +553,52 @@ const EditApartmentFlat = ({ data, propertyType }) => {
         handleClose={handleDeleteModalClose}
         show={showDeleteModal}
       />
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={locationModal}
-        onHide={() => setLocationModal(false)}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className={`fontFam_poppins`}>
-            Select Your Property In Map
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {isLoaded && (
-            <GoogleMap
-              id="map"
-              onGoogleApiLoaded={({ map, maps }) =>
-                console.log(map, maps, "lsdnhfioubn")
-              }
-              zoom={16}
-              center={selected}
-              mapContainerClassName={`${styles.map_container}`}
-              onLoad={(map) => {
-                setMap(map);
-              }}
-            >
-              {markerStat && (
-                <Marker
-                  draggable={true}
-                  onDragEnd={(e) => {
-                    markerChange();
-                    setSelected({
-                      lat: e.latLng.lat(),
-                      lng: e.latLng.lng(),
-                    });
-                  }}
-                  position={selected}
-                />
-              )}
-            </GoogleMap>
-          )}
 
-          <button
-            className={`btn float-end ${styles.saveBtn} fontFam_poppins mt-4`}
-          >
-            Save
-          </button>
-        </Modal.Body>
-        <Modal.Footer></Modal.Footer>
-      </Modal>
-      {
-      data===0&&  <>
-          <ApartmentEditProperty
-        show={featureModalShow}
-        handleClose={() => setFeatureModalShow(false)}
+      <ApartmentUpdateMap
+        show={editLocation}
+        handleClose={() => setEditLocation(false)}
       />
-      <ApartmentEditAmenities
-        show={amenitiesModal}
-        handleClose={() => setAmenitiesModal(false)}
-      />
-      <ApartmentAreaPrice
-        show={areaModal}
-        handleClose={() => setAreaModal(false)}
-      />
-      <ApartmentDescription
-        show={descriptionModal}
-        handleClose={() => setDescriptionModal(false)}
-      /> 
-      </>
-      }
-      {
-      data===1&&<>
+        </>
+      )}
+      {data === 1 && <>
       
-      </>
-      }
+        <VillaEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <VillaEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          < VillaAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <VillaDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <VillaUploadPhoto
+        handleClose={handleClose}
+        handleImageUpload={handleImageUpload}
+        show={show}
+      />
+      <VillaDeletePhoto
+        deleteFn={onImageRemove}
+        index={imageNumber}
+        handleClose={handleDeleteModalClose}
+        show={showDeleteModal}
+      />
 
+      <VillaUpdateMap
+        show={editLocation}
+        handleClose={() => setEditLocation(false)}
+      />
+      
+      </>}
 
-
-
-  
+      {data === 2 && <>
+      </>}
     </div>
   );
 };

@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 import upload from "../../../assets/icons/upload.png";
 import styles from "../../../styles/modals/apartmentUploadPhoto.module.css";
 
-const ResidentialUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
+const ResidentialHouseUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   const [images, setImages] = useState([]);
   const maxNumber = 10;
   // const [currentPage, setCurrentPage] = useState("photoDesc");
@@ -195,4 +195,4 @@ const ResidentialUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   );
 };
 
-export default ResidentialUploadPhoto;
+export default ResidentialHouseUploadPhoto;

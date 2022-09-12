@@ -3,8 +3,9 @@ import styles from "../../../styles/edit-property/apartment-flat.module.css";
 import Image from "next/image";
 import backIcon from "../../../assets/icons/back-icon.svg";
 import Location from "../../../assets/icons/location-icon.svg";
-import ApartmentUploadPhoto from "../../modals/apartmentModals/apartmentUploadPhoto";
-import ApartmentDeletePhoto from "../../modals/apartmentModals/apartmentDeletePhoto";
+import ApartmentUploadPhoto from "../../modals/residential-property/apartment/apartmentUploadPhoto";
+import ApartmentDeletePhoto from "../../modals/residential-property/apartment/apartmentDeletePhoto";
+
 import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";

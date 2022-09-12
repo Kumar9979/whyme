@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 
 const ResidentialLandEditAmenities = ({ show, handleClose }) => {

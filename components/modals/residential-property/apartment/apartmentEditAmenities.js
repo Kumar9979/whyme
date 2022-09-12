@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 
 const ApartmentEditAmenities = ({ show, handleClose }) => {
@@ -59,7 +59,7 @@ const ApartmentEditAmenities = ({ show, handleClose }) => {
                 </span>
               </div>
               <div>
-                <span onClick={handleClose} className={`${styles.close_icon}`}>
+                <span onClick={handleClose} className={`${styles.close_icon} cursor_pointer`}>
                   <Image src={closeIcon} width="23px" height="23px" />
                 </span>
               </div>

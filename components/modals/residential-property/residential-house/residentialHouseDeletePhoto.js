@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-import styles from "../../../styles/modals/apartmentDeletePhoto.module.css";
+import styles from "../../../../styles/modals/apartmentDeletePhoto.module.css";
 
-const ResidentialDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
+const ResidentialHouseDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   function handleDelete() {
     deleteFn(index);
     handleClose();
@@ -55,4 +55,4 @@ const ResidentialDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
   );
 };
 
-export default ResidentialDeletePhoto;
+export default ResidentialHouseDeletePhoto;
