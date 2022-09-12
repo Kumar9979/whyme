@@ -101,6 +101,10 @@ import AgricultureLandUpdateMap from "../components/modals/agriculture-property/
 import AgricultureLandDescription from "../components/modals/agriculture-property/agriculture-land/agricultureLandDescription";
 import AgricultureLandAreaPrice from "../components/modals/agriculture-property/agriculture-land/agricultureLandAreaPrice";
 import AgricultureLandRent from "../components/modals/agriculture-property/agriculture-land/agricultureLandRent";
+import IndustryPlotAreaPrice from "../components/modals/commercial-property/industrial-plot/industryPlotAreaPrice";
+import IndustryPlotRent from "../components/modals/commercial-property/industrial-plot/industryPlotRent";
+import IndustryPlotDescription from "../components/modals/commercial-property/industrial-plot/industryPlotDescription";
+import IndustryPlotAmenities from "../components/modals/commercial-property/industrial-plot/industryplotAmenities";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -296,6 +300,10 @@ const Hello = () => {
      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotAreaPrice handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotRent handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotDescription handleClose={handleClose} show={show} /> */}
+     <IndustryPlotAmenities  handleClose={handleClose} show={show} />
 
       {/* commercial plot */}
 
@@ -304,7 +312,7 @@ const Hello = () => {
       {/* <CommercialPlotUpdateMap handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotFeatures handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotAreaPrice handleClose={handleClose} show={show} /> */}
-      <CommercialPlotRent handleClose={handleClose} show={show} />
+      {/* <CommercialPlotRent handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotAmenities  handleClose={handleClose} show={show} /> */}
       {/* <CommercialPlotDescription handleClose={handleClose} show={show} /> */}
 
