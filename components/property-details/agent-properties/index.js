@@ -8,7 +8,7 @@ import arrowright from "../../../assets/images/arrow_right.svg";
 import seeall from "../../../assets/images/seeall.svg";
 import RelatedProperties from "../../cards/property-details-cards/related-properties";
 
-const AgentProperties = () => {
+const AgentProperties = ({propertyType, data}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -43,7 +43,7 @@ const AgentProperties = () => {
           <div className={`${styles.scrollmenu} `}>
             <div ref={ref} className={`${styles.row} d-flex`}>
               {[...Array(n)].map((item, index) => {
-                return <RelatedProperties />;
+                return <RelatedProperties location={propertyType} data={data} />;
               })}
             </div>
           </div>

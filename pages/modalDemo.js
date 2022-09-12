@@ -7,38 +7,36 @@ import OfficeSpaceProperty from "../components/modals/commercial-property/office
 import OfficeSpaceDescription from "../components/modals/commercial-property/office-space/officeSpaceDescription";
 import CommercialShopUploadPhoto from "../components/modals/commercial-property/commercial-shop/commercialshopUploadPhoto";
 import CommercialShopDeletePhoto from "../components/modals/commercial-property/commercial-shop/commercialshopDeletePhoto";
-import ApartmentDeletePhoto from "../components/modals/apartmentModals/apartmentDeletePhoto";
-import ApartmentAreaPrice from "../components/modals/apartmentModals/apartmentAreaPrice";
-import ApartmentAreaPriceRent from "../components/modals/apartmentModals/apartmentAreaPriceRent";
-import ApartmentDescription from "../components/modals/apartmentModals/apartmentDescription";
-import ApartmentEditAmenities from "../components/modals/apartmentModals/apartmentEditAmenities";
-import ApartmentEditProperty from "../components/modals/apartmentModals/apartmentEditProperty";
-import ApartmentUpdateMap from "../components/modals/apartmentModals/apartmentUpdateMap";
-import ApartmentUploadPhoto from "../components/modals/apartmentModals/apartmentUploadPhoto";
-import VillaDeletePhoto from "../components/modals/villa-property/villaDeletePhoto";
-import VillaUploadPhoto from "../components/modals/villa-property/villaUploadPhoto";
+import ApartmentDeletePhoto from "../components/modals/residential-property/apartment/apartmentDeletePhoto";
+import ApartmentAreaPrice from "../components/modals/residential-property/apartment/apartmentAreaPrice";
+import ApartmentAreaPriceRent from "../components/modals/residential-property/apartment/apartmentAreaPriceRent";
+import ApartmentDescription from "../components/modals/residential-property/apartment/apartmentDescription";
+import ApartmentEditAmenities from "../components/modals/residential-property/apartment/apartmentEditAmenities";
+import ApartmentEditProperty from "../components/modals/residential-property/apartment/apartmentEditProperty";
+import ApartmentUpdateMap from "../components/modals/residential-property/apartment/apartmentUpdateMap";
+import ApartmentUploadPhoto from "../components/modals/residential-property/apartment/apartmentUploadPhoto";
+import VillaDeletePhoto from "../components/modals/residential-property/villa-property/villaDeletePhoto";
+import VillaUploadPhoto from "../components/modals/residential-property/villa-property/villaUploadPhoto";
 import OfficeSpaceUploadPhoto from "../components/modals/commercial-property/office-space/officespaceUploadPhoto";
 import OfficespaceDeletePhoto from "../components/modals/commercial-property/office-space/officespaceDeletePhoto";
 import OfficeSpaceUpdateMap from "../components/modals/commercial-property/office-space/officespaceUpdateMap";
 import CommercialShopUpdateMap from "../components/modals/commercial-property/commercial-shop/commercialshopUpdateMap";
-import ResidentialEditProperty from "../components/modals/residential-house-property/residentialEditProperty";
-import ResidentialEditAmenities from "../components/modals/residential-house-property/residentialEditAmenities";
-import ResidentialAreaPrice from "../components/modals/residential-house-property/residentialAreaPrice";
-import ResidentialAreaPriceRent from "../components/modals/residential-house-property/residentialAreaPriceRent";
-import ResidentialDescription from "../components/modals/residential-house-property/residentialDescription";
-import VillaUpdateMap from "../components/modals/villa-property/villaUpdateMap";
-import VillaEditProperty from "../components/modals/villa-property/villaEditProperty";
-import VillaEditAmenities from "../components/modals/villa-property/villaEditAmenities";
-import VillaAreaPrice from "../components/modals/villa-property/villaAreaPrice";
-import VillaAreaPriceRent from "../components/modals/villa-property/villaAreaPriceRent";
-import VillaDescription from "../components/modals/villa-property/villaDescription";
-import ResidentialLandUploadPhoto from "../components/modals/residential-land-property/residentialLandUploadPhoto";
-import ResidentialLandDeletePhoto from "../components/modals/residential-land-property/residentialLandDeletePhoto";
-import ResidentialLandUpdateMap from "../components/modals/residential-land-property/residentialLandUpdateMap";
-import ResidentialLandEditProperty from "../components/modals/residential-land-property/residentialLandEditProperty";
-import ResidentialLandEditAmenities from "../components/modals/residential-land-property/residentialLandEditAmenities";
-import ResidentialLandAreaPrice from "../components/modals/residential-land-property/residentialLandAreaPrice";
-import ResidentialLandDescription from "../components/modals/residential-land-property/residentialLandDescription";
+
+
+
+import VillaUpdateMap from "../components/modals/residential-property/villa-property/villaUpdateMap";
+import VillaEditProperty from "../components/modals/residential-property/villa-property/villaEditProperty";
+import VillaEditAmenities from "../components/modals/residential-property/villa-property/villaEditAmenities";
+import VillaAreaPrice from "../components/modals/residential-property/villa-property/villaAreaPrice";
+import VillaAreaPriceRent from "../components/modals/residential-property/villa-property/villaAreaPriceRent";
+import VillaDescription from "../components/modals/residential-property/villa-property/villaDescription";
+import ResidentialLandUploadPhoto from "../components/modals/residential-property/residential-land/residentialLandUploadPhoto"; 
+import ResidentialLandDeletePhoto from "../components/modals/residential-property/residential-land/residentialLandDeletePhoto";
+import ResidentialLandUpdateMap from "../components/modals/residential-property/residential-land/residentialLandUpdateMap";
+import ResidentialLandEditProperty from "../components/modals/residential-property/residential-land/residentialLandEditProperty";
+import ResidentialLandEditAmenities from "../components/modals/residential-property/residential-land/residentialLandEditAmenities";
+import ResidentialLandAreaPrice from "../components/modals/residential-property/residential-land/residentialLandAreaPrice";
+import ResidentialLandDescription from "../components/modals/residential-property/residential-land/residentialLandDescription";
 import CommercialShopFeatures from "../components/modals/commercial-property/commercial-shop/commercialshopFeatures";
 import CommercialShowroomUploadPhoto from "../components/modals/commercial-property/commercial-showroom/commercialShowroomUploadLoadPhoto";
 import CommercialShowroomDeletePhoto from "../components/modals/commercial-property/commercial-showroom/commercialShowroomDeletePhoto";
@@ -101,10 +99,13 @@ import AgricultureLandUpdateMap from "../components/modals/agriculture-property/
 import AgricultureLandDescription from "../components/modals/agriculture-property/agriculture-land/agricultureLandDescription";
 import AgricultureLandAreaPrice from "../components/modals/agriculture-property/agriculture-land/agricultureLandAreaPrice";
 import AgricultureLandRent from "../components/modals/agriculture-property/agriculture-land/agricultureLandRent";
-import IndustryPlotAreaPrice from "../components/modals/commercial-property/industrial-plot/industryPlotAreaPrice";
-import IndustryPlotRent from "../components/modals/commercial-property/industrial-plot/industryPlotRent";
-import IndustryPlotDescription from "../components/modals/commercial-property/industrial-plot/industryPlotDescription";
-import IndustryPlotAmenities from "../components/modals/commercial-property/industrial-plot/industryplotAmenities";
+import ResidentialHouseAreaPrice from "../components/modals/residential-property/residential-house/residentialHouseAreaPrice";
+import ResidentialHouseDeletePhoto from "../components/modals/residential-property/residential-house/residentialHouseDeletePhoto";
+import ResidentialHouseUpdateMap from "../components/modals/residential-property/residential-house/residentialHouseUpdateMap";
+import ResidentialHouseAreaPriceRent from "../components/modals/residential-property/residential-house/residentialHouseAreaPriceRent";
+import ResidentialHouseEditAmenities from "../components/modals/residential-property/residential-house/residentialHouseEditAmenities";
+import ResidentialHouseDescription from "../components/modals/residential-property/residential-house/residentialHouseDescription";
+import ResidentialHouseEditProperty from "../components/modals/residential-property/residential-house/residentialHouseEditProperty";
 
 const Hello = () => {
   const [show, setShow] = useState(false);
@@ -126,14 +127,14 @@ const Hello = () => {
       {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
 
       {/* residential House*/}
-      {/* <ResidentialUploadPhoto handleClose={handleClose} show={show}/> */}
-      {/* <ResidentialDeletePhoto handleClose={handleClose} show={show}/> */}
-      {/* <ResidentialUpdateMap handleClose={handleClose} show={show}/> */}
-      {/* <ResidentialEditProperty handleClose={handleClose} show={show}/> */}
-      {/* <ResidentialEditAmenities handleClose={handleClose} show={show} /> */}
-      {/* <ResidentialAreaPrice handleClose={handleClose} show={show} /> */}
-      {/* <ResidentialAreaPriceRent handleClose={handleClose} show={show} /> */}
-      {/* <ResidentialDescription handleClose={handleClose} show={show} /> */}
+      {/* <ResidentialHouseAreaPrice handleClose={handleClose} show={show}/>
+      <ResidentialHouseDeletePhoto handleClose={handleClose} show={show}/>
+      <ResidentialHouseUpdateMap handleClose={handleClose} show={show}/>
+      <ResidentialHouseAreaPriceRent handleClose={handleClose} show={show}/>
+      <ResidentialHouseEditAmenities handleClose={handleClose} show={show} />
+      <ResidentialHouseEditProperty handleClose={handleClose} show={show} />
+      <ResidentialHouseDescription handleClose={handleClose} show={show} />
+      <ResidentialHouseEditAmenities handleClose={handleClose} show={show} /> */}
 
       {/* Residentail Land */}
       {/* <ResidentialLandUploadPhoto handleClose={handleClose} show={show}/> */}
@@ -148,7 +149,7 @@ const Hello = () => {
       {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
-      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
+      <VillaEditProperty handleClose={handleClose} show={show}/>
       {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
@@ -303,7 +304,7 @@ const Hello = () => {
      {/* <IndustryPlotAreaPrice handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotRent handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotDescription handleClose={handleClose} show={show} /> */}
-     <IndustryPlotAmenities  handleClose={handleClose} show={show} />
+     {/* <IndustryPlotAmenities  handleClose={handleClose} show={show} /> */}
 
       {/* commercial plot */}
 

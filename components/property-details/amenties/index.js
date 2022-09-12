@@ -3,9 +3,31 @@ import { useState } from "react";
 import styles from "../../../styles/propertydetails/amenties.module.css";
 
 const Amenties = ({ data }) => {
-  const [properties, setProperties] = useState(
-    data == 1 ? plotAmenties : amenties
-  );
+  let type;
+  switch (data) {
+    case 0:
+      type = residential;
+      break;
+    case 1:
+      type = PlotAndLand;
+      break;
+    case 2:
+      type = OfficeSpace;
+      break;
+    case 3:
+      type = CommercialShop;
+      break;
+    case 4:
+      type = CommercialShop;
+      break;
+    case 5:
+      type = Gowdown;
+      break;
+    case 6:
+      type = IndustrialShed;
+      break;
+  }
+  const [properties, setProperties] = useState(type);
   return (
     <div className={`${styles.amenties} p-4 mt-4`}>
       <p className={`${styles.amenties_text}`}>Amenities</p>
@@ -19,7 +41,7 @@ const Amenties = ({ data }) => {
                   <ul
                     className={`${styles.amenties_bullet} d-flex align-items-center`}
                   >
-                    <li className={`${styles.amenties_list}  ps-2 `}>
+                    <li className={`${styles.amenties_list}  ps-2 text-nowrap`}>
                       {item.list}
                     </li>
                   </ul>
@@ -35,7 +57,7 @@ const Amenties = ({ data }) => {
 
 export default Amenties;
 
-const amenties = [
+const residential = [
   {
     list: "Elevators/Lifts",
   },
@@ -69,7 +91,7 @@ const amenties = [
   },
 ];
 
-const plotAmenties = [
+const PlotAndLand = [
   {
     list: "Basic Amenities",
   },
@@ -94,3 +116,114 @@ const plotAmenties = [
     list: "Pet Room",
   },
 ];
+
+const OfficeSpace = [
+  {
+    list: "Private Parking Space",
+  },
+
+  {
+    list: "Guest Parking Spaces",
+  },
+
+  {
+    list: "Play Ground",
+  },
+
+  {
+    list: "Sauna Steam Room",
+  },
+
+  {
+    list: "Hardwood Floors",
+  },
+
+  {
+    list: "Pet Room",
+  },
+  {
+    list: "Lounge Area",
+  },
+  {
+    list: "Garden Area",
+  },
+ 
+];
+const CommercialShop = [
+  {
+    list: "Jewelry Mart",
+  },
+
+  {
+    list: "Clothing And Fashion Stores",
+  },
+
+  {
+    list: "Super Markets",
+  },
+
+  {
+    list: "Department Store",
+  },
+
+  {
+    list: "Grocery Shop",
+  },
+  {
+    list: "Clinics And Polyclinics",
+  },
+  {
+    list: "Chemist And Medical Store",
+  },
+ 
+  {
+    list: "Nursing Home",
+  },
+  {
+    list: "Optician",
+  },
+ 
+];
+const Gowdown = [
+  {
+    list: "Godown For Any Dry Storage",
+  },
+
+  {
+    list: "Distribution Center",
+  },
+
+  {
+    list: "Godown For Cold Storage",
+  },
+
+  {
+    list: "Godown With Climate Control",
+  },
+ 
+];
+const IndustrialShed = [
+  {
+    list: "The Production Of Power",
+  },
+
+  {
+    list: "Manufacturing Industries",
+  },
+
+  {
+    list: "Raw Materials Mining Industries",
+  },
+
+  {
+    list: "Textile Industries",
+  },
+  {
+    list: "Petroleum Products Industries",
+  },
+  {
+    list: "Wood And Paper Products",
+  },
+ 
+];
+

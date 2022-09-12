@@ -169,6 +169,10 @@ p {
   margin-top: 0.15rem;
 }
 
+.cursor_pointer{
+  cursor: pointer;
+}
+
 
 @media only screen and (max-width: 992px) {
   .fs_md_7 {
