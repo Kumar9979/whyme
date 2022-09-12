@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentAreaPrice.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentAreaPrice.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 import { useFormik } from "formik";
-import errorIcon from "../../../assets/icons/error.svg";
-
 import { useRouter } from "next/router";
 
 const VillaAreaPrice = ({ show, handleClose }) => {
@@ -45,10 +43,6 @@ const VillaAreaPrice = ({ show, handleClose }) => {
     },
   });
   console.log(formik.values);
-
-
-  
-
 
   return (
     <div>
@@ -118,7 +112,6 @@ const VillaAreaPrice = ({ show, handleClose }) => {
                         <span>{formik.errors.BuildUpArea}</span>
                       </div>
                     )}
-                  
                   </div>
                   <div class="col mt-3 mt-lg-0">
                     <label
@@ -156,7 +149,6 @@ const VillaAreaPrice = ({ show, handleClose }) => {
                         <span className="">{formik.errors.CarpetArea}</span>
                       </div>
                     )}
-                   
                   </div>
                 </div>
               </div>
@@ -193,9 +185,7 @@ const VillaAreaPrice = ({ show, handleClose }) => {
                       <span>{formik.errors.ExpectedPrice}</span>
                     </div>
                   )}
-                 
                 </div>
-               
               </div>
               <div className={`d-flex justify-content-end`}>
                 <button

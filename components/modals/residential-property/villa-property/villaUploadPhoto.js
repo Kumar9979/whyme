@@ -1,15 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { StylesContext } from "@material-ui/styles";
 import ImageUploading from "react-images-uploading";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import upload from "../../../assets/icons/upload.png";
-import styles from "../../../styles/modals/apartmentUploadPhoto.module.css";
+import upload from "../../../../assets/icons/upload.png";
+import styles from "../../../../styles/modals/apartmentUploadPhoto.module.css";
 
 const VillaUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
   const [images, setImages] = useState([]);
@@ -55,7 +53,6 @@ const VillaUploadPhoto = ({ show, handleClose, handleImageUpload }) => {
       onHide={handleClose}
       dialogClassName={`${styles.card_width}`}
       contentClassName={`${styles.card_radius}`}
-   
     >
       <Modal.Body>
         {" "}

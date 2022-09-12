@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentEditAmenities.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 
-const ResidentialEditAmenities = ({ show, handleClose }) => {
+const ResidentialHouseEditAmenities = ({ show, handleClose }) => {
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
@@ -240,6 +240,6 @@ const ResidentialEditAmenities = ({ show, handleClose }) => {
   );
 };
 
-export default ResidentialEditAmenities;
+export default ResidentialHouseEditAmenities;
 
 

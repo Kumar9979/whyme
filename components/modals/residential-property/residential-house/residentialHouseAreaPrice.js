@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import styles from "../../../styles/modals/apartmentsModals/apartmentAreaPrice.module.css";
+import styles from "../../../../styles/modals/apartmentsModals/apartmentAreaPrice.module.css";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
 import { useFormik } from "formik";
-import errorIcon from "../../../assets/icons/error.svg";
+
 
 import { useRouter } from "next/router";
 
-const ResidentialAreaPrice = ({ show, handleClose }) => {
+const ResidentialHouseAreaPrice = ({ show, handleClose }) => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
@@ -213,4 +213,4 @@ const ResidentialAreaPrice = ({ show, handleClose }) => {
   );
 };
 
-export default ResidentialAreaPrice;
+export default ResidentialHouseAreaPrice;

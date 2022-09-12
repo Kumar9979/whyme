@@ -1,19 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import closeIcon from "../../../assets/icons/close.png";
+import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
-import styles from "../../../styles/modals/apartmentEditProperty.module.css";
+import styles from "../../../../styles/modals/apartmentEditProperty.module.css";
 import Select from "react-select";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
 const VillaEditProperty = ({ show, handleClose }) => {
   const [value, setValue1] = useState("4");
   const [optionType, setoptionType] = useState("");
   const numRegex = /^[0-9]+$/;
   const [menuOpen, setMenuOpen] = useState(false);
+  const width=useScreenSizeDetector();
   const customStyles = {
     control: (base, state) => ({
       ...base,
@@ -102,20 +104,7 @@ const VillaEditProperty = ({ show, handleClose }) => {
     },
   });
 
-  // const handleCheckbox = (e) => {
-  //   const { checked, name } = e.target;
-  //   if (e.target.checked) {
-  //     formik.setFieldValue("Amenities", [
-  //       ...formik.values.Amenities,
-  //       e.target.name,
-  //     ]);
-  //   } else {
-  //     formik.setFieldValue(
-  //       "Amenities",
-  //       formik.values.Amenities.filter((item) => item !== e.target.name)
-  //     );
-  //   }
-  // };
+
 
   const facing = [
     { value: "North", label: "North" },
