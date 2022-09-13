@@ -6,7 +6,7 @@ import EditApartmentFlat from "../../../components/edit-property/edit-resedentia
 const ApartmentFlatPage = () => {
   return (
     <>
-      <EditCommercial data={1} propertyType="2BHK Coomercial Shop in Vijaynagar Mys..."/>
+      <EditCommercial data={6} propertyType="2BHK Commercial Plot in Vijaynagar Mys..."/>
       {/* <EditAgiculture/> */}
     </>
   );
