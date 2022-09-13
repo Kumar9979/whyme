@@ -15,6 +15,62 @@ import { usePosition } from "../../../pages/post-property/property-details/usePo
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
+import OfficespaceAreaPrice from "../../modals/commercial-property/office-space/officespaceAreaPrice";
+import OfficeSpaceAmenities from "../../modals/commercial-property/office-space/officespaceEditAmenities";
+import OfficeSpaceProperty from "../../modals/commercial-property/office-space/officeSpaceProperty";
+import OfficeSpaceDescription from "../../modals/commercial-property/office-space/officespaceDescription";
+import OfficeSpaceUploadPhoto from "../../modals/commercial-property/office-space/officespaceUploadPhoto";
+import OfficespaceDeletePhoto from "../../modals/commercial-property/office-space/officespaceDeletePhoto";
+import OfficeSpaceUpdateMap from "../../modals/commercial-property/office-space/officespaceUpdateMap";
+import CommercialShopFeatures from "../../modals/commercial-property/commercial-shop/commercialshopFeatures";
+import CommercialShopAmenities from "../../modals/commercial-property/commercial-shop/commercialshopAmenities";
+import CommercialShopAreaPrice from "../../modals/commercial-property/commercial-shop/commercialshopAreaPrice";
+import CommercialShopDescription from "../../modals/commercial-property/commercial-shop/commercialshopDescription";
+import CommercialShopDeletePhoto from "../../modals/commercial-property/commercial-shop/commercialshopDeletePhoto";
+import CommercialShopUpdateMap from "../../modals/commercial-property/commercial-shop/commercialshopUpdateMap";
+import CommercialShopUploadPhoto from "../../modals/commercial-property/commercial-shop/commercialshopUploadPhoto";
+import CommercialShowroomEditProperty from "../../modals/commercial-property/commercial-showroom/commercialshopFeatures";
+import CommercialShowroomEditAmenities from "../../modals/commercial-property/commercial-showroom/commercialShowroomEditAmenities";
+import CommercialShowroomAreaPrice from "../../modals/commercial-property/commercial-showroom/commercialShowroomAreaPrice";
+import CommercialShowroomDescription from "../../modals/commercial-property/commercial-showroom/commercialShowroomDescription";
+import CommercialShowroomUploadPhoto from "../../modals/commercial-property/commercial-showroom/commercialShowroomUploadLoadPhoto";
+import CommercialShowroomDeletePhoto from "../../modals/commercial-property/commercial-showroom/commercialShowroomDeletePhoto";
+import CommercialShowroomUpdateMap from "../../modals/commercial-property/commercial-showroom/commercialShowroomUpdateMap";
+import WarehouseEditProperty from "../../modals/commercial-property/warehouse-property/warehouseEditProperty";
+import WarehouseEditAmenities from "../../modals/commercial-property/warehouse-property/warehouseEditAmenities";
+import WarehouseAreaPrice from "../../modals/commercial-property/warehouse-property/warehouseAreaPrice";
+import WarehouseDescription from "../../modals/commercial-property/warehouse-property/warehouseDescription";
+import WarehouseUploadPhoto from "../../modals/commercial-property/warehouse-property/warehouseUploadPhoto";
+import WarehouseDeletePhoto from "../../modals/commercial-property/warehouse-property/warehouseDeletePhoto";
+import WarehouseUpdateMap from "../../modals/commercial-property/warehouse-property/warehouseUpdateMap";
+import IndustryBuildingFeatures from "../../modals/commercial-property/industrial-building/industrybuildingEditFeatures";
+import IndustryBuildingAmenities from "../../modals/commercial-property/industrial-building/industrybuildingEditAmenities";
+import IndustryBuildingAreaPrice from "../../modals/commercial-property/industrial-building/industrybuildingAreaPrice";
+import IndustryBuildingDescription from "../../modals/commercial-property/industrial-building/industrybuildingDescription";
+import IndustryBuildingUploadPhoto from "../../modals/commercial-property/industrial-building/industrybuildingUploadPhoto";
+import IndustryBuildingDeletePhoto from "../../modals/commercial-property/industrial-building/industrybuildingDeletePhoto";
+import IndustryBuildingUpdateMap from "../../modals/commercial-property/industrial-building/industrybuildingUpdateMap";
+import IndustrialShedEditProperty from "../../modals/commercial-property/industrial-shed/industrialShedEditProperty";
+import IndustrialShedEditAmenities from "../../modals/commercial-property/industrial-shed/industrialShedEditAmenities";
+import IndustrialShedAreaPrice from "../../modals/commercial-property/industrial-shed/industrialShedAreaPrice";
+import IndustrialShedDescription from "../../modals/commercial-property/industrial-shed/industrialShedDescription";
+import IndustrialShedUploadPhoto from "../../modals/commercial-property/industrial-shed/industrialShedUploadPhoto";
+import IndustrialShedDeletePhoto from "../../modals/commercial-property/industrial-shed/industrialShedDeletePhoto";
+import IndustrialShedUpdateMap from "../../modals/commercial-property/industrial-shed/industrialShedUpdateMap";
+import CommercialPlotFeatures from "../../modals/commercial-property/commercial-plot/commercialplotFeatures";
+import CommercialPlotAmenities from "../../modals/commercial-property/commercial-plot/commercialplotAmenities";
+import CommercialPlotAreaPrice from "../../modals/commercial-property/commercial-plot/commercialPlotAreaPrice";
+import CommercialPlotDescription from "../../modals/commercial-property/commercial-plot/commercialplotDescription";
+import CommercialPlotUploadPhoto from "../../modals/commercial-property/commercial-plot/commercialplotUploadPhoto";
+import CommercialPlotDeletePhoto from "../../modals/commercial-property/commercial-plot/commercialplotDeletePhoto";
+import CommercialPlotUpdateMap from "../../modals/commercial-property/commercial-plot/commercialplotUpdateMap";
+import IndustryPlotFeatures from "../../modals/commercial-property/industrial-plot/industryPlotEditFeatures";
+import IndustryPlotAmenities from "../../modals/commercial-property/industrial-plot/industryplotAmenities";
+import IndustryPlotAreaPrice from "../../modals/commercial-property/industrial-plot/industryPlotAreaPrice";
+import IndustryPlotDescription from "../../modals/commercial-property/industrial-plot/industryPlotDescription";
+import IndustryPlotUploadPhoto from "../../modals/commercial-property/industrial-plot/industryPlotUploadPhoto";
+import IndustryPlotDeletePhoto from "../../modals/commercial-property/industrial-plot/industryPlotDeletePhoto";
+import IndustryPlotUpdateMap from "../../modals/commercial-property/industrial-plot/industryPlotUpdateMap";
 
 const EditCommercial = ({ data, propertyType }) => {
   let features;
@@ -45,17 +101,21 @@ const EditCommercial = ({ data, propertyType }) => {
       ament = IndustrialShedAmenties;
       break;
     case 6:
-      features = CommercialPlotFeatures;
+      features = commercialPlotFeatures;
       ament = CommercialPlotAmenties;
       break;
     case 7:
-      features = IndustrialPlotFeatures;
+      features = industrialPlotFeatures;
       ament = IndustrialPlotAmenties;
       break;
   }
-
+  const [featureModalShow, setFeatureModalShow] = useState(false);
   const [properties, setProperties] = useState(features);
   const [amenties, setAmenties] = useState(ament);
+  const [areaModal, setAreaModal] = useState(false);
+  const [amenitiesModal, setAmenitiesModal] = useState(false);
+  const [descriptionModal, setDescriptionModal] = useState(false);
+  const [editLocation, setEditLocation] = useState(false);
   const [show, setShow] = useState(false);
   const [imageNumber, setImageNumber] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -277,7 +337,7 @@ const EditCommercial = ({ data, propertyType }) => {
 
                 <button
                   onClick={() => {
-                    setLocationModal(true);
+                    setEditLocation(true);
                   }}
                   className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
                 >
@@ -345,7 +405,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   Features
                 </div>
                 <button
-                  onClick={() => setLocationModal(true)}
+                  onClick={() => setFeatureModalShow(true)}
                   className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
                 >
                   Edit Features
@@ -384,7 +444,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   Amenities
                 </div>
                 <button
-                  onClick={() => {}}
+                  onClick={() => setAmenitiesModal(true)}
                   className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
                 >
                   Edit Amenities
@@ -423,7 +483,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   Area & Price
                 </div>
                 <button
-                  onClick={() => {}}
+                  onClick={() => setAreaModal(true)}
                   className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
                 >
                   Edit Area & Price
@@ -510,7 +570,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   Description
                 </div>
                 <button
-                  onClick={() => {}}
+                  onClick={() => setDescriptionModal(true)}
                   className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
                 >
                   Edit Description
@@ -532,7 +592,7 @@ const EditCommercial = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
-        <ApartmentUploadPhoto
+        {/* <ApartmentUploadPhoto
           handleClose={handleClose}
           handleImageUpload={handleImageUpload}
           show={show}
@@ -542,8 +602,8 @@ const EditCommercial = ({ data, propertyType }) => {
           index={imageNumber}
           handleClose={handleDeleteModalClose}
           show={showDeleteModal}
-        />
-        <Modal
+        /> */}
+        {/* <Modal
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
@@ -584,7 +644,297 @@ const EditCommercial = ({ data, propertyType }) => {
             )}
           </Modal.Body>
           <Modal.Footer></Modal.Footer>
-        </Modal>
+        </Modal> */}
+
+        {data === 0 && (
+          <>
+            <OfficeSpaceProperty
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <OfficeSpaceAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <OfficespaceAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <OfficeSpaceDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <OfficeSpaceUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <OfficespaceDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <OfficeSpaceUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+
+        {data === 1 && (
+          <>
+            <CommercialShopFeatures
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <CommercialShopAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <CommercialShopAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <CommercialShopDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <CommercialShopUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <CommercialShopDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <CommercialShopUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+        {data === 2 && (
+          <>
+            <CommercialShowroomEditProperty
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <CommercialShowroomEditAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <CommercialShowroomAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <CommercialShowroomDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <CommercialShowroomUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <CommercialShowroomDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <CommercialShowroomUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+         {data === 3 && (
+          <>
+            <WarehouseEditProperty
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <WarehouseEditAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <WarehouseAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <WarehouseDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <WarehouseUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <WarehouseDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <WarehouseUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+         {data === 4 && (
+          <>
+            <IndustryBuildingFeatures
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <IndustryBuildingAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <IndustryBuildingAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <IndustryBuildingDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <IndustryBuildingUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <IndustryBuildingDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <IndustryBuildingUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+         {data === 5 && (
+          <>
+            <IndustrialShedEditProperty
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <IndustrialShedEditAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <IndustrialShedAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <IndustrialShedDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <IndustrialShedUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <IndustrialShedDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <IndustrialShedUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+         {data === 6 && (
+          <>
+            <CommercialPlotFeatures
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <CommercialPlotAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <CommercialPlotAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <CommercialPlotDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <CommercialPlotUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <CommercialPlotDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <CommercialPlotUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
+        {data === 7 && (
+          <>
+            <IndustryPlotFeatures
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <IndustryPlotAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <IndustryPlotAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <IndustryPlotDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <IndustryPlotUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <IndustryPlotDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
+
+            <IndustryPlotUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        )}
       </div>
     </>
   );
@@ -880,7 +1230,7 @@ const IndustrialShedAmenties = [
   "Textile Industries",
 ];
 
-const CommercialPlotFeatures = [
+const commercialPlotFeatures = [
   {
     heading: "No. Of Open Sides",
     text: "2",
@@ -904,7 +1254,7 @@ const CommercialPlotFeatures = [
 ];
 
 const CommercialPlotAmenties = ["Any Construction", "Industrial Construction"];
-const IndustrialPlotFeatures = [
+const industrialPlotFeatures = [
   {
     heading: "No. Of Open Sides",
     text: "2",

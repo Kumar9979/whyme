@@ -8,7 +8,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
-const industryPlotFeatures = ({ show, handleClose }) => {
+const IndustryPlotFeatures = ({ show, handleClose }) => {
   const [cornerShop, setCornerShop] = useState("no");
   const [value, setValue1] = useState("4");
   const [discloseIdentity, setDiscloseIdentity] = useState("no");
@@ -373,4 +373,4 @@ const industryPlotFeatures = ({ show, handleClose }) => {
   );
 };
 
-export default industryPlotFeatures;
+export default IndustryPlotFeatures;
