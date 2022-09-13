@@ -10,8 +10,7 @@ const Companyprofile = () => {
     <div><div className={`${styles.container} pb-lg-3 `}>
     <div className={` mt-lg-5 pt-5   mx-lg-4 px-lg-4 mx-md-4 px-md-2 `}>
       <div>
-        <div
-          className={`${styles.profile_container} pb-lg-2  mt-lg-5 mx-lg-5 px-lg-4 pt-lg-4  mx-md-2 px-md-2 mx-sm-0 px-sm-0 mx-xs-0 px-xs-0   `}>
+        <div className={`${styles.profile_container} pb-lg-2  mt-lg-5 mx-lg-5 px-lg-4 pt-lg-4  mx-md-2 px-md-2 mx-sm-0 px-sm-0 mx-xs-0 px-xs-0   `}>
           <Profilehead/>
          
 
