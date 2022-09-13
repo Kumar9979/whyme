@@ -12,3 +12,15 @@
     color: #FFFF;
     font-family: Poppins;
   }  
+
+  .amenities_container{
+    max-width: 35rem;
+  }
+
+  .industry_amenities_container{
+    max-width: 38rem;
+  }
+  .industrial_shed_amenities_container{
+    max-width: 38rem;
+  }
+

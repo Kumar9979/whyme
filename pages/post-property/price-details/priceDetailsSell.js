@@ -43,10 +43,11 @@ const PriceDetailsSell = () => {
 
   return (
     <div>
-      <div className="container mt-5 pt-3">
-        <div className={`row`}>
+      <div className={`${styles.whole_container} container `}>
+        <div className={`row justify-content-center mx-2 mx-lg-0`}>
+        <div className={`col-12 mt-5`}></div>
           <div
-            className={`col-lg-3 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
+            className={`col-lg-3  col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
           >
             {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
@@ -56,11 +57,11 @@ const PriceDetailsSell = () => {
             <StepperNew currentPage={currentPage} />
           </div>
           <div
-            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} d-flex justify-content-center align-items-center col-lg-6 py-5`}
+            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} d-flex justify-content-center align-items-center col-lg-6 py-4`}
           >
             {/* <div>stepper</div> */}
 
-            <div className={`${styles.input_container} `}>
+            <div className={`${styles.input_container} px-3 `}>
               <div className={`mb-4`}>
                 <h5
                   className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
@@ -72,13 +73,13 @@ const PriceDetailsSell = () => {
                 <div className={``}>
                   <div className={`row  mb-4`}>
                     <div
-                      className={`col-lg-6 col-sm-12 ${styles.super_area_container}`}
+                      className={`col-lg-6 col-sm-12  ${styles.super_area_container}`}
                     >
                       <label
                         htmlFor="SuperArea"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
-                        Super Area
+                 Built-up Area
                       </label>
                       <div
                         className={`${styles.propetyfeature_input} w-100  d-flex`}
@@ -110,7 +111,7 @@ const PriceDetailsSell = () => {
                         </div>
                       )}
                     </div>
-                    <div className={`col-lg-6 col-sm-12`}>
+                    <div className={`col-lg-6 col-sm-12 `}>
                       <label
                         htmlFor="CarpetArea"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}

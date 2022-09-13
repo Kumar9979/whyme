@@ -43,10 +43,9 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 
   return (
     <div className={`${styles.container} pb-3`}>
-
-        
       <input
         type="range"
+        step={5}
         min={min}
         max={max}
         value={minVal}
@@ -55,11 +54,12 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           setMinVal(value);
           minValRef.current = value;
         }}
-        className={`${styles.thumb} ${styles.thum_left}`}
-        style={{ zIndex: minVal > max - 100 && "5" }}
+        className={`${styles.thumb} ${styles.thum_left} ${styles.left_ranger}`}
+        // style={{ zIndex: minVal > max - 100 && "5" }}
       />
       <input
         type="range"
+        step={5}
         min={min}
         max={max}
         value={maxVal}
@@ -68,14 +68,26 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
           setMaxVal(value);
           maxValRef.current = value;
         }}
-        className={`${styles.thumb} ${styles.thum_right}`}
+        className={`${styles.thumb} ${styles.thum_right} ${styles.right_ranger}`}
       />
 
       <div className={`${styles.slider}`}>
         <div className={`${styles.slider_track}`} />
         <div ref={range} className={`${styles.slider_range}`} />
-        <div className={`${styles.slider_left_value} px-2 py-1`}> <span className={`pe-2`}>min</span> {minVal}</div>
-        <div className={`${styles.slider_right_value} px-2 py-1`}><span className={`pe-2`}>max</span> {maxVal}</div>
+        <div
+          className={`${styles.slider_left_value} ${styles.min_box} px-2 py-1 gap-2 `}
+        >
+          {" "}
+          <span className={`pe-2 color_cloudBurst fs_14 fw_500`}>Min</span> <span className={`${styles.lac_text} fs_14 fw_500`}>{minVal}</span>
+          <span className={`${styles.lac_text} fs_14 fw_500`}>Lac</span>
+        </div>
+        <div
+          className={`${styles.slider_right_value} ${styles.min_box} px-2 py-1 gap-2`}
+        >
+          <span className={`pe-2 color_cloudBurst fs_14 fw_500`}>Max</span> <span className={`${styles.lac_text} fs_14 fw_500`}>{maxVal}</span>
+          <span className={`${styles.lac_text} fs_14 fw_500`}>Lac</span>
+        </div>
+        
       </div>
     </div>
   );

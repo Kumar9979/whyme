@@ -140,8 +140,8 @@ const propertyFeatures = () => {
 
   return (
     <div>
-      <div className="container mt-5">
-        <div className={`row`}>
+      <div className={`${styles.whole_container} container mb-5 mb-lg-0`}>
+        <div className={`row justify-content-center mx-2 mx-lg-0`}>
           <div
             className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
           >
@@ -155,7 +155,7 @@ const propertyFeatures = () => {
           </div>
 
           <div
-            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-12 py-5 px-3  `}
+            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-7 col-md-12 py-5 px-lg-3  px-2`}
           >
             {/* <div className={`col-lg-6 col-md-12 py-5 px-3` }> */}
             <div className={`${styles.input_container}`}>

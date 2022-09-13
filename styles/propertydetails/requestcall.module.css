@@ -20,7 +20,7 @@
 .agent_name {
   color: #323d5a;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
 }
 .agent_rating {
@@ -66,6 +66,17 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 13px;
+}
+.share_report_card {
+  box-shadow: 0px 0px 20px #0000001f;
+  opacity: 1;
+  height: fit-content;
+  width: fit-content;
+  background-color: #ffffff;
+  top: 15%;
+  right: 3%;
+  border-radius: 8px;
+  border: none;
 }
 @media only screen and (max-width: 992px)  {
   .request_call {

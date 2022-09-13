@@ -261,7 +261,7 @@ const FilterTopNavbar = () => {
               <PriceRanger/>
               
             </div>
-            </DropdownPriceRange>
+            </DropdownPriceRange >
             </div>
       
         <div className="fontFam_poppins ms-2">

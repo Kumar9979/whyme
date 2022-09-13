@@ -20,16 +20,13 @@
 }
 .amenties_bullet{
    list-style: none;
-
 }
 .amenties_list::marker {
   content: "\2022";
   color: #24734E;
   font-weight: 900;
   display: inline-block; 
-  font-size: 20px;
-  
-  
+  font-size: 20px; 
 }
 
 

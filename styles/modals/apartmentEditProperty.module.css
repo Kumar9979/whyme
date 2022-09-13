@@ -1,3 +1,17 @@
+.property_features_container{
+    max-width: 37rem;
+}
+
+.property_features_commercial_plot_container{
+    max-width: 35rem;
+}
+/* .floor_allowed{
+    width: 90%;
+} */
+.meters_text{
+    color: #BCC7CE;
+}
+
 .upload_heading_text{
     color: #323D5A;
     font-family: Poppins;
@@ -8,7 +22,7 @@
     border-radius: 5px;
 }
 .total_floors_input:focus-visible{
-    outline: 1px solid #1d72db
+    outline:none;
   }
 .total_floors_text{
     font-family: Poppins;
@@ -28,3 +42,4 @@
   .card_radius{
     border-radius: 10px;
 }
+

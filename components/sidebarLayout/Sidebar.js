@@ -48,20 +48,20 @@ const ProfileLayout = ({ children }) => {
                     <div
                       onClick={() => {
                         router.push(
-                          "/profile/profile-pages/company-my-profile"
+                          "/profile/profile-pages/my-profile"
                         );
                       }}
-                      className={`${styles.card} card mt-4`}
+                      className={`${styles.card} card mt-4 `}
                     >
                       <div className="card-body">
                         <div className="d-flex justify-content-center align-items-center">
-                          <div className="me-2">
+                          <div className="me-3">
                             <div className={`${styles.DpContainer}`}>
                               <Image
                                 className={`${styles.Dp}`}
                                 src={Dp}
-                                width={600}
-                                height={600}
+                                width={800}
+                                height={800}
                               />
                             </div>
                           </div>
@@ -69,12 +69,12 @@ const ProfileLayout = ({ children }) => {
                           <div>
                             <div className="">
                               <div
-                                className={`${styles.profile_name} d-flex align-items-center`}
+                                className={`${styles.profile_name} d-flex align-items-center `}
                               >
                                 Amal Sabu
                               </div>
                               <div
-                                className={`${styles.phone_number} d-flex align-items-center`}
+                                className={`${styles.phone_number} d-flex align-items-center pt-1`}
                               >
                                 +91 9875643210
                               </div>
@@ -84,7 +84,7 @@ const ProfileLayout = ({ children }) => {
                       </div>
                     </div>
 
-                    <ul className="list-unstyled  mt-3 p-3">
+                    <ul className="list-unstyled  mt-3 py-3 me-3 pe-5 ps-4">
                       <li
                         className={`${
                           router.pathname ===
@@ -127,7 +127,7 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/my-properties"
+                          router.pathname === "/profile/sidebar-pages/my-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -138,7 +138,7 @@ const ProfileLayout = ({ children }) => {
                           height={16}
                           src={Key}
                         />
-                        <Link href="/profile/my-properties">
+                        <Link href="/profile/sidebar-pages/my-properties">
                           <a className={` ms-3 ${styles.sidebar_links}`}>
                             My Properties
                           </a>
@@ -181,6 +181,9 @@ const ProfileLayout = ({ children }) => {
               </div>
             )}
           </div>
+
+
+          
           <div className="col-lg-10 d-flex justify-content-center">
             {children}
           </div>

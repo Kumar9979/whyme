@@ -18,8 +18,8 @@ const Notification = () => {
 
   return (
     <div className={`${styles.settings_container}`}>
-      <span className={`color_light_blue fw_500 fs_20 fontFam_poppins`}>
-        Notification Settings{" "}
+      <span className={`color_light_blue fw_500 fs_20 fontFam_poppins d-none d-md-block`}>
+        Notification Settings
       </span>
       <div className="mt-0 pt-0 color_grey fs_11 fontFam_poppins fw_500">
         Please note that it might take up to a few days for your preferences to
@@ -32,8 +32,9 @@ const Notification = () => {
               Zameen Square News
             </span>
             <Switch
-              height={25}
-              width={56}
+              height={20}
+              width={43}
+              borderRadius = {30}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"
@@ -54,8 +55,8 @@ const Notification = () => {
               New Homes Offers{" "}
             </span>
             <Switch
-              height={25}
-              width={56}
+              height={20}
+              width={43}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"
@@ -77,8 +78,8 @@ const Notification = () => {
               Partner Offers{" "}
             </span>
             <Switch
-              height={25}
-              width={56}
+              height={20}
+              width={43}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"

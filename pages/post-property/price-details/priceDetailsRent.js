@@ -47,10 +47,11 @@ const PriceDetailsRent = () => {
   return (
     <div>
       <Navbar />
-      <div className={`container mt-5`}>
-        <div className={`row`}>
+      <div className={`${styles.whole_container} container `}>
+        <div className={`row justify-content-center mx-2 mx-lg-0`}>
+          <div className={`col-12 mt-5`}></div>
           <div
-            className={`col-lg-4 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
+            className={`col-lg-3 col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
           >
             {/* <div className={`${styles.sidebar}`}>
             <div className={`${styles.progressbar} p-5 `}>
@@ -61,27 +62,27 @@ const PriceDetailsRent = () => {
             <StepperNew currentPage={currentPage} />
           </div>
           <div
-            className={`  ${styles.property_boxShadow} ${styles.propertyFeature_border_radius} d-flex justify-content-center align-items-center col-lg-6 py-5`}
+            className={`  ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  d-flex justify-content-center align-items-center col-12 col-lg-7 col-xxl-6 pb-4 pt-5`}
           >
             {/* <div>stepper</div> */}
 
-            <div className={`${styles.input_container}`}>
+            <div className={`${styles.input_container} `}>
               <div className={`mb-4`}>
                 <h5
-                  className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`mx-3 mx-md-0 ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
                 >
                   Price Details
                 </h5>
               </div>
               <form onSubmit={formik.handleSubmit}>
-                <div className={``}>
+                <div className={`mx-3 mx-md-0`}>
                   <div className={`row  mb-4`}>
-                    <div className={`col-lg-6 col-sm-12 `}>
+                    <div className={`col-lg-6 col-sm-12 mb-4 mb-lg-0 `}>
                       <label
                         htmlFor="SuperArea"
                         className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
                       >
-                        Super Area
+                        Built-up Area
                       </label>
                       <div
                         className={`${styles.propetyfeature_input} w-100  d-flex`}
@@ -269,7 +270,7 @@ const PriceDetailsRent = () => {
                 <div
                   className={` d-flex justify-content-end ${styles.PriceDetails_margin_top_res}`}
                 >
-                  <div className={`d-flex`}>
+                  <div className={`d-flex me-3 me-md-0`}>
                     <button
                       type="button"
                       onClick={() =>

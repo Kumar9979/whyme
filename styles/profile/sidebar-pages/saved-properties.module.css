@@ -1,6 +1,5 @@
 .recent_activities {
-  width: 100%;
-  padding-right: 5rem;
+  width: 90%;
 }
 
 .recent_activities_card {
@@ -8,7 +7,7 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 5px;
   opacity: 1;
-height: 85vh;
+  height: 85vh;
 }
 .arrow_left_button {
   background: #323d5a 0% 0% no-repeat padding-box;
@@ -26,9 +25,9 @@ height: 85vh;
   border: 0.5px solid #dbe9f2;
 }
 .cards_width {
-  width: 85%;
+  width: 80%;
 }
-.empty_search_container{
+.empty_search_container {
   padding-top: 12rem;
 }
 
@@ -72,34 +71,6 @@ height: 85vh;
   -ms-overflow-style: none;
 }
 
-
-
-@media only screen and (min-width: 992px) and (max-width: 1350px) {
-  .cards_width {
-    width: 100%;
-  }
-  .recent_activities {
-    width: 90%;
-    padding-right: 0rem;
-    padding-left: 1rem;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .recent_activities {
-    width: 95%;
-    padding-right: 0rem;
-    padding-left: 0rem;
-  }
-  .cards_width {
-    width: 100%;
-  }
-}
-
-
-
-
-
-
 .recent_activities_card {
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 20px #0000001f;
@@ -107,7 +78,6 @@ height: 85vh;
   opacity: 1;
   height: 85vh;
 }
-
 
 .search_activities_text {
   color: #323d5a;
@@ -118,18 +88,19 @@ height: 85vh;
   white-space: nowrap;
 }
 
-
 @media only screen and (min-width: 992px) and (max-width: 1350px) {
   .recent_activities {
-    width: 90%;
+    width: 85%;
     padding-right: 0rem;
-    padding-left: 1rem;
+    padding-left: 4rem;
   }
   .width_properties {
     width: 85%;
     margin-left: 1rem;
   }
-
+  .cards_width {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 992px) {
   .recent_activities {
@@ -142,21 +113,23 @@ height: 85vh;
   }
   .recent_activities_card {
     background: transparent 0% 0% no-repeat padding-box;
-  box-shadow: 0px 0px 20px transparent;
-
+    box-shadow: 0px 0px 20px transparent;
   }
   .sad_emoji {
     margin-top: 8rem;
-   }
-   .cards_width {
+  }
+  .cards_width {
     width: 100%;
   }
-
 }
-
-
-
-
-
-
-
+@media only screen and (width: 992px) {
+  .recent_activities {
+    width: 80%;
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+  .recent_activities_card {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #0000001f;
+  }
+}

@@ -1,6 +1,6 @@
 .edit_profile {
   margin-top: 5rem;
-  width: 95%;
+  width: 90%;
 }
 .edit_profile_card {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -122,24 +122,29 @@
   background: #013ea3 0% 0% no-repeat padding-box;
   border-radius: 4px;
   opacity: 1;
-  color: #FFFFFF;
+  color: #ffffff;
   white-space: nowrap;
   border: none;
 }
 .remove_photo {
   background-color: transparent;
   border-radius: 7px;
-  color: #F77223;
+  color: #f77223;
   white-space: nowrap;
   border: none;
 }
 .image_container {
-    width: 160px;
-    height: 170px;
+  width: 160px;
+  height: 170px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1320px) {
   .edit_profile {
-    padding-left: 5rem;
+    width: 85%;
+    padding-right: 0rem;
+    margin-left: 6rem;
+  }
+  .edit_profile_card {
+    height: fit-content;
   }
   .form_width {
     width: 100%;
@@ -149,6 +154,9 @@
 @media only screen and (max-width: 992px) {
   .form_width {
     width: 60%;
+  }
+  .edit_profile_card {
+    height: fit-content;
   }
 }
 @media only screen and (max-width: 768px) {

@@ -1,4 +1,6 @@
-
+.description_container{
+  max-width: 32rem;
+}
   .upload_heading_text{
     color: #323D5A;
     font-family: Poppins;
@@ -19,6 +21,7 @@
     resize: none;
     border-color: #BCC7CE;
     border-radius: 5px;
+    font-weight: 500;
 }
 .description:focus-visible {
     outline: none;

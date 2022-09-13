@@ -1,18 +1,16 @@
-.deleteCard_width{
-    width: fit-content;
-}
+
 .delete_btn{
     width: 45%;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 2px solid #1D72DB;
-    color: #1D72DB;
+    background-color: #BCC7CE;
+    border-radius: 5px;
+    border: none;
+    color: #323D5A;
     font-family: Poppins;
 }
 .no_btn{
     width: 45%;
     background-color: #1D72DB;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     color: #ffff;
     font-family: Poppins;
@@ -27,4 +25,18 @@
 }
 .card_radius{
     border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .modal {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        max-height: max-content;
+       
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
 }
