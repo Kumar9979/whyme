@@ -14,7 +14,7 @@ import SelectGenerator, {
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
 import {
   AmnetiesGenerator,
-  ShowRoom,
+  OfficeList,
 } from "../../../../components/postproperty/formData/amnetiesListGenerator";
 import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
@@ -229,7 +229,7 @@ const propertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ShowRoom}
+                  list={OfficeList}
                   startIndex={0}
                   endIndex={2}
                   formik={formik}
@@ -237,7 +237,7 @@ const propertyFeatures = () => {
               </div>{" "}
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ShowRoom}
+                  list={OfficeList}
                   startIndex={3}
                   endIndex={5}
                   formik={formik}
@@ -245,9 +245,9 @@ const propertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ShowRoom}
+                  list={OfficeList}
                   startIndex={6}
-                  endIndex={8}
+                  endIndex={7}
                   formik={formik}
                 />
               </div>{" "}

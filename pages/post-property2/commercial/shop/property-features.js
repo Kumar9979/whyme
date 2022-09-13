@@ -115,6 +115,9 @@ const propertyFeatures = () => {
                     formikTouched={formik.touched.totalFloors}
                   />
                 </div>
+              </div>
+              <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
+                {" "}
                 <div
                   className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
@@ -128,29 +131,6 @@ const propertyFeatures = () => {
                     formikError={formik.errors.washRooms}
                     formikTouched={formik.touched.washRooms}
                   />
-                </div>
-              </div>
-              <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-                {" "}
-                <div className={` me-0  mb-1`}>
-                  <label
-                    htmlFor="FurnishedStatus"
-                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                  >
-                    Furnishing Status{" "}
-                  </label>
-                  <div className={``}>
-                    <SelectGenerator
-                      option={furnishingOptions}
-                      itemName={"furnishedStatus"}
-                      formikValue={formik.values.furnishedStatus}
-                      formik={formik}
-                    />
-                    <FormikErrorGenerator
-                      formikError={formik.errors.furnishedStatus}
-                      formikTouched={formik.touched.furnishedStatus}
-                    />
-                  </div>
                 </div>
                 <div className={` `}>
                   <RadioButtonGenerator
@@ -170,13 +150,25 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
-                <div className={` `}>
-                  <RadioButtonGenerator
-                    formik={formik}
-                    title={"Corner Shop"}
-                    containerClassName="mt-1"
-                    itemName={"cornerShop"}
-                  />
+                <div className={` me-0  mb-1`}>
+                  <label
+                    htmlFor="FurnishedStatus"
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                  >
+                    Furnishing Status{" "}
+                  </label>
+                  <div className={``}>
+                    <SelectGenerator
+                      option={furnishingOptions}
+                      itemName={"furnishedStatus"}
+                      formikValue={formik.values.furnishedStatus}
+                      formik={formik}
+                    />
+                    <FormikErrorGenerator
+                      formikError={formik.errors.furnishedStatus}
+                      formikTouched={formik.touched.furnishedStatus}
+                    />
+                  </div>
                 </div>
 
                 <div
