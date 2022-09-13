@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif !important;
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 p {
@@ -165,15 +166,18 @@ p {
   color: #ffffff;
 }
 
-.margin_top{
+.margin_top {
   margin-top: 0.15rem;
 }
 
+<<<<<<< HEAD
+=======
 .cursor_pointer{
   cursor: pointer;
 }
 
 
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
 @media only screen and (max-width: 992px) {
   .fs_md_7 {
     font-size: 7px;

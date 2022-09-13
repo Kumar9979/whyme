@@ -115,13 +115,13 @@ const SellRentOptionModal = ({ show, onHide }) => {
       <Modal.Body className={styles.modal_body_register}>
         <div className="mb-1">
           <h5
-            className={`${styles.fontFam_poppins} ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+            className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
           >
             Please select the option
           </h5>
 
           <p
-            className={`${styles.opacity_6} ${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+            className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
           >
             Please select the Preferred option that are right here
           </p>
@@ -140,8 +140,8 @@ const SellRentOptionModal = ({ show, onHide }) => {
             <span
               className={
                 optionType === "sell"
-                  ? `${styles.fontFam_poppins} ${styles.font_18} ${styles.font_medium} $ text-uppercase text-white mt-3`
-                  : `${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_18} ${styles.font_medium} $ text-uppercase  mt-3`
+                  ? `fontFam_poppins ${styles.font_18} ${styles.font_medium} $ text-uppercase text-white mt-3`
+                  : `fontFam_poppins ${styles.color_323D5A} ${styles.font_18} ${styles.font_medium} $ text-uppercase  mt-3`
               }
             >
               SELL
@@ -169,8 +169,8 @@ const SellRentOptionModal = ({ show, onHide }) => {
             <span
               className={
                 optionType === "rent"
-                  ? `${styles.fontFam_poppins} ${styles.font_18} ${styles.font_medium}  text-uppercase text-white mt-3`
-                  : `${styles.fontFam_poppins} ${styles.color_323D5A} ${styles.font_18} ${styles.font_medium}  text-uppercase  mt-3`
+                  ? `fontFam_poppins ${styles.font_18} ${styles.font_medium}  text-uppercase text-white mt-3`
+                  : `fontFam_poppins ${styles.color_323D5A} ${styles.font_18} ${styles.font_medium}  text-uppercase  mt-3`
               }
             >
               RENT
@@ -182,7 +182,7 @@ const SellRentOptionModal = ({ show, onHide }) => {
             <div>
               <label
                 id="#name"
-                className={`${styles.color_1D1E1F} ${styles.font_regular} ${styles.fontFam_poppins} ${styles.font_20} mb-2`}
+                className={`${styles.color_1D1E1F} ${styles.font_regular} fontFam_poppins ${styles.font_20} mb-2`}
               >
                 Property Type
               </label>
@@ -223,7 +223,7 @@ const SellRentOptionModal = ({ show, onHide }) => {
               className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
             >
               <span
-                className={`${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                className={`fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
               >
                 Next
               </span>

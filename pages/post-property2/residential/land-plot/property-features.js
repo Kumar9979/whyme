@@ -94,7 +94,10 @@ const propertyFeatures = () => {
       router.push("/post-property/price-details/priceDetailsSell");
     },
   });
-
+  const [discloseIdentity, setDiscloseIdentity] = useState("yes");
+  const [boundaryWallIdentity, setBoundaryWallIdentity] = useState("yes");
+  const [gatedColonyIdentity, setGatedColonyIdentity] = useState("yes");
+  const [conerSiteIdentity, setConerSiteIdentity] = useState("yes");
   const handleCheckbox = (e) => {
     const { checked, name } = e.target;
     if (e.target.checked) {
@@ -109,6 +112,49 @@ const propertyFeatures = () => {
       );
     }
   };
+  function handleRadioButton(e) {
+    setDiscloseIdentity(e.target.value);
+    let event = {
+      target: {
+        name: "constructionDone",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
+  function handleBoundaryWallRadioButton(e) {
+    setBoundaryWallIdentity(e.target.value);
+    let event = {
+      target: {
+        name: "boundaryWall",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
+  function handleGatedColonyRadioButton(e) {
+    setGatedColonyIdentity(e.target.value);
+    let event = {
+      target: {
+        name: "gatedColony",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+
+  function handleConerSiteRadioButton(e) {
+    setConerSiteIdentity(e.target.value);
+    let event = {
+      target: {
+        name: "cornerSite",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
 
   console.log(formik.values);
 
@@ -130,18 +176,20 @@ const propertyFeatures = () => {
             <div className={`${styles.input_container}`}>
               <div className={`  mb-4`}>
                 <h5
-                  className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
                 >
                   Property Features
                 </h5>
               </div>
               <form onSubmit={formik.handleSubmit}>
                 <div className={`${styles.propertyFeature_padding_l_res}`}>
-                  <div className={`d-flex gap-5 `}>
+                  <div
+                    className={`d-flex flex-column flex-lg-row gap-1 gap-lg-5 `}
+                  >
                     <div className="mb-1">
                       <label
                         htmlFor="FloorsAllowed"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Floors allowed for construction
                       </label>
@@ -172,12 +220,10 @@ const propertyFeatures = () => {
                       </div>
                     </div>
 
-           
-
                     <div className=" mb-1 ">
                       <label
                         htmlFor="TotalFloors"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         No. of Open Sides
                       </label>
@@ -209,12 +255,207 @@ const propertyFeatures = () => {
                     </div>
                   </div>
 
+                  <div className="row gx-0">
+                    <div className="col-12 col-sm-6 mb-3 mb-sm-0">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Any construction Done
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="disclose"
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={discloseIdentity === "yes"}
+                          onChange={handleRadioButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            discloseIdentity === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="disclose"
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={discloseIdentity === "no"}
+                          onChange={handleRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            discloseIdentity === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="col-6">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Boundary Wall made
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="boundaryWall"
+                          id="yeswall"
+                          type="radio"
+                          value="yes"
+                          checked={boundaryWallIdentity === "yes"}
+                          onChange={handleBoundaryWallRadioButton}
+                        />
+                        <label
+                          htmlFor="yeswall"
+                          className={
+                            boundaryWallIdentity === "yes"
+                              ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="boundaryWall"
+                          id="nowall"
+                          type="radio"
+                          value="no"
+                          checked={boundaryWallIdentity === "no"}
+                          onChange={handleBoundaryWallRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="nowall"
+                          className={
+                            boundaryWallIdentity === "no"
+                              ? `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row gx-0 mt-3">
+                    <div className="col-12 col-sm-6 mb-3 mb-sm-0">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Gated colony
+                      </div>
+                      <div className="d-flex">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="gatedColony"
+                          id="yesGated"
+                          type="radio"
+                          value="yes"
+                          checked={gatedColonyIdentity === "yes"}
+                          onChange={handleGatedColonyRadioButton}
+                        />
+                        <label
+                          htmlFor="yesGated"
+                          className={
+                            gatedColonyIdentity === "yes"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="gatedColony"
+                          id="noGated"
+                          type="radio"
+                          value="no"
+                          checked={gatedColonyIdentity === "no"}
+                          onChange={handleGatedColonyRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="noGated"
+                          className={
+                            gatedColonyIdentity === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="col-6 ">
+                      <div
+                        className={`text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 mb-1`}
+                      >
+                        Corner site
+                      </div>
+                      <div className="d-flex ">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          name="conerSite"
+                          id="yesCorner"
+                          type="radio"
+                          value="yes"
+                          checked={conerSiteIdentity === "yes"}
+                          onChange={handleConerSiteRadioButton}
+                        />
+                        <label
+                          htmlFor="yesCorner"
+                          className={
+                            conerSiteIdentity === "yes"
+                              ? `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          name="conerSite"
+                          id="noCorner"
+                          type="radio"
+                          value="no"
+                          checked={conerSiteIdentity === "no"}
+                          onChange={handleConerSiteRadioButton}
+                        />{" "}
+                        <label
+                          htmlFor="noCorner"
+                          className={
+                            conerSiteIdentity === "no"
+                              ? `${styles.total_floors_text}   fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* CHECKBOX ITEMS */}
 
-                  <div className={`content-fourth-line mt-4 mt-lg-3 `}>
+                  <div className={`content-fourth-line mt-4 mt-lg-5  mb-5 `}>
                     <div className={`content-fourth-name mb-2`}>
                       <h5
-                        className={`${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Amenities
                       </h5>
@@ -236,7 +477,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Basic Amenities"
                         >
                           Basic Amenities
@@ -257,17 +498,15 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1  ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Underground Drainage System"
                         >
                           Underground Drainage System
                         </label>
                       </div>
-
-                  
                     </div>
 
-                    <div className={`${styles.amenities_list_flex_res}  `}>
+                    <div className={`${styles.amenities_list_flex_res} `}>
                       <div
                         className={`form-check me-4 ${styles.margin_bottom}`}
                       >
@@ -282,7 +521,7 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Highway Access"
                         >
                           Highway Access
@@ -303,15 +542,15 @@ const propertyFeatures = () => {
                           )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Main Road Access"
                         >
-                     Main Road Access
+                          Main Road Access
                         </label>
                       </div>
 
                       <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
+                        className={`form-check me-4 mb-5  ${styles.margin_bottom}`}
                       >
                         <input
                           className="form-check-input rounded-0 mt-2"
@@ -319,22 +558,22 @@ const propertyFeatures = () => {
                           id="Electricity Line"
                           name="Electricity Line"
                           onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes("Electricity Line")}
+                          checked={formik.values.Amenities.includes(
+                            "Electricity Line"
+                          )}
                         />
                         <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  ${styles.fontFam_poppins} ${styles.amenities_list_title}`}
+                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
                           htmlFor="Electricity Line"
                         >
-         Electricity Line
+                          Electricity Line
                         </label>
                       </div>
                     </div>
-
-                
                   </div>
 
                   <div
-                    className={`content-btn d-flex justify-content-end mt-4 me-0 me-lg-3`}
+                    className={`content-btn d-flex justify-content-end mt-5  me-0 me-lg-3`}
                   >
                     <div className={`d-flex`}>
                       <button
@@ -355,7 +594,7 @@ const propertyFeatures = () => {
                         </span>
 
                         <span
-                          className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Back
                         </span>
@@ -365,7 +604,7 @@ const propertyFeatures = () => {
                         className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
                       >
                         <span
-                          className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                          className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                         >
                           Next
                         </span>

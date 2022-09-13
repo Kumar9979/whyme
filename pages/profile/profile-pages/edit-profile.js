@@ -173,7 +173,7 @@ const EditProfile = () => {
 
                             <input
                               type="text"
-                              className={` ${styles.form_input} w-100  py-1 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} w-100  py-3 mt-1 ps-2 px-5 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                               placeholder="Enter your name"
@@ -229,7 +229,7 @@ const EditProfile = () => {
                             </label>
                             <input
                               type="text"
-                              className={` ${styles.form_input} w-100 mt-1 ps-2 py-1 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} w-100 mt-1 ps-2 py-3 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputPassword1"
                               placeholder="Enter your contact number"
                               name="phone"

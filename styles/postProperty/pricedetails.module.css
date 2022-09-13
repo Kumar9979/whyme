@@ -112,20 +112,19 @@
 .propetyfeature_input:focus-visible {
   outline: none;
 }
-.sidebar {
-  background-color: #1d72db;
-  height: 40rem;
-  max-width: 20rem;
-  min-width: 10rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-}
+
 .PriceDetails_margin_top_res {
   margin-top: 9rem;
 }
 .input_container {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
+}
+@media only screen and (max-width: 992px) {
+  .input_container {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
 }
 
 /* .create_map{
