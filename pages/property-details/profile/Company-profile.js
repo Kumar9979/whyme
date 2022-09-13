@@ -17,11 +17,11 @@ const Companyprofile = () => {
 
             <div className={`${styles.property_content} mt-5 pt-2`}>
             <div className="mt-5 pt-5">
-            <div className="pt-5 mt-5"> <CompanyCard /></div>
+            <div className="pt-3 mt-5"> <CompanyCard /></div>
             
              </div>  
-             <div className="mt-5 pt-5">
-            <div className="pt-5"> <PropertyReview/></div>
+             <div className="mt-5">
+            <div> <PropertyReview/></div>
             
              </div> 
              </div>

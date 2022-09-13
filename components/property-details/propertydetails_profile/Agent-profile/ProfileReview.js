@@ -144,7 +144,9 @@ const PropertyReview = () => {
                       <span
                         className={`${styles.profilename} fs_24 fw_500 fontFam_poppins`}
                       >
-                        Rohit
+                        {name.map((item, index) => {
+                    return <span className="">{item}</span>;
+                  })}
                       </span>
                       <br />
                       <div className="d-flex align-items-center ">
@@ -206,3 +208,7 @@ export default PropertyReview;
 const data = [
   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.",
 ];
+const name = [
+  "Rohit",
+];
+
