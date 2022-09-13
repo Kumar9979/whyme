@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
@@ -58,24 +58,11 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push(
+        "/post-property/commercial/industrial-buildings/property-price-rent"
+      );
     },
   });
-
-  const handleCheckbox = (e) => {
-    const { checked, name } = e.target;
-    if (e.target.checked) {
-      formik.setFieldValue("Amenities", [
-        ...formik.values.Amenities,
-        e.target.name,
-      ]);
-    } else {
-      formik.setFieldValue(
-        "Amenities",
-        formik.values.Amenities.filter((item) => item !== e.target.name)
-      );
-    }
-  };
 
   console.log(formik.values);
 

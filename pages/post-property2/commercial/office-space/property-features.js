@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
@@ -14,8 +14,9 @@ import SelectGenerator, {
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
 import {
   AmnetiesGenerator,
-  CommercialIndustrialShed,
+  ShowRoom,
 } from "../../../../components/postproperty/formData/amnetiesListGenerator";
+import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
 const propertyFeatures = () => {
   const router = useRouter();
@@ -24,26 +25,26 @@ const propertyFeatures = () => {
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
+      floorsNumber: "",
       floorAllowed: "",
       totalFloors: "",
       washRooms: "",
-      NoOfOpenSides: "",
+      personalWashRoom: "",
       transaction: "",
       furnishedStatus: "",
       status: "",
-      widthOfRoad: "",
-      floorsAllowed: "",
+      roadFace: "",
       Amenities: [],
     },
 
     validationSchema: Yup.object({
+      floorsNumber: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
       washRooms: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       totalFloors: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      NoOfOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
@@ -53,29 +54,16 @@ const propertyFeatures = () => {
       furnishedStatus: Yup.string().required("Required"),
       status: Yup.string().required("Required"),
       transaction: Yup.string().required("Required"),
-      widthOfRoad: Yup.string().required("Required"),
+      roadFace: Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push(
+        "/post-property/commercial/industrial-buildings/property-price-rent"
+      );
     },
   });
-
-  const handleCheckbox = (e) => {
-    const { checked, name } = e.target;
-    if (e.target.checked) {
-      formik.setFieldValue("Amenities", [
-        ...formik.values.Amenities,
-        e.target.name,
-      ]);
-    } else {
-      formik.setFieldValue(
-        "Amenities",
-        formik.values.Amenities.filter((item) => item !== e.target.name)
-      );
-    }
-  };
 
   console.log(formik.values);
 
@@ -96,6 +84,22 @@ const propertyFeatures = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className={`mt-5`}>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5 `}>
+                {" "}
+                <div
+                  className={`${styles.propertyFeature_width_25_to_100} mb-1`}
+                >
+                  <InputFieldGenerator
+                    title={"Floor Number"}
+                    itemName={"floorsNumber"}
+                    inputValue={formik.values.floorsNumber}
+                    onChangeFn={formik.handleChange}
+                    inputClassName={"w-100"}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.floorsNumber}
+                    formikTouched={formik.touched.floorsNumber}
+                  />
+                </div>
                 <div
                   className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
@@ -112,8 +116,23 @@ const propertyFeatures = () => {
                   />
                 </div>
                 <div
-                  className={`${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                  className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
+                  <InputFieldGenerator
+                    title={"Washrooms"}
+                    itemName={"washRooms"}
+                    inputValue={formik.values.washRooms}
+                    onChangeFn={formik.handleChange}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.washRooms}
+                    formikTouched={formik.touched.washRooms}
+                  />
+                </div>
+              </div>
+              <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
+                {" "}
+                <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
@@ -133,68 +152,54 @@ const propertyFeatures = () => {
                     />
                   </div>
                 </div>
-                <div
-                  className={`${styles.propertyFeature_width_25_to_100} mb-1`}
-                >
-                  <InputFieldGenerator
-                    title={"Washrooms"}
-                    itemName={"washRooms"}
-                    inputValue={formik.values.washRooms}
-                    onChangeFn={formik.handleChange}
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.washRooms}
-                    formikTouched={formik.touched.washRooms}
+                <div className={` `}>
+                  <RadioButtonGenerator
+                    formik={formik}
+                    title={"Personal Washroom"}
+                    containerClassName="mt-1"
+                    itemName={"personalWashroom"}
                   />
                 </div>
-              </div>
-              <div className={`d-block d-lg-flex gap-0 gap-lg-5 mb-2 mt-2`}>
-                {" "}
-                <div
-                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
-                >
-                  <InputFieldGenerator
-                    title={"Floors Allowed for Construction"}
-                    itemName={"floorsAllowed"}
-                    inputValue={formik.values.floorsAllowed}
-                    onChangeFn={formik.handleChange}
-                    inputClassName="w-100"
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.floorsAllowed}
-                    formikTouched={formik.touched.floorsAllowed}
-                  />
-                </div>
-                <div
-                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
-                >
-                  <InputFieldGenerator
-                    title={"Number of Open Sides"}
-                    itemName={"NoOfOpenSides"}
-                    inputValue={formik.values.NoOfOpenSides}
-                    onChangeFn={formik.handleChange}
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.NoOfOpenSides}
-                    formikTouched={formik.touched.NoOfOpenSides}
+                <div className={` `}>
+                  <RadioButtonGenerator
+                    formik={formik}
+                    title={"Corner Shop"}
+                    containerClassName="mt-1"
+                    itemName={"cornerShop"}
                   />
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+                <div className={` `}>
+                  <RadioButtonGenerator
+                    formik={formik}
+                    title={"Is Main Road Facing"}
+                    containerClassName="mt-1"
+                    itemName={"roadFace"}
+                  />
+                </div>
+
                 <div
-                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
+                  className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
                 >
-                  <InputFieldGenerator
-                    title={"Width of Road Facing the Plot(in meters)"}
-                    itemName={"widthOfRoad"}
-                    inputValue={formik.values.widthOfRoad}
-                    onChangeFn={formik.handleChange}
-                    inputClassName="w-100"
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.widthOfRoad}
-                    formikTouched={formik.touched.widthOfRoad}
-                  />
+                  <label
+                    htmlFor="status"
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                  >
+                    Status{" "}
+                  </label>
+                  <div className={`w-100`}>
+                    <SelectGenerator
+                      option={statusOptions}
+                      itemName={"status"}
+                      formikValue={formik.values.status}
+                      formik={formik}
+                    />
+                    <FormikErrorGenerator
+                      formikError={formik.errors.status}
+                      formikTouched={formik.touched.status}
+                    />
+                  </div>
                 </div>
                 <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
                   <label
@@ -217,28 +222,6 @@ const propertyFeatures = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
-              >
-                <label
-                  htmlFor="status"
-                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                >
-                  Status{" "}
-                </label>
-                <div className={``}>
-                  <SelectGenerator
-                    option={statusOptions}
-                    itemName={"status"}
-                    formikValue={formik.values.status}
-                    formik={formik}
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.status}
-                    formikTouched={formik.touched.status}
-                  />
-                </div>
-              </div>
               <div className={`content-fourth-name mb-1 mt-2`}>
                 <h5 className={`fs_16 fw_400 fontFam_poppins mb-1`}>
                   Suitable for
@@ -246,28 +229,28 @@ const propertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={CommercialIndustrialShed}
+                  list={ShowRoom}
                   startIndex={0}
-                  endIndex={1}
+                  endIndex={2}
                   formik={formik}
                 />
               </div>{" "}
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={CommercialIndustrialShed}
-                  startIndex={2}
-                  endIndex={3}
+                  list={ShowRoom}
+                  startIndex={3}
+                  endIndex={5}
                   formik={formik}
                 />
               </div>
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={CommercialIndustrialShed}
-                  startIndex={4}
-                  endIndex={5}
+                  list={ShowRoom}
+                  startIndex={6}
+                  endIndex={8}
                   formik={formik}
                 />
-              </div>
+              </div>{" "}
               <PostPropertySubmitButton paddingTop="0rem" />
             </div>
           </form>
