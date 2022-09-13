@@ -100,10 +100,10 @@ const PropertyDetails = () => {
             {/* <div className={`col-lg-6 col-md-10 col-sm-10 px-5 pb-1 pt-3 ` }> */}
             <form
               onSubmit={formik.handleSubmit}
-              // onSubmit={(e) => {
-              //   formik.handleSubmit;
-              //   console.log("hi");
-              // }}
+            // onSubmit={(e) => {
+            //   formik.handleSubmit;
+            //   console.log("hi");
+            // }}
             >
               <div className={`${styles.input_container} mt-2 `}>
                 <h5 className={`${styles.propertyHeading}`}>
@@ -238,7 +238,7 @@ const PropertyDetails = () => {
                       </span>
 
                       <span
-                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle `}
+                        className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle `}
                       >
                         Back
                       </span>
@@ -249,7 +249,7 @@ const PropertyDetails = () => {
                       className={`${styles.bg_color_1D72DB}  ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
-                        className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                       >
                         Next
                       </span>

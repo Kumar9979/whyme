@@ -57,9 +57,8 @@ const StepperNew = ({ currentPage }) => {
 
   return (
     <div
-      className={` ${`${styles.stepper_cont_flex_res}`} aling-items-center ps-0 ps-lg-4   justify-content-around  ${
-        styles.stepper_bg_color
-      }`}
+      className={` ${`${styles.stepper_cont_flex_res}`} aling-items-center ps-0 ps-lg-4   justify-content-around  ${styles.stepper_bg_color
+        }`}
     >
       <div className={`${styles.stepper_item_container}`}>
         <div className={`${styles.stepper_item_flex_res}`}>
@@ -75,7 +74,7 @@ const StepperNew = ({ currentPage }) => {
           </div>
 
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20}  ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20}  ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Property{" "}
             <span className={`${styles.stepper_components_title}`}>
@@ -104,7 +103,7 @@ const StepperNew = ({ currentPage }) => {
           </div>
 
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${propertyFeatures.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20} ${propertyFeatures.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Property Features
           </span>
@@ -129,7 +128,7 @@ const StepperNew = ({ currentPage }) => {
             />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white fontFam_poppins ${styles.font_medium} ${styles.font_20} ${priceDetails.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Price Details
           </span>
@@ -146,8 +145,8 @@ const StepperNew = ({ currentPage }) => {
       <div>
         <div className={`${styles.stepper_item_flex_res}`}>
           <div
-          //  style={{ width: 40, height: 40 }}
-          className={`me-1`}
+            //  style={{ width: 40, height: 40 }}
+            className={`me-1`}
           >
             <Image
               src={photoDesc.iconImage}
@@ -157,7 +156,7 @@ const StepperNew = ({ currentPage }) => {
             />
           </div>
           <span
-            className={`text-white ${styles.fontFam_poppins}  ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
+            className={`text-white fontFam_poppins  ${styles.font_medium} ${styles.font_20}  ${photoDesc.textOpacity} ${styles.stepper_text_center_res} ${styles.stepper_margin_left}`}
           >
             Photos & Description
           </span>

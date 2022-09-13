@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import styles from "../../../styles/postProperty/pricedetails.module.css";
 import { useRouter } from "next/router";
 import StepperNew from "../../stepper/stepper";
-const PriceDetailsSell = () => {
+const FlatPriceDetailsSell = () => {
   const [currentPage, setCurrentPage] = useState("priceDetails");
 
   const numRegex = /^[0-9]+$/;
@@ -45,7 +45,7 @@ const PriceDetailsSell = () => {
     <div>
       <div className={`${styles.whole_container} container `}>
         <div className={`row justify-content-center mx-2 mx-lg-0`}>
-        <div className={`col-12 mt-5`}></div>
+          <div className={`col-12 mt-5`}></div>
           <div
             className={`col-lg-3  col-md-12 ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
           >
@@ -64,7 +64,7 @@ const PriceDetailsSell = () => {
             <div className={`${styles.input_container} px-3 `}>
               <div className={`mb-4`}>
                 <h5
-                  className={`${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_24}`}
+                  className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
                 >
                   Price Details
                 </h5>
@@ -77,9 +77,9 @@ const PriceDetailsSell = () => {
                     >
                       <label
                         htmlFor="SuperArea"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
-                 Built-up Area
+                        Built-up Area
                       </label>
                       <div
                         className={`${styles.propetyfeature_input} w-100  d-flex`}
@@ -98,7 +98,7 @@ const PriceDetailsSell = () => {
                         >
                           <span className={`${styles.input_bar} mx-2`}></span>
                           <span
-                            className={`${styles.fontFam_poppins} ${styles.font_medium} ${styles.sq_ft}  align-middle me-3`}
+                            className={`fontFam_poppins ${styles.font_medium} ${styles.sq_ft}  align-middle me-3`}
                           >
                             Sqft
                           </span>
@@ -114,7 +114,7 @@ const PriceDetailsSell = () => {
                     <div className={`col-lg-6 col-sm-12 `}>
                       <label
                         htmlFor="CarpetArea"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                       >
                         Carpet Area
                       </label>
@@ -135,7 +135,7 @@ const PriceDetailsSell = () => {
                         >
                           <span className={`${styles.input_bar} mx-2`}></span>
                           <span
-                            className={`${styles.fontFam_poppins} ${styles.font_medium} ${styles.sq_ft} align-middle me-3`}
+                            className={`fontFam_poppins ${styles.font_medium} ${styles.sq_ft} align-middle me-3`}
                           >
                             Sqft
                           </span>
@@ -153,7 +153,7 @@ const PriceDetailsSell = () => {
                   <div className={`mb-4`}>
                     <label
                       htmlFor="ExpectedPrice"
-                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins} `}
+                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins `}
                     >
                       Expected Price
                     </label>
@@ -190,7 +190,7 @@ const PriceDetailsSell = () => {
                   <div className={"mb-4"}>
                     <label
                       htmlFor="MaintenanceFees"
-                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} ${styles.fontFam_poppins}`}
+                      className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
                     >
                       Maintenance Fees
                     </label>
@@ -248,7 +248,7 @@ const PriceDetailsSell = () => {
                       </span>
 
                       <span
-                        className={` ${styles.color_1D72DB} ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                       >
                         Back
                       </span>
@@ -259,7 +259,7 @@ const PriceDetailsSell = () => {
                       className={`${styles.bg_color_1D72DB} ms-3 text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
                     >
                       <span
-                        className={` ${styles.fontFam_poppins} ${styles.font_medium} ${styles.font_18} align-middle`}
+                        className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
                       >
                         Next
                       </span>
@@ -280,4 +280,4 @@ const PriceDetailsSell = () => {
   );
 };
 
-export default PriceDetailsSell;
+export default FlatPriceDetailsSell;

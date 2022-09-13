@@ -18,6 +18,11 @@ import construction from "../../../assets/images/about-property-images/construct
 import corner from "../../../assets/images/about-property-images/corner_sites.svg";
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
+<<<<<<< HEAD
+
+const Aboutproperty = ({ data }) => {
+  const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
+=======
 import western from "../../../assets/images/about-property-images/western.svg";
 import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
 import road from "../../../assets/images/about-property-images/road-facing.svg";
@@ -48,6 +53,7 @@ const Aboutproperty = ({ data }) => {
   }
   const [properties, setProperties] = useState(type);
   // const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
@@ -95,8 +101,17 @@ const Aboutproperty = ({ data }) => {
 
 export default Aboutproperty;
 
+<<<<<<< HEAD
+const aboutproperties = [
+  {
+    image: bedroom,
+    heading: "Bedroom",
+    amenity: "3",
+  },
+=======
 const residential = [
   { image: bedroom, heading: "Bedroom", amenity: "3" },
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   {
     image: bathroom,
     heading: "Bathrooms",
@@ -111,16 +126,31 @@ const residential = [
     image: furniture,
     heading: "Furnishing Status",
     amenity: "Furnished",
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: floor,
     heading: "Floor",
     amenity: "3 out of 15",
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: facing,
     heading: "Facing",
     amenity: "North",
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: transaction,

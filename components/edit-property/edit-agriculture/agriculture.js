@@ -16,7 +16,18 @@ import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
 
-const EditAgiculture = () => {
+const EditAgiculture = ({ data, propertyType }) => {
+  let features;
+  switch (data) {
+    case 0:
+      features = AgriculturalFarmHouseFeatures;
+      break;
+    case 1:
+      features = AgriculturalLandFeatures;
+      break;
+  }
+
+  const [properties, setProperties] = useState(features);
   const [show, setShow] = useState(false);
   const [imageNumber, setImageNumber] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -109,7 +120,7 @@ const EditAgiculture = () => {
                   <span
                     className={`${styles.flat_heading} fs_18 fw_500 ps-2 ps-lg-3 fontFam_poppins`}
                   >
-                    2BHK Flat in Vijayanagar, Mysuru
+                    {propertyType}
                   </span>
                   <div className={`d-flex`}>
                     <span
@@ -236,7 +247,9 @@ const EditAgiculture = () => {
               </div>
 
               <button
-                onClick={() => {setLocationModal(true)}}
+                onClick={() => {
+                  setLocationModal(true);
+                }}
                 className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
               >
                 Edit Location
@@ -311,7 +324,7 @@ const EditAgiculture = () => {
             </div>
             <hr className={`${styles.hr}`} />
             <div className={`row mt-4`}>
-              {propertyData.map((item, index) => {
+              {properties.map((item, index) => {
                 return (
                   <div
                     key={index}
@@ -408,17 +421,17 @@ const EditAgiculture = () => {
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
-                     Plot Length
+                      Plot Length
                     </div>
                     <div className={`fontFam_poppins ${styles.price_text}`}>
-                    1200 ft
+                      1200 ft
                     </div>
                   </div>
                   <div className={`col-6 mb-3`}>
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
-                     Plot Width
+                      Plot Width
                     </div>
                     <div className={`fontFam_poppins ${styles.price_text}`}>
                       1000Sqft
@@ -428,10 +441,10 @@ const EditAgiculture = () => {
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
-                     Plot Area
+                      Plot Area
                     </div>
                     <div className={`fontFam_poppins ${styles.price_text}`}>
-                    1200Sqft
+                      1200Sqft
                     </div>
                   </div>
                 </div>
@@ -531,7 +544,7 @@ const EditAgiculture = () => {
 
 export default EditAgiculture;
 
-const propertyData = [
+const AgriculturalFarmHouseFeatures  = [
   {
     heading: "Total Floors",
     text: "45",
@@ -558,17 +571,20 @@ const propertyData = [
   },
 ];
 
-const AmentiesData = [
-  "Private Parking Space",
-  "Private Parking Space",
-  "Gym",
-  "Sauna Steam Room",
-  "Sauna Steam Room",
-  "Yoga Meditation Area",
-  "Kids Play Area",
-  "Play Ground",
-  "BBQ Lounge Area",
-  "Hardwood Floors",
-  "Pet Room",
-  "Lounge Area",
+
+const  AgriculturalLandFeatures = [
+  {
+    heading: "Boundary Wall",
+    text: "Yes",
+  },
+  {
+    heading: "No. Of Open Sides",
+    text: "3",
+  },
+  {
+    heading: "Road Facing Plot Width",
+    text: "7",
+  },
 ];
+
+
