@@ -544,7 +544,7 @@ const EditAgiculture = ({ data, propertyType }) => {
 
 export default EditAgiculture;
 
-const AgriculturalFarmHouseFeatures  = [
+const AgriculturalFarmHouseFeatures = [
   {
     heading: "Total Floors",
     text: "45",
@@ -571,8 +571,7 @@ const AgriculturalFarmHouseFeatures  = [
   },
 ];
 
-
-const  AgriculturalLandFeatures = [
+const AgriculturalLandFeatures = [
   {
     heading: "Boundary Wall",
     text: "Yes",
@@ -586,5 +585,3 @@ const  AgriculturalLandFeatures = [
     text: "7",
   },
 ];
-
-
