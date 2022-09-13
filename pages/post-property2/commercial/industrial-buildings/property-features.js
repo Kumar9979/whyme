@@ -141,6 +141,11 @@ const propertyFeatures = () => {
   };
 
   console.log(formik.values);
+ const span = () => {
+  return (
+    <span>(in meters)</span>
+  )
+}
 
   return (
     <PostPropertyLayout>
@@ -245,6 +250,22 @@ const propertyFeatures = () => {
               </div>
 
               <div className={`${styles.amenities_list_flex_res} mt-2`}>
+
+              <div
+                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
+                >
+                  <InputFieldGenerator
+                    title={["Width of Road Facing the Plot, <strong>dsf</strong>"]}
+                    
+                    itemName={"widthOfRoad"}
+                    inputValue={formik.values.widthOfRoad}
+                    onChangeFn={formik.handleChange}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.widthOfRoad}
+                    formikTouched={formik.touched.widthOfRoad}
+                  />
+                </div>
                 <div className="mb-1 me-0 me-lg-5 ">
                   <label
                     htmlFor="widthOfRoad"
