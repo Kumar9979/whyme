@@ -17,19 +17,49 @@ import construction from "../../../assets/images/about-property-images/construct
 import corner from "../../../assets/images/about-property-images/corner_sites.svg";
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
+import western from "../../../assets/images/about-property-images/western.svg";
+import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
+import road from "../../../assets/images/about-property-images/road-facing.svg";
 
-const SimilarProperties = ({ data, plot, amenties }) => {
+const SimilarProperties = ({ data, plot, amenties, type }) => {
+  let available;
+  switch (plot) {
+    case 0:
+      available = residential;
+      break;
+    case 1:
+      available = PlotAndLand;
+      break;
+    case 2:
+      available = OfficeSpace;
+      break;
+    case 3:
+      available = CommercialShop;
+      break;
+    case 4:
+      available = CommercialShowroom;
+      break;
+    case 5:
+      available = Godown;
+      break;
+    case 6:
+      available = IndustrialShed;
+      break;
+  }
+  const [facilities, setFacilities] = useState(available);
+
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
-  const [facilities, setFacilities] = useState(
-    plot == 1 ? aboutproperties1 : aboutproperties
-  );
+  // const [facilities, setFacilities] = useState(
+  //   plot == 1 ? aboutproperties1 : aboutproperties
+  // );
   const [liked, setLiked] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
   const [show, setShow] = useState(false);
+  console.log(type);
 
   function likeHovered(state) {
     if (state === "hovered") {
@@ -108,7 +138,7 @@ const SimilarProperties = ({ data, plot, amenties }) => {
               <div
                 className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
               >
-                2BHK flat in Vijayanagar, Mysuru
+                {type}
               </div>
               <div
                 className={`px-2 py-1 ms-2 fw_500 fontFam_poppins ${styles.ready_house} `}
@@ -259,7 +289,7 @@ const SimilarProperties = ({ data, plot, amenties }) => {
 };
 
 export default SimilarProperties;
-const aboutproperties = [
+const residential = [
   {
     image: squarearea,
     heading: "super Area",
@@ -292,7 +322,7 @@ const aboutproperties = [
   },
 ];
 
-const aboutproperties1 = [
+const PlotAndLand = [
   {
     image: floors_allowed,
     heading: "Floors Allowed",
@@ -322,5 +352,167 @@ const aboutproperties1 = [
     image: corner,
     heading: "Corner Site",
     amenity: "Yes",
+  },
+];
+
+const OfficeSpace = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: Cafetaria,
+    heading: "Cafetaria",
+    amenity: "yes",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+];
+const CommercialShop = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "Resale",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+];
+const CommercialShowroom = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+  {
+    image: road,
+    heading: "Main Road Facing",
+    amenity: "Yes",
+  },
+];
+const Godown = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: Cafetaria,
+    heading: "Cafetaria",
+    amenity: "yes",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+];
+const IndustrialShed = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
   },
 ];

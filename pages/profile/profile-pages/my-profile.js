@@ -81,7 +81,7 @@ const MyProfile = () => {
                             <input
                               type="text"
                               readOnly
-                              className={` ${styles.form_input} w-100 py-1 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} w-100 py-3 mt-1 ps-3 px-5 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                               placeholder="Enter your name"
@@ -136,7 +136,7 @@ const MyProfile = () => {
                             <input
                               readOnly
                               type="text"
-                              className={` ${styles.form_input} w-100 mt-1 ps-3 py-1 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} w-100 mt-1 py-3 ps-3 py-1 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputPassword1"
                               placeholder="Enter your contact number"
                               name="phone"
@@ -153,7 +153,7 @@ const MyProfile = () => {
                             <input
                               readOnly
                               type="text"
-                              className={` ${styles.form_input} mt-1 w-100 py-1 ps-3 fs_15 fw_600 fontFam_poppins`}
+                              className={` ${styles.form_input} mt-1 w-100 py-3 ps-3 fs_15 fw_600 fontFam_poppins`}
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                               placeholder="Enter your name"

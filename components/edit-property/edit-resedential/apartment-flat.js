@@ -3,8 +3,7 @@ import styles from "../../../styles/edit-property/apartment-flat.module.css";
 import Image from "next/image";
 import backIcon from "../../../assets/icons/back-icon.svg";
 import Location from "../../../assets/icons/location-icon.svg";
-import ApartmentUploadPhoto from "../../modals/apartmentModals/apartmentUploadPhoto";
-import ApartmentDeletePhoto from "../../modals/apartmentModals/apartmentDeletePhoto";
+
 import Delete from "../../../assets/icons/delete.svg";
 import { Progress } from "antd";
 import { useFormik } from "formik";
@@ -14,17 +13,51 @@ import { usePosition } from "../../../pages/post-property/property-details/usePo
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
-import ApartmentEditProperty from "../../modals/apartmentModals/apartmentEditProperty";
-import ApartmentEditAmenities from "../../modals/apartmentModals/apartmentEditAmenities";
-import ApartmentAreaPrice from "../../modals/apartmentModals/apartmentAreaPrice";
-import ApartmentDescription from "../../modals/apartmentModals/apartmentDescription";
+import ApartmentDescription from "../../modals/residential-property/apartment/apartmentDescription";
+import ApartmentEditProperty from "../../modals/residential-property/apartment/apartmentEditProperty";
+import ApartmentEditAmenities from "../../modals/residential-property/apartment/apartmentEditAmenities";
+import ApartmentAreaPrice from "../../modals/residential-property/apartment/apartmentAreaPrice";
+import ApartmentUploadPhoto from "../../modals/residential-property/apartment/apartmentUploadPhoto";
+import ApartmentDeletePhoto from "../../modals/residential-property/apartment/apartmentDeletePhoto";
+import ApartmentUpdateMap from "../../modals/residential-property/apartment/apartmentUpdateMap";
+import VillaEditProperty from "../../modals/residential-property/villa-property/villaEditProperty";
+import VillaEditAmenities from "../../modals/residential-property/villa-property/villaEditAmenities";
+import VillaAreaPrice from "../../modals/residential-property/villa-property/villaAreaPrice";
+import VillaDescription from "../../modals/residential-property/villa-property/villaDescription";
+import VillaUploadPhoto from "../../modals/residential-property/villa-property/villaUploadPhoto";
+import VillaDeletePhoto from "../../modals/residential-property/villa-property/villaDeletePhoto";
+import VillaUpdateMap from "../../modals/residential-property/villa-property/villaUpdateMap";
 
-const EditApartmentFlat = () => {
+const EditApartmentFlat = ({ data, propertyType }) => {
+  let type;
+  let Ament;
+  switch (data) {
+    case 0:
+      type = apartmentFeatures;
+      Ament = ApartmentAmenties;
+      break;
+    case 1:
+      type = villaFeatures;
+      Ament = villaAmenties;
+      break;
+    case 2:
+      type = houseFeatures;
+      Ament = houseAmenties;
+      break;
+    case 3:
+      type = plotFeatures;
+      Ament = plotAmenties;
+      break;
+  }
+  const [properties, setProperties] = useState(type);
+  const [Amenties, setAmenties] = useState(Ament);
+
   const [show, setShow] = useState(false);
   const [featureModalShow, setFeatureModalShow] = useState(false);
-  const [areaModal, setAreaModal] = useState(false)
+  const [areaModal, setAreaModal] = useState(false);
   const [amenitiesModal, setAmenitiesModal] = useState(false);
-  const [descriptionModal, setDescriptionModal] = useState(false)
+  const [descriptionModal, setDescriptionModal] = useState(false);
+  const [editLocation, setEditLocation] = useState(false);
   const [imageNumber, setImageNumber] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [locationModal, setLocationModal] = useState(false);
@@ -91,7 +124,7 @@ const EditApartmentFlat = () => {
     setShowDeleteModal(true);
   }
   return (
-    <div className={`d-flex justify-content-center`}>
+    <div className={`d-flex justify-content-center container`}>
       <div className={`${styles.abcd}`}>
         <div
           className={`${styles.back_icon} d-flex justify-content-start ps-2`}
@@ -116,7 +149,7 @@ const EditApartmentFlat = () => {
                   <span
                     className={`${styles.flat_heading} fs_18 fw_500 ps-2 ps-lg-3 fontFam_poppins`}
                   >
-                    2BHK Flat in Vijayanagar, Mysuru
+                    {propertyType}
                   </span>
                   <div className={`d-flex`}>
                     <span
@@ -244,7 +277,7 @@ const EditApartmentFlat = () => {
 
               <button
                 onClick={() => {
-                  setLocationModal(true);
+                  setEditLocation(true);
                 }}
                 className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
               >
@@ -320,7 +353,7 @@ const EditApartmentFlat = () => {
             </div>
             <hr className={`${styles.hr}`} />
             <div className={`row mt-4`}>
-              {propertyData.map((item, index) => {
+              {properties.map((item, index) => {
                 return (
                   <div
                     key={index}
@@ -359,7 +392,7 @@ const EditApartmentFlat = () => {
             </div>
             <hr className={`${styles.hr}`} />
             <div className={`row mt-4`}>
-              {AmentiesData.map((item, index) => {
+              {Amenties.map((item, index) => {
                 return (
                   <div
                     key={index}
@@ -489,7 +522,27 @@ const EditApartmentFlat = () => {
           </div>
         </div>
       </div>
-      <ApartmentUploadPhoto
+      
+      
+      {data === 0 && (
+        <>
+          <ApartmentEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <ApartmentEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          <ApartmentAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <ApartmentDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <ApartmentUploadPhoto
         handleClose={handleClose}
         handleImageUpload={handleImageUpload}
         show={show}
@@ -500,61 +553,98 @@ const EditApartmentFlat = () => {
         handleClose={handleDeleteModalClose}
         show={showDeleteModal}
       />
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={locationModal}
-        onHide={() => setLocationModal(false)}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className={`fontFam_poppins`}>Select Your Property In Map</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {isLoaded && (
-            <GoogleMap
-              id="map"
-              onGoogleApiLoaded={({ map, maps }) =>
-                console.log(map, maps, "lsdnhfioubn")
-              }
-              zoom={16}
-              center={selected}
-              mapContainerClassName={`${styles.map_container}`}
-              onLoad={(map) => {
-                setMap(map);
-              }}
-            >
-              {markerStat && (
-                <Marker
-                  draggable={true}
-                  onDragEnd={(e) => {
-                    markerChange();
-                    setSelected({
-                      lat: e.latLng.lat(),
-                      lng: e.latLng.lng(),
-                    });
-                  }}
-                  position={selected}
-                />
-              )}
-            </GoogleMap>
-          )}
-          
-          <button className={`btn float-end ${styles.saveBtn} fontFam_poppins mt-4`}>Save</button>
-        </Modal.Body>
-        <Modal.Footer></Modal.Footer>
-      </Modal>
-      <ApartmentEditProperty show={featureModalShow} handleClose={()=>setFeatureModalShow(false)}/>
-      <ApartmentEditAmenities  show={amenitiesModal} handleClose={()=>setAmenitiesModal(false)}/>
-      <ApartmentAreaPrice show={areaModal} handleClose={()=>setAreaModal(false)}/>
-      <ApartmentDescription show={descriptionModal} handleClose={()=>setDescriptionModal(false)}/>
+
+      <ApartmentUpdateMap
+        show={editLocation}
+        handleClose={() => setEditLocation(false)}
+      />
+        </>
+      )}
+      {data === 1 && <>
+      
+        <VillaEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <VillaEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          < VillaAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <VillaDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <VillaUploadPhoto
+        handleClose={handleClose}
+        handleImageUpload={handleImageUpload}
+        show={show}
+      />
+      <VillaDeletePhoto
+        deleteFn={onImageRemove}
+        index={imageNumber}
+        handleClose={handleDeleteModalClose}
+        show={showDeleteModal}
+      />
+
+      <VillaUpdateMap
+        show={editLocation}
+        handleClose={() => setEditLocation(false)}
+      />
+      
+      </>}
+
+      {data === 2 && <>
+      </>}
     </div>
   );
 };
 
 export default EditApartmentFlat;
 
-const propertyData = [
+const apartmentFeatures = [
+  {
+    heading: "Total Floors",
+    text: "45",
+  },
+  {
+    heading: "Floor Number",
+    text: "3",
+  },
+  {
+    heading: "Car Parking Count",
+    text: "2",
+  },
+  {
+    heading: "Bedroom",
+    text: "3",
+  },
+
+  {
+    heading: "Bathroom",
+    text: "2",
+  },
+  {
+    heading: "Facing",
+    text: "North",
+  },
+  {
+    heading: "Furnishing Status",
+    text: "Furnished",
+  },
+  {
+    heading: "Status",
+    text: "Ready To Move",
+  },
+  {
+    heading: "Transaction",
+    text: "Resale",
+  },
+];
+const villaFeatures = [
   {
     heading: "Total Floors",
     text: "45",
@@ -597,7 +687,87 @@ const propertyData = [
   },
 ];
 
-const AmentiesData = [
+const houseFeatures = [
+  {
+    heading: "Total Floors",
+    text: "45",
+  },
+  {
+    heading: "No. Of Open Sides",
+    text: "3",
+  },
+  {
+    heading: "Balconies",
+    text: "7",
+  },
+  {
+    heading: "Bedroom",
+    text: "3",
+  },
+  {
+    heading: "Bathroom",
+    text: "2",
+  },
+  {
+    heading: "Facing",
+    text: "North",
+  },
+  {
+    heading: "Furnishing Status",
+    text: "Furnished",
+  },
+  {
+    heading: "Status",
+    text: "Ready To Move",
+  },
+  {
+    heading: "Transaction",
+    text: "Resale",
+  },
+  {
+    heading: "Age Of Construction",
+    text: "7",
+  },
+];
+const plotFeatures = [
+  {
+    heading: "Floors Allowed For Construction",
+    text: "12",
+  },
+  {
+    heading: "Any Construction Done",
+    text: "No",
+  },
+  {
+    heading: "No. Of Open Sides",
+    text: "2",
+  },
+  {
+    heading: "Boundary Wall Made",
+    text: "No",
+  },
+  {
+    heading: "Gated Colony",
+    text: "Yes",
+  },
+  {
+    heading: "Corner Site",
+    text: "No",
+  },
+];
+
+const ApartmentAmenties = [
+  "Elevators/Lifts",
+  "Guest Parking Spaces",
+  "Gym",
+  "Sauna Steam Room",
+  "Swimming Pool",
+  "Yoga Meditation Area",
+  "Kids Play Area",
+  "Play Ground",
+  "BBQ Lounge Area",
+];
+export const villaAmenties = [
   "Private Parking Space",
   "Private Parking Space",
   "Gym",
@@ -610,4 +780,21 @@ const AmentiesData = [
   "Hardwood Floors",
   "Pet Room",
   "Lounge Area",
+];
+const houseAmenties = [
+  "Private Parking Space",
+  "Guest Parking Spaces",
+  "Play Ground",
+  "Sauna Steam Room",
+  "Hardwood Floors",
+  "Pet Room",
+  "Lounge Area",
+  "Garden Area",
+];
+const plotAmenties = [
+  "Basic Amenities",
+  "Underground Drainage System",
+  "Highway Access",
+  "Main Road Access",
+  "Electricity Line",
 ];

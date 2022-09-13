@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../../styles/propertydetails/aboutproperty.module.css";
 // import styles from "../styles/propertydetails/aboutproperty.module.css";
 import Image from "next/image";
-import facing from "../../../assets/images/about-property-images/facing.svg"
+import facing from "../../../assets/images/about-property-images/facing.svg";
 // import facing from "../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -18,9 +18,42 @@ import construction from "../../../assets/images/about-property-images/construct
 import corner from "../../../assets/images/about-property-images/corner_sites.svg";
 import floors_allowed from "../../../assets/images/about-property-images/floors_allowed.svg";
 import opensides from "../../../assets/images/about-property-images/open_sides.svg";
+<<<<<<< HEAD
 
 const Aboutproperty = ({ data }) => {
   const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
+=======
+import western from "../../../assets/images/about-property-images/western.svg";
+import Cafetaria from "../../../assets/images/about-property-images/Cafetaria.svg";
+import road from "../../../assets/images/about-property-images/road-facing.svg";
+const Aboutproperty = ({ data }) => {
+  let type;
+  switch (data) {
+    case 0:
+      type = residential;
+      break;
+    case 1:
+      type = PlotandLand;
+        break;
+    case 2:
+      type = officeSpace;
+        break;
+    case 3:
+      type = CommercialShop;
+        break;
+    case 4:
+      type = CommercialShowroom;
+        break;
+    case 5:
+      type = Godown;
+        break;
+    case 6:
+      type = IndustrialShed;
+        break;
+  }
+  const [properties, setProperties] = useState(type);
+  // const [properties, setProperties] = useState(data == 1 ? aboutproperties1 : aboutproperties);
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   const [readless, setReadless] = useState(false);
   const text = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Know More`;
   const Alltext = readless === true ? text : text.slice(0, 200);
@@ -68,12 +101,17 @@ const Aboutproperty = ({ data }) => {
 
 export default Aboutproperty;
 
+<<<<<<< HEAD
 const aboutproperties = [
   {
     image: bedroom,
     heading: "Bedroom",
     amenity: "3",
   },
+=======
+const residential = [
+  { image: bedroom, heading: "Bedroom", amenity: "3" },
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   {
     image: bathroom,
     heading: "Bathrooms",
@@ -88,22 +126,31 @@ const aboutproperties = [
     image: furniture,
     heading: "Furnishing Status",
     amenity: "Furnished",
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: floor,
     heading: "Floor",
     amenity: "3 out of 15",
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: facing,
     heading: "Facing",
     amenity: "North",
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
   },
   {
     image: transaction,
@@ -122,8 +169,7 @@ const aboutproperties = [
   },
 ];
 
-
-const aboutproperties1 = [
+const PlotandLand = [
   {
     image: floors_allowed,
     heading: "Floors Allowed",
@@ -156,3 +202,220 @@ const aboutproperties1 = [
   },
 ];
 
+const officeSpace = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  { image: Cafetaria, heading: "Cafetaria", amenity: "Yes" },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: cars,
+    heading: "Car Parking",
+    amenity: "1",
+  },
+];
+const CommercialShop= [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: western,
+    heading: "Personal Washroom",
+    amenity: "Yes",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+];
+const CommercialShowroom = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: western,
+    heading: "Personal Washroom",
+    amenity: "Yes",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: facing,
+    heading: "Facing",
+    amenity: "North",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "New",
+  },
+  {
+    image: corner,
+    heading: "Corner Shop",
+    amenity: "Yes",
+  },
+  {
+    image: road,
+    heading: "Main Road Facing",
+    amenity: "Yes",
+  },
+];
+const Godown = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "Resale",
+  },
+];
+const IndustrialShed = [
+  {
+    image: squarearea,
+    heading: "super Area",
+    amenity: "2400sqft",
+  },
+  {
+    image: furniture,
+    heading: "Furnishing Status",
+    amenity: "Furnished",
+  },
+  {
+    image: western,
+    heading: "Washroom",
+    amenity: "3 washrooms",
+  },
+  {
+    image: floors_allowed,
+    heading: "Floors Allowed",
+    amenity: "Floors",
+  },
+  {
+    image: floor,
+    heading: "Floor",
+    amenity: "3 out of 15",
+  },
+  {
+    image: opensides,
+    heading: "Open Sides",
+    amenity: "2",
+  },
+  {
+    image: underconstruction,
+    heading: "Status",
+    amenity: "Ready To Move",
+  },
+  {
+    image: transaction,
+    heading: "Transactions",
+    amenity: "Resale",
+  },
+  
+];
