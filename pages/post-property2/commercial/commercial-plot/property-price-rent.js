@@ -19,7 +19,7 @@ const IndustrialShedPriceDetailsSell = () => {
       plotWidth: "",
       depositPrice: "",
       rentAmount: "",
-      cornerPlot:"yes"
+      cornerPlot: "yes",
     },
 
     validationSchema: Yup.object({
@@ -39,7 +39,7 @@ const IndustrialShedPriceDetailsSell = () => {
       rentAmount: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-        cornerPlot: Yup.string()
+      cornerPlot: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
     }),
