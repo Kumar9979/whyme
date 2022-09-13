@@ -27,13 +27,16 @@ const PropertyStatistics = () => {
               className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2 w-100 justify-content-center`}
             >
               Property Statistics - 2BHK flat in Vijayanagar, Mysuru
+              <span className={`${styles.verified_button} fs_12 py-1 fw_400 fontFam_poppins color_white px-3 ms-2`}>
+                {" "}
+                <Image
+                  src={tick}
+                  alt="Picture of the author"
+                  width={13}
+                />{" "}
+                Verified
+              </span>
             </span>
-            <span> <Image
-                src={tick}
-                alt="Picture of the author"
-                width={20}
-                height={15}
-              /> Verified</span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
         </div>
