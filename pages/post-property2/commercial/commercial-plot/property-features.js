@@ -41,7 +41,7 @@ const CommercialPlotPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push("/post-property/commercial/commercial-plot/property-price-rent");
     },
   });
 
@@ -55,7 +55,7 @@ const CommercialPlotPropertyFeatures = () => {
         <div className={`${styles.input_container}`}>
           <div className={`  mb-4`}>
             <h5
-              className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
+              className={`color_light_blue fontFam_poppins  fs_20`}
             >
               Property Features
             </h5>
@@ -118,7 +118,7 @@ const CommercialPlotPropertyFeatures = () => {
               containerClassName=" mt-1 "
             />
             <div className={` mt-4 mt-lg-4 pt-0 pt-lg-1 `}>
-              <h5 className={`fs_18 fw_400 fontFam_poppins`}>Suitable for</h5>
+              <h5 className={`fs_16 fw_400 fontFam_poppins`}>Suitable for</h5>
             </div>
             <div className={`d-block d-lg-flex`}>
               <AmnetiesGenerator
@@ -127,7 +127,7 @@ const CommercialPlotPropertyFeatures = () => {
               />
             </div>
 
-            <PostPropertySubmitButton marginEnd={"me-5 "} />
+            <PostPropertySubmitButton marginEnd={"me-5 "} paddingTop="3.5rem" />
           </form>
         </div>
       </div>

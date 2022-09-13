@@ -11,7 +11,7 @@ const InputFieldGenerator = ({ title, placeholder = "Ex : 7", itemName, inputVal
                 {title}
             </label>
             <div>
-                <input
+                <input 
                     type="text"
                     className={` ${inputClassName} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
                     id={itemName}

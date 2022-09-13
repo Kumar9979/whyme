@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/pricedetails.module.css";
@@ -40,7 +40,7 @@ const IndustrialShedPriceDetailsRent = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property/propertyUpload/propertyUpload");
+      router.push("/post-property/commercial/industrial-shed/property-upload");
     },
   });
 

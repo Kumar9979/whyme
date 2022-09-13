@@ -4,10 +4,17 @@ import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
 import { useRouter } from "next/router";
 import PostPropertyLayout from "../../../../components/postproperty/components/propertyLayout";
-import SelectGenerator, { furnishingOptions, statusOptions, transactionOptions } from "../../../../components/postproperty/formData/selectGenerator";
+import SelectGenerator, {
+  furnishingOptions,
+  statusOptions,
+  transactionOptions,
+} from "../../../../components/postproperty/formData/selectGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
-import { AmnetiesGenerator, CommercialIndustrialShed } from "../../../../components/postproperty/formData/amnetiesListGenerator";
+import {
+  AmnetiesGenerator,
+  CommercialIndustrialShed,
+} from "../../../../components/postproperty/formData/amnetiesListGenerator";
 import InputFieldGenerator from "../../../../components/postproperty/formData/inputFieldGenerator";
 
 const IndustrialShedPropertyFeatures = () => {
@@ -46,15 +53,12 @@ const IndustrialShedPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push("/post-property/commercial/industrial-shed/property-price-sell");
     },
   });
 
-
-
   return (
     <PostPropertyLayout>
-
       <div
         className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-9 col-xl-8  col-xxl-7 col-md-12 pt-5 pb-4 px-lg-3  px-2`}
       >
@@ -70,7 +74,9 @@ const IndustrialShedPropertyFeatures = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className={``}>
               <div className={`d-block d-lg-flex gap-4 `}>
-                <div className={`${styles.propertyFeature_width_25_to_100} mb-1`}>
+                <div
+                  className={`${styles.propertyFeature_width_25_to_100} mb-1`}
+                >
                   <InputFieldGenerator
                     title={"Floor Number"}
                     itemName={"floorsNumber"}
@@ -84,10 +90,9 @@ const IndustrialShedPropertyFeatures = () => {
                   />
                 </div>
 
-
-
-                <div className={`mb-1 ${styles.propertyFeature_width_25_to_100}`}>
-
+                <div
+                  className={`mb-1 ${styles.propertyFeature_width_25_to_100}`}
+                >
                   <InputFieldGenerator
                     title={"Total Floors"}
                     itemName={"totalFloors"}
@@ -99,20 +104,18 @@ const IndustrialShedPropertyFeatures = () => {
                     formikError={formik.errors.totalFloors}
                     formikTouched={formik.touched.totalFloors}
                   />
-
                 </div>
 
-                <div className={`${styles.propertyFeature_width_25_to_100} me-0  mb-1`}>
+                <div
+                  className={`${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                >
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
                     Furnishing Status{" "}
                   </label>
-                  <div
-                    className={``}
-                    onClick={() => setoptionType("furnishingStatus")}
-                  >
+                  <div className={``}>
                     <SelectGenerator
                       option={furnishingOptions}
                       itemName={"furnishedStatus"}
@@ -121,14 +124,13 @@ const IndustrialShedPropertyFeatures = () => {
                     />
                     <FormikErrorGenerator
                       formikError={formik.errors.furnishedStatus}
-                      formikTouched={formik.touched.furnishedStatus} />
+                      formikTouched={formik.touched.furnishedStatus}
+                    />
                   </div>
                 </div>
               </div>
 
-              <div
-                className={`d-block d-lg-flex gap-0 gap-lg-5 mb-2 mt-2`}
-              >
+              <div className={`d-block d-lg-flex gap-0 gap-lg-5 mb-2 mt-2`}>
                 {" "}
                 <div className="mb-1 ">
                   <InputFieldGenerator
@@ -142,7 +144,6 @@ const IndustrialShedPropertyFeatures = () => {
                     formikError={formik.errors.washRooms}
                     formikTouched={formik.touched.washRooms}
                   />
-
                 </div>
                 <div className="mb-1 ">
                   <InputFieldGenerator
@@ -171,19 +172,17 @@ const IndustrialShedPropertyFeatures = () => {
                   </label>
                   <div
                     className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
-                    onClick={() => setoptionType("status")}
                   >
                     <SelectGenerator
                       option={statusOptions}
                       itemName={"currentStatus"}
                       formikValue={formik.values.currentStatus}
                       formik={formik}
-
                     />
                     <FormikErrorGenerator
                       formikError={formik.errors.currentStatus}
-                      formikTouched={formik.touched.currentStatus} />
-
+                      formikTouched={formik.touched.currentStatus}
+                    />
                   </div>
                 </div>
                 <div
@@ -197,7 +196,6 @@ const IndustrialShedPropertyFeatures = () => {
                   </label>
                   <div
                     className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}
-                    onClick={() => setoptionType("transaction")}
                   >
                     <SelectGenerator
                       option={transactionOptions}
@@ -207,21 +205,14 @@ const IndustrialShedPropertyFeatures = () => {
                     />
                     <FormikErrorGenerator
                       formikError={formik.errors.transaction}
-                      formikTouched={formik.touched.transaction} />
-
+                      formikTouched={formik.touched.transaction}
+                    />
                   </div>
-
                 </div>{" "}
               </div>
 
-
               <div className={` mt-4 mt-lg-3 `}>
-
-                <h5
-                  className={`fs_18 fw_500 fontFam_poppins`}
-                >
-                  Suitable for
-                </h5>
+                <h5 className={`fs_18 fw_500 fontFam_poppins`}>Suitable for</h5>
                 <div className={`d-block d-lg-flex`}>
                   <AmnetiesGenerator
                     startIndex={0}
@@ -229,14 +220,16 @@ const IndustrialShedPropertyFeatures = () => {
                     list={CommercialIndustrialShed}
                     formik={formik}
                   />
-                </div>     <div className={`d-block d-lg-flex`}>
+                </div>{" "}
+                <div className={`d-block d-lg-flex`}>
                   <AmnetiesGenerator
                     list={CommercialIndustrialShed}
                     startIndex={2}
                     endIndex={3}
                     formik={formik}
                   />
-                </div>      <div className={`d-block d-lg-flex`}>
+                </div>{" "}
+                <div className={`d-block d-lg-flex`}>
                   <AmnetiesGenerator
                     list={CommercialIndustrialShed}
                     formik={formik}
@@ -244,7 +237,6 @@ const IndustrialShedPropertyFeatures = () => {
                     endIndex={5}
                   />
                 </div>
-
               </div>
 
               <PostPropertySubmitButton />
@@ -252,7 +244,7 @@ const IndustrialShedPropertyFeatures = () => {
           </form>
         </div>
       </div>
-    </PostPropertyLayout >
+    </PostPropertyLayout>
   );
 };
 

@@ -37,7 +37,7 @@ const AgricultureLandPriceDetailsSell = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property/propertyUpload/propertyUpload");
+      router.push("/post-property/propertyUpload//post-property/agriculture/land/property-upload");
     },
   });
 

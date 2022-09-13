@@ -37,7 +37,7 @@ const IndustrialPlotPriceDetailsSell = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property/propertyUpload/propertyUpload");
+      router.push("/post-property/commercial/industrial-plot/property-upload");
     },
   });
 

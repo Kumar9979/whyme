@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/pricedetails.module.css";
@@ -51,7 +51,7 @@ const AgriFarmPriceDetailsSell = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property/propertyUpload/propertyUpload");
+            router.push("/post-property/agriculture/farmhouse/property-upload");
         },
     });
 

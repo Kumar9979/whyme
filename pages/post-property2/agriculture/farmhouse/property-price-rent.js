@@ -49,7 +49,7 @@ const AgriFarmPriceDetailsRent = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property/propertyUpload/propertyUpload");
+      router.push("/post-property/agriculture/farmhouse/property-upload");
     },
   });
 

@@ -45,7 +45,7 @@ const IndustrialShedPriceDetailsSell = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property/propertyUpload/propertyUpload");
+      router.push("/post-property/commercial/commercial-plot/property-upload");
     },
   });
 
