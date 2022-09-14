@@ -60,7 +60,7 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/commercial/office-space/property-price-rent");
+      router.push("/post-property/commercial/warehouse/property-price-rent");
     },
   });
 
@@ -167,7 +167,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
-                {" "}
+                
                 <div
                   className={`${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
@@ -181,7 +181,7 @@ const propertyFeatures = () => {
                     formikError={formik.errors.NoOfOpenSides}
                     formikTouched={formik.touched.NoOfOpenSides}
                   />
-                </div>{" "}
+                </div>
                 <div className={` mb-1 me-0 me-lg-3`}>
                   <InputFieldGenerator
                     title={"Width of Road Facing the Plot(in meters)"}
@@ -198,7 +198,7 @@ const propertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-2  mt-2`}>
                 <div
-                  className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                  className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
                 >
                   <label
                     htmlFor="status"

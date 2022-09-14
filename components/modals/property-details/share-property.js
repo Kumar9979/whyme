@@ -9,6 +9,7 @@ import igimg from "../../../assets/icons/modals/ig.svg";
 import tgimg from "../../../assets/icons/modals/Tg.svg";
 import link from "../../../assets/icons/modals/link.svg";
 import Image from "next/image";
+import { FacebookShareButton } from "react-share";
 
 const Shareproperty = ({ show, handleClose }) => {
   const [referalLink, setReferalLink] = useState(
@@ -68,6 +69,9 @@ const Shareproperty = ({ show, handleClose }) => {
             >
               <div className=" ms-lg-1 me-lg-2 me-md-2  ms-sm-1 me-sm-2  ms-2 me-2">
                 <div className={`${styles.scoial_image} ms-2 ps-1`}>
+               {/* <div>
+                <FacebookShareButton url="https://www.youtube.com/watch?v=2BnTYEafRQc"> */}
+                <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253D2BnTYEafRQc&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=en_GB">
                   <Image
                     src={FBimg}
                     alt="Picture of the author"
@@ -75,7 +79,10 @@ const Shareproperty = ({ show, handleClose }) => {
                     height={35.88}
                     className={` `}
                   />
-                </div>
+                  </a>
+                 
+                  {/* </FacebookShareButton></div>*/}
+                </div> 
 
                 <span className={`fs_12 fw_500 mt-0 ${styles.scoial_text}`}>
                 <a href="www.Faccebook.com">  Facebook </a>
@@ -83,13 +90,14 @@ const Shareproperty = ({ show, handleClose }) => {
               </div>
               <div className=" ms-lg-3 p-lg-2 ms-md-2 p-md-2 ms-sm-3  me-sm-2 ms-2 ">
                 <div className={`${styles.scoial_image} ms-0 ps-1`}>
+                <a href="https://twitter.com/i/flow/login">
                   <Image
                     src={twtimg}
                     alt="Picture of the author"
                     width={36}
                     height={35.88}
                     className={`${styles.property_photo} `}
-                  />
+                  /></a>
                 </div>
                 <span className={`fs_12 fw_500 ${styles.scoial_text}`}>
                  <a href="www.twitter.com">Twitter</a>
@@ -99,13 +107,14 @@ const Shareproperty = ({ show, handleClose }) => {
 
               <div className=" ms-lg-3 p-lg-2 ms-md-2 p-md-2 ms-sm-3 me-sm-2 lg-me-4 me-1 ms-2  ">
                 <div className={`${styles.scoial_image} ms-2 ps-1`}>
+                  <a href="https://www.instagram.com/">
                   <Image
                     src={igimg}
                     alt="Picture of the author"
                     width={36}
                     height={35.88}
                     className={`${styles.property_photo}`}
-                  />
+                  /></a>
                 </div>
                 <span className={`fs_12 fw_500 ${styles.scoial_text}`}>
                 <a href="www.instagram.com"> Instagram </a>
@@ -113,13 +122,14 @@ const Shareproperty = ({ show, handleClose }) => {
               </div>
               <div className="ms-lg-3 p-lg-2 ms-md-2 p-md-2  ms-sm-3  me-sm-2 ms-2 ">
                 <div className={`${styles.scoial_image} ms-2 ps-1`}>
+                  <a href="https://web.whatsapp.com/">
                   <Image
                     src={wtspimg}
                     alt="Picture of the author"
                     width={36}
                     height={35.88}
                     className={`${styles.property_photo}`}
-                  />
+                  /></a>
                 </div>
                 <span className={`fs_12 fw_500 ${styles.scoial_text}`}>
                 <a href="www.whatsapp.com"> WhatsApp </a>
@@ -127,13 +137,14 @@ const Shareproperty = ({ show, handleClose }) => {
               </div>
               <div className="ms-lg-3 p-lg-2 ms-md-2 p-md-2 me-md-3 ms-sm-3  me-sm-2  ms-2 me-2">
                 <div className={`${styles.scoial_image} ms-2 ps-1`}>
+                  <a href="https://web.telegram.org/z/">
                   <Image
                     src={tgimg}
                     alt="Picture of the author"
                     width={36}
                     height={35.88}
                     className={`${styles.property_photo}`}
-                  />
+                  /></a>
                 </div>
                 <span className={`fs_12 fw_500 ${styles.scoial_text}`}>
                 <a href="www.telegram.com"> Telegram </a>

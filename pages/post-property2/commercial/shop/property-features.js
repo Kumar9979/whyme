@@ -60,7 +60,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/commercial/industrial-buildings/property-price-rent"
+        "/post-property/commercial/shop/property-price-rent"
       );
     },
   });
@@ -117,7 +117,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-                {" "}
+               
                 <div
                   className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
@@ -149,7 +149,7 @@ const propertyFeatures = () => {
                   />
                 </div>
               </div>
-              <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+              <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
                 <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
@@ -172,7 +172,7 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                  className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
                 >
                   <label
                     htmlFor="status"

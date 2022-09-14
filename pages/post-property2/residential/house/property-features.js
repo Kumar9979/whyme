@@ -2,855 +2,293 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
-import Select from "react-select";
 import { useRouter } from "next/router";
-import StepperNew from "../../../stepper/stepper";
+import PostPropertyLayout from "../../../../components/postproperty/components/propertyLayout";
+import InputFieldGenerator from "../../../../components/postproperty/formData/inputFieldGenerator";
+import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
+// import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
+import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
+import {
+  AmnetiesGenerator,
+  ResidentialhomeList,
+} from "../../../../components/postproperty/formData/amnetiesListGenerator";
+import SelectGenerator, {
+  furnishingOptions,
+  statusOptions,
+  facingOptions,
+  transactionOptions,
+} from "../../../../components/postproperty/formData/selectGenerator";
 
-const propertyFeatures = () => {
-  const [value, setValue1] = useState("4");
-  const [optionType, setoptionType] = useState("");
-  const [currentPage, setCurrentPage] = useState("propertyFeatures");
-
+const CommercialPlotPropertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
-  const customStyles = {
-    control: (base, state) => ({
-      ...base,
-      background: "#F4F8FB",
-      // match with the menu
-      borderRadius: "7px",
-      width: "100%",
-      // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-      // Removes weird border around container
-      boxShadow: state.isFocused ? null : null,
-      "&:hover": {
-        // Overwrittes the different states of border
-        borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-      },
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? "#1D72DB" : null,
-      borderBottom: "1px solid #F5F5F5",
-      fontFamily: "Poppins",
-      "&:hover": {
-        backgroundColor: state.isFocused ? "#1D72DB" : "#1D72DB",
-      },
-    }),
-    placeholder: (defaultStyles) => {
-      return {
-        ...defaultStyles,
-        color: "#BCC7CE",
-        fontFamily: "Poppins",
-        fontSize: "0.8rem",
-      };
-    },
-    dropdownIndicator: (provided) => ({
-      ...provided,
-      svg: {
-        fill: "#323D5A",
-      },
-    }),
-  };
 
-  const facing = [
-    { value: "North", label: "North" },
-    { value: "South", label: "South" },
-    { value: "East", label: "East" },
-    { value: "West", label: "West" },
-  ];
-  const status = [
-    { value: "Ready To Move", label: "Ready To Move" },
-    { value: "Under Construction", label: "Under Construction" },
-  ];
-
-  const furnishingStatus = [
-    { value: "Furnished", label: "Furnished" },
-    { value: "Unfurnished", label: "Unfurnished" },
-  ];
-  const transaction = [
-    { value: "Resale", label: "Resale" },
-    { value: "Fresh", label: "Fresh" },
-  ];
   const formik = useFormik({
-    // enableReinitialize: true,
     initialValues: {
-      Bedrooms: "",
-      Bathrooms: "",
+      Totalfloors: "",
+      NoofOpenSides: "",
       Balconies: "",
-      TotalFloors: "",
-      NoOfOpenSides: "",
+      Bedroom: "",
+      Bathroom: "",
+      Ageofconstruction: "",
+      transaction: "",
+      furnishedStatus: "",
+      status: "",
       facing: "",
-      AgeOfConstruction: "",
-      FurnishedStatus: "",
-      Status: "",
-      Transaction: "",
-      FloorsAllowed: "",
       Amenities: [],
     },
 
     validationSchema: Yup.object({
-      Bedrooms: Yup.string()
+      Totalfloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      Bathrooms: Yup.string()
+      NoofOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       Balconies: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      TotalFloors: Yup.string()
+      Bedroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      NoOfOpenSides: Yup.string()
+      Bathroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      AgeOfConstruction: Yup.string()
+      Ageofconstruction: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      FloorsAllowed: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
+      furnishedStatus: Yup.string().required("Required"),
+      status: Yup.string().required("Required"),
+      transaction: Yup.string().required("Required"),
       facing: Yup.string().required("Required"),
-      FurnishedStatus: Yup.string().required("Required"),
-      Status: Yup.string().required("Required"),
-      Transaction: Yup.string().required("Required"),
+
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push(
+        "/post-property/residential/house/property-price-rent"
+      );
     },
   });
-
-  const handleCheckbox = (e) => {
-    const { checked, name } = e.target;
-    if (e.target.checked) {
-      formik.setFieldValue("Amenities", [
-        ...formik.values.Amenities,
-        e.target.name,
-      ]);
-    } else {
-      formik.setFieldValue(
-        "Amenities",
-        formik.values.Amenities.filter((item) => item !== e.target.name)
-      );
-    }
-  };
 
   console.log(formik.values);
 
   return (
-    <div>
-      <div className={`${styles.whole_container} container mb-5 mb-lg-5`}>
-        <div className={`row justify-content-center mx-0 mx-lg-2 mx-lg-0`}>
-          <div
-            className={`col-lg-3 col-md-12  ${styles.property_boxShadow} ${styles.stepper_border_radius} ${styles.bg_color_1D72DB} `}
-          >
-            {" "}
-            <StepperNew currentPage={currentPage} />
+    <PostPropertyLayout>
+      <div
+        className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-9 col-xl-8  col-xxl-6 col-md-12 pt-5 pb-4 px-lg-3  px-2`}
+      >
+        <div className={`${styles.input_container}`}>
+          <div className={`  mb-4`}>
+            <h5 className={`color_light_blue fontFam_poppins  fs_20`}>
+              Property Features
+            </h5>
           </div>
-
-          <div
-            className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-9 col-xl-8  col-xxl-7 col-md-12 pt-5 pb-4 px-lg-3  px-2`}
-          >
-            {/* <div className={`col-lg-6 col-md-12 py-5 px-3` }> */}
-            <div className={`${styles.input_container}`}>
-              <div className={`  mb-4`}>
-                <h5
-                  className={`color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_24}`}
-                >
-                  Property Features
-                </h5>
+          <form onSubmit={formik.handleSubmit}>
+            <div className={`d-block d-lg-flex  `}>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Bedroom"}
+                  itemName={"Bedroom"}
+                  inputValue={formik.values.Bedroom}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Bedroom}
+                  formikTouched={formik.touched.Bedroom}
+                />
               </div>
-              <form onSubmit={formik.handleSubmit}>
-                <div className={`${styles.propertyFeature_padding_l_res}`}>
-                  <div className={`${styles.amenities_list_flex_res} `}>
-                    <div className="mb-1">
-                      <label
-                        htmlFor="Bedrooms"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Bedrooms
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={` ${styles.propertyFeature_width_50_to_75} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="Bedrooms"
-                          placeholder="Ex : 13"
-                          name="Bedrooms"
-                          value={formik.values.Bedrooms}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Bedrooms && formik.touched.Bedrooms && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Bedrooms}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="  mb-1  ">
-                      <label
-                        htmlFor="Bathrooms"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Bathrooms
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`  ${styles.propertyFeature_width_50_to_75} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="Bathrooms"
-                          placeholder="Ex : 7"
-                          name="Bathrooms"
-                          value={formik.values.Bathrooms}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Bathrooms && formik.touched.Bathrooms && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Bathrooms}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className=" mb-1 ">
-                      <label
-                        htmlFor="Balconies"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Balconies
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={` ${styles.propertyFeature_width_50_to_75} mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="Balconies"
-                          placeholder="Ex : 3"
-                          name="Balconies"
-                          value={formik.values.Balconies}
-                          onChange={formik.handleChange}
-                        />
-                      </div>{" "}
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Balconies && formik.touched.Balconies && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Balconies}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className=" mb-1 ">
-                      <label
-                        htmlFor="TotalFloors"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Total Floors
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`mb-1 ${styles.propertyFeature_width_50_to_75} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="TotalFloors"
-                          placeholder="Ex : 3"
-                          name="TotalFloors"
-                          value={formik.values.TotalFloors}
-                          onChange={formik.handleChange}
-                        />
-                      </div>{" "}
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.TotalFloors &&
-                          formik.touched.TotalFloors && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.TotalFloors}
-                              </span>
-                            </div>
-                          )}
-                      </div>{" "}
-                    </div>
-                  </div>
-
-                  <div className={`${styles.amenities_list_flex_res} mt-2`}>
-                    <div
-                      className={`${styles.property_features_list_container} w-50  mb-1 `}
-                    >
-                      <label
-                        htmlFor="NoOfOpenSides"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        No. of Open Sides
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.propertyFeature_width_75_to_100} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="NoOfOpenSides"
-                          placeholder="Ex : 13"
-                          name="NoOfOpenSides"
-                          value={formik.values.NoOfOpenSides}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.NoOfOpenSides &&
-                          formik.touched.NoOfOpenSides && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.NoOfOpenSides}
-                              </span>
-                            </div>
-                          )}
-                      </div>{" "}
-                    </div>
-                    <div
-                      className={`${styles.propertyFeature_width_50_to_75} mb-1`}
-                    >
-                      <label
-                        htmlFor="facing"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Facing{" "}
-                      </label>
-                      <div
-                        className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
-                        onClick={() => setoptionType("facing")}
-                      >
-                        <Select
-                          id="facing"
-                          options={facing}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="facing"
-                          value={facing.filter((option) => {
-                            return option.value === formik.values.facing;
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "facing",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.facing && formik.touched.facing && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.facing}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div
-                      className={`${styles.property_features_list_container} w-50 ms-0 ms-lg-3 mb-1 `}
-                    >
-                      <label
-                        htmlFor="AgeOfConstruction"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Age of construction
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label  ps-2 pe-2  pt-2 pb-2 ${styles.propertyFeature_width_75_to_100} ${styles.propetyfeature_input}`}
-                          id="AgeOfConstruction"
-                          placeholder="Ex : 7"
-                          name="AgeOfConstruction"
-                          value={formik.values.AgeOfConstruction}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.AgeOfConstruction &&
-                          formik.touched.AgeOfConstruction && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.AgeOfConstruction}
-                              </span>
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.amenities_list_flex_res} mt-2`}>
-                    <div className="me-5 w-100 mb-1">
-                      <label
-                        htmlFor="FurnishedStatus"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Furnishing Status{" "}
-                      </label>
-                      <div
-                        className={`mb-1`}
-                        onClick={() => setoptionType("furnishingStatus")}
-                      >
-                        <Select
-                          id="FurnishedStatus"
-                          options={furnishingStatus}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="FurnishedStatus"
-                          value={furnishingStatus.filter((option) => {
-                            return (
-                              option.value === formik.values.FurnishedStatus
-                            );
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "FurnishedStatus",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.FurnishedStatus &&
-                          formik.touched.FurnishedStatus && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.FurnishedStatus}
-                              </span>
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                    <div className={`me-5 w-100 mb-1`}>
-                      <label
-                        htmlFor="Status"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Status{" "}
-                      </label>
-                      <div
-                        className={`mb-1`}
-                        onClick={() => setoptionType("status")}
-                      >
-                        <Select
-                          id="Status"
-                          options={status}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="Status"
-                          value={status.filter((option) => {
-                            return option.value === formik.values.Status;
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "Status",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Status && formik.touched.Status && (
-                          <div className="d-flex align-items-center text-danger">
-                            <i
-                              style={{ fontSize: 12, marginRight: ".1rem" }}
-                              className="ri-error-warning-line   "
-                            ></i>
-                            <span className={`fs_12 lh-base `}>
-                              {formik.errors.Status}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className=" mb-1 w-100">
-                      <label
-                        htmlFor="Transaction"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Transaction{" "}
-                      </label>
-                      <div
-                        className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
-                        onClick={() => setoptionType("transaction")}
-                      >
-                        <Select
-                          id="Transaction"
-                          options={transaction}
-                          type="text"
-                          placeholder="Select.."
-                          styles={customStyles}
-                          name="Transaction"
-                          value={transaction.filter((option) => {
-                            return option.value === formik.values.Transaction;
-                          })}
-                          onChange={(selectedOption) => {
-                            let event = {
-                              target: {
-                                name: "Transaction",
-                                value: selectedOption.value,
-                              },
-                            };
-                            formik.handleChange(event);
-                          }}
-                          components={{
-                            IndicatorSeparator: () => null,
-                          }}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.Transaction &&
-                          formik.touched.Transaction && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.Transaction}
-                              </span>
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                  </div>
-                  <div className={`${styles.amenities_list_flex_res} mt-2`}>
-                    <div
-                      className={`${styles.property_features_list_container} w-50  mb-1 `}
-                    >
-                      <label
-                        htmlFor="FloorsAllowed"
-                        className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Floors allowed for construction
-                      </label>
-                      <div>
-                        <input
-                          type="text"
-                          className={`form-label ${styles.propertyFeature_width_75_to_100} ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                          id="FloorsAllowed"
-                          placeholder="Ex : 13"
-                          name="FloorsAllowed"
-                          value={formik.values.FloorsAllowed}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                      <div className={`${styles.error_container}`}>
-                        {formik.errors.FloorsAllowed &&
-                          formik.touched.FloorsAllowed && (
-                            <div className="d-flex align-items-center text-danger">
-                              <i
-                                style={{ fontSize: 12, marginRight: ".1rem" }}
-                                className="ri-error-warning-line   "
-                              ></i>
-                              <span className={`fs_12 lh-base `}>
-                                {formik.errors.FloorsAllowed}
-                              </span>
-                            </div>
-                          )}
-                      </div>{" "}
-                    </div>
-                  </div>
-                  {/* CHECKBOX ITEMS */}
-
-                  <div className={`content-fourth-line mt-4 mt-lg-3 `}>
-                    <div className={`content-fourth-name mb-2`}>
-                      <h5
-                        className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                      >
-                        Amenities
-                      </h5>
-                    </div>
-                    {/* CHECKBOX ITEMS LIST  */}
-
-                    <div className={`${styles.amenities_list_flex_res}`}>
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2 "
-                          type="checkbox"
-                          id="Private Parking Space"
-                          name="Private Parking Space"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Private Parking Space"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Private Parking Space"
-                        >
-                          Private Parking Space
-                        </label>
-                      </div>
-
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Guest Parking Spaces"
-                          name="Guest Parking Spaces"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Guest Parking Spaces"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Guest Parking Spaces"
-                        >
-                          Guest Parking Spaces
-                        </label>
-                      </div>
-
-                      <div
-                        className={`form-check me-4  ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Play Ground"
-                          name="Play Ground"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Play Ground"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Play Ground"
-                        >
-                          Play Ground
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className={`${styles.amenities_list_flex_res}  `}>
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input mt-2 rounded-0"
-                          type="checkbox"
-                          id="Sauna Steam Room"
-                          name="Sauna Steam Room"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Sauna Steam Room"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Sauna Steam Room"
-                        >
-                          Sauna Steam Room
-                        </label>
-                      </div>
-
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Hardwood Floors"
-                          name="Hardwood Floors"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Hardwood Floors"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Hardwood Floors"
-                        >
-                          Hardwood Floors
-                        </label>
-                      </div>
-
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Pet Room"
-                          name="Pet Room"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes("Pet Room")}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Pet Room"
-                        >
-                          Pet Room
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className={`${styles.amenities_list_flex_res}  `}>
-                      <div
-                        className={`form-check me-4 ${styles.margin_bottom}`}
-                      >
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Lounge Area"
-                          name="Lounge Area"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Lounge Area"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Lounge Area"
-                        >
-                          Lounge Area
-                        </label>
-                      </div>
-                      <div className={`form-check ${styles.margin_bottom}`}>
-                        <input
-                          className="form-check-input rounded-0 mt-2"
-                          type="checkbox"
-                          id="Garden Area"
-                          name="Garden Area"
-                          onChange={handleCheckbox}
-                          checked={formik.values.Amenities.includes(
-                            "Garden Area"
-                          )}
-                        />
-                        <label
-                          className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                          htmlFor="Garden Area"
-                        >
-                          Garden Area
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className={`content-btn d-flex justify-content-end mt-3`}
-                  >
-                    <div className={`d-flex`}>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          router.push(
-                            "/post-property/property-details/propertyDetails"
-                          )
-                        }
-                        className={`bg-white border-0 `}
-                      >
-                        <span
-                          className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
-                        >
-                          <i
-                            className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
-                          ></i>
-                        </span>
-
-                        <span
-                          className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
-                        >
-                          Back
-                        </span>
-                      </button>
-                      <button
-                        type="submit"
-                        className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
-                      >
-                        <span
-                          className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
-                        >
-                          Next
-                        </span>
-                        <div>
-                          <i
-                            className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
-                          ></i>
-                          {/* <Image className={styles.modal_icon_arrowRightbtn} src={
-                        
-arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Bathroom"}
+                  itemName={"Bathroom"}
+                  inputValue={formik.values.Bathroom}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Bathroom}
+                  formikTouched={formik.touched.Bathroom}
+                />
+              </div>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Balconies"}
+                  itemName={"Balconies"}
+                  inputValue={formik.values.Balconies}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Balconies}
+                  formikTouched={formik.touched.Balconies}
+                />
+              </div>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Total Floors"}
+                  itemName={"Totalfloors"}
+                  inputValue={formik.values.Totalfloors}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Totalfloors}
+                  formikTouched={formik.touched.Totalfloors}
+                />
+              </div>
             </div>
-          </div>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-4 mb-2 mt-2`}>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"No. of Open Sides"}
+                  itemName={"NoofOpenSides"}
+                  inputValue={formik.values.NoofOpenSides}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-100"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.NoofOpenSides}
+                  formikTouched={formik.touched.NoofOpenSides}
+                />
+              </div>
+
+              <div className={` me-0  mb-1`}>
+                <label
+                  htmlFor="FurnishedStatus"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Facing
+                </label>
+                <div className={`w-100`}>
+                  <SelectGenerator
+                    option={facingOptions}
+                    itemName={"facing"}
+                    formikValue={formik.values.facing}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.facing}
+                    formikTouched={formik.touched.facing}
+                  />
+                </div>
+              </div>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Age of construction"}
+                  itemName={"Ageofconstruction"}
+                  inputValue={formik.values.Ageofconstruction}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-100"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Ageofconstruction}
+                  formikTouched={formik.touched.Ageofconstruction}
+                />
+              </div>
+            </div>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
+              <div className={` me-0  mb-1`}>
+                <label
+                  htmlFor="FurnishedStatus"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Furnishing Status
+                </label>
+                <div className={``}>
+                  <SelectGenerator
+                    option={furnishingOptions}
+                    itemName={"furnishedStatus"}
+                    formikValue={formik.values.furnishedStatus}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.furnishedStatus}
+                    formikTouched={formik.touched.furnishedStatus}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={` ${styles.propertyFeature_width_48_to_100} me-0 ms-2 mb-1`}
+              >
+                <label
+                  htmlFor="status"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Status
+                </label>
+                <div className={`w-120`}>
+                  <SelectGenerator
+                    option={statusOptions}
+                    itemName={"status"}
+                    formikValue={formik.values.status}
+                    formik={formik}
+                    className={`w-120`}
+                    
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.status}
+                    formikTouched={formik.touched.status}
+                  />
+                </div>
+              </div>
+              <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
+                <label
+                  htmlFor="transaction"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Transaction{" "}
+                </label>
+                <div className={``}>
+                  <SelectGenerator
+                    option={transactionOptions}
+                    itemName={"transaction"}
+                    formikValue={formik.values.transaction}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.transaction}
+                    formikTouched={formik.touched.transaction}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={` mt-4 mt-lg-4 pt-0 pt-lg-1 `}>
+              <h5 className={`fs_16 fw_500 fontFam_poppins`}>Amenities</h5>
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialhomeList}
+                startIndex={0}
+                endIndex={2}
+                formik={formik}
+              />
+            </div>{" "}
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialhomeList}
+                startIndex={3}
+                endIndex={5}
+                formik={formik}
+              />
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialhomeList}
+                startIndex={6}
+                endIndex={7}
+                formik={formik}
+              />
+            </div>
+            <PostPropertySubmitButton marginEnd={"me-2 "} paddingTop="1rem" />
+          </form>
         </div>
       </div>
-    </div>
+    </PostPropertyLayout>
   );
 };
 
-export default propertyFeatures;
+export default CommercialPlotPropertyFeatures;

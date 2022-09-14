@@ -119,3 +119,59 @@ export const OfficeList = [
   "Lounge Area",
   "Garden Area",
 ];
+export const ResidentialFlatList = [
+  "Elevators/Lifts",
+  "Guest Parking Spaces",
+  "Gym",
+  "CCTV Surveillance",
+  "Swimming Pool",
+  "Play Grounds",
+  "Kids Play Area",
+  "Community Clubhouse",
+  "Garden",
+  "Pet Washing Stations",
+  "Rooftop Lounge Areas",
+  "Electronic Vehicle Charging Points",
+  "Barbecue Areas"
+];
+export const ResidentialhomeList = [
+  "Private Parking Space",
+  "Guest Parking Spaces",
+  "Play Grounds",
+  "Sauna Steam Room",
+  "Hardwood Floors",  
+  "Pet Room",
+  "Lounge Area",
+  "Garden Area",
+  
+];
+export const ResidentialvillaList = [
+  "Private Parking Space",
+  "Guest Parking Spaces",
+  "Play Ground",
+  "Sauna Steam Room",
+  "Rooftop Lounge Areas",  
+  "Yoga Meditation Area",
+  "Kids Play Area",
+  "Hardwood Floors",
+  "gym", 
+  "BBQ Lounge Area",
+  "Pet Room",
+  "Swimming Pool",  
+  "Lounge Area",
+  "Garden Area",
+  "Electric Car Charging Stations",
+  "Barbecue Areas",
+  "Pet Wash Station"
+  
+];
+export const ResidentiallandList = [
+  "Basic Amenities",
+  "Underground Drainage System",
+  "Highway Access",
+  "Main Road Access",
+  "Electricity Line"
+  
+  
+];
+

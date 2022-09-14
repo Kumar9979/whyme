@@ -8,7 +8,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import useScreenSizeDetector from "../../../useScreenSizeDetector";
 
-const industrialPlotFeatures = ({ show, handleClose }) => {
+const IndustryPlotFeatures = ({ show, handleClose }) => {
+  const [cornerShop, setCornerShop] = useState("no");
   const [value, setValue1] = useState("4");
   const [discloseIdentity, setDiscloseIdentity] = useState("no");
   const [status, setStatus] = useState("no");
@@ -21,9 +22,11 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
       OpenSlides: "",
 
       FloorsAllowed: "",
+      AnyConstruction:"",
 
       BoundaryWall: "no",
       RegistrationStatus: "no",
+      CornerShop: "no",
     },
 
     validationSchema: Yup.object({
@@ -34,9 +37,13 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
       FloorsAllowed: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
+        AnyConstruction: Yup.string()
+        .matches(numRegex, "Invalid value")
+        .required("Required"),
 
       BoundaryWall: Yup.string(),
       RegistrationStatus: Yup.string(),
+      CornerShop: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -60,6 +67,17 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
     let event = {
       target: {
         name: "RegistrationStatus",
+        value: e.target.value,
+      },
+    };
+    formik.handleChange(event);
+  }
+  console.log(formik.values);
+  function handleCornerShopButton(e) {
+    setCornerShop(e.target.value);
+    let event = {
+      target: {
+        name: "CornerShop",
         value: e.target.value,
       },
     };
@@ -96,7 +114,7 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
             <div>
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0 ">
-                  <div className="col-sm-12 col-7">
+                  <div className=" col-7">
                     <div className="">
                       <label
                         htmlFor="construction"
@@ -109,7 +127,7 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
                           type="text"
                           className={
                            
-                         `form-label ${styles.total_floors_input} w-100  fs_15 fs_sm_12 p-2`
+                         `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
                           }
                           id="construction"
                           placeholder="Ex : 2"
@@ -127,11 +145,43 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
                         )}
                     </div>
                   </div>
+                  <div className=" col-5">
+                    <div className="">
+                      <label
+                        htmlFor="AnyConstruction"
+                        className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500`}
+                      >
+                        Any construction Done
+                      </label>
+                      <div>
+                        <input
+                          type="text"
+                          className={
+                           
+                         `form-label ${styles.total_floors_input} w-75  fs_15 fs_sm_12 p-2`
+                          }
+                          id="AnyConstruction"
+                          placeholder="Ex : 2"
+                          name="AnyConstruction"
+                          value={formik.values.AnyConstruction}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                      {formik.errors.AnyConstruction &&
+                        formik.touched.AnyConstruction && (
+                          <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
+                            <i className="ri-error-warning-line me-1  "></i>
+                            <span>{formik.errors.AnyConstruction}</span>
+                          </div>
+                        )}
+                    </div>
+                  </div>
+                 
                 </div>
               </div>
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0 gap-lg-4 ">
-                  <div className="col-4 col-lg-3">
+                  <div className="col-4 col-lg-4">
                     <div className="">
                       <label
                         htmlFor="OpenSlides"
@@ -159,7 +209,7 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
                     </div>
                   </div>
 
-                  <div className="col-4 col-lg-5">
+                  <div className="col-4 col-lg-4">
                     <div className="">
                       <label
                         htmlFor="RegistrationStatus"
@@ -207,6 +257,52 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
                       </div>
                     </div>
                   </div>
+                  <div className="col-lg-4 col-sm-12 ">
+                      <label
+                        htmlFor="CornerShop"
+                        className={`form-label text-nowrap ${styles.built_text}  fs_15 fs_sm_12 fw_500`}
+                      >
+                        Corner Plot
+                      </label>
+                      <div className="d-flex mt-2">
+                        <input
+                          className={` ms-1 cursor_pointer`}
+                          id="yes"
+                          type="radio"
+                          value="yes"
+                          checked={cornerShop === "yes"}
+                          onChange={handleCornerShopButton}
+                        />
+                        <label
+                          htmlFor="yes"
+                          className={
+                            cornerShop === "yes"
+                              ? ` ${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          Yes
+                        </label>
+                        <input
+                          className={`  ${styles.membertrade_modal_offer_radiobox} cursor_pointer ms-3`}
+                          id="no"
+                          type="radio"
+                          value="no"
+                          checked={cornerShop === "no"}
+                          onChange={handleCornerShopButton}
+                        />{" "}
+                        <label
+                          htmlFor="no"
+                          className={
+                            cornerShop === "no"
+                              ? ` ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                              : `${styles.total_floors_text}  fs_15 fs_sm_12 fw_500 ms-1 cursor_pointer`
+                          }
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
                 </div>
                 <div className=" text-start mt-3">
                   <div className="row">
@@ -277,4 +373,4 @@ const industrialPlotFeatures = ({ show, handleClose }) => {
   );
 };
 
-export default industrialPlotFeatures;
+export default IndustryPlotFeatures;

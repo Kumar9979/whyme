@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../../../styles/propertydetails/propertyprofile.module.css";
+import styles from "../../../../styles/propertydetails/profile/Profilehead.module.css";
 import Image from "next/image";
-import profile from "../../../assets/images/property-details/profile.jpg";
-import star from "../../../assets/images/star.svg";
-import caution from "../../../assets/images/property-details/caution.svg";
-import share from "../../../assets/images/property-details/share.svg";
+import profile from "../../../../assets/images/property-details/profile.png"
+import star from "../../../../assets/images/star.svg";
+import caution from "../../../../assets/images/property-details/caution.svg";
+import share from "../../../../assets/images/property-details/share.svg";
 
 
 const Profilehead = () => {
@@ -43,8 +43,8 @@ const Profilehead = () => {
             </div>
 
             <div className="  d-flex align-items-center ">
-            <span className={` ${styles.activestatus} ms-lg-1 fontFam_poppins fs_22 fw_400 `}>Active Since Aug 2022</span>
-             <div className="ms-lg-1  d-flex align-items-center">
+            <span className={` ${styles.activestatus} ms-lg-1 fontFam_poppins  fw_400 `}><span className={`${styles.active}`}>Active Since</span> Aug 2022</span>
+             <div className="ms-lg-2  d-flex align-items-center">
               <Image
                 src={star}
                 width={20}
@@ -69,7 +69,7 @@ const Profilehead = () => {
             </div>
           </div>
           <div
-            className={`${styles.button_sec} mt-lg-4 pt-lg-3  mt-sm- mt-4 ms-md-5 mt-md-1 ms-sm-5  mt-sm-3 d-flex align-items-center`}
+            className={`${styles.button_sec} mt-lg-4 pt-lg-3 mt-md-1  mt-sm-3  mt-3 ms-md-5 mt-md-1 ms-sm-5 d-flex align-items-center`}
           >
             <div className="">
               <Image
@@ -80,7 +80,7 @@ const Profilehead = () => {
                 className={`${styles.cautionimg}`}
               />
             </div>
-            <div className="ms-lg-4 ms-2">
+            <div className="ms-lg-4 ms-md-5 ms-sm-4 ms-2">
               <Image
                 src={share}
                 alt="Picture of the author"
@@ -89,7 +89,7 @@ const Profilehead = () => {
             </div>
 
             <button
-              className={`${styles.contact_btn}  ms-2 me-lg-5 ms-lg-4 fw_400 py-lg-2 fontFam_poppins btn btn-primary`}
+              className={`${styles.contact_btn}  ms-2 me-lg-5 ms-lg-4  ms-md-5 ms-sm-4 fw_400 py-lg-2 fontFam_poppins btn btn-primary`}
             >
               Contact
             </button>
