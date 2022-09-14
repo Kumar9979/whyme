@@ -57,7 +57,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/commercial/industrial-buildings/property-price-rent"
+        "/post-property/residential/land-plot/property-price-sell"
       );
     },
   });
@@ -139,7 +139,7 @@ const propertyFeatures = () => {
                     itemName={"Gatedcolony"}
                   />
                 </div>
-                <div className={` `}>
+                <div className={`ms-5 `}>
                   <RadioButtonGenerator
                     formik={formik}
                     title={"Corner site"}
