@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useRef } from "react";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/sidebar-pages/property-statistics.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -12,6 +12,10 @@ import calling from "../../../assets/icons/calling.svg";
 import whatsapp from "../../../assets/icons/profile-icons/whatsapp.svg";
 
 const PropertyStatistics = () => {
+  const ref = useRef();
+  const onScroll = (scroll) => {
+    ref.current.scrollLeft += scroll;
+  };
   return (
     <ProfileLayout>
       <div className={`${styles.recent_activities} mt-5 pt-5`}>
@@ -48,7 +52,7 @@ const PropertyStatistics = () => {
             <span className={`fs_20 fw_500 fontFam_poppins color_cloudBurst`}>
               Property Analytics
             </span>
-            <div className={`col-lg-12  col-md-12 ${styles.tableSize}`}>
+            <div className={`col-lg-9  col-md-12 ${styles.tableSize}`}>
               <div className={`row mt-3  d-flex justify-content-center `}>
                 {statistics.map((item, index) => {
                   return (
@@ -79,80 +83,67 @@ const PropertyStatistics = () => {
                 })}
               </div>
               <h1
-                className={`fs_24 mt-4 fw_500 fontFam_poppins color_cloudBurst`}
+                className={`fs_24 mt-4 fw_500 fontFam_poppins color_cloudBurst mb-3`}
               >
                 Request Callbacks
               </h1>
-              <div
-                className={`d-flex justify-content-center justify-content-lg-start ${styles.table_container}`}
-              >
-                {" "}
-                <table className={`${styles.table} p-5`}>
-                  <thead
-                    className={`${styles.table_heading}  w-100 border-none `}
-                  >
-                    <tr className={`fs_18 color_white fontFam_poppins fw_400 `}>
-                      <th scope="col-1 ps-2">
-                        <span className="ps-2">#</span>
-                      </th>
-                      <th scope="col-2">Date</th>
-                      <th scope="col-3">Name</th>
-                      <th scope="col-3">Phone Number</th>
-                      <th scope="col-3"></th>
-                    </tr>
-                  </thead>
 
-                  <tbody>
+              <div className={`position-relative `}>
+                <div className={`${styles.scroll_table} `}>
+                  <table className={`${styles.table} w-100`}>
+                    <tr
+                      className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute`}
+                    >
+                      <th className="col-1 ps-3">#</th>
+                      <th className="col-4 ps-4">Date</th>
+                      <th className="col-3 ps-3">Name</th>
+                      <th className="col-3 ps-4">Phone Number</th>
+                      <th className="col-1"></th>
+                    </tr>
+
                     {statisticsTable.map((item, index) => {
                       return (
-                        <tr className={`${styles.statistics_card_width}`}>
-                          <td scope="row" className={`py-2`}>
-                            <span className="color_cloudBurst fs_15 fw_500 fontFam_poppins ps-2 pb-5">
-                              {item.slno}
-                            </span>
+                        <tr className={`${styles.table_container} `}>
+                          <td className="pt-3 ps-3 color_cloudBurst fw_400 fontFam_poppins">
+                            {item.slno}
                           </td>
-                          <td >
-                            <span className="color_cloudBurst fs_15 fontFam_poppins fw_500">
-                              {item.date}
-                            </span>
+                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
+                            {item.date}
                           </td>
-                          <td>
-                            <span className="color_cloudBurst fs_15 fontFam_poppins fw_500">
-                              {item.name}
-                            </span>
+                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
+                            {item.name}
                           </td>
-                          <td>
-                            <span className="color_cloudBurst fs_15 fontFam_poppins fw_500">
-                              {item.phone}
-                            </span>
+                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
+                            {item.phone}
                           </td>
-                          <td>
-                            <button
-                              className={`${styles.call_button} color_dark_blue`}
-                            >
+                          <td className="pt-3 ">
+                            <span className={`${styles.call_button} px-2 py-1`}>
                               <Image
                                 src={item.phoneicon}
                                 alt="Picture of the author"
                                 width={15}
                               />
-                              <span className="ms-2">Call</span>
-                            </button>
-                            <button
-                              className={`${styles.whatsapp_button} color_dark_blue ms-5`}
+                              <span className="ms-2 color_dark_blue">
+                                {" "}
+                                Call
+                              </span>
+                            </span>
+                            <span
+                              className={`${styles.call_button} px-2 py-1 color_light_green ms-4`}
                             >
                               <Image
                                 src={item.whatsappicon}
                                 alt="Picture of the author"
                                 width={15}
                               />
-                              <span className="ms-2">Whatsapp</span>
-                            </button>
+                              <span className="ms-2"> Whatsapp</span>
+                            </span>
                           </td>
                         </tr>
                       );
                     })}
-                  </tbody>
-                </table>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -234,7 +225,7 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "06",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
@@ -244,7 +235,7 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "07",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
@@ -254,7 +245,7 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "08",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
@@ -264,7 +255,7 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "09",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
@@ -274,7 +265,7 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "10",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
@@ -284,7 +275,147 @@ const statisticsTable = [
     whatsapp: "whatsapp",
   },
   {
-    slno: "05",
+    slno: "11",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "12",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "14",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "15",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "16",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "17",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "18",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "19",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "20",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "21",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "22",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "23",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "24",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "25",
+    date: "29 Aug 2022",
+    name: "Amal Sabu",
+    phone: "+91 7894561230",
+    phoneicon: calling,
+    whatsappicon: whatsapp,
+    call: "call",
+    whatsapp: "whatsapp",
+  },
+  {
+    slno: "26",
     date: "29 Aug 2022",
     name: "Amal Sabu",
     phone: "+91 7894561230",
