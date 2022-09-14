@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/sidebar-pages/property-statistics.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -16,6 +16,26 @@ const PropertyStatistics = () => {
   const onScroll = (scroll) => {
     ref.current.scrollLeft += scroll;
   };
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setMobile(true);
+    }
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <ProfileLayout>
       <div className={`${styles.recent_activities} mt-5 pt-5`}>
@@ -26,7 +46,7 @@ const PropertyStatistics = () => {
             <button
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
-              <div className={`${styles.imagesize}`}>
+              <div className={`${styles.imagesize} d-flex align-items-center`}>
                 <Image
                   src={arrow_left}
                   alt="Picture of the author"
@@ -48,103 +68,147 @@ const PropertyStatistics = () => {
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
-          <div className="p-4">
+          <div className="p-2 p-md-3">
             <span className={`fs_20 fw_500 fontFam_poppins color_cloudBurst`}>
               Property Analytics
             </span>
             <div className={`col-lg-9  col-md-12 ${styles.tableSize}`}>
-              <div className={`row mt-3  d-flex justify-content-center `}>
-                {statistics.map((item, index) => {
-                  return (
-                    <div className="col-12 col-lg-4">
-                      <div
-                        className={`d-flex align-items-center ${styles.container} ps-2 py-3 mb-3 `}
-                      >
-                        <Image
-                          src={item.image}
-                          alt="Picture of the author"
-                          width={50}
-                        />
-                        <div className="d-flex flex-column ms-3">
+              {mobile ? (
+                <div className={`row mt-3  d-flex justify-content-center `}>
+                  {statistics.map((item, index) => {
+                    return (
+                      <div className="col-4">
+                        <div
+                          className={`d-flex  flex-column ${styles.container}`}
+                        >
                           <span
-                            className={`fs_20 fw_500 fontFam_poppins color_cloudBurst text-nowrap`}
+                            className={`fs_24 fw_500 ps-2 fontFam_poppins color_cloudBurst text-wrap`}
                           >
                             {item.view}
                           </span>
-                          <span
-                            className={`fs_15 fw_400 fontFam_poppins color_grey text-nowrap`}
-                          >
-                            {item.text}
-                          </span>
+
+                          <div className="d-flex  align-items-center ps-2">
+                              <Image
+                                src={item.image}
+                                alt="Picture of the author"
+                                width={25}
+                                height={25}
+                              />
+                            
+
+                            <p
+                              className={`fs_9 ps-2 fw_400 fontFam_poppins color_grey text-wrap`}
+                            >
+                              {item.text}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <h1
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className={`row mt-3  d-flex justify-content-center `}>
+                  {statistics.map((item, index) => {
+                    return (
+                      <div className="col-4">
+                        <div
+                          className={`  d-flex align-items-center  ${styles.container} ps-2 py-3 mb-3 `}
+                        >
+                          <Image
+                            src={item.image}
+                            alt="Picture of the author"
+                            width={50}
+                          />
+                          <div className="d-flex flex-column ms-3">
+                            <span
+                              className={`fs_20 fw_500 fontFam_poppins color_cloudBurst text-wrap`}
+                            >
+                              {item.view}
+                            </span>
+                            <span
+                              className={`fs_15 fw_400 fontFam_poppins color_grey text-wrap`}
+                            >
+                              {item.text}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+             {
+              mobile?(<div></div>):(<div>
+                <h1
                 className={`fs_24 mt-4 fw_500 fontFam_poppins color_cloudBurst mb-3`}
               >
                 Request Callbacks
               </h1>
 
-              <div className={`position-relative `}>
-                <div className={`${styles.scroll_table} `}>
+              <div className={`position-relative`}>
+                <div className={`${styles.scroll_table}`}>
                   <table className={`${styles.table} w-100`}>
-                    <tr
-                      className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute`}
-                    >
-                      <th className="col-1 ps-3">#</th>
-                      <th className="col-4 ps-4">Date</th>
-                      <th className="col-3 ps-3">Name</th>
-                      <th className="col-3 ps-4">Phone Number</th>
-                      <th className="col-1"></th>
-                    </tr>
+                    <tbody>
+                      <tr
+                        className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute w-100`}
+                      >
+                        <th scope="col-1">#</th>
+                        <th scope="col-2">Date</th>
+                        <th scope="col-2">Name</th>
+                        <th scope="col-3">Phone Number</th>
+                        <th scope="col-4"></th>
+                      </tr>
 
-                    {statisticsTable.map((item, index) => {
-                      return (
-                        <tr className={`${styles.table_container} `}>
-                          <td className="pt-3 ps-3 color_cloudBurst fw_400 fontFam_poppins">
-                            {item.slno}
-                          </td>
-                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
-                            {item.date}
-                          </td>
-                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
-                            {item.name}
-                          </td>
-                          <td className="pt-3 color_cloudBurst fw_400 fontFam_poppins">
-                            {item.phone}
-                          </td>
-                          <td className="pt-3 ">
-                            <span className={`${styles.call_button} px-2 py-1`}>
-                              <Image
-                                src={item.phoneicon}
-                                alt="Picture of the author"
-                                width={15}
-                              />
-                              <span className="ms-2 color_dark_blue">
-                                {" "}
-                                Call
+                      {statisticsTable.map((item, index) => {
+                        return (
+                          <tr className={`${styles.table_container} `}>
+                            <td className="pt-4 pb-1 ps-3 color_cloudBurst fw_400 fontFam_poppins">
+                              {item.slno}
+                            </td>
+                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                              {item.date}
+                            </td>
+                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                              {item.name}
+                            </td>
+                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                              {item.phone}
+                            </td>
+                            <td className="pt-4 pb-1 d-flex align-items-center ">
+                              <span
+                                className={`${styles.call_button} px-2 py-1 d-flex align-items-center`}
+                              >
+                                <Image
+                                  src={item.phoneicon}
+                                  alt="Picture of the author"
+                                  width={15}
+                                />
+                                <span className="ms-2 color_dark_blue">
+                                  {" "}
+                                  Call
+                                </span>
                               </span>
-                            </span>
-                            <span
-                              className={`${styles.call_button} px-2 py-1 color_light_green ms-4`}
-                            >
-                              <Image
-                                src={item.whatsappicon}
-                                alt="Picture of the author"
-                                width={15}
-                              />
-                              <span className="ms-2"> Whatsapp</span>
-                            </span>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                              <span
+                                className={`${styles.call_button} px-2 py-1 color_light_green ms-4 d-flex align-items-center`}
+                              >
+                                <Image
+                                  src={item.whatsappicon}
+                                  alt="Picture of the author"
+                                  width={15}
+                                />
+                                <span className="ms-2"> Whatsapp</span>
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
                   </table>
                 </div>
-              </div>
+              </div></div>)
+             }
             </div>
           </div>
         </div>
@@ -159,7 +223,7 @@ const statistics = [
   {
     image: today,
     view: "22",
-    text: "Today Views",
+    text: "Today  Views",
   },
   {
     image: total,
@@ -169,7 +233,7 @@ const statistics = [
   {
     image: request,
     view: "28",
-    text: "Total views",
+    text: "Requested Callbacks",
   },
 ];
 

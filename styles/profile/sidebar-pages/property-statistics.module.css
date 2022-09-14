@@ -55,11 +55,13 @@
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   opacity: 1;
+  z-index: 999;
 }
 .table_container {
   border: 1px solid var(--unnamed-color-dbe9f2);
   border-bottom: 1px solid #dbe9f2;
   opacity: 1;
+  z-index: 99999999;
 }
 .scroll_table {
   overflow-y: auto;
@@ -83,9 +85,16 @@
   background-color: #323D5A;
   border-radius: 100px;
 }
+.sizeimage {
+  width: 20px;
+  height: 20px;
+}
 
-@media only screen and (min-width: 992px) and (max-width: 1350px) {
+@media only screen and (min-width: 992px) and (max-width: 1450px) {
   .tableSize {
+    width: 100%;
+  }
+  .container {
     width: 100%;
   }
   .recent_activities {
@@ -101,7 +110,7 @@
     width: 15px;
   }
   .container {
-    width: 30%;
+    width: 100%;
   }
   .recent_activities_card {
     background: transparent 0% 0% no-repeat padding-box;
@@ -142,11 +151,17 @@
 }
 @media only screen and (max-width: 768px) {
   .container {
-    width: 50%;
+    width: 100%;
+    height: 6rem;
+  }
+  .tableSize {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 400px) {
   .container {
     width: 100%;
+    height: 6rem;
+
   }
 }
