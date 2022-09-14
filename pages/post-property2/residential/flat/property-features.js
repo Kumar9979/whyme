@@ -173,7 +173,7 @@ const CommercialPlotPropertyFeatures = () => {
                 </div>
               </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
@@ -196,7 +196,7 @@ const CommercialPlotPropertyFeatures = () => {
               </div>
 
               <div
-                className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                className={` ${styles.propertyFeature_width_48_to_100} me-0 ms-2  mb-1`}
               >
                 <label
                   htmlFor="status"
@@ -204,12 +204,13 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Status
                 </label>
-                <div className={`w-100`}>
+                <div className={`w-120 `}>
                   <SelectGenerator
                     option={statusOptions}
                     itemName={"status"}
                     formikValue={formik.values.status}
                     formik={formik}
+                    className={`w-120`}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.status}
