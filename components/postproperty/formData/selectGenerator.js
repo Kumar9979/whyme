@@ -56,6 +56,7 @@ export const transactionOptions = [
     { value: "Fresh", label: "Fresh" },
 ];
 
+
 export const customStyles = {
     control: (base, state) => ({
         ...base,

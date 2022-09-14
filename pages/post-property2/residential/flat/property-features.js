@@ -10,7 +10,7 @@ import { FormikErrorGenerator } from "../../../../components/postproperty/formDa
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
 import {
   AmnetiesGenerator,
-  ResidentialhomeList,
+  ResidentialFlatList,
   } from "../../../../components/postproperty/formData/amnetiesListGenerator";
   import SelectGenerator, {
     furnishingOptions,
@@ -26,11 +26,10 @@ const CommercialPlotPropertyFeatures = () => {
   const formik = useFormik({
     initialValues: {
       Totalfloors: "",
-      NoofOpenSides: "",
-      Balconies: "",
+      Floornumber: "",
+      CarParkingCount: "",
       Bedroom: "",
       Bathroom: "",
-      Ageofconstruction:"",
       transaction: "",
       furnishedStatus: "",
       status: "",
@@ -39,29 +38,26 @@ const CommercialPlotPropertyFeatures = () => {
     },
 
     validationSchema: Yup.object({
-       Totalfloors: Yup.string()
+      Totalfloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        NoofOpenSides: Yup.string()
+                Floornumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        Balconies: Yup.string()
+        CarParkingCount: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
         Bedroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
+
         Bathroom: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-        Ageofconstruction: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
         furnishedStatus: Yup.string().required("Required"),
         status: Yup.string().required("Required"),
         transaction: Yup.string().required("Required"),
-        facing: Yup.string().required("Required"),
-
+        facing:Yup.string().required("Required"),
 
       Amenitities: Yup.string(),
     }),
@@ -88,8 +84,49 @@ const CommercialPlotPropertyFeatures = () => {
           </div>
           <form onSubmit={formik.handleSubmit}>
             <div className={`d-block d-lg-flex  `}>
-             
-              
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Total Floors"}
+                  itemName={"Totalfloors"}
+                  inputValue={formik.values.Totalfloors}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Totalfloors}
+                  formikTouched={formik.touched.Totalfloors}
+                />
+              </div>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Floor number"}
+                  itemName={"Floornumber"}
+                  inputValue={formik.values.Floornumber}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Floornumber}
+                  formikTouched={formik.touched.Floornumber}
+                />
+              </div>
+
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Car Parking Count"}
+                  itemName={"CarParkingCount"}
+                  inputValue={formik.values.CarParkingCount}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.CarParkingCount}
+                  formikTouched={formik.touched.CarParkingCount}
+                />
+              </div>
+            </div>
+
+            <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
               <div className={`mb-1`}>
                 <InputFieldGenerator
                   title={"Bedroom"}
@@ -116,49 +153,6 @@ const CommercialPlotPropertyFeatures = () => {
                   formikTouched={formik.touched.Bathroom}
                 />
               </div>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Balconies"}
-                  itemName={"Balconies"}
-                  inputValue={formik.values.Balconies}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Balconies}
-                  formikTouched={formik.touched.Balconies}
-                />
-              </div>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Total Floors"}
-                  itemName={"Totalfloors"}
-                  inputValue={formik.values.Totalfloors}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Totalfloors}
-                  formikTouched={formik.touched.Totalfloors}
-                />
-              </div>
-            </div>
-
-            <div className={`d-block d-lg-flex gap-0 gap-lg-4 mb-2 mt-2`}>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"No. of Open Sides"}
-                  itemName={"NoofOpenSides"}
-                  inputValue={formik.values.NoofOpenSides}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-100"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.NoofOpenSides}
-                  formikTouched={formik.touched.NoofOpenSides}
-                />
-              </div>
-              
               <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
@@ -179,19 +173,6 @@ const CommercialPlotPropertyFeatures = () => {
                     />
                   </div>
                   </div>
-                  <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Age of construction"}
-                  itemName={"Ageofconstruction"}
-                  inputValue={formik.values.Ageofconstruction}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-100"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Ageofconstruction}
-                  formikTouched={formik.touched.Ageofconstruction}
-                />
-              </div>
             </div>
             <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
                 <div className={` me-0  mb-1`}>
@@ -264,7 +245,7 @@ const CommercialPlotPropertyFeatures = () => {
 
             <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ResidentialhomeList}
+                  list={ResidentialFlatList}
                   startIndex={0}
                   endIndex={2}
                   formik={formik}
@@ -272,7 +253,7 @@ const CommercialPlotPropertyFeatures = () => {
               </div>{" "}
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ResidentialhomeList}
+                  list={ResidentialFlatList}
                   startIndex={3}
                   endIndex={5}
                   formik={formik}
@@ -280,14 +261,28 @@ const CommercialPlotPropertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex`}>
                 <AmnetiesGenerator
-                  list={ResidentialhomeList}
+                  list={ResidentialFlatList}
                   startIndex={6}
-                  endIndex={7}
+                  endIndex={8}
                   formik={formik}
                 />
               </div>
-              
-                      
+              <div className={`d-block d-lg-flex`}>
+                <AmnetiesGenerator
+                  list={ResidentialFlatList}
+                  startIndex={9}
+                  endIndex={10}
+                  formik={formik}
+                />
+              </div>
+              <div className={`d-block d-lg-flex`}>
+                <AmnetiesGenerator
+                  list={ResidentialFlatList}
+                  startIndex={11}
+                  endIndex={13}
+                  formik={formik}
+                />
+              </div>          
 
             <PostPropertySubmitButton marginEnd={"me-2 "} paddingTop="1rem" />
           </form>
