@@ -25,20 +25,18 @@ const propertyFeatures = () => {
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
-      
-      floorAllowed: "",
+      floorsAllowed: "",
       NoofOpenSides: "",
       Cornersite: "",
-      Gatedcolony:"",
-      BoundaryWallmade:"",
-      AnyconstructionDone:"",
-      
+      Gatedcolony: "",
+      BoundaryWallmade: "",
+      AnyconstructionDone: "",
+
       Amenities: [],
     },
 
     validationSchema: Yup.object({
-     
-        NoofOpenSides: Yup.string()
+      NoofOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
@@ -83,20 +81,19 @@ const propertyFeatures = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className={`mt-5`}>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5 `}>
-               
                 <div
                   className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
                   <InputFieldGenerator
                     title={"Floors allowed for construction"}
-                    itemName={"Floorsallowedforconstruction"}
-                    inputValue={formik.values.floorAllowed}
+                    itemName={"floorsAllowed"}
+                    inputValue={formik.values.floorsAllowed}
                     onChangeFn={formik.handleChange}
                     inputClassName={"w-90"}
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.floorAllowed}
-                    formikTouched={formik.touched.floorAllowed}
+                    formikError={formik.errors.floorsAllowed}
+                    formikTouched={formik.touched.floorsAllowed}
                   />
                 </div>
                 <div
@@ -114,10 +111,8 @@ const propertyFeatures = () => {
                     formikTouched={formik.touched.NoofOpenSides}
                   />
                 </div>
-               
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-            
                 <div className={` `}>
                   <RadioButtonGenerator
                     formik={formik}
@@ -152,14 +147,10 @@ const propertyFeatures = () => {
                     itemName={"Cornersite"}
                   />
                 </div>
-
-
-               
-                
               </div>
               <div className={`content-fourth-name mb-1 mt-5`}>
                 <h5 className={`fs_16 fw_500 fontFam_poppins mb-1`}>
-                Amenities
+                  Amenities
                 </h5>
               </div>
               <div className={`d-block d-lg-flex`}>
@@ -178,7 +169,7 @@ const propertyFeatures = () => {
                   formik={formik}
                 />
               </div>
-              
+
               <PostPropertySubmitButton marginEnd={"me-5"} paddingTop="0rem" />
             </div>
           </form>

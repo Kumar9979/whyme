@@ -11,13 +11,13 @@ import PostPropertySubmitButton from "../../../../components/postproperty/compon
 import {
   AmnetiesGenerator,
   ResidentialFlatList,
-  } from "../../../../components/postproperty/formData/amnetiesListGenerator";
-  import SelectGenerator, {
-    furnishingOptions,
-    statusOptions,
-    facingOptions,
-    transactionOptions,
-  } from "../../../../components/postproperty/formData/selectGenerator";
+} from "../../../../components/postproperty/formData/amnetiesListGenerator";
+import SelectGenerator, {
+  furnishingOptions,
+  statusOptions,
+  facingOptions,
+  transactionOptions,
+} from "../../../../components/postproperty/formData/selectGenerator";
 
 const CommercialPlotPropertyFeatures = () => {
   const router = useRouter();
@@ -33,7 +33,7 @@ const CommercialPlotPropertyFeatures = () => {
       transaction: "",
       furnishedStatus: "",
       status: "",
-      facing:"",
+      facing: "",
       Amenities: [],
     },
 
@@ -41,29 +41,31 @@ const CommercialPlotPropertyFeatures = () => {
       Totalfloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-                Floornumber: Yup.string()
+      Floornumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        CarParkingCount: Yup.string()
+      CarParkingCount: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        Bedroom: Yup.string()
+      Bedroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-        Bathroom: Yup.string()
+      Bathroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        furnishedStatus: Yup.string().required("Required"),
-        status: Yup.string().required("Required"),
-        transaction: Yup.string().required("Required"),
-        facing:Yup.string().required("Required"),
+      furnishedStatus: Yup.string().required("Required"),
+      status: Yup.string().required("Required"),
+      transaction: Yup.string().required("Required"),
+      facing: Yup.string().required("Required"),
 
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/commercial/commercial-plot/property-price-rent");
+      router.push(
+        "/post-property/commercial/commercial-plot/property-price-rent"
+      );
     },
   });
 
@@ -76,9 +78,7 @@ const CommercialPlotPropertyFeatures = () => {
       >
         <div className={`${styles.input_container}`}>
           <div className={`  mb-4`}>
-            <h5
-              className={`color_light_blue fontFam_poppins  fs_20`}
-            >
+            <h5 className={`color_light_blue fontFam_poppins  fs_20`}>
               Property Features
             </h5>
           </div>
@@ -125,7 +125,6 @@ const CommercialPlotPropertyFeatures = () => {
                 />
               </div>
             </div>
-
             <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
               <div className={`mb-1`}>
                 <InputFieldGenerator
@@ -154,136 +153,134 @@ const CommercialPlotPropertyFeatures = () => {
                 />
               </div>
               <div className={` me-0  mb-1`}>
-                  <label
-                    htmlFor="FurnishedStatus"
-                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                  >
-                   Facing
-                  </label>
-              <div className={`w-100`}>
-                    <SelectGenerator
-                      option={facingOptions}
-                      itemName={"facing"}
-                      formikValue={formik.values.facing}
-                      formik={formik}
-                    />
-                    <FormikErrorGenerator
-                      formikError={formik.errors.facing}
-                      formikTouched={formik.touched.facing}
-                    />
-                  </div>
-                  </div>
-            </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
-                <div className={` me-0  mb-1`}>
-                  <label
-                    htmlFor="FurnishedStatus"
-                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                  >
-                    Furnishing Status
-                  </label>
-                  <div className={``}>
-                    <SelectGenerator
-                      option={furnishingOptions}
-                      itemName={"furnishedStatus"}
-                      formikValue={formik.values.furnishedStatus}
-                      formik={formik}
-                    />
-                    <FormikErrorGenerator
-                      formikError={formik.errors.furnishedStatus}
-                      formikTouched={formik.touched.furnishedStatus}
-                    />
-                  </div>
-                </div>
-
-                <div
-                  className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                <label
+                  htmlFor="FurnishedStatus"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                 >
-                  <label
-                    htmlFor="status"
-                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                  >
-                    Status
-                  </label>
-                  <div className={`w-100`}>
-                    <SelectGenerator
-                      option={statusOptions}
-                      itemName={"status"}
-                      formikValue={formik.values.status}
-                      formik={formik}
-                    />
-                    <FormikErrorGenerator
-                      formikError={formik.errors.status}
-                      formikTouched={formik.touched.status}
-                    />
-                  </div>
-                </div>
-                <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
-                  <label
-                    htmlFor="transaction"
-                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
-                  >
-                    Transaction{" "}
-                  </label>
-                  <div className={``}>
-                    <SelectGenerator
-                      option={transactionOptions}
-                      itemName={"transaction"}
-                      formikValue={formik.values.transaction}
-                      formik={formik}
-                    />
-                    <FormikErrorGenerator
-                      formikError={formik.errors.transaction}
-                      formikTouched={formik.touched.transaction}
-                    />
-                  </div>
+                  Facing
+                </label>
+                <div className={`w-100`}>
+                  <SelectGenerator
+                    option={facingOptions}
+                    itemName={"facing"}
+                    formikValue={formik.values.facing}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.facing}
+                    formikTouched={formik.touched.facing}
+                  />
                 </div>
               </div>
+            </div>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+              <div className={` me-0  mb-1`}>
+                <label
+                  htmlFor="FurnishedStatus"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Furnishing Status
+                </label>
+                <div className={``}>
+                  <SelectGenerator
+                    option={furnishingOptions}
+                    itemName={"furnishedStatus"}
+                    formikValue={formik.values.furnishedStatus}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.furnishedStatus}
+                    formikTouched={formik.touched.furnishedStatus}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+              >
+                <label
+                  htmlFor="status"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Status
+                </label>
+                <div className={`w-100`}>
+                  <SelectGenerator
+                    option={statusOptions}
+                    itemName={"status"}
+                    formikValue={formik.values.status}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.status}
+                    formikTouched={formik.touched.status}
+                  />
+                </div>
+              </div>
+              <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
+                <label
+                  htmlFor="transaction"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
+                >
+                  Transaction{" "}
+                </label>
+                <div className={``}>
+                  <SelectGenerator
+                    option={transactionOptions}
+                    itemName={"transaction"}
+                    formikValue={formik.values.transaction}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.transaction}
+                    formikTouched={formik.touched.transaction}
+                  />
+                </div>
+              </div>
+            </div>
             <div className={` mt-4 mt-lg-4 pt-0 pt-lg-1 `}>
               <h5 className={`fs_16 fw_500 fontFam_poppins`}>Amenities</h5>
             </div>
-
             <div className={`d-block d-lg-flex`}>
-                <AmnetiesGenerator
-                  list={ResidentialFlatList}
-                  startIndex={0}
-                  endIndex={2}
-                  formik={formik}
-                />
-              </div>{" "}
-              <div className={`d-block d-lg-flex`}>
-                <AmnetiesGenerator
-                  list={ResidentialFlatList}
-                  startIndex={3}
-                  endIndex={5}
-                  formik={formik}
-                />
-              </div>
-              <div className={`d-block d-lg-flex`}>
-                <AmnetiesGenerator
-                  list={ResidentialFlatList}
-                  startIndex={6}
-                  endIndex={8}
-                  formik={formik}
-                />
-              </div>
-              <div className={`d-block d-lg-flex`}>
-                <AmnetiesGenerator
-                  list={ResidentialFlatList}
-                  startIndex={9}
-                  endIndex={10}
-                  formik={formik}
-                />
-              </div>
-              <div className={`d-block d-lg-flex`}>
-                <AmnetiesGenerator
-                  list={ResidentialFlatList}
-                  startIndex={11}
-                  endIndex={13}
-                  formik={formik}
-                />
-              </div>          
-
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={0}
+                endIndex={2}
+                formik={formik}
+              />
+            </div>{" "}
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={3}
+                endIndex={5}
+                formik={formik}
+              />
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={6}
+                endIndex={8}
+                formik={formik}
+              />
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={9}
+                endIndex={10}
+                formik={formik}
+              />
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={11}
+                endIndex={13}
+                formik={formik}
+              />
+            </div>
             <PostPropertySubmitButton marginEnd={"me-2 "} paddingTop="1rem" />
           </form>
         </div>
