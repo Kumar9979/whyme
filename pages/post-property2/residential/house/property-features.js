@@ -189,7 +189,7 @@ const CommercialPlotPropertyFeatures = () => {
                 />
               </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"

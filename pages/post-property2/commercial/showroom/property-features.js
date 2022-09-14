@@ -60,7 +60,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/commercial/industrial-buildings/property-price-rent"
+        "/post-property/commercial/showroom/property-price-rent"
       );
     },
   });
@@ -180,7 +180,7 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                  className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
                 >
                   <label
                     htmlFor="status"
