@@ -68,33 +68,34 @@ const PropertyStatistics = () => {
             </span>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
-          <div className="p-2 p-md-3">
-            <span className={`fs_20 fw_500 fontFam_poppins color_cloudBurst`}>
+          <div className="p-md-3">
+            <span
+              className={`fs_20 fw_500 fontFam_poppins color_cloudBurst px-2`}
+            >
               Property Analytics
             </span>
             <div className={`col-lg-9  col-md-12 ${styles.tableSize}`}>
               {mobile ? (
-                <div className={`row mt-3  d-flex justify-content-center `}>
+                <div className={`row mt-3  d-flex justify-content-center px-2`}>
                   {statistics.map((item, index) => {
                     return (
                       <div className="col-4">
                         <div
-                          className={`d-flex  flex-column ${styles.container}`}
+                          className={`d-flex  flex-column justify-content-center ${styles.container}`}
                         >
                           <span
-                            className={`fs_24 fw_500 ps-2 fontFam_poppins color_cloudBurst text-wrap`}
+                            className={`fs_24 fw_500 ps-2 fontFam_poppins color_cloudBurst text-wrap pb-2`}
                           >
                             {item.view}
                           </span>
 
                           <div className="d-flex  align-items-center ps-2">
-                              <Image
-                                src={item.image}
-                                alt="Picture of the author"
-                                width={25}
-                                height={25}
-                              />
-                            
+                            <Image
+                              src={item.image}
+                              alt="Picture of the author"
+                              width={25}
+                              height={25}
+                            />
 
                             <p
                               className={`fs_9 ps-2 fw_400 fontFam_poppins color_grey text-wrap`}
@@ -139,76 +140,138 @@ const PropertyStatistics = () => {
                 </div>
               )}
 
-             {
-              mobile?(<div></div>):(<div>
-                <h1
-                className={`fs_24 mt-4 fw_500 fontFam_poppins color_cloudBurst mb-3`}
-              >
-                Request Callbacks
-              </h1>
+              {mobile ? (
+                <div>
+                  <h1
+                    className={`fs_14 py-2 w-100 fontFam_poppins mt-3 ps-4 color_light_green fw_600  ${styles.dates}`}
+                  >
+                    Yesterday
+                  </h1>
+                  <div
+                    className={`${styles.contacted_container} mx-4 py-1 px-2 mt-4`}
+                  >
+                    <div className="row">
+                      <div className="col-5">
+                        <h1 className="fs_13 fontFam_poppins color_grey1 fw_500">
+                          Contact Info
+                        </h1>
+                        <h2 className="fs_13 fontFam_poppins color_black fw_500">
+                          Harish
+                        </h2>
+                        <h2 className="fs_13 fontFam_poppins color_black fw_500">
+                          +91 9876543210
+                        </h2>
+                      </div>
+                      <div className="col-7">
+                        <div className="d-flex align-items-center mt-5 pb-2  ">
+                          <button
+                            className={`d-flex align-items-center ${styles.calling_button}`}
+                          >
+                            <div className={`${styles.calling_icon_size}`}>
+                              <Image
+                                src={calling}
+                                alt="Picture of the author"
+                                width={15}
+                                height={15}
+                              />
+                            </div>
 
-              <div className={`position-relative`}>
-                <div className={`${styles.scroll_table}`}>
-                  <table className={`${styles.table} w-100`}>
-                    <tbody>
-                      <tr
-                        className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute w-100`}
-                      >
-                        <th scope="col-1">#</th>
-                        <th scope="col-2">Date</th>
-                        <th scope="col-2">Name</th>
-                        <th scope="col-3">Phone Number</th>
-                        <th scope="col-4"></th>
-                      </tr>
+                            <span className="color_dark_blue fs_15 fw_500 fontFaam_poppins ms-1">
+                              Call
+                            </span>
+                          </button>
+                          <button
+                            className={`d-flex align-items-center ${styles.calling_button} ms-2`}
+                          >
+                            <div className={`${styles.whatsapp_icon_size}`}>
+                              {" "}
+                              <Image
+                                src={whatsapp}
+                                alt="Picture of the author"
+                                width={15}
+                              />
+                            </div>
 
-                      {statisticsTable.map((item, index) => {
-                        return (
-                          <tr className={`${styles.table_container} `}>
-                            <td className="pt-4 pb-1 ps-3 color_cloudBurst fw_400 fontFam_poppins">
-                              {item.slno}
-                            </td>
-                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
-                              {item.date}
-                            </td>
-                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
-                              {item.name}
-                            </td>
-                            <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
-                              {item.phone}
-                            </td>
-                            <td className="pt-4 pb-1 d-flex align-items-center ">
-                              <span
-                                className={`${styles.call_button} px-2 py-1 d-flex align-items-center`}
-                              >
-                                <Image
-                                  src={item.phoneicon}
-                                  alt="Picture of the author"
-                                  width={15}
-                                />
-                                <span className="ms-2 color_dark_blue">
-                                  {" "}
-                                  Call
-                                </span>
-                              </span>
-                              <span
-                                className={`${styles.call_button} px-2 py-1 color_light_green ms-4 d-flex align-items-center`}
-                              >
-                                <Image
-                                  src={item.whatsappicon}
-                                  alt="Picture of the author"
-                                  width={15}
-                                />
-                                <span className="ms-2"> Whatsapp</span>
-                              </span>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                            <span className="color_light_green fs_15 fw_500 fontFaam_poppins ms-1">
+                              Whatsapp
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div></div>)
-             }
+              ) : (
+                <div>
+                  <h1
+                    className={`fs_24 mt-4 fw_500 fontFam_poppins color_cloudBurst mb-3`}
+                  >
+                    Request Callbacks
+                  </h1>
+
+                  <div className={`position-relative`}>
+                    <div className={`${styles.scroll_table}`}>
+                      <table className={`${styles.table} w-100`}>
+                        <tbody>
+                          <tr
+                            className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute w-100`}
+                          >
+                            <th scope="col-1">#</th>
+                            <th scope="col-2">Date</th>
+                            <th scope="col-2">Name</th>
+                            <th scope="col-3">Phone Number</th>
+                            <th scope="col-4"></th>
+                          </tr>
+
+                          {statisticsTable.map((item, index) => {
+                            return (
+                              <tr className={`${styles.table_container} `}>
+                                <td className="pt-4 pb-1 ps-3 color_cloudBurst fw_400 fontFam_poppins">
+                                  {item.slno}
+                                </td>
+                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                  {item.date}
+                                </td>
+                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                  {item.name}
+                                </td>
+                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                  {item.phone}
+                                </td>
+                                <td className="pt-4 pb-1 d-flex align-items-center ">
+                                  <span
+                                    className={`${styles.call_button} px-2 py-1 d-flex align-items-center`}
+                                  >
+                                    <Image
+                                      src={item.phoneicon}
+                                      alt="Picture of the author"
+                                      width={15}
+                                    />
+                                    <span className="ms-2 color_dark_blue">
+                                      {" "}
+                                      Call
+                                    </span>
+                                  </span>
+                                  <span
+                                    className={`${styles.call_button} px-2 py-1 color_light_green ms-4 d-flex align-items-center`}
+                                  >
+                                    <Image
+                                      src={item.whatsappicon}
+                                      alt="Picture of the author"
+                                      width={15}
+                                    />
+                                    <span className="ms-2"> Whatsapp</span>
+                                  </span>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
