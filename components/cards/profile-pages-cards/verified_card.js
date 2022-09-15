@@ -79,7 +79,7 @@ const VerifiedProperties = ({ housetype }) => {
                 <div
                   className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
                 >
-                  <div className="d-flex align-items-center mb-2">
+                  <div className="d-flex align-items-center mb-3">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
                     </div>
@@ -132,7 +132,6 @@ const VerifiedProperties = ({ housetype }) => {
               By Amal Sabu
             </span>
             <div
-              // style={{ width: "" }}
               className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
             >
               <button
@@ -170,7 +169,7 @@ const VerifiedProperties = ({ housetype }) => {
             width={12}
             height={12}
           />
-          <span className="color_white fontFam_poppins fw_400 fs_12 ms-1 ">
+          <span className="color_white fontFam_poppins fw_400 fs_15 ms-1 ">
             Verified
           </span>
         </div>

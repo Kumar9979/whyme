@@ -21,14 +21,14 @@ const Notification = () => {
       <span className={`color_light_blue fw_500 fs_20 fontFam_poppins d-none d-md-block`}>
         Notification Settings
       </span>
-      <div className="mt-0 pt-0 color_grey fs_11 fontFam_poppins fw_500">
+      <div className="mt-0 pt-0 color_grey fs_14 fontFam_poppins fw_500">
         Please note that it might take up to a few days for your preferences to
         be updated in our system.
       </div>
       <div className="mt-4">
         <div className="mb-4">
           <div className="d-flex justify-content-between align-items-center">
-            <span className={`fs_15 fw_500 fontFam_poppins color_black`}>
+            <span className={`fs_17 fw_500 fontFam_poppins color_black`}>
               Zameen Square News
             </span>
             <Switch
@@ -45,14 +45,14 @@ const Notification = () => {
               checked={checked}
             />
           </div>
-          <p className={`fs_11 fw_500 fontFam_poppins color_grey w-75`}>
+          <p className={`fs_14 fw_500 fontFam_poppins color_grey w-75`}>
             Exciting property news, surveys and offers from Zameen Square.
           </p>
         </div>
         <div className="mb-4">
           <div className="d-flex justify-content-between align-items-center">
-            <span className={`fs_15 fw_500 fontFam_poppins color_black`}>
-              New Homes Offers{" "}
+            <span className={`fs_17 fw_500 fontFam_poppins color_black`}>
+              New Homes Offers
             </span>
             <Switch
               height={22}
@@ -67,14 +67,14 @@ const Notification = () => {
               checked={selected}
             />
           </div>
-          <p className={`fs_11 fw_500 fontFam_poppins color_grey w-75`}>
+          <p className={`fs_14 fw_500 fontFam_poppins color_grey w-75`}>
             Updates on new build properties in your search area from new build
             developers.{" "}
           </p>
         </div>
         <div className="mb-4">
           <div className="d-flex justify-content-between align-items-center">
-            <span className={`fs_15 fw_500 fontFam_poppins color_black`}>
+            <span className={`fs_17 fw_500 fontFam_poppins color_black`}>
               Partner Offers{" "}
             </span>
             <Switch
@@ -90,7 +90,7 @@ const Notification = () => {
               checked={clicked}
             />
           </div>
-          <p className={`fs_11 fw_500 fontFam_poppins color_grey w-75`}>
+          <p className={`fs_14 fw_500 fontFam_poppins color_grey w-75`}>
             Latest money-saving offers from Zameen Square's chosen property and
             financial partners.{" "}
           </p>

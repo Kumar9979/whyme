@@ -1,7 +1,7 @@
 .recent_activities {
-  width: 95%;
+  margin-top: 7rem;
+    width: 90%;
 }
-
 .recent_activities_card {
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 20px #0000001f;
@@ -120,8 +120,15 @@
     width: 100%;
   }
   .recent_activities {
+    width: 70%;
+    padding-right: 0rem;
+    margin-left: 6rem;
+  }
+}
+@media only screen and (min-width: 1350px) and (max-width: 1600px) {
+  .recent_activities{
     width: 85%;
-    padding-left: 4rem;
+    padding-left: 5rem;
   }
 }
 @media only screen and (max-width: 992px) {

@@ -5,7 +5,6 @@ import arrow_left from "../../../assets/images/arrow_left.svg";
 import Image from "next/image";
 import people from "../../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
 import { useRouter } from "next/router";
 
@@ -19,21 +18,6 @@ const MyProfile = () => {
       message:
         "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
     },
-    // validationSchema: Yup.object({
-    //   name: Yup.string()
-    //     .matches(nameregex, "Invalid First Name")
-    //     .required("Required"),
-    //   phone: Yup.string()
-    //     .matches(phoneregex, "Invalid Phone Number")
-    //     .required("Required"),
-    //   email: Yup.string().email().required("Required"),
-    // }),
-    // onSubmit: (values, { resetForm }) => {
-    //   console.log(values);
-    //   localStorage.setItem("User", JSON.stringify(values));
-    //   alert(values);
-    //   resetForm();
-    // },
   });
   const router = useRouter();
 
@@ -65,14 +49,6 @@ const MyProfile = () => {
               <div className="row ">
                 <div className="col-6 col-lg-3 d-flex justify-content-lg-end justify-content-start ">
                   <div className="d-flex flex-column">
-                    {/* <h1
-                      className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
-                    >
-                      Profile Type{" "}
-                      <span className={`${styles.type_buyer} fw_600 ps-3`}>
-                        Agent
-                      </span>
-                    </h1> */}
                     <h3
                       className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
                     >
@@ -83,7 +59,6 @@ const MyProfile = () => {
                         src={people}
                         className={`${styles.profile_photo}`}
                         alt="Picture of the author"
-                        // width={60}
                         height={210}
                       />
                     </div>
@@ -93,15 +68,6 @@ const MyProfile = () => {
                 <div className="col-12 col-lg-9 d-flex justify-content-start justify-content-lg-start">
                   <div className={`${styles.form_width}`}>
                     <div className="ps-lg-2 ps-0">
-                      {/* <h1
-                        className={`${styles.profile_type} fs_15 d-none d-lg-block fw_500 mt-4 mt-lg-0 d-flex justify-content-center fontFam_poppins`}
-                      >
-                        Profile Type{" "}
-                        <span className={`${styles.type_buyer} fw_600 ps-3`}>
-                          Buyer
-                        </span>
-                      </h1> */}
-
                       <form>
                         <div className="">
                           <div className="row">
@@ -163,7 +129,7 @@ const MyProfile = () => {
                             </div>
 
                             <div className="col-12 col-lg-6 col-md-6">
-                              <div className="form-group mt-3">
+                              <div className="form-group ">
                                 <label
                                   className={`${styles.contact_us_label}`}
                                   for="exampleInputPassword1"
@@ -208,9 +174,8 @@ const MyProfile = () => {
                               Deacription
                             </label>
                             <textarea
-                            type ="text"
+                              type="text"
                               readOnly
-                        
                               className={`${styles.description_box} w-100 mt-1 ps-2  fs_13 fw_500 fontFam_poppins`}
                               placeholder="Enter desctiption"
                               id="exampleInputEmail1"
@@ -226,15 +191,11 @@ const MyProfile = () => {
                                   "/profile/profile-pages/agent-edit-profile"
                                 );
                               }}
-                              className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-5 py-2 fs_15 fw_400`}
                             >
                               Edit Profile
                             </button>
-                            {/* <button
-                            className={`${styles.undo_button_width}  px-3 py-1 ms-4 fs_15 fw_500`}
-                          >
-                            Undo Changes
-                          </button> */}
+                         
                           </div>
                         </div>
                       </form>

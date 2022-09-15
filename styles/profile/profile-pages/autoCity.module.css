@@ -22,9 +22,9 @@
   color: #dddbdb;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 15px;
   position: absolute;
-  top: 10%;
+  top: 25%;
 }
 .save_btn {
   background-color: #1d72db;

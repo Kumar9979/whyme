@@ -44,10 +44,12 @@ const SettingFaq = () => {
     <div>
       <div className={`${styles.faqsContainer}`}>
         <div className="">
-          <h1 className={`color_light_blue fw_600 fs_20 fontFam_poppins d-none d-md-block`}>
+          <h1
+            className={`color_light_blue fw_600 fs_20 fontFam_poppins d-none d-md-block`}
+          >
             Frequently asked question
           </h1>
-          <p className="mt-0 pt-0 color_grey fs_11 fontFam_poppins fw_500 w-75">
+          <p className="mt-0 pt-0 color_grey fs_14 fontFam_poppins fw_500 w-75">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
           </p>
@@ -56,7 +58,11 @@ const SettingFaq = () => {
               <div className={`${styles.question_container} p-2 mb-2 `}>
                 <div className={` d-flex justify-content-between `}>
                   <div
-                    className={`mt-0 pt-0  fs_14  fontFam_poppins fw_600 ${clicked==index? styles.answer_opened : styles.answer_closed } `}
+                    className={`mt-0 pt-0  fs_16  fontFam_poppins fw_600 ${
+                      clicked == index
+                        ? styles.answer_opened
+                        : styles.answer_closed
+                    } `}
                   >
                     {item.question}
                   </div>
@@ -82,177 +88,16 @@ const SettingFaq = () => {
                     </div>
                   </div>
                 </div>
-                {clicked === index ? <div className="mt-0 pt-0 ms-2 color_cloudBurst fs_11 fontFam_poppins fw_600 w-75">{item.answeer}</div> : null}
-
+                {clicked === index ? (
+                  <div className="mt-0 pt-0 ms-2 color_cloudBurst fs_14 fontFam_poppins fw_600 w-75">
+                    {item.answeer}
+                  </div>
+                ) : null}
               </div>
             );
           })}
 
-          {/*          
-          <div className={`${styles.question_container} p-2 mb-2 `}>
-            <div className={` d-flex justify-content-between `}>
-              <span
-                className={`mt-0 pt-0 color_cloudBurst fs_14  fontFam_poppins fw_600 `}
-              >
-                Frequently asked question 1{" "}
-              </span>
-
-              {show == true ? (
-                <div onClick={() => setShow(false)}>
-                  {" "}
-                  <Image src={upward} alt="Picture of the author" width={20} />
-                </div>
-              ) : (
-                <div
-                  onClick={() => {
-                    clickHandler("question2");
-                    setShow(true);
-                  }}
-                >
-                  <Image
-                    src={downward}
-                    alt="Picture of the author"
-                    width={20}
-                  />
-                </div>
-              )}
-            </div>
-            {show ? (
-              <div>
-                {" "}
-                {rendered == "question2" ? (
-                  <p className="mt-0 pt-0 ms-2 color_cloudBurst fs_11 fontFam_poppins fw_600 w-75">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diamnonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam.{" "}
-                  </p>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-          <div className={`${styles.question_container} p-2 mb-2 `}>
-            <div className={` d-flex justify-content-between `}>
-              <span
-                className={`mt-0 pt-0 color_cloudBurst fs_14  fontFam_poppins fw_600 `}
-              >
-                Frequently asked question 1{" "}
-              </span>
-
-              {show == true ? (
-                <div onClick={() => setShow(false)}>
-                  {" "}
-                  <Image src={upward} alt="Picture of the author" width={20} />
-                </div>
-              ) : (
-                <div
-                  onClick={() => {
-                    clickHandler("question3");
-                    setShow(true);
-                  }}
-                >
-                  <Image
-                    src={downward}
-                    alt="Picture of the author"
-                    width={20}
-                  />
-                </div>
-              )}
-            </div>
-            {show ? (
-              <div>
-                {" "}
-                {rendered == "question3" ? (
-                  <p className="mt-0 pt-0 ms-2 color_cloudBurst fs_11 fontFam_poppins fw_600 w-75">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diamnonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam.{" "}
-                  </p>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-          <div className={`${styles.question_container} p-2 mb-2 `}>
-            <div className={` d-flex justify-content-between `}>
-              <span
-                className={`mt-0 pt-0 color_cloudBurst fs_14  fontFam_poppins fw_600 `}
-              >
-                Frequently asked question 1{" "}
-              </span>
-
-              {show == true ? (
-                <div onClick={() => setShow(false)}>
-                  {" "}
-                  <Image src={upward} alt="Picture of the author" width={20} />
-                </div>
-              ) : (
-                <div
-                  onClick={() => {
-                    clickHandler("question4");
-                    setShow(true);
-                  }}
-                >
-                  <Image
-                    src={downward}
-                    alt="Picture of the author"
-                    width={20}
-                  />
-                </div>
-              )}
-            </div>
-            {show ? (
-              <div>
-                {" "}
-                {rendered == "question4" ? (
-                  <p className="mt-0 pt-0 ms-2 color_cloudBurst fs_11 fontFam_poppins fw_600 w-75">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diamnonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam.{" "}
-                  </p>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-          <div className={`${styles.question_container} p-2 mb-2 `}>
-            <div className={` d-flex justify-content-between `}>
-              <span
-                className={`mt-0 pt-0 color_cloudBurst fs_14  fontFam_poppins fw_600 `}
-              >
-                Frequently asked question 1{" "}
-              </span>
-
-              {show == true ? (
-                <div onClick={() => setShow(false)}>
-                  {" "}
-                  <Image src={upward} alt="Picture of the author" width={20} />
-                </div>
-              ) : (
-                <div
-                  onClick={() => {
-                    clickHandler("question5");
-                    setShow(true);
-                  }}
-                >
-                  <Image
-                    src={downward}
-                    alt="Picture of the author"
-                    width={20}
-                  />
-                </div>
-              )}
-            </div>
-            {show ? (
-              <div>
-                {" "}
-                {rendered == "question5" ? (
-                  <p className="mt-0 pt-0 ms-2 color_cloudBurst fs_11 fontFam_poppins fw_600 w-75">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diamnonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam.{" "}
-                  </p>
-                ) : null}
-              </div>
-            ) : null}
-          </div> */}
+       
 
           <h1
             className={`color_cloudBurst fs_18 fontFam_poppins fw_600 text-center mt-4`}
@@ -261,7 +106,7 @@ const SettingFaq = () => {
           </h1>
           <div className="d-flex justify-content-center">
             <p
-              className={`color_grey fs_11 fontFam_poppins fw_600 text-center w-50`}
+              className={`color_grey fs_14 fontFam_poppins fw_600 text-center w-50`}
             >
               If you cannot find answer to your question in our FAQ, you can
               always contact us. We will answer to you shortly!

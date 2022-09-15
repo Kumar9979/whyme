@@ -12,7 +12,7 @@ import SentProperties from "../../../components/profile/my-properties/posted-pro
 const MyProperties = () => {
   return (
     <ProfileLayout>
-      <div className={`${styles.recent_activities} mt-5 pt-4`}>
+      <div className={`${styles.recent_activities} mt-5 pt-5`}>
         <div className={`${styles.recent_activities_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
@@ -25,8 +25,7 @@ const MyProperties = () => {
                 height={15}
               />
             </button>
-            <div className="d-flex  justify-content-center w-100">
-              {" "}
+            <div className="d-flex  justify-content-center justify-content-lg-start w-100">
               <span
                 className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
               >

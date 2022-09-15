@@ -120,13 +120,13 @@ const PlotProperties = ({ data,housetype }) => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 mt-4 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-2 ${styles.amenties_width} `}>
             {nm.map((item, index) => {
               return (
                 <div
                   className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
                 >
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center mb-2">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
                     </div>
@@ -148,7 +148,7 @@ const PlotProperties = ({ data,housetype }) => {
               );
             })}
           </div>
-          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-4`}>
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-2`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
@@ -161,7 +161,7 @@ const PlotProperties = ({ data,housetype }) => {
 
         <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_22 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >
             ₹ 30 Lac
           </div>
@@ -182,7 +182,7 @@ const PlotProperties = ({ data,housetype }) => {
         <button
           className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
-          <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+          <span className={`fs_13 fw_400 ps-3 ms-3 `}>Contact</span>
           <div className={`position-absolute ${styles.round_image}`}>
             <Image
               className={`${styles.owner_image}`}

@@ -12,22 +12,17 @@ import SearchIcon from "../../../assets/icons/profile-icons/search";
 import See from "../../../assets/icons/profile-icons/see";
 import UseResponisve from "../../../components/useResponsive";
 
-// import queryString from "query-string"
 const RecentlyViewed = () => {
-  // const {width,mobile}=UseResponisve
-  // // const value = queryString.parse(window.location.search)
-  // // console.log(value.variable)
-  const [activityType, SetActivityType] = useState("search");
-
-  const [mobile, setMobile] = useState(false);
+const [activityType, SetActivityType] = useState("search");
+const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 1200) {
+    if (window.innerWidth < 1400) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1200) {
+      if (window.innerWidth < 1400) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -82,13 +77,13 @@ const RecentlyViewed = () => {
                     >
                       <div className={` d-flex align-items-center p-0`}>
                         {activityType == "search" ? (
-                          <SearchIcon fill="#FFFFFF" width={30} />
+                          <SearchIcon fill="#FFFFFF" width={20} />
                         ) : (
-                          <SearchIcon fill="#323D5A" width={30} />
+                          <SearchIcon fill="#323D5A" width={20} />
                         )}
                       </div>
                       <a>
-                        <span className="ms-1 ms-lg-2 fs_12 fw_500 fontFam_poppins">
+                        <span className="ms-1 ms-lg-2 fs_15 fs_sm_10 fw_500 fontFam_poppins">
                           {" "}
                           Search Activities
                         </span>
@@ -104,13 +99,13 @@ const RecentlyViewed = () => {
                     >
                       <div className={` d-flex align-items-center p-0`}>
                         {activityType == "search" ? (
-                          <See fill="#323D5A" width={30} />
+                          <See fill="#323D5A" width={20} />
                         ) : (
-                          <See fill="#FFFFFF" width={30} />
+                          <See fill="#FFFFFF" width={20} />
                         )}
                       </div>
                       <a>
-                        <span className="ms-1 ms-lg-2 fs_12 fw_500 fontFam_poppins">
+                        <span className="ms-1 ms-lg-2 fs_15 fs_sm_10 fw_500 fontFam_poppins">
                           Viewed Properties
                         </span>
                       </a>
@@ -134,14 +129,13 @@ const RecentlyViewed = () => {
                     >
                       <div className={` d-flex align-items-center p-0`}>
                         {activityType == "search" ? (
-                          <SearchIcon fill="#1D72DB" />
+                          <SearchIcon fill="#1D72DB" width={25} />
                         ) : (
-                          <SearchIcon fill="#323D5A" />
+                          <SearchIcon fill="#323D5A" width={25} />
                         )}
                       </div>
                       <a>
-                        <span className="ms-2 fs_14 fw_500 fontFam_poppins">
-                          {" "}
+                        <span className="ms-2 fs_16 fw_500 fontFam_poppins">
                           Search Activities
                         </span>
                       </a>
@@ -156,13 +150,13 @@ const RecentlyViewed = () => {
                     >
                       <div className={` d-flex align-items-center p-0`}>
                         {activityType == "search" ? (
-                          <See fill="#323D5A" />
+                          <See fill="#323D5A" width={25} />
                         ) : (
-                          <See fill="#1D72DB " />
+                          <See fill="#1D72DB " width={25} />
                         )}
                       </div>
                       <a>
-                        <span className="ms-2 fs_14 fw_500 fontFam_poppins">
+                        <span className="ms-2 fs_16 fw_500 fontFam_poppins">
                           Viewed Properties
                         </span>
                       </a>
@@ -171,7 +165,7 @@ const RecentlyViewed = () => {
                 </div>
               </div>
             )}
-           
+
             <div className="col-xl-9 col-12">
               {activityType === "search" ? <RecentSearch /> : <RecentView />}
             </div>
@@ -183,5 +177,3 @@ const RecentlyViewed = () => {
 };
 
 export default RecentlyViewed;
-
-

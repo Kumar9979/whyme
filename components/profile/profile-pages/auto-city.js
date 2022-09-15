@@ -63,7 +63,7 @@ const AutoCityLoad = ({
             }}
             defaultValue="mysore"
             disabled={!ready}
-            className={`${styles.comboboxInput} w-75 ps-2  fs_15 fw_600 fontFam_poppins`}
+            className={`${styles.comboboxInput} w-75 ps-2 py-2  fs_15 fw_600 fontFam_poppins`}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter your city"
