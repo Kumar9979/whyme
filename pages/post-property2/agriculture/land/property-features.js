@@ -34,7 +34,7 @@ const IndustrialShedPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/agriculture/land/property-price-rent");
+      router.push("/post-property2/agriculture/land/property-price-rent");
     },
   });
 

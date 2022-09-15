@@ -67,7 +67,7 @@ const CommercialPlotPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/residential/villa-bungalow/property-price-rent"
+        "/post-property2/residential/villa-bungalow/property-price-rent"
       );
     },
   });
@@ -147,7 +147,7 @@ const CommercialPlotPropertyFeatures = () => {
                   itemName={"NoofOpenSides"}
                   inputValue={formik.values.NoofOpenSides}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-90"}
+                  inputClassName={"w-75"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.NoofOpenSides}
@@ -181,7 +181,7 @@ const CommercialPlotPropertyFeatures = () => {
                   itemName={"Ageofconstruction"}
                   inputValue={formik.values.Ageofconstruction}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-100"}
+                  inputClassName={"w-75"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.Ageofconstruction}

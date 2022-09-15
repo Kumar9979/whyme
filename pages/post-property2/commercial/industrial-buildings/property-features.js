@@ -59,7 +59,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/commercial/industrial-buildings/property-price-rent"
+        "/post-property2/commercial/industrial-buildings/property-price-rent"
       );
     },
   });

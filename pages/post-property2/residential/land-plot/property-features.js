@@ -57,7 +57,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/residential/land-plot/property-price-sell"
+        "/post-property2/residential/land-plot/property-price-sell"
       );
     },
   });
@@ -82,14 +82,14 @@ const propertyFeatures = () => {
             <div className={`mt-5`}>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5 `}>
                 <div
-                  className={`${styles.propertyFeature_width_25_to_100} mb-1`}
+                  className={`${styles.propertyFeature_width_30_to_100} mb-1`}
                 >
                   <InputFieldGenerator
                     title={"Floors allowed for construction"}
                     itemName={"floorsAllowed"}
                     inputValue={formik.values.floorsAllowed}
                     onChangeFn={formik.handleChange}
-                    inputClassName={"w-90"}
+                    inputClassName={"w-100"}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.floorsAllowed}
@@ -97,14 +97,14 @@ const propertyFeatures = () => {
                   />
                 </div>
                 <div
-                  className={`${styles.propertyFeature_width_25_to_100} mb-1 ps-lg-5 ms-lg-5`}
+                  className={`${styles.propertyFeature_width_30_to_100} mb-1 ps-lg-5 ms-lg-5`}
                 >
                   <InputFieldGenerator
                     title={"No. of Open Sides"}
                     itemName={"NoofOpenSides"}
                     inputValue={formik.values.NoofOpenSides}
                     onChangeFn={formik.handleChange}
-                    inputClassName={"w-60"}
+                    inputClassName={"w-100"}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.NoofOpenSides}

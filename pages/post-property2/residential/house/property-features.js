@@ -67,7 +67,7 @@ const CommercialPlotPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/residential/house/property-price-rent"
+        "/post-property2/residential/house/property-price-rent"
       );
     },
   });
@@ -89,7 +89,7 @@ const CommercialPlotPropertyFeatures = () => {
             <div className={`d-block d-lg-flex  `}>
               <div className={`mb-1`}>
                 <InputFieldGenerator
-                  title={"Bedroom"}
+                  title={"Bedrooms"}
                   itemName={"Bedroom"}
                   inputValue={formik.values.Bedroom}
                   onChangeFn={formik.handleChange}
@@ -102,7 +102,7 @@ const CommercialPlotPropertyFeatures = () => {
               </div>
               <div className={`mb-1`}>
                 <InputFieldGenerator
-                  title={"Bathroom"}
+                  title={"Bathrooms"}
                   itemName={"Bathroom"}
                   inputValue={formik.values.Bathroom}
                   onChangeFn={formik.handleChange}
@@ -140,14 +140,14 @@ const CommercialPlotPropertyFeatures = () => {
                 />
               </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-4 mb-2 mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-3 mb-2 mt-2`}>
               <div className={`mb-1`}>
                 <InputFieldGenerator
                   title={"No. of Open Sides"}
                   itemName={"NoofOpenSides"}
                   inputValue={formik.values.NoofOpenSides}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-100"}
+                  inputClassName={"w-75"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.NoofOpenSides}
@@ -162,7 +162,7 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Facing
                 </label>
-                <div className={`w-100`}>
+                <div className={`${styles.width_100}`}>
                   <SelectGenerator
                     option={facingOptions}
                     itemName={"facing"}
@@ -175,13 +175,13 @@ const CommercialPlotPropertyFeatures = () => {
                   />
                 </div>
               </div>
-              <div className={`mb-1`}>
+              <div className={`mb-1 ms-2`}>
                 <InputFieldGenerator
                   title={"Age of construction"}
                   itemName={"Ageofconstruction"}
                   inputValue={formik.values.Ageofconstruction}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-100"}
+                  inputClassName={"w-75"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.Ageofconstruction}
@@ -220,7 +220,7 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Status
                 </label>
-                <div className={`w-120`}>
+                <div className={`${styles.width_100}`}>
                   <SelectGenerator
                     option={statusOptions}
                     itemName={"status"}

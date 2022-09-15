@@ -64,7 +64,7 @@ const CommercialPlotPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property/residential/flat/property-price-rent"
+        "/post-property2/residential/flat/property-price-rent"
       );
     },
   });
@@ -91,6 +91,7 @@ const CommercialPlotPropertyFeatures = () => {
                   inputValue={formik.values.Totalfloors}
                   onChangeFn={formik.handleChange}
                   inputClassName={"w-50"}
+                 
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.Totalfloors}
@@ -159,12 +160,13 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Facing
                 </label>
-                <div className={`w-100`}>
+                <div className={`${styles.width_120}`}>
                   <SelectGenerator
                     option={facingOptions}
                     itemName={"facing"}
                     formikValue={formik.values.facing}
                     formik={formik}
+                    className={``}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.facing}
@@ -173,7 +175,7 @@ const CommercialPlotPropertyFeatures = () => {
                 </div>
               </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-4  mt-2`}>
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
@@ -204,13 +206,13 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Status
                 </label>
-                <div className={`w-120 `}>
+                <div className={`${styles.width_100} `}>
                   <SelectGenerator
                     option={statusOptions}
                     itemName={"status"}
                     formikValue={formik.values.status}
                     formik={formik}
-                    className={`w-120`}
+                    className={``}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.status}
