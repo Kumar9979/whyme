@@ -32,8 +32,8 @@ const Notification = () => {
               Zameen Square News
             </span>
             <Switch
-              height={20}
-              width={43}
+              height={22}
+              width={45}
               borderRadius = {30}
               uncheckedIcon={false}
               checkedIcon={false}
@@ -55,8 +55,8 @@ const Notification = () => {
               New Homes Offers{" "}
             </span>
             <Switch
-              height={20}
-              width={43}
+              height={22}
+              width={45}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"
@@ -78,8 +78,8 @@ const Notification = () => {
               Partner Offers{" "}
             </span>
             <Switch
-              height={20}
-              width={43}
+              height={22}
+              width={45}
               uncheckedIcon={false}
               checkedIcon={false}
               offColor="#DBE9F2"

@@ -120,7 +120,7 @@ const PlotProperties = ({ data,housetype }) => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-4 ${styles.amenties_width} `}>
             {nm.map((item, index) => {
               return (
                 <div
@@ -148,7 +148,7 @@ const PlotProperties = ({ data,housetype }) => {
               );
             })}
           </div>
-          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-4`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}

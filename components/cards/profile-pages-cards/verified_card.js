@@ -2,10 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
-import people from "../../../assets/images/imagereview/people.png";
-import seeall from "../../../assets/images/seeall.svg";
 import styles from "../../../styles/cards/profile-pages-card/post-property.module.css";
-import proptertyimagegrid1 from "../../../assets/images/proptertyimagegrid1.png";
 import facing from "../../../assets/images/about-property-images/facing.svg";
 import floor from "../../../assets/images/about-property-images/floor.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
@@ -16,7 +13,10 @@ import homeimage from "../../../assets/images/home.png";
 import tick from "../../../assets/icons/profile-icons/tick.svg";
 import edit_icon from "../../../assets/icons/profile-icons/editicon.svg";
 import delete_icon from "../../../assets/icons/profile-icons/delete.svg";
-const VerifiedProperties = ({housetype}) => {
+import { useRouter } from "next/router";
+
+const VerifiedProperties = ({ housetype }) => {
+  const router = useRouter();
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -34,8 +34,6 @@ const VerifiedProperties = ({housetype}) => {
       setSaveIcon(saved);
     }
   }
-
-
 
   return (
     <div className="">
@@ -75,10 +73,12 @@ const VerifiedProperties = ({housetype}) => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-3 ${styles.amenties_width} mt-4`}>
             {aboutproperties.map((item, index) => {
               return (
-                <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
+                <div
+                  className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
+                >
                   <div className="d-flex align-items-center mb-2">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
@@ -101,12 +101,19 @@ const VerifiedProperties = ({housetype}) => {
               );
             })}
           </div>
-          <div className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}>
+          <div
+            className={`d-flex justify-content-between mt-4 ${styles.property_statistics_width}`}
+          >
             {" "}
             <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
               ₹ 30 Lac
             </div>
-            <a className={`${styles.view_properties_statistics} pt-1`}>
+            <a
+              onClick={() => {
+                router.push("/profile/sidebar-pages/property-statistics");
+              }}
+              className={`${styles.view_properties_statistics} pt-1`}
+            >
               View Property Statistics
             </a>
           </div>

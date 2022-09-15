@@ -10,7 +10,7 @@ import SavedProperties from "../../../components/profile/saved-properties/proper
 const RecentlyViewed = () => {
   return (
     <ProfileLayout>
-      <div className={`${styles.recent_activities} mt-5 pt-4`}>
+      <div className={`${styles.recent_activities} mt-5 pt-5`}>
         <div className={`${styles.recent_activities_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
@@ -31,7 +31,7 @@ const RecentlyViewed = () => {
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div className={`${styles.cards_width}`}>
-            <SavedProperties/>
+            <SavedProperties />
           </div>
         </div>
       </div>

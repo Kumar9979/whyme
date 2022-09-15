@@ -42,11 +42,13 @@ const PropertyStatistics = () => {
         <div
           className={`${styles.recent_activities_card} p-lg-4 mt-3 mt-lg-3 p-0   position-sm-fixed`}
         >
-          <div className="d-flex align-items-center px-lg-0 px-4">
+          <div className="d-flex px-lg-0 px-4">
             <button
-              className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+              className={`${styles.arrow_left_button} d-flex align-items-center ustify-content-center p-0`}
             >
-              <div className={`${styles.imagesize} d-flex align-items-center`}>
+              <div
+                className={`${styles.imagesize} d-flex align-items-center justify-content-center`}
+              >
                 <Image
                   src={arrow_left}
                   alt="Picture of the author"
@@ -55,7 +57,7 @@ const PropertyStatistics = () => {
               </div>
             </button>
             <span
-              className={`${styles.edit_profile_heading} fs_20 fs_md_14 fw_500 ms-2 w-100 justify-content-center`}
+              className={`${styles.edit_profile_heading} fs_20 fs_md_14 fw_500 ms-2 w-100 `}
             >
               Property Statistics - 2BHK flat in Vijayanagar, Mysuru
               <span
@@ -147,59 +149,140 @@ const PropertyStatistics = () => {
                   >
                     Yesterday
                   </h1>
-                  <div
-                    className={`${styles.contacted_container} mx-4 py-1 px-2 mt-4`}
-                  >
-                    <div className="row">
-                      <div className="col-5">
-                        <h1 className="fs_13 fontFam_poppins color_grey1 fw_500">
-                          Contact Info
-                        </h1>
-                        <h2 className="fs_13 fontFam_poppins color_black fw_500">
-                          Harish
-                        </h2>
-                        <h2 className="fs_13 fontFam_poppins color_black fw_500">
-                          +91 9876543210
-                        </h2>
-                      </div>
-                      <div className="col-7">
-                        <div className="d-flex align-items-center mt-5 pb-2  ">
-                          <button
-                            className={`d-flex align-items-center ${styles.calling_button}`}
-                          >
-                            <div className={`${styles.calling_icon_size}`}>
-                              <Image
-                                src={calling}
-                                alt="Picture of the author"
-                                width={15}
-                                height={15}
-                              />
-                            </div>
+                  {contact.map((item, index) => {
+                    return (
+                      <div
+                        className={`${styles.contacted_container} mx-4 py-2 px-2 mt-4`}
+                      >
+                        <div className="row">
+                          <div className="col-5">
+                            <h1 className="fs_12 fontFam_poppins color_grey1 fw_500 text-nowrap">
+                              Contact Info
+                            </h1>
+                            <h2 className="fs_12 fontFam_poppins color_black fw_500">
+                              {item.name}
+                            </h2>
+                            <h2 className="fs_12 fontFam_poppins color_black fw_500 text-nowrap">
+                              {item.phone}
+                            </h2>
+                          </div>
+                          <div className="col-7">
+                            <div
+                              className={`d-flex align-items-center justify-content-end  pb-2 ${styles.button_position}`}
+                            >
+                              <button className={`${styles.calling_button}`}>
+                                <div className="d-flex align-items-center">
+                                  <div
+                                    className={`${styles.calling_icon_size}`}
+                                  >
+                                    <Image
+                                      src={calling}
+                                      alt="Picture of the author"
+                                      width={15}
+                                      height={15}
+                                    />
+                                  </div>
+                                  <span className="color_dark_blue fs_12 fw_500 fontFaam_poppins ms-1">
+                                    Call
+                                  </span>
+                                </div>
+                              </button>
+                              <button
+                                className={`${styles.calling_button} ms-2`}
+                              >
+                                <div className="d-flex align-items-center">
+                                  <div
+                                    className={`${styles.whatsapp_icon_size} d-flex align-items-center`}
+                                  >
+                                    {" "}
+                                    <Image
+                                      src={whatsapp}
+                                      alt="Picture of the author"
+                                      width={15}
+                                    />
+                                  </div>
 
-                            <span className="color_dark_blue fs_15 fw_500 fontFaam_poppins ms-1">
-                              Call
-                            </span>
-                          </button>
-                          <button
-                            className={`d-flex align-items-center ${styles.calling_button} ms-2`}
-                          >
-                            <div className={`${styles.whatsapp_icon_size}`}>
-                              {" "}
-                              <Image
-                                src={whatsapp}
-                                alt="Picture of the author"
-                                width={15}
-                              />
+                                  <span className="color_light_green fs_12  fw_500 fontFaam_poppins ms-1">
+                                    Whatsapp
+                                  </span>
+                                </div>
+                              </button>
                             </div>
-
-                            <span className="color_light_green fs_15 fw_500 fontFaam_poppins ms-1">
-                              Whatsapp
-                            </span>
-                          </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    );
+                  })}
+
+                  <h1
+                    className={`fs_14 py-2 w-100 fontFam_poppins mt-3 ps-4 color_light_green fw_600  ${styles.dates}`}
+                  >
+                    26 Aug 2022
+                  </h1>
+                  {contact.map((item, index) => {
+                    return (
+                      <div
+                        className={`${styles.contacted_container} mx-4 py-2 px-2 mt-4`}
+                      >
+                        <div className="row">
+                          <div className="col-5">
+                            <h1 className="fs_12 fontFam_poppins color_grey1 fw_500 text-nowrap">
+                              Contact Info
+                            </h1>
+                            <h2 className="fs_12 fontFam_poppins color_black fw_500">
+                              {item.name}
+                            </h2>
+                            <h2 className="fs_12 fontFam_poppins color_black fw_500 text-nowrap">
+                              {item.phone}
+                            </h2>
+                          </div>
+                          <div className="col-7">
+                            <div
+                              className={`d-flex align-items-center justify-content-end  pb-2 ${styles.button_position}`}
+                            >
+                              <button className={`${styles.calling_button}`}>
+                                <div className="d-flex align-items-center">
+                                  <div
+                                    className={`${styles.calling_icon_size}`}
+                                  >
+                                    <Image
+                                      src={calling}
+                                      alt="Picture of the author"
+                                      width={15}
+                                      height={15}
+                                    />
+                                  </div>
+                                  <span className="color_dark_blue fs_12 fw_500 fontFaam_poppins ms-1">
+                                    Call
+                                  </span>
+                                </div>
+                              </button>
+                              <button
+                                className={`${styles.calling_button} ms-2`}
+                              >
+                                <div className="d-flex align-items-center">
+                                  <div
+                                    className={`${styles.whatsapp_icon_size} d-flex align-items-center`}
+                                  >
+                                    {" "}
+                                    <Image
+                                      src={whatsapp}
+                                      alt="Picture of the author"
+                                      width={15}
+                                    />
+                                  </div>
+
+                                  <span className="color_light_green fs_12  fw_500 fontFaam_poppins ms-1">
+                                    Whatsapp
+                                  </span>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <div>
@@ -214,9 +297,11 @@ const PropertyStatistics = () => {
                       <table className={`${styles.table} w-100`}>
                         <tbody>
                           <tr
-                            className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins position-absolute w-100`}
+                            className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins w-100`}
                           >
-                            <th scope="col-1">#</th>
+                            <th scope="col-1" className="ps-3">
+                              #
+                            </th>
                             <th scope="col-2">Date</th>
                             <th scope="col-2">Name</th>
                             <th scope="col-3">Phone Number</th>
@@ -226,19 +311,19 @@ const PropertyStatistics = () => {
                           {statisticsTable.map((item, index) => {
                             return (
                               <tr className={`${styles.table_container} `}>
-                                <td className="pt-4 pb-1 ps-3 color_cloudBurst fw_400 fontFam_poppins">
+                                <td className="pt-2 fs_12 pb-1 ps-3 color_cloudBurst fw_400 fontFam_poppins">
                                   {item.slno}
                                 </td>
-                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                <td className="pt-2 fs_12 pb-1 color_cloudBurst fw_400 fontFam_poppins">
                                   {item.date}
                                 </td>
-                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                <td className="pt-2 fs_12 pb-1 color_cloudBurst fw_400 fontFam_poppins">
                                   {item.name}
                                 </td>
-                                <td className="pt-4 pb-1 color_cloudBurst fw_400 fontFam_poppins">
+                                <td className="pt-2 fs_12 pb-1 color_cloudBurst fw_400 fontFam_poppins">
                                   {item.phone}
                                 </td>
-                                <td className="pt-4 pb-1 d-flex align-items-center ">
+                                <td className="pt-2  pb-1 d-flex align-items-center ">
                                   <span
                                     className={`${styles.call_button} px-2 py-1 d-flex align-items-center`}
                                   >
@@ -550,5 +635,20 @@ const statisticsTable = [
     whatsappicon: whatsapp,
     call: "call",
     whatsapp: "whatsapp",
+  },
+];
+
+const contact = [
+  {
+    name: "Amal",
+    phone: "+91 6360749419",
+  },
+  {
+    name: "Amal",
+    phone: "+91 6360749419",
+  },
+  {
+    name: "Amal",
+    phone: "+91 6360749419",
   },
 ];

@@ -47,9 +47,7 @@ const ProfileLayout = ({ children }) => {
                   <div>
                     <div
                       onClick={() => {
-                        router.push(
-                          "/profile/profile-pages/my-profile"
-                        );
+                        router.push("/profile/profile-pages/my-profile");
                       }}
                       className={`${styles.card} card mt-4 `}
                     >
@@ -127,7 +125,8 @@ const ProfileLayout = ({ children }) => {
                       </li>
                       <li
                         className={`${
-                          router.pathname === "/profile/sidebar-pages/my-properties"
+                          router.pathname ===
+                          "/profile/sidebar-pages/my-properties"
                             ? styles.sidebar_listActive
                             : styles.sidebar_list
                         }  mb-3 d-flex align-items-center`}
@@ -182,8 +181,6 @@ const ProfileLayout = ({ children }) => {
             )}
           </div>
 
-
-          
           <div className="col-lg-10 d-flex justify-content-center">
             {children}
           </div>

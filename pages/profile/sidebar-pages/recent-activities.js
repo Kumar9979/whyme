@@ -42,7 +42,7 @@ const RecentlyViewed = () => {
 
   return (
     <ProfileLayout>
-      <div className={`${styles.recent_activities} mt-5 pt-4`}>
+      <div className={`${styles.recent_activities} mt-5 pt-5`}>
         <div
           className={`${styles.recent_activities_card} p-lg-4 mt-3 mt-lg-3 p-0   position-sm-fixed`}
         >

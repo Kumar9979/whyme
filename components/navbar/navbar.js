@@ -42,12 +42,10 @@ const Navbar = () => {
         {
           key: "1",
           label: (
-            <div 
-            onClick={() => {
-              router.push(
-                "/profile/profile-pages/my-profile"
-              );
-            }}
+            <div
+              onClick={() => {
+                router.push("/profile/profile-pages/my-profile");
+              }}
             >
               <div
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
@@ -68,11 +66,11 @@ const Navbar = () => {
         {
           key: "2",
           label: (
-            <div  onClick={() => {
-              router.push(
-                "/profile/sidebar-pages/recent-activities"
-              );
-            }}>
+            <div
+              onClick={() => {
+                router.push("/profile/sidebar-pages/recent-activities");
+              }}
+            >
               <a
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
@@ -94,17 +92,15 @@ const Navbar = () => {
         {
           key: "3",
           label: (
-            <div onClick={() => {
-              router.push(
-                "/profile/sidebar-pages/saved-properties"
-              );
-            }}>
-              <a
+            <div
               onClick={() => {
-                router.push(
-                  "/profile/sidebar-pages/saved-properties"
-                );
+                router.push("/profile/sidebar-pages/saved-properties");
               }}
+            >
+              <a
+                onClick={() => {
+                  router.push("/profile/sidebar-pages/saved-properties");
+                }}
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -125,12 +121,15 @@ const Navbar = () => {
         {
           key: "4",
           label: (
-            <div onClick={() => {
-              router.push(
-                "/profile/sidebar-pages/recent-activities"
-              );
-            }}>
+            <div
+              onClick={() => {
+                router.push("/profile/sidebar-pages/my-properties");
+              }}
+            >
               <a
+                onClick={() => {
+                  router.push("/profile/sidebar-pages/my-properties");
+                }}
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -151,12 +150,15 @@ const Navbar = () => {
         {
           key: "5",
           label: (
-            <div onClick={() => {
-              router.push(
-                "/profile/sidebar-pages/recent-activities"
-              );
-            }}>
+            <div
+              onClick={() => {
+                router.push("/profile/sidebar-pages/settings");
+              }}
+            >
               <a
+                onClick={() => {
+                  router.push("/profile/sidebar-pages/settings");
+                }}
                 className={`${Styles.linkMenu} d-flex align-items-center mb-2`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -231,7 +233,6 @@ const Navbar = () => {
                             router.push("");
                           }}
                         >
-                         
                           <Image
                             className={`${Styles.navProfile}`}
                             src={ProfileImage}

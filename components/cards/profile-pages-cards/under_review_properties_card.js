@@ -74,7 +74,7 @@ const UnderReviewProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-4 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
                 <div
@@ -103,7 +103,7 @@ const UnderReviewProperties = () => {
             })}
           </div>
           <div
-            className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}
+            className={`d-flex justify-content-between mt-4 ${styles.property_statistics_width}`}
           >
             {" "}
             <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>

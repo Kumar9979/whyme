@@ -1,5 +1,6 @@
 .recent_activities {
-  width: 90%;
+  width: 100%;
+  padding-right: 4rem;
 }
 
 .recent_activities_card {

@@ -52,8 +52,6 @@
 }
 .table_head {
   background: #1d72db 0% 0% no-repeat padding-box;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
   opacity: 1;
   z-index: 999;
 }
@@ -65,8 +63,10 @@
 }
 .scroll_table {
   overflow-y: auto;
-  height: 40vh;
+  height: 45vh;
   scroll-behavior: smooth;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .scroll_table::-webkit-scrollbar {
   width: 20px;
@@ -103,10 +103,13 @@
   background-color: transparent;
 } 
 .whatsapp_icon_size {
-  width: 15px;
+  width: 13px;
 }
 .calling_icon_size {
-  width: 15px;
+  width: 13px;
+}
+.button_position {
+  margin-top: 2.2rem;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1450px) {
