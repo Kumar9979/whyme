@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import PlacesAutocomplete from "../../../pages/post-property/property-details/placesAutocomplete";
 import { usePosition } from "../../../pages/post-property/property-details/usePosition";
 import Geocode from "react-geocode";
 import styles from "../../../styles/postProperty/postpropertylayout.module.css";
 const libraries = ["places"];
-const LocationAndSearch = () => {
+const LocationAndSearch = ({ formik }) => {
   const { latitude: lat, longitude: lng, error } = usePosition();
   const [markedAddress, setMarkedAddress] = useState("");
   const [selected, setSelected] = useState();
@@ -15,6 +15,8 @@ const LocationAndSearch = () => {
     setSelected({ lat, lng });
     if (lat !== undefined) {
       const timer = setTimeout(() => {
+        markerChange()
+        formik.setFieldValue("map", selected);
         markerSetOn();
       }, 1000);
     }
@@ -60,7 +62,7 @@ const LocationAndSearch = () => {
               mapContainerClassName={`${styles.map_container}`}
               onLoad={(map) => {
                 setMap(map);
-                // formik.setFieldValue("Map", selected);
+                formik.setFieldValue("map", selected);
               }}
             >
               {markerStat && (
@@ -72,7 +74,7 @@ const LocationAndSearch = () => {
                       lat: e.latLng.lat(),
                       lng: e.latLng.lng(),
                     });
-                    // formik.setFieldValue("Map", selected);
+                    formik.setFieldValue("Map", selected);
                   }}
                   position={selected}
                 />
