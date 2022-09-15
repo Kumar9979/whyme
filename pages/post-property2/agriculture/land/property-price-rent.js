@@ -9,7 +9,7 @@ import PriceInputGenerator from "../../../../components/postproperty/formData/pr
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
-const AgricultureLandPriceDetailsSell = () => {
+const AgricultureLandPriceDetailsRent = () => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
@@ -157,4 +157,4 @@ const AgricultureLandPriceDetailsSell = () => {
   );
 };
 
-export default AgricultureLandPriceDetailsSell;
+export default AgricultureLandPriceDetailsRent;
