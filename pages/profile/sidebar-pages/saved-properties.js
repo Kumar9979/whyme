@@ -6,7 +6,6 @@ import Image from "next/image";
 import EmptySearch from "../../../components/profile/saved-properties/empty-properties";
 import SavedProperties from "../../../components/profile/saved-properties/properties-saved";
 
-
 const RecentlyViewed = () => {
   return (
     <ProfileLayout>
