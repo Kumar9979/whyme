@@ -18,7 +18,7 @@ import {
 } from "../../../../components/postproperty/formData/amnetiesListGenerator";
 import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
-const propertyFeatures = () => {
+const LandpropertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
 
@@ -27,10 +27,10 @@ const propertyFeatures = () => {
     initialValues: {
       floorsAllowed: "",
       NoofOpenSides: "",
-      Cornersite: "",
-      Gatedcolony: "",
-      BoundaryWallmade: "",
-      AnyconstructionDone: "",
+      Cornersite: "yes",
+      Gatedcolony: "yes",
+      BoundaryWallmade: "yes",
+      AnyconstructionDone: "yes",
 
       Amenities: [],
     },
@@ -179,4 +179,4 @@ const propertyFeatures = () => {
   );
 };
 
-export default propertyFeatures;
+export default LandpropertyFeatures;

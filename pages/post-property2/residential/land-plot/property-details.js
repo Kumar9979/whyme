@@ -10,7 +10,7 @@ import LocationAndSearch from "../../../../components/postproperty/layout/locati
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 
 
-const FlatPropertyDetails = () => {
+const LandPlotPropertyDetails = () => {
     const router = useRouter();
     const formik = useFormik({
         initialValues: {
@@ -26,13 +26,14 @@ const FlatPropertyDetails = () => {
                 // .required("Select your location in the map"),
             }),
             address: Yup.string("").required("Required"),
-            buildingName: Yup.string("").required("Required"),
+            // buildingName: Yup.string("").required("Required"),
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/residential/flat/property-features");
+            router.push("/post-property2/residential/land-plot/property-features");
         },
     });
+    console.log(formik.values);
 
 
 
@@ -56,14 +57,11 @@ const FlatPropertyDetails = () => {
                             </h6>
 
                             <LocationAndSearch formik={formik} />
-                            {/* <FormikErrorGenerator
-                                formikError={formik.errors.map.lat}
-                                formikTouched={formik.touched.map.lat}
-                            /> */}
+
                             <div className="mt-3">
                                 <label
                                     htmlFor="address"
-                                    className={`${styles.labelText} fw_500 form-label pb-1`}
+                                    className={`${styles.labelText} fw_500  form-label pb-1`}
                                 >
                                     Address
                                 </label>
@@ -81,28 +79,9 @@ const FlatPropertyDetails = () => {
                                 formikError={formik.errors.address}
                                 formikTouched={formik.touched.address}
                             />
-                            <div className="mt-2 ">
-                                <label
-                                    htmlFor="buildingName"
-                                    className={`${styles.labelText} fw_500 form-label pb-1`}
-                                >
-                                    Project/Society Name
-                                </label>
-                                <input
-                                    type="text"
-                                    className={`${styles.building} form-control mb-1 p-2`}
-                                    id="buildingName"
-                                    placeholder="Enter project/society name"
-                                    name="buildingName"
-                                    value={formik.values.buildingName}
-                                    onChange={formik.handleChange}
-                                />
-                            </div>
-                            <FormikErrorGenerator
-                                formikError={formik.errors.buildingName}
-                                formikTouched={formik.touched.buildingName}
-                            />
-                            <PostPropertySubmitButton marginTop="mt-3" marginEnd={"me-2 "} paddingTop="0rem" />
+                           
+                            
+                            <PostPropertySubmitButton marginTop="mt-5" marginEnd={"me-2 "} paddingTop="0rem" />
 
                         </div>
                     </form>
@@ -113,4 +92,4 @@ const FlatPropertyDetails = () => {
     );
 };
 
-export default FlatPropertyDetails;
+export default LandPlotPropertyDetails;

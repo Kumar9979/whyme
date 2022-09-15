@@ -10,7 +10,7 @@ import LocationAndSearch from "../../../../components/postproperty/layout/locati
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 
 
-const FlatPropertyDetails = () => {
+const WareHousePropertyDetails = () => {
     const router = useRouter();
     const formik = useFormik({
         initialValues: {
@@ -30,9 +30,10 @@ const FlatPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/residential/flat/property-features");
+            router.push("/post-property2/commercial/warehouse/property-features");
         },
     });
+    console.log(formik.values);
 
 
 
@@ -56,10 +57,7 @@ const FlatPropertyDetails = () => {
                             </h6>
 
                             <LocationAndSearch formik={formik} />
-                            {/* <FormikErrorGenerator
-                                formikError={formik.errors.map.lat}
-                                formikTouched={formik.touched.map.lat}
-                            /> */}
+
                             <div className="mt-3">
                                 <label
                                     htmlFor="address"
@@ -81,18 +79,18 @@ const FlatPropertyDetails = () => {
                                 formikError={formik.errors.address}
                                 formikTouched={formik.touched.address}
                             />
-                            <div className="mt-2 ">
+                            <div className="mt-2">
                                 <label
                                     htmlFor="buildingName"
                                     className={`${styles.labelText} fw_500 form-label pb-1`}
                                 >
-                                    Project/Society Name
+                                    Building Name
                                 </label>
                                 <input
                                     type="text"
                                     className={`${styles.building} form-control mb-1 p-2`}
                                     id="buildingName"
-                                    placeholder="Enter project/society name"
+                                    placeholder="Enter Building Name"
                                     name="buildingName"
                                     value={formik.values.buildingName}
                                     onChange={formik.handleChange}
@@ -113,4 +111,4 @@ const FlatPropertyDetails = () => {
     );
 };
 
-export default FlatPropertyDetails;
+export default WareHousePropertyDetails;

@@ -10,7 +10,7 @@ import InputFieldGenerator from "../../../../components/postproperty/formData/in
 import { useState } from "react";
 import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
-const IndustrialShedPropertyFeatures = () => {
+const LandPropertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const [optionType, setoptionType] = useState("adf");
@@ -18,7 +18,7 @@ const IndustrialShedPropertyFeatures = () => {
     initialValues: {
       noOfSides: "",
       roadFace: "",
-      boundaryWall: "",
+      boundaryWall: "yes",
     },
 
     validationSchema: Yup.object({
@@ -29,7 +29,7 @@ const IndustrialShedPropertyFeatures = () => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
       boundaryWall: Yup.string()
-        .matches(numRegex, "Invalid value")
+      
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -105,4 +105,4 @@ const IndustrialShedPropertyFeatures = () => {
   );
 };
 
-export default IndustrialShedPropertyFeatures;
+export default LandPropertyFeatures;
