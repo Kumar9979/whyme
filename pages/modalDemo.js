@@ -149,7 +149,7 @@ const Hello = () => {
       {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
-      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
+      <VillaEditProperty handleClose={handleClose} show={show}/>
       {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}
@@ -301,6 +301,10 @@ const Hello = () => {
      {/* <IndustryBuildingDeletePhoto handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotUpdateMap handleClose={handleClose} show={show} /> */}
      {/* <IndustryPlotFeatures handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotAreaPrice handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotRent handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotDescription handleClose={handleClose} show={show} /> */}
+     {/* <IndustryPlotAmenities  handleClose={handleClose} show={show} /> */}
 
       {/* commercial plot */}
 

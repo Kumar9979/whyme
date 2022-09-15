@@ -10,7 +10,7 @@ import { FormikErrorGenerator } from "../../../../components/postproperty/formDa
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
 import {
   AmnetiesGenerator,
-  ResidentialvillaList,
+  ResidentialFlatList,
 } from "../../../../components/postproperty/formData/amnetiesListGenerator";
 import SelectGenerator, {
   furnishingOptions,
@@ -26,11 +26,10 @@ const CommercialPlotPropertyFeatures = () => {
   const formik = useFormik({
     initialValues: {
       Totalfloors: "",
-      NoofOpenSides: "",
-      Balconies: "",
+      Floornumber: "",
+      CarParkingCount: "",
       Bedroom: "",
       Bathroom: "",
-      Ageofconstruction: "",
       transaction: "",
       furnishedStatus: "",
       status: "",
@@ -42,19 +41,17 @@ const CommercialPlotPropertyFeatures = () => {
       Totalfloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      NoofOpenSides: Yup.string()
+      Floornumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      Balconies: Yup.string()
+      CarParkingCount: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       Bedroom: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
+
       Bathroom: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      Ageofconstruction: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       furnishedStatus: Yup.string().required("Required"),
@@ -67,7 +64,7 @@ const CommercialPlotPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/villa-bungalow/property-price-rent"
+        "/post-property2/residential/flat/property-price-rent"
       );
     },
   });
@@ -77,7 +74,7 @@ const CommercialPlotPropertyFeatures = () => {
   return (
     <PostPropertyLayout>
       <div
-        className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-9 col-xl-8  col-xxl-7 col-md-12 pt-5 pb-4 px-lg-3  px-2`}
+        className={` ${styles.property_boxShadow} ${styles.propertyFeature_border_radius}  col-lg-9 col-xl-8  col-xxl-6 col-md-12 pt-5 pb-4 px-lg-3  px-2`}
       >
         <div className={`${styles.input_container}`}>
           <div className={`  mb-4`}>
@@ -87,6 +84,49 @@ const CommercialPlotPropertyFeatures = () => {
           </div>
           <form onSubmit={formik.handleSubmit}>
             <div className={`d-block d-lg-flex  `}>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Total Floors"}
+                  itemName={"Totalfloors"}
+                  inputValue={formik.values.Totalfloors}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                 
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Totalfloors}
+                  formikTouched={formik.touched.Totalfloors}
+                />
+              </div>
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Floor number"}
+                  itemName={"Floornumber"}
+                  inputValue={formik.values.Floornumber}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.Floornumber}
+                  formikTouched={formik.touched.Floornumber}
+                />
+              </div>
+
+              <div className={`mb-1`}>
+                <InputFieldGenerator
+                  title={"Car Parking Count"}
+                  itemName={"CarParkingCount"}
+                  inputValue={formik.values.CarParkingCount}
+                  onChangeFn={formik.handleChange}
+                  inputClassName={"w-50"}
+                />
+                <FormikErrorGenerator
+                  formikError={formik.errors.CarParkingCount}
+                  formikTouched={formik.touched.CarParkingCount}
+                />
+              </div>
+            </div>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
               <div className={`mb-1`}>
                 <InputFieldGenerator
                   title={"Bedroom"}
@@ -113,48 +153,6 @@ const CommercialPlotPropertyFeatures = () => {
                   formikTouched={formik.touched.Bathroom}
                 />
               </div>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Balconies"}
-                  itemName={"Balconies"}
-                  inputValue={formik.values.Balconies}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Balconies}
-                  formikTouched={formik.touched.Balconies}
-                />
-              </div>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Total Floors"}
-                  itemName={"Totalfloors"}
-                  inputValue={formik.values.Totalfloors}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Totalfloors}
-                  formikTouched={formik.touched.Totalfloors}
-                />
-              </div>
-            </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-4 mb-2 mt-2`}>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"No. of Open Sides"}
-                  itemName={"NoofOpenSides"}
-                  inputValue={formik.values.NoofOpenSides}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-75"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.NoofOpenSides}
-                  formikTouched={formik.touched.NoofOpenSides}
-                />
-              </div>
-
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
@@ -162,12 +160,13 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Facing
                 </label>
-                <div className={`w-100`}>
+                <div className={`${styles.width_120}`}>
                   <SelectGenerator
                     option={facingOptions}
                     itemName={"facing"}
                     formikValue={formik.values.facing}
                     formik={formik}
+                    className={``}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.facing}
@@ -175,21 +174,8 @@ const CommercialPlotPropertyFeatures = () => {
                   />
                 </div>
               </div>
-              <div className={`mb-1`}>
-                <InputFieldGenerator
-                  title={"Age of construction"}
-                  itemName={"Ageofconstruction"}
-                  inputValue={formik.values.Ageofconstruction}
-                  onChangeFn={formik.handleChange}
-                  inputClassName={"w-75"}
-                />
-                <FormikErrorGenerator
-                  formikError={formik.errors.Ageofconstruction}
-                  formikTouched={formik.touched.Ageofconstruction}
-                />
-              </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-4  mt-2`}>
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
@@ -212,7 +198,7 @@ const CommercialPlotPropertyFeatures = () => {
               </div>
 
               <div
-                className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
+                className={` ${styles.propertyFeature_width_48_to_100} me-0 ms-2  mb-1`}
               >
                 <label
                   htmlFor="status"
@@ -220,13 +206,13 @@ const CommercialPlotPropertyFeatures = () => {
                 >
                   Status
                 </label>
-                <div className={`w-120`}>
+                <div className={`${styles.width_100} `}>
                   <SelectGenerator
                     option={statusOptions}
                     itemName={"status"}
                     formikValue={formik.values.status}
                     formik={formik}
-                    className={`w-120`}
+                    className={``}
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.status}
@@ -234,7 +220,7 @@ const CommercialPlotPropertyFeatures = () => {
                   />
                 </div>
               </div>
-              <div className={` me-0  ms-0 ms-lg-2 mb-1`}>
+              <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
                 <label
                   htmlFor="transaction"
                   className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
@@ -255,12 +241,12 @@ const CommercialPlotPropertyFeatures = () => {
                 </div>
               </div>
             </div>
-            <div className={` mt-3 mt-lg-3 pt-0 pt-lg-1 `}>
+            <div className={` mt-4 mt-lg-4 pt-0 pt-lg-1 `}>
               <h5 className={`fs_16 fw_500 fontFam_poppins`}>Amenities</h5>
             </div>
             <div className={`d-block d-lg-flex`}>
               <AmnetiesGenerator
-                list={ResidentialvillaList}
+                list={ResidentialFlatList}
                 startIndex={0}
                 endIndex={2}
                 formik={formik}
@@ -268,7 +254,7 @@ const CommercialPlotPropertyFeatures = () => {
             </div>{" "}
             <div className={`d-block d-lg-flex`}>
               <AmnetiesGenerator
-                list={ResidentialvillaList}
+                list={ResidentialFlatList}
                 startIndex={3}
                 endIndex={5}
                 formik={formik}
@@ -276,29 +262,29 @@ const CommercialPlotPropertyFeatures = () => {
             </div>
             <div className={`d-block d-lg-flex`}>
               <AmnetiesGenerator
-                list={ResidentialvillaList}
+                list={ResidentialFlatList}
                 startIndex={6}
-                endIndex={9}
+                endIndex={8}
                 formik={formik}
               />
             </div>
             <div className={`d-block d-lg-flex`}>
               <AmnetiesGenerator
-                list={ResidentialvillaList}
-                startIndex={10}
+                list={ResidentialFlatList}
+                startIndex={9}
+                endIndex={10}
+                formik={formik}
+              />
+            </div>
+            <div className={`d-block d-lg-flex`}>
+              <AmnetiesGenerator
+                list={ResidentialFlatList}
+                startIndex={11}
                 endIndex={13}
                 formik={formik}
               />
             </div>
-            <div className={`d-block d-lg-flex`}>
-              <AmnetiesGenerator
-                list={ResidentialvillaList}
-                startIndex={14}
-                endIndex={16}
-                formik={formik}
-              />
-            </div>
-            <PostPropertySubmitButton marginEnd={"me-1 "} paddingTop="0rem" />
+            <PostPropertySubmitButton marginEnd={"me-2 "} paddingTop="1rem" />
           </form>
         </div>
       </div>

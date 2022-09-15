@@ -53,7 +53,9 @@ const IndustrialShedPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/commercial/industrial-shed/property-price-sell");
+      router.push(
+        "/post-property2/commercial/industrial-shed/property-price-sell"
+      );
     },
   });
 

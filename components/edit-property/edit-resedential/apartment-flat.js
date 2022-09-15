@@ -27,6 +27,20 @@ import VillaDescription from "../../modals/residential-property/villa-property/v
 import VillaUploadPhoto from "../../modals/residential-property/villa-property/villaUploadPhoto";
 import VillaDeletePhoto from "../../modals/residential-property/villa-property/villaDeletePhoto";
 import VillaUpdateMap from "../../modals/residential-property/villa-property/villaUpdateMap";
+import ResidentialHouseEditProperty from "../../modals/residential-property/residential-house/residentialHouseEditProperty";
+import ResidentialHouseEditAmenities from "../../modals/residential-property/residential-house/residentialHouseEditAmenities";
+import ResidentialHouseAreaPrice from "../../modals/residential-property/residential-house/residentialHouseAreaPrice";
+import ResidentialHouseDescription from "../../modals/residential-property/residential-house/residentialHouseDescription";
+import ResidentialHouseUpdateMap from "../../modals/residential-property/residential-house/residentialHouseUpdateMap";
+import ResidentialHouseDeletePhoto from "../../modals/residential-property/residential-house/residentialHouseDeletePhoto";
+import ResidentialHouseUploadPhoto from "../../modals/residential-property/residential-house/residentialHouseUploadPhoto";
+import ResidentialLandEditProperty from "../../modals/residential-property/residential-land/residentialLandEditProperty";
+import ResidentialLandEditAmenities from "../../modals/residential-property/residential-land/residentialLandEditAmenities";
+import ResidentialLandAreaPrice from "../../modals/residential-property/residential-land/residentialLandAreaPrice";
+import ResidentialLandDescription from "../../modals/residential-property/residential-land/residentialLandDescription";
+import ResidentialLandUploadPhoto from "../../modals/residential-property/residential-land/residentialLandUploadPhoto";
+import ResidentialLandDeletePhoto from "../../modals/residential-property/residential-land/residentialLandDeletePhoto";
+import ResidentialLandUpdateMap from "../../modals/residential-property/residential-land/residentialLandUpdateMap";
 
 const EditApartmentFlat = ({ data, propertyType }) => {
   let type;
@@ -522,8 +536,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
           </div>
         </div>
       </div>
-      
-      
+
       {data === 0 && (
         <>
           <ApartmentEditProperty
@@ -543,26 +556,26 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             handleClose={() => setDescriptionModal(false)}
           />
           <ApartmentUploadPhoto
-        handleClose={handleClose}
-        handleImageUpload={handleImageUpload}
-        show={show}
-      />
-      <ApartmentDeletePhoto
-        deleteFn={onImageRemove}
-        index={imageNumber}
-        handleClose={handleDeleteModalClose}
-        show={showDeleteModal}
-      />
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <ApartmentDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
 
-      <ApartmentUpdateMap
-        show={editLocation}
-        handleClose={() => setEditLocation(false)}
-      />
+          <ApartmentUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          />
         </>
       )}
-      {data === 1 && <>
-      
-        <VillaEditProperty
+      {data === 1 && (
+        <>
+          <VillaEditProperty
             show={featureModalShow}
             handleClose={() => setFeatureModalShow(false)}
           />
@@ -570,7 +583,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             show={amenitiesModal}
             handleClose={() => setAmenitiesModal(false)}
           />
-          < VillaAreaPrice
+          <VillaAreaPrice
             show={areaModal}
             handleClose={() => setAreaModal(false)}
           />
@@ -579,26 +592,91 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             handleClose={() => setDescriptionModal(false)}
           />
           <VillaUploadPhoto
-        handleClose={handleClose}
-        handleImageUpload={handleImageUpload}
-        show={show}
-      />
-      <VillaDeletePhoto
-        deleteFn={onImageRemove}
-        index={imageNumber}
-        handleClose={handleDeleteModalClose}
-        show={showDeleteModal}
-      />
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <VillaDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
 
-      <VillaUpdateMap
-        show={editLocation}
-        handleClose={() => setEditLocation(false)}
-      />
-      
-      </>}
+          <VillaUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          />
+        </>
+      )}
 
-      {data === 2 && <>
-      </>}
+      {data === 2 && <><>
+          <ResidentialHouseEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <ResidentialHouseEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          <ResidentialHouseAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <ResidentialHouseDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <ResidentialHouseUploadPhoto
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <ResidentialHouseDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
+
+          <ResidentialHouseUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          />
+        </></>}
+      {data === 3 && <>
+        <ResidentialLandEditProperty
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
+          <ResidentialLandEditAmenities
+            show={amenitiesModal}
+            handleClose={() => setAmenitiesModal(false)}
+          />
+          <ResidentialLandAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <ResidentialLandDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <ResidentialLandUploadPhoto
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <ResidentialLandDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
+
+          <ResidentialLandUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          /></>}
     </div>
   );
 };

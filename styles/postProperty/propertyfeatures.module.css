@@ -1,3 +1,40 @@
+.width_200{
+  min-width: 200%;
+}
+.width_120{
+  min-width: 120%;
+}
+.width_110{
+  min-width: 110%;
+}
+.width_100{
+  min-width: 100%;
+}
+.width_90{
+  min-width: 90%;
+}
+.width_80{
+  min-width: 80%;
+}
+.width_70{
+  min-width: 70%;
+}
+.width_60{
+  min-width: 60%;
+}
+.width_50{
+  min-width: 50%;
+}
+.width_40{
+  min-width: 40%;
+}
+.width_30{
+  min-width: 30%;
+}
+.width_20{
+  min-width: 20%;
+}
+
 .whole_container {
   margin-top: 8rem;
 }

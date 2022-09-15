@@ -64,8 +64,8 @@ const VillaEditProperty = ({ show, handleClose }) => {
     // enableReinitialize: true,
     initialValues: {
       TotalFloors: "",
-      FloorNumber: "",
-      CarParkingCount: "",
+      AgeOfConstruction: "",
+      Balconies: "",
       BedRoom: "",
       BathRoom: "",
       facing: "",
@@ -79,11 +79,11 @@ const VillaEditProperty = ({ show, handleClose }) => {
       TotalFloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      FloorNumber: Yup.number()
+      AgeOfConstruction: Yup.number()
       .typeError("invalid value")
       .max(Yup.ref("TotalFloors"), "Must be less then TotalFloors")
       .required("Required"),
-      CarParkingCount: Yup.string()
+      Balconies: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       BedRoom: Yup.string()
@@ -155,7 +155,7 @@ const VillaEditProperty = ({ show, handleClose }) => {
             <div>
               <div className=" text-start mt-3">
                 <div className="d-flex gx-0">
-                  <div className="col-4 col-lg-3">
+                  <div className="col-3 col-lg-3">
                    
                     <div className="">
                       <label
@@ -183,59 +183,59 @@ const VillaEditProperty = ({ show, handleClose }) => {
                       )}
                     </div>
                   </div>
-                  <div className="col-4 col-lg-3">
+                  <div className="col-5 col-lg-5">
                   
                     <div className="">
                       <label
-                        htmlFor="FloorNumber"
+                        htmlFor="AgeOfConstruction"
                         className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 `}
                       >
-                        Floor number
+                        Age Of Construction
                       </label>
                       <div>
                         <input
                           type="text"
                           className={`form-label ${styles.total_floors_input} w-50  fs_15 fs_sm_12 p-2`}
-                          id="FloorNumber"
+                          id="AgeOfConstruction"
                           placeholder="Ex : 13"
-                          name="FloorNumber"
-                          value={formik.values.FloorNumber}
+                          name="AgeOfConstruction"
+                          value={formik.values.AgeOfConstruction}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      {formik.errors.FloorNumber && formik.touched.FloorNumber && (
+                      {formik.errors.AgeOfConstruction && formik.touched.AgeOfConstruction && (
                         <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
                           <i className="ri-error-warning-line me-1  "></i>
-                          <span>{formik.errors.FloorNumber}</span>
+                          <span>{formik.errors.AgeOfConstruction}</span>
                         </div>
                       )}
                     </div>
                   </div>
-                  <div className="col-5">
+                  <div className="col-lg-3 ">
                     
                     <div className="">
                       <label
-                        htmlFor="CarParkingCount"
+                        htmlFor="Balconies"
                         className={`form-label text-nowrap ${styles.total_floors_text} fs_15 fs_sm_12 fw_500 `}
                       >
-                        Car Parking Count
+                        Balconies
                       </label>
                       <div>
                         <input
                           type="text"
                           className={`form-label ${styles.total_floors_input} w-50  fs_15 fs_sm_12 p-2`}
-                          id="CarParkingCount"
+                          id="Balconies"
                           placeholder="Ex : 43"
-                          name="CarParkingCount"
-                          value={formik.values.CarParkingCount}
+                          name="Balconies"
+                          value={formik.values.Balconies}
                           onChange={formik.handleChange}
                         />
                       </div>
-                      {formik.errors.CarParkingCount &&
-                        formik.touched.CarParkingCount && (
+                      {formik.errors.Balconies &&
+                        formik.touched.Balconies && (
                           <div className="d-flex align-items-center text-danger fs_sm_12 fs_13 ">
                             <i className="ri-error-warning-line me-1  "></i>
-                            <span>{formik.errors.CarParkingCount}</span>
+                            <span>{formik.errors.Balconies}</span>
                           </div>
                         )}
                     </div>

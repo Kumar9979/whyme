@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PhotoDelete from "../../components/modals/edit-profile-modals/PhotoDelete";
 // import Logout from "../../components/modals/edit-profile-modals/Logout";
 // import SuccessSave from "../../components/modals/edit-profile-modals/success-saved";
 // import ReportAdvertiser from "../../components/modals/property-details/report-advertiser";
@@ -9,6 +10,7 @@ import React, {useState} from "react";
 // import ReportProperty from "../../components/modals/property-details/report-property";
 // import RequestCallBack from "../../components/modals/property-details/request-call";
 // import ScheduleVisit from "../../components/modals/property-details/schedule-visit";
+
 
 const Modals = () => {
     const [show, setShow] = useState(false);
@@ -30,6 +32,7 @@ const Modals = () => {
       {/* <ReportAdvertiser handleClose={handleClose} show={show}/> */}
       {/* <SuccessSave handleClose={handleClose} show={show}/> */}         
       {/* <Logout handleClose={handleClose} show={show} /> */}
+      <PhotoDelete handleClose={handleClose} show={show} />
 
     </div>
   );

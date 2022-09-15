@@ -1,80 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
-import Select from "react-select";
 import { useRouter } from "next/router";
-import StepperNew from "../../../stepper/stepper";
 import PostPropertyLayout from "../../../../components/postproperty/components/propertyLayout";
 import InputFieldGenerator from "../../../../components/postproperty/formData/inputFieldGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 import SelectGenerator, {
   furnishingOptions,
+  statusOptions,
+  transactionOptions,
 } from "../../../../components/postproperty/formData/selectGenerator";
+import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
+import {
+  AmnetiesGenerator,
+  CommercialIndustrialShed,
+} from "../../../../components/postproperty/formData/amnetiesListGenerator";
 
 const propertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
-  const customStyles = {
-    control: (base, state) => ({
-      ...base,
-      background: "#F4F8FB",
-      // match with the menu
-      borderRadius: "7px",
-      width: "100%",
-      // Overwrittes the different states of border
-      borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-      // Removes weird border around container
-      boxShadow: state.isFocused ? null : null,
-      "&:hover": {
-        // Overwrittes the different states of border
-        borderColor: state.isFocused ? "#1D72DB" : "#F4F8FB",
-      },
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? "#1D72DB" : null,
-      borderBottom: "1px solid #F5F5F5",
-      fontFamily: "Poppins",
-      "&:hover": {
-        backgroundColor: state.isFocused ? "#1D72DB" : "#1D72DB",
-      },
-    }),
-    placeholder: (defaultStyles) => {
-      return {
-        ...defaultStyles,
-        color: "#BCC7CE",
-        fontFamily: "Poppins",
-        fontSize: "0.8rem",
-      };
-    },
-    dropdownIndicator: (provided) => ({
-      ...provided,
-      svg: {
-        fill: "#323D5A",
-      },
-    }),
-  };
 
-  const facing = [
-    { value: "North", label: "North" },
-    { value: "South", label: "South" },
-    { value: "East", label: "East" },
-    { value: "West", label: "West" },
-  ];
-  const status = [
-    { value: "Ready To Move", label: "Ready To Move" },
-    { value: "Under Construction", label: "Under Construction" },
-  ];
-
-  const furnishingStatus = [
-    { value: "Furnished", label: "Furnished" },
-    { value: "Unfurnished", label: "Unfurnished" },
-  ];
-  const transaction = [
-    { value: "Resale", label: "Resale" },
-    { value: "Fresh", label: "Fresh" },
-  ];
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
@@ -82,63 +28,41 @@ const propertyFeatures = () => {
       totalFloors: "",
       washRooms: "",
       NoOfOpenSides: "",
-      facing: "",
-      AgeOfConstruction: "",
+      transaction: "",
       furnishedStatus: "",
-      Status: "",
-      Transaction: "",
-      FloorsAllowed: "",
+      status: "",
+      widthOfRoad: "",
+      floorsAllowed: "",
       Amenities: [],
     },
 
     validationSchema: Yup.object({
-      FloorNumber: Yup.string()
+      washRooms: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       totalFloors: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      washRooms: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      TotalFloors: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
       NoOfOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      AgeOfConstruction: Yup.string()
+
+      floorsAllowed: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-      FloorsAllowed: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
-      facing: Yup.string().required("Required"),
       furnishedStatus: Yup.string().required("Required"),
-      Status: Yup.string().required("Required"),
-      Transaction: Yup.string().required("Required"),
+      status: Yup.string().required("Required"),
+      transaction: Yup.string().required("Required"),
+      widthOfRoad: Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property/price-details/priceDetailsSell");
+      router.push(
+        "/post-property2/commercial/industrial-buildings/property-price-rent"
+      );
     },
   });
-
-  const handleCheckbox = (e) => {
-    const { checked, name } = e.target;
-    if (e.target.checked) {
-      formik.setFieldValue("Amenities", [
-        ...formik.values.Amenities,
-        e.target.name,
-      ]);
-    } else {
-      formik.setFieldValue(
-        "Amenities",
-        formik.values.Amenities.filter((item) => item !== e.target.name)
-      );
-    }
-  };
 
   console.log(formik.values);
  const span = () => {
@@ -216,7 +140,6 @@ const propertyFeatures = () => {
                   />
                 </div>
               </div>
-
               <div className={`d-block d-lg-flex gap-0 gap-lg-5 mb-2 mt-2`}>
                 {" "}
                 <div
@@ -224,13 +147,14 @@ const propertyFeatures = () => {
                 >
                   <InputFieldGenerator
                     title={"Floors Allowed for Construction"}
-                    itemName={"floorAllowed"}
-                    inputValue={formik.values.floorAllowed}
+                    itemName={"floorsAllowed"}
+                    inputValue={formik.values.floorsAllowed}
                     onChangeFn={formik.handleChange}
+                    inputClassName="w-100"
                   />
                   <FormikErrorGenerator
-                    formikError={formik.errors.floorAllowed}
-                    formikTouched={formik.touched.floorAllowed}
+                    formikError={formik.errors.floorsAllowed}
+                    formikTouched={formik.touched.floorsAllowed}
                   />
                 </div>
                 <div
@@ -248,6 +172,7 @@ const propertyFeatures = () => {
                   />
                 </div>
               </div>
+<<<<<<< HEAD
 
               <div className={`${styles.amenities_list_flex_res} mt-2`}>
 
@@ -298,287 +223,97 @@ const propertyFeatures = () => {
                     )}
                   </div>
                 </div>{" "}
+=======
+              <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
+>>>>>>> b202da8d82c4c0a895edca0c3c3d120162603d03
                 <div
-                  className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}
+                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
+                  <InputFieldGenerator
+                    title={"Width of Road Facing the Plot(in meters)"}
+                    itemName={"widthOfRoad"}
+                    inputValue={formik.values.widthOfRoad}
+                    onChangeFn={formik.handleChange}
+                    inputClassName="w-100"
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.widthOfRoad}
+                    formikTouched={formik.touched.widthOfRoad}
+                  />
+                </div>
+                <div className={` me-0  ms-0 ms-lg-3 mb-1`}>
                   <label
-                    htmlFor="Transaction"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
+                    htmlFor="transaction"
+                    className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
                     Transaction{" "}
                   </label>
-                  <div
-                    className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}
-                    onClick={() => setoptionType("transaction")}
-                  >
-                    <Select
-                      id="Transaction"
-                      options={transaction}
-                      type="text"
-                      placeholder="Select.."
-                      styles={customStyles}
-                      name="Transaction"
-                      value={transaction.filter((option) => {
-                        return option.value === formik.values.Transaction;
-                      })}
-                      onChange={(selectedOption) => {
-                        let event = {
-                          target: {
-                            name: "Transaction",
-                            value: selectedOption.value,
-                          },
-                        };
-                        formik.handleChange(event);
-                      }}
-                      components={{
-                        IndicatorSeparator: () => null,
-                      }}
+                  <div className={``}>
+                    <SelectGenerator
+                      option={transactionOptions}
+                      itemName={"transaction"}
+                      formikValue={formik.values.transaction}
+                      formik={formik}
+                    />
+                    <FormikErrorGenerator
+                      formikError={formik.errors.transaction}
+                      formikTouched={formik.touched.transaction}
                     />
                   </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.Transaction && formik.touched.Transaction && (
-                      <div className="d-flex align-items-center text-danger">
-                        <i
-                          style={{ fontSize: 12, marginRight: ".1rem" }}
-                          className="ri-error-warning-line   "
-                        ></i>
-                        <span className={`fs_12 lh-base `}>
-                          {formik.errors.Transaction}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>{" "}
+                </div>
               </div>
-              <div className={`${styles.amenities_list_flex_res} mt-2`}>
-                {" "}
-                <div
-                  className={`me-5 ${styles.propertyFeature_width_50_to_100} mb-1`}
+              <div
+                className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+              >
+                <label
+                  htmlFor="status"
+                  className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                 >
-                  <label
-                    htmlFor="Status"
-                    className={`form-label text-nowrap ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Status{" "}
-                  </label>
-                  <div
-                    className={`mb-1`}
-                    onClick={() => setoptionType("status")}
-                  >
-                    <Select
-                      id="Status"
-                      options={status}
-                      type="text"
-                      placeholder="Select.."
-                      styles={customStyles}
-                      name="Status"
-                      value={status.filter((option) => {
-                        return option.value === formik.values.Status;
-                      })}
-                      onChange={(selectedOption) => {
-                        let event = {
-                          target: {
-                            name: "Status",
-                            value: selectedOption.value,
-                          },
-                        };
-                        formik.handleChange(event);
-                      }}
-                      components={{
-                        IndicatorSeparator: () => null,
-                      }}
-                    />
-                  </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.Status && formik.touched.Status && (
-                      <div className="d-flex align-items-center text-danger">
-                        <i
-                          style={{ fontSize: 12, marginRight: ".1rem" }}
-                          className="ri-error-warning-line   "
-                        ></i>
-                        <span className={`fs_12 lh-base `}>
-                          {formik.errors.Status}
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  Status{" "}
+                </label>
+                <div className={``}>
+                  <SelectGenerator
+                    option={statusOptions}
+                    itemName={"status"}
+                    formikValue={formik.values.status}
+                    formik={formik}
+                  />
+                  <FormikErrorGenerator
+                    formikError={formik.errors.status}
+                    formikTouched={formik.touched.status}
+                  />
                 </div>
               </div>
-              {/* CHECKBOX ITEMS */}
-
-              <div className={`content-fourth-line mt-4 mt-lg-3 `}>
-                <div className={`content-fourth-name mb-2`}>
-                  <h5
-                    className={`${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Suitable for
-                  </h5>
-                </div>
-                {/* CHECKBOX ITEMS LIST  */}
-                <div className={`${styles.amenities_list_flex_res}`}>
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2 "
-                      type="checkbox"
-                      id="Industries For The Production Of Power"
-                      name="Industries For The Production Of Power"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Industries For The Production Of Power"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Industries For The Production Of Power"
-                    >
-                      Industries For The Production Of Power
-                    </label>
-                  </div>
-
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2"
-                      type="checkbox"
-                      id="Manufacturing Industries"
-                      name="Manufacturing Industries"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Manufacturing Industries"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Manufacturing Industries"
-                    >
-                      Manufacturing Industries
-                    </label>
-                  </div>
-                </div>
-                <div className={`${styles.amenities_list_flex_res}`}>
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2 "
-                      type="checkbox"
-                      id="Raw Materials Mining Industries"
-                      name="Raw Materials Mining Industries"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Raw Materials Mining Industries"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Raw Materials Mining Industries"
-                    >
-                      Raw Materials Mining Industries
-                    </label>
-                  </div>
-
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2"
-                      type="checkbox"
-                      id="Textile Industries"
-                      name="Textile Industries"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Textile Industries"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Textile Industries"
-                    >
-                      Textile Industries
-                    </label>
-                  </div>
-                </div>{" "}
-                <div className={`${styles.amenities_list_flex_res}`}>
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2 "
-                      type="checkbox"
-                      id="Petroleum Products Industries"
-                      name="Petroleum Products Industries"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Petroleum Products Industries"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Petroleum Products Industries"
-                    >
-                      Petroleum Products Industries
-                    </label>
-                  </div>
-
-                  <div className={`form-check me-4 ${styles.margin_bottom}`}>
-                    <input
-                      className="form-check-input rounded-0 mt-2"
-                      type="checkbox"
-                      id="Industries Of Wood And Paper Products"
-                      name="Industries Of Wood And Paper Products"
-                      onChange={handleCheckbox}
-                      checked={formik.values.Amenities.includes(
-                        "Industries Of Wood And Paper Products"
-                      )}
-                    />
-                    <label
-                      className={`form-check-label mt-1 text-nowrap ${styles.font_medium}  fontFam_poppins ${styles.amenities_list_title}`}
-                      htmlFor="Industries Of Wood And Paper Products"
-                    >
-                      Industries Of Wood And Paper Products
-                    </label>
-                  </div>
-                </div>
+              <div className={`content-fourth-name mb-1 mt-2`}>
+                <h5 className={`fs_16 fw_400 fontFam_poppins mb-1`}>
+                  Suitable for
+                </h5>
               </div>
-
-              <div className={`content-btn d-flex justify-content-end mt-5 `}>
-                <div className={`d-flex`}>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      router.push(
-                        "/post-property/property-details/propertyDetails"
-                      )
-                    }
-                    className={`bg-white border-0 `}
-                  >
-                    <span
-                      className={`${styles.container_icon_arrowLeftbtn} align-middle me-2`}
-                    >
-                      <i
-                        className={`${styles.icon_arrowLeftbtn} h-100 p-1 ri-arrow-left-line  border mt-1 rounded `}
-                      ></i>
-                    </span>
-
-                    <span
-                      className={` color_light_blue fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
-                    >
-                      Back
-                    </span>
-                  </button>
-                  <button
-                    type="submit"
-                    className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0 ms-3  px-3 py-2`}
-                  >
-                    <span
-                      className={` fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
-                    >
-                      Next
-                    </span>
-                    <div>
-                      <i
-                        className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
-                      ></i>
-                      {/* <Image className={styles.modal_icon_arrowRightbtn} src={
-                        
-arrowRightIcon} alt="arrowRightIcon" width={14} height={14} /> */}
-                    </div>
-                  </button>
-                </div>
+              <div className={`d-block d-lg-flex`}>
+                <AmnetiesGenerator
+                  list={CommercialIndustrialShed}
+                  startIndex={0}
+                  endIndex={1}
+                  formik={formik}
+                />
+              </div>{" "}
+              <div className={`d-block d-lg-flex`}>
+                <AmnetiesGenerator
+                  list={CommercialIndustrialShed}
+                  startIndex={2}
+                  endIndex={3}
+                  formik={formik}
+                />
               </div>
+              <div className={`d-block d-lg-flex`}>
+                <AmnetiesGenerator
+                  list={CommercialIndustrialShed}
+                  startIndex={4}
+                  endIndex={5}
+                  formik={formik}
+                />
+              </div>
+              <PostPropertySubmitButton paddingTop="0rem" />
             </div>
           </form>
         </div>
