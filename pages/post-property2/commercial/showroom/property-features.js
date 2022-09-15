@@ -33,8 +33,8 @@ const propertyFeatures = () => {
       furnishedStatus: "",
       status: "",
       roadFace: "yes",
-      personalWashroom:"yes",
-      cornerShop:"yes",
+      personalWashroom: "yes",
+      cornerShop: "yes",
       Amenities: [],
     },
 
@@ -49,21 +49,17 @@ const propertyFeatures = () => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-     
       furnishedStatus: Yup.string().required("Required"),
       status: Yup.string().required("Required"),
       transaction: Yup.string().required("Required"),
       roadFace: Yup.string().required("Required"),
-      personalWashroom:Yup.string().required("Required"),
-      cornerShop:Yup.string().required("Required"),
+      personalWashroom: Yup.string().required("Required"),
+      cornerShop: Yup.string().required("Required"),
       Amenitities: Yup.string(),
-     
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push(
-        "/post-property2/commercial/showroom/property-price-rent"
-      );
+      router.push("/post-property2/commercial/showroom/property-price-rent");
     },
   });
 
@@ -86,7 +82,7 @@ const propertyFeatures = () => {
           <form onSubmit={formik.handleSubmit}>
             <div className={`mt-5`}>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5 `}>
-                {" "}
+              
                 <div
                   className={`${styles.propertyFeature_width_25_to_100} mb-1`}
                 >
@@ -133,7 +129,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-                {" "}
+    
                 <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"

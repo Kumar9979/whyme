@@ -26,7 +26,7 @@ const OfficepropertyFeatures = () => {
     // enableReinitialize: true,
     initialValues: {
       floorsNumber: "",
-      
+
       totalFloors: "",
       washRooms: "",
       personalWashRoom: "",
@@ -34,8 +34,8 @@ const OfficepropertyFeatures = () => {
       furnishedStatus: "",
       status: "",
       roadFace: "yes",
-      personalWashroom:"yes",
-      cornerShop:"yes",
+      personalWashroom: "yes",
+      cornerShop: "yes",
       Amenities: [],
     },
 
@@ -50,13 +50,12 @@ const OfficepropertyFeatures = () => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-      
       furnishedStatus: Yup.string().required("Required"),
       status: Yup.string().required("Required"),
       transaction: Yup.string().required("Required"),
       roadFace: Yup.string().required("Required"),
-      personalWashroom:Yup.string().required("Required"),
-      cornerShop:Yup.string().required("Required"),
+      personalWashroom: Yup.string().required("Required"),
+      cornerShop: Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -133,7 +132,6 @@ const OfficepropertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-                
                 <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
@@ -188,7 +186,7 @@ const OfficepropertyFeatures = () => {
                     htmlFor="status"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Statu{" "}
+                    Statu
                   </label>
                   <div className={`w-100`}>
                     <SelectGenerator

@@ -46,7 +46,7 @@ const propertyFeatures = () => {
       NoOfOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        floorsNumber: Yup.string()
+      floorsNumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       floorsAllowed: Yup.string()
@@ -167,7 +167,6 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
-                
                 <div
                   className={`${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
