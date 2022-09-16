@@ -6,6 +6,12 @@ body {
   min-height: 100%;
 }
 
+.ant-progress-text{
+  color: #1D72DB  !important;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+}
+
 p {
   margin-bottom: 0;
 }

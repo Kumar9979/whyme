@@ -84,7 +84,7 @@ const ProfileLayout = ({ children }) => {
                       </div>
                     </div>
 
-                    <ul className="list-unstyled  mt-3 py-3 me-5 pe-5 ps-4">
+                    <ul className="list-unstyled  mt-3 py-3 me-3 pe-5 ps-4">
                       <li
                         className={`${
                           router.pathname ===

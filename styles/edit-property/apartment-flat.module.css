@@ -4,6 +4,8 @@
 .back_text {
   color: #24734e;
 }
+
+
 .card_body {
   border-radius: 10px;
   border: none !important;
@@ -135,8 +137,33 @@ object-fit: contain;
 @media only screen and (max-width: 480px) {
   .delete {
     position: relative;
-    top: -92px;
-    right: -60px;
+    top: -135px;
+    right: -80px;
+    z-index: 999;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .delete {
+    position: relative;
+    top: -120px;
+    right: -70px;
+    z-index: 999;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .delete {
+    position: relative;
+    top: -101px;
+    right: -55px;
+    z-index: 999;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .delete {
+    position: relative;
+    top: -85px;
+    right: -45px;
     z-index: 999;
   }
 }

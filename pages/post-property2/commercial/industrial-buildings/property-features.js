@@ -172,60 +172,7 @@ const propertyFeatures = () => {
                   />
                 </div>
               </div>
-<<<<<<< HEAD
-
-              <div className={`${styles.amenities_list_flex_res} mt-2`}>
-
-              <div
-                  className={`${styles.propertyFeature_width_50_to_100} mb-1`}
-                >
-                  <InputFieldGenerator
-                    title={["Width of Road Facing the Plot, <strong>dsf</strong>"]}
-                    
-                    itemName={"widthOfRoad"}
-                    inputValue={formik.values.widthOfRoad}
-                    onChangeFn={formik.handleChange}
-                  />
-                  <FormikErrorGenerator
-                    formikError={formik.errors.widthOfRoad}
-                    formikTouched={formik.touched.widthOfRoad}
-                  />
-                </div>
-                <div className="mb-1 me-0 me-lg-5 ">
-                  <label
-                    htmlFor="widthOfRoad"
-                    className={`form-label text-nowrap  ${styles.font_20} ${styles.font_regular} fontFam_poppins`}
-                  >
-                    Width of Road Facing the Plot(in meters)
-                  </label>
-                  <div>
-                    <input
-                      type="text"
-                      className={` w-100 mb-1 ps-2 pe-2  pt-2 pb-2 ${styles.propetyfeature_input}`}
-                      id="widthOfRoad"
-                      placeholder="Ex : 13"
-                      name="widthOfRoad"
-                      value={formik.values.widthOfRoad}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                  <div className={`${styles.error_container}`}>
-                    {formik.errors.widthOfRoad && formik.touched.widthOfRoad && (
-                      <div className="d-flex align-items-center text-danger">
-                        <i
-                          style={{ fontSize: 12, marginRight: ".1rem" }}
-                          className="ri-error-warning-line   "
-                        ></i>
-                        <span className={`fs_12 lh-base `}>
-                          {formik.errors.widthOfRoad}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>{" "}
-=======
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mt-2`}>
->>>>>>> b202da8d82c4c0a895edca0c3c3d120162603d03
                 <div
                   className={`${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
