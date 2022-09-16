@@ -25,7 +25,7 @@ const Profilehead = () => {
     </div>
     <div className="col-8 ms-lg-2">
       <div className={`${styles.profiledetails_container}  `}>
-        <div className="d-lg-flex justify-content-between">
+        <div className="d-flex justify-content-between ">
           <div className={`${styles.containerhide_second}`}>
             <div className=" d-flex justify-content-start mt-lg-3">
               <span

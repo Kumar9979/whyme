@@ -86,7 +86,7 @@ const SettingFaq = () => {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </div> 
                 </div>
                 {clicked === index ? (
                   <div className="mt-0 pt-0 ms-2 color_cloudBurst fs_14 fontFam_poppins fw_600 w-75">
