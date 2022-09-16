@@ -38,7 +38,7 @@ const ProfileLayout = ({ children }) => {
 
   return (
     <>
-      <div>
+      <div className={`${styles.over}`}>
         <div className="row">
           <div className="col-2 hideSidebar">
             {mobile !== true && (
@@ -48,7 +48,7 @@ const ProfileLayout = ({ children }) => {
                     <div
                       onClick={() => {
                         router.push(
-                          "/profile/profile-pages/company-my-profile"
+                          "/profile/profile-pages/my-profile"
                         );
                       }}
                       className={`${styles.card} card mt-4 `}

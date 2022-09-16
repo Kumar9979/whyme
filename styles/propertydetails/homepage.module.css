@@ -3,6 +3,9 @@
   opacity: 1;
   padding-top: 5rem;
 }
+.body {
+  overflow-x: hidden;
+}
 .related_properties {
   color: #323d5a;
   font-family: "Poppins", sans-serif;

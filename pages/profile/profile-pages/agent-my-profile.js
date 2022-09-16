@@ -22,7 +22,7 @@ const MyProfile = () => {
   const router = useRouter();
 
   return (
-    <ProfileLayout>
+    <ProfileLayout className={`${styles.body}`}>
       <div className={`${styles.edit_profile} me-lg-3 me-0 p-2`}>
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">

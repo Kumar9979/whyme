@@ -4,6 +4,9 @@
   margin-top: 3rem;
   /* width: 30vh; */
 }
+.over{
+  overflow-x: hidden;
+}
 .sidebar_links {
   color: inherit;
   font-family: Poppins;

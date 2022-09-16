@@ -44,7 +44,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={`${styles.body}`}>
       <div className={`${styles.body_background} pb-5`}>
         <div className="row d-flex justify-content-center">
           <div className="col-lg-7 col-11">
