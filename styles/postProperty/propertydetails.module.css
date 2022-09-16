@@ -34,14 +34,14 @@
   border: none;
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
-  font-size: 12px;
+  font-size: 16px;
   color: #1a1a1a;
   font-weight: 500;
   resize: none;
 }
 
 .address::placeholder {
-  font-size: 13px;
+  font-size: 14px;
   color: #bcc7ce;
 }
 
@@ -63,17 +63,18 @@
   border: none;
   background-color: #f4f8fb;
   font-family: Poppins, Regular;
-  font-size: 12px;
+  font-size: 16px;
   color: #1a1a1a;
   font-weight: 500;
 }
 
 .building::placeholder {
-  font-size: 13px;
+  font-size: 14px;
   color: #bcc7ce;
 }
-.labelText {
-  font-family: Poppins, Regular;
+.labelText{
+  font-size: 16px;
+  font-family: Poppins, medium;
 }
 .back {
   background: none;

@@ -263,7 +263,7 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div
-                className={` ${styles.propertyFeature_width_25_to_100} me-0  mb-1`}
+                className={` ${styles.propertyFeature_width_35_to_100} me-0  mb-1`}
               >
                 <label
                   htmlFor="status"
@@ -271,12 +271,14 @@ const propertyFeatures = () => {
                 >
                   Status{" "}
                 </label>
-                <div className={``}>
+                <div className={`w-100`}>
                   <SelectGenerator
                     option={statusOptions}
                     itemName={"status"}
                     formikValue={formik.values.status}
                     formik={formik}
+                    inputClassName="w-25"
+                  
                   />
                   <FormikErrorGenerator
                     formikError={formik.errors.status}

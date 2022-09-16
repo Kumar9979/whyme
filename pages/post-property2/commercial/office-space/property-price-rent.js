@@ -8,14 +8,14 @@ import PostPropertyLayout from "../../../../components/postproperty/components/p
 import PriceInputGenerator from "../../../../components/postproperty/formData/priceInputGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 
-const OfficePriceDetailsSell = () => {
+const OfficePriceDetailsRent = () => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
       superArea: "",
       carpetArea: "",
-      plotArea:"",
+      plotArea: "",
       depositPrice: "",
       rentPrice: "",
       maintenanceFee: "",
@@ -29,7 +29,7 @@ const OfficePriceDetailsSell = () => {
       carpetArea: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-        plotArea: Yup.string()
+      plotArea: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
       depositPrice: Yup.string()
@@ -38,9 +38,7 @@ const OfficePriceDetailsSell = () => {
       rentPrice: Yup.string()
         .matches(numRegex, "invalid value")
         .required("Required"),
-      maintenanceFee: Yup.string()
-        .matches(numRegex, "invalid value")
-        
+      maintenanceFee: Yup.string().matches(numRegex, "invalid value"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -159,4 +157,4 @@ const OfficePriceDetailsSell = () => {
   );
 };
 
-export default OfficePriceDetailsSell;
+export default OfficePriceDetailsRent;

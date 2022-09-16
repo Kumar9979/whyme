@@ -18,7 +18,7 @@ import {
 } from "../../../../components/postproperty/formData/amnetiesListGenerator";
 import RadioButtonGenerator from "../../../../components/postproperty/formData/radioButtonGenerator";
 
-const propertyFeatures = () => {
+const OfficepropertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
 
@@ -26,14 +26,16 @@ const propertyFeatures = () => {
     // enableReinitialize: true,
     initialValues: {
       floorsNumber: "",
-      floorAllowed: "",
+
       totalFloors: "",
       washRooms: "",
       personalWashRoom: "",
       transaction: "",
       furnishedStatus: "",
       status: "",
-      roadFace: "",
+      roadFace: "yes",
+      personalWashroom: "yes",
+      cornerShop: "yes",
       Amenities: [],
     },
 
@@ -48,19 +50,18 @@ const propertyFeatures = () => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-      floorsAllowed: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
       furnishedStatus: Yup.string().required("Required"),
       status: Yup.string().required("Required"),
       transaction: Yup.string().required("Required"),
       roadFace: Yup.string().required("Required"),
+      personalWashroom: Yup.string().required("Required"),
+      cornerShop: Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/commercial/commercial-plot/property-price-rent"
+        "/post-property2/commercial/office-space/property-price-rent"
       );
     },
   });
@@ -131,13 +132,12 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-5  mb-2 mt-2`}>
-                {" "}
                 <div className={` me-0  mb-1`}>
                   <label
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Furnishing Status{" "}
+                    Furnishing Status
                   </label>
                   <div className={``}>
                     <SelectGenerator
@@ -180,13 +180,13 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={` ${styles.propertyFeature_width_48_to_100} me-0 ms-2  mb-1`}
+                  className={` ${styles.propertyFeature_width_35_to_100} me-0 ms-2  mb-1`}
                 >
                   <label
                     htmlFor="status"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Status{" "}
+                    Statu
                   </label>
                   <div className={`w-100`}>
                     <SelectGenerator
@@ -260,4 +260,4 @@ const propertyFeatures = () => {
   );
 };
 
-export default propertyFeatures;
+export default OfficepropertyFeatures;

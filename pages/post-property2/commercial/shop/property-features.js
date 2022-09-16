@@ -33,7 +33,8 @@ const propertyFeatures = () => {
       transaction: "",
       furnishedStatus: "",
       status: "",
-      roadFace: "",
+      personalWashroom: "yes",
+      pantry:"yes",
       Amenities: [],
     },
 
@@ -48,13 +49,12 @@ const propertyFeatures = () => {
         .matches(numRegex, "Invalid value")
         .required("Required"),
 
-      floorsAllowed: Yup.string()
-        .matches(numRegex, "Invalid value")
-        .required("Required"),
+      
       furnishedStatus: Yup.string().required("Required"),
       status: Yup.string().required("Required"),
       transaction: Yup.string().required("Required"),
-      roadFace: Yup.string().required("Required"),
+      personalWashroom: Yup.string().required("Required"),
+      pantry:Yup.string().required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {
@@ -172,7 +172,7 @@ const propertyFeatures = () => {
                 </div>
 
                 <div
-                  className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
+                  className={` ${styles.propertyFeature_width_35_to_100} me-0  mb-1`}
                 >
                   <label
                     htmlFor="status"

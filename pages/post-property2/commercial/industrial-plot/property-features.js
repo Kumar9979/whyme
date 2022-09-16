@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import styles from "../../../../styles/postProperty/propertyfeatures.module.css";
 import PostPropertySubmitButton from "../../../../components/postproperty/components/submitButton";
@@ -13,6 +14,7 @@ import PostPropertyLayout from "../../../../components/postproperty/components/p
 import InputFieldGenerator from "../../../../components/postproperty/formData/inputFieldGenerator";
 
 const IndustrialPlotPropertyFeatures = () => {
+  const router = useRouter();
   const numRegex = /^[0-9]+$/;
   const formik = useFormik({
     // enableReinitialize: true,
@@ -20,6 +22,9 @@ const IndustrialPlotPropertyFeatures = () => {
       floorsAllowed: "",
       NoOfOpenSides: "",
       constructionDone: "",
+      boundaryWall:"yes",
+      cornerSite:"yes",
+      reraReg:"yes",
       Amenities: [],
     },
 
@@ -33,6 +38,12 @@ const IndustrialPlotPropertyFeatures = () => {
       floorsAllowed: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
+        boundaryWall:Yup.string()      
+        .required("Required"),
+        cornerSite:Yup.string()      
+        .required("Required"),
+      reraReg:Yup.string()      
+      .required("Required"),
       Amenitities: Yup.string(),
     }),
     onSubmit: (values, { resetForm }) => {

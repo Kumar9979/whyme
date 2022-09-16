@@ -8,7 +8,7 @@ import PostPropertyLayout from "../../../../components/postproperty/components/p
 import PriceInputGenerator from "../../../../components/postproperty/formData/priceInputGenerator";
 import { FormikErrorGenerator } from "../../../../components/postproperty/formData/formikErrorGenerator";
 
-const OfficePriceDetailsRent = () => {
+const OfficePriceDetailsSell = () => {
   const numRegex = /^[0-9]+$/;
   const router = useRouter();
   const formik = useFormik({
@@ -140,4 +140,4 @@ const OfficePriceDetailsRent = () => {
   );
 };
 
-export default OfficePriceDetailsRent;
+export default OfficePriceDetailsSell;

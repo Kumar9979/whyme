@@ -164,13 +164,13 @@ const IndustrialShedPropertyFeatures = () => {
 
               <div className={`d-block d-lg-flex gap-0  mt-2`}>
                 <div
-                  className={` ${styles.propertyFeature_width_50_to_100} mb-1`}
+                  className={` ${styles.propertyFeature_width_45_to_100} mb-1`}
                 >
                   <label
                     htmlFor="Status"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Status{" "}
+                    Status
                   </label>
                   <div
                     className={`mb-1 ${styles.propertyFeature_width_75_to_100}`}
@@ -194,7 +194,7 @@ const IndustrialShedPropertyFeatures = () => {
                     htmlFor="Transaction"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Transaction{" "}
+                    Transaction
                   </label>
                   <div
                     className={`mb-1 ${styles.propertyFeature_width_50_to_100}`}

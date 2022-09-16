@@ -46,7 +46,7 @@ const propertyFeatures = () => {
       NoOfOpenSides: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
-        floorsNumber: Yup.string()
+      floorsNumber: Yup.string()
         .matches(numRegex, "Invalid value")
         .required("Required"),
       floorsAllowed: Yup.string()
@@ -118,7 +118,7 @@ const propertyFeatures = () => {
                     htmlFor="FurnishedStatus"
                     className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                   >
-                    Furnishing Status{" "}
+                    Furnishing Status
                   </label>
                   <div className={``}>
                     <SelectGenerator
@@ -167,7 +167,6 @@ const propertyFeatures = () => {
                 </div>
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-0 mb-2 mt-2`}>
-                
                 <div
                   className={`${styles.propertyFeature_width_50_to_100} mb-1`}
                 >
@@ -198,7 +197,7 @@ const propertyFeatures = () => {
               </div>
               <div className={`d-block d-lg-flex gap-0 gap-lg-2  mt-2`}>
                 <div
-                  className={` ${styles.propertyFeature_width_48_to_100} me-0  mb-1`}
+                  className={` ${styles.propertyFeature_width_35_to_100} me-0  mb-1`}
                 >
                   <label
                     htmlFor="status"

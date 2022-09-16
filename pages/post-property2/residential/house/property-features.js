@@ -19,7 +19,7 @@ import SelectGenerator, {
   transactionOptions,
 } from "../../../../components/postproperty/formData/selectGenerator";
 
-const CommercialPlotPropertyFeatures = () => {
+const HousePropertyFeatures = () => {
   const router = useRouter();
   const numRegex = /^[0-9]+$/;
 
@@ -189,7 +189,7 @@ const CommercialPlotPropertyFeatures = () => {
                 />
               </div>
             </div>
-            <div className={`d-block d-lg-flex gap-0 gap-lg-3  mt-2`}>
+            <div className={`d-block d-lg-flex gap-0 gap-lg-2  mt-2`}>
               <div className={` me-0  mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
@@ -212,7 +212,7 @@ const CommercialPlotPropertyFeatures = () => {
               </div>
 
               <div
-                className={` ${styles.propertyFeature_width_48_to_100} me-0 ms-2 mb-1`}
+                className={` ${styles.propertyFeature_width_40_to_100} me-0 ms-3 mb-1`}
               >
                 <label
                   htmlFor="status"
@@ -291,4 +291,4 @@ const CommercialPlotPropertyFeatures = () => {
   );
 };
 
-export default CommercialPlotPropertyFeatures;
+export default HousePropertyFeatures;
