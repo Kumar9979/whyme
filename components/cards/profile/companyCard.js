@@ -8,7 +8,7 @@ import rupee from "../../../assets/icons/rupee-icon.svg";
 const CompanyCard = () => {
   return (
     <div>
-      <div className={`${styles.container} col-lg-7 col-md-10 col-sm-10 col-12`} >
+      <div className={`${styles.container} col-xl-10 col-xxl-6 col-lg-10 col-md-10 col-sm-10 col-12`} >
         <div className={`${styles.imagecontainer} px-lg-3 py-lg-3 px-md-3 py-md-3 px-sm-3 py-sm-3 px-2 py-2`} >
           <div>
             <Image

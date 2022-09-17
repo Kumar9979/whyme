@@ -11,7 +11,7 @@ const Headdetails = () => {
     <div className={`container `}>
       <div className={`row`}>
         <div
-          className={` col-xl-3 col-xxl-3 col-lg-3 col-md-4 col-sm-4 col-4 mt-5 pt-3 mt-md-5 pt-md-4 mt-lg-5 pt-lg-3 pt-xl-3 mt-sm-5 pt-sm-4  d-lg-flex justify-content-center`} >
+          className={` col-xl-3 col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-4 mt-5 pt-3 mt-md-5 pt-md-4 mt-lg-5 pt-lg-3 pt-xl-3 mt-sm-5 pt-sm-4  d-lg-flex justify-content-center`} >
           <div className={`col- mt-4 mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0  `} >
             <Image src={profile} alt="Picture of the author" width={230} height={230} className={`${styles.profile_image} position-absolute `}
             />
@@ -25,7 +25,7 @@ const Headdetails = () => {
           </div>
         </div>
         <div
-          className={`col-xxl-9 col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8 mt-xl-5 pt-xl-5 mt-lg-5 pt-lg-3 mt-md-5 pt-md-4 mt-sm-5 pt-sm-4 mt-5 pt-3  `}
+          className={`col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8 mt-xl-5 pt-xl-5 mt-lg-5 pt-lg-3 mt-md-5 pt-md-4 mt-sm-5 pt-sm-4 mt-5 pt-3  `}
         >
           <div className={`${styles.details} mt-5 pt-5  `}>
             <div className="d-flex  justify-content-between  ">
