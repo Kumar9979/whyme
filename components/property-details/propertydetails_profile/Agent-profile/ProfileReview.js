@@ -48,15 +48,15 @@ const PropertyReview = () => {
   return (
     <div className="mt-5">
       <div className={`${styles.review_container} mt-5`}>
-        <div className="  d-flex align-items-center ">
-          <div>
+        <div className="  d-lg-flex d-md-flex d-sm-flex align-items-center justify-content-start  ">
+         
             <span
-              className={`${styles.reviewtext} fw_500 me-lg-3 me-md-3  me-sm-3 me-1 `}
+              className={`${styles.reviewtext} col- text-nowrap fw_500 me-lg-3 me-md-3  me-sm-3 me-1 `}
             >
               Review & Rating
             </span>
-          </div>
-          <div className="  d-flex align-items-center mt-lg-1 mt-md-1 mt-sm-1 mt-1 ">
+          
+          <div className=" col- d-flex align-items-center mt-lg-1 mt-md-1 mt-sm-1 mt-1 ">
             <Image src={star} alt="Picture of the author" />
             <span
               className={`${styles.reviewrating_number}  fs_24 fw_400 ms-lg-1  ms-md-1 ms-sm-1 ms-0`}
