@@ -16,9 +16,9 @@ const Agentprofile = () => {
               <Profilehead />
             </div>
 
-            <div className={`ms-4 ms-lg-4 ms-md-5 ms-sm-5  `}>
+            <div className={`ms-4 ms-lg-5 ps-lg-3 ms-md-5 ms-sm-5  `}>
               <div className="mt-5 pt-5">
-                <div className="pt-5">cards </div>
+                <div className="pt-5 ">cards </div>
               </div>
               <div className="mt-5 pt-5">
                 <div className="pt-5">
