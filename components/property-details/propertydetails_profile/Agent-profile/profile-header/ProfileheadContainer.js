@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../../../../styles/propertydetails/profile/profilehead.module.css";
-import Headdetails from "./profile-headdetails";
+import Headdetails from "./profile-headContainerdetails";
 import Image from "next/image";
 import star from "../../../../../assets/images/star.svg";
 
