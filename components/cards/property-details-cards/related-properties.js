@@ -10,7 +10,7 @@ import likeimage from "../../../assets/images/likeimage.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
 import furniture from "../../../assets/images/about-property-images/furniture.svg";
-const RelatedProperties = ({ location, data }) => {
+const RelatedProperties = ({ location, data, }) => {
   let type;
   switch (data) {
     case 0:

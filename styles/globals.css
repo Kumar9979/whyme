@@ -170,6 +170,7 @@ p {
 .color_dark_blue {
   color: #013ea3;
 }
+
 .color_light_blue {
   color: #1d72db;
 }
@@ -190,6 +191,9 @@ p {
 }
 .color_white {
   color: #ffffff;
+}
+.color_grey3 {
+  color: #889197;
 }
 
 .margin_top {

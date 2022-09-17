@@ -9,14 +9,55 @@
   box-shadow: 0px 0px 6px #0000001f;
   border-radius: 7px;
   opacity: 1;
-  height: 15%;
-  left: 25%;
+  height: 4.5rem;
+  left: 22.5%;
   top: 90%;
+  width: 55%;
+}
+.properties {
+  width: 90%;
+  margin-top: 3rem;
+}
+.container {
   width: 50%;
 }
-.location_field_width {
-    width: 45%;
+
+.homeSelectionButton {
+  border: none;
+  background-color: #50BF97;
+  border-radius: 4px;
+  color: #ffffff;
 }
+.UnSelectionButton {
+  border: none;
+  background-color: transparent;
+} 
+.width_popular_apartments {
+  width: 95%;
+}
+.popular_apartments_container {
+  width: 90%;
+}
+.scrollmenu {
+  width: 100%;
+}
+.scrollmenu > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.scrollmenu > .row::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+}
+
 @media only screen and (max-width: 992px) {
   .homepageContainer {
     height: 400px;
@@ -32,3 +73,22 @@
     height: 250px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .homepageContainer {
+    height: 160px;
+  }
+  .width_popular_apartments {
+    width: 100%;
+  }
+}
+@media only screen and  (max-width: 1890px) {
+  .container {
+    width: 60%;
+  }
+}
+@media only screen and  (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}
+
