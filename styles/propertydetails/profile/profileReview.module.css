@@ -87,21 +87,19 @@
   }
   @media only screen and (max-width: 568px) {
     .reviewtext {
-       font-size: 32px;
+       font-size: 28px;
     }
     .reviewtextarea {
-      width: 85%;
+      width: 95%;
       height: 10rem;
     }
     .reviewtextarea::placeholder {
       font-size: 14px;
     }
     .review_card {
-      width: 85%;
+      width: 95%;
     }
-    .reviewtext {
-      font-size: 30px;
-    }
+   
     .stars{
       font-size: 32px;
     }

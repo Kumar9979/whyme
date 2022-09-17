@@ -8,8 +8,8 @@ import share from "../../../../../assets/images/property-details/share.svg";
 
 const Headdetails = () => {
   return (
-    <div className={`container ms-3 mt-`}>
-      <div className={` row`}>
+    <div className={`container `}>
+      <div className={`row`}>
         <div
           className={` col-xl-3 col-xxl-3 col-lg-3 col-md-4 col-sm-4 col-4 mt-5 pt-3 mt-md-5 pt-md-4 mt-lg-5 pt-lg-3 pt-xl-3 mt-sm-5 pt-sm-4  d-lg-flex justify-content-center`} >
           <div className={`col- mt-4 mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-0  `} >
@@ -18,7 +18,7 @@ const Headdetails = () => {
             
             <div className={` d-lg-none`}>
               <span
-                className={`fs_md_32 fs_sm_17 text-nowrap fontFam_poppins  fw_500`}  >
+                className={`fs_md_24 fs_sm_17 text-nowrap fontFam_poppins  fw_500`}  >
                 Amal Sabu
               </span>
             </div>
