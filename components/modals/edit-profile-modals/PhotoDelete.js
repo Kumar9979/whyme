@@ -4,13 +4,13 @@ import styles from "../../../styles/modals/edit-profile-modals/edit-profile.modu
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const PhotoDelete = ({ show, handleClose }) => {
+const PhotoDelete = ({ show, onHide,setuploaded }) => {
   return (
     <Modal
       className={`d-flex justify-content-center`}
       centered
       show={show}
-      onHide={handleClose}
+      onHide={onHide}
       dialogClassName={`${styles.requestcall_width}`}
       //       contentClassName={`${styles.card_radius}`}
       // size={'lg'}
@@ -24,12 +24,14 @@ const PhotoDelete = ({ show, handleClose }) => {
           Do you want to Remove your Picture
           </p>
           <div className="d-flex justify-content-start mt-4 ">
-            <button className={`${styles.undo_button} ms-4 px-2 fs_15 fw_400`}>
+            <button className={`${styles.undo_button} ms-4 px-2 fs_15 fw_400`}
+   onClick={() => {setuploaded(false);{onHide
+   ()}}}>
               Yes
             </button>
             <button
               className={`${styles.undo_okay_button}  ms-4 px-2  fs_15 fw_500`}
-              onClick={handleClose}
+              onClick={onHide}
             >
               No
             </button>
