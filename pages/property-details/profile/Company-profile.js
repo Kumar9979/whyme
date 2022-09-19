@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../../../styles/propertydetails/profile/propertyprofile.module.css";
-import Profilehead from "../../../components/property-details/propertydetails_profile/Agent-profile/Profilehead";
-import CompanyCard from "../../../components/cards/profile/companyCard"
+
 import PropertyReview from "../../../components/property-details/propertydetails_profile/Agent-profile/ProfileReview";
+import Profilehead from "../../../components/property-details/propertydetails_profile/Agent-profile/profile-header/ProfileheadContainer";
 
 
 const Companyprofile = () => {
@@ -15,12 +15,12 @@ const Companyprofile = () => {
          
 
             <div className={`${styles.property_content} mt-5 pt-2`}>
-            <div className="mt-5 pt-5">
-            <div className="pt-3 mt-5"> <CompanyCard /></div>
+            <div className="mt-5 pt-5 mx-md-4">
+            <div className="pt-3 mt-5 mx-4 mx-sm-4 mx-md-4"> card</div>
             
              </div>  
              <div className="mt-5">
-            <div> <PropertyReview/></div>
+            <div className="ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-5 ms-sm-4 ms-4"> <PropertyReview/></div>
             
              </div> 
              </div>

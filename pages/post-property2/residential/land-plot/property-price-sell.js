@@ -98,7 +98,7 @@ const LandPriceDetailsSell = () => {
               </div>
             </div>
 
-            <PostPropertySubmitButton paddingTop="10rem" />
+            <PostPropertySubmitButton paddingTop="12rem" />
           </form>
         </div>
       </div>

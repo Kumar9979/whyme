@@ -120,7 +120,7 @@ const VillaPriceDetailsRent = () => {
                             </div>
                         </div>
 
-                        <PostPropertySubmitButton  paddingTop="6rem" />
+                        <PostPropertySubmitButton  paddingTop="4rem" />
                     </form>
                 </div>
             </div>

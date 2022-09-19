@@ -113,7 +113,7 @@ const HousePriceDetailsSell = () => {
               </div>
             </div>
 
-            <PostPropertySubmitButton />
+            <PostPropertySubmitButton paddingTop="4rem" />
           </form>
         </div>
       </div>

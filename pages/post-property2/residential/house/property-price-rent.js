@@ -131,7 +131,7 @@ const PriceDetailsRent = () => {
               </div>
             </div>
 
-            <PostPropertySubmitButton />
+            <PostPropertySubmitButton paddingTop="5rem" />
           </form>
         </div>
       </div>
