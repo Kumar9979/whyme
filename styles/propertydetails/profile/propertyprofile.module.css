@@ -6,5 +6,10 @@
   box-shadow: 0px 0px 20px #0000001f;
   border-radius: 20px;
   opacity: 1;
+} 
+
+.similar_properties_width {
+  width: 80%;
 }
+
 

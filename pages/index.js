@@ -5,7 +5,6 @@ import Image from "next/image";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import Location from "../components/location";
 import AgentProperties from "../components/property-details/agent-properties";
-import CompanyCard from "../components/cards/profile/companyCard";
 import PopularApartmentCard from "../components/cards/homePage_card/popular_apartment";
 import arrowleft from "../assets/images/arrow_left.svg";
 import arrowright from "../assets/images/arrow_right.svg";

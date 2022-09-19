@@ -1,0 +1,23 @@
+.profile_container {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #0000001f;
+  border-radius: 20px;
+  opacity: 1;
+}
+.agent_detail_height {
+    height: 7.5rem;
+    background-color: green;
+} 
+.number_properties {
+    background-color: #F77223;
+    border-radius: 7px;
+} 
+.white_space {
+    width: 21%;
+}
+.details_width {
+    width: 78%;
+}
+
+
+

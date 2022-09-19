@@ -6,7 +6,9 @@ import profile from "../../../assets/images/property-details/profile.png";
 
 const PopularApartmentCard = () => {
   return (
-    <div className={`${styles.popular_apartments_card} me-3 ms-2 mt-5 p-2 mb-2`}>
+    <div
+      className={`${styles.popular_apartments_card} me-3 ms-2 mt-5 p-2 mb-2`}
+    >
       <Image
         width={1000}
         height={550}
@@ -18,7 +20,7 @@ const PopularApartmentCard = () => {
         <div className="col-2">
           <div className={`${styles.profile_image}`}>
             <Image
-              width={400}
+              width={600}
               height={400}
               src={profile}
               alt="Picture of the author"
@@ -44,12 +46,13 @@ const PopularApartmentCard = () => {
               ₹ 30 Lac
             </span>
           </div>
-          <div className="d-flex justify-content-end"><button
-            className={`${styles.view_details_button} py-2 px-2 px-lg-4 color_white fontFam_poppins fw_400 fs_12 fs_sm_10 text-nowrap`}
-          >
-            View Details
-          </button></div>
-          
+          <div className="d-flex justify-content-end">
+            <button
+              className={`${styles.view_details_button} py-2 px-2 px-lg-4 color_white fontFam_poppins fw_400 fs_12 fs_sm_10 text-nowrap`}
+            >
+              View Details
+            </button>
+          </div>
         </div>
       </div>
     </div>
