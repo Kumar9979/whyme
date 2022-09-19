@@ -1,6 +1,9 @@
 import React from "react";
 import HeaderSection from "../../../components/property-details/property-details-profile/header";
 import styles from "../../../styles/propertydetails/profile/agent-profile.module.css";
+import star from "../../../../../assets/images/star.svg";
+import caution from "../../../../../assets/images/property-details/caution.svg";
+import share from "../../../../../assets/images/property-details/share.svg";
 
 const AgentProfile = () => {
   return (
@@ -27,12 +30,36 @@ const AgentProfile = () => {
                           </span>
                         </div>
                         <div className="mt-2 d-flex align-items-center">
-                          <span className="color_grey fs_8 fw_400 fontFam_poppins">Active Since</span>
-                          <span className="fs_12 fw_500 fontFam_poppins color_cloudBurst ms-1">Aug 2022</span>
-                          <span ></span>
-                          <span className="fs_15 fw_400 fontFam_poppins color_light_blue ms-1">4.7 Ratings</span>
-                          <span className="fs_13 fw_400 fontFam_poppins color_cloudBurst ms-1"> {"(236)"}</span>
+                          <span className="color_grey fs_8 fw_400 fontFam_poppins">
+                            Active Since
+                          </span>
+                          <span className="fs_12 fw_500 fontFam_poppins color_cloudBurst ms-1">
+                            Aug 2022
+                          </span>
+                          <span></span>
+                          <span className="fs_15 fw_400 fontFam_poppins color_light_blue ms-1">
+                            4.7 Ratings
+                          </span>
+                          <span className="fs_13 fw_400 fontFam_poppins color_cloudBurst ms-1">
+                            {" "}
+                            {"(236)"}
+                          </span>
                         </div>
+                      </div>
+                      <div className="d-flex">
+                        <div>
+                          <Image
+                            src={caution}
+                            alt="Picture of the author"
+                            width={43}
+                            height={43}
+                          />
+                        </div>
+                        <div>
+                          <Image src={share} alt="Picture of the author" />
+                        </div>
+
+                        <button>Contact</button>
                       </div>
                     </div>
                   </div>
