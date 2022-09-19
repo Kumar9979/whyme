@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../../styles/propertydetails/profile/propertyprofile.module.css";
-
 import PropertyReview from "../../../components/property-details/propertydetails_profile/Agent-profile/ProfileReview";
 import Profilehead from "../../../components/property-details/propertydetails_profile/Agent-profile/profile-header/ProfileheadContainer";
 
