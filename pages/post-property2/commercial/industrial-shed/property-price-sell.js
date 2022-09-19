@@ -118,7 +118,7 @@ const IndustrialShedPriceDetailsSell = () => {
               </div>
             </div>
 
-            <PostPropertySubmitButton paddingTop="5rem" />
+            <PostPropertySubmitButton paddingTop="3rem" />
           </form>
         </div>
       </div>

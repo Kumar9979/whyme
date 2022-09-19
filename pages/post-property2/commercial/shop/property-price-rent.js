@@ -133,7 +133,7 @@ const ShopPriceDetailsRent = () => {
               </div>
             </div>
 
-            <PostPropertySubmitButton paddingTop="5rem" />
+            <PostPropertySubmitButton paddingTop="4rem" />
           </form>
         </div>
       </div>
