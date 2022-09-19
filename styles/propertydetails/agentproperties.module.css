@@ -3,7 +3,7 @@
   background-color: #ffffff;
 }
 .seeall_button {
-  color: #50BF97;
+  color: #50bf97;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -84,6 +84,31 @@
   right: 0%;
   top: 50%;
 }
+.arrow_left_button {
+  background-color: #1d72db;
+  border-radius: 50%;
+  width: 30px;
+  left: -2%;
+  top: 50%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.arrow_right_button {
+  background-color: #1d72db;
+  border-radius: 50%;
+  right: -2%;
+  top: 50%;
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
 .prev_decor {
   border-radius: 50%;
   background-color: #dddbdb;
@@ -101,13 +126,13 @@
   .scrollmenu {
     width: 100%;
   }
-  
-.agent_name {
-  font-weight: 600;
-  font-size: 14px;
-}
-.agent_properties_text {
-  font-size: 14px;
-  font-weight: 600;
-}
+
+  .agent_name {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .agent_properties_text {
+    font-size: 14px;
+    font-weight: 600;
+  }
 }

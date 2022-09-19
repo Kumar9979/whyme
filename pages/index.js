@@ -7,6 +7,8 @@ import Location from "../components/location";
 import AgentProperties from "../components/property-details/agent-properties";
 import CompanyCard from "../components/cards/profile/companyCard";
 import PopularApartmentCard from "../components/cards/homePage_card/popular_apartment";
+import arrowleft from "../assets/images/arrow_left.svg";
+import arrowright from "../assets/images/arrow_right.svg";
 
 const Homescreen = () => {
   let n = 10;
@@ -151,7 +153,7 @@ const Homescreen = () => {
             </p>
           </div>
         </div>
-        <div className={`${styles.width_popular_apartments} mx-auto mt-0`}>
+        <div className={`${styles.width_popular_apartments} mx-auto `}>
           <div>
             <AgentProperties
               propertyType={
@@ -164,7 +166,7 @@ const Homescreen = () => {
             />
           </div>
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-5">
           <div className={`${styles.popular_apartments_container} mt-5`}>
             <h1 className="text-center color_cloudBurst fw_500 fs_36 fs_sm_20">
               Popular Apartments in Mysuru
@@ -176,20 +178,40 @@ const Homescreen = () => {
                 aliquyam erat, sed diam voluptua. At vero.
               </p>
             </div>
-            <div className="mt-2">
-              <div className={`row mt-3`}>
-                <div className={`${styles.scrollmenu} `}>
-                  <div ref={ref} className={`${styles.row} row`}>
-                    {[...Array(n)].map((item, index) => {
-                      return <PopularApartmentCard />;
-                    })}
-                  </div>
+            <div className={`row position-relative`}>
+              <div className={`${styles.scrollmenu} `}>
+                <div ref={ref} className={`${styles.row} row`}>
+                  {[...Array(n)].map((item, index) => {
+                    return <PopularApartmentCard />;
+                  })}
                 </div>
               </div>
+              <button
+            onClick={() => onScroll(-800)}
+            className={`${styles.arrow_left_button} p-0 position-absolute d-lg-block d-none`}
+          >
+            <Image
+              width={100}
+              height={100}
+              src={arrowleft}
+              alt="Picture of the author"
+            />
+          </button>
+          <button
+            onClick={() => onScroll(+800)}
+            className={`${styles.arrow_right_button} p-0 position-absolute d-lg-block d-none`}
+          >
+            <Image
+              width={100}
+              height={100}
+              src={arrowright}
+              alt="Picture of the author"
+            />
+          </button>
             </div>
           </div>
         </div>
-        <div className={` d-flex justify-content-center `}>
+        <div className={` d-flex justify-content-center mt-5`}>
           <div className={`${styles.properties} `}>
             <div className="row">
               <div className={`${styles.container}`}>
@@ -236,6 +258,39 @@ const Homescreen = () => {
           </div>
         </div>
         <div className={`${styles.width_popular_apartments} mx-auto mt-0`}>
+          <div>
+            <AgentProperties
+              sqftType={selectsqft ? "1200Sqft" : "2400Sqft"}
+              data={1}
+              hide={1}
+            />
+          </div>
+        </div>
+        <div className={` d-flex justify-content-center mt-5`}>
+          <div className={`${styles.properties} `}>
+            <h1 className="color_cloudBurst fw_500 fs_36 fs_sm_20 ">
+              Residential Houses & Villas in Prime Locations
+            </h1>
+
+            <p
+              className={`color_grey fs_15 fs_sm_12 fw_500 fontFam_poppins col-lg-6 col-12 mt-2 mt-lg-0`}
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero.
+            </p>
+          </div>
+        </div>
+        <div className={`${styles.width_residental_houses} ms-0 ms-lg-5  mt-0`}>
+          <div>
+            <AgentProperties
+              sqftType={selectsqft ? "1200Sqft" : "2400Sqft"}
+              data={1}
+              hide={1}
+            />
+          </div>
+        </div>
+        <div className={`${styles.width_residental_houses} ms-0 ms-lg-5 mt-0`}>
           <div>
             <AgentProperties
               sqftType={selectsqft ? "1200Sqft" : "2400Sqft"}

@@ -57,21 +57,50 @@
   scroll-behavior: smooth;
   -ms-overflow-style: none;
 }
+.width_residental_houses {
+  width: 65%;
+}
+.arrow_left_button {
+  background-color: #1d72db;
+  border-radius: 50%;
+  width: 30px;
+  left: -3%;
+  top: 50%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.arrow_right_button {
+  background-color: #1d72db;
+  border-radius: 50%;
+  right: -3%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
 
 @media only screen and (max-width: 992px) {
   .homepageContainer {
-    height: 400px;
+    height: 250px;
   }
   .location_type_budget {
     left: 12.5%;
     top: 90%;
     width: 75%;
   }
+  .width_residental_houses {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 992px) {
-  .homepageContainer {
-    height: 250px;
-  }
+  
 }
 @media only screen and (max-width: 768px) {
   .homepageContainer {

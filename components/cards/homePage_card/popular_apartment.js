@@ -6,7 +6,7 @@ import profile from "../../../assets/images/property-details/profile.png";
 
 const PopularApartmentCard = () => {
   return (
-    <div className={`${styles.popular_apartments_card} me-2 ms-2 mt-5 p-2 mb-2`}>
+    <div className={`${styles.popular_apartments_card} me-3 ms-2 mt-5 p-2 mb-2`}>
       <Image
         width={1000}
         height={550}
