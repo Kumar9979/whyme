@@ -161,7 +161,7 @@ const PlotProperties = ({ data,housetype }) => {
 
         <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_22 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_22 fs_md_15 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
           >
             ₹ 30 Lac
           </div>

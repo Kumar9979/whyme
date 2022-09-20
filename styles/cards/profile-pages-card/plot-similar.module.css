@@ -18,12 +18,12 @@
 }
 .similar_property_location {
   color: #000000;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .exact_location {
   color: #bcc7ce;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -32,23 +32,23 @@
 }
 .about_property_heading {
   color: #bcc7ce;
-  font-size: 12px;
+  font-size: 15px;
   white-space: nowrap;
 }
 .about_property_amenity {
   color: #1d72db;
-  font-size: 12px;
+  font-size: 15px;
   white-space: nowrap;
 }
 .about_readmore_text {
   color: #323d5a;
   width: 90%;
   padding-top: 1rem;
-  font-size: 11px;
+  font-size: 13px;
 }
 .image_size {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 .about_readmore_button {
   background-color: transparent;

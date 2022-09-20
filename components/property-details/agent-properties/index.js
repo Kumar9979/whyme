@@ -16,7 +16,7 @@ const AgentProperties = ({ propertyType, data, hide }) => {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <div className={`${styles.agent_properties} p-2`}>
         {hide === 1 ? null : (
           <div className="d-flex justify-content-between align-items-center ">

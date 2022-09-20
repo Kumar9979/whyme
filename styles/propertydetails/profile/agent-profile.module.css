@@ -5,11 +5,10 @@
   opacity: 1;
 }
 .body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 .agent_detail_height {
   height: 7rem;
-  background-color: green;
 }
 .number_properties {
   background-color: #f77223;
@@ -42,5 +41,16 @@
   }
   .details_width {
     width: 70%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .agent_detail_height {
+    height: 5.5rem;
+  }
+  .white_space {
+    width: 28%;
+  }
+  .details_width {
+    width: 72%;
   }
 }

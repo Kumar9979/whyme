@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "../../../styles/propertydetails/requestcall.module.css";
 import menu from "../../../assets/images/menu.svg";
 import Image from "next/dist/client/image";
@@ -70,11 +70,19 @@ const RequestCall = () => {
       <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
         Request Callback
       </button>
-      <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+      <button
+       onClick={() => {
+        router.push(
+          "/property-details/profile/agent-profile"
+        );
+      }}
+       className={`${styles.agent_profile} w-100 py-2 mt-3`}>
         View Profile
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -93,7 +101,6 @@ const RequestCall = () => {
 };
 
 export default RequestCall;
-
 
 export const CompanyRequestCall = () => {
   const [show, setShow] = useState(false);
@@ -158,11 +165,19 @@ export const CompanyRequestCall = () => {
       <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
         Request Callback
       </button>
-      <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+      <button
+       onClick={() => {
+        router.push(
+          "/property-details/profile/company-profile"
+        );
+      }}
+       className={`${styles.agent_profile} w-100 py-2 mt-3`}>
         View Profile
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -215,9 +230,10 @@ export const PostedByOwner = () => {
             >
               Rohith
             </div>
-            <span className="fs_15 fw_500 color_light_green fontFam_poppins d-flex justify-content-start justify-content-md-center justify-content-lg-center">Verified Owner</span>
-            
-            
+            <span className="fs_15 fw_500 color_light_green fontFam_poppins d-flex justify-content-start justify-content-md-center justify-content-lg-center">
+              Verified Owner
+            </span>
+
             <div
               className={`${styles.agent_number} d-flex justify-content-start justify-content-md-center justify-content-lg-center`}
             >
@@ -230,7 +246,9 @@ export const PostedByOwner = () => {
         Request Callback
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -247,5 +265,3 @@ export const PostedByOwner = () => {
     </div>
   );
 };
-
-

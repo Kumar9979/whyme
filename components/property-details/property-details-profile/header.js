@@ -31,8 +31,8 @@ const HeaderSection = () => {
           <Image
             src={profile}
             alt="Picture of the author"
-            width={130}
-            height={130}
+            width={100}
+            height={100}
             className={`${styles.image}`}
           />
         ) : (

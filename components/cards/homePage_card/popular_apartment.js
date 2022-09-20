@@ -7,7 +7,7 @@ import profile from "../../../assets/images/property-details/profile.png";
 const PopularApartmentCard = () => {
   return (
     <div
-      className={`${styles.popular_apartments_card} me-3 ms-2 mt-5 p-2 mb-2`}
+      className={`${styles.popular_apartments_card} me-3 ms-3 mt-3 p-2 mb-2`}
     >
       <Image
         width={1000}
@@ -17,22 +17,22 @@ const PopularApartmentCard = () => {
         alt="Picture of the author"
       />
       <div className="row">
-        <div className="col-2">
+        <div className="col-3">
           <div className={`${styles.profile_image}`}>
             <Image
               width={600}
-              height={400}
+              height={500}
               src={profile}
               alt="Picture of the author"
             />
           </div>
         </div>
-        <div className="col-7">
-          <div className="fs_15 fs_sm_13 fw_500 fontFam_poppins color_black">
+        <div className="col-6">
+          <div className="fs_15 fs_sm_10 fw_500 fontFam_poppins color_black">
             2 & 3 BHK Hi-End living spaces in Mysuru
           </div>
           <div>
-            <div className="color_grey3 fontFam_poppins fs_12 fs_sm_9 fw_500">
+            <div className="color_grey3 fontFam_poppins fs_12 fs_sm_8 fw_500">
               By Brigade GdivSector 36 Vijayanagar, Mysuru
             </div>
           </div>
@@ -48,7 +48,7 @@ const PopularApartmentCard = () => {
           </div>
           <div className="d-flex justify-content-end">
             <button
-              className={`${styles.view_details_button} py-2 px-2 px-lg-4 color_white fontFam_poppins fw_400 fs_12 fs_sm_10 text-nowrap`}
+              className={`${styles.view_details_button} py-1 py-lg-2 px-2 px-lg-4 color_white fontFam_poppins fw_400 fs_12 fs_sm_10 text-nowrap`}
             >
               View Details
             </button>
