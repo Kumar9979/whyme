@@ -6,9 +6,11 @@ import image from "../../../assets/images/imagereview/people.png";
 import star from "../../../assets/images/star.svg";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 import companyLogo from "../../../assets/images/about-property-images/brigade.jpeg";
+import { useRouter } from "next/router";
 
 const RequestCall = () => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
@@ -71,12 +73,11 @@ const RequestCall = () => {
         Request Callback
       </button>
       <button
-       onClick={() => {
-        router.push(
-          "/property-details/profile/agent-profile"
-        );
-      }}
-       className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+        onClick={() => {
+          router.push("/property-details/profile/agent-profile");
+        }}
+        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+      >
         View Profile
       </button>
       {show ? (
@@ -104,6 +105,8 @@ export default RequestCall;
 
 export const CompanyRequestCall = () => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
+
 
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
@@ -166,12 +169,11 @@ export const CompanyRequestCall = () => {
         Request Callback
       </button>
       <button
-       onClick={() => {
-        router.push(
-          "/property-details/profile/company-profile"
-        );
-      }}
-       className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+        onClick={() => {
+          router.push("/property-details/profile/company-profile");
+        }}
+        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+      >
         View Profile
       </button>
       {show ? (

@@ -46,7 +46,7 @@ const OtherProperties = ({amenties, type, data, plot}) => {
           <button
             className={`${styles.seeall_button} d-flex align-items-center `}
           >
-            <span>See All </span>
+            <span>See More </span>
             <span className={`mt-1 ms-2 `}>
               {" "}
               <Image

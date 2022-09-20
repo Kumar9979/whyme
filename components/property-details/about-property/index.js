@@ -55,7 +55,7 @@ const Aboutproperty = ({ data }) => {
     <div className={`${styles.aboutproperty} mt-4 p-4`}>
       <h1 className={`${styles.about_property_text}`}>About the Property</h1>
       <hr className={`${styles.about_property_horizontal}`}></hr>
-      <div className={`row ps-2 ps-lg-5 ps-lg-4`}>
+      <div className={`row`}>
         {properties.map((item, index) => {
           return (
             <div className={`col-lg-4 col-6 d-flex mb-5`}>
@@ -86,7 +86,7 @@ const Aboutproperty = ({ data }) => {
           className={`${styles.about_readmore_button}`}
           onClick={() => setReadless(!readless)}
         >
-          {readless === true ? "Read Less" : "See More"}
+          {readless === true ? "Read Less" : "Know More"}
         </button>
       </p>
     </div>

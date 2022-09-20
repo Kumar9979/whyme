@@ -10,7 +10,7 @@
 }
 
 .heading {
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 600;
 }
 
@@ -60,7 +60,7 @@
 .input_text::placeholder {
   color: #dddbdb;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 13px;
 }
 .input_text_warning_border::placeholder {
   color: #dddbdb;

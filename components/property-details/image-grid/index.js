@@ -21,7 +21,7 @@ import save from "../../../assets/icons/save.svg";
 import ShareIcon from "../../../assets/images/about-property-images/share";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 import { date } from "yup";
-const ImageGrid = ({ propertyType }) => {
+const ImageGrid = ({ propertyType, data }) => {
   const [show, setShow] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -71,22 +71,22 @@ const ImageGrid = ({ propertyType }) => {
             >
               {propertyType}
             </p>
-            {date == 1 ? (
+            {data == 1 ? (
               <div
-                className={`${styles.construction_company} px-1 fs_12 me-2 fw_500 fontFam_poppins d-none d-lg-block`}
+                className={`${styles.construction_company} px-1 fs_13 me-2 fw_600 fontFam_poppins d-none d-lg-block`}
               >
                 Project by Brigade
               </div>
             ) : null}
 
             <div
-              className={`${styles.ready_apartment} px-1 fs_12 fw_500 fontFam_poppins d-none d-lg-block`}
+              className={`${styles.ready_apartment} px-1 fs_13 fw_600 fontFam_poppins d-none d-lg-block`}
             >
               Ready to move
             </div>
           </div>
           <p
-            className={`${styles.property_location} px-1 mt-2 fs_12 fw_500 fontFam_poppins d-flex justify-content-spacearound`}
+            className={`${styles.property_location} px-1 mt-2 fs_14 fw_500 color_cloudBurst fontFam_poppins d-flex justify-content-spacearound`}
           >
             <span className="pe-1">
               {" "}
