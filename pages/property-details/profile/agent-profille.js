@@ -33,7 +33,7 @@ const AgentProfile = () => {
         <div className="d-flex justify-content-center mt-5 pt-5">
           <div className="col-12 col-md-11 col-lg-11">
             <div className="d-flex justify-content-center">
-              <div className={`${styles.profile_container} w-100`}>
+              <div className={`${styles.profile_container} w-100 mb-3`}>
                 <div className="p-sm-0 p-md-3 p-lg-3">
                   <HeaderSection />
                   <div className={`${styles.agent_detail_height}`}>
@@ -81,7 +81,7 @@ const AgentProfile = () => {
                               />
                             </div>
 
-                            <div className="ms-3">
+                            <div className="ms-2 ms-lg-3">
                               <Image
                                 src={share}
                                 width={25}
@@ -91,7 +91,7 @@ const AgentProfile = () => {
                             </div>
 
                             <button
-                              className={`${styles.contact_button} px-lg-4 me-1 ms-3 color_white py-2 py-md-1 px-md-2 px-3 border-none`}
+                              className={`${styles.contact_button} px-lg-4 me-1 ms-2 ms-lg-3 fontfam_poppins fw_500 fs_15 fs_sm_8 color_white py-2 py-md-2 py-lg-3 px-md-3 px-3 border-none`}
                             >
                               Contact
                             </button>
