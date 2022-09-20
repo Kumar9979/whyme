@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from "react";
-import * as Yup from "yup";
+import React from "react";
 import styles from "../../../../styles/modals/apartmentsModals/apartmentDescription.module.css";
 import Modal from "react-bootstrap/Modal";
 import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
-import { useFormik } from "formik";
 
 const CommercialShowroomDescription = ({show, handleClose}) => {
-    const formik = useFormik({
-        initialValues: {
-            Description: "",
-        },
-        validationSchema: Yup.object({
-            Description: Yup.string("").required("Required"),
-        }),
-        onSubmit: (values, { resetForm }) => {
-            console.log(values);
-            handleClose();
-            resetForm();
-          },
-      });
+    
   return (
     <div>
         <Modal
@@ -32,7 +18,7 @@ const CommercialShowroomDescription = ({show, handleClose}) => {
       >
         <Modal.Body>
             <div>
-            <form onSubmit={formik.handleSubmit}>
+            <form >
             <div
               className={`${styles.heading} d-flex justify-content-between `}
             >
@@ -58,16 +44,9 @@ const CommercialShowroomDescription = ({show, handleClose}) => {
                     id="Description"
                     placeholder="Enter the description"
                     name="Description"
-                    value={formik.values.Description}
-                    onChange={formik.handleChange}
                   ></textarea>
                 </div>
-                {formik.errors.Description && formik.touched.Description && (
-                  <div className="d-flex align-items-center text-danger">
-                    <i className="ri-error-warning-line me-1 ps-2 "></i>
-                    <span>{formik.errors.Description}</span>
-                  </div>
-                )}
+               
                 <div className={`d-flex justify-content-end`}>
                 <button
                   type="submit"

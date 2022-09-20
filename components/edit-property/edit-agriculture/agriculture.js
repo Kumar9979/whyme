@@ -39,8 +39,6 @@ const EditAgiculture = ({ data, propertyType }) => {
       break;
   }
 
-
-  
   const [featureModalShow, setFeatureModalShow] = useState(false);
   const [properties, setProperties] = useState(features);
   const [areaModal, setAreaModal] = useState(false);
@@ -118,7 +116,7 @@ const EditAgiculture = ({ data, propertyType }) => {
         <div
           className={`${styles.back_icon} d-flex justify-content-start ps-2`}
         >
-          <span>
+          <span className="d-flex align-items-center">
             {" "}
             <Image src={backIcon} />
             <span
@@ -178,7 +176,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                     </div>
                     <div className="">
                       <Progress
-                      className={`${styles.progress_bar}`}
+                        className={`${styles.progress_bar}`}
                         strokeColor={"#50BF97"}
                         width={60}
                         strokeWidth={12}
@@ -197,7 +195,7 @@ const EditAgiculture = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
-        <div className={`${styles.card}  px-2 pt-3 mt-3 `}>
+        <div className={`${styles.card}  px-2  mt-3 `}>
           <div className={` card-body pt-2 pt-lg-3 pb-2`}>
             <div className="d-flex  justify-content-between">
               <span
@@ -209,7 +207,7 @@ const EditAgiculture = ({ data, propertyType }) => {
               {image.length != 0 ? (
                 <button
                   onClick={handleShow}
-                  className={`${styles.add_photo_btn} me-3 px-3 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Add Photos
                 </button>
@@ -269,7 +267,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                 onClick={() => {
                   setEditLocation(true);
                 }}
-                className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
               >
                 Edit Location
               </button>
@@ -336,13 +334,13 @@ const EditAgiculture = ({ data, propertyType }) => {
               </div>
               <button
                 onClick={() => setFeatureModalShow(true)}
-                className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
               >
                 Edit Features
               </button>
             </div>
             <hr className={`${styles.hr}`} />
-            <div className={`row mt-4`}>
+            <div className={`row mt-4 ps-0 ps-lg-3`}>
               {properties.map((item, index) => {
                 return (
                   <div
@@ -376,13 +374,13 @@ const EditAgiculture = ({ data, propertyType }) => {
               </div>
               <button
                 onClick={() => setAreaModal(true)}
-                className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
               >
                 Edit Area & Price
               </button>
             </div>
             <hr className={`${styles.hr}`} />
-            <div className={`row mt-4`}>
+            <div className={`row mt-4 ps-0 ps-lg-3`}>
               <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
                 <p className={`fontFam_poppins ${styles.priceHeading}`}>
                   Price Details
@@ -483,13 +481,13 @@ const EditAgiculture = ({ data, propertyType }) => {
               </div>
               <button
                 onClick={() => setDescriptionModal(true)}
-                className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
               >
                 Edit Description
               </button>
             </div>
             <hr className={`${styles.hr}`} />
-            <p className={`fontFam_poppins`}>
+            <p className={`fontFam_poppins ps-0 ps-lg-3`}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
@@ -558,75 +556,72 @@ const EditAgiculture = ({ data, propertyType }) => {
         <Modal.Footer></Modal.Footer>
       </Modal>
       {data === 0 && (
-          <>
-            <AgricultureFarmHouseFeatures
-              show={featureModalShow}
-              handleClose={() => setFeatureModalShow(false)}
-            />
-            
-            <AgricultureFarmHouseAreaPrice
-              show={areaModal}
-              handleClose={() => setAreaModal(false)}
-            />
-            <AgricultureFarmHouseDescription
-              show={descriptionModal}
-              handleClose={() => setDescriptionModal(false)}
-            />
-            <AgricultureFarmHouseUploadPhoto
-              handleClose={handleClose}
-              handleImageUpload={handleImageUpload}
-              show={show}
-            />
-            <AgricultureFarmHouseDeletePhoto
-              deleteFn={onImageRemove}
-              index={imageNumber}
-              handleClose={handleDeleteModalClose}
-              show={showDeleteModal}
-            />
+        <>
+          <AgricultureFarmHouseFeatures
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
 
-            <AgricultureFarmHouseUpdateMap
-              show={editLocation}
-              handleClose={() => setEditLocation(false)}
-            />
-          </>
-        )}
+          <AgricultureFarmHouseAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <AgricultureFarmHouseDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <AgricultureFarmHouseUploadPhoto
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <AgricultureFarmHouseDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
 
-
+          <AgricultureFarmHouseUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          />
+        </>
+      )}
 
       {data === 1 && (
-          <>
-            <AgricultureLandFeatures
-              show={featureModalShow}
-              handleClose={() => setFeatureModalShow(false)}
-            />
-            
-            <AgricultureLandAreaPrice
-              show={areaModal}
-              handleClose={() => setAreaModal(false)}
-            />
-            <AgricultureLandDescription
-              show={descriptionModal}
-              handleClose={() => setDescriptionModal(false)}
-            />
-            <AgricultureLandUploadPhoto
-              handleClose={handleClose}
-              handleImageUpload={handleImageUpload}
-              show={show}
-            />
-            <AgricultureLandDeletePhoto
-              deleteFn={onImageRemove}
-              index={imageNumber}
-              handleClose={handleDeleteModalClose}
-              show={showDeleteModal}
-            />
+        <>
+          <AgricultureLandFeatures
+            show={featureModalShow}
+            handleClose={() => setFeatureModalShow(false)}
+          />
 
-            <AgricultureLandUpdateMap
-              show={editLocation}
-              handleClose={() => setEditLocation(false)}
-            />
-          </>
-        )}
+          <AgricultureLandAreaPrice
+            show={areaModal}
+            handleClose={() => setAreaModal(false)}
+          />
+          <AgricultureLandDescription
+            show={descriptionModal}
+            handleClose={() => setDescriptionModal(false)}
+          />
+          <AgricultureLandUploadPhoto
+            handleClose={handleClose}
+            handleImageUpload={handleImageUpload}
+            show={show}
+          />
+          <AgricultureLandDeletePhoto
+            deleteFn={onImageRemove}
+            index={imageNumber}
+            handleClose={handleDeleteModalClose}
+            show={showDeleteModal}
+          />
 
+          <AgricultureLandUpdateMap
+            show={editLocation}
+            handleClose={() => setEditLocation(false)}
+          />
+        </>
+      )}
     </div>
   );
 };

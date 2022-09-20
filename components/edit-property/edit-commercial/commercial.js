@@ -189,7 +189,7 @@ const EditCommercial = ({ data, propertyType }) => {
           <div
             className={`${styles.back_icon} d-flex justify-content-start ps-2`}
           >
-            <span>
+            <span className="d-flex align-items-center">
               {" "}
               <Image src={backIcon} />
               <span
@@ -267,7 +267,7 @@ const EditCommercial = ({ data, propertyType }) => {
               </div>
             </div>
           </div>
-          <div className={`${styles.card}  px-2 pt-3 mt-3 `}>
+          <div className={`${styles.card}  px-2  mt-3 `}>
             <div className={` card-body pt-2 pt-lg-3 pb-2`}>
               <div className="d-flex  justify-content-between">
                 <span
@@ -279,7 +279,7 @@ const EditCommercial = ({ data, propertyType }) => {
                 {image.length != 0 ? (
                   <button
                     onClick={handleShow}
-                    className={`${styles.add_photo_btn} me-3 px-3 px-lg-4 fs_13 fontFam_poppins`}
+                    className={`${styles.add_photo_btn} me-3 px-2 px-lg-3 fs_13 fontFam_poppins`}
                   >
                     Add Photos
                   </button>
@@ -339,7 +339,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   onClick={() => {
                     setEditLocation(true);
                   }}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Location
                 </button>
@@ -406,13 +406,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setFeatureModalShow(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Features
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
                 {properties.map((item, index) => {
                   return (
                     <div
@@ -445,13 +445,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setAmenitiesModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Amenities
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
                 {amenties.map((item, index) => {
                   return (
                     <div
@@ -484,13 +484,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setAreaModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Area & Price
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
                 <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
                   <p className={`fontFam_poppins ${styles.priceHeading}`}>
                     Price Details
@@ -571,13 +571,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setDescriptionModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Description
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <p className={`fontFam_poppins`}>
+              <p className={`fontFam_poppins ps-0 ps-lg-3`}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et

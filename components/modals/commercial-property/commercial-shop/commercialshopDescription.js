@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from "react";
-import * as Yup from "yup";
 import styles from "../../../../styles/modals/apartmentsModals/apartmentDescription.module.css";
 import Modal from "react-bootstrap/Modal";
 import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
-import { useFormik } from "formik";
 
 const CommercialShopDescription = ({show, handleClose}) => {
-    const formik = useFormik({
-        initialValues: {
-            Description: "",
-        },
-        validationSchema: Yup.object({
-            Description: Yup.string("").required("Required"),
-        }),
-        onSubmit: (values, { resetForm }) => {
-            console.log(values);
-            handleClose();
-            resetForm();
-          },
-      });
+    
   return (
     <div>
         <Modal
@@ -32,7 +18,7 @@ const CommercialShopDescription = ({show, handleClose}) => {
       >
         <Modal.Body>
             <div>
-            <form onSubmit={formik.handleSubmit}>
+            <form >
             <div
               className={`${styles.heading} d-flex justify-content-between `}
             >
