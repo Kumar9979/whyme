@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../../../styles/postProperty/propertydetails.module.css";
-import Image from "next/image";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";

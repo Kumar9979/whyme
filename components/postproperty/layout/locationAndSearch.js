@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import PlacesAutocomplete from "../../../pages/post-property/property-details/placesAutocomplete";
-import { usePosition } from "../../../pages/post-property/property-details/usePosition";
+import PlacesAutocomplete from "../../../components/postproperty/components/placesAutocomplete";
+import { usePosition } from "../../../components/postproperty/components/usePosition";
 import Geocode from "react-geocode";
 import styles from "../../../styles/postProperty/postpropertylayout.module.css";
 const libraries = ["places"];
@@ -54,6 +54,7 @@ const LocationAndSearch = ({ formik }) => {
               markedAddress={markedAddress}
               setSelected={setSelected}
             />
+
           </div>
           <div className="mt-3">
             <GoogleMap

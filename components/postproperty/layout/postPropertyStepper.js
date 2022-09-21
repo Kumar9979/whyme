@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-
 import styles from "../../../styles/stepper/stepper.module.css";
 import stepperCompleletedIcon from "../../../assets/icons/stepperCompleletedIcon.svg";
 import stepperCurrentIcon from "../../../assets/icons/stepperCurrentIcon.svg";
