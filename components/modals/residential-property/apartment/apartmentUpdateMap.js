@@ -9,6 +9,7 @@ import PropertyLocation from "../../../modal-location";
 const ApartmentUpdateMap = ({ show, handleClose }) => {
   return (
     <Modal
+    // className="p-0"
       centered
       show={show}
       onHide={handleClose}
@@ -18,7 +19,7 @@ const ApartmentUpdateMap = ({ show, handleClose }) => {
     >
       <Modal.Body>
         {" "}
-        <div className="px-lg-2">
+        <div className="px-0 px-lg-2">
           <div className={`${styles.heading} d-flex justify-content-between `}>
             <div>
             <span

@@ -205,7 +205,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                     <div>
                       <Progress
                         className={`${styles.ant_progress_text}`}
-                        style={{color:"#50BF97"}}
+                        style={{ color: "#50BF97" }}
                         strokeColor={"#50BF97"}
                         width={60}
                         strokeWidth={12}
@@ -431,6 +431,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
+
         <div className={`${styles.card} card mt-4`}>
           <div className={`card-body`}>
             <div
@@ -448,14 +449,16 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                 Edit Area & Price
               </button>
             </div>
+
             <hr className={`${styles.hr}`} />
+
             <div className={`row mt-4 ps-0 ps-lg-3`}>
-              <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
+              <div className="col-lg-6 col-md-6">
                 <p className={`fontFam_poppins ${styles.priceHeading}`}>
                   Price Details
                 </p>
-                <div className="d-flex align-item-center justify-content-between">
-                  <div>
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -465,7 +468,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                       ₹ 1,00,000
                     </div>
                   </div>
-                  <div>
+                  <div className="col-lg-6 col-md-6 col-sm-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -477,13 +480,12 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-1 col-md-1 col-sm-1 col-xl-1"></div>
-              <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
+              <div className="col-lg-6 col-md-6 mt-5 mt-lg-0 mt-md-0">
                 <p className={`fontFam_poppins ${styles.priceHeading}`}>
                   Area Details
                 </p>
-                <div className="d-flex align-item-center justify-content-between">
-                  <div>
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -493,7 +495,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                       1200Sqft
                     </div>
                   </div>
-                  <div>
+                  <div className="col-lg-6 col-md-6 col-sm-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -508,6 +510,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
+
         <div className={`${styles.card} card mt-4 mb-5`}>
           <div className={`card-body`}>
             <div

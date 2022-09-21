@@ -21,7 +21,7 @@ const Navbar = () => {
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const router = useRouter();
-  var login = true;
+  var login = false;
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1065) {
@@ -234,9 +234,8 @@ setShow(false)
                       <Dropdown overlay={menu} placement="bottomLeft">
                         <div
                           className={`ms-5 ${Styles.navProfile} pe-5`}
-                          onClick={() => {
-                            router.push("");
-                          }}
+                          onClick={() => setShow(true)
+                          }
                         >
                           <Image
                             className={`${Styles.navProfile}`}
@@ -252,9 +251,8 @@ setShow(false)
                       <button
                         type="button"
                         className={`ms-5 px-5 btn text-nowrap ${Styles.loginBtn}`}
-                        onClick={() => {
-                          router.push("/registercompany/userType");
-                        }}
+                        onClick={() => setShow(true)
+                        }
                       >
                         Login
                       </button>
@@ -340,9 +338,8 @@ setShow(false)
               <button
                 type="button"
                 className={`px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-                onClick={() => {
-                  router.push("/registercompany/userType");
-                }}
+                onClick={() => setShow(true)
+                }
               >
                 Post Property
               </button>
@@ -350,9 +347,8 @@ setShow(false)
               <button
                 type="button"
                 className={`px-5 btn text-nowrap ${Styles.loginBtn}`}
-                onClick={() => {
-                  router.push("/registercompany/userType");
-                }}
+                onClick={() => setShow(true)
+                }
               >
                 Login
               </button>

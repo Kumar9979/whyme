@@ -39,7 +39,8 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       resetForm();
       handleSellRentShow();
       formReset();
-     
+      handleSellRentShow();
+      onHide();
     },
   });
 
@@ -60,6 +61,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
   return (
     <>
       <Modal
+      className="p-0"
         size="lg"
         aria-labelledby="example-modal-sizes-title-lg"
         show={show}
@@ -78,21 +80,21 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             }}
             src={close}
             alt="close icon"
-            width={30}
-            height={30}
+            width={25}
+            height={25}
             className={`${styles.cursor_pointer}`}
           />
         </div>
-        <Modal.Body className={styles.modal_body_register}>
+        <Modal.Body className={`p-2 p-lg-5`}>
           <div className="mb-1 mt-1">
             <h5
-              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
+              className={`fontFam_poppins fw_600 ${styles.color_323D5A} fs_24 fs_sm_20 text-nowrap`}
             >
               Register your account
             </h5>
 
             <p
-              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} fs_18 fs_sm_14`}
             >
               Please register your account to manage all your property.
             </p>
@@ -101,7 +103,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
           <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
             <label
               htmlFor="profile"
-              className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} ${styles.font_20} mb-1 `}
+              className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} fs_20 fs_sm_16 mb-1 `}
             >
               Company Logo
             </label>
@@ -151,7 +153,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               <div className={`${styles.width_res_cen_half} mb-3 `}>
                 <label
                   id="#name"
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Company Name
                 </label>
@@ -177,7 +179,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               >
                 <label
                   id="#name"
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Name
                 </label>
@@ -205,7 +207,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             >
               <div className={`${styles.width_res_cen_half} mb-3 `}>
                 <label
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Email Address
                 </label>
@@ -230,7 +232,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 className={`${styles.width_res_cen_half} ${styles.margin_l_3}  mb-3`}
               >
                 <label
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Role
                 </label>
@@ -255,11 +257,10 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             <div>
               <button
                onClick={() => {
-                handleSellRentShow();
-                onHide();
+              
               }}
                 type="submit"
-                className={`${styles.modal_btn_complete} ${styles.font_20} ${styles.font_semibold} text-uppercase btn text-white w-100 mt-4`}
+                className={`${styles.modal_btn_complete} fs_16 fw_600 text-uppercase btn text-white w-100 mt-4`}
               >
                 NEXT
               </button>

@@ -41,7 +41,7 @@ export const customStyles = {
       ...defaultStyles,
       color: "#BCC7CE",
       fontFamily: "Poppins",
-      fontSize: "0.8rem",
+      fontSize: "0.6rem",
     };
   },
   dropdownIndicator: (provided) => ({
@@ -84,6 +84,10 @@ const SellRentOptionModal = ({ show, onHide }) => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
+      onHide()
+      router.push(
+        "/post-property/property-details/propertyDetails"
+      );
     },
   });
 
@@ -120,13 +124,13 @@ const router = useRouter();
         <Modal.Body className={styles.modal_body_register}>
           <div className="mb-1">
             <h5
-              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} fs_24 fs_sm_20`}
             >
               Please select the option
             </h5>
 
             <p
-              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} fs_18 fs_sm_14`}
             >
               Please select the Preferred option that are right here
             </p>
@@ -141,7 +145,7 @@ const router = useRouter();
                   : ` ${styles.rentSell_container} ${styles.margin_r_3} d-flex flex-column align-items-center justify-content-center p-2`
               }
             >
-              <Image src={sell} alt="image of sell" width={65} height={65} />
+              <Image src={sell} alt="image of sell" width={50} height={50} />
               <span
                 className={
                   optionType === "sell"
@@ -165,8 +169,8 @@ const router = useRouter();
                 <Image
                   src={rent}
                   alt="image of rent"
-                  width={65}
-                  height={65}
+                  width={50}
+                  height={50}
                   className={optionType === "rent" ? "text-white" : null}
                 />
               </div>
@@ -187,7 +191,7 @@ const router = useRouter();
               <div>
                 <label
                   id="#name"
-                  className={`${styles.color_1D1E1F} ${styles.font_regular} fontFam_poppins ${styles.font_20} mb-2`}
+                  className={`${styles.color_1D1E1F} ${styles.font_regular} fontFam_poppins fs_20 fs_sm_14 mb-2`}
                 >
                   Property Type
                 </label>
@@ -225,22 +229,19 @@ const router = useRouter();
             <div className="d-flex justify-content-end py-2 border-none mt-2">
               <button
               onClick={() => {
-                onHide()
-                router.push(
-                  "/post-property/property-details/propertyDetails"
-                );
+               
               }}
                 type="submit"
                 className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
               >
                 <span
-                  className={`fontFam_poppins ${styles.font_medium} ${styles.font_18} align-middle`}
+                  className={`fontFam_poppins ${styles.font_medium} fs_18 fs_sm_14 align-middle`}
                 >
                   Next
                 </span>
                 <div>
                   <i
-                    className={`${styles.modal_icon_arrowRightbtn} h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
+                    className={`fs_12 fs_sm_10 h-100 p-1 ri-arrow-right-line text-white border-light border mt-1 rounded ms-5 `}
                   ></i>
                 </div>
               </button>

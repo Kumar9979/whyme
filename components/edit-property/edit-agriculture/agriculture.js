@@ -380,7 +380,98 @@ const EditAgiculture = ({ data, propertyType }) => {
               </button>
             </div>
             <hr className={`${styles.hr}`} />
+
             <div className={`row mt-4 ps-0 ps-lg-3`}>
+              <div className="col-lg-6 col-md-6">
+                <p className={`fontFam_poppins ${styles.priceHeading}`}>
+                  Price Details
+                </p>
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                      Deposit Price
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                      ₹ 1,00,000
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                      Rent Price
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                      ₹ 10,000
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6 col-md-6 mt-5 mt-lg-0 mt-md-0">
+                <p className={`fontFam_poppins ${styles.priceHeading}`}>
+                  Area Details
+                </p>
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-6">
+                    <div className="mb-3">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Built-Up Area
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        1200Sqft
+                      </div>
+                    </div>
+
+                    <div className="mb-3">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Plot Length
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        1200 ft
+                      </div>
+                    </div>
+
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                      Plot Area
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                      1200Sqft
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6 col-sm-6">
+                    <div className="mb-3">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Carpet Area
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        1000Sqft
+                      </div>
+                    </div>
+
+                    <div
+                      className={`fontFam_poppins ${styles.price_subheading}`}
+                    >
+                      Plot Width
+                    </div>
+                    <div className={`fontFam_poppins ${styles.price_text}`}>
+                      1000Sqft
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div className={`row mt-4 ps-0 ps-lg-3`}>
               <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
                 <p className={`fontFam_poppins ${styles.priceHeading}`}>
                   Price Details
@@ -466,7 +557,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={`${styles.card} card mt-4 mb-5`}>
