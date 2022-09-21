@@ -41,7 +41,8 @@
     
 }
 .about_readmore_button {
-    color: #F77223;
+    color: #1D72DB;
+    text-decoration: underline;
     font-size: 14px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;

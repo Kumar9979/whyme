@@ -272,7 +272,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
         <button
           className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
-          <span className={`fs_16 fw_400 pb-1 ps-4 ms-3`}>Contact</span>
+          <span className={`fs_14 fw_400 pb-1 ps-4 ms-2 pt-1`}>Contact</span>
           <div className={`position-absolute ${styles.round_image}`}>
             <Image
               className={`${styles.owner_image}`}

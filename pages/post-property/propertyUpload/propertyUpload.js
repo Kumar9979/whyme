@@ -15,7 +15,7 @@ import PostPropertyLayout from "../../../components/postproperty/components/prop
 
 const PropertyUpload = () => {
   const [images, setImages] = useState([]);
-  const maxNumber = 10;
+  const maxNumber = 5;
   const [currentPage, setCurrentPage] = useState("photoDesc");
   const router = useRouter();
   const [file, setFile] = useState(upload);

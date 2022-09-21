@@ -101,6 +101,7 @@ const RegisterCompany = () => {
                 >
                   <Image
                     src={uploaded ? file : camera}
+                    htmlFor="profile"
                     alt="image of camera"
                     width={size}
                     height={size}

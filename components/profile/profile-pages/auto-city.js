@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
 import styles from "../../../styles/profile/profile-pages/autoCity.module.css";
-import dropdown from "../../../assets/icons/cityDropdown.svg";
 import Image from "next/image";
 
 import usePlacesAutocomplete, {
@@ -15,6 +14,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
+import Dropdown from "../../../assets/icons/cityDropdown";
 
 const AutoCityLoad = ({
   setSelected,
@@ -23,6 +23,7 @@ const AutoCityLoad = ({
   markerSetOn,
   markedAddress,
 }) => {
+  const [val, setVal] = useState();
   const {
     ready,
     value,
@@ -30,7 +31,6 @@ const AutoCityLoad = ({
     suggestions: { status, data },
     clearSuggestions,
   } = usePlacesAutocomplete();
-
 
   useEffect(() => {
     setValue(markedAddress, false);
@@ -49,7 +49,6 @@ const AutoCityLoad = ({
     setSelected({ lat, lng });
     formikUpdate(address);
   };
-  
 
   return (
     <>
@@ -67,16 +66,12 @@ const AutoCityLoad = ({
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter your city"
-            
+            value={val}
           />
+          <button onClick={() => setVal(() => "")}>Reset</button>
           <div className={`${styles.nmm}`}></div>
           <span className="d-flex align-items-center pe-2">
-            <Image
-              src={dropdown}
-              alt="Picture of the author"
-              width={13}
-              height={13}
-            />
+            <Dropdown fill="#50BF97" width={13} height={13} />
           </span>
         </div>
 

@@ -4,7 +4,12 @@ import Modal from "react-bootstrap/Modal";
 
 import styles from "../../../../styles/modals/apartmentDeletePhoto.module.css";
 
-const ResidentialHouseDeletePhoto = ({ show, handleClose, index, deleteFn }) => {
+const ResidentialHouseDeletePhoto = ({
+  show,
+  handleClose,
+  index,
+  deleteFn,
+}) => {
   function handleDelete() {
     deleteFn(index);
     handleClose();
@@ -38,7 +43,7 @@ const ResidentialHouseDeletePhoto = ({ show, handleClose, index, deleteFn }) => 
           </div>
           <div className={`d-flex justify-content-center mt-3 mb-1 px-lg-2`}>
             <button
-              className={`${styles.delete_btn} py-2 `}
+              className={`${styles.delete_btn} py-2 px-3`}
               onClick={handleDelete}
             >
               <span className={`${styles.delete_text} fs_15 fw_500 `}>

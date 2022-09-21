@@ -9,7 +9,7 @@
   border: none;
 }
 .posted_by {
-  color: #323D5A;
+  color: #323d5a;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -62,10 +62,10 @@
   border: 2px solid #1d72db;
   border-radius: 7px;
   opacity: 1;
-  color: #1D72DB;
+  color: #1d72db;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 14px;
 }
 .share_report_card {
   box-shadow: 0px 0px 20px #0000001f;
@@ -78,13 +78,13 @@
   border-radius: 8px;
   border: none;
 }
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 992px) {
   .request_call {
     width: 100%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1320px) {
   .request_call {
-      width: 100%;
-    } 
+    width: 100%;
+  }
 }

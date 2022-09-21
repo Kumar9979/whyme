@@ -123,7 +123,6 @@ const RejectedProperties = () => {
               By Amal Sabu
             </span>
             <div
-              // style={{ width: "" }}
               className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
             >
               <button

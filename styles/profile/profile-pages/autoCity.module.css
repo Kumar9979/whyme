@@ -12,11 +12,25 @@
 .placesAutocomplete {
   z-index: 999;
 }
+.comboboxinput {
+  border: none;
+}
 .comboboxInput {
   border: none;
 }
+.comboboxinput:focus-visible {
+  outline: none;
+}
 .comboboxInput:focus-visible {
   outline: none;
+}
+.comboboxinput::placeholder {
+  color: #dddbdb;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  position: absolute;
+  /* top: 25%; */
 }
 .comboboxInput::placeholder {
   color: #dddbdb;

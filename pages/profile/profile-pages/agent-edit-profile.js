@@ -7,11 +7,12 @@ import people from "../../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import camera from "../../../assets/icons/camera.png";
-import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
-import dropdown from "../../../assets/icons/cityDropdown.svg";
+// import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
+// import dropdown from "../../../assets/icons/cityDropdown.svg";
 import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
+import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
 
 const EditProfile = () => {
   const libraries = ["places"];
@@ -25,6 +26,9 @@ const EditProfile = () => {
   const [selected, setSelected] = useState();
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
+  const [addModalShow, setaddModalShow] = useState(false);
+ 
+ 
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -119,7 +123,14 @@ const EditProfile = () => {
               <div className="row ">
                 <div className="col-6 col-lg-3 d-flex justify-content-lg-end justify-content-start">
                   <div className="d-flex flex-column">
-                   
+                    {/* <h1
+                      className={`${styles.profile_type} fs_15  d-block d-lg-none fw_500 mt-lg-0 d-flex justify-content-start fontFam_poppins`}
+                    >
+                      Profile Type{" "}
+                      <span className={`${styles.type_buyer} fw_600 ps-2`}>
+                        Buyer
+                      </span>
+                    </h1> */}
                     <h3
                       className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
                     >
@@ -154,7 +165,7 @@ const EditProfile = () => {
 
                     <button
                       className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
-                      onClick={() => setuploaded(false)}
+                      onClick={() => {setuploaded(true);setaddModalShow(true)}}
                     >
                       Remove Picture
                     </button>
@@ -164,7 +175,14 @@ const EditProfile = () => {
                 <div className="col-12 col-lg-9 d-flex justify-content-start justify-content-lg-start">
                   <div className={`${styles.form_width} `}>
                     <div className="ps-lg-2 ps-0">
-                      
+                      {/* <h1
+                        className={`${styles.profile_type} fs_15 d-none d-lg-block fw_500 mt-4 mt-lg-0 d-flex justify-content-center fontFam_poppins`}
+                      >
+                        Profile Type{" "}
+                        <span className={`${styles.type_buyer} fw_600 ps-2`}>
+                          Buyer
+                        </span>
+                      </h1> */}
 
                       <form onSubmit={formik.handleSubmit}>
                         <div className="">
@@ -360,12 +378,12 @@ const EditProfile = () => {
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-2 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15 fw_400`}
                             >
                               Save Changes
                             </button>
                             <button
-                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-2 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
+                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-1 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
                             >
                               Undo Changes
                             </button>
@@ -379,7 +397,13 @@ const EditProfile = () => {
             </div>
           </div>
         </div>
+       
       </div>
+      <PhotoDelete
+              show={addModalShow}
+              onHide={() => setaddModalShow(false)}
+              setuploaded={setuploaded}
+            />
     </ProfileLayout>
   );
 };

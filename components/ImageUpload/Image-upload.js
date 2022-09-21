@@ -1,6 +1,8 @@
 import ImageUploading from "react-images-uploading";
 import upload from "../../assets/icons/upload.png";
 import { useFormik } from "formik";
+import { useRouter } from "next/router";
+
 import * as Yup from "yup";
 import React, { useState } from "react";
 
@@ -11,10 +13,10 @@ import Image from "next/image";
 
 function ImageUpload({ handleImageUpload }) {
   const [images, setImages] = useState([]);
-  const maxNumber = 10;
+  const maxNumber = 12;
   const [image, setimage] = useState([]);
   const [currentPage, setCurrentPage] = useState("photoDesc");
-  // const router = useRouter();
+  const router = useRouter();
   const [file, setFile] = useState(upload);
   const [uploaded, setUploaded] = useState(false);
   const [size, setSize] = useState(35);
@@ -39,8 +41,9 @@ function ImageUpload({ handleImageUpload }) {
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     handleImageUpload(imageList, empty);
-    // setImgTot(imageList.length);
-    // setimage(imageList);
+    setImgTot(imageList.length);
+    setimage(imageList);
+    console.log(imageList, addUpdateIndex);
     // formik.setFieldValue("image", imageList);
   };
   function empty() {

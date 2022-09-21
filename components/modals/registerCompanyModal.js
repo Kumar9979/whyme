@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+
 import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
-import SellRentOptionModal from "./sellRentOptionModal";
+import SellRentOptionModal from "../../components/modals/sellRentOptionModal";
+import { useRouter } from "next/router";
 
 const RegisterCompanyModal = ({ show, onHide }) => {
+  const router = useRouter();
   const [file, setFile] = useState(camera);
   const [uploaded, setuploaded] = useState(false);
   const [size, setSize] = useState(35);
@@ -27,7 +30,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       image: Yup.mixed().required("Upload an Image"),
       name: Yup.string().required("Required"),
       email: Yup.string().email().required("Required"),
-      // .matches(phoneRegex, "invalid")
       companyName: Yup.string().required("Required"),
       role: Yup.string().required("Required"),
     }),
@@ -36,8 +38,9 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       console.log(values);
       resetForm();
       handleSellRentShow();
+      formReset();
+      handleSellRentShow();
       onHide();
-
     },
   });
 
@@ -49,8 +52,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
     }
   }
 
-
-
   function formReset() {
     setuploaded(false);
     setSize(35);
@@ -60,6 +61,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
   return (
     <>
       <Modal
+      className="p-0"
         size="lg"
         aria-labelledby="example-modal-sizes-title-lg"
         show={show}
@@ -72,24 +74,27 @@ const RegisterCompanyModal = ({ show, onHide }) => {
         <div className="d-flex justify-content-end mt-4 me-4 mb-1">
           {" "}
           <Image
-            onClick={() => { onHide(); formReset(); }}
+            onClick={() => {
+              onHide();
+              formReset();
+            }}
             src={close}
             alt="close icon"
-            width={30}
-            height={30}
+            width={25}
+            height={25}
             className={`${styles.cursor_pointer}`}
           />
         </div>
-        <Modal.Body className={styles.modal_body_register}>
+        <Modal.Body className={`p-2 p-lg-5`}>
           <div className="mb-1 mt-1">
             <h5
-              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24} text-nowrap`}
+              className={`fontFam_poppins fw_600 ${styles.color_323D5A} fs_24 fs_sm_20 text-nowrap`}
             >
               Register your account
             </h5>
 
             <p
-              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} fs_18 fs_sm_14`}
             >
               Please register your account to manage all your property.
             </p>
@@ -97,17 +102,19 @@ const RegisterCompanyModal = ({ show, onHide }) => {
 
           <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
             <label
-              className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} ${styles.font_20} mb-1 `}
+              htmlFor="profile"
+              className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} fs_20 fs_sm_16 mb-1 `}
             >
               Company Logo
             </label>
             <div className="mb-3">
               <label
-                htmlhtmlFor="profile"
+                htmlFor="profile"
                 className={`fontFam_poppins ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
               >
                 <Image
                   src={uploaded ? file : camera}
+                  htmlFor="profile"
                   alt="image of camera"
                   width={size}
                   height={size}
@@ -138,8 +145,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                   handleChange(e);
                 }}
               />
-
-
             </div>
 
             <div
@@ -148,7 +153,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               <div className={`${styles.width_res_cen_half} mb-3 `}>
                 <label
                   id="#name"
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Company Name
                 </label>
@@ -156,7 +161,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Enter your company name"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={` ${styles.register_form_inputField} w-100`}
                   value={formik.values.companyName}
                   name="companyName"
                   onChange={formik.handleChange}
@@ -174,7 +179,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
               >
                 <label
                   id="#name"
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Name
                 </label>
@@ -183,7 +188,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                   id="#name"
                   type="text"
                   placeholder="Enter your name"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={` ${styles.register_form_inputField} w-100`}
                   value={formik.values.name}
                   name="name"
                   onChange={formik.handleChange}
@@ -202,7 +207,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             >
               <div className={`${styles.width_res_cen_half} mb-3 `}>
                 <label
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Email Address
                 </label>
@@ -210,7 +215,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Enter your email address"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={`${styles.register_form_inputField} w-100`}
                   name="email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
@@ -227,7 +232,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 className={`${styles.width_res_cen_half} ${styles.margin_l_3}  mb-3`}
               >
                 <label
-                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} ${styles.font_20} mb-1`}
+                  className={`fontFam_poppins ${styles.color_1D1E1F} ${styles.font_medium} fs_20 fs_sm_16 mb-1`}
                 >
                   Role
                 </label>
@@ -235,7 +240,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Ex : Agent, Builder, etc,..."
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={`${styles.register_form_inputField} w-100`}
                   name="role"
                   value={formik.values.role}
                   onChange={formik.handleChange}
@@ -251,8 +256,11 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             </div>
             <div>
               <button
+               onClick={() => {
+              
+              }}
                 type="submit"
-                className={`${styles.modal_btn_complete} ${styles.font_20} ${styles.font_semibold} text-uppercase btn text-white w-100 mt-4`}
+                className={`${styles.modal_btn_complete} fs_16 fw_600 text-uppercase btn text-white w-100 mt-4`}
               >
                 NEXT
               </button>
@@ -262,7 +270,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       </Modal>
       <SellRentOptionModal show={sellRentShow} onHide={handleSellRentClose} />
     </>
-
   );
 };
 
