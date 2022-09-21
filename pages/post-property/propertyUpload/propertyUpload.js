@@ -139,8 +139,11 @@ const PropertyUpload = () => {
                     ) : (
                       <>
                         {" "}
-                        <div   {...dragProps}
-                            onClick={onImageUpload} className={`row p-2 ps-4`}>
+                        <div
+                          {...dragProps}
+                          onClick={onImageUpload}
+                          className={`row p-2 ps-4`}
+                        >
                           {/* {imageList.slice(0,6).map((image, index) => ( */}
                           {images.map((image, index) => (
                             <div className={`col-4 d-flex mb-2`} key={index}>
@@ -170,7 +173,6 @@ const PropertyUpload = () => {
                             </div>
                           ))}
                         </div>
-                      
                         {/* <div className={`d-flex justify-content-center  mt-4`}>
                           <button
                           
@@ -193,26 +195,25 @@ const PropertyUpload = () => {
               formikTouched={formik.touched.image}
             />
 
+            <div className="mt-2">
+              <label
+                htmlFor="exampleFormControlInput1"
+                className={`${styles.labelText} form-label`}
+              >
+                Description
+              </label>
+              <textarea
+                type="text"
+                className={`${styles.description} form-control`}
+                id="exampleFormControlInput1"
+                aria-describedby="emailHelp"
+                placeholder="Describe your property"
+                name="description"
+                value={formik.values.description}
+                onChange={formik.handleChange}
+              ></textarea>
+            </div>
 
-              <div className="mt-2">
-                <label
-                  htmlFor="exampleFormControlInput1"
-                  className={`${styles.labelText} form-label`}
-                >
-                  Description
-                </label>
-                <textarea
-                  type="text"
-                  className={`${styles.description} form-control`}
-                  id="exampleFormControlInput1"
-                  aria-describedby="emailHelp"
-                  placeholder="Describe your property"
-                  name="description"
-                  value={formik.values.description}
-                  onChange={formik.handleChange}
-                ></textarea>
-              </div>
-       
             <FormikErrorGenerator
               formikError={formik.errors.description}
               formikTouched={formik.touched.description}

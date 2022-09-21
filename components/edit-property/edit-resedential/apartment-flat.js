@@ -610,42 +610,47 @@ const EditApartmentFlat = ({ data, propertyType }) => {
         </>
       )}
 
-      {data === 2 && <><>
-          <ResidentialHouseEditProperty
-            show={featureModalShow}
-            handleClose={() => setFeatureModalShow(false)}
-          />
-          <ResidentialHouseEditAmenities
-            show={amenitiesModal}
-            handleClose={() => setAmenitiesModal(false)}
-          />
-          <ResidentialHouseAreaPrice
-            show={areaModal}
-            handleClose={() => setAreaModal(false)}
-          />
-          <ResidentialHouseDescription
-            show={descriptionModal}
-            handleClose={() => setDescriptionModal(false)}
-          />
-          <ResidentialHouseUploadPhoto
-            handleClose={handleClose}
-            handleImageUpload={handleImageUpload}
-            show={show}
-          />
-          <ResidentialHouseDeletePhoto
-            deleteFn={onImageRemove}
-            index={imageNumber}
-            handleClose={handleDeleteModalClose}
-            show={showDeleteModal}
-          />
+      {data === 2 && (
+        <>
+          <>
+            <ResidentialHouseEditProperty
+              show={featureModalShow}
+              handleClose={() => setFeatureModalShow(false)}
+            />
+            <ResidentialHouseEditAmenities
+              show={amenitiesModal}
+              handleClose={() => setAmenitiesModal(false)}
+            />
+            <ResidentialHouseAreaPrice
+              show={areaModal}
+              handleClose={() => setAreaModal(false)}
+            />
+            <ResidentialHouseDescription
+              show={descriptionModal}
+              handleClose={() => setDescriptionModal(false)}
+            />
+            <ResidentialHouseUploadPhoto
+              handleClose={handleClose}
+              handleImageUpload={handleImageUpload}
+              show={show}
+            />
+            <ResidentialHouseDeletePhoto
+              deleteFn={onImageRemove}
+              index={imageNumber}
+              handleClose={handleDeleteModalClose}
+              show={showDeleteModal}
+            />
 
-          <ResidentialHouseUpdateMap
-            show={editLocation}
-            handleClose={() => setEditLocation(false)}
-          />
-        </></>}
-      {data === 3 && <>
-        <ResidentialLandEditProperty
+            <ResidentialHouseUpdateMap
+              show={editLocation}
+              handleClose={() => setEditLocation(false)}
+            />
+          </>
+        </>
+      )}
+      {data === 3 && (
+        <>
+          <ResidentialLandEditProperty
             show={featureModalShow}
             handleClose={() => setFeatureModalShow(false)}
           />
@@ -676,7 +681,9 @@ const EditApartmentFlat = ({ data, propertyType }) => {
           <ResidentialLandUpdateMap
             show={editLocation}
             handleClose={() => setEditLocation(false)}
-          /></>}
+          />
+        </>
+      )}
     </div>
   );
 };
