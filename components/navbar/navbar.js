@@ -14,7 +14,9 @@ import Clock from "../../assets/icons/clock.svg";
 import Key from "../../assets/icons/key.svg";
 import Settings from "../../assets/icons/settings.svg";
 import Heart from "../../assets/icons/heart.svg";
+import UserTypeModal from "../modals/userTypeModal";
 const Navbar = () => {
+  const [show, setShow] = useState(false)
   const [mobile, setMobile] = useState(false);
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -35,6 +37,10 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+function onClose(){
+setShow(false)
+}
 
   const menu = (
     <Menu
@@ -217,9 +223,8 @@ const Navbar = () => {
                     <button
                       type="button"
                       className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-                      onClick={() => {
-                        router.push("/registercompany/userType");
-                      }}
+                      onClick={() => setShow(true)
+                      }
                     >
                       Post Property
                     </button>
@@ -487,6 +492,8 @@ const Navbar = () => {
           </div>
         </Offcanvas.Body>
       </Offcanvas>
+
+      <UserTypeModal onHide={onClose} show={show}/>
     </div>
   );
 };

@@ -34,20 +34,20 @@ const UserTypeModal = ({ show, onHide }) => {
             src={close}
             alt="close icon"
             width={30}
-            height={30}
+            height={25}
             className={`${styles.cursor_pointer}`}
           />
         </div>
         <Modal.Body className={styles.modal_body_register}>
           <div className="mb-1">
             <h5
-              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} ${styles.font_24}`}
+              className={`fontFam_poppins ${styles.font_semibold} ${styles.color_323D5A} fs_24 fs_sm_20`}
             >
               What you are
             </h5>
 
             <p
-              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} ${styles.font_18}`}
+              className={`${styles.opacity_6} fontFam_poppins ${styles.color_323D5A} ${styles.font_regular} fs_18 fs_sm_15`}
             >
               Please select the Preferred option that are right here
             </p>
@@ -68,19 +68,19 @@ const UserTypeModal = ({ show, onHide }) => {
                     onClick={onHide}
                     src={building}
                     alt="building icon"
-                    width={38}
-                    height={38}
+                    width={30}
+                    height={25}
                     className={`${styles.cursor_pointer}`}
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ${styles.padding_l_4}`}
+                  className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ${styles.padding_l_4}`}
                 >
                   Builder/Developer
                 </span>
               </div>
               <i
-                className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
               ></i>
             </div>
 
@@ -96,19 +96,19 @@ const UserTypeModal = ({ show, onHide }) => {
                     onClick={onHide}
                     src={agent}
                     alt="building icon"
-                    width={35}
-                    height={35}
+                    width={30}
+                    height={25}
                     className={`${styles.cursor_pointer}`}
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
+                  className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ms-3`}
                 >
                   Agent
                 </span>
               </div>
               <i
-                className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
               ></i>
             </div>
             <div
@@ -124,20 +124,20 @@ const UserTypeModal = ({ show, onHide }) => {
                     onClick={onHide}
                     src={owner}
                     alt="building icon"
-                    width={38}
-                    height={38}
+                    width={30}
+                    height={25}
                     className={`${styles.cursor_pointer}`}
                   />
                 </div>
                 <span
-                  className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
+                  className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ms-3`}
                 >
                   Owner
                 </span>
               </div>
 
               <i
-                className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
               ></i>
             </div>
           </div>

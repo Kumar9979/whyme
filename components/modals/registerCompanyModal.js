@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+
 import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
-import SellRentOptionModal from "./sellRentOptionModal";
+import SellRentOptionModal from "../../components/modals/sellRentOptionModal";
+import { useRouter } from "next/router";
 
 const RegisterCompanyModal = ({ show, onHide }) => {
+  const router = useRouter();
   const [file, setFile] = useState(camera);
   const [uploaded, setuploaded] = useState(false);
   const [size, setSize] = useState(35);
@@ -27,7 +30,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       image: Yup.mixed().required("Upload an Image"),
       name: Yup.string().required("Required"),
       email: Yup.string().email().required("Required"),
-      // .matches(phoneRegex, "invalid")
       companyName: Yup.string().required("Required"),
       role: Yup.string().required("Required"),
     }),
@@ -36,8 +38,8 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       console.log(values);
       resetForm();
       handleSellRentShow();
-      onHide();
-
+      formReset();
+     
     },
   });
 
@@ -48,8 +50,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       setFile(URL.createObjectURL(e.target.files[0]));
     }
   }
-
-
 
   function formReset() {
     setuploaded(false);
@@ -72,7 +72,10 @@ const RegisterCompanyModal = ({ show, onHide }) => {
         <div className="d-flex justify-content-end mt-4 me-4 mb-1">
           {" "}
           <Image
-            onClick={() => { onHide(); formReset(); }}
+            onClick={() => {
+              onHide();
+              formReset();
+            }}
             src={close}
             alt="close icon"
             width={30}
@@ -97,17 +100,19 @@ const RegisterCompanyModal = ({ show, onHide }) => {
 
           <form onSubmit={formik.handleSubmit} className="mt-3 w-100">
             <label
+              htmlFor="profile"
               className={`${styles.color_1D1E1F} fontFam_poppins ${styles.font_medium} ${styles.font_20} mb-1 `}
             >
               Company Logo
             </label>
             <div className="mb-3">
               <label
-                htmlhtmlFor="profile"
+                htmlFor="profile"
                 className={`fontFam_poppins ${styles.modal_inputProfile_registeruser} ${styles.color_1D1E1F} ${styles.font_medium}  ${styles.cursor_pointer} ${styles.font_20} mb-1 d-flex justify-content-center align-items-center`}
               >
                 <Image
                   src={uploaded ? file : camera}
+                  htmlFor="profile"
                   alt="image of camera"
                   width={size}
                   height={size}
@@ -138,8 +143,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                   handleChange(e);
                 }}
               />
-
-
             </div>
 
             <div
@@ -156,7 +159,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Enter your company name"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={` ${styles.register_form_inputField} w-100`}
                   value={formik.values.companyName}
                   name="companyName"
                   onChange={formik.handleChange}
@@ -183,7 +186,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                   id="#name"
                   type="text"
                   placeholder="Enter your name"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={` ${styles.register_form_inputField} w-100`}
                   value={formik.values.name}
                   name="name"
                   onChange={formik.handleChange}
@@ -210,7 +213,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Enter your email address"
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={`${styles.register_form_inputField} w-100`}
                   name="email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
@@ -235,7 +238,7 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                 <input
                   type="text"
                   placeholder="Ex : Agent, Builder, etc,..."
-                  className={`${styles.modal_input_registeruser} w-100`}
+                  className={`${styles.register_form_inputField} w-100`}
                   name="role"
                   value={formik.values.role}
                   onChange={formik.handleChange}
@@ -251,6 +254,10 @@ const RegisterCompanyModal = ({ show, onHide }) => {
             </div>
             <div>
               <button
+               onClick={() => {
+                handleSellRentShow();
+                onHide();
+              }}
                 type="submit"
                 className={`${styles.modal_btn_complete} ${styles.font_20} ${styles.font_semibold} text-uppercase btn text-white w-100 mt-4`}
               >
@@ -262,7 +269,6 @@ const RegisterCompanyModal = ({ show, onHide }) => {
       </Modal>
       <SellRentOptionModal show={sellRentShow} onHide={handleSellRentClose} />
     </>
-
   );
 };
 
