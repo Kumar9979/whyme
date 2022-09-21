@@ -118,7 +118,7 @@ const EditProfile = () => {
                 <div className="col-6 col-lg-3 d-flex justify-content-lg-center  justify-content-start">
                   <div className="d-flex flex-column">
                     <h3
-                      className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
+                      className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_18 fw_500 fontFam_poppins`}
                     >
                       Profile Picture
                     </h3>
@@ -144,13 +144,13 @@ const EditProfile = () => {
                     </div>
 
                     <button
-                      className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
+                      className={`${styles.change_photo} fs_16 fw_400 fontFam_poppins py-1 mt-3`}
                     >
                       <label htmlFor="profile">Change Picture </label>
                     </button>
 
                     <button
-                      className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
+                      className={`${styles.remove_photo} fs_16 fw_500 fontFam_poppins py-2 mt-3 d-flex justify-content-start justify-content-lg-center`}
                       onClick={() => setuploaded(false)}
                     >
                       Remove Picture
@@ -310,9 +310,9 @@ const EditProfile = () => {
                             </div>
                           </div>
 
-                          <div className="d-lg-flex justify-content-lg-start d-flex mt-2 w-75 ">
+                          <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15  fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-3 fs_15  fw_400`}
                             >
                               Save Changes
                             </button>

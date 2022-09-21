@@ -38,7 +38,7 @@ const ProfileLayout = ({ children }) => {
 
   return (
     <>
-      <div>
+      <div className={`${styles.over}`}>
         <div className="row">
           <div className="col-2 hideSidebar">
             {mobile !== true && (
@@ -54,7 +54,7 @@ const ProfileLayout = ({ children }) => {
                       className={`${styles.card} card mt-4 `}
                     >
                       <div className="card-body">
-                        <div className="d-flex justify-content-center align-items-center">
+                        <div className="d-flex align-items-center">
                           <div className="me-3">
                             <div className={`${styles.DpContainer}`}>
                               <Image

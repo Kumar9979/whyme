@@ -43,9 +43,7 @@ const EditAgiculture = ({ data, propertyType }) => {
   
   const [featureModalShow, setFeatureModalShow] = useState(false);
   const [properties, setProperties] = useState(features);
-  // const [amenties, setAmenties] = useState(ament);
   const [areaModal, setAreaModal] = useState(false);
-  // const [amenitiesModal, setAmenitiesModal] = useState(false);
   const [descriptionModal, setDescriptionModal] = useState(false);
   const [editLocation, setEditLocation] = useState(false);
   const [show, setShow] = useState(false);
@@ -180,6 +178,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                     </div>
                     <div className="">
                       <Progress
+                      className={`${styles.progress_bar}`}
                         strokeColor={"#50BF97"}
                         width={60}
                         strokeWidth={12}
@@ -231,8 +230,8 @@ const EditAgiculture = ({ data, propertyType }) => {
                       <Image
                         src={image.data_url}
                         name="uploaded-images"
-                        width={100}
-                        height={100}
+                        width={130}
+                        height={150}
                         className={`${styles.image_container}`}
                       />
                     </div>
@@ -634,7 +633,7 @@ const EditAgiculture = ({ data, propertyType }) => {
 
 export default EditAgiculture;
 
-const AgriculturalFarmHouseFeatures  = [
+const AgriculturalFarmHouseFeatures = [
   {
     heading: "Total Floors",
     text: "45",
@@ -661,8 +660,7 @@ const AgriculturalFarmHouseFeatures  = [
   },
 ];
 
-
-const  AgriculturalLandFeatures = [
+const AgriculturalLandFeatures = [
   {
     heading: "Boundary Wall",
     text: "Yes",
@@ -676,5 +674,3 @@ const  AgriculturalLandFeatures = [
     text: "7",
   },
 ];
-
-

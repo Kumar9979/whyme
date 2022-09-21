@@ -8,7 +8,7 @@ import arrowright from "../../../assets/images/arrow_right.svg";
 import seeall from "../../../assets/images/seeall.svg";
 import RelatedProperties from "../../cards/property-details-cards/related-properties";
 
-const AgentProperties = ({propertyType, data}) => {
+const AgentProperties = ({propertyType, data, hide}) => {
   let n = 10;
   const ref = useRef();
   const onScroll = (scroll) => {
@@ -18,7 +18,8 @@ const AgentProperties = ({propertyType, data}) => {
   return (
     <div>
       <div className={`${styles.agent_properties} p-3 mt-4 `}>
-        <div className="d-flex justify-content-between align-items-center ">
+        {
+          hide===1? null :<div className="d-flex justify-content-between align-items-center ">
           <div className={`${styles.agent_properties_text}`}>
             See More Properties By{" "}
             <span className={`${styles.agent_name}`}>Amal Sabu</span>
@@ -38,6 +39,8 @@ const AgentProperties = ({propertyType, data}) => {
             </span>
           </button>
         </div>
+        }
+        
 
         <div className={`row mt-3`}>
           <div className={`${styles.scrollmenu} `}>

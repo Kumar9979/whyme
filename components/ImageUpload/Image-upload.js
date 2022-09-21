@@ -106,7 +106,6 @@ function ImageUpload({ handleImageUpload }) {
                     >
                       Browse Photos
                     </button>
-                    {/* <p className={`${styles.upload_text_3}`}>Browse Photos</p> */}
                   </div>
                 </div>
               ) : (
@@ -116,15 +115,12 @@ function ImageUpload({ handleImageUpload }) {
                     {/* {imageList.slice(0,6).map((image, index) => ( */}
                     {images.map((image, index) => (
                       <div className={`col-4 d-flex mb-2`} key={index}>
-                        <div
-                         
-                        >
+                        <div className="position-relative">
                           <Image
                             src={image.data_url}
                             name="uploaded-images"
                             width={20}
                             height={20}
-                           
                           />
                         </div>
                         <button

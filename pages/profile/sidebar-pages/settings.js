@@ -93,9 +93,7 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          // rendered == "notification"
-                          //   ? styles.selected_component
-                          //   : 
+                         
                             styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("notification")}
@@ -108,9 +106,7 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          // rendered == "faq"
-                          //   // ? styles.selected_component
-                          //   // :
+                          
                              styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("faq")}
@@ -123,9 +119,7 @@ const Settings = () => {
                     >
                       <a
                         className={`${
-                          // rendered == "terms"
-                          //   ? styles.selected_component
-                          //   : 
+                       
                             styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("terms")}
@@ -136,9 +130,7 @@ const Settings = () => {
                     <li className={` fs_13 fw_600 fontFam_poppins mb-4`}>
                       <a
                         className={`${
-                          // rendered == "privacy"
-                          //   ? styles.selected_component
-                          //   : 
+                        
                             styles.not_selected_component
                         }`}
                         onClick={() => clickHandler("privacy")}
@@ -150,9 +142,7 @@ const Settings = () => {
                 </div>
               ) : (
                 <div className="col-12 col-md-8 col-lg-10">
-                  {/* {mobile == false ? null : (
-                    <button >back</button>
-                  )} */}
+                
                   {rendered === "notification" ? (
                     <div>
                       <div>
@@ -293,7 +283,7 @@ const Settings = () => {
               <div className="col-12 col-md-3 col-lg-2">
                 <ul className="list-unstyled">
                   <li
-                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
+                    className={`${styles.setting_list} fs_16 fw_600 fontFam_poppins mb-4`}
                   >
                     <a
                       className={`${
@@ -307,7 +297,7 @@ const Settings = () => {
                     </a>
                   </li>
                   <li
-                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
+                    className={`${styles.setting_list} fs_16 fw_600 fontFam_poppins mb-4`}
                   >
                     <a
                       className={`${
@@ -321,7 +311,7 @@ const Settings = () => {
                     </a>
                   </li>
                   <li
-                    className={`${styles.setting_list} fs_13 fw_600 fontFam_poppins mb-4`}
+                    className={`${styles.setting_list} fs_16 fw_600 fontFam_poppins mb-4`}
                   >
                     <a
                       className={`${
@@ -334,7 +324,7 @@ const Settings = () => {
                       Terms & Condition
                     </a>
                   </li>
-                  <li className={` fs_13 fw_600 fontFam_poppins mb-4`}>
+                  <li className={` fs_16 fw_600 fontFam_poppins mb-4`}>
                     <a
                       className={`${
                         rendered == "privacy"

@@ -58,14 +58,18 @@
   object-fit: contain;
   width: 0.2rem;
 }
+
 .mobile_ProfileIcon {
   border-radius: 2px;
   object-fit: cover;
+  border-radius: 50%;
 }
 .mobile_burger {
   border: none;
   background: none;
   font-size: 1.2rem;
+  background-color: #1D72DB;
+  border-radius: 5px;
 }
 .DropdownText {
   font-family: Poppins;

@@ -9,11 +9,10 @@ import ZeroPostedProperties from "../../../components/profile/my-properties/empt
 import Postproperties from "../../../components/profile/my-properties/posted-properties";
 import SentProperties from "../../../components/profile/my-properties/posted-properties";
 
-
 const MyProperties = () => {
   return (
     <ProfileLayout>
-      <div className={`${styles.recent_activities} mt-5 pt-4`}>
+      <div className={`${styles.recent_activities} mt-5 pt-5`}>
         <div className={`${styles.recent_activities_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
@@ -26,12 +25,18 @@ const MyProperties = () => {
                 height={15}
               />
             </button>
-            <span
-              className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
-            >
-              My Properties 
-            </span>
-            <div className={`${styles.background_color} px-2 py-1 fs_12 fw_400 color_white fontFam_poppins ms-3`}><span>3 Properties</span></div>
+            <div className="d-flex  justify-content-center justify-content-lg-start w-100">
+              <span
+                className={`${styles.edit_profile_heading} fs_20 fw_500 ms-2`}
+              >
+                My Properties
+              </span>
+              <div
+                className={`${styles.background_color} px-2 py-1 fs_12 fw_400 color_white fontFam_poppins ms-3`}
+              >
+                <span>3 Properties</span>
+              </div>
+            </div>
           </div>
           <hr className={`${styles.edit_horizontal_line}`}></hr>
           <div className={`${styles.cards_width}`}>

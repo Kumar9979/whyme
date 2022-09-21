@@ -3,8 +3,13 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif !important;
-  overflow-x: hidden;
   min-height: 100%;
+}
+
+.ant-progress-text{
+  color: #1D72DB  !important;
+  font-size: 0.9rem !important;
+  font-weight: 600;
 }
 
 p {
@@ -89,11 +94,23 @@ p {
 .fs_30 {
   font-size: 30px;
 }
-.fs_32{
+.fs_31 {
+  font-size: 31px;
+}
+.fs_32 {
   font-size: 32px;
 }
-.fs_34{
+.fs_33 {
+  font-size: 33px;
+}
+.fs_34 {
   font-size: 34px;
+}
+.fs_35 {
+  font-size: 35px;
+}
+.fs_36 {
+  font-size: 36px;
 }
 
 .fw_100 {
@@ -138,6 +155,9 @@ p {
 .color_cloudBurst {
   color: #323d5a;
 }
+.color_grey1 {
+  color: #323D5A99;
+}
 .color_green {
   color: #24734e;
 }
@@ -176,14 +196,11 @@ p {
   margin-top: 0.15rem;
 }
 
-<<<<<<< HEAD
-=======
 .cursor_pointer{
   cursor: pointer;
 }
 
 
->>>>>>> 3c8e756583eb833d2aaa2ab957836e32584b470c
 @media only screen and (max-width: 992px) {
   .fs_md_7 {
     font-size: 7px;

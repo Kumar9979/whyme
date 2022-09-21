@@ -300,8 +300,8 @@ const EditCommercial = ({ data, propertyType }) => {
                         <Image
                           src={image.data_url}
                           name="uploaded-images"
-                          width={100}
-                          height={100}
+                          width={130}
+                          height={150}
                           className={`${styles.image_container}`}
                         />
                       </div>

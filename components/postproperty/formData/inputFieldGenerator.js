@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "../../../styles/postProperty/propertyfeatures.module.css";
 
 const InputFieldGenerator = ({ title, placeholder = "Ex : 7", itemName, inputValue, onChangeFn, inputClassName = styles.propertyFeature_width_75_to_100 }) => {
+  console.log(title);
     return (
         <>
             <label

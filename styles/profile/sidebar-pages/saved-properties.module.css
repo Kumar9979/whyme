@@ -1,4 +1,5 @@
 .recent_activities {
+  margin-top: 7rem;
   width: 90%;
 }
 
@@ -90,9 +91,9 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1350px) {
   .recent_activities {
-    width: 85%;
+    width: 70%;
     padding-right: 0rem;
-    padding-left: 4rem;
+    margin-left: 6rem;
   }
   .width_properties {
     width: 85%;
@@ -100,6 +101,12 @@
   }
   .cards_width {
     width: 100%;
+  }
+}
+@media only screen and (min-width: 1350px) and (max-width: 1600px) {
+  .recent_activities{
+    width: 85%;
+    padding-left: 5rem;
   }
 }
 @media only screen and (max-width: 992px) {

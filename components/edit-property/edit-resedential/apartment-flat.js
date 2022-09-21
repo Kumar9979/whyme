@@ -65,7 +65,6 @@ const EditApartmentFlat = ({ data, propertyType }) => {
   }
   const [properties, setProperties] = useState(type);
   const [Amenties, setAmenties] = useState(Ament);
-
   const [show, setShow] = useState(false);
   const [featureModalShow, setFeatureModalShow] = useState(false);
   const [areaModal, setAreaModal] = useState(false);
@@ -153,6 +152,8 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             </span>{" "}
           </span>
         </div>
+
+        {/* first container */}
         <div
           className={`${styles.card} mt-4 d-flex justify-content-center px-2 pt-3 `}
         >
@@ -201,13 +202,16 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                         <li className="text-nowrap">Property Images</li>
                       </ul>
                     </div>
-                    <div className="">
+                    <div>
                       <Progress
+                        className={`${styles.ant_progress_text}`}
+                        style={{color:"#50BF97"}}
                         strokeColor={"#50BF97"}
                         width={60}
                         strokeWidth={12}
                         type="circle"
-                        percent={75}
+                        percent={80}
+                        color={"red"}
                       />
                     </div>
                   </div>
@@ -221,6 +225,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
+
         <div className={`${styles.card}  px-2 pt-3 mt-3 `}>
           <div className={` card-body pt-2 pt-lg-3 pb-2`}>
             <div className="d-flex  justify-content-between">
@@ -254,8 +259,8 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                       <Image
                         src={image.data_url}
                         name="uploaded-images"
-                        width={100}
-                        height={100}
+                        width={130}
+                        height={150}
                         className={`${styles.image_container}`}
                       />
                     </div>

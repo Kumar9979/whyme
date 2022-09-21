@@ -65,6 +65,11 @@ const propertyFeatures = () => {
   });
 
   console.log(formik.values);
+ const span = () => {
+  return (
+    <span>(in meters)</span>
+  )
+}
 
   return (
     <PostPropertyLayout>

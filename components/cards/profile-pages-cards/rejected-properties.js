@@ -74,11 +74,11 @@ const RejectedProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-4 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
                 <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center mb-3">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
                     </div>
@@ -101,7 +101,7 @@ const RejectedProperties = () => {
             })}
           </div>
           <div
-            className={`d-flex justify-content-between mt-3 ${styles.property_statistics_width}`}
+            className={`d-flex justify-content-between mt-4 ${styles.property_statistics_width}`}
           >
             {" "}
             <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
@@ -161,7 +161,7 @@ const RejectedProperties = () => {
             width={12}
             height={12}
           />
-          <span className="color_white fontFam_poppins fw_400 fs_12 ms-1 ">
+          <span className="color_white fontFam_poppins fw_400 fs_14 ms-1 ">
             Rejected
           </span>
         </div>

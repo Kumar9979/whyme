@@ -1,5 +1,5 @@
 .edit_profile {
-  margin-top: 5rem;
+  margin-top: 7rem;
   width: 90%;
 }
 .edit_profile_card {
@@ -47,15 +47,13 @@
   color: #1d1e1f;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 17px;
 }
-.form_input {
-  background: #dbe9f200 0% 0% no-repeat padding-box;
-  border-radius: 7px;
-  border-color: #dddbdb;
-}
+
 .email_input {
   border: none;
+  height: 2.8rem;
+  font-size: 1rem;
 }
 .verified_input {
   background: #dbe9f200 0% 0% no-repeat padding-box;
@@ -73,10 +71,13 @@
 }
 .form_input {
   border-color: #dddbdb;
-  height: 2rem;
+  font-size: 1rem;
+  height: 2.8rem;
   border: 1px solid #dddbdb;
   border-radius: 4px;
   opacity: 1;
+  background: #dbe9f200 0% 0% no-repeat padding-box;
+  border-radius: 7px;
 }
 .form_input::placeholder {
   color: #dddbdb;
@@ -84,7 +85,8 @@
   font-weight: 500;
   font-size: 12px;
   position: absolute;
-  top: 20%;
+  top: 30%;
+  font-size: 0.9rem;
 }
 .email_input::placeholder {
   color: #dddbdb;
@@ -92,7 +94,8 @@
   font-weight: 500;
   font-size: 12px;
   position: absolute;
-  top: 10%;
+  top: 30%;
+  font-size: 0.9rem;
 }
 .save_button_width {
   border: none;
@@ -137,9 +140,9 @@
   width: 160px;
   height: 170px;
 }
-@media only screen and (min-width: 992px) and (max-width: 1320px) {
+@media only screen and (min-width: 992px) and (max-width: 1350px) {
   .edit_profile {
-    width: 85%;
+    width: 70%;
     padding-right: 0rem;
     margin-left: 6rem;
   }
@@ -150,6 +153,13 @@
     width: 100%;
     padding-left: 1rem;
   }
+}
+@media only screen and (min-width: 1350px) and (max-width: 1600px) {
+  .edit_profile {
+    width: 90%;
+    padding-left: 5rem;
+  }
+  
 }
 @media only screen and (max-width: 992px) {
   .form_width {
@@ -171,6 +181,6 @@
 }
 @media only screen and (min-width: 1600px) {
   .edit_profile {
-    width: 100%;
+    width: 90%;
   }
 }

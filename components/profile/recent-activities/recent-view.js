@@ -8,9 +8,7 @@ import ProfileRelatedProperties from "../../cards/profile-pages-cards/profile-re
 const RecentView = () => {
   let n = 10;
   const ref = useRef();
-  const onScroll = (scroll) => {
-    ref.current.scrollLeft += scroll;
-  };
+ 
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     if (window.innerWidth < 768) {

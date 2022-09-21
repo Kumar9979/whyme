@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
-import styles from "../../../styles/profile/profile-pages/autoCity.module.css";
-import dropdown from "../../../assets/icons/cityDropdown.svg";
+import styles from "../styles/profile/profile-pages/autoCity.module.css";
+import dropdown from "../assets/icons/cityDropdown.svg";
 import Image from "next/image";
 
 import usePlacesAutocomplete, {
@@ -15,8 +15,9 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
+import LocationIcon from "../assets/icons/locationIcon";
 
-const AutoCityLoad = ({
+const Location = ({
   setSelected,
   result,
   formikUpdate,
@@ -47,7 +48,6 @@ const AutoCityLoad = ({
     const results = await getGeocode({ address });
     const { lat, lng } = getLatLng(results[0]);
     setSelected({ lat, lng });
-    formikUpdate(address);
   };
   
 
@@ -55,23 +55,24 @@ const AutoCityLoad = ({
     <>
       <Combobox onSelect={handleSelect} style={{ position: "relative" }}>
         <div
-          className={`${styles.city_input_tag} w-100 py-1 mt-1 d-flex justify-content-between`}
+          className={`${styles.city_input_tag} w-100 py-1 mt-1 d-flex align-items-center`}
         >
+            <span className="ms-2 me-2"><LocationIcon fill="#50BF97"/></span>
           <ComboboxInput
             onChange={(e) => {
               setValue(e.target.value);
             }}
             defaultValue="mysore"
             disabled={!ready}
-            className={`${styles.comboboxInput} w-75 ps-2 py-2  fs_15 fw_600 fontFam_poppins`}
+            className={`${styles.comboboxInput} w-75  py-2 ps-2  fs_15 fw_600 fontFam_poppins`}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter your city"
             
           />
-          <div className={`${styles.nmm}`}></div>
-          <span className="d-flex align-items-center pe-2">
+          <span className="d-flex align-items-center justify-content-end ps-1">
             <Image
+            
               src={dropdown}
               alt="Picture of the author"
               width={13}
@@ -93,4 +94,4 @@ const AutoCityLoad = ({
   );
 };
 
-export default AutoCityLoad;
+export default Location;

@@ -21,7 +21,7 @@ const MyProfile = () => {
   const router = useRouter();
 
   return (
-    <ProfileLayout>
+    <ProfileLayout >
       <div className={`${styles.edit_profile} me-lg-5 me-0`}>
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
@@ -58,7 +58,6 @@ const MyProfile = () => {
                         src={people}
                         className={`${styles.profile_photo}`}
                         alt="Picture of the author"
-                        // width={60}
                         height={210}
                       />
                     </div>
@@ -162,7 +161,7 @@ const MyProfile = () => {
                             />
                           </div>
 
-                          <div className="d-flex justify-content-between mt-4 w-75 ">
+                          <div className="d-flex justify-content-between mt-5 w-75 ">
                             <button
                               type="button"
                               onClick={() => {
@@ -170,15 +169,11 @@ const MyProfile = () => {
                                   "/profile/profile-pages/edit-profile"
                                 );
                               }}
-                              className={`${styles.save_button_width} px-5 py-1 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-5 py-2 fs_17 fw_400`}
                             >
                               Edit Profile
                             </button>
-                            {/* <button
-                            className={`${styles.undo_button_width}  px-3 py-1 ms-4 fs_15 fw_500`}
-                          >
-                            Undo Changes
-                          </button> */}
+                       
                           </div>
                         </div>
                       </form>

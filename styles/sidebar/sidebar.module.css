@@ -4,10 +4,13 @@
   margin-top: 3rem;
   /* width: 30vh; */
 }
+.over{
+  overflow-x: hidden;
+}
 .sidebar_links {
   color: inherit;
   font-family: Poppins;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .logout {
   position: relative;
@@ -52,16 +55,14 @@
   border-radius: 0;
   border: none;
   background: linear-gradient(to right, #50bf97,  #1d72db);
-  /* background: transparent
-    radial-gradient(closest-side at 27% 80%, #50bf97 0%, #1d72db 100%) 0% 0%
-    no-repeat padding-box; */
+
   opacity: 1;
   opacity: 1;
 }
 .profile_name {
   font-family: Poppins;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 17px;
 }
 .phone_number {
   font-family: Poppins;

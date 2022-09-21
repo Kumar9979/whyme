@@ -69,16 +69,16 @@ const SavedProperties = () => {
             <div ref={ref} className={`${styles.row}`}>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties/>                </div>
+                <PlotProperties housetype={"2BHK flat in Vijayanagar, Mysuru"}/>                </div>
               </div>
               <div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties/>                </div>
+                <PlotProperties housetype={"2BHK flat in Vijayanagar, Mysuru"}/>                </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                <PlotProperties/>
+                <PlotProperties housetype={"2BHK flat in Vijayanagar, Mysuru"}/>
                 </div>
                 <div className={`${styles.width_properties} mb-0`}>
-                  <PlotProperties/>
+                  <PlotProperties housetype={"2BHK flat in Vijayanagar, Mysuru"}/>
                 </div>
               </div>
             </div>
