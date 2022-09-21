@@ -269,7 +269,7 @@ const EditCommercial = ({ data, propertyType }) => {
           </div>
           <div className={`${styles.card}  px-2  mt-3 `}>
             <div className={` card-body pt-2 pt-lg-3 pb-2`}>
-              <div className="d-flex  justify-content-between">
+              <div className="d-flex  justify-content-between mt-2">
                 <span
                   className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
                 >
@@ -558,73 +558,7 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
               </div>
 
-              {/* <div className={`row mt-4 ps-0 ps-lg-3`}>
-                <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
-                  <p className={`fontFam_poppins ${styles.priceHeading}`}>
-                    Price Details
-                  </p>
-                  <div className="d-flex align-item-center justify-content-between">
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Deposit Price
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        ₹ 1,00,000
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Rent Price
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        ₹ 10,000
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-1 col-md-1 col-sm-1 col-xl-1"></div>
-                <div className={`col-md-6 col-12 col-sm-6 col-xl-6 mb-4`}>
-                  <p className={`fontFam_poppins ${styles.priceHeading}`}>
-                    Area Details
-                  </p>
-                  <div className="d-flex align-item-center justify-content-between">
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Built-Up Area
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        1200Sqft
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Carpet Area
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        1000Sqft
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Maintenance Fees
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        ₹ 2,000
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+             
             </div>
           </div>
           <div className={`${styles.card} card mt-4 mb-5`}>
@@ -660,59 +594,7 @@ const EditCommercial = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
-        {/* <ApartmentUploadPhoto
-          handleClose={handleClose}
-          handleImageUpload={handleImageUpload}
-          show={show}
-        />
-        <ApartmentDeletePhoto
-          deleteFn={onImageRemove}
-          index={imageNumber}
-          handleClose={handleDeleteModalClose}
-          show={showDeleteModal}
-        /> */}
-        {/* <Modal
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          show={locationModal}
-          onHide={() => setLocationModal(false)}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Location</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {isLoaded && (
-              <GoogleMap
-                id="map"
-                onGoogleApiLoaded={({ map, maps }) =>
-                  console.log(map, maps, "lsdnhfioubn")
-                }
-                zoom={16}
-                center={selected}
-                mapContainerClassName={`${styles.map_container}`}
-                onLoad={(map) => {
-                  setMap(map);
-                }}
-              >
-                {markerStat && (
-                  <Marker
-                    draggable={true}
-                    onDragEnd={(e) => {
-                      markerChange();
-                      setSelected({
-                        lat: e.latLng.lat(),
-                        lng: e.latLng.lng(),
-                      });
-                    }}
-                    position={selected}
-                  />
-                )}
-              </GoogleMap>
-            )}
-          </Modal.Body>
-          <Modal.Footer></Modal.Footer>
-        </Modal> */}
+      
 
         {data === 0 && (
           <>

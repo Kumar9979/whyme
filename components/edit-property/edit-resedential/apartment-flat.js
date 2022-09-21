@@ -228,7 +228,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
 
         <div className={`${styles.card}  px-2 mt-3 `}>
           <div className={` card-body pt-2 pt-lg-3 pb-2`}>
-            <div className="d-flex  justify-content-between">
+            <div className="d-flex  justify-content-between mt-2">
               <span
                 className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
               >

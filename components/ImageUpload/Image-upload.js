@@ -13,7 +13,7 @@ import Image from "next/image";
 
 function ImageUpload({ handleImageUpload }) {
   const [images, setImages] = useState([]);
-  const maxNumber = 3;
+  const maxNumber = 12;
   const [image, setimage] = useState([]);
   const [currentPage, setCurrentPage] = useState("photoDesc");
   const router = useRouter();
