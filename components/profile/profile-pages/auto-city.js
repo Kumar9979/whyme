@@ -50,6 +50,12 @@ const AutoCityLoad = ({
     formikUpdate(address);
   };
 
+  // const valueChange = (event) => {
+  //   setVal(event.target.value);
+  // };
+
+
+
   return (
     <>
       <Combobox onSelect={handleSelect} style={{ position: "relative" }}>
@@ -68,7 +74,10 @@ const AutoCityLoad = ({
             placeholder="Enter your city"
             value={val}
           />
-          <button onClick={() => setVal(() => "")}>Reset</button>
+          <button 
+         
+          onClick={() => setVal(() => "")}
+          >Reset</button>
           <div className={`${styles.nmm}`}></div>
           <span className="d-flex align-items-center pe-2">
             <Dropdown fill="#50BF97" width={13} height={13} />

@@ -159,14 +159,17 @@ const EditProfile = () => {
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
                     >
-                      <label htmlFor="profile">Change Picture </label>
+                      <label htmlFor="profile">
+                       {uploaded ? "Change Picture" : "Add Picture"}
+                      </label>
                     </button>
 
                     <button
                       className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
                       onClick={() => {
-                        setuploaded(true);
-                        setaddModalShow(true);
+                       
+                  {uploaded?setaddModalShow(true):setaddModalShow(false)} 
+                   
                       }}
                     >
                       Remove Picture
