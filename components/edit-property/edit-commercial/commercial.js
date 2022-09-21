@@ -478,19 +478,87 @@ const EditCommercial = ({ data, propertyType }) => {
                 className={`d-flex align-items-center justify-content-between`}
               >
                 <div
-                  className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
+                  className={`${styles.photo_text} color_cloudBurst fs_20 fs_sm_15 fw_500 ps-2 ps-lg-3`}
                 >
                   Area & Price
                 </div>
                 <button
                   onClick={() => setAreaModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13  fontFam_poppins`}
                 >
                   Edit Area & Price
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
+
               <div className={`row mt-4 ps-0 ps-lg-3`}>
+                <div className="col-lg-6 col-md-6">
+                  <p className={`fontFam_poppins ${styles.priceHeading}`}>
+                    Price Details
+                  </p>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div className="mb-3">
+                        <div
+                          className={`fontFam_poppins ${styles.price_subheading}`}
+                        >
+                          Deposit Price
+                        </div>
+                        <div className={`fontFam_poppins ${styles.price_text}`}>
+                          ₹ 1,00,000
+                        </div>
+                      </div>
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Maintenance Fees
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        ₹ 2,000
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Rent Price
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        ₹ 10,000
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-6 mt-5 mt-lg-0 mt-md-0">
+                  <p className={`fontFam_poppins ${styles.priceHeading}`}>
+                    Area Details
+                  </p>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Built-Up Area
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        1200Sqft
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div
+                        className={`fontFam_poppins ${styles.price_subheading}`}
+                      >
+                        Carpet Area
+                      </div>
+                      <div className={`fontFam_poppins ${styles.price_text}`}>
+                        1000Sqft
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* <div className={`row mt-4 ps-0 ps-lg-3`}>
                 <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
                   <p className={`fontFam_poppins ${styles.priceHeading}`}>
                     Price Details
@@ -556,7 +624,7 @@ const EditCommercial = ({ data, propertyType }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className={`${styles.card} card mt-4 mb-5`}>
@@ -755,7 +823,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 3 && (
+        {data === 3 && (
           <>
             <WarehouseEditProperty
               show={featureModalShow}
@@ -791,7 +859,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 4 && (
+        {data === 4 && (
           <>
             <IndustryBuildingFeatures
               show={featureModalShow}
@@ -827,7 +895,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 5 && (
+        {data === 5 && (
           <>
             <IndustrialShedEditProperty
               show={featureModalShow}
@@ -863,7 +931,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 6 && (
+        {data === 6 && (
           <>
             <CommercialPlotFeatures
               show={featureModalShow}

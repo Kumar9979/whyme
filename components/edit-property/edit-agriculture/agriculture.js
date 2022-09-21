@@ -387,7 +387,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                   Price Details
                 </p>
                 <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -397,7 +397,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                       ₹ 1,00,000
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -415,7 +415,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                   Area Details
                 </p>
                 <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div className="mb-3">
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}
@@ -447,7 +447,7 @@ const EditAgiculture = ({ data, propertyType }) => {
                       1200Sqft
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div className="mb-3">
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}

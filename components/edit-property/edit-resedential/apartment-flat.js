@@ -438,13 +438,13 @@ const EditApartmentFlat = ({ data, propertyType }) => {
               className={`d-flex align-items-center justify-content-between`}
             >
               <div
-                className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
+                className={`${styles.photo_text} color_cloudBurst fs_20 fs_sm_15 fw_500 ps-2 ps-lg-3`}
               >
                 Area & Price
               </div>
               <button
                 onClick={() => setAreaModal(true)}
-                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
+                className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fs_sm_12 fontFam_poppins`}
               >
                 Edit Area & Price
               </button>
@@ -458,7 +458,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                   Price Details
                 </p>
                 <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -468,7 +468,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                       ₹ 1,00,000
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -485,7 +485,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                   Area Details
                 </p>
                 <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
@@ -495,7 +495,7 @@ const EditApartmentFlat = ({ data, propertyType }) => {
                       1200Sqft
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-6">
+                  <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                     <div
                       className={`fontFam_poppins ${styles.price_subheading}`}
                     >
