@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "../../../styles/propertydetails/requestcall.module.css";
 import menu from "../../../assets/images/menu.svg";
 import Image from "next/dist/client/image";
@@ -6,9 +6,11 @@ import image from "../../../assets/images/imagereview/people.png";
 import star from "../../../assets/images/star.svg";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 import companyLogo from "../../../assets/images/about-property-images/brigade.jpeg";
+import { useRouter } from "next/router";
 
 const RequestCall = () => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
@@ -70,11 +72,18 @@ const RequestCall = () => {
       <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
         Request Callback
       </button>
-      <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+      <button
+        onClick={() => {
+          router.push("/property-details/profile/agent-profile");
+        }}
+        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+      >
         View Profile
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -94,9 +103,10 @@ const RequestCall = () => {
 
 export default RequestCall;
 
-
 export const CompanyRequestCall = () => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
+
 
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
@@ -158,11 +168,18 @@ export const CompanyRequestCall = () => {
       <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
         Request Callback
       </button>
-      <button className={`${styles.agent_profile} w-100 py-2 mt-3`}>
+      <button
+        onClick={() => {
+          router.push("/property-details/profile/company-profile");
+        }}
+        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+      >
         View Profile
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -215,9 +232,10 @@ export const PostedByOwner = () => {
             >
               Rohith
             </div>
-            <span className="fs_15 fw_500 color_light_green fontFam_poppins d-flex justify-content-start justify-content-md-center justify-content-lg-center">Verified Owner</span>
-            
-            
+            <span className="fs_15 fw_500 color_light_green fontFam_poppins d-flex justify-content-start justify-content-md-center justify-content-lg-center">
+              Verified Owner
+            </span>
+
             <div
               className={`${styles.agent_number} d-flex justify-content-start justify-content-md-center justify-content-lg-center`}
             >
@@ -230,7 +248,9 @@ export const PostedByOwner = () => {
         Request Callback
       </button>
       {show ? (
-        <button className={`${styles.share_report_card} p-3  position-absolute`}>
+        <button
+          className={`${styles.share_report_card} p-3  position-absolute`}
+        >
           <div className="d-flex align-items-center justify-content-center">
             <Image
               src={caution}
@@ -247,5 +267,3 @@ export const PostedByOwner = () => {
     </div>
   );
 };
-
-

@@ -46,8 +46,8 @@ const PropertyReview = () => {
   console.log(formik.values);
 
   return (
-    <div className="mt-5   ">
-      <div className={`${styles.review_container} mt-5`}>
+    <div className="">
+      <div className={`${styles.review_container} `}>
         <div className="  d-lg-flex d-md-flex d-sm-flex align-items-center justify-content-start  ">
          
             <span

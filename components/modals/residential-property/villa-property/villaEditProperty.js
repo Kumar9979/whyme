@@ -132,6 +132,7 @@ const VillaEditProperty = ({ show, handleClose }) => {
       onHide={handleClose}
       dialogClassName={`${styles.property_features_container}`}
       contentClassName={`${styles.card_radius}`}
+      
     >
       <Modal.Body contentClassName={`${styles.card_radius}`}>
         {" "}

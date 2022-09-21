@@ -189,7 +189,7 @@ const EditCommercial = ({ data, propertyType }) => {
           <div
             className={`${styles.back_icon} d-flex justify-content-start ps-2`}
           >
-            <span>
+            <span className="d-flex align-items-center">
               {" "}
               <Image src={backIcon} />
               <span
@@ -267,9 +267,9 @@ const EditCommercial = ({ data, propertyType }) => {
               </div>
             </div>
           </div>
-          <div className={`${styles.card}  px-2 pt-3 mt-3 `}>
+          <div className={`${styles.card}  px-2  mt-3 `}>
             <div className={` card-body pt-2 pt-lg-3 pb-2`}>
-              <div className="d-flex  justify-content-between">
+              <div className="d-flex  justify-content-between mt-2">
                 <span
                   className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
                 >
@@ -279,7 +279,7 @@ const EditCommercial = ({ data, propertyType }) => {
                 {image.length != 0 ? (
                   <button
                     onClick={handleShow}
-                    className={`${styles.add_photo_btn} me-3 px-3 px-lg-4 fs_13 fontFam_poppins`}
+                    className={`${styles.add_photo_btn} me-3 px-2 px-lg-3 fs_13 fontFam_poppins`}
                   >
                     Add Photos
                   </button>
@@ -339,7 +339,7 @@ const EditCommercial = ({ data, propertyType }) => {
                   onClick={() => {
                     setEditLocation(true);
                   }}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Location
                 </button>
@@ -406,13 +406,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setFeatureModalShow(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Features
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
                 {properties.map((item, index) => {
                   return (
                     <div
@@ -445,13 +445,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setAmenitiesModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Amenities
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
                 {amenties.map((item, index) => {
                   return (
                     <div
@@ -478,35 +478,46 @@ const EditCommercial = ({ data, propertyType }) => {
                 className={`d-flex align-items-center justify-content-between`}
               >
                 <div
-                  className={`${styles.photo_text} color_cloudBurst fs_20 fw_500 ps-2 ps-lg-3`}
+                  className={`${styles.photo_text} color_cloudBurst fs_20 fs_sm_15 fw_500 ps-2 ps-lg-3`}
                 >
                   Area & Price
                 </div>
                 <button
                   onClick={() => setAreaModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13  fontFam_poppins`}
                 >
                   Edit Area & Price
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <div className={`row mt-4`}>
-                <div className={`col-md-5 col-12 col-sm-6 col-xl-5 mb-4`}>
+
+              <div className={`row mt-4 ps-0 ps-lg-3`}>
+                <div className="col-lg-6 col-md-6">
                   <p className={`fontFam_poppins ${styles.priceHeading}`}>
                     Price Details
                   </p>
-                  <div className="d-flex align-item-center justify-content-between">
-                    <div>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div className="mb-3">
+                        <div
+                          className={`fontFam_poppins ${styles.price_subheading}`}
+                        >
+                          Deposit Price
+                        </div>
+                        <div className={`fontFam_poppins ${styles.price_text}`}>
+                          ₹ 1,00,000
+                        </div>
+                      </div>
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}
                       >
-                        Deposit Price
+                        Maintenance Fees
                       </div>
                       <div className={`fontFam_poppins ${styles.price_text}`}>
-                        ₹ 1,00,000
+                        ₹ 2,000
                       </div>
                     </div>
-                    <div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}
                       >
@@ -518,13 +529,12 @@ const EditCommercial = ({ data, propertyType }) => {
                     </div>
                   </div>
                 </div>
-                <div className="col-1 col-md-1 col-sm-1 col-xl-1"></div>
-                <div className={`col-md-6 col-12 col-sm-6 col-xl-6 mb-4`}>
+                <div className="col-lg-6 col-md-6 mt-5 mt-lg-0 mt-md-0">
                   <p className={`fontFam_poppins ${styles.priceHeading}`}>
                     Area Details
                   </p>
-                  <div className="d-flex align-item-center justify-content-between">
-                    <div>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}
                       >
@@ -534,7 +544,7 @@ const EditCommercial = ({ data, propertyType }) => {
                         1200Sqft
                       </div>
                     </div>
-                    <div>
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                       <div
                         className={`fontFam_poppins ${styles.price_subheading}`}
                       >
@@ -544,19 +554,11 @@ const EditCommercial = ({ data, propertyType }) => {
                         1000Sqft
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className={`fontFam_poppins ${styles.price_subheading}`}
-                      >
-                        Maintenance Fees
-                      </div>
-                      <div className={`fontFam_poppins ${styles.price_text}`}>
-                        ₹ 2,000
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
+
+             
             </div>
           </div>
           <div className={`${styles.card} card mt-4 mb-5`}>
@@ -571,13 +573,13 @@ const EditCommercial = ({ data, propertyType }) => {
                 </div>
                 <button
                   onClick={() => setDescriptionModal(true)}
-                  className={`${styles.add_photo_btn} me-3 px-3 py-1 px-lg-4 fs_13 fontFam_poppins`}
+                  className={`${styles.add_photo_btn} me-3 px-2 py-1 px-lg-3 fs_13 fontFam_poppins`}
                 >
                   Edit Description
                 </button>
               </div>
               <hr className={`${styles.hr}`} />
-              <p className={`fontFam_poppins`}>
+              <p className={`fontFam_poppins ps-0 ps-lg-3`}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -592,59 +594,7 @@ const EditCommercial = ({ data, propertyType }) => {
             </div>
           </div>
         </div>
-        {/* <ApartmentUploadPhoto
-          handleClose={handleClose}
-          handleImageUpload={handleImageUpload}
-          show={show}
-        />
-        <ApartmentDeletePhoto
-          deleteFn={onImageRemove}
-          index={imageNumber}
-          handleClose={handleDeleteModalClose}
-          show={showDeleteModal}
-        /> */}
-        {/* <Modal
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          show={locationModal}
-          onHide={() => setLocationModal(false)}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Location</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {isLoaded && (
-              <GoogleMap
-                id="map"
-                onGoogleApiLoaded={({ map, maps }) =>
-                  console.log(map, maps, "lsdnhfioubn")
-                }
-                zoom={16}
-                center={selected}
-                mapContainerClassName={`${styles.map_container}`}
-                onLoad={(map) => {
-                  setMap(map);
-                }}
-              >
-                {markerStat && (
-                  <Marker
-                    draggable={true}
-                    onDragEnd={(e) => {
-                      markerChange();
-                      setSelected({
-                        lat: e.latLng.lat(),
-                        lng: e.latLng.lng(),
-                      });
-                    }}
-                    position={selected}
-                  />
-                )}
-              </GoogleMap>
-            )}
-          </Modal.Body>
-          <Modal.Footer></Modal.Footer>
-        </Modal> */}
+      
 
         {data === 0 && (
           <>
@@ -755,7 +705,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 3 && (
+        {data === 3 && (
           <>
             <WarehouseEditProperty
               show={featureModalShow}
@@ -791,7 +741,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 4 && (
+        {data === 4 && (
           <>
             <IndustryBuildingFeatures
               show={featureModalShow}
@@ -827,7 +777,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 5 && (
+        {data === 5 && (
           <>
             <IndustrialShedEditProperty
               show={featureModalShow}
@@ -863,7 +813,7 @@ const EditCommercial = ({ data, propertyType }) => {
             />
           </>
         )}
-         {data === 6 && (
+        {data === 6 && (
           <>
             <CommercialPlotFeatures
               show={featureModalShow}

@@ -101,7 +101,7 @@
 .Amenities_text{
   font-size: 14px;
   color: #323d5a;
-  font-weight: 500;
+  font-weight: 600;
 }
 .Amenities_dot{
   color: #1D72DB;
@@ -141,6 +141,11 @@ object-fit: contain;
     right: -80px;
     z-index: 999;
   }
+  .Amenities_text{
+    font-size: 8px;
+    color: #323d5a;
+    font-weight: 500;
+  }
 }
 @media only screen and (max-width: 450px) {
   .delete {
@@ -163,7 +168,7 @@ object-fit: contain;
   .delete {
     position: relative;
     top: -85px;
-    right: -45px;
+    right: -40px;
     z-index: 999;
   }
 }

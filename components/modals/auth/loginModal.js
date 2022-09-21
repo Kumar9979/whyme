@@ -17,7 +17,7 @@ const LoginModals = ({ show, onShow, onHide }) => {
 
   const [number, setNumber] = useState(undefined);
   const phoneRegex =
-    /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
+  /^\d{10}$/;
   // const options = [
   //   { value: "+91", label: "+91" },
   //   { value: "+92", label: "+92" },

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import close from "../../assets/icons/close.png";
 import agent from "../../assets/icons/agent.png";
 import building from "../../assets/icons/building.png";
@@ -9,6 +8,7 @@ import Image from "next/image";
 
 import styles from "../../styles/modals/registerModal.module.css";
 import { useRouter } from "next/router";
+import UserTypeModal from "../../components/modals/userTypeModal";
 
 const UserType = () => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const UserType = () => {
   return (
     <>
       <div
-        className={`vh-100 d-flex align-items-center justify-content-center mx-2`}
+        className={`vh-100 d-flex  align-items-center justify-content-center mx-2`}
       >
         <div
           className={`${styles.register_form_container} ${styles.max_height_500}`}
@@ -65,19 +65,19 @@ const UserType = () => {
                     <Image
                       src={building}
                       alt="building icon"
-                      width={35}
-                      height={35}
+                      width={30}
+                      height={25}
                       className={`${styles.cursor_pointer}`}
                     />
                   </div>
                   <span
-                    className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ${styles.padding_l_4}`}
+                    className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ${styles.padding_l_4}`}
                   >
                     Builder/Developer
                   </span>
                 </div>
                 <i
-                  className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                  className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
                 ></i>
               </div>
 
@@ -92,19 +92,19 @@ const UserType = () => {
                     <Image
                       src={agent}
                       alt="building icon"
-                      width={35}
-                      height={30}
+                      width={30}
+                      height={25}
                       className={`${styles.cursor_pointer}`}
                     />
                   </div>
                   <span
-                    className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
+                    className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ms-3`}
                   >
                     Agent
                   </span>
                 </div>
                 <i
-                  className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                  className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
                 ></i>
               </div>
               <div
@@ -119,26 +119,27 @@ const UserType = () => {
                     <Image
                       src={owner}
                       alt="building icon"
-                      width={35}
-                      height={30}
+                      width={30}
+                      height={25}
                       className={`${styles.cursor_pointer}`}
                     />
                   </div>
                   <span
-                    className={`${styles.font_20} fontFam_poppins ${styles.font_medium} ms-3`}
+                    className={`fs_20 fs_sm_15 fontFam_poppins ${styles.font_medium} ms-3`}
                   >
                     Owner
                   </span>
                 </div>
 
                 <i
-                  className={`${styles.modal_icon_arrowRight} ri-arrow-right-s-line mt-1 ms-auto`}
+                  className={`fs_30 fs_sm_25 ri-arrow-right-s-line mt-1 ms-auto`}
                 ></i>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <UserTypeModal show={true}/>
     </>
   );
 };

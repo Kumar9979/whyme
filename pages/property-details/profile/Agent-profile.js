@@ -1,27 +1,28 @@
-import React, { useRef, useState, useEffect } from "react";
-import styles from "../../../styles/propertydetails/profile/propertyprofile.module.css";
-
-import PropertyReview from "../../../components/property-details/propertydetails_profile/Agent-profile/ProfileReview";
-import Profilehead from "../../../components/property-details/propertydetails_profile/Agent-profile/profile-header/ProfileheadContainer";
-import OtherProperties from "../../../components/property-details/other-properties/other-properties";
+import React, { useState, useEffect, useRef } from "react";
+import HeaderSection from "../../../components/property-details/property-details-profile/header";
+import styles from "../../../styles/propertydetails/profile/agent-profile.module.css";
+import star from "../../../assets/images/star.svg";
+import caution from "../../../assets/images/property-details/caution.svg";
+import share from "../../../assets/images/property-details/share.svg";
+import Image from "next/image";
 import SimilarProperties from "../../../components/cards/property-details-cards/similar-properties";
 import RelatedProperties from "../../../components/cards/property-details-cards/related-properties";
+import PlotProperties from "../../../components/cards/profile-pages-cards/plot-similar-properties";
+import PropertyReview from "../../../components/property-details/propertydetails_profile/Agent-profile/ProfileReview";
+import Foter from "../../../components/footerPage/footer";
 
-const Agentprofile = () => {
+const AgentProfile = () => {
+  const [mobile, setMobile] = useState(false);
   let n = 2;
   const ref = useRef();
-  const onScroll = (scroll) => {
-    ref.current.scrollLeft += scroll;
-  };
-  const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
@@ -34,54 +35,175 @@ const Agentprofile = () => {
     };
   }, []);
   return (
-    <div className={`${styles.container} pb-lg-3 `}>
-      <div className={` mt-lg-5 pt-5   mx-lg-4 px-lg-4 mx-md-5 px-md-2 `}>
-        <div>
-          <div
-            className={`${styles.profile_container} pb-lg-2 mt-lg-5 mx-lg-3 px-lg-4 pt-lg-4  mx-md-2 px-md-2 mx-sm-0 px-sm-0 mx-xs-0 px-xs-0 `}
-          >
-            <div>
-              <Profilehead />
-            </div>
+    <div className={`${styles.body}`}>
+      <div className="col-12">
+        <div className="d-flex justify-content-center mt-4 pt-4 mt-lg-5 pt-lg-5 mt-md-5 pt-md-5">
+          <div className="col-12 col-md-10 col-lg-10">
+            <div className="d-flex justify-content-center">
+              <div className={`${styles.profile_container} w-100 mb-3`}>
+                <div className="p-sm-0 p-md-3 p-lg-3">
+                  <HeaderSection />
+                  <div className={`${styles.agent_detail_height}`}>
+                    <div className="row">
+                      <div className={`${styles.white_space}`}></div>
+                      <div
+                        className={`${styles.details_width} d-flex justify-content-between`}
+                      >
+                        <div className="mt-auto d-none d-md-block">
+                          <div className="d-flex align-items-center mt-3">
+                            <span className="fs_25 fs_md_16 fw_600 fontFam_poppins color_cloudBurst">
+                              Amal Sabu
+                            </span>
+                            <span
+                              className={`${styles.number_properties} color_white py-1 fs_10 fs_md_8 fw_400 px-1 ms-2 d-flex align-items-center`}
+                            >
+                              2 Properties
+                            </span>
+                          </div>
+                          <div className="mt-2 d-flex align-items-center">
+                            <span className="color_grey fs_8 fw_400 fontFam_poppins">
+                              Active Since
+                            </span>
+                            <span className="fs_12 fw_500 fontFam_poppins color_cloudBurst ms-1">
+                              Aug 2022
+                            </span>
+                            <span className="ms-2">
+                              <Image
+                                src={star}
+                                alt="Picture of the author"
+                                width={20}
+                                height={20}
+                              />
+                            </span>
+                            <span className="fs_15  fs_md_12 fw_400 fontFam_poppins color_light_blue ms-1">
+                              4.7 Ratings
+                            </span>
+                            <span className="fs_13 fw_400 fontFam_poppins color_cloudBurst ms-1">
+                              {" "}
+                              {"(236)"}
+                            </span>
+                          </div>
+                        </div>
+                        {mobile ? (
+                          <div className="d-flex mt-5  align-items-center ms-auto">
+                            <div>
+                              <Image
+                                src={caution}
+                                alt="Picture of the author"
+                                width={25}
+                                height={25}
+                              />
+                            </div>
 
-            <div className={`ms-4 ms-lg-5 ps-lg-3 ms-md-5 ms-sm-5  mt-md-2`}>
-              <div className="mt-5 pt-5">
-                <div className="pt-5 w-75 mt-md-4">
-                  {mobile ? (
+                            <div className="ms-2 ms-lg-3">
+                              <Image
+                                src={share}
+                                width={25}
+                                height={25}
+                                alt="Picture of the author"
+                              />
+                            </div>
+
+                            <button
+                              className={`${styles.contact_button} px-lg-4 me-1 ms-2 ms-lg-3 fontfam_poppins fw_500 fs_15 fs_sm_8 color_white py-2 py-md-2 py-lg-3 px-md-3 px-3 border-none`}
+                            >
+                              Contact
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="d-flex mt-5  align-items-center ms-auto">
+                            <div>
+                              <Image
+                                src={caution}
+                                alt="Picture of the author"
+                                width={35}
+                                height={35}
+                              />
+                            </div>
+                            <div className="ms-3">
+                              <Image
+                                src={share}
+                                width={35}
+                                height={35}
+                                alt="Picture of the author"
+                              />
+                            </div>
+
+                            <button
+                              className={`${styles.contact_button} px-lg-4 me-1 ms-3 color_white py-2 py-md-1 px-md-2 px-3 fs_15 fs_sm_10 border-none`}
+                            >
+                              Contact
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="ms-4 d-block d-md-none d-lg-none">
                     <div>
-                      <div className={`d-flex  p-3  mb-5`}>
-                        <div className={`${styles.scrollmenu}  `}>
-                          <div
-                            ref={ref}
-                            className={`${styles.row} d-flex flex-column`}
-                          >
+                      <span className="fs_25 fs_md_16 fw_600 fontFam_poppins color_cloudBurst">
+                        Amal Sabu
+                      </span>
+                      <span className="color_grey fs_8 fw_400 fontFam_poppins">
+                        Active Since
+                      </span>
+                      <span className="fs_12 fw_500 fontFam_poppins color_cloudBurst ms-1">
+                        Aug 2022
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <span>
+                        <Image
+                          src={star}
+                          alt="Picture of the author"
+                          width={20}
+                          height={20}
+                        />
+                      </span>
+                      <span className="fs_15  fs_md_12 fw_400 fontFam_poppins color_light_blue ms-1">
+                        4.7 Ratings
+                      </span>
+                      <span className="fs_13 fw_400 fontFam_poppins color_cloudBurst ms-1">
+                        {" "}
+                        {"(236)"}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    {mobile ? (
+                      <div className={`row mb-5`}>
+                        <div className={` d-flex justify-content-center `}>
+                          <div ref={ref} className={` d-flex flex-column`}>
                             {[...Array(n)].map((item, index) => {
                               return <RelatedProperties data={0} />;
                             })}
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <div className={`${styles.similar_properties_width}`}>
-                      <div className="d-flex justify-content-center">
-                        <SimilarProperties
-                          plot={0}
-                          type={"2BHK Villa in Vijayanagar, Mysuru"}
-                        />
+                    ) : (
+                      <div className="ms-5 ps-4 mt-5">
+                        <div className="col-lg-9 col-md-10">
+                          <PlotProperties
+                            housetype={"2BHK flat in Vijayanagar, Mysuru"}
+                          />
+                        </div>
+                        <div className="col-lg-9 col-md-10">
+                          <PlotProperties
+                            housetype={"2BHK flat in Vijayanagar, Mysuru"}
+                          />
+                        </div>
                       </div>
-                      <div className="d-flex justify-content-center">
-                        <SimilarProperties
-                          plot={0}
-                          type={"2BHK Villa in Vijayanagar, Mysuru"}
-                        />
-                      </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
+                  <div className="ms-2 ps-2 ms-lg-5 ps-lg-4 ms-md-5 ps-md-4 d-flex justify-content-center">
+                    <PropertyReview />
+                  </div>
+
+
+
+
+                  <Foter/>
                 </div>
-              </div>
-              <div className="mt-5">
-                <PropertyReview />
               </div>
             </div>
           </div>
@@ -91,4 +213,4 @@ const Agentprofile = () => {
   );
 };
 
-export default Agentprofile;
+export default AgentProfile;
