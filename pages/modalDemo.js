@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import ApartmentUpdateMap from "../components/modals/residential-property/apartment/apartmentUpdateMap";
 // import OfficeSpacePriceRent from "../components/modals/commercial-property/office-space/officespaceAreapriceRent";
 // import OfficespaceAreaPrice from "../components/modals/commercial-property/office-space/officespaceAreaPrice";
 // import OfficeSpaceAmenities from "../components/modals/commercial-property/office-space/officespaceEditAmenities";
@@ -122,7 +123,7 @@ const Hello = () => {
       {/* <ApartmentAreaPrice handleClose={handleClose} show={show} /> */}
       {/* <ApartmentEditAmenities handleClose={handleClose} show={show} /> */}
       {/* <ApartmentEditProperty handleClose={handleClose} show={show} /> */}
-      {/* <ApartmentUpdateMap handleClose={handleClose} show={show} /> */}
+      <ApartmentUpdateMap handleClose={handleClose} show={show} />
       {/* <ApartmentDeletePhoto handleClose={handleClose} show={show} /> */}
       {/* <ApartmentUploadPhoto handleClose={handleClose} show={show} /> */}
 
@@ -149,7 +150,7 @@ const Hello = () => {
       {/* <VillaUploadPhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaDeletePhoto handleClose={handleClose} show={show} />  */}
       {/* <VillaUpdateMap handleClose={handleClose} show={show}/> */}
-      <VillaEditProperty handleClose={handleClose} show={show}/>
+      {/* <VillaEditProperty handleClose={handleClose} show={show}/> */}
       {/* <VillaEditAmenities handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPrice handleClose={handleClose} show={show} /> */}
       {/* <VillaAreaPriceRent handleClose={handleClose} show={show} /> */}

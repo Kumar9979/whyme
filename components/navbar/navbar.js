@@ -21,7 +21,7 @@ const Navbar = () => {
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   const router = useRouter();
-  var login = false;
+  var login = true;
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1065) {

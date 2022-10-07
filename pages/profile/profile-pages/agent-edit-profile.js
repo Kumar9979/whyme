@@ -27,8 +27,7 @@ const EditProfile = () => {
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
   const [addModalShow, setaddModalShow] = useState(false);
- 
- 
+
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -160,12 +159,18 @@ const EditProfile = () => {
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-1 mt-3`}
                     >
-                      <label htmlFor="profile">Change Picture </label>
+                      <label htmlFor="profile">
+                       {uploaded ? "Change Picture" : "Add Picture"}
+                      </label>
                     </button>
 
                     <button
                       className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
-                      onClick={() => {setuploaded(true);setaddModalShow(true)}}
+                      onClick={() => {
+                       
+                  {uploaded?setaddModalShow(true):setaddModalShow(false)} 
+                   
+                      }}
                     >
                       Remove Picture
                     </button>
@@ -364,16 +369,14 @@ const EditProfile = () => {
                               value={formik.values.description}
                               onChange={formik.handleChange}
                             ></textarea>
-                              <div className={`${styles.nmm}`}>
-                                  {formik.errors.description &&
-                                    formik.touched.description && (
-                                      <span
-                                        className={`text-danger fs_14 mb-0 `}
-                                      >
-                                        {formik.errors.description}
-                                      </span>
-                                    )}
-                                </div>
+                            <div className={`${styles.nmm}`}>
+                              {formik.errors.description &&
+                                formik.touched.description && (
+                                  <span className={`text-danger fs_14 mb-0 `}>
+                                    {formik.errors.description}
+                                  </span>
+                                )}
+                            </div>
                           </div>
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
@@ -397,13 +400,12 @@ const EditProfile = () => {
             </div>
           </div>
         </div>
-       
       </div>
       <PhotoDelete
-              show={addModalShow}
-              onHide={() => setaddModalShow(false)}
-              setuploaded={setuploaded}
-            />
+        show={addModalShow}
+        onHide={() => setaddModalShow(false)}
+        setuploaded={setuploaded}
+      />
     </ProfileLayout>
   );
 };

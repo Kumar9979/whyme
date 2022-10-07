@@ -13,6 +13,7 @@ import PlacesAutocomplete from "../../post-property/property-details/placesAutoc
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import { func } from "prop-types";
+import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
 
 const EditProfile = () => {
   const libraries = ["places"];
@@ -26,6 +27,7 @@ const EditProfile = () => {
   const [selected, setSelected] = useState();
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
+  const [addModalShow, setaddModalShow] = useState(false);
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -146,14 +148,16 @@ const EditProfile = () => {
                     <button
                       className={`${styles.change_photo} fs_16 fw_400 fontFam_poppins py-1 mt-3`}
                     >
-                      <label htmlFor="profile">Change Picture </label>
+                      <label htmlFor="profile">
+                        {uploaded ? "Change Picture" : "Add Picture"}
+                        </label>
                     </button>
 
                     <button
                       className={`${styles.remove_photo} fs_16 fw_500 fontFam_poppins py-2 mt-3 d-flex justify-content-start justify-content-lg-center`}
-                      onClick={() => setuploaded(false)}
+                      onClick={() => {uploaded?setaddModalShow(true):setaddModalShow(false)} }
                     >
-                      Remove Picture
+                      {uploaded ? "Remove Picture" :null}
                     </button>
                   </div>
                 </div>
@@ -332,6 +336,11 @@ const EditProfile = () => {
           </div>
         </div>
       </div>
+      <PhotoDelete
+        show={addModalShow}
+        onHide={() => setaddModalShow(false)}
+        setuploaded={setuploaded}
+      />
     </ProfileLayout>
   );
 };
