@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {usePosition} from "../../../pages/post-property/property-details/usePosition"
 // import { usePosition } from "../../pages/post-property/property-details/usePosition";
 import styles from "../../../styles/propertydetails/propertylocation.module.css";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import PlacesAutocomplete from "../../../pages/post-property/property-details/placesAutocomplete";
+// import PlacesAutocomplete from "../../../pages/post-property/property-details/placesAutocomplete";
 import Geocode from "react-geocode";
+import { usePosition } from "../../postproperty/components/usePosition";
 
 const PropertyLocation = () => {
   const libraries = ["places"];
