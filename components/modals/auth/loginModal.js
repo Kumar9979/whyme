@@ -47,6 +47,7 @@ const LoginModals = ({ show, onShow, onHide }) => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       setNumber(values.phoneNumber);
+      setSelectedOption(values.countryCode)
       setShowOtp(true);
       onHide();
       setTimer(true);
@@ -162,6 +163,7 @@ const LoginModals = ({ show, onShow, onHide }) => {
       <OtpModals
         onShowModal={onShow}
         number={number}
+        selectedOption={selectedOption}
         show={showOtp}
         onHide={closeOtpModal}
         timerStatus={timer}
