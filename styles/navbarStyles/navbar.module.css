@@ -54,6 +54,13 @@
   border-radius: 5px;
   font-weight: 600;
 }
+.loginBtn2{
+  color: #1d72db;
+  border: 1px solid #1d72db;
+  font-family: Poppins;
+  border-radius: 5px;
+  font-weight: 600;
+}
 .DropdownIcon {
   object-fit: contain;
   width: 0.2rem;
