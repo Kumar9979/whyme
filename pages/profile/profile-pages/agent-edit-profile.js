@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import camera from "../../../assets/icons/camera.png";
 // import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
 // import dropdown from "../../../assets/icons/cityDropdown.svg";
-import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
+// import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";

@@ -9,7 +9,6 @@ import { Progress } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ImageUpload from "../../ImageUpload/Image-upload";
-import { usePosition } from "../../../pages/post-property/property-details/usePosition";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
@@ -41,6 +40,7 @@ import ResidentialLandDescription from "../../modals/residential-property/reside
 import ResidentialLandUploadPhoto from "../../modals/residential-property/residential-land/residentialLandUploadPhoto";
 import ResidentialLandDeletePhoto from "../../modals/residential-property/residential-land/residentialLandDeletePhoto";
 import ResidentialLandUpdateMap from "../../modals/residential-property/residential-land/residentialLandUpdateMap";
+import { usePosition } from "../../postproperty/components/usePosition";
 
 const EditApartmentFlat = ({ data, propertyType }) => {
   let type;
