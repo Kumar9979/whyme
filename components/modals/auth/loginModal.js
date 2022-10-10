@@ -162,7 +162,6 @@ const LoginModals = ({ show, onShow, onHide }) => {
       <OtpModals
         onShowModal={onShow}
         number={number}
-        selectedOption={selectedOption}
         show={showOtp}
         onHide={closeOtpModal}
         timerStatus={timer}
