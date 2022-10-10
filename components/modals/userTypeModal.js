@@ -21,9 +21,7 @@ const UserTypeModal = ({ show, onHide }) => {
   const handleBuilderClose = () => setBuilderShow(false);
   const handleSellRentShow = () => setSellRentShow(true);
   const handleSellRentClose = () => setSellRentShow(false);
-  function hi() {
-    console.log(hi);
-  }
+
   return (
     <>
       <Modal show={show} onHide={onHide} centered>

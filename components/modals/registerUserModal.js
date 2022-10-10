@@ -14,9 +14,9 @@ const RegisterUserModal = ({ show, onHide }) => {
   const [file, setFile] = useState();
   const [size, setSize] = useState(35);
   const [uploaded, setUploaded] = useState(false);
-  const [showModal, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   function onClose() {
-    setShow(false)
+    setShowModal(false)
   }
   const formik = useFormik({
     initialValues: {
@@ -34,8 +34,8 @@ const RegisterUserModal = ({ show, onHide }) => {
       console.log(values);
       resetForm();
       formReset();
+      setShowModal(true)
       onHide();
-      setShow(true)
     },
   });
 
@@ -59,6 +59,7 @@ const RegisterUserModal = ({ show, onHide }) => {
   }
 
   return (
+    <>
     <Modal
       show={show}
       onHide={() => {
@@ -197,9 +198,10 @@ const RegisterUserModal = ({ show, onHide }) => {
             </button>
           </div>
         </form>
-        <UserTypeModal onHide={onClose} show={showModal} />
       </Modal.Body>
     </Modal>
+        <UserTypeModal onHide={onClose} show={showModal} />
+</>
   );
 };
 

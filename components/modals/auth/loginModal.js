@@ -24,7 +24,6 @@ const LoginModals = ({ show, onShow, onHide }) => {
   //   { value: "+93", label: "+93" },
   // ];
 
-  const [selectedOption, setSelectedOption] = useState(null);
 
   const ShowOtpModal = () => setShowOtp(true);
   const closeOtpModal = () => setShowOtp(false);
