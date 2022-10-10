@@ -45,8 +45,8 @@ const Navbar = () => {
   }
 
   const onClosePostProperty = () => {
-    setShowProperty(false)
-  }
+    setShowProperty(false);
+  };
 
   const menu = (
     <Menu
@@ -228,7 +228,7 @@ const Navbar = () => {
                   <li>
                     <button
                       type="button"
-                      className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
+                      className={`ms-5 px-4  btn-primary text-nowrap ${Styles.landingheader}`}
                       onClick={() => setShowProperty(true)}
                     >
                       Post Property
@@ -254,7 +254,11 @@ const Navbar = () => {
                     <li>
                       <button
                         type="button"
-                        className={`ms-5 px-5 btn text-nowrap ${Styles.loginBtn}`}
+                        className={
+                          showLogin
+                            ? `ms-4 px-4 btn text-nowrap ${Styles.landingheader}`
+                            : `ms-4 px-4 btn text-nowrap ${Styles.loginBtn}`
+                        }
                         onClick={() => setShowLogin(true)}
                       >
                         Login
@@ -298,7 +302,7 @@ const Navbar = () => {
                 ) : (
                   <button
                     type="button"
-                    className={`btn text-nowrap ${Styles.loginBtn2} mx-2 `}
+                    className={`btn text-nowrap ${Styles.loginBtn2} mx-2 py-1 `}
                     onClick={() => setShowLogin(true)}
                   >
                     Login
@@ -306,7 +310,7 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={() => setTopBar(!topBar)}
-                  className={`${Styles.mobile_burger} px-2 mb-2`}
+                  className={`${Styles.mobile_burger} px-2 mb-2 mt-2`}
                 >
                   <span className="d-flex align-items-center">
                     <i class="ri-add-line color_white"></i>
