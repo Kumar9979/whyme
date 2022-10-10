@@ -14,6 +14,8 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import { func } from "prop-types";
 import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
+import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
+import SuccessSave from "../../../components/modals/edit-profile-modals/success-saved";
 
 const EditProfile = () => {
   const libraries = ["places"];
@@ -316,7 +318,7 @@ const EditProfile = () => {
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-3 fs_15  fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15  fw_400`}
                             >
                               Save Changes
                             </button>
@@ -341,6 +343,8 @@ const EditProfile = () => {
         onHide={() => setaddModalShow(false)}
         setuploaded={setuploaded}
       />
+      {/* <SaveChanges show={true} handleClose={handleClose}/> */}
+      {/* <SuccessSave show={true} handleClose={handleClose}/>  */}
     </ProfileLayout>
   );
 };

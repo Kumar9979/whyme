@@ -15,8 +15,10 @@ import Key from "../../assets/icons/key.svg";
 import Settings from "../../assets/icons/settings.svg";
 import Heart from "../../assets/icons/heart.svg";
 import UserTypeModal from "../modals/userTypeModal";
+import LoginModals from "../modals/auth/loginModal";
 const Navbar = () => {
-  const [show, setShow] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
+  const [showPostProperty, setShowProperty] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [topBar, setTopBar] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -38,9 +40,13 @@ const Navbar = () => {
     };
   }, []);
 
-function onClose(){
-setShow(false)
-}
+  function onCloseLogin() {
+    setShowLogin(false);
+  }
+
+  const onClosePostProperty = () => {
+    setShowProperty(false);
+  };
 
   const menu = (
     <Menu
@@ -222,20 +228,18 @@ setShow(false)
                   <li>
                     <button
                       type="button"
-                      className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-                      onClick={() => setShow(true)
-                      }
+                      className={`ms-5 px-4  btn-primary text-nowrap ${Styles.landingheader}`}
+                      onClick={() => setShowProperty(true)}
                     >
                       Post Property
                     </button>
                   </li>
-                  {login !== false ? (
+                  {login !== true ? (
                     <li className={`${Styles.navbar} nav-item`}>
-                      <Dropdown overlay={menu} placement="bottomLeft">
+                      <Dropdown overlay={menu} placement="bottomRight">
                         <div
                           className={`ms-5 ${Styles.navProfile} pe-5`}
-                          onClick={() => setShow(true)
-                          }
+                          // onClick={() => setShow(true)}
                         >
                           <Image
                             className={`${Styles.navProfile}`}
@@ -250,9 +254,12 @@ setShow(false)
                     <li>
                       <button
                         type="button"
-                        className={`ms-5 px-5 btn text-nowrap ${Styles.loginBtn}`}
-                        onClick={() => setShow(true)
+                        className={
+                          showLogin
+                            ? `ms-4 px-4 btn text-nowrap ${Styles.landingheader}`
+                            : `ms-4 px-4 btn text-nowrap ${Styles.loginBtn}`
                         }
+                        onClick={() => setShowLogin(true)}
                       >
                         Login
                       </button>
@@ -280,17 +287,30 @@ setShow(false)
               </div>
 
               <div className="d-flex align-items-center justify-content-between ms-auto">
-                <div onClick={() => setSidebar(!sidebar)} className="btn me-2">
-                  <Image
-                    className={`${Styles.mobile_ProfileIcon}`}
-                    src={ProfileImage}
-                    width={30}
-                    height={30}
-                  />
-                </div>
+                {login !== true ? (
+                  <div
+                    onClick={() => setSidebar(!sidebar)}
+                    className="btn me-2"
+                  >
+                    <Image
+                      className={`${Styles.mobile_ProfileIcon}`}
+                      src={ProfileImage}
+                      width={30}
+                      height={30}
+                    />
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    className={`btn text-nowrap ${Styles.loginBtn2} mx-2 py-1 `}
+                    onClick={() => setShowLogin(true)}
+                  >
+                    Login
+                  </button>
+                )}
                 <button
                   onClick={() => setTopBar(!topBar)}
-                  className={`${Styles.mobile_burger} px-2 mb-2`}
+                  className={`${Styles.mobile_burger} px-2 mb-2 mt-2`}
                 >
                   <span className="d-flex align-items-center">
                     <i class="ri-add-line color_white"></i>
@@ -338,8 +358,7 @@ setShow(false)
               <button
                 type="button"
                 className={`px-5  btn-primary text-nowrap ${Styles.landingheader}`}
-                onClick={() => setShow(true)
-                }
+                onClick={() => setShowProperty(true)}
               >
                 Post Property
               </button>
@@ -347,8 +366,7 @@ setShow(false)
               <button
                 type="button"
                 className={`px-5 btn text-nowrap ${Styles.loginBtn}`}
-                onClick={() => setShow(true)
-                }
+                onClick={() => setShowLogin(true)}
               >
                 Login
               </button>
@@ -489,7 +507,8 @@ setShow(false)
         </Offcanvas.Body>
       </Offcanvas>
 
-      <UserTypeModal onHide={onClose} show={show}/>
+      <UserTypeModal show={showPostProperty} onHide={onClosePostProperty} />
+      <LoginModals show={showLogin} onHide={onCloseLogin} />
     </div>
   );
 };

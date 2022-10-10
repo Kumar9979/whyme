@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/profile-pages/every-edit-profile.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -425,12 +424,12 @@ const CompanyEditProfile = () => {
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-2 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15 fw_400`}
                             >
                               Save Changes
                             </button>
                             <button
-                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-2 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
+                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-1 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
                             >
                               Undo Changes
                             </button>

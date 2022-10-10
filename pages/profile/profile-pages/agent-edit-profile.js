@@ -13,6 +13,8 @@ import camera from "../../../assets/icons/camera.png";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
+import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
+import SuccessSave from "../../../components/modals/edit-profile-modals/success-saved";
 
 const EditProfile = () => {
   const libraries = ["places"];
@@ -93,6 +95,7 @@ const EditProfile = () => {
     formik.setFieldValue("city", value);
   }
   console.log(formik.values);
+  const handleClose = () => setShow(false);
 
   return (
     <ProfileLayout>
@@ -406,6 +409,8 @@ const EditProfile = () => {
         onHide={() => setaddModalShow(false)}
         setuploaded={setuploaded}
       />
+      {/* <SaveChanges show={true} handleClose={handleClose}/> */}
+      {/* <SuccessSave show={true} handleClose={handleClose}/>  */}
     </ProfileLayout>
   );
 };
