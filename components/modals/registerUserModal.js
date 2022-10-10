@@ -7,12 +7,17 @@ import Image from "next/image";
 import camera from "../../assets/icons/camera.png";
 import close from "../../assets/icons/close.png";
 import { useRouter } from "next/router";
+import UserTypeModal from "./userTypeModal";
 
 const RegisterUserModal = ({ show, onHide }) => {
   const router = useRouter();
   const [file, setFile] = useState();
   const [size, setSize] = useState(35);
   const [uploaded, setUploaded] = useState(false);
+  const [showUserModal, setShowUserModal] = useState(false)
+  function closeUserModal(){
+setShowUserModal(false)
+  }
   const formik = useFormik({
     initialValues: {
       image: "",
@@ -30,7 +35,7 @@ const RegisterUserModal = ({ show, onHide }) => {
       resetForm();
       formReset();
       onHide();
-      router.replace("/auth/navbar");
+      setShowUserModal(true)
     },
   });
 
@@ -54,6 +59,7 @@ const RegisterUserModal = ({ show, onHide }) => {
   }
 
   return (
+    <>
     <Modal
       show={show}
       onHide={() => {
@@ -194,6 +200,8 @@ const RegisterUserModal = ({ show, onHide }) => {
         </form>
       </Modal.Body>
     </Modal>
+      <UserTypeModal onHide={closeUserModal} show={showUserModal}/>
+</>
   );
 };
 
