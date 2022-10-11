@@ -59,7 +59,7 @@
 }
 .about_readmore_text {
   color: #323d5a;
-  width: 90%;
+  /* width: 90%; */
   padding-top: 1rem;
   font-size: 13px;
 }
@@ -210,4 +210,18 @@
     left: 2%;
     top: 5%;
   }
+}
+.description{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.heart_icon{
+  width: 20%;
+  flex-direction: row;
+  padding-bottom: 3px;
+  justify-content: flex-end;
+  display: flex;
+  align-items: flex-end;
 }

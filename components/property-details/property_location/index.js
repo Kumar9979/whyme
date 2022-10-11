@@ -57,7 +57,7 @@ console.log(selected)
       <div className="row">
         <div className="col-12 col-lg-4">
           <div className={`${styles.location_heading}`}>Location</div>
-          <div className={`${styles.location_address}`}>
+          <div className={`${styles.location_address} mb-4`}>
             2nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
             Karnataka 570017
           </div>

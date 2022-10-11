@@ -5,7 +5,7 @@ import saved from "../../../assets/icons/saved.svg";
 import save from "../../../assets/icons/save.svg";
 import Image from "next/image";
 import home from "../../../assets/images/home.png";
-import styles from "../../../styles/cards/property-details-cards/relatedProperties.module.css";
+import styles from "../../../styles/cards/property-details-cards/relatedproperties.module.css";
 import likeimage from "../../../assets/images/likeimage.svg";
 import squarearea from "../../../assets/images/about-property-images/sqft.svg";
 import bathroom from "../../../assets/images/about-property-images/bathroom.svg";
@@ -142,7 +142,7 @@ const RelatedProperties = ({ location, data, }) => {
               Listed on <br />
               27/sep/2021
             </div>
-            <div>
+            <div className="mt-2">
               <button className={`${styles.view_details_button} px-3 py-1`}>
                 View Details
               </button>
