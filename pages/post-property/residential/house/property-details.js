@@ -29,7 +29,7 @@ const HousePropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property2/residential/house/property-features");
+      router.push("/post-property/residential/house/property-features");
     },
   });
   console.log(formik.values);

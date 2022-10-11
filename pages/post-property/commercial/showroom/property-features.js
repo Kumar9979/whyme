@@ -59,7 +59,7 @@ const propertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property2/commercial/showroom/property-price-rent");
+      router.push("/post-property/commercial/showroom/property-price-rent");
     },
   });
 

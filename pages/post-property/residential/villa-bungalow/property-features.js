@@ -67,7 +67,7 @@ const  VillaPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/villa-bungalow/property-price-rent"
+        "/post-property/residential/villa-bungalow/property-price-rent"
       );
     },
   });

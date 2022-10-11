@@ -57,7 +57,7 @@ const LandpropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/land-plot/property-price-sell"
+        "/post-property/residential/land-plot/property-price-sell"
       );
     },
   });

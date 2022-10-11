@@ -30,7 +30,7 @@ const LandPlotPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/residential/land-plot/property-features");
+            router.push("/post-property/residential/land-plot/property-features");
         },
     });
     console.log(formik.values);

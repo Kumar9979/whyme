@@ -64,7 +64,7 @@ const FlatPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/flat/property-price-rent"
+        "/post-property/residential/flat/property-price-rent"
       );
     },
   });

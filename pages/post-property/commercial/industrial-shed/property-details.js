@@ -30,7 +30,7 @@ const IndustrialShedPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/industrial-shed/property-features");
+            router.push("/post-property/commercial/industrial-shed/property-features");
         },
     });
     console.log(formik.values);
