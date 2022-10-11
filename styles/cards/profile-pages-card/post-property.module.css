@@ -138,7 +138,7 @@
   background: #50bf97 0% 0% no-repeat padding-box;
   border-radius: 0px 12px;
   opacity: 1;
-  width: 15%;
+  width: 10%;
   right: 0%;
   top: 0%;
   white-space: nowrap;
@@ -147,7 +147,7 @@
   background: #f77223 0% 0% no-repeat padding-box;
   border-radius: 0px 12px;
   opacity: 1;
-  width: 20%;
+  width: 15%;
   right: 0%;
   top: 0%;
   white-space: nowrap;
@@ -156,7 +156,7 @@
   background: #d91c30 0% 0% no-repeat padding-box;
   border-radius: 0px 12px;
   opacity: 1;
-  width: 15%;
+  width: 10%;
   right: 0%;
   top: 0%;
   white-space: nowrap;
@@ -237,6 +237,6 @@
 }
 @media only screen and (max-width: 992px) {
   .reviewed {
-    width: 15%;
+    width: 20%;
   }
 }
