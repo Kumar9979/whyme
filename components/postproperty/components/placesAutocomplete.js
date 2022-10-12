@@ -13,9 +13,15 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import Image from "next/image";
-import closeIcon from "../../../assets/icons/close-new-icon.svg"
+import closeIcon from "../../../assets/icons/close-new-icon.svg";
 
-const PlacesAutocomplete = ({ setSelected, markerSetOn, markedAddress }) => {
+const PlacesAutocomplete = ({
+  setSelected,
+  markerSetOn,
+  markedAddress,
+  formik,
+  selected,
+}) => {
   const {
     ready,
     value,
@@ -44,18 +50,23 @@ const PlacesAutocomplete = ({ setSelected, markerSetOn, markedAddress }) => {
   return (
     <>
       <Combobox onSelect={handleSelect} style={{ position: "relative" }}>
-        {value &&
-          <button style={{ background: "transparent", right: "10px", top: ".9rem" }} onClick={() => setValue("")} className={`border-0 position-absolute`}>
-            <Image src={closeIcon
-            } />
+        {value && (
+          <button
+            style={{ background: "transparent", right: "10px", top: ".9rem" }}
+            onClick={() => {
+              setValue("");
+            }}
+            className={`border-0 position-absolute`}
+          >
+            <Image src={closeIcon} />
           </button>
-        }
-
+        )}
 
         <ComboboxInput
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
+            formik.setFieldValue("map", selected);
           }}
           disabled={!ready}
           className={`${styles.comboboxInput} ps-2 mt-2 fs_12 py-2`}

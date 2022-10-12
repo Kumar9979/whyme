@@ -15,7 +15,7 @@ const LocationAndSearch = ({ formik }) => {
     setSelected({ lat, lng });
     if (lat !== undefined) {
       const timer = setTimeout(() => {
-        markerChange()
+        markerChange();
         formik.setFieldValue("map", selected);
         markerSetOn();
       }, 1000);
@@ -50,11 +50,12 @@ const LocationAndSearch = ({ formik }) => {
         <>
           <div>
             <PlacesAutocomplete
+            selected={selected}
               markerSetOn={markerSetOn}
               markedAddress={markedAddress}
               setSelected={setSelected}
+              formik={formik}
             />
-
           </div>
           <div className="mt-3">
             <GoogleMap
@@ -75,7 +76,7 @@ const LocationAndSearch = ({ formik }) => {
                       lat: e.latLng.lat(),
                       lng: e.latLng.lng(),
                     });
-                    formik.setFieldValue("Map", selected);
+                    formik.setFieldValue("map", selected);
                   }}
                   position={selected}
                 />
