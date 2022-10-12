@@ -299,13 +299,13 @@ const PropertyStatistics = () => {
                           <tr
                             className={`${styles.table_head} color_white fs_15 fw_400 fontFam_poppins w-100`}
                           >
-                            <th scope="col-1" className="ps-3">
+                            <th scope="col-1" className="ps-3 py-2">
                               #
                             </th>
-                            <th scope="col-2">Date</th>
-                            <th scope="col-2">Name</th>
-                            <th scope="col-3">Phone Number</th>
-                            <th scope="col-4"></th>
+                            <th scope="col-2" className=" py-2">Date</th>
+                            <th scope="col-2" className=" py-2">Name</th>
+                            <th scope="col-3" className=" py-2">Phone Number</th>
+                            <th scope="col-4" className=" py-2"></th>
                           </tr>
 
                           {statisticsTable.map((item, index) => {

@@ -9,10 +9,13 @@ import * as Yup from "yup";
 import camera from "../../../assets/icons/camera.png";
 // import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
 // import dropdown from "../../../assets/icons/cityDropdown.svg";
-import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
+// import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import { func } from "prop-types";
+import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
+import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
+import SuccessSave from "../../../components/modals/edit-profile-modals/success-saved";
 
 const EditProfile = () => {
   const libraries = ["places"];
@@ -26,6 +29,7 @@ const EditProfile = () => {
   const [selected, setSelected] = useState();
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
+  const [addModalShow, setaddModalShow] = useState(false);
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -146,14 +150,16 @@ const EditProfile = () => {
                     <button
                       className={`${styles.change_photo} fs_16 fw_400 fontFam_poppins py-1 mt-3`}
                     >
-                      <label htmlFor="profile">Change Picture </label>
+                      <label htmlFor="profile">
+                        {uploaded ? "Change Picture" : "Add Picture"}
+                        </label>
                     </button>
 
                     <button
                       className={`${styles.remove_photo} fs_16 fw_500 fontFam_poppins py-2 mt-3 d-flex justify-content-start justify-content-lg-center`}
-                      onClick={() => setuploaded(false)}
+                      onClick={() => {uploaded?setaddModalShow(true):setaddModalShow(false)} }
                     >
-                      Remove Picture
+                      {uploaded ? "Remove Picture" :null}
                     </button>
                   </div>
                 </div>
@@ -312,7 +318,7 @@ const EditProfile = () => {
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-3 fs_15  fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15  fw_400`}
                             >
                               Save Changes
                             </button>
@@ -332,6 +338,13 @@ const EditProfile = () => {
           </div>
         </div>
       </div>
+      <PhotoDelete
+        show={addModalShow}
+        onHide={() => setaddModalShow(false)}
+        setuploaded={setuploaded}
+      />
+      {/* <SaveChanges show={true} handleClose={handleClose}/> */}
+      {/* <SuccessSave show={true} handleClose={handleClose}/>  */}
     </ProfileLayout>
   );
 };

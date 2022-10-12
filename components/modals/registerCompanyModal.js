@@ -242,7 +242,9 @@ const RegisterCompanyModal = ({ show, onHide }) => {
                   placeholder="Ex : Agent, Builder, etc,..."
                   className={`${styles.register_form_inputField} w-100`}
                   name="role"
-                  value={formik.values.role}
+                  // value={formik.values.role}
+                  value={"Builder"}
+                  disable
                   onChange={formik.handleChange}
                 />
 

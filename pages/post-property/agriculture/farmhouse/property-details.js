@@ -30,7 +30,7 @@ const FarmPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/agriculture/farmhouse/property-features");
+            router.push("/post-property/agriculture/farmhouse/property-features");
         },
     });
     console.log(formik.values);

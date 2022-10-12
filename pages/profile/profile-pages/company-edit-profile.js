@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import SaveChanges from "../../components/modals/edit-profile-modals/save-changes";
 import ProfileLayout from "../../../components/sidebarLayout/Sidebar";
 import styles from "../../../styles/profile/profile-pages/every-edit-profile.module.css";
 import arrow_left from "../../../assets/images/arrow_left.svg";
@@ -8,12 +7,13 @@ import people from "../../../assets/images/imagereview/people.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import camera from "../../../assets/icons/camera.png";
-import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
-import dropdown from "../../../assets/icons/cityDropdown.svg";
-import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
+// import verified from "../../../assets/icons/edit-profile-icons/verified.svg";
+// import dropdown from "../../../assets/icons/cityDropdown.svg";
+// import PlacesAutocomplete from "../../post-property/property-details/placesAutocomplete";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import AutoCityLoad from "../../../components/profile/profile-pages/auto-city";
 import SaveChanges from "../../../components/modals/edit-profile-modals/save-changes";
+import PhotoDelete from "../../../components/modals/edit-profile-modals/PhotoDelete";
 
 const CompanyEditProfile = () => {
   const libraries = ["places"];
@@ -27,6 +27,7 @@ const CompanyEditProfile = () => {
   const [selected, setSelected] = useState();
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
+  const [addModalShow, setaddModalShow] = useState(false);
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -106,7 +107,6 @@ const CompanyEditProfile = () => {
           <div className="d-flex align-items-center ">
             <button
               onClick={handleShow}
-             
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
               <Image
@@ -115,7 +115,6 @@ const CompanyEditProfile = () => {
                 width={20}
                 height={15}
               />
-              
             </button>
             <span
               className={`${styles.edit_profile_heading} fs_20 fw_400 ms-2`}
@@ -131,7 +130,6 @@ const CompanyEditProfile = () => {
               <div className="row ">
                 <div className="col-6 col-lg-3 d-flex justify-content-lg-end justify-content-start">
                   <div className="d-flex flex-column">
-                    
                     <h3
                       className={`${styles.profile_picture_heading} mt-2 mt-lg-0 fs_15 fw_500 fontFam_poppins`}
                     >
@@ -161,14 +159,21 @@ const CompanyEditProfile = () => {
                     <button
                       className={`${styles.change_photo} fs_13 fw_400 fontFam_poppins py-2 mt-3`}
                     >
-                      <label htmlFor="profile">Change Picture </label>
+                      <label htmlFor="profile">
+                        {" "}
+                        {uploaded ? "Change Picture" : "Add Picture"}{" "}
+                      </label>
                     </button>
 
                     <button
                       className={`${styles.remove_photo} fs_14 fw_500 fontFam_poppins py-1 mt-3 d-flex justify-content-start justify-content-lg-center`}
-                      onClick={() => setuploaded(false)}
+                      onClick={() => {
+                        uploaded
+                          ? setaddModalShow(true)
+                          : setaddModalShow(false);
+                      }}
                     >
-                      Remove Picture
+                      {uploaded ? "Remove Picture" : null}
                     </button>
                   </div>
                 </div>
@@ -176,8 +181,6 @@ const CompanyEditProfile = () => {
                 <div className="col-12 col-lg-9 d-flex justify-content-start justify-content-lg-start">
                   <div className={`${styles.form_width} `}>
                     <div className="ps-lg-2 ps-0">
-                    
-
                       <form onSubmit={formik.handleSubmit}>
                         <div className="">
                           <div className="row">
@@ -421,12 +424,12 @@ const CompanyEditProfile = () => {
 
                           <div className="d-lg-flex justify-content-lg-start d-flex mt-4 w-75 ">
                             <button
-                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-2 fs_15 fw_400`}
+                              className={`${styles.save_button_width} px-2 px-lg-4 px-md-4 py-1 fs_15 fw_400`}
                             >
                               Save Changes
                             </button>
                             <button
-                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-2 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
+                              className={`${styles.undo_button_width}  px-2 px-lg-4 px-md-4 py-1 ms-lg-4 ms-md-4 ms-3 fs_15 fw_500`}
                             >
                               Undo Changes
                             </button>
@@ -441,6 +444,11 @@ const CompanyEditProfile = () => {
           </div>
         </div>
       </div>
+      <PhotoDelete
+        show={addModalShow}
+        onHide={() => setaddModalShow(false)}
+        setuploaded={setuploaded}
+      />
     </ProfileLayout>
   );
 };

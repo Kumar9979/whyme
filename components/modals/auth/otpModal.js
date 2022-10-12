@@ -7,12 +7,12 @@ import styles from "../../../styles/modals/modal.module.css";
 import OtpInput from "react-otp-input";
 import RegisterUserModal from "../registerUserModal";
 
-
 const OtpModals = ({
   onShowModal,
   show,
   onHide,
   number,
+  selectedOption,
   timerStatus,
   handleTimer,
 }) => {
@@ -21,7 +21,6 @@ const OtpModals = ({
   const [counter, setCounter] = useState(30);
   const [showRegUserModal, setshowRegUserModal] = useState(false);
 
-  // console.log(number);
   const handleRegModalClose = () => setshowRegUserModal(false);
   const handleRegModalShow = () => setshowRegUserModal(true);
 
@@ -68,7 +67,8 @@ const OtpModals = ({
             onHide();
             timerReset("close");
           }}
-          centered        dialogClassName={`${styles.login_otp_modal_container}`}
+          centered
+          dialogClassName={`${styles.login_otp_modal_container}`}
         >
           <div
             className={`${styles.cursor_pointer} d-flex justify-content-end mt-3 me-4`}
@@ -99,6 +99,7 @@ const OtpModals = ({
                   <span className={`${styles.login_text}`}>
                     number{" "}
                     <span className={`${styles.phone_number} text-dark`}>
+                      {selectedOption}
                       {number}
                     </span>
                   </span>{" "}
@@ -129,28 +130,28 @@ const OtpModals = ({
                 inputStyle={
                   error
                     ? {
-                      width: "60px",
-                      height: "50px",
+                        width: "60px",
+                        height: "50px",
 
-                      marginLeft: "18px",
-                      borderBottom: "1px solid red",
-                      borderRight: "none",
-                      borderLeft: "none",
-                      borderTop: "none",
-                      color: "black",
-                      fontSize: "23px",
-                    }
+                        marginLeft: "18px",
+                        borderBottom: "1px solid red",
+                        borderRight: "none",
+                        borderLeft: "none",
+                        borderTop: "none",
+                        color: "black",
+                        fontSize: "23px",
+                      }
                     : {
-                      width: "60px",
-                      height: "50px",
-                      marginLeft: "18px",
-                      borderBottom: "1px solid #00000029",
-                      borderRight: "none",
-                      borderLeft: "none",
-                      borderTop: "none",
-                      color: "black",
-                      fontSize: "23px",
-                    }
+                        width: "60px",
+                        height: "50px",
+                        marginLeft: "18px",
+                        borderBottom: "1px solid #00000029",
+                        borderRight: "none",
+                        borderLeft: "none",
+                        borderTop: "none",
+                        color: "black",
+                        fontSize: "23px",
+                      }
                 }
               />
             </div>
@@ -177,7 +178,7 @@ const OtpModals = ({
                 </span>
               ) : (
                 <span className={`${styles.otp_timer} `}>
-                  {counter >= 0 ? counter : null}
+                  {counter >= 0 ? `00:${counter}` : null}
                 </span>
               )}
             </div>

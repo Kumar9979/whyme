@@ -49,7 +49,7 @@ const IndustrialPlotPropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/commercial/industrial-plot/property-price-sell"
+        "/post-property/commercial/industrial-plot/property-price-sell"
       );
     },
   });

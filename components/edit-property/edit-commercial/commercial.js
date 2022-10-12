@@ -11,7 +11,6 @@ import { Progress } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ImageUpload from "../../ImageUpload/Image-upload";
-import { usePosition } from "../../../pages/post-property/property-details/usePosition";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
@@ -71,6 +70,7 @@ import IndustryPlotDescription from "../../modals/commercial-property/industrial
 import IndustryPlotUploadPhoto from "../../modals/commercial-property/industrial-plot/industryPlotUploadPhoto";
 import IndustryPlotDeletePhoto from "../../modals/commercial-property/industrial-plot/industryPlotDeletePhoto";
 import IndustryPlotUpdateMap from "../../modals/commercial-property/industrial-plot/industryPlotUpdateMap";
+import { usePosition } from "../../postproperty/components/usePosition";
 
 const EditCommercial = ({ data, propertyType }) => {
   let features;

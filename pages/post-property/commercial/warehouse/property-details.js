@@ -30,7 +30,7 @@ const WareHousePropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/warehouse/property-features");
+            router.push("/post-property/commercial/warehouse/property-features");
         },
     });
     console.log(formik.values);

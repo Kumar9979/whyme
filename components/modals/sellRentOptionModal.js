@@ -5,14 +5,15 @@ import styles from "../../styles/modals/registerModal.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import sell from "../../assets/icons/sell.png";
+import sellWhite from "../../assets/icons/sellWhite.png";
 import Image from "next/image";
 import close from "../../assets/icons/close.png";
 import { useRouter } from "next/router";
 
 import rent from "../../assets/icons/rent.png";
+import rentWhite from "../../assets/icons/rentWhite.png";
 
 export const customStyles = {
-  
   control: (base, state) => ({
     ...base,
     background: "#F4F8FB",
@@ -84,16 +85,13 @@ const SellRentOptionModal = ({ show, onHide }) => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
-      onHide()
-      router.push(
-        "/post-property/property-details/propertyDetails"
-      );
+      onHide();
+      router.push("/post-property/property-details/propertyDetails");
     },
   });
 
   const optionList = typeOptions?.find((item) => item?.type === optionType);
-const router = useRouter();
-
+  const router = useRouter();
 
   return (
     <>
@@ -145,7 +143,12 @@ const router = useRouter();
                   : ` ${styles.rentSell_container} ${styles.margin_r_3} d-flex flex-column align-items-center justify-content-center p-2`
               }
             >
-              <Image src={sell} alt="image of sell" width={50} height={50} />
+              <Image
+                src={optionType === "sell" ? sellWhite : sell}
+                alt="image of sell"
+                width={50}
+                height={50}
+              />
               <span
                 className={
                   optionType === "sell"
@@ -167,7 +170,7 @@ const router = useRouter();
             >
               <div>
                 <Image
-                  src={rent}
+                  src={optionType === "rent" ? rentWhite : rent}
                   alt="image of rent"
                   width={50}
                   height={50}
@@ -228,9 +231,7 @@ const router = useRouter();
             ) : null}
             <div className="d-flex justify-content-end py-2 border-none mt-2">
               <button
-              onClick={() => {
-               
-              }}
+                onClick={() => {}}
                 type="submit"
                 className={`${styles.bg_color_1D72DB} text-white d-flex justify-content-between align-items-center rounded-3 border-0  px-3 py-2`}
               >
@@ -249,7 +250,6 @@ const router = useRouter();
           </form>
         </Modal.Body>
       </Modal>
-      
     </>
   );
 };

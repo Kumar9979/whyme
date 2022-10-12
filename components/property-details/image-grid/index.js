@@ -21,12 +21,14 @@ import save from "../../../assets/icons/save.svg";
 import ShareIcon from "../../../assets/images/about-property-images/share";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 import { date } from "yup";
+import Shareproperty from "../../modals/property-details/share-property";
 const ImageGrid = ({ propertyType, data }) => {
   const [show, setShow] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [liked, setLiked] = useState(false);
   const [like, setLike] = useState(false);
   const [saveIcon, setSaveIcon] = useState(save);
+  const [shareShow,setShareShow] = useState(false)
   function likeHovered(state) {
     if (state === "hovered") {
       setSaveIcon(saved);
@@ -58,6 +60,7 @@ const ImageGrid = ({ propertyType, data }) => {
   const [isVisible, setIsVisible] = useState(false);
   const handleShow = () => setIsVisible(true);
   const handleClose = () => setIsVisible(false);
+  const handleCloseShare = () => setShareShow(false)
   const number = 10;
   return (
     <div
@@ -67,7 +70,7 @@ const ImageGrid = ({ propertyType, data }) => {
         <div className="col-11">
           <div className="d-flex align-items-center">
             <p
-              className={`${styles.property_area} lh-sm m-0 p-0 fs_22  fs_sm_15 fw_600 fontFam_poppins me-lg-2 me-0 `}
+              className={`${styles.property_area} lh-sm m-0 p-0 fs_22  px-0 fs_sm_15 fw_500 fontFam_poppins me-lg-2 me-0 `}
             >
               {propertyType}
             </p>
@@ -86,11 +89,11 @@ const ImageGrid = ({ propertyType, data }) => {
             </div>
           </div>
           <p
-            className={`${styles.property_location} px-1 mt-2 fs_14 fw_500 color_cloudBurst fontFam_poppins d-flex justify-content-spacearound`}
+            className={`${styles.property_location} px-0 mt-2 fs_12 fw_500 color_cloudBurst fontFam_poppins d-flex justify-content-spacearound`}
           >
-            <span className="pe-1">
+            <span className="pe-2">
               {" "}
-              <LocationIcon fill="#1D72DB" />
+              <LocationIcon fill="#1D72DB" width={16} height={20}/>
             </span>
             2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd, Mysuru,
             Karnataka 570017
@@ -142,7 +145,7 @@ const ImageGrid = ({ propertyType, data }) => {
               <Image
                 src={proptertyimagegrid2}
                 alt="Picture of the author"
-                width={500}
+                width={520}
                 height={350}
               />
             </div>
@@ -196,7 +199,7 @@ const ImageGrid = ({ propertyType, data }) => {
               <Image
                 src={proptertyimagegrid3}
                 alt="Picture of the author"
-                width={500}
+                width={520}
                 height={350}
               />
             </div>
@@ -210,7 +213,7 @@ const ImageGrid = ({ propertyType, data }) => {
         >
           ₹ 70Lac
           <span
-            className={`${styles.property_price_per_sqft} pt-2 fs_15 fw_600 fontFam_poppins ps-2 d-none d-lg-block `}
+            className={`${styles.property_price_per_sqft} pt-2 fs_13 fw_500 fontFam_poppins ps-2 d-none d-lg-block `}
           >
             ₹ 2920 per Sqft
           </span>
@@ -239,6 +242,7 @@ const ImageGrid = ({ propertyType, data }) => {
           </div>
           <button
             className={`${styles.shareIcon}  d-flex align-items-center ms-2 ms-lg-4 justify-content-center`}
+            onClick={() => setShareShow(true)}
           >
             <div
               className={`${styles.saveIcon} d-flex align-items-center justify-content-center`}
@@ -335,6 +339,7 @@ const ImageGrid = ({ propertyType, data }) => {
           </button>
         </div>
       ) : null}
+      <Shareproperty show={shareShow } handleClose={handleCloseShare}/>
     </div>
   );
 };

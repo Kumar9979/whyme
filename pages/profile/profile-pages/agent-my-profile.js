@@ -111,7 +111,7 @@ const MyProfile = () => {
                                     name="email"
                                     value={formik.values.email}
                                   />
-                                  <span className="d-flex align-items-center pe-2">
+                                  {/* <span className="d-flex align-items-center pe-2">
                                     <Image
                                       src={verified}
                                       alt="Picture of the author"
@@ -123,7 +123,7 @@ const MyProfile = () => {
                                     >
                                       verified
                                     </span>
-                                  </span>
+                                  </span> */}
                                 </div>
                               </div>
                             </div>
@@ -171,7 +171,7 @@ const MyProfile = () => {
                               className={`${styles.contact_us_label} `}
                               htmlFor="exampleInputEmail1"
                             >
-                              Deacription
+                              Description
                             </label>
                             <textarea
                               type="text"

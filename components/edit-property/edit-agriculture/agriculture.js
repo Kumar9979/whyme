@@ -11,7 +11,7 @@ import { Progress } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import ImageUpload from "../../ImageUpload/Image-upload";
-import { usePosition } from "../../../pages/post-property/property-details/usePosition";
+// import { usePosition } from "../../../pages/post-property/property-details/usePosition";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import { Modal } from "react-bootstrap";
@@ -27,6 +27,7 @@ import AgricultureLandDescription from "../../modals/agriculture-property/agricu
 import AgricultureLandDeletePhoto from "../../modals/agriculture-property/agriculture-land/agricultureLandDeletePhoto";
 import AgricultureLandUploadPhoto from "../../modals/agriculture-property/agriculture-land/agricultureLandUploadPhoto";
 import AgricultureLandUpdateMap from "../../modals/agriculture-property/agriculture-land/agricultureLandUpdateMap";
+import { usePosition } from "../../postproperty/components/usePosition";
 
 const EditAgiculture = ({ data, propertyType }) => {
   let features;

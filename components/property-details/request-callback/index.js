@@ -7,9 +7,15 @@ import star from "../../../assets/images/star.svg";
 import caution from "../../../assets/images/about-property-images/report_icon.svg";
 import companyLogo from "../../../assets/images/about-property-images/brigade.jpeg";
 import { useRouter } from "next/router";
+import RequestCallBack from "../../modals/property-details/request-call";
 
 const RequestCall = () => {
   const [show, setShow] = useState(false);
+  const [showCallBack, setShowCallBack] = useState(false);
+
+  const handleCloseCallBack = () => {
+    setShowCallBack(false);
+  };
   const router = useRouter();
 
   return (
@@ -69,7 +75,7 @@ const RequestCall = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       <button
@@ -91,12 +97,13 @@ const RequestCall = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
-              Report an Issue
+            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+              Report
             </span>
           </div>
         </button>
       ) : null}
+      <RequestCallBack show={showCallBack} handleClose={handleCloseCallBack} />
     </div>
   );
 };
@@ -105,8 +112,12 @@ export default RequestCall;
 
 export const CompanyRequestCall = () => {
   const [show, setShow] = useState(false);
-  const router = useRouter();
+  const [showCallBack, setShowCallBack] = useState(false);
 
+  const handleCloseCallBack = () => {
+    setShowCallBack(false);
+  };
+  const router = useRouter();
 
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
@@ -155,7 +166,7 @@ export const CompanyRequestCall = () => {
             <div
               className={`${styles.more_properties} d-flex justify-content-center pt-1`}
             >
-              2 More properties by this agent
+              500+ Projects available from this builder
             </div>
             <div
               className={`${styles.agent_number} d-flex justify-content-start justify-content-md-center justify-content-lg-center pt-2`}
@@ -165,7 +176,7 @@ export const CompanyRequestCall = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       <button
@@ -187,18 +198,23 @@ export const CompanyRequestCall = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
-              Report an Issue
+            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+              Report
             </span>
           </div>
         </button>
       ) : null}
+      <RequestCallBack show={showCallBack} handleClose={handleCloseCallBack} />
     </div>
   );
 };
 export const PostedByOwner = () => {
   const [show, setShow] = useState(false);
+  const [showCallBack, setShowCallBack] = useState(false);
 
+  const handleCloseCallBack = () => {
+    setShowCallBack(false);
+  };
   return (
     <div className={`${styles.request_call} p-4 mt-4 position-relative`}>
       <div
@@ -244,7 +260,7 @@ export const PostedByOwner = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       {show ? (
@@ -258,12 +274,13 @@ export const PostedByOwner = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_17 color_red fw_600 ps-3">
-              Report an Issue
+            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+              Report
             </span>
           </div>
         </button>
       ) : null}
+      <RequestCallBack show={showCallBack} handleClose={handleCloseCallBack} />
     </div>
   );
 };

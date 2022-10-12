@@ -30,7 +30,7 @@ const IndustrialPlotPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/industrial-plot/property-features");
+            router.push("/post-property/commercial/industrial-plot/property-features");
         },
     });
     console.log(formik.values);

@@ -41,7 +41,7 @@ const AgentProperties = ({ propertyType, data, hide }) => {
           </div>
         )}
 
-        <div className={`row mt-3 position-relative`}>
+        <div className={`row mt-3 mx-2 position-relative`}>
           <div className={`${styles.scrollmenu} `}>
             <div ref={ref} className={`${styles.row} d-flex`}>
               {[...Array(n)].map((item, index) => {

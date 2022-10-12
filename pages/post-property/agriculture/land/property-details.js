@@ -27,7 +27,7 @@ const LandPropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property2/agriculture/land/property-features");
+      router.push("/post-property/agriculture/land/property-features");
     },
   });
   console.log(formik.values);

@@ -30,7 +30,7 @@ const VillaPropertyDetails = () => {
     onSubmit: (values) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/villa-bungalow/property-features"
+        "/post-property/residential/villa-bungalow/property-features"
       );
     },
   });

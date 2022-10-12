@@ -67,7 +67,7 @@ const HousePropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/residential/house/property-price-rent"
+        "/post-property/residential/house/property-price-rent"
       );
     },
   });
