@@ -26,7 +26,7 @@ const AgricultureFarmHouseAreaPrice = ({ show, handleClose }) => {
     validationSchema: Yup.object({
       BuildUpArea: Yup.number()
         .typeError("invalid value")
-        .moreThan(Yup.ref("CarpetArea"), "Must be more then CarpetArea")
+        .moreThan(Yup.ref("CarpetArea"), "Must be more then carpet area")
         .required("Required"),
       CarpetArea: Yup.string()
         .matches(numRegex, "invalid value")

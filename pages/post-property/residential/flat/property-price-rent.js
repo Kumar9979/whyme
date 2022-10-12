@@ -23,7 +23,7 @@ const PriceDetailsRent = () => {
         validationSchema: Yup.object({
             buildUpArea: Yup.number()
                 .typeError("invalid value")
-                .moreThan(Yup.ref("carpetArea"), "Must be more then CarpetArea")
+                .moreThan(Yup.ref("carpetArea"), "Must be more then carpet area")
                 .required("Required"),
             carpetArea: Yup.string()
                 .matches(numRegex, "invalid value")

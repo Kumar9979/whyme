@@ -52,8 +52,9 @@ const ResidentialHouseDescription = ({ show, handleClose }) => {
 
               <div className={`d-flex justify-content-end`}>
                 <button
-                  type="submit"
+                  // type="submit"
                   className={`${styles.save_btn} px-4 px-lg-5 py-lg-2 py-1 fs_14 fs_sm_15 mt-3 me-2`}
+                  onClick={handleClose}
                 >
                   <span>Save</span>
                 </button>
