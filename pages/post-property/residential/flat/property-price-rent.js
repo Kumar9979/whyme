@@ -13,7 +13,7 @@ const PriceDetailsRent = () => {
     const router = useRouter();
     const formik = useFormik({
         initialValues: {
-            superArea: "",
+            buildUpArea: "",
             carpetArea: "",
             depositPrice: "",
             rentPrice: "",
@@ -21,9 +21,9 @@ const PriceDetailsRent = () => {
         },
 
         validationSchema: Yup.object({
-            superArea: Yup.number()
+            buildUpArea: Yup.number()
                 .typeError("invalid value")
-                .moreThan(Yup.ref("CarpetArea"), "Must be more then CarpetArea")
+                .moreThan(Yup.ref("carpetArea"), "Must be more then CarpetArea")
                 .required("Required"),
             carpetArea: Yup.string()
                 .matches(numRegex, "invalid value")
@@ -66,13 +66,13 @@ const PriceDetailsRent = () => {
                                     <PriceInputGenerator
                                         price={false}
                                         title={" Built-up Area"}
-                                        formikValue={formik.values.depositPrice}
+                                        formikValue={formik.values.buildUpArea}
                                         formik={formik}
-                                        itemName={"depositPrice"}
+                                        itemName={"buildUpArea"}
                                         placeholder={"Enter property price"}
                                     />
                                     <FormikErrorGenerator
-                                        formikError={formik.errors.depositPrice} formikTouched={formik.touched.depositPrice}
+                                        formikError={formik.errors.buildUpArea} formikTouched={formik.touched.buildUpArea}
                                     />
                                 </div>
                                 <div className={`col-lg-6 col-sm-12`}>
