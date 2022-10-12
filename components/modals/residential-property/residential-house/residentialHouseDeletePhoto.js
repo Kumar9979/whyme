@@ -43,7 +43,7 @@ const ResidentialHouseDeletePhoto = ({
           </div>
           <div className={`d-flex justify-content-center mt-3 mb-1 px-lg-2`}>
             <button
-              className={`${styles.delete_btn} py-2 px-3`}
+              className={`${styles.delete_btn} py-1 px-3`}
               onClick={handleDelete}
             >
               <span className={`${styles.delete_text} fs_15 fw_500 `}>
