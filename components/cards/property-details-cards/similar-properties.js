@@ -98,7 +98,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
   return (
     <div className="">
       <div
-        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
+        className={`${styles.similar_properties_card} p-3 row mt-3 mb-5 position-relative`}
       >
         <div className={`position-relative col-lg-3 `}>
           <Image
@@ -136,7 +136,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
           <div className="ps-1">
             <div className="d-flex align-items-center">
               <div
-                className={`${styles.similar_property_location} fw_400  fontFam_poppins`}
+                className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
               >
                 {type}
               </div>
@@ -234,35 +234,35 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
                 </div>
               </div>
             ) : null}
-            {/* <div className="d-flex justify-content-between"> */}
-            <div className={`${styles.description} fontFam_poppins fw_400 mt-0`}>
-              <div
-                className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-0`}
-              >
-                {Alltext}
-                <button
-                  className={`${styles.about_readmore_button}`}
-                  onClick={() => setReadless(!readless)}
-                >
-                  {readless === true ? "Read Less" : "See More"}
-                </button>
-              </div>
 
-              <div className={`${styles.heart_icon}`}>
-                <div
-                  onMouseEnter={() => likeHovered("hovered")}
-                  onMouseLeave={() => likeHovered("leaved")}
-                  onClick={() => setLiked(!liked)}
-                >
-                  <Image
-                    className="d-flex justify-content-center pt-2"
-                    src={saveIcon}
-                    alt="Picture of the author"
-                    width={25}
-                    height={25}
-                  />
-                </div>
-              </div>
+            <div className="d-flex justify-content-between">
+            <p
+              className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-0`}
+            >
+              {Alltext}
+              <button
+                className={`${styles.about_readmore_button}`}
+                onClick={() => setReadless(!readless)}
+              >
+                {readless === true ? "Read Less" : "See More"}
+              </button>
+            </p>
+            <div className={`${styles.like_image} d-flex flex-column justify-content-end`}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={`${styles.save_image_button} `}
+            >
+              <Image
+                className="d-flex justify-content-center pt-2"
+                src={saveIcon}
+                alt="Picture of the author"
+                width={25}
+                height={25}
+              />
+            </button>
+          </div> 
             </div>
           </div>
         </div>
@@ -275,12 +275,12 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
           </div>
           <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-3`}
+              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-2`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-3`}
+              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-2`}
             >
               By Amal Sabu
             </span>
@@ -310,7 +310,7 @@ export default SimilarProperties;
 const residential = [
   {
     image: squarearea,
-    heading: "Super Area",
+    heading: "super Area",
     amenity: "2400sqft",
   },
   {
