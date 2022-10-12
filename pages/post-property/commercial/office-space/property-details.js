@@ -29,7 +29,7 @@ const OfficeSpacePropertyDetails = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      router.push("/post-property2/commercial/office-space/property-features");
+      router.push("/post-property/commercial/office-space/property-features");
     },
   });
   console.log(formik.values);

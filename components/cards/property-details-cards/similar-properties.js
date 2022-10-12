@@ -98,7 +98,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
   return (
     <div className="">
       <div
-        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
+        className={`${styles.similar_properties_card} p-3 row mt-3 mb-5 position-relative`}
       >
         <div className={`position-relative col-lg-3 `}>
           <Image
@@ -109,7 +109,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
             height={300}
             layout="fill"
           />
-          <div className={`${styles.like_image} position-absolute`}>
+          {/* <div className={`${styles.like_image} position-absolute`}>
             <button
               onMouseEnter={() => likeHovered("hovered")}
               onMouseLeave={() => likeHovered("leaved")}
@@ -124,7 +124,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
                 height={25}
               />
             </button>
-          </div>
+          </div> */}
           <div
             className={`${styles.luxurius} position-absolute w-50 fs_14 fw_500 fontFam_poppins`}
           >
@@ -235,6 +235,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
               </div>
             ) : null}
 
+            <div className="d-flex justify-content-between">
             <p
               className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-0`}
             >
@@ -246,6 +247,23 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
                 {readless === true ? "Read Less" : "See More"}
               </button>
             </p>
+            <div className={`${styles.like_image} d-flex flex-column justify-content-end`}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={`${styles.save_image_button} `}
+            >
+              <Image
+                className="d-flex justify-content-center pt-2"
+                src={saveIcon}
+                alt="Picture of the author"
+                width={25}
+                height={25}
+              />
+            </button>
+          </div> 
+            </div>
           </div>
         </div>
 
@@ -257,12 +275,12 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
           </div>
           <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-2`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2`}
+              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-2`}
             >
               By Amal Sabu
             </span>

@@ -60,7 +60,7 @@ const propertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/commercial/shop/property-price-rent"
+        "/post-property/commercial/shop/property-price-rent"
       );
     },
   });

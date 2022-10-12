@@ -61,7 +61,7 @@ const OfficepropertyFeatures = () => {
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       router.push(
-        "/post-property2/commercial/office-space/property-price-rent"
+        "/post-property/commercial/office-space/property-price-rent"
       );
     },
   });

@@ -42,7 +42,7 @@ const IndustrialShedPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property2/agriculture/farmhouse/property-price-sell");
+      router.push("/post-property/agriculture/farmhouse/property-price-sell");
     },
   });
 

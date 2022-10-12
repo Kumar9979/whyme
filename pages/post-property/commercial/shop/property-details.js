@@ -30,7 +30,7 @@ const ShopPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/shop/property-features");
+            router.push("/post-property/commercial/shop/property-features");
         },
     });
     console.log(formik.values);

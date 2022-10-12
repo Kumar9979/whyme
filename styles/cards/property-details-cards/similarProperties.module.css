@@ -59,7 +59,7 @@
 }
 .about_readmore_text {
   color: #323d5a;
-  width: 90%;
+  width: 80%;
   padding-top: 1rem;
   font-size: 13px;
 }
@@ -81,7 +81,7 @@
   width: 7.8rem;
   height: 2rem;
   right: 2%;
-  bottom: 3%;
+  bottom: 7%;
 }
 .owner_image {
   border-radius: 50%;
@@ -110,6 +110,7 @@
 .like_image {
   bottom: 5%;
   right: 5%;
+  padding-bottom: 5px;
 }
 .amenties_width {
   width: 98%;

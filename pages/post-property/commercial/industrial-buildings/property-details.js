@@ -30,7 +30,7 @@ const IndustrialBuildingPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/industrial-buildings/property-features");
+            router.push("/post-property/commercial/industrial-buildings/property-features");
         },
     });
     console.log(formik.values);

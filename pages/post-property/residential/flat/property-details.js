@@ -29,7 +29,7 @@ const FlatPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/residential/flat/property-features");
+            router.push("/post-property/residential/flat/property-features");
         },
     });
 

@@ -41,7 +41,7 @@ const CommercialPlotPropertyFeatures = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      router.push("/post-property2/commercial/commercial-plot/property-price-rent");
+      router.push("/post-property/commercial/commercial-plot/property-price-rent");
     },
   });
 

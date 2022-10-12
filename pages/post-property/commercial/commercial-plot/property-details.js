@@ -30,7 +30,7 @@ const CommercialPlotPropertyDetails = () => {
         }),
         onSubmit: (values) => {
             console.log(values);
-            router.push("/post-property2/commercial/commercial-plot/property-features");
+            router.push("/post-property/commercial/commercial-plot/property-features");
         },
     });
     console.log(formik.values);
