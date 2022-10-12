@@ -3,9 +3,26 @@ import styles from "../../../../styles/modals/apartmentsModals/apartmentDescript
 import Modal from "react-bootstrap/Modal";
 import closeIcon from "../../../../assets/icons/close.png";
 import Image from "next/image";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { FormikErrorGenerator } from "../../../postproperty/formData/formikErrorGenerator";
+
 
 const ResidentialLandDescription = ({show, handleClose}) => {
    
+  const formik = useFormik({
+    initialValues: {
+      description:""
+    },
+    validationSchema: Yup.object({
+      description:Yup.string("").required("Required"),
+    }),
+    onSubmit:(values) => {
+      console.log(values);
+      handleClose()
+    }
+  })
+
   return (
     <div>
         <Modal
@@ -39,13 +56,18 @@ const ResidentialLandDescription = ({show, handleClose}) => {
 
             <div className="mt-3 px-lg-2">
                   <textarea
-                    type="text"
-                    className={`${styles.description}   ps-2`}
-                    id="Description"
-                    placeholder="Enter the description"
-                    name="Description"
-             
-                  ></textarea>
+                  type="text"
+                  className={`${styles.description}   ps-2`}
+                  id="description"
+                  value={formik.values.description}
+                  placeholder="Enter the description"
+                  name="description"
+                  onChange={formik.handleChange}
+                ></textarea>
+                <FormikErrorGenerator
+                  formikError={formik.errors.description}
+                  formikTouched={formik.touched.description}
+                />
                 </div>
               
                 <div className={`d-flex justify-content-end`}>
