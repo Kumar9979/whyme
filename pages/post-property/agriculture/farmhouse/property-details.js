@@ -13,17 +13,17 @@ const FarmPropertyDetails = () => {
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      map: {},
       address: "",
       buildingName: "",
+      map: { lat: "", lng: "" },
     },
     validationSchema: Yup.object({
-      map: Yup.object("").shape({
+      address: Yup.string("").required("Required"),
+      buildingName: Yup.string("").required("Required"),
+      map: Yup.object().shape({
         lat: Yup.string().required("Select your location in the map"),
         lng: Yup.string().required("Select your location in the map"),
       }),
-      address: Yup.string("").required("Required"),
-      buildingName: Yup.string("").required("Required"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -31,6 +31,8 @@ const FarmPropertyDetails = () => {
     },
   });
   console.log(formik.values);
+  console.log(formik.errors);
+  // console.log(formik.values.map);
 
   return (
     <>
@@ -52,8 +54,8 @@ const FarmPropertyDetails = () => {
               <LocationAndSearch formik={formik} />
               <div className={`mt-2`}>
                 <FormikErrorGenerator
-                  formikError={formik.errors.map?.lat}
-                  formikTouched={formik.touched.map?.lat}
+                  formikError={formik.errors.map?.lng}
+                  formikTouched={formik.errors.map?.lng}
                 />
               </div>
               <div className="mt-3">

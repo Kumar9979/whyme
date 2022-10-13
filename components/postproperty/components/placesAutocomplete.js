@@ -32,7 +32,6 @@ const PlacesAutocomplete = ({
 
   useEffect(() => {
     setValue(markedAddress, false);
-
     return () => {
       console.log("Address updated");
     };
@@ -45,6 +44,7 @@ const PlacesAutocomplete = ({
     const results = await getGeocode({ address });
     const { lat, lng } = getLatLng(results[0]);
     setSelected({ lat, lng });
+    formik.setFieldValue("map", { lat, lng });
   };
 
   return (
@@ -66,7 +66,6 @@ const PlacesAutocomplete = ({
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
-            formik.setFieldValue("map", selected);
           }}
           disabled={!ready}
           className={`${styles.comboboxInput} ps-2 mt-2 fs_12 py-2`}
