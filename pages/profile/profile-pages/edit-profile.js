@@ -30,6 +30,7 @@ const EditProfile = () => {
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
   const [addModalShow, setaddModalShow] = useState(false);
+  const [openConfirm,setOpenConfirm] = useState(false);
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -93,6 +94,10 @@ const EditProfile = () => {
   }
   console.log(formik.values);
 
+  const handleCloseConfirm = () => {
+    setOpenConfirm(false)
+  }
+
   return (
     <ProfileLayout>
       <div className={`${styles.edit_profile} me-lg-5 me-0`}>
@@ -100,6 +105,7 @@ const EditProfile = () => {
           <div className="d-flex align-items-center ">
             <button
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+              onClick={() => setOpenConfirm(true)}
             >
               <Image
                 src={arrow_left}
@@ -343,7 +349,7 @@ const EditProfile = () => {
         onHide={() => setaddModalShow(false)}
         setuploaded={setuploaded}
       />
-      {/* <SaveChanges show={true} handleClose={handleClose}/> */}
+      <SaveChanges show={openConfirm} handleClose={handleCloseConfirm}/>
       {/* <SuccessSave show={true} handleClose={handleClose}/>  */}
     </ProfileLayout>
   );

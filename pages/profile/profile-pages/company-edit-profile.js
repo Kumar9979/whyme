@@ -28,6 +28,7 @@ const CompanyEditProfile = () => {
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
   const [addModalShow, setaddModalShow] = useState(false);
+  const [openConfirm,setOpenConfirm] = useState(false);
   function markerSetOn() {
     setmarkerStat(true);
   }
@@ -100,13 +101,17 @@ const CompanyEditProfile = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleCloseConfirm = () => {
+    setOpenConfirm(false)
+  }
+
   return (
     <ProfileLayout>
       <div className={`${styles.edit_profile} me-lg-3 me-0 p-2`}>
         <div className={`${styles.edit_profile_card} p-lg-4 mt-3 p-3 `}>
           <div className="d-flex align-items-center ">
             <button
-              onClick={handleShow}
+            onClick={() => setOpenConfirm(true)}
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
             >
               <Image
@@ -449,6 +454,8 @@ const CompanyEditProfile = () => {
         onHide={() => setaddModalShow(false)}
         setuploaded={setuploaded}
       />
+      <SaveChanges show={openConfirm} handleClose={handleCloseConfirm}/>
+      {/* <SuccessSave show={true} handleClose={handleClose}/>  */}
     </ProfileLayout>
   );
 };
