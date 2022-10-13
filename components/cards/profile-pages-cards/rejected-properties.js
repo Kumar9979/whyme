@@ -39,7 +39,7 @@ const RejectedProperties = () => {
   return (
     <div className="">
       <div
-        className={`${styles.similar_properties_card} p-1 row mt-3 mb-5 position-relative`}
+        className={`${styles.similar_properties_card} p-3 row mt-3 mb-5 position-relative`}
       >
         <div className={`position-relative col-lg-3 col-md-3`}>
           <Image
@@ -61,7 +61,7 @@ const RejectedProperties = () => {
         <div className={`d-flex flex-column ps-2 col-lg-6 col-md-6`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
+              className={`${styles.similar_property_location} fw_400  fontFam_poppins`}
             >
               2BHK flat in Vijayanagar, Mysuru
             </div>
@@ -74,7 +74,7 @@ const RejectedProperties = () => {
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 mt-4 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-2 ${styles.amenties_width} `}>
             {aboutproperties.map((item, index) => {
               return (
                 <div className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}>
@@ -101,7 +101,7 @@ const RejectedProperties = () => {
             })}
           </div>
           <div
-            className={`d-flex justify-content-between mt-4 ${styles.property_statistics_width}`}
+            className={`d-flex justify-content-between mt-2 ${styles.property_statistics_width}`}
           >
             {" "}
             <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
@@ -113,12 +113,12 @@ const RejectedProperties = () => {
         <div className="col-lg-3 col-md-3 d-flex flex-column ">
           <div className=" mt-auto">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_16 fw_400 fontFam_poppins ${styles.posted_date}`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_15 fw_400 fontFam_poppins ${styles.posted_date}`}
             >
               By Amal Sabu
             </span>
@@ -126,7 +126,7 @@ const RejectedProperties = () => {
               className={`${styles.buttons_position} d-flex justify-content-end mt-2 pb-1 `}
             >
               <button
-                className={`${styles.edit_property_button} fs_9 fw_500  fontFam_poppins color_white px-3 d-flex align-items-center py-1`}
+                className={`${styles.edit_property_button} fs_12 fw_500  fontFam_poppins color_white px-4 d-flex align-items-center py-1`}
               >
                 <Image
                   src={edit_icon}
@@ -138,7 +138,7 @@ const RejectedProperties = () => {
                 <span className="ms-1"> Edit</span>
               </button>
               <button
-                className={`${styles.delete_property_button} ms-2 fs_9 fw_500 fontFam_poppins color_white px-2 d-flex align-items-center py-1`}
+                className={`${styles.delete_property_button} ms-2 fs_12 fw_500 fontFam_poppins color_white px-4 d-flex align-items-center py-1`}
               >
                 <div className={`${styles.edit_image_size}`}>
                   <Image
@@ -153,7 +153,7 @@ const RejectedProperties = () => {
             </div>
           </div>
         </div>
-        <div className={`${styles.rejected} position-absolute `}>
+        <div className={`${styles.rejected} position-absolute text-center`}>
           <Image
             src={rejected}
             alt="Picture of the author"
@@ -173,7 +173,7 @@ export default RejectedProperties;
 const aboutproperties = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {

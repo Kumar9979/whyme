@@ -28,7 +28,7 @@
 }
 .similar_property_location {
   color: #000000;
-  font-size: 17px;
+  font-size: 20px;
 }
 .ready_house {
   color: #ffffff;
@@ -40,7 +40,7 @@
 }
 .exact_location {
   color: #bcc7ce;
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   white-space: nowrap;
@@ -184,9 +184,10 @@
 }
 .view_properties_statistics {
   text-decoration: underline;
+  margin-right: 0px;
 }
 .property_statistics_width {
-  width: 90%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1300px) {
