@@ -80,7 +80,7 @@ const AutoCityLoad = ({
           >Reset</button>
           <div className={`${styles.nmm}`}></div>
           <span className="d-flex align-items-center pe-2">
-            <Dropdown fill="#50BF97" width={13} height={13} />
+            <Dropdown width={13} height={13} />
           </span>
         </div>
 
