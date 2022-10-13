@@ -13,17 +13,15 @@ const FlatPropertyDetails = () => {
     const router = useRouter();
     const formik = useFormik({
         initialValues: {
-            map: {},
+            map: { lat: "", lng: "" },
             address: "",
             buildingName: "",
         },
         validationSchema: Yup.object({
-            map: Yup.object("").shape({
-                lat: Yup.string(),
-                // .required("Select your location in the map"),
-                lng: Yup.string()
-                // .required("Select your location in the map"),
-            }),
+            map: Yup.object().shape({
+                lat: Yup.string().required("Select your location in the map"),
+                lng: Yup.string().required("Select your location in the map"),
+              }),
             address: Yup.string("").required("Required"),
             buildingName: Yup.string("").required("Required"),
         }),
@@ -55,10 +53,10 @@ const FlatPropertyDetails = () => {
                             </h6>
 
                             <LocationAndSearch formik={formik} />
-                            {/* <FormikErrorGenerator
-                                formikError={formik.errors.map.lat}
-                                formikTouched={formik.touched.map.lat}
-                            /> */}
+                            <FormikErrorGenerator
+                  formikError={formik.errors.map?.lng}
+                  formikTouched={formik.errors.map?.lng}
+                />
                             <div className="mt-3">
                                 <label
                                     htmlFor="address"
