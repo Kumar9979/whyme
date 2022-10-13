@@ -11,12 +11,14 @@ const LocationAndSearch = ({ formik }) => {
   const [selected, setSelected] = useState();
   const [map, setMap] = useState(null);
   const [markerStat, setmarkerStat] = useState(false);
+  console.log(lat);
   useEffect(() => {
-    setSelected({ lat, lng });
     if (lat !== undefined) {
+      setSelected({ lat, lng });
+
+      formik.setFieldValue("map", { lat, lng });
       const timer = setTimeout(() => {
         markerChange();
-        formik.setFieldValue("map", selected);
         markerSetOn();
       }, 1000);
     }
@@ -33,24 +35,24 @@ const LocationAndSearch = ({ formik }) => {
   Geocode.setApiKey("AIzaSyAVDzgCl3C4LxYECq149eAYFA_sNyPmpGU");
 
   function markerChange() {
-    Geocode.fromLatLng(selected.lat, selected.lng).then(
+    Geocode.fromLatLng(selected?.lat, selected?.lng).then(
       (response) => {
         setMarkedAddress(response.results[0].formatted_address);
         console.log(markedAddress);
       },
-
       (error) => {
         console.error(error);
       }
     );
   }
+
   return (
     <>
       {isLoaded ? (
         <>
           <div>
             <PlacesAutocomplete
-            selected={selected}
+              selected={selected}
               markerSetOn={markerSetOn}
               markedAddress={markedAddress}
               setSelected={setSelected}
@@ -64,7 +66,7 @@ const LocationAndSearch = ({ formik }) => {
               mapContainerClassName={`${styles.map_container}`}
               onLoad={(map) => {
                 setMap(map);
-                formik.setFieldValue("map", selected);
+                markerChange();
               }}
             >
               {markerStat && (
@@ -76,7 +78,6 @@ const LocationAndSearch = ({ formik }) => {
                       lat: e.latLng.lat(),
                       lng: e.latLng.lng(),
                     });
-                    formik.setFieldValue("map", selected);
                   }}
                   position={selected}
                 />
