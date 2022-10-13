@@ -89,7 +89,8 @@
 }
 .background_color {
   background-color: #50bf97;
-  border-radius: 4px;
+  border-radius: 5px;
+  margin-top: 3px;
   opacity: 1;
 }
 

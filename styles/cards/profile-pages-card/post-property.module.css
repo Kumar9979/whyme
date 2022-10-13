@@ -190,6 +190,10 @@
   width: 100%;
 }
 
+.font_color_323D5A{
+  color: #323D5A;
+}
+
 @media only screen and (max-width: 1300px) {
   .similar_properties_card {
     background: #ffffff 0% 0% no-repeat padding-box;

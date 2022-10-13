@@ -105,7 +105,7 @@ const VerifiedProperties = ({ housetype }) => {
             className={`d-flex justify-content-between mt-2 ${styles.property_statistics_width}`}
           >
             {" "}
-            <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins `}>
+            <div className={`fs_22 fw_700 text-nowrap  fontFam_poppins ${styles.font_color_323D5A}`}>
               ₹ 30 Lac
             </div>
             <a
