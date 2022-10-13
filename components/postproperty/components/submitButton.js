@@ -38,9 +38,10 @@ const PostPropertySubmitButton = ({ marginTop = "mt-5", marginEnd, paddingTop = 
                 <button
                     type="button"
                     onClick={() =>
-                        router.push(
-                            "/post-property/property-details/propertyDetails"
-                        )
+                        router.back()
+                        // router.push(
+                        //     "/post-property/property-details/propertyDetails"
+                        // )
                     }
                     className={`bg-white border-0 `}
                 >

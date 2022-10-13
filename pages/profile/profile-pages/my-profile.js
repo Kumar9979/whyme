@@ -27,6 +27,7 @@ const MyProfile = () => {
           <div className="d-flex align-items-center ">
             <button
               className={`${styles.arrow_left_button} d-flex align-items-center p-0`}
+              onClick={() => router.back()}
             >
               <Image
                 src={arrow_left}

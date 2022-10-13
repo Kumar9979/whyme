@@ -86,7 +86,7 @@ const SellRentOptionModal = ({ show, onHide }) => {
       console.log(values);
       resetForm();
       onHide();
-      router.push("/post-property/property-details/propertyDetails");
+      router.push("/post-property/property-details/property-details");
     },
   });
 
