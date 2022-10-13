@@ -32,19 +32,19 @@
 }
 .about_property_heading {
   color: #bcc7ce;
-  font-size: 15px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .about_property_amenity {
   color: #1d72db;
-  font-size: 15px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .about_readmore_text {
   color: #323d5a;
   width: 90%;
   padding-top: 1rem;
-  font-size: 13px;
+  font-size: 12px;
 }
 .image_size {
   width: 30px;
@@ -61,10 +61,10 @@
   opacity: 1;
   border: none;
   color: #ffffff;
-  width: 7.8rem;
-  height: 2rem;
+  width: 8rem;
+  height: 2.2rem;
   right: 2%;
-  bottom: 3%;
+  bottom: 5%;
 }
 .owner_image {
   border-radius: 50%;

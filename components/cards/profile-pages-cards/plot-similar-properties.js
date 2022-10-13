@@ -65,7 +65,7 @@ const PlotProperties = ({ data,housetype }) => {
   return (
     <div className="">
       <div
-        className={`${styles.similar_properties_card} p-2 row mt-3 mb-5 position-relative`}
+        className={`${styles.similar_properties_card} p-3 row mt-3 mb-5 position-relative`}
       >
         <div className={`position-relative col-lg-3 col-md-3 `}>
           <Image
@@ -76,7 +76,7 @@ const PlotProperties = ({ data,housetype }) => {
             height={300}
             layout="fill"
           />
-          <div className={`${styles.like_image} position-absolute`}>
+          {/* <div className={`${styles.like_image} position-absolute`}>
             <button
               onMouseEnter={() => likeHovered("hovered")}
               onMouseLeave={() => likeHovered("leaved")}
@@ -91,7 +91,7 @@ const PlotProperties = ({ data,housetype }) => {
                 height={25}
               />
             </button>
-          </div>
+          </div> */}
           <div
             className={`${styles.luxurius} position-absolute fs_13 fw_500 fontFam_poppins`}
           >
@@ -99,10 +99,10 @@ const PlotProperties = ({ data,housetype }) => {
           </div>
         </div>
 
-        <div className={`d-flex flex-column ps-2 col-lg-7 col-md-7`}>
+        <div className={`d-flex flex-column col-lg-7 col-md-7`}>
           <div className="d-flex align-items-center">
             <div
-              className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
+              className={`${styles.similar_property_location} fw_400  fontFam_poppins`}
             >
               {housetype}
             </div>
@@ -112,21 +112,21 @@ const PlotProperties = ({ data,housetype }) => {
               Ready to move
             </div>
           </div>
-          <div className={`${styles.exact_location}  d-flex `}>
-            <i className="ri-map-pin-2-fill "></i>
-            <span className="ps-1">
+          <div className={`${styles.exact_location} d-flex `}>
+            <i className="ri-map-pin-2-fill fs_13"></i>
+            <span className="ps-1 fs_13">
               2Nd Floor, Dejgow Building, Kannada Sahithya Parishath Rd,
               <br />
               Mysuru - 570017
             </span>
           </div>
-          <div className={`row ps-3 mt-2 ${styles.amenties_width} `}>
+          <div className={`row ps-3 mt-0 ${styles.amenties_width} `}>
             {nm.map((item, index) => {
               return (
                 <div
                   className={`col-lg-4 col-md-4 col-6 d-flex ${styles.container} `}
                 >
-                  <div className="d-flex align-items-center mb-2">
+                  <div className="d-flex align-items-center">
                     <div className={`${styles.image_size} `}>
                       <Image src={item.image} alt="Picture of the author" />
                     </div>
@@ -148,7 +148,8 @@ const PlotProperties = ({ data,housetype }) => {
               );
             })}
           </div>
-          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400 mt-2`}>
+          <div className="d-flex justify-content-between">
+          <p className={`${styles.about_readmore_text} fontFam_poppins fw_400`}>
             {Alltext}
             <button
               className={`${styles.about_readmore_button}`}
@@ -157,6 +158,23 @@ const PlotProperties = ({ data,housetype }) => {
               {readless === true ? "Read Less" : "Read More"}
             </button>
           </p>
+          <div className={`${styles.like_image} d-flex flex-column justify-content-end`}>
+            <button
+              onMouseEnter={() => likeHovered("hovered")}
+              onMouseLeave={() => likeHovered("leaved")}
+              onClick={() => setLiked(!liked)}
+              className={`${styles.save_image_button} `}
+            >
+              <Image
+                className="d-flex justify-content-center pt-2"
+                src={saveIcon}
+                alt="Picture of the author"
+                width={25}
+                height={25}
+              />
+            </button>
+          </div> 
+          </div>
         </div>
 
         <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
@@ -167,12 +185,12 @@ const PlotProperties = ({ data,housetype }) => {
           </div>
           <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date}`}
+              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-1`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2`}
+              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-1`}
             >
               By Amal Sabu
             </span>
@@ -182,7 +200,7 @@ const PlotProperties = ({ data,housetype }) => {
         <button
           className={`  ${styles.contact_button} d-flex align-items-center position-absolute position-relative`}
         >
-          <span className={`fs_13 fw_400 ps-3 ms-3 `}>Contact</span>
+          <span className={`fs_14 fw_400 pb-1 ps-4 ms-2 pt-1`}>Contact</span>
           <div className={`position-absolute ${styles.round_image}`}>
             <Image
               className={`${styles.owner_image}`}
@@ -235,7 +253,7 @@ const aboutproperties2 = [
 const aboutProperties = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {

@@ -310,7 +310,7 @@ export default SimilarProperties;
 const residential = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
@@ -376,7 +376,7 @@ const PlotAndLand = [
 const OfficeSpace = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
@@ -408,7 +408,7 @@ const OfficeSpace = [
 const CommercialShop = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
@@ -441,7 +441,7 @@ const CommercialShop = [
 const CommercialShowroom = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
@@ -473,7 +473,7 @@ const CommercialShowroom = [
 const Godown = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
@@ -505,7 +505,7 @@ const Godown = [
 const IndustrialShed = [
   {
     image: squarearea,
-    heading: "super Area",
+    heading: "Super Area",
     amenity: "2400sqft",
   },
   {
