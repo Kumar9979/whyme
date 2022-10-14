@@ -146,6 +146,16 @@ object-fit: contain;
     color: #323d5a;
     font-weight: 500;
   }
+  .complete_status_text{
+  color: #1139a8;
+  font-size: 14px;
+  }
+  .complete_list{
+    font-size: 10px;
+  }
+  .response_text{
+    font-size: 10px;
+  }
 }
 @media only screen and (max-width: 450px) {
   .delete {
