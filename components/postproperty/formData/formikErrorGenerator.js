@@ -10,7 +10,7 @@ export const FormikErrorGenerator = ({ formikError, formikTouched }) => {
             style={{ fontSize: 12, marginRight: ".1rem" }}
             className="ri-error-warning-line   "
           ></i>
-          <span className={`fs_12 lh-base `}>{formikError}</span>
+          <span className={`fs_10 lh-base `}>{formikError}</span>
         </div>
       )}
     </div>

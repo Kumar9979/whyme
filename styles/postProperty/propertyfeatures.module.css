@@ -150,7 +150,7 @@
   }
 
   .error_container {
-    justify-content: end;
+    justify-content: start;
   }
 
   .propertyFeature_width_50_to_75 {

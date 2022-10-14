@@ -35,7 +35,7 @@ const PropertyUpload = () => {
       description: Yup.string().required("Required"),
       terms: Yup.boolean().oneOf(
         [true],
-        "Terms and condition need to be accepted"
+        "Accept terms and conditon"
       ),
 
       // terms: Yup.string().required("Required"),

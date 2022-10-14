@@ -167,7 +167,9 @@ const [mobile, setMobile] = useState(false);
             )}
 
             <div className="col-xl-9 col-12">
-              {activityType === "search" ? <RecentSearch /> : <NoRecentSearch />}
+              {activityType === "search" ? <RecentSearch /> : <RecentView/>}
+              {/* NoRecentView and No RecentSearch should be added in case of empty data */}
+              <RecentView/>
             </div>
           </div>
         </div>
