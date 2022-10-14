@@ -28,7 +28,7 @@
 }
 .similar_property_location {
   color: #000000;
-  font-size: 14px;
+  font-size: 16px;
 }
 .ready_house {
   color: #ffffff;
@@ -149,6 +149,9 @@
   border: none;
   background-color: transparent;
   font-size: 10px; 
+}
+.lac_30{
+  color: #323D5A;
 }
 
 @media only screen and (max-width: 1300px) {

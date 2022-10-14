@@ -113,6 +113,9 @@
   font-size: 9px;
   white-space: nowrap;
 }
+.lac_30{
+  color: #323D5A;
+}
 
 @media only screen and (max-width: 1600px) {
   .similar_properties_card {

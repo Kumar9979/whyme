@@ -179,18 +179,18 @@ const PlotProperties = ({ data,housetype }) => {
 
         <div className="col-lg-2 col-md-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_22 fs_md_15 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_22 fs_md_15 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end ${styles.lac_30}`}
           >
             ₹ 30 Lac
           </div>
           <div className="pb-4 mb-2 ">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-1`}
+              className={`d-flex justify-content-end fs_10 fw_400 fontFam_poppins  ${styles.posted_date} me-1`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-1`}
+              className={`d-flex justify-content-end fs_9 fw_400 fontFam_poppins ${styles.posted_date} mb-2 me-1`}
             >
               By Amal Sabu
             </span>

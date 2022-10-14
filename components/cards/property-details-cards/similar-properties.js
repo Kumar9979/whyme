@@ -100,7 +100,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
       <div
         className={`${styles.similar_properties_card} p-3 row mt-3 mb-5 position-relative`}
       >
-        <div className={`position-relative col-lg-3 `}>
+        <div className={`position-relative col-lg-3 col-md-3 `}>
           <Image
             src={homeimage}
             alt="Picture of the autho"
@@ -136,7 +136,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
           <div className="ps-1">
             <div className="d-flex align-items-center">
               <div
-                className={`${styles.similar_property_location} fw_600  fontFam_poppins`}
+                className={`${styles.similar_property_location} fw_400  fontFam_poppins`}
               >
                 {type}
               </div>
@@ -269,18 +269,18 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
 
         <div className="col-lg-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_20 fw_700 text-nowrap  fontFam_poppins d-flex justify-content-end`}
+            className={`fs_30 fw_600 text-nowrap  fontFam_poppins d-flex justify-content-end ${styles.lac_30}`}
           >
             ₹ 30 Lac
           </div>
-          <div className="pb-4 mb-2 ">
+          <div className="pb-4 mb-3">
             <div
-              className={`d-flex justify-content-end fs_9 fw_600 fontFam_poppins  ${styles.posted_date} me-2`}
+              className={`d-flex justify-content-end fs_10 fw_400 fontFam_poppins  ${styles.posted_date} me-2`}
             >
               Posted On 20 June 2020
             </div>
             <span
-              className={`d-flex justify-content-end fs_8 fw_600 fontFam_poppins ${styles.posted_date} mb-2 me-2`}
+              className={`d-flex justify-content-end fs_9 fw_400 fontFam_poppins ${styles.posted_date} mb-2 me-2`}
             >
               By Amal Sabu
             </span>
