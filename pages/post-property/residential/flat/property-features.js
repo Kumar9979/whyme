@@ -133,7 +133,8 @@ const FlatPropertyFeatures = () => {
                   itemName={"Bedroom"}
                   inputValue={formik.values.Bedroom}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
+                  className={'w-100'}
+                  // inputClassName={"w-50"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.Bedroom}
@@ -146,21 +147,22 @@ const FlatPropertyFeatures = () => {
                   itemName={"Bathroom"}
                   inputValue={formik.values.Bathroom}
                   onChangeFn={formik.handleChange}
-                  inputClassName={"w-50"}
+                  className={'w-100'}
+                  // inputClassName={"w-50"}
                 />
                 <FormikErrorGenerator
                   formikError={formik.errors.Bathroom}
                   formikTouched={formik.touched.Bathroom}
                 />
               </div>
-              <div className={` me-0  mb-1`}>
+              <div className={`w-50 me-0 mb-1`}>
                 <label
                   htmlFor="FurnishedStatus"
                   className={`form-label text-nowrap fs_16 fw_500 fontFam_poppins`}
                 >
                   Facing
                 </label>
-                <div className={`${styles.width_120}`}>
+                <div className={``}>
                   <SelectGenerator
                     option={facingOptions}
                     itemName={"facing"}
