@@ -157,6 +157,9 @@
     .edit_profile {
       width: 97%;
     }
+    .edit_profile_card {
+      height: fit-content;
+    }
   }
   @media only screen and (max-width: 768px) {
     .form_width {
