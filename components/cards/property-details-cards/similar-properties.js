@@ -269,7 +269,7 @@ const SimilarProperties = ({ data, plot, amenties, type }) => {
 
         <div className="col-lg-2 d-flex flex-column justify-content-between position-relative">
           <div
-            className={`fs_30 fw_600 text-nowrap  fontFam_poppins d-flex justify-content-end ${styles.lac_30}`}
+            className={`fs_22 fw_600 text-nowrap  fontFam_poppins d-flex justify-content-end ${styles.lac_30}`}
           >
             ₹ 30 Lac
           </div>

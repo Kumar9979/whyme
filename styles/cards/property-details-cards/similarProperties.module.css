@@ -78,8 +78,8 @@
   opacity: 1;
   border: none;
   color: #ffffff;
-  width: 7.8rem;
-  height: 2rem;
+  width: 8rem;
+  height: 2.2rem;
   right: 2%;
   bottom: 7%;
 }
@@ -121,8 +121,8 @@
 }
 
 .round_image {
-  left: 1.5%;
-  top: 6.8%;
+  left: 3%;
+  top: 9%;
 }
 .list_columns {
   columns: 2;

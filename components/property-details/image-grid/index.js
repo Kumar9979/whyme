@@ -64,7 +64,7 @@ const ImageGrid = ({ propertyType, data }) => {
   const number = 10;
   return (
     <div
-      className={`${styles.property_details} p-2 p-lg-4 mt-lg-4 position-relative`}
+      className={`${styles.property_details} p-2 p-lg-4 mt-4 position-relative`}
     >
       <div className="d-flex justify-content-between ">
         <div className="col-11">

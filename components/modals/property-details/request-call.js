@@ -40,7 +40,7 @@ const RequestCallBack = ({ show, handleClose }) => {
     >
       <Modal.Body className={`${styles.requestcall_modal}`}>
         <div className={``}>
-          <div className={`${styles.requestcall_div} d-flex justify-content-between pb-2`}>
+          <div className={`${styles.requestcall_div} d-flex justify-content-between pb-1`}>
           <div
               className={` fs_18 fw_600 fontFam_poppins pt-0 ms-2  ${styles.request_call_heading}`}
             >
@@ -64,7 +64,7 @@ const RequestCallBack = ({ show, handleClose }) => {
               you
             </div> */}
             <form onSubmit={formik.handleSubmit}>
-              <div className="d-flex flex-column mt-3">
+              <div className="d-flex flex-column mt-2">
                 <label
                   className={`${styles.request_label} fs_14 mb-1 fw_400`}
                   for="exampleInputEmail1"
@@ -73,7 +73,7 @@ const RequestCallBack = ({ show, handleClose }) => {
                 </label>
                 <input
                   type="text"
-                  className={`w-100 py-3 ps-4 ${styles.request_input} `}
+                  className={`w-100 py-2 ps-4 ${styles.request_input} `}
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter your name"
@@ -86,7 +86,7 @@ const RequestCallBack = ({ show, handleClose }) => {
                 )}
               </div>
 
-              <div className="form-group mt-3">
+              <div className="form-group mt-2">
                 <label
                   className={`${styles.request_label} fs_14 mb-1 fw_400 `}
                   for="exampleInputEmail1"
@@ -95,7 +95,7 @@ const RequestCallBack = ({ show, handleClose }) => {
                 </label>
                 <input
                   type="text"
-                  className={`w-100 ${styles.request_input} py-3 ps-4`}
+                  className={`w-100 ${styles.request_input} py-2 ps-4`}
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter your Mobile Number"
@@ -108,7 +108,7 @@ const RequestCallBack = ({ show, handleClose }) => {
                 )}
                 <div className={`d-flex`}>
                 <input type="checkbox" />
-                <label className={`${styles.checkbox_label} fs_10 mt-2 mb-2 ms-1`}>This is your WhatsApp number</label>
+                <label className={`${styles.checkbox_label} fs_10 mt-2 mb-1 ms-1`}>This is your WhatsApp number</label>
                 </div>
               </div>
               <button className={`w-100 mt-3 py-2 ${styles.submit_button}`}
