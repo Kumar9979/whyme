@@ -86,7 +86,7 @@ const Foter = () => {
                       className={`${styles.input} ps-2 pe-3`}
                       type="email"
                       id="email"
-                      placeholder="Enter your email address"
+                      placeholder="Enter email address"
                       value={formik.values.email}
                       onChange={formik.handleChange}
                     />

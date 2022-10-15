@@ -228,7 +228,7 @@ const Navbar = () => {
                   <li>
                     <button
                       type="button"
-                      className={`ms-5 px-4  btn-primary text-nowrap ${Styles.landingheader}`}
+                      className={`ms-5 px-5  btn-primary text-nowrap ${Styles.landingheader}`}
                       onClick={() => setShowProperty(true)}
                     >
                       Post Property

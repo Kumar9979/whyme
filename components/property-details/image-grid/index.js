@@ -209,7 +209,7 @@ const ImageGrid = ({ propertyType, data }) => {
 
       <div className="d-flex justify-content-between ps-0">
         <div
-          className={` d-flex align-items-center fw_700 fs_28 fs_sm_20 text-nowrap fontFam_poppins ${styles.property_price} `}
+          className={` d-flex align-items-center fw_600 fs_34 fs_sm_20 text-nowrap fontFam_poppins ${styles.property_price} `}
         >
           ₹ 70Lac
           <span
