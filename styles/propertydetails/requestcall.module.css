@@ -73,10 +73,14 @@
   height: fit-content;
   width: fit-content;
   background-color: #ffffff;
-  top: 15%;
-  right: 3%;
+  top: 12%;
+  right: 7%;
   border-radius: 8px;
   border: none;
+}
+
+.margin_right{
+  margin-right: 50px;
 }
 @media only screen and (max-width: 992px) {
   .request_call {

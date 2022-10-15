@@ -75,20 +75,20 @@ const RequestCall = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       <button
         onClick={() => {
           router.push("/property-details/profile/agent-profile");
         }}
-        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+        className={`${styles.agent_profile} w-100 py-1 mt-3`}
       >
         View Profile
       </button>
       {show ? (
         <button
-          className={`${styles.share_report_card} p-3  position-absolute`}
+          className={`${styles.share_report_card} p-2 position-absolute`}
         >
           <div className="d-flex align-items-center justify-content-center">
             <Image
@@ -97,7 +97,7 @@ const RequestCall = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+            <span className={`fontFam_poppins text-nowrap fs_15 color_red fw_500 ps-2 ${styles.margin_right}`}>
               Report
             </span>
           </div>
@@ -176,20 +176,20 @@ export const CompanyRequestCall = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       <button
         onClick={() => {
           router.push("/property-details/profile/company-profile");
         }}
-        className={`${styles.agent_profile} w-100 py-2 mt-3`}
+        className={`${styles.agent_profile} w-100 py-1 mt-3`}
       >
         View Profile
       </button>
       {show ? (
         <button
-          className={`${styles.share_report_card} p-3  position-absolute`}
+          className={`${styles.share_report_card} p-2 position-absolute`}
         >
           <div className="d-flex align-items-center justify-content-center">
             <Image
@@ -198,7 +198,7 @@ export const CompanyRequestCall = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+            <span className={`fontFam_poppins text-nowrap fs_15 color_red fw_500 ps-2 ${styles.margin_right}`}>
               Report
             </span>
           </div>
@@ -260,12 +260,12 @@ export const PostedByOwner = () => {
           </div>
         </div>
       </div>
-      <button className={`${styles.request_button} w-100 py-2 mt-3 mt-1`} onClick={() => setShowCallBack(true)}>
+      <button className={`${styles.request_button} w-100 py-2 mt-3`} onClick={() => setShowCallBack(true)}>
         Request Callback
       </button>
       {show ? (
         <button
-          className={`${styles.share_report_card} p-3  position-absolute`}
+          className={`${styles.share_report_card} p-2 mt-2  position-absolute`}
         >
           <div className="d-flex align-items-center justify-content-center">
             <Image
@@ -274,7 +274,7 @@ export const PostedByOwner = () => {
               width={15}
               height={15}
             />
-            <span className="fontFam_poppins text-nowrap fs_15 color_red fw_400 ps-3">
+            <span className={`fontFam_poppins text-nowrap fs_15 color_red fw_500 ps-2 ${styles.margin_right}`}>
               Report
             </span>
           </div>
