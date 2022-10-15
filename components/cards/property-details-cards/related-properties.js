@@ -57,7 +57,7 @@ const RelatedProperties = ({ location, data, }) => {
   const number = 20;
   return (
     <div className="me-4">
-      <div className={`${styles.related_image} mb-1 p-2 mb-lg-2 mt-3 ms-2`}>
+      <div className={`${styles.related_image} mb-1 p-2 mb-lg-2 mt-3 mx-2`}>
         <div className={`position-relative`}>
           <Image
             src={home}

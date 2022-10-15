@@ -207,7 +207,7 @@ const ImageGrid = ({ propertyType, data }) => {
         </div>
       )}
 
-      <div className="d-flex justify-content-between ps-2">
+      <div className="d-flex justify-content-between ps-0">
         <div
           className={` d-flex align-items-center fw_700 fs_28 fs_sm_20 text-nowrap fontFam_poppins ${styles.property_price} `}
         >

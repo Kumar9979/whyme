@@ -19,7 +19,7 @@ const AgentProperties = ({ propertyType, data, hide }) => {
     <div className="mt-4">
       <div className={`${styles.agent_properties} p-2`}>
         {hide === 1 ? null : (
-          <div className="d-flex justify-content-between align-items-center ">
+          <div className="d-flex justify-content-between align-items-center ps-3 pe-5">
             <div className={`${styles.agent_properties_text}`}>
               See More Properties By{" "}
               <span className={`${styles.agent_name}`}>Amal Sabu</span>
