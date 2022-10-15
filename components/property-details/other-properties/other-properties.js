@@ -37,7 +37,7 @@ const OtherProperties = ({amenties, type, data, plot}) => {
   }, []);
 
   return (
-    <div>
+    <div className="pb-5">
       <div className={`${styles.agent_properties} p-4  `}>
         <div className="d-flex justify-content-between align-items-center ">
           <div className={`${styles.agent_properties_text}`}>

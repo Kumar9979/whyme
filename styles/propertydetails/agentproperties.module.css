@@ -85,7 +85,7 @@
   top: 50%;
 }
 .arrow_left_button {
-  background-color: #1d72db;
+  background-color: gray;
   border-radius: 50%;
   width: 30px;
   left: 0%;
@@ -97,7 +97,7 @@
   border: none;
 }
 .arrow_right_button {
-  background-color: #1d72db;
+  background-color: gray;
   border-radius: 50%;
   right: 2%;
   top: 50%;
