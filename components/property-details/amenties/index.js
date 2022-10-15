@@ -37,7 +37,7 @@ const Amenties = ({ data }) => {
           <div className="row">
             {properties.map((item, index) => {
               return (
-                <div className="col-lg-4 col-12 ">
+                <div className="col-lg-4 col-12 ps-0">
                   <ul
                     className={`${styles.amenties_bullet} d-flex align-items-center`}
                   >
